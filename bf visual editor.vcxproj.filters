@@ -83,4 +83,9 @@
     <None Include="README.md" />
     <None Include=".gitignore" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

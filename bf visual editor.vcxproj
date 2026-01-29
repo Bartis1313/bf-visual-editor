@@ -182,6 +182,9 @@
     <None Include="README.md" />
     <None Include="vcpkg.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\1.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
