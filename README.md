@@ -38,5 +38,5 @@ Also editor class was not good idea, I have to recode this into more internal pa
 Probably support for fb3 going to be added in some time.
 
 # Demo
-![preview](https://github-production-user-asset-6210df.s3.amazonaws.com/69613796/542472076-7a23e338-33f5-4039-90bc-a2488acd0fc8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260129T225457Z&X-Amz-Expires=300&X-Amz-Signature=e2bfad01f2c344079968b7738d777c3418155dc8d20e3a0aba99685327d4dc1d&X-Amz-SignedHeaders=host)\
+![preview](https://github.com/Bartis1313/bf-visual-editor/blob/7f3e7e56281ba563aa2bf15039e8df507df2225a/images/1.png)\
 [![video](https://img.youtube.com/vi/LeEkiGc7Ggw/maxresdefault.jpg)](https://www.youtube.com/watch?v=LeEkiGc7Ggw)
