@@ -1,6 +1,8 @@
 #include "editor.h"
 #include "../utils/log.h"
 
+#include <magic_enum/magic_enum.hpp>
+
 void VisualEnvironmentEditor::RenderGlobalVEEditor()
 {
     if (!m_GlobalVEData.captured)
@@ -774,11 +776,9 @@ void VisualEnvironmentEditor::RenderEnlightenComponent(fb::EnlightenComponentDat
 
 void VisualEnvironmentEditor::RenderTonemapComponent(fb::TonemapComponentData* e, const fb::TonemapComponentData* o)
 {
-    // TODO: use magic enum
-    const char* methods[] = { "None", "Linear", "Filmic", "Filmic Neutral" };
     int method = static_cast<int>(e->m_TonemapMethod);
     int origMethod = static_cast<int>(o->m_TonemapMethod);
-    if (EnumCombo("Tonemap Method", &method, &origMethod, methods, IM_ARRAYSIZE(methods)))
+    if (EnumCombo<fb::TonemapMethod>("Tonemap Method", &method, &origMethod))
         e->m_TonemapMethod = static_cast<fb::TonemapMethod>(method);
 
     Vec3Edit("Bloom Scale", &e->m_BloomScale, &o->m_BloomScale);
@@ -1080,11 +1080,9 @@ void VisualEnvironmentEditor::RenderDofComponent(fb::DofComponentData* e, const 
 {
     BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
 
-    // TODO: use magic enum
-    const char* filters[] = { "None", "Gaussian 3px", "Gaussian 5px", "Gaussian 7px", "Gaussian 9px", "Gaussian 15px", "Gaussian 31px" };
     int filter = static_cast<int>(e->m_BlurFilter);
     int origFilter = static_cast<int>(o->m_BlurFilter);
-    if (EnumCombo("Blur Filter", &filter, &origFilter, filters, IM_ARRAYSIZE(filters)))
+    if (EnumCombo<fb::BlurFilter>("Blur Filter", &filter, &origFilter))
         e->m_BlurFilter = static_cast<fb::BlurFilter>(filter);
 
     FloatEdit("Focus Distance", &e->m_FocusDistance, &o->m_FocusDistance);
@@ -1148,11 +1146,9 @@ void VisualEnvironmentEditor::RenderCameraParamsComponent(fb::CameraParamsCompon
 
 void VisualEnvironmentEditor::RenderScreenEffectComponent(fb::ScreenEffectComponentData* e, const fb::ScreenEffectComponentData* o)
 {
-    // TODO: use magic enum
-    const char* types[] = { "Full Frame", "Single Frame Part", "Single Square Frame Part" };
     int type = static_cast<int>(e->m_FrameType);
     int origType = static_cast<int>(o->m_FrameType);
-    if (EnumCombo("Frame Type", &type, &origType, types, IM_ARRAYSIZE(types)))
+    if (EnumCombo<fb::ScreenEffectFrameType>("Frame Type", &type, &origType))
         e->m_FrameType = static_cast<fb::ScreenEffectFrameType>(type);
 
     Vec4Edit("Screen Effect Params", &e->m_ScreenEffectParams, &o->m_ScreenEffectParams);
@@ -1191,19 +1187,16 @@ void VisualEnvironmentEditor::RenderPlanarReflectionComponent(fb::PlanarReflecti
     BoolEdit("Sky Render Enable", &e->m_SkyRenderEnable, &o->m_SkyRenderEnable);
     FloatEdit("Ground Height", &e->m_GroundHeight, &o->m_GroundHeight);
 
-    // TODO: use magic enum
-    const char* filters[] = { "None", "Gaussian 3px", "Gaussian 5px", "Gaussian 7px", "Gaussian 9px", "Gaussian 15px", "Gaussian 31px" };
-
     int hFilter = static_cast<int>(e->m_HorizontalBlurFilter);
     int origHFilter = static_cast<int>(o->m_HorizontalBlurFilter);
-    if (EnumCombo("H Blur Filter", &hFilter, &origHFilter, filters, IM_ARRAYSIZE(filters)))
+    if (EnumCombo<fb::BlurFilter>("H Blur Filter", &hFilter, &origHFilter))
         e->m_HorizontalBlurFilter = static_cast<fb::BlurFilter>(hFilter);
 
     FloatEdit("H Deviation", &e->m_HorizontalDeviation, &o->m_HorizontalDeviation);
 
     int vFilter = static_cast<int>(e->m_VerticalBlurFilter);
     int origVFilter = static_cast<int>(o->m_VerticalBlurFilter);
-    if (EnumCombo("V Blur Filter", &vFilter, &origVFilter, filters, IM_ARRAYSIZE(filters)))
+    if (EnumCombo<fb::BlurFilter>("V Blur Filter", &vFilter, &origVFilter))
         e->m_VerticalBlurFilter = static_cast<fb::BlurFilter>(vFilter);
 
     FloatEdit("V Deviation", &e->m_VerticalDeviation, &o->m_VerticalDeviation);
@@ -1223,11 +1216,9 @@ void VisualEnvironmentEditor::RenderCharacterLightingComponent(fb::CharacterLigh
     BoolEdit("First Person Enable", &e->m_FirstPersonEnable, &o->m_FirstPersonEnable);
     BoolEdit("Lock to Camera Direction", &e->m_LockToCameraDirection, &o->m_LockToCameraDirection);
 
-    // TODO: use magic enum
-    const char* modes[] = { "Add", "Blend" };
     int mode = static_cast<int>(e->m_CharacterLightingMode);
     int origMode = static_cast<int>(o->m_CharacterLightingMode);
-    if (EnumCombo("Lighting Mode", &mode, &origMode, modes, IM_ARRAYSIZE(modes)))
+    if (EnumCombo<fb::CharacterLightingMode>("Lighting Mode", &mode, &origMode))
         e->m_CharacterLightingMode = static_cast<fb::CharacterLightingMode>(mode);
 
     Vec3Edit("Top Light", &e->m_TopLight, &o->m_TopLight, true);
@@ -1247,71 +1238,361 @@ void VisualEnvironmentEditor::RenderMotionBlurComponent(fb::MotionBlurComponentD
 
 void VisualEnvironmentEditor::RenderWorldRenderSettingsComponent(fb::WorldRenderSettings* e, const fb::WorldRenderSettings* o)
 {
-    if (ImGui::TreeNode("Viewport & Quality##WRS"))
+    if (ImGui::TreeNode("Viewport & Quality"))
     {
-        FloatEdit("Viewport Scale", &e->m_viewportScale, &o->m_viewportScale, 0.1f, 2.0f);
-        DwordEdit("FXAA Quality", &e->m_fxaaQuality, &o->m_fxaaQuality, 0, 5);
-        FloatEdit("Cull Screen Area Scale", &e->m_cullScreenAreaScale, &o->m_cullScreenAreaScale);
-        DwordEdit("Multisample Count", &e->m_multisampleCount, &o->m_multisampleCount, 1, 8);
-        FloatEdit("Multisample Threshold", &e->m_multisampleThreshold, &o->m_multisampleThreshold);
-
+        FloatEdit("Viewport Scale", &e->m_ViewportScale, &o->m_ViewportScale, 0.1f, 2.0f);
+        UIntEdit("FXAA Quality", &e->m_FxaaQuality, &o->m_FxaaQuality, 0, 5);
+        IntEdit("FXAA Force Vendor", &e->m_FxaaForceVendor, &o->m_FxaaForceVendor, -1, 3);
+        BoolEdit("FXAA Enable", &e->m_FxaaEnable, &o->m_FxaaEnable);
+        FloatEdit("Cull Screen Area Scale", &e->m_CullScreenAreaScale, &o->m_CullScreenAreaScale);
+        UIntEdit("Multisample Count", &e->m_MultisampleCount, &o->m_MultisampleCount, 1, 8);
+        FloatEdit("Multisample Threshold", &e->m_MultisampleThreshold, &o->m_MultisampleThreshold);
+        BoolEdit("HDR Enable", &e->m_HdrEnable, &o->m_HdrEnable);
+        BoolEdit("Half Res Enable", &e->m_HalfResEnable, &o->m_HalfResEnable);
+        BoolEdit("Bilateral Half Res Composite", &e->m_BilateralHalfResCompositeEnable, &o->m_BilateralHalfResCompositeEnable);
+        BoolEdit("Tiled Half Res Composite", &e->m_TiledHalfResCompositeEnable, &o->m_TiledHalfResCompositeEnable);
+        BoolEdit("Tiled Half Res Stencil Occluders", &e->m_TiledHalfResStencilOccludersEnable, &o->m_TiledHalfResStencilOccludersEnable);
+        BoolEdit("Output Gamma Correction", &e->m_OutputGammaCorrectionEnable, &o->m_OutputGammaCorrectionEnable);
+        BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ImGui::TreePop();
     }
 
-    if (ImGui::TreeNode("Shadows##WRS"))
+    if (ImGui::TreeNode("Shadows"))
     {
-        BoolEdit("Draw Shadows", &e->m_drawShadows, &o->m_drawShadows);
-        BoolEdit("Light Shadows", &e->m_lightShadows, &o->m_lightShadows);
-        BoolEdit("Smoke Shadows", &e->m_smokeShadows, &o->m_smokeShadows);
-        BoolEdit("More Shadows", &e->m_moreShadows, &o->m_moreShadows);
-        FloatEdit("Shadow Min Screen Area", &e->m_shadowMinScreenArea, &o->m_shadowMinScreenArea);
-        FloatEdit("Shadow Viewport Scale", &e->m_shadowViewportScale, &o->m_shadowViewportScale);
-        FloatEdit("Shadow View Distance", &e->m_shadowViewDistance, &o->m_shadowViewDistance);
-        DwordEdit("Shadowmap Resolution", &e->m_shadowmapResolution, &o->m_shadowmapResolution, 256, 4096);
-        DwordEdit("Shadowmap Quality", &e->m_shadowmapQuality, &o->m_shadowmapQuality, 0, 4);
+        BoolEdit("Shadowmaps Enable", &e->m_ShadowmapsEnable, &o->m_ShadowmapsEnable);
+        BoolEdit("Generate Shadowmaps", &e->m_GenerateShadowmapsEnable, &o->m_GenerateShadowmapsEnable);
+        BoolEdit("Apply Shadowmaps", &e->m_ApplyShadowmapsEnable, &o->m_ApplyShadowmapsEnable);
+        BoolEdit("Simple Shadowmaps", &e->m_SimpleShadowmapsEnable, &o->m_SimpleShadowmapsEnable);
+        BoolEdit("Transparency Shadowmaps", &e->m_TransparencyShadowmapsEnable, &o->m_TransparencyShadowmapsEnable);
+        BoolEdit("Cloud Shadow", &e->m_CloudShadowEnable, &o->m_CloudShadowEnable);
+
+        ImGui::Separator();
+        UIntEdit("Resolution", &e->m_ShadowmapResolution, &o->m_ShadowmapResolution, 256, 4096);
+        UIntEdit("Quality", &e->m_ShadowmapQuality, &o->m_ShadowmapQuality, 0, 4);
+        UIntEdit("Slice Count", &e->m_ShadowmapSliceCount, &o->m_ShadowmapSliceCount, 1, 8);
+        FloatEdit("View Distance", &e->m_ShadowmapViewDistance, &o->m_ShadowmapViewDistance);
+        BoolEdit("View Distance Scale Enable", &e->m_ShadowmapViewDistanceScaleEnable, &o->m_ShadowmapViewDistanceScaleEnable);
+        FloatEdit("Min Screen Area", &e->m_ShadowMinScreenArea, &o->m_ShadowMinScreenArea);
+        FloatEdit("Shadowmap Min Screen Area", &e->m_ShadowmapMinScreenArea, &o->m_ShadowmapMinScreenArea);
+        FloatEdit("Viewport Scale", &e->m_ShadowViewportScale, &o->m_ShadowViewportScale);
+        FloatEdit("Size Z Scale", &e->m_ShadowmapSizeZScale, &o->m_ShadowmapSizeZScale);
+        FloatEdit("Slice Scheme Weight", &e->m_ShadowmapSliceSchemeWeight, &o->m_ShadowmapSliceSchemeWeight);
+        FloatEdit("First Slice Scale", &e->m_ShadowmapFirstSliceScale, &o->m_ShadowmapFirstSliceScale);
+        FloatEdit("Extrusion Length", &e->m_ShadowmapExtrusionLength, &o->m_ShadowmapExtrusionLength);
+        FloatEdit("Min FOV", &e->m_ShadowmapMinFov, &o->m_ShadowmapMinFov);
+        FloatEdit("Poisson Filter Scale", &e->m_ShadowmapPoissonFilterScale, &o->m_ShadowmapPoissonFilterScale);
+
+        ImGui::Separator();
+        BoolEdit("Fixed Depth", &e->m_ShadowmapFixedDepthEnable, &o->m_ShadowmapFixedDepthEnable);
+        BoolEdit("Fixed Movement", &e->m_ShadowmapFixedMovementEnable, &o->m_ShadowmapFixedMovementEnable);
+        BoolEdit("Cull Volume", &e->m_ShadowmapCullVolumeEnable, &o->m_ShadowmapCullVolumeEnable);
+        BoolEdit("Accum Enable", &e->m_ShadowmapAccumEnable, &o->m_ShadowmapAccumEnable);
+        BoolEdit("Accum Bilinear", &e->m_ShadowmapAccumBilinearEnable, &o->m_ShadowmapAccumBilinearEnable);
+        BoolEdit("Colored Slices", &e->m_ColoredShadowmapSlicesEnable, &o->m_ColoredShadowmapSlicesEnable);
+        BoolEdit("Z Buffer Test", &e->m_ZBufferShadowTestEnable, &o->m_ZBufferShadowTestEnable);
+        BoolEdit("DX 16-Bit", &e->m_DxShadowmap16BitEnable, &o->m_DxShadowmap16BitEnable);
+
+        IntEdit("Only Slice (debug)", &e->m_OnlyShadowmapSlice, &o->m_OnlyShadowmapSlice, -1, 8);
         ImGui::TreePop();
     }
 
-    if (ImGui::TreeNode("Motion Blur##WRS"))
+    if (ImGui::TreeNode("Motion Blur"))
     {
-        FloatEdit("Scale", &e->m_motionBlurScale, &o->m_motionBlurScale, 0.0f, 2.0f);
-        FloatEdit("Max", &e->m_motionBlurMax, &o->m_motionBlurMax);
-        FloatEdit("Noise Scale", &e->m_motionBlurNoiseScale, &o->m_motionBlurNoiseScale);
-        DwordEdit("Quality", &e->m_motionBlurQuality, &o->m_motionBlurQuality, 0, 4);
-        DwordEdit("Max Sample Count", &e->m_motionBlurMaxSampleCount, &o->m_motionBlurMaxSampleCount, 1, 64);
+        BoolEdit("Enable", &e->m_MotionBlurEnable, &o->m_MotionBlurEnable);
+        BoolEdit("Geometry Pass", &e->m_MotionBlurGeometryPassEnable, &o->m_MotionBlurGeometryPassEnable);
+        BoolEdit("Stencil Pass", &e->m_MotionBlurStencilPassEnable, &o->m_MotionBlurStencilPassEnable);
+        FloatEdit("Scale", &e->m_MotionBlurScale, &o->m_MotionBlurScale, 0.0f, 2.0f);
+        FloatEdit("Max", &e->m_MotionBlurMax, &o->m_MotionBlurMax);
+        FloatEdit("Noise Scale", &e->m_MotionBlurNoiseScale, &o->m_MotionBlurNoiseScale);
+        UIntEdit("Quality", &e->m_MotionBlurQuality, &o->m_MotionBlurQuality, 0, 4);
+        UIntEdit("Max Sample Count", &e->m_MotionBlurMaxSampleCount, &o->m_MotionBlurMaxSampleCount, 1, 64);
+        UIntEdit("Frame Average Count", &e->m_MotionBlurFrameAverageCount, &o->m_MotionBlurFrameAverageCount, 1, 16);
+        FloatEdit("Max Frame Time", &e->m_MotionBlurMaxFrameTime, &o->m_MotionBlurMaxFrameTime);
+        FloatEdit("Force Depth Cutoff", &e->m_ForceMotionBlurDepthCutoff, &o->m_ForceMotionBlurDepthCutoff);
+        FloatEdit("Cutoff Gradient Scale", &e->m_ForceMotionBlurCutoffGradientScale, &o->m_ForceMotionBlurCutoffGradientScale);
         ImGui::TreePop();
     }
 
-    if (ImGui::TreeNode("Spot Lights##WRS"))
+    if (ImGui::TreeNode("Lighting - General"))
     {
-        BoolEdit("Enable 0", &e->m_spotLightEnable_0, &o->m_spotLightEnable_0);
-        BoolEdit("Enable 1", &e->m_spotLightEnable_1, &o->m_spotLightEnable_1);
-        DwordEdit("Max Count", &e->m_maxSpotLightCount, &o->m_maxSpotLightCount, 0, 64);
-        DwordEdit("Max Shadow Count", &e->m_maxSpotLightShadowCount, &o->m_maxSpotLightShadowCount, 0, 32);
-        DwordEdit("Shadowmap Resolution", &e->m_spotLightShadowmapResolution, &o->m_spotLightShadowmapResolution, 128, 2048);
-        FloatEdit("Near Plane", &e->m_spotLightNearPlane, &o->m_spotLightNearPlane);
+        BoolEdit("Outdoor Light Enable", &e->m_OutdoorLightEnable, &o->m_OutdoorLightEnable);
+        BoolEdit("Outdoor Key Light", &e->m_OutdoorKeyLightEnable, &o->m_OutdoorKeyLightEnable);
+        BoolEdit("Outdoor Sky Light", &e->m_OutdoorSkyLightEnable, &o->m_OutdoorSkyLightEnable);
+        BoolEdit("Outdoor Light Specular", &e->m_OutdoorLightSpecularEnable, &o->m_OutdoorLightSpecularEnable);
+        BoolEdit("Outdoor Light Tiling", &e->m_OutdoorLightTilingEnable, &o->m_OutdoorLightTilingEnable);
+        BoolEdit("Outdoor Light Tile Render", &e->m_OutdoorLightTileRenderEnable, &o->m_OutdoorLightTileRenderEnable);
+        BoolEdit("Outdoor Light Tile Blend", &e->m_OutdoorLightTileBlendEnable, &o->m_OutdoorLightTileBlendEnable);
+        BoolEdit("Outdoor Light Tile Simple Shader", &e->m_OutdoorLightTileSimpleShaderEnable, &o->m_OutdoorLightTileSimpleShaderEnable);
+        UIntEdit("Outdoor Light Tile Batch Count", &e->m_OutdoorLightTileBatchCount, &o->m_OutdoorLightTileBatchCount);
+
+        ImGui::Separator();
+        FloatEdit("Intensity Scale", &e->m_LightIntensityScale, &o->m_LightIntensityScale);
+        FloatEdit("Force Intensity", &e->m_LightForceIntensity, &o->m_LightForceIntensity);
+        FloatEdit("Radius Scale", &e->m_LightRadiusScale, &o->m_LightRadiusScale);
+        FloatEdit("Attenuation Threshold", &e->m_LightAttenuationThreshold, &o->m_LightAttenuationThreshold);
+        BoolEdit("Attenuation Threshold Enable", &e->m_LightAttenuationThresholdEnable, &o->m_LightAttenuationThresholdEnable);
+        BoolEdit("Width Enable", &e->m_LightWidthEnable, &o->m_LightWidthEnable);
+        BoolEdit("Intensity Normalization", &e->m_LightIntensityNormalizationEnable, &o->m_LightIntensityNormalizationEnable);
+
+        ImGui::Separator();
+        BoolEdit("Specular Lighting", &e->m_SpecularLightingEnable, &o->m_SpecularLightingEnable);
+        BoolEdit("Skin Lighting", &e->m_SkinLightingEnable, &o->m_SkinLightingEnable);
+        BoolEdit("Translucency Lighting", &e->m_TranslucencyLightingEnable, &o->m_TranslucencyLightingEnable);
+        BoolEdit("Emissive Enable", &e->m_EmissiveEnable, &o->m_EmissiveEnable);
+        BoolEdit("Unlit Enable", &e->m_UnlitEnable, &o->m_UnlitEnable);
+        BoolEdit("Draw Light Sources", &e->m_DrawLightSources, &o->m_DrawLightSources);
         ImGui::TreePop();
     }
 
-    if (ImGui::TreeNode("Reflections##WRS"))
+    if (ImGui::TreeNode("Lighting - LOD"))
     {
-        BoolEdit("Draw Reflection", &e->m_drawReflection, &o->m_drawReflection);
-        DwordEdit("Reflection Envmap Size", &e->m_reflectionEnvmapSize, &o->m_reflectionEnvmapSize, 16, 512);
-        DwordEdit("Dynamic Envmap Resolution", &e->m_dynamicEnvmapResolution, &o->m_dynamicEnvmapResolution, 16, 512);
-        FloatEdit("Planar Reflection Cull FOV", &e->m_planarReflectionCullFOV, &o->m_planarReflectionCullFOV);
-        DwordEdit("Planar Reflection Width", &e->m_planarReflectionWidth, &o->m_planarReflectionWidth, 128, 2048);
+        FloatEdit("LOD Specular Fade Start", &e->m_LightLodSpecularFadeAreaStart, &o->m_LightLodSpecularFadeAreaStart);
+        FloatEdit("LOD Specular Fade End", &e->m_LightLodSpecularFadeAreaEnd, &o->m_LightLodSpecularFadeAreaEnd);
+        FloatEdit("LOD Radius Factor", &e->m_LightLodRadiusFactor, &o->m_LightLodRadiusFactor);
+        FloatEdit("LOD Fade Area", &e->m_LightLodFadeArea, &o->m_LightLodFadeArea);
+        FloatEdit("LOD Min Area", &e->m_LightLodMinArea, &o->m_LightLodMinArea);
         ImGui::TreePop();
     }
 
-    if (ImGui::TreeNode("Toggles##WRS"))
+    if (ImGui::TreeNode("Lighting - Culling"))
     {
-        BoolEdit("Sky Enable", &e->m_skyEnable, &o->m_skyEnable);
-        BoolEdit("Sun Enabled", &e->m_sunEnabled, &o->m_sunEnabled);
-        BoolEdit("Depth of Field", &e->m_depthOfField, &o->m_depthOfField);
-        BoolEdit("Draw Light", &e->m_drawLight, &o->m_drawLight);
-        BoolEdit("Draw Foliage", &e->m_drawFoliage, &o->m_drawFoliage);
-        BoolEdit("Draw First Person Model", &e->m_drawFirstPersonModel, &o->m_drawFirstPersonModel);
-        BoolEdit("Enlighten Glass", &e->m_enlightenGlass, &o->m_enlightenGlass);
+        BoolEdit("Cull Enable", &e->m_LightCullEnable, &o->m_LightCullEnable);
+        BoolEdit("Depth Cull", &e->m_LightDepthCullEnable, &o->m_LightDepthCullEnable);
+        BoolEdit("Normal Cull", &e->m_LightNormalCullEnable, &o->m_LightNormalCullEnable);
+        BoolEdit("Cone Cull", &e->m_LightConeCullEnable, &o->m_LightConeCullEnable);
+        FloatEdit("Stencil Min Area", &e->m_LightStencilMinArea, &o->m_LightStencilMinArea);
+        BoolEdit("Stencil Method", &e->m_LightStencilMethodEnable, &o->m_LightStencilMethodEnable);
+        BoolEdit("Volume Method", &e->m_LightVolumeMethodEnable, &o->m_LightVolumeMethodEnable);
+        BoolEdit("Volume Depth Test", &e->m_LightVolumeDepthTestEnable, &o->m_LightVolumeDepthTestEnable);
+        FloatEdit("Tile Min Area", &e->m_LightTileMinArea, &o->m_LightTileMinArea);
+        BoolEdit("Tile Overlay", &e->m_LightTileOverlayEnable, &o->m_LightTileOverlayEnable);
+        UIntEdit("Overdraw Max Layer Count", &e->m_LightOverdrawMaxLayerCount, &o->m_LightOverdrawMaxLayerCount);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Light Types"))
+    {
+        BoolEdit("Point Lights", &e->m_PointLightsEnable, &o->m_PointLightsEnable);
+        UIntEdit("Max Point Light Count", &e->m_MaxPointLightCount, &o->m_MaxPointLightCount, 0, 256);
+
+        ImGui::Separator();
+        BoolEdit("Spot Lights", &e->m_SpotLightsEnable, &o->m_SpotLightsEnable);
+        UIntEdit("Max Spot Light Count", &e->m_MaxSpotLightCount, &o->m_MaxSpotLightCount, 0, 64);
+        UIntEdit("Max Spot Shadow Count", &e->m_MaxSpotLightShadowCount, &o->m_MaxSpotLightShadowCount, 0, 32);
+        UIntEdit("Spot Shadowmap Resolution", &e->m_SpotLightShadowmapResolution, &o->m_SpotLightShadowmapResolution, 128, 2048);
+        UIntEdit("Spot Shadowmap Quality", &e->m_SpotLightShadowmapQuality, &o->m_SpotLightShadowmapQuality, 0, 4);
+        FloatEdit("Spot Near Plane", &e->m_SpotLightNearPlane, &o->m_SpotLightNearPlane);
+        FloatEdit("Spot Poisson Filter Scale", &e->m_SpotLightShadowmapPoissonFilterScale, &o->m_SpotLightShadowmapPoissonFilterScale);
+        BoolEdit("Spot Shadowmap Enable", &e->m_SpotLightShadowmapEnable, &o->m_SpotLightShadowmapEnable);
+        BoolEdit("DX Spot Shadowmap 16-Bit", &e->m_DxSpotLightShadowmap16BitEnable, &o->m_DxSpotLightShadowmap16BitEnable);
+
+        ImGui::Separator();
+        BoolEdit("Line Lights", &e->m_LineLightsEnable, &o->m_LineLightsEnable);
+        BoolEdit("Cone Lights", &e->m_ConeLightsEnable, &o->m_ConeLightsEnable);
+        BoolEdit("Light Probes", &e->m_LightProbesEnable, &o->m_LightProbesEnable);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Sky"))
+    {
+        BoolEdit("Sky Enable", &e->m_SkyEnable, &o->m_SkyEnable);
+        BoolEdit("Sky Fog Enable", &e->m_SkyFogEnable, &o->m_SkyFogEnable);
+
+        ImGui::Separator();
+        BoolEdit("Sky Envmap Enable", &e->m_SkyEnvmapEnable, &o->m_SkyEnvmapEnable);
+        BoolEdit("Sky Envmap Update", &e->m_SkyEnvmapUpdateEnable, &o->m_SkyEnvmapUpdateEnable);
+        BoolEdit("Sky Envmap Force Update", &e->m_SkyEnvmapForceUpdateEnable, &o->m_SkyEnvmapForceUpdateEnable);
+        BoolEdit("Sky Envmap Mipmap Gen", &e->m_SkyEnvmapMipmapGenEnable, &o->m_SkyEnvmapMipmapGenEnable);
+        BoolEdit("Sky Envmap 8-Bit Texture", &e->m_SkyEnvmapUse8BitTexture, &o->m_SkyEnvmapUse8BitTexture);
+        UIntEdit("Sky Envmap Resolution", &e->m_SkyEnvmapResolution, &o->m_SkyEnvmapResolution, 16, 512);
+        UIntEdit("Sky Envmap Sides Per Frame", &e->m_SkyEnvmapSidesPerFrameCount, &o->m_SkyEnvmapSidesPerFrameCount, 1, 6);
+        FloatEdit("Sky Envmap Filter Width", &e->m_SkyEnvmapFilterWidth, &o->m_SkyEnvmapFilterWidth);
+        EnumCombo<fb::MipmapFilterMode>("Sky Envmap Filter Mode", reinterpret_cast<int*>(&e->m_SkyEnvmapFilterMode), reinterpret_cast<const int*>(&o->m_SkyEnvmapFilterMode));
+        BoolEdit("Sky Visibility Envmap Scaling", &e->m_SkyVisibilityEnvmapScalingEnable, &o->m_SkyVisibilityEnvmapScalingEnable);
+        IntEdit("Debug Sky Envmap Mip Level", &e->m_DrawDebugSkyEnvmapMipLevel, &o->m_DrawDebugSkyEnvmapMipLevel, -1, 10);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Dynamic Environment Map"))
+    {
+        BoolEdit("Enable", &e->m_DynamicEnvmapEnable, &o->m_DynamicEnvmapEnable);
+        BoolEdit("Lighting Enable", &e->m_DynamicEnvmapLightingEnable, &o->m_DynamicEnvmapLightingEnable);
+        BoolEdit("Mipmap Gen", &e->m_DynamicEnvmapMipmapGenEnable, &o->m_DynamicEnvmapMipmapGenEnable);
+        UIntEdit("Resolution", &e->m_DynamicEnvmapResolution, &o->m_DynamicEnvmapResolution, 16, 512);
+        FloatEdit("Filter Width", &e->m_DynamicEnvmapFilterWidth, &o->m_DynamicEnvmapFilterWidth);
+        EnumCombo<fb::MipmapFilterMode>("Dynamic Mode", reinterpret_cast<int*>(&e->m_DynamicEnvmapFilterMode), reinterpret_cast<const int*>(&o->m_DynamicEnvmapFilterMode));
+        Vec3Edit("Default Position", &e->m_DynamicEnvmapDefaultPosition, &o->m_DynamicEnvmapDefaultPosition);
+        IntEdit("Debug Mip Level", &e->m_DrawDebugDynamicEnvmapMipLevel, &o->m_DrawDebugDynamicEnvmapMipLevel, -1, 10);
+
+        ImGui::Separator();
+        BoolEdit("Static Envmap Enable", &e->m_StaticEnvmapEnable, &o->m_StaticEnvmapEnable);
+        BoolEdit("Custom Envmap Enable", &e->m_CustomEnvmapEnable, &o->m_CustomEnvmapEnable);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Reflections"))
+    {
+        BoolEdit("Planar Reflection Enable", &e->m_PlanarReflectionEnable, &o->m_PlanarReflectionEnable);
+        BoolEdit("Planar Reflection Blur", &e->m_PlanarReflectionBlur, &o->m_PlanarReflectionBlur);
+        UIntEdit("Planar Reflection Width", &e->m_PlanarReflectionWidth, &o->m_PlanarReflectionWidth, 128, 2048);
+        UIntEdit("Planar Reflection Height", &e->m_PlanarReflectionHeight, &o->m_PlanarReflectionHeight, 128, 2048);
+        FloatEdit("Planar Reflection Cull FOV", &e->m_PlanarReflectionCullFOV, &o->m_PlanarReflectionCullFOV);
+        FloatEdit("Temp Planar Reflection Y", &e->m_TempPlanarReflectionY, &o->m_TempPlanarReflectionY);
+        BoolEdit("Debug Cull Mode", &e->m_PlanarReflectionDebugCullMode, &o->m_PlanarReflectionDebugCullMode);
+        BoolEdit("Freeze Cull Frustum", &e->m_FreezePlanarReflectionCullFrustum, &o->m_FreezePlanarReflectionCullFrustum);
+        UIntEdit("Reflection Envmap Size", &e->m_ReflectionEnvmapSize, &o->m_ReflectionEnvmapSize, 16, 512);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Subsurface Scattering"))
+    {
+        Vec3Edit("Color", &e->m_SubSurfaceColor, &o->m_SubSurfaceColor, true);
+        FloatEdit("Rolloff Key Light", &e->m_SubSurfaceRolloffKeyLight, &o->m_SubSurfaceRolloffKeyLight);
+        FloatEdit("Rolloff Local Light", &e->m_SubSurfaceRolloffLocalLight, &o->m_SubSurfaceRolloffLocalLight);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Decals & Volumes"))
+    {
+        BoolEdit("Decal Volume Enable", &e->m_DecalVolumeEnable, &o->m_DecalVolumeEnable);
+        UIntEdit("Max Decal Volume Count", &e->m_MaxDecalVolumeCount, &o->m_MaxDecalVolumeCount, 0, 256);
+        FloatEdit("Decal Volume Scale", &e->m_DecalVolumeScale, &o->m_DecalVolumeScale);
+        UIntEdit("Max Destruction Volume Count", &e->m_MaxDestructionVolumeCount, &o->m_MaxDestructionVolumeCount, 0, 256);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Render Passes"))
+    {
+        BoolEdit("Z Pass", &e->m_ZPassEnable, &o->m_ZPassEnable);
+        BoolEdit("Main Opaque Z Pass", &e->m_MainOpaqueZPassEnable, &o->m_MainOpaqueZPassEnable);
+        BoolEdit("Occluder Mesh Z Prepass", &e->m_OccluderMeshZPrepassEnable, &o->m_OccluderMeshZPrepassEnable);
+        BoolEdit("Occluder Mesh Z Prepass Debug", &e->m_OccluderMeshZPrepassDebugEnable, &o->m_OccluderMeshZPrepassDebugEnable);
+
+        ImGui::Separator();
+        BoolEdit("Foreground Enable", &e->m_ForegroundEnable, &o->m_ForegroundEnable);
+        BoolEdit("Foreground Z Pass", &e->m_ForegroundZPassEnable, &o->m_ForegroundZPassEnable);
+        BoolEdit("Foreground Depth Clear", &e->m_ForegroundDepthClearEnable, &o->m_ForegroundDepthClearEnable);
+        BoolEdit("Foreground As Main", &e->m_ForegroundAsMainEnable, &o->m_ForegroundAsMainEnable);
+        BoolEdit("Foreground Transparent", &e->m_ForegroundTransparentEnable, &o->m_ForegroundTransparentEnable);
+
+        ImGui::Separator();
+        BoolEdit("Draw Transparent", &e->m_DrawTransparent, &o->m_DrawTransparent);
+        BoolEdit("Draw Transparent Decal", &e->m_DrawTransparentDecal, &o->m_DrawTransparentDecal);
+        BoolEdit("Screen Effect Enable", &e->m_ScreenEffectEnable, &o->m_ScreenEffectEnable);
+        BoolEdit("Final Post Enable", &e->m_FinalPostEnable, &o->m_FinalPostEnable);
+        BoolEdit("View FX Enable", &e->m_ViewFxEnable, &o->m_ViewFxEnable);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Lens Flares"))
+    {
+        BoolEdit("Enable", &e->m_LensFlaresEnable, &o->m_LensFlaresEnable);
+        BoolEdit("Half Res", &e->m_HalfResLensFlaresEnable, &o->m_HalfResLensFlaresEnable);
+        BoolEdit("Occlusion Enable", &e->m_LensFlareOcclusionEnable, &o->m_LensFlareOcclusionEnable);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("GBuffer"))
+    {
+        BoolEdit("Clear Enable", &e->m_GBufferClearEnable, &o->m_GBufferClearEnable);
+        BoolEdit("Alpha Test Simple", &e->m_GBufferAlphaTestSimpleEnable, &o->m_GBufferAlphaTestSimpleEnable);
+        BoolEdit("DX Light 16-Bit", &e->m_DxGBufferLight16BitEnable, &o->m_DxGBufferLight16BitEnable);
+        BoolEdit("DX Normal 16-Bit", &e->m_DxGBufferNormal16BitEnable, &o->m_DxGBufferNormal16BitEnable);
+        BoolEdit("DX Linear Depth 32-Bit", &e->m_DxLinearDepth32BitFormatEnable, &o->m_DxLinearDepth32BitFormatEnable);
+        BoolEdit("DX Deferred CS Path", &e->m_DxDeferredCsPathEnable, &o->m_DxDeferredCsPathEnable);
+        UIntEdit("Test Count", &e->m_GBufferTestCount, &o->m_GBufferTestCount);
+        EnumCombo<fb::ShaderGBufferLayout>("Layout", reinterpret_cast<int*>(&e->m_GBufferLayout), reinterpret_cast<const int*>(&o->m_GBufferLayout));
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Dynamic AO"))
+    {
+        BoolEdit("Override Dynamic AO", &e->m_OverrideDynamicAO, &o->m_OverrideDynamicAO);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Misc Rendering"))
+    {
+        BoolEdit("Wireframe", &e->m_WireframeEnable, &o->m_WireframeEnable);
+        BoolEdit("Opaque Sort By Solution", &e->m_OpaqueSortBySolutionEnable, &o->m_OpaqueSortBySolutionEnable);
+        BoolEdit("Generic Entity Renderer", &e->m_GenericEntityRendererEnable, &o->m_GenericEntityRendererEnable);
+        UIntEdit("Generic Entity Max Visible", &e->m_GenericEntityMaxVisibleEntityCount, &o->m_GenericEntityMaxVisibleEntityCount);
+        BoolEdit("Setup Job Enable", &e->m_SetupJobEnable, &o->m_SetupJobEnable);
+        BoolEdit("Dynamic Cull Z Buffer Test", &e->m_DynamicCullZBufferTestEnable, &o->m_DynamicCullZBufferTestEnable);
+        BoolEdit("Dynamic Cull Draw Occluded Boxes", &e->m_DynamicCullDrawOccludedBoxesEnable, &o->m_DynamicCullDrawOccludedBoxesEnable);
+        EnumCombo<fb::WorldViewMode>("View Mode", reinterpret_cast<int*>(&e->m_ViewMode), reinterpret_cast<const int*>(&o->m_ViewMode));
+        IntEdit("Only Tile Index", &e->m_OnlyTileIndex, &o->m_OnlyTileIndex, -1, 64);
+        IntEdit("Only Light Tile X", &e->m_OnlyLightTileX, &o->m_OnlyLightTileX, -1, 64);
+        IntEdit("Only Light Tile Y", &e->m_OnlyLightTileY, &o->m_OnlyLightTileY, -1, 64);
+        IntEdit("Only Light Tile Index", &e->m_OnlyLightTileIndex, &o->m_OnlyLightTileIndex, -1, 256);
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Debug Visualization"))
+    {
+        if (ImGui::TreeNode("Buffers"))
+        {
+            BoolEdit("GBuffer", &e->m_DrawDebugGBuffer, &o->m_DrawDebugGBuffer);
+            BoolEdit("Z Buffer", &e->m_DrawDebugZBufferEnable, &o->m_DrawDebugZBufferEnable);
+            BoolEdit("Velocity Buffer", &e->m_DrawDebugVelocityBuffer, &o->m_DrawDebugVelocityBuffer);
+            BoolEdit("Multisample Classify", &e->m_DrawDebugMultisampleClassify, &o->m_DrawDebugMultisampleClassify);
+            BoolEdit("Half Res Environment", &e->m_DrawDebugHalfResEnvironment, &o->m_DrawDebugHalfResEnvironment);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Shadows"))
+        {
+            BoolEdit("Shadowmaps", &e->m_DrawDebugShadowmaps, &o->m_DrawDebugShadowmaps);
+            BoolEdit("Quarter Shadowmaps", &e->m_DrawDebugQuarterShadowmaps, &o->m_DrawDebugQuarterShadowmaps);
+            BoolEdit("Trans Shadowmap", &e->m_DrawDebugTransShadowmap, &o->m_DrawDebugTransShadowmap);
+            BoolEdit("Spot Light Shadowmaps", &e->m_DrawDebugSpotLightShadowmaps, &o->m_DrawDebugSpotLightShadowmaps);
+            BoolEdit("Shadow Frustums", &e->m_DrawShadowFrustums, &o->m_DrawShadowFrustums);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Lights"))
+        {
+            BoolEdit("Light Sources", &e->m_DrawDebugLightSources, &o->m_DrawDebugLightSources);
+            BoolEdit("Light Shadow Sources", &e->m_DrawDebugLightShadowSources, &o->m_DrawDebugLightShadowSources);
+            BoolEdit("Light Stats", &e->m_DrawDebugLightStats, &o->m_DrawDebugLightStats);
+            BoolEdit("Light Tiles", &e->m_DrawDebugLightTiles, &o->m_DrawDebugLightTiles);
+            BoolEdit("Light Tile Volumes", &e->m_DrawDebugLightTileVolumes, &o->m_DrawDebugLightTileVolumes);
+            BoolEdit("Light Tile FB Grid", &e->m_DrawDebugLightTileFbGrid, &o->m_DrawDebugLightTileFbGrid);
+            BoolEdit("Light Tile Grid", &e->m_DrawDebugLightTileGrid, &o->m_DrawDebugLightTileGrid);
+            BoolEdit("Light Tile Sources", &e->m_DrawDebugLightTileSources, &o->m_DrawDebugLightTileSources);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Environment"))
+        {
+            BoolEdit("Dynamic AO", &e->m_DrawDebugDynamicAO, &o->m_DrawDebugDynamicAO);
+            BoolEdit("Dynamic Envmap", &e->m_DrawDebugDynamicEnvmap, &o->m_DrawDebugDynamicEnvmap);
+            BoolEdit("Sky Envmap", &e->m_DrawDebugSkyEnvmap, &o->m_DrawDebugSkyEnvmap);
+            BoolEdit("Planar Reflection", &e->m_DrawDebugPlanarReflection, &o->m_DrawDebugPlanarReflection);
+            BoolEdit("Planar Reflection Cull Frustum", &e->m_DrawDebugPlanarReflectionCullFrustum, &o->m_DrawDebugPlanarReflectionCullFrustum);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Volumes & Misc"))
+        {
+            BoolEdit("Decal Volumes", &e->m_DrawDebugDecalVolumes, &o->m_DrawDebugDecalVolumes);
+            BoolEdit("Destruction Volumes", &e->m_DrawDebugDestructionVolumes, &o->m_DrawDebugDestructionVolumes);
+            BoolEdit("Lens Flares", &e->m_DrawDebugLensFlares, &o->m_DrawDebugLensFlares);
+            BoolEdit("Lens Flare Occluders", &e->m_DrawDebugLensFlareOccluders, &o->m_DrawDebugLensFlareOccluders);
+            BoolEdit("World Occlusions", &e->m_DrawDebugWorldOcclusions, &o->m_DrawDebugWorldOcclusions);
+            BoolEdit("Visible Entity Types", &e->m_DrawDebugVisibleEntityTypes, &o->m_DrawDebugVisibleEntityTypes);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Bounding Geometry"))
+        {
+            BoolEdit("Bounding Spheres", &e->m_DrawBoundingSpheres, &o->m_DrawBoundingSpheres);
+            BoolEdit("Solid Bounding Boxes", &e->m_DrawSolidBoundingBoxes, &o->m_DrawSolidBoundingBoxes);
+            BoolEdit("Line Bounding Boxes", &e->m_DrawLineBoundingBoxes, &o->m_DrawLineBoundingBoxes);
+            BoolEdit("Frustums", &e->m_DrawFrustums, &o->m_DrawFrustums);
+            ImGui::TreePop();
+        }
+
         ImGui::TreePop();
     }
 }
@@ -1543,23 +1824,17 @@ bool VisualEnvironmentEditor::IntEdit(const char* label, int* c, const int* o, i
     return changed;
 }
 
-bool VisualEnvironmentEditor::DwordEdit(const char* label, DWORD* c, const DWORD* o, int min, int max)
-{
-    int val = static_cast<int>(*c);
-    int origVal = static_cast<int>(*o);
-    bool changed = IntEdit(label, &val, &origVal, min, max);
-    if (changed)
-        *c = static_cast<DWORD>(val);
-    return changed;
-}
-
-bool VisualEnvironmentEditor::EnumCombo(const char* label, int* c, const int* o, const char* const* names, int count)
+bool VisualEnvironmentEditor::UIntEdit(const char* label, uint32_t* c, const uint32_t* o, uint32_t min, uint32_t max)
 {
     bool mod = *c != *o;
     if (mod && m_HighlightModified)
         ImGui::PushStyleColor(ImGuiCol_Text, m_ModifiedColor);
 
-    bool changed = ImGui::Combo(label, c, names, count);
+    bool changed;
+    if (min != 0 || max != 0)
+        changed = ImGui::SliderScalar(label, ImGuiDataType_U32, c, &min, &max);
+    else
+        changed = ImGui::DragScalar(label, ImGuiDataType_U32, c);
 
     if (mod && m_HighlightModified)
         ImGui::PopStyleColor();
@@ -1567,7 +1842,7 @@ bool VisualEnvironmentEditor::EnumCombo(const char* label, int* c, const int* o,
     if (m_ShowOriginalValues && ImGui::IsItemHovered())
     {
         ImGui::BeginTooltip();
-        ImGui::TextColored(m_OriginalColor, "Original: %s", (*o >= 0 && *o < count) ? names[*o] : "Unknown");
+        ImGui::TextColored(m_OriginalColor, "Original: %u", *o);
         ImGui::EndTooltip();
     }
 
@@ -1595,7 +1870,8 @@ void VisualEnvironmentEditor::RenderLightsTab()
 
     ImGui::SameLine();
     ImGui::SetNextItemWidth(100);
-    // TODO: use magic enum
+    
+    // no need for enumcombo here, special case
     const char* typeFilters[] = { "All", "SpotLight", "PointLight", "LocalLight" };
     ImGui::Combo("##LightType", &m_LightTypeFilter, typeFilters, IM_ARRAYSIZE(typeFilters));
 
@@ -1798,7 +2074,6 @@ void VisualEnvironmentEditor::RenderLightDataEditor(LightDataEntry& entry)
             }
         }
 
-        // Intensity
         bool intensityMod = entry.intensity != entry.origIntensity;
         if (intensityMod && m_HighlightModified)
             ImGui::PushStyleColor(ImGuiCol_Text, m_ModifiedColor);
@@ -1828,9 +2103,7 @@ void VisualEnvironmentEditor::RenderLightDataEditor(LightDataEntry& entry)
         if (ImGui::Checkbox("Enlighten", &entry.enlightenEnable))
             changed = true;
 
-        // TODO: use magic enum
-        const char* colorModes[] = { "MultiplyWithLightColor", "OverrideLightColor" };
-        if (ImGui::Combo("Enlighten Color Mode", &entry.enlightenColorMode, colorModes, 2))
+        if (EnumCombo<fb::EnlightenColorMode>("Enlighten Color Mode", &entry.enlightenColorMode))
             changed = true;
 
         if (ImGui::TreeNode("Color Scales##Light"))
@@ -1881,9 +2154,7 @@ void VisualEnvironmentEditor::RenderLightDataEditor(LightDataEntry& entry)
         if (ImGui::Checkbox("Cast Shadows", &entry.castShadowsEnable))
             changed = true;
 
-        // TODO: use magic enum
-        const char* qualityLevels[] = { "Low", "Medium", "High", "Ultra" };
-        if (ImGui::Combo("Shadow Min Level", &entry.castShadowsMinLevel, qualityLevels, 4))
+        if (EnumCombo<fb::QualityLevel>("Shadow Min Level", &entry.castShadowsMinLevel))
             changed = true;
 
         ImGui::TreePop();

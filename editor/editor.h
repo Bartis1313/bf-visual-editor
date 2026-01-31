@@ -8,6 +8,7 @@
 
 #include <imgui.h>
 #include <nlohmann/json.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 #include "types.h"
 
@@ -245,6 +246,7 @@ private:
     DECLARE_SERIAL_FUNCS(DynamicEnvmap, fb::DynamicEnvmapComponentData);
     DECLARE_SERIAL_FUNCS(CharacterLighting, fb::CharacterLightingComponentData);
     DECLARE_SERIAL_FUNCS(MotionBlur, fb::MotionBlurComponentData);
+    DECLARE_SERIAL_FUNCS(WorldRenderSettings, fb::WorldRenderSettings);
 
 #undef DECLARE_SERIAL_FUNCS
 
@@ -297,7 +299,78 @@ private:
     bool FloatEdit(const char* label, float* current, const float* original, float min = 0.f, float max = 0.f, const char* format = "%.3f");
     bool BoolEdit(const char* label, bool* current, const bool* original);
     bool IntEdit(const char* label, int* current, const int* original, int min = 0, int max = 0);
-    // remove this
-    bool DwordEdit(const char* label, DWORD* current, const DWORD* original, int min = 0, int max = 0);
-    bool EnumCombo(const char* label, int* current, const int* original, const char* const* names, int count);
+    bool UIntEdit(const char* label, uint32_t* current, const uint32_t* original, uint32_t min = 0, uint32_t max = 0);
+
+    template<enumable E>
+    bool EnumCombo(const char* label, int* current, const int* original);
+    template<enumable E>
+    bool EnumCombo(const char* label, int* current);
 };
+
+template<enumable E>
+bool VisualEnvironmentEditor::EnumCombo(const char* label, int* c, const int* o)
+{
+    using NamesType = std::decay_t<decltype(magic_enum::enum_names<E>())>;
+    const auto names = magic_enum::enum_names<E>();
+    const auto count = magic_enum::enum_count<E>();
+
+    bool mod = *c != *o;
+    if (mod && m_HighlightModified)
+        ImGui::PushStyleColor(ImGuiCol_Text, m_ModifiedColor);
+
+    auto getter = [](void* data, int idx, const char** out_text) -> bool
+        {
+            const auto& arr = *static_cast<const NamesType*>(data);
+            if (idx < 0 || idx >= static_cast<int>(arr.size()))
+                return false;
+            if (out_text)
+                *out_text = arr[idx].data();
+            return true;
+        };
+
+    bool changed = ImGui::Combo(label, c, getter, (void*)&names, count);
+
+    if (mod && m_HighlightModified)
+        ImGui::PopStyleColor();
+
+    if (m_ShowOriginalValues && ImGui::IsItemHovered())
+    {
+        ImGui::BeginTooltip();
+        ImGui::TextColored(m_OriginalColor, "Original: %s", (*o >= 0 && *o < count) ? names[*o].data() : "Unknown");
+        ImGui::EndTooltip();
+    }
+
+    if (mod)
+    {
+        ImGui::SameLine();
+        ImGui::PushID(label);
+        if (ImGui::SmallButton("R"))
+        {
+            *c = *o;
+            changed = true;
+        }
+        ImGui::PopID();
+    }
+
+    return changed;
+}
+
+template<enumable E>
+bool VisualEnvironmentEditor::EnumCombo(const char* label, int* c)
+{
+    using NamesType = std::decay_t<decltype(magic_enum::enum_names<E>())>;
+    const auto names = magic_enum::enum_names<E>();
+    const auto count = magic_enum::enum_count<E>();
+
+    auto getter = [](void* data, int idx, const char** out_text) -> bool
+        {
+            const auto& arr = *static_cast<const NamesType*>(data);
+            if (idx < 0 || idx >= static_cast<int>(arr.size()))
+                return false;
+            if (out_text)
+                *out_text = arr[idx].data();
+            return true;
+        };
+
+    return ImGui::Combo(label, c, getter, (void*)&names, count);
+}

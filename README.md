@@ -39,4 +39,5 @@ Probably support for fb3 going to be added in some time.
 
 # Demo
 ![preview](https://github.com/Bartis1313/bf-visual-editor/blob/7f3e7e56281ba563aa2bf15039e8df507df2225a/images/1.png)\
+video below\
 [![video](https://img.youtube.com/vi/LeEkiGc7Ggw/maxresdefault.jpg)](https://www.youtube.com/watch?v=LeEkiGc7Ggw)

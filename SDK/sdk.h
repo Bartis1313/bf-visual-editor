@@ -995,115 +995,326 @@ namespace fb
 		INT m_realm;											// 0x2C
 	}; // 0x30
 
+	enum MipmapFilterMode
+	{
+		MipmapFilterMode_Box, //0x0000
+		MipmapFilterMode_Renormalize, //0x0001
+		MipmapFilterMode_Poisson13, //0x0002
+		MipmapFilterMode_Poisson13Clamped //0x0003
+	};
+
+	enum WorldViewMode
+	{
+		WorldViewMode_Default, //0x0000
+		WorldViewMode_RawLinear, //0x0001
+		WorldViewMode_RawLinearAlpha, //0x0002
+		WorldViewMode_Diffuse, //0x0003
+		WorldViewMode_Specular, //0x0004
+		WorldViewMode_Emissive, //0x0005
+		WorldViewMode_Normal, //0x0006
+		WorldViewMode_Smoothness, //0x0007
+		WorldViewMode_Material, //0x0008
+		WorldViewMode_Light, //0x0009
+		WorldViewMode_LightDiffuse, //0x000A
+		WorldViewMode_LightSpecular, //0x000B
+		WorldViewMode_LightIndirect, //0x000C
+		WorldViewMode_LightTranslucency, //0x000D
+		WorldViewMode_LightOverdraw, //0x000E
+		WorldViewMode_SkyVisibility, //0x000F
+		WorldViewMode_SkyVisibilityRaw, //0x0010
+		WorldViewMode_Overdraw, //0x0011
+		WorldViewMode_DynamicAO, //0x0012
+		WorldViewMode_Occluders, //0x0013
+		WorldViewMode_RadiosityLightMaps, //0x0014
+		WorldViewMode_RadiosityDiffuseColor, //0x0015
+		WorldViewMode_RadiosityTargetUV, //0x0016
+		WorldViewMode_VelocityVector, //0x0017
+		WorldViewMode_DistortionVector //0x0018
+	};
+
+	enum ShaderGBufferLayout
+	{
+		ShaderGBufferLayout_Default, //0x0000
+		ShaderGBufferLayout_Test //0x0001
+	};
+
+	enum QualityLevel
+	{
+		QualityLevel_Low, //0x0000
+		QualityLevel_Medium, //0x0001
+		QualityLevel_High, //0x0002
+		QualityLevel_Ultra //0x0003
+	};
+
 	class WorldRenderSettings
 	{
 	public:
-		char _0x0000[16];
-		float m_dynamicEnvmapDefaultPosition_0; //0x0010 
-		float m_dynamicEnvmapDefaultPosition_1; //0x0014 
-		float m_dynamicEnvmapDefaultPosition_2; //0x0018 
-		float m_dynamicEnvmapDefaultPosition_3; //0x001C 
-		float m_subSurfaceColor_0; //0x0020 
-		float m_subSurfaceColor_1; //0x0024 
-		float m_subSurfaceColor_2; //0x0028 
-		float m_subSurfaceColor_3; //0x002C 
-		float m_viewportScale; //0x0030 
-		float m_shadowMinScreenArea; //0x0034 
-		float m_shadowViewportScale; //0x0038 
-		DWORD m_fxaaQuality; //0x003C 
-		float m_cullScreenAreaScale; //0x0040 
-		float m_planarReflectionCullFOV; //0x0044 
-		DWORD m_planarReflectionWidth; //0x0048 
-		float m_shadowmapSizeZScale; //0x004C 
-		DWORD m_shadowmapResolution; //0x0050 
-		DWORD m_shadowmapQuality; //0x0054 
-		char _0x0058[8];
-		float m_shadowmapSliceSchemeWeight; //0x0060 
-		float m_shadowmapFirstSliceScale; //0x0064 
-		float m_shadowViewDistance; //0x0068 
-		char _0x006C[68];
-		float m_motionBlurScale; //0x00B0 
-		float m_motionBlurMax; //0x00B4 
-		float m_motionBlurNoiseScale; //0x00B8 
-		DWORD m_motionBlurQuality; //0x00BC 
-		DWORD m_dynamicEnvmapResolution; //0x00C0 
-		DWORD m_maxDecalVolumeCount; //0x00C4 
-		DWORD m_motionBlurMaxSampleCount; //0x00C8 
-		DWORD m_motionBlurFrameAverageCount; //0x00CC 
-		float m_motionBlurMaxFrameTime; //0x00D0 
-		float m_forceMotionBlurDepthCutoff; //0x00D4 
-		float m_forceMotionBlurCutoffGradientScale; //0x00D8 
-		DWORD m_multisampleCount; //0x00DC 
-		float m_multisampleThreshold; //0x00E0 
-		DWORD m_maxSpotLightShadowCount; //0x00E4 
-		DWORD m_reflectionEnvmapSize; //0x00E8 
-		float m_spotLightNearPlane; //0x00EC 
-		float m_subSurfaceRolloff; //0x00F0 
-		char _0x00F4[4];
-		DWORD m_maxSpotLightCount; //0x00F8 
-		DWORD m_spotLightShadowmapResolution; //0x00FC 
-		DWORD m_spotLightShadowmapQuality; //0x0100 
-		char _0x0104[150];
-		bool m_drawFirstPersonModel; //0x019A 
-		char _0x019B[6];
-		bool m_enlightenGlass; //0x01A1 
-		bool m_drawDebugSkyEnvmap; //0x01A2 
-		bool m_debugDrawEmitters; //0x01A3 
-		char _0x01A4[1];
-		bool m_depthOfField; //0x01A5 
-		char _0x01A6[7];
-		bool m_debugDrawDepth; //0x01AD 
-		char _0x01AE[1];
-		bool m_lightBrightMap; //0x01AF 
-		char _0x01B0[1];
-		bool m_debugDrawSkyboxAndMask; //0x01B1 
-		char _0x01B2[4];
-		bool m_debugDrawSkyviewBoxes; //0x01B6 
-		bool m_skyEnable; //0x01B7 
-		char _0x01B8[6];
-		bool m_sunEnabled; //0x01BE 
-		char _0x01BF[7];
-		bool m_fluorescentBloom; //0x01C6 
-		char _0x01C7[6];
-		bool m_drawFoliage; //0x01CD 
-		char _0x01CE[4];
-		bool m_drawLight; //0x01D2 
-		bool m_unlitEnable; //0x01D3 
-		char _0x01D4[1];
-		bool m_spotLightEnable_0; //0x01D5 
-		char _0x01D6[3];
-		bool m_spotLightEnable_1; //0x01D9 
-		char _0x01DA[3];
-		bool m_lightShadows; //0x01DD 
-		char _0x01DE[17];
-		bool m_clearBuffer; //0x01EF 
-		char _0x01F0[10];
-		bool m_softenSmoke; //0x01FA 
-		char _0x01FB[1];
-		bool m_somethingLighting; //0x01FC 
-		bool m_drawReflection; //0x01FD 
-		bool m_fadeDecals; //0x01FE 
-		char _0x01FF[5];
-		bool m_debugDrawMovementOrSomething; //0x0204 
-		bool m_debugChristmasAcidTrip; //0x0205 
-		char _0x0206[1];
-		bool m_debugMultiView; //0x0207 Has color map, fullbright, shadow, everything!
-		char _0x0208[8];
-		bool m_lightEnabledAgain; //0x0210 
-		bool m_drawShadows; //0x0211 
-		char _0x0212[3];
-		bool m_drawNothingButGround; //0x0215 
-		char _0x0216[10];
-		bool m_debugDrawShadowBoxes; //0x0220 
-		char _0x0221[2];
-		bool m_moreShadows; //0x0223 
-		bool DONTFUCKINGCHANGEME; //0x0224 
-		char _0x0225[5];
-		bool m_smokeShadows; //0x022A 
-		char _0x022B[7];
-		bool m_comeBackToMe2; //0x0232 
-		bool m_softenLighting; //0x0233
-	}; // fb::WorldRenderSettings
+		static __inline unsigned int ClassId()
+		{
+			return 851;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x0240627C;
+		}
+		char padInherit[sizeof(DataContainer)];
+		char SKIPME[8];
+		Vec3 m_DynamicEnvmapDefaultPosition; //0x0010
+		Vec3 m_SubSurfaceColor; //0x0020
+		float m_ViewportScale; //0x0030
+		float m_ShadowMinScreenArea; //0x0034
+		float m_ShadowViewportScale; //0x0038
+		unsigned __int32 m_FxaaQuality; //0x003C
+		float m_CullScreenAreaScale; //0x0040
+		float m_PlanarReflectionCullFOV; //0x0044
+		unsigned __int32 m_GenericEntityMaxVisibleEntityCount; //0x0048
+		float m_ShadowmapSizeZScale; //0x004C
+		unsigned __int32 m_ShadowmapResolution; //0x0050
+		unsigned __int32 m_ShadowmapQuality; //0x0054
+		float m_ShadowmapPoissonFilterScale; //0x0058
+		unsigned __int32 m_ShadowmapSliceCount; //0x005C
+		float m_ShadowmapSliceSchemeWeight; //0x0060
+		float m_ShadowmapFirstSliceScale; //0x0064
+		float m_ShadowmapViewDistance; //0x0068
+		unsigned __int32 m_PlanarReflectionWidth; //0x006C
+		float m_ShadowmapExtrusionLength; //0x0070
+		float m_ShadowmapMinScreenArea; //0x0074
+		float m_TempPlanarReflectionY; //0x0078
+		float m_SubSurfaceRolloffKeyLight; //0x007C
+		__int32 m_FxaaForceVendor; //0x0080
+		unsigned __int32 m_PlanarReflectionHeight; //0x0084
+		float m_LightIntensityScale; //0x0088
+		float m_LightLodSpecularFadeAreaEnd; //0x008C
+		float m_ShadowmapMinFov; //0x0090
+		float m_LightLodSpecularFadeAreaStart; //0x0094
+		float m_LightLodRadiusFactor; //0x0098
+		float m_LightForceIntensity; //0x009C
+		float m_LightLodFadeArea; //0x00A0
+		float m_LightLodMinArea; //0x00A4
+		__int32 m_DrawDebugDynamicEnvmapMipLevel; //0x00A8
+		unsigned __int32 m_MaxDecalVolumeCount; //0x00AC
+		float m_MotionBlurScale; //0x00B0
+		float m_MotionBlurMax; //0x00B4
+		float m_MotionBlurNoiseScale; //0x00B8
+		unsigned __int32 m_MotionBlurQuality; //0x00BC
+		unsigned __int32 m_MaxSpotLightShadowCount; //0x00C0
+		MipmapFilterMode m_DynamicEnvmapFilterMode; //0x00C4
+		unsigned __int32 m_MotionBlurMaxSampleCount; //0x00C8
+		unsigned __int32 m_MotionBlurFrameAverageCount; //0x00CC
+		float m_MotionBlurMaxFrameTime; //0x00D0
+		float m_ForceMotionBlurDepthCutoff; //0x00D4
+		float m_ForceMotionBlurCutoffGradientScale; //0x00D8
+		unsigned __int32 m_MultisampleCount; //0x00DC
+		float m_MultisampleThreshold; //0x00E0
+		unsigned __int32 m_MaxPointLightCount; //0x00E4
+		unsigned __int32 m_ReflectionEnvmapSize; //0x00E8
+		float m_SpotLightNearPlane; //0x00EC
+		float m_SpotLightShadowmapPoissonFilterScale; //0x00F0
+		__int32 m_OnlyShadowmapSlice; //0x00F4
+		WorldViewMode m_ViewMode; //0x00F8
+		unsigned __int32 m_SpotLightShadowmapResolution; //0x00FC
+		QualityLevel m_SpotLightShadomapLevel; //0x0100
+		unsigned __int32 m_SpotLightShadowmapQuality; //0x0104
+		__int32 m_OnlyLightTileY; //0x0108
+		__int32 m_OnlyLightTileX; //0x010C
+		float m_XenonHdrColorScale; //0x0110
+		float m_XenonHdrColorScaleFactor; //0x0114
+		unsigned __int32 m_Ps3LightTileJobMaxFbTileCount; //0x0118
+		__int32 m_OnlyLightTileIndex; //0x011C
+		unsigned __int32 m_Ps3LightTileJobCount; //0x0120
+		unsigned __int32 m_Ps3LightTileJobPriority; //0x0124
+		unsigned __int32 m_XenonLightTileMaxLineLightCount; //0x0128
+		unsigned __int32 m_XenonLightTileMaxSpotLightCount; //0x012C
+		unsigned __int32 m_XenonLightTileConstantBufferSize; //0x0130
+		unsigned __int32 m_XenonLightTileMaxPointLightCount; //0x0134
+		unsigned __int32 m_MaxDestructionVolumeCount; //0x0138
+		float m_DynamicEnvmapFilterWidth; //0x013C
+		float m_LightTileMinArea; //0x0140
+		unsigned __int32 m_DynamicEnvmapResolution; //0x0144
+		ShaderGBufferLayout m_GBufferLayout; //0x0148
+		__int32 m_DrawDebugSkyEnvmapMipLevel; //0x014C
+		float m_DecalVolumeScale; //0x0150
+		unsigned __int32 m_LightOverdrawMaxLayerCount; //0x0154
+		float m_LightRadiusScale; //0x0158
+		float m_LightAttenuationThreshold; //0x015C
+		unsigned __int32 m_Ps3LightTileMethod; //0x0160
+		float m_Ps3LightTileJobYieldGranularity; //0x0164
+		unsigned __int32 m_OutdoorLightTileBatchCount; //0x0168
+		unsigned __int32 m_XenonDrawDebugLightTileGridMode; //0x016C
+		float m_LightStencilMinArea; //0x0170
+		unsigned __int32 m_MaxSpotLightCount; //0x0174
+		MipmapFilterMode m_SkyEnvmapFilterMode; //0x0178
+		float m_SkyEnvmapFilterWidth; //0x017C
+		unsigned __int32 m_GBufferTestCount; //0x0180
+		unsigned __int32 m_SkyEnvmapResolution; //0x0184
+		unsigned __int32 m_SkyEnvmapSidesPerFrameCount; //0x0188
+		float m_SubSurfaceRolloffLocalLight; //0x018C
+		__int32 m_OnlyTileIndex; //0x0190
+		bool m_OccluderMeshZPrepassEnable; //0x0194
+		bool m_OccluderMeshZPrepassDebugEnable; //0x0195
+		bool m_WireframeEnable; //0x0196
+		bool m_HalfResEnable; //0x0197
+		bool m_HalfResLensFlaresEnable; //0x0198
+		bool m_ZPassEnable; //0x0199
+		bool m_ForegroundEnable; //0x019A
+		bool m_TiledHalfResCompositeEnable; //0x019B
+		bool m_ForegroundZPassEnable; //0x019C
+		bool m_DrawDebugVelocityBuffer; //0x019D
+		bool m_ForegroundDepthClearEnable; //0x019E
+		bool m_ForegroundAsMainEnable; //0x019F
+		bool m_CustomEnvmapEnable; //0x01A0
+		bool m_SkyEnvmapEnable; //0x01A1
+		bool m_DrawDebugVisibleEntityTypes; //0x01A2
+		bool m_DrawDebugHalfResEnvironment; //0x01A3
+		bool m_DrawSolidBoundingBoxes; //0x01A4
+		bool m_BilateralHalfResCompositeEnable; //0x01A5
+		bool m_ForegroundTransparentEnable; //0x01A6
+		bool m_TiledHalfResStencilOccludersEnable; //0x01A7
+		bool m_SkyEnvmapUpdateEnable; //0x01A8
+		bool m_SkyEnvmapForceUpdateEnable; //0x01A9
+		bool m_SkyEnvmapUse8BitTexture; //0x01AA
+		bool m_DynamicEnvmapEnable; //0x01AB
+		bool m_ScreenEffectEnable; //0x01AC
+		bool m_DrawDebugZBufferEnable; //0x01AD
+		bool m_MotionBlurStencilPassEnable; //0x01AE
+		bool m_FinalPostEnable; //0x01AF
+		bool m_DrawDebugQuarterShadowmaps; //0x01B0
+		bool m_DrawDebugSkyEnvmap; //0x01B1
+		bool m_DxShadowmap16BitEnable; //0x01B2
+		bool m_DrawDebugTransShadowmap; //0x01B3
+		bool m_DrawDebugSpotLightShadowmaps; //0x01B4
+		bool m_DrawShadowFrustums; //0x01B5
+		bool m_DrawDebugShadowmaps; //0x01B6
+		bool m_SkyEnable; //0x01B7
+		bool m_DrawBoundingSpheres; //0x01B8
+		bool m_DrawFrustums; //0x01B9
+		bool m_StaticEnvmapEnable; //0x01BA
+		bool m_SkyFogEnable; //0x01BB
+		bool m_DrawLineBoundingBoxes; //0x01BC
+		bool m_DrawDebugDestructionVolumes; //0x01BD
+		bool m_LensFlaresEnable; //0x01BE
+		bool m_DrawDebugLensFlareOccluders; //0x01BF
+		bool m_DrawDebugLensFlares; //0x01C0
+		bool m_LensFlareOcclusionEnable; //0x01C1
+		bool m_DrawDebugWorldOcclusions; //0x01C2
+		bool m_CloudShadowEnable; //0x01C3
+		bool m_OverrideDynamicAO; //0x01C4
+		bool m_DrawDebugDynamicAO; //0x01C5
+		bool m_EmissiveEnable; //0x01C6
+		bool m_UnlitEnable; //0x01C7
+		bool m_SkyEnvmapMipmapGenEnable; //0x01C8
+		bool m_DrawLightSources; //0x01C9
+		bool m_GBufferClearEnable; //0x01CA
+		bool m_DxGBufferLight16BitEnable; //0x01CB
+		bool m_DxGBufferNormal16BitEnable; //0x01CC
+		bool m_GBufferAlphaTestSimpleEnable; //0x01CD
+		bool m_SpecularLightingEnable; //0x01CE
+		bool m_SkinLightingEnable; //0x01CF
+		bool m_TranslucencyLightingEnable; //0x01D0
+		bool m_DynamicEnvmapLightingEnable; //0x01D1
+		bool m_OutdoorLightEnable; //0x01D2
+		bool m_PointLightsEnable; //0x01D3
+		bool m_LineLightsEnable; //0x01D4
+		bool m_ConeLightsEnable; //0x01D5
+		bool m_SpotLightsEnable; //0x01D6
+		bool m_LightProbesEnable; //0x01D7
+		bool m_LightStencilMethodEnable; //0x01D8
+		bool m_LightVolumeMethodEnable; //0x01D9
+		bool m_LightVolumeDepthTestEnable; //0x01DA
+		bool m_OutputGammaCorrectionEnable; //0x01DB
+		bool m_DrawDebugMultisampleClassify; //0x01DC
+		bool m_OutdoorKeyLightEnable; //0x01DD
+		bool m_OutdoorSkyLightEnable; //0x01DE
+		bool m_OutdoorLightSpecularEnable; //0x01DF
+		bool m_OutdoorLightTilingEnable; //0x01E0
+		bool m_OutdoorLightTileRenderEnable; //0x01E1
+		bool m_OutdoorLightTileBlendEnable; //0x01E2
+		bool m_OutdoorLightTileSimpleShaderEnable; //0x01E3
+		bool m_Ps3TiledHalfTargetEnable; //0x01E4
+		bool m_XenonOutdoorLightTilingEnable; //0x01E5
+		bool m_XenonPointLightsTilingEnable; //0x01E6
+		bool m_XenonSpotLightsTilingEnable; //0x01E7
+		bool m_XenonLineLightsTilingEnable; //0x01E8
+		bool m_XenonAsyncLightJobsEnable; //0x01E9
+		bool m_XenonLightTileDownsampleSpecularCheckEnable; //0x01EA
+		bool m_XenonLightTileCpuPointLightCullingEnable; //0x01EB
+		bool m_Ps3TiledSSAOTargetsEnable; //0x01EC
+		bool m_Ps3SCullEnable; //0x01ED
+		bool m_Ps3ColorCompressionEnable; //0x01EE
+		bool m_Enable; //0x01EF
+		bool m_Ps3TilingEnable; //0x01F0
+		bool m_Ps3DepthBoundsLightCullingEnable; //0x01F1
+		bool m_Ps3ZCullEnable; //0x01F2
+		bool m_ConsoleRenderTargetPoolSharingEnable; //0x01F3
+		bool m_XenonFloatDepthBufferEnable; //0x01F4
+		bool m_Ps3LightTileJobYieldEnable; //0x01F5
+		bool m_Ps3HdrClearEnable; //0x01F6
+		bool m_XenonFastHdrEnable; //0x01F7
+		bool m_ShadowmapViewDistanceScaleEnable; //0x01F8
+		bool m_Ps3RenderTargetPoolGBufferOffsetEnable; //0x01F9
+		bool m_HdrEnable; //0x01FA
+		bool m_SpotLightShadowmapEnable; //0x01FB
+		bool m_SimpleShadowmapsEnable; //0x01FC
+		bool m_DrawTransparent; //0x01FD
+		bool m_DrawTransparentDecal; //0x01FE
+		bool m_ShadowmapFixedDepthEnable; //0x01FF
+		bool m_DrawDebugDynamicEnvmap; //0x0200
+		bool m_MotionBlurGeometryPassEnable; //0x0201
+		bool m_DxLinearDepth32BitFormatEnable; //0x0202
+		bool m_DynamicEnvmapMipmapGenEnable; //0x0203
+		bool m_MotionBlurEnable; //0x0204
+		bool m_ColoredShadowmapSlicesEnable; //0x0205
+		bool m_DxDeferredCsPathEnable; //0x0206
+		bool m_DrawDebugGBuffer; //0x0207
+		bool m_DrawDebugLightSources; //0x0208
+		bool m_DrawDebugLightShadowSources; //0x0209
+		bool m_DrawDebugLightStats; //0x020A
+		bool m_DrawDebugLightTiles; //0x020B
+		bool m_DrawDebugLightTileVolumes; //0x020C
+		bool m_DrawDebugLightTileFbGrid; //0x020D
+		bool m_DrawDebugLightTileGrid; //0x020E
+		bool m_DrawDebugLightTileSources; //0x020F
+		bool m_ApplyShadowmapsEnable; //0x0210
+		bool m_GenerateShadowmapsEnable; //0x0211
+		bool m_DxSpotLightShadowmap16BitEnable; //0x0212
+		bool m_Ps3Shadowmap16BitEnable; //0x0213
+		bool m_Ps3SpotLightShadowmap16BitEnable; //0x0214
+		bool m_GenericEntityRendererEnable; //0x0215
+		bool m_SetupJobEnable; //0x0216
+		bool m_ShadowmapAccumBilinearEnable; //0x0217
+		bool m_LightWidthEnable; //0x0218
+		bool m_LightIntensityNormalizationEnable; //0x0219
+		bool m_LightCullEnable; //0x021A
+		bool m_LightDepthCullEnable; //0x021B
+		bool m_LightNormalCullEnable; //0x021C
+		bool m_LightConeCullEnable; //0x021D
+		bool m_LightTileOverlayEnable; //0x021E
+		bool m_Ps3ShadowmapTilingEnable; //0x021F
+		bool m_LightAttenuationThresholdEnable; //0x0220
+		bool m_SkyVisibilityEnvmapScalingEnable; //0x0221
+		bool m_ZBufferShadowTestEnable; //0x0222
+		bool m_ShadowmapsEnable; //0x0223
+		bool m_ShadowmapAccumEnable; //0x0224
+		bool m_ShadowmapCullVolumeEnable; //0x0225
+		bool m_OpaqueSortBySolutionEnable; //0x0226
+		bool m_MainOpaqueZPassEnable; //0x0227
+		bool m_DrawDebugDecalVolumes; //0x0228
+		bool m_PlanarReflectionEnable; //0x0229
+		bool m_TransparencyShadowmapsEnable; //0x022A
+		bool m_DynamicCullDrawOccludedBoxesEnable; //0x022B
+		bool m_PlanarReflectionBlur; //0x022C
+		bool m_DrawDebugPlanarReflectionCullFrustum; //0x022D
+		bool m_FreezePlanarReflectionCullFrustum; //0x022E
+		bool m_PlanarReflectionDebugCullMode; //0x022F
+		bool m_ShadowmapFixedMovementEnable; //0x0230
+		bool m_DecalVolumeEnable; //0x0231
+		bool m_DrawDebugPlanarReflection; //0x0232
+		bool m_FxaaEnable; //0x0233
+		bool m_DynamicCullSpuJobEnable; //0x0234
+		bool m_DynamicCullZBufferTestEnable; //0x0235
+		bool m_ViewFxEnable; //0x0236
+		char _0x0237[9];
+	};//Size=0x0240
 
 	class WorldRenderer
 	{
@@ -1636,14 +1847,6 @@ namespace fb
 		SpotLightShape_Cone, //0x0000
 		SpotLightShape_Frustum, //0x0001
 		SpotLightShape_OrthoFrustum //0x0002
-	};
-
-	enum QualityLevel
-	{
-		QualityLevel_Low, //0x0000
-		QualityLevel_Medium, //0x0001
-		QualityLevel_High, //0x0002
-		QualityLevel_Ultra //0x0003
 	};
 
 	class SpotLightEntityData : public LocalLightEntityData

@@ -308,62 +308,9 @@ void VisualEnvironmentEditor::CopyMotionBlur(fb::MotionBlurComponentData* dst, c
 void VisualEnvironmentEditor::CopyWorldRenderSettings(fb::WorldRenderSettings* dst, const fb::WorldRenderSettings* src)
 {
     if (!dst || !src) return;
-    dst->m_viewportScale = src->m_viewportScale;
-    dst->m_fxaaQuality = src->m_fxaaQuality;
-    dst->m_cullScreenAreaScale = src->m_cullScreenAreaScale;
-    dst->m_multisampleCount = src->m_multisampleCount;
-    dst->m_multisampleThreshold = src->m_multisampleThreshold;
-    dst->m_shadowMinScreenArea = src->m_shadowMinScreenArea;
-    dst->m_shadowViewportScale = src->m_shadowViewportScale;
-    dst->m_shadowmapResolution = src->m_shadowmapResolution;
-    dst->m_shadowmapQuality = src->m_shadowmapQuality;
-    dst->m_shadowmapSizeZScale = src->m_shadowmapSizeZScale;
-    dst->m_shadowmapSliceSchemeWeight = src->m_shadowmapSliceSchemeWeight;
-    dst->m_shadowmapFirstSliceScale = src->m_shadowmapFirstSliceScale;
-    dst->m_shadowViewDistance = src->m_shadowViewDistance;
-    dst->m_motionBlurScale = src->m_motionBlurScale;
-    dst->m_motionBlurMax = src->m_motionBlurMax;
-    dst->m_motionBlurNoiseScale = src->m_motionBlurNoiseScale;
-    dst->m_motionBlurQuality = src->m_motionBlurQuality;
-    dst->m_motionBlurMaxSampleCount = src->m_motionBlurMaxSampleCount;
-    dst->m_motionBlurFrameAverageCount = src->m_motionBlurFrameAverageCount;
-    dst->m_motionBlurMaxFrameTime = src->m_motionBlurMaxFrameTime;
-    dst->m_forceMotionBlurDepthCutoff = src->m_forceMotionBlurDepthCutoff;
-    dst->m_forceMotionBlurCutoffGradientScale = src->m_forceMotionBlurCutoffGradientScale;
-    dst->m_dynamicEnvmapResolution = src->m_dynamicEnvmapResolution;
-    dst->m_reflectionEnvmapSize = src->m_reflectionEnvmapSize;
-    dst->m_planarReflectionCullFOV = src->m_planarReflectionCullFOV;
-    dst->m_planarReflectionWidth = src->m_planarReflectionWidth;
-    dst->m_maxSpotLightCount = src->m_maxSpotLightCount;
-    dst->m_maxSpotLightShadowCount = src->m_maxSpotLightShadowCount;
-    dst->m_spotLightShadowmapResolution = src->m_spotLightShadowmapResolution;
-    dst->m_spotLightShadowmapQuality = src->m_spotLightShadowmapQuality;
-    dst->m_spotLightNearPlane = src->m_spotLightNearPlane;
-    dst->m_maxDecalVolumeCount = src->m_maxDecalVolumeCount;
-    dst->m_subSurfaceColor_0 = src->m_subSurfaceColor_0;
-    dst->m_subSurfaceColor_1 = src->m_subSurfaceColor_1;
-    dst->m_subSurfaceColor_2 = src->m_subSurfaceColor_2;
-    dst->m_subSurfaceColor_3 = src->m_subSurfaceColor_3;
-    dst->m_subSurfaceRolloff = src->m_subSurfaceRolloff;
-    dst->m_skyEnable = src->m_skyEnable;
-    dst->m_sunEnabled = src->m_sunEnabled;
-    dst->m_depthOfField = src->m_depthOfField;
-    dst->m_drawLight = src->m_drawLight;
-    dst->m_unlitEnable = src->m_unlitEnable;
-    dst->m_drawFoliage = src->m_drawFoliage;
-    dst->m_drawFirstPersonModel = src->m_drawFirstPersonModel;
-    dst->m_fluorescentBloom = src->m_fluorescentBloom;
-    dst->m_softenSmoke = src->m_softenSmoke;
-    dst->m_softenLighting = src->m_softenLighting;
-    dst->m_fadeDecals = src->m_fadeDecals;
-    dst->m_lightBrightMap = src->m_lightBrightMap;
-    dst->m_clearBuffer = src->m_clearBuffer;
-    dst->m_enlightenGlass = src->m_enlightenGlass;
-    dst->m_drawShadows = src->m_drawShadows;
-    dst->m_lightShadows = src->m_lightShadows;
-    dst->m_smokeShadows = src->m_smokeShadows;
-    dst->m_moreShadows = src->m_moreShadows;
-    dst->m_drawReflection = src->m_drawReflection;
-    dst->m_spotLightEnable_0 = src->m_spotLightEnable_0;
-    dst->m_spotLightEnable_1 = src->m_spotLightEnable_1;
+
+    constexpr size_t offset = sizeof(fb::DataContainer) + sizeof(fb::WorldRenderSettings::SKIPME);
+    constexpr size_t size = sizeof(fb::WorldRenderSettings) - offset;
+
+    memcpy(reinterpret_cast<char*>(dst) + offset, reinterpret_cast<const char*>(src) + offset, size);
 }

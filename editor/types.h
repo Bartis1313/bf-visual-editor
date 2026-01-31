@@ -3,7 +3,11 @@
 #include <string>
 #include <unordered_set>
 #include <cmath>
+#include <type_traits>
 #include "../SDK/sdk.h"
+
+template<typename T>
+concept enumable = std::is_enum_v<T>;
 
 struct StateHash
 {

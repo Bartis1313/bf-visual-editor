@@ -320,12 +320,6 @@ void VisualEnvironmentEditor::OnManagerUpdateBegin(fb::VisualEnvironmentManager*
         SetEditorState(EditorState::Ready);
     }
 
-    if (!m_VEDataScanned && currentCount > 0 && !currentMap.empty())
-    {
-        ScanVEDataFromResourceManager();
-        m_VEDataScanned = true;
-    }
-
     SyncStateList(manager);
 
     if (!m_HasCapturedOriginals)
@@ -334,13 +328,17 @@ void VisualEnvironmentEditor::OnManagerUpdateBegin(fb::VisualEnvironmentManager*
         {
             m_CapturedMapName = currentMap;
             m_HasCapturedOriginals = true;
-            ScanVEDataFromResourceManager();
             CaptureWorldRenderSettings();
 
             if (!m_LightDataScanned)
             {
                 ScanAllLightData();
                 ScanExistingLightEntities();
+            }
+
+            if (!m_VEDataScanned)
+            {
+                ScanVEDataFromResourceManager();
             }
 
             SetEditorState(EditorState::Active);
@@ -1400,4 +1398,6 @@ void VisualEnvironmentEditor::ScanVEDataFromResourceManager()
     }
 
     LOG_INFO("Found %zu VEData entries", m_VEDataNameMap.size());
+
+    m_VEDataScanned = true;
 }

@@ -502,6 +502,252 @@ json VisualEnvironmentEditor::SerializeMotionBlur(const fb::MotionBlurComponentD
     return j;
 }
 
+json VisualEnvironmentEditor::SerializeWorldRenderSettings(const fb::WorldRenderSettings& s) const
+{
+    json j;
+    j["ViewportScale"] = s.m_ViewportScale;
+    j["FxaaQuality"] = s.m_FxaaQuality;
+    j["FxaaForceVendor"] = s.m_FxaaForceVendor;
+    j["FxaaEnable"] = s.m_FxaaEnable;
+    j["CullScreenAreaScale"] = s.m_CullScreenAreaScale;
+    j["MultisampleCount"] = s.m_MultisampleCount;
+    j["MultisampleThreshold"] = s.m_MultisampleThreshold;
+    j["HdrEnable"] = s.m_HdrEnable;
+    j["HalfResEnable"] = s.m_HalfResEnable;
+    j["BilateralHalfResCompositeEnable"] = s.m_BilateralHalfResCompositeEnable;
+    j["TiledHalfResCompositeEnable"] = s.m_TiledHalfResCompositeEnable;
+    j["TiledHalfResStencilOccludersEnable"] = s.m_TiledHalfResStencilOccludersEnable;
+    j["OutputGammaCorrectionEnable"] = s.m_OutputGammaCorrectionEnable;
+    j["Enable"] = s.m_Enable;
+
+    j["ShadowmapsEnable"] = s.m_ShadowmapsEnable;
+    j["GenerateShadowmapsEnable"] = s.m_GenerateShadowmapsEnable;
+    j["ApplyShadowmapsEnable"] = s.m_ApplyShadowmapsEnable;
+    j["SimpleShadowmapsEnable"] = s.m_SimpleShadowmapsEnable;
+    j["TransparencyShadowmapsEnable"] = s.m_TransparencyShadowmapsEnable;
+    j["CloudShadowEnable"] = s.m_CloudShadowEnable;
+    j["ShadowmapResolution"] = s.m_ShadowmapResolution;
+    j["ShadowmapQuality"] = s.m_ShadowmapQuality;
+    j["ShadowmapSliceCount"] = s.m_ShadowmapSliceCount;
+    j["ShadowmapViewDistance"] = s.m_ShadowmapViewDistance;
+    j["ShadowmapViewDistanceScaleEnable"] = s.m_ShadowmapViewDistanceScaleEnable;
+    j["ShadowMinScreenArea"] = s.m_ShadowMinScreenArea;
+    j["ShadowmapMinScreenArea"] = s.m_ShadowmapMinScreenArea;
+    j["ShadowViewportScale"] = s.m_ShadowViewportScale;
+    j["ShadowmapSizeZScale"] = s.m_ShadowmapSizeZScale;
+    j["ShadowmapSliceSchemeWeight"] = s.m_ShadowmapSliceSchemeWeight;
+    j["ShadowmapFirstSliceScale"] = s.m_ShadowmapFirstSliceScale;
+    j["ShadowmapExtrusionLength"] = s.m_ShadowmapExtrusionLength;
+    j["ShadowmapMinFov"] = s.m_ShadowmapMinFov;
+    j["ShadowmapPoissonFilterScale"] = s.m_ShadowmapPoissonFilterScale;
+    j["ShadowmapFixedDepthEnable"] = s.m_ShadowmapFixedDepthEnable;
+    j["ShadowmapFixedMovementEnable"] = s.m_ShadowmapFixedMovementEnable;
+    j["ShadowmapCullVolumeEnable"] = s.m_ShadowmapCullVolumeEnable;
+    j["ShadowmapAccumEnable"] = s.m_ShadowmapAccumEnable;
+    j["ShadowmapAccumBilinearEnable"] = s.m_ShadowmapAccumBilinearEnable;
+    j["ColoredShadowmapSlicesEnable"] = s.m_ColoredShadowmapSlicesEnable;
+    j["ZBufferShadowTestEnable"] = s.m_ZBufferShadowTestEnable;
+    j["DxShadowmap16BitEnable"] = s.m_DxShadowmap16BitEnable;
+    j["OnlyShadowmapSlice"] = s.m_OnlyShadowmapSlice;
+
+    j["MotionBlurEnable"] = s.m_MotionBlurEnable;
+    j["MotionBlurGeometryPassEnable"] = s.m_MotionBlurGeometryPassEnable;
+    j["MotionBlurStencilPassEnable"] = s.m_MotionBlurStencilPassEnable;
+    j["MotionBlurScale"] = s.m_MotionBlurScale;
+    j["MotionBlurMax"] = s.m_MotionBlurMax;
+    j["MotionBlurNoiseScale"] = s.m_MotionBlurNoiseScale;
+    j["MotionBlurQuality"] = s.m_MotionBlurQuality;
+    j["MotionBlurMaxSampleCount"] = s.m_MotionBlurMaxSampleCount;
+    j["MotionBlurFrameAverageCount"] = s.m_MotionBlurFrameAverageCount;
+    j["MotionBlurMaxFrameTime"] = s.m_MotionBlurMaxFrameTime;
+    j["ForceMotionBlurDepthCutoff"] = s.m_ForceMotionBlurDepthCutoff;
+    j["ForceMotionBlurCutoffGradientScale"] = s.m_ForceMotionBlurCutoffGradientScale;
+
+    j["OutdoorLightEnable"] = s.m_OutdoorLightEnable;
+    j["OutdoorKeyLightEnable"] = s.m_OutdoorKeyLightEnable;
+    j["OutdoorSkyLightEnable"] = s.m_OutdoorSkyLightEnable;
+    j["OutdoorLightSpecularEnable"] = s.m_OutdoorLightSpecularEnable;
+    j["OutdoorLightTilingEnable"] = s.m_OutdoorLightTilingEnable;
+    j["OutdoorLightTileRenderEnable"] = s.m_OutdoorLightTileRenderEnable;
+    j["OutdoorLightTileBlendEnable"] = s.m_OutdoorLightTileBlendEnable;
+    j["OutdoorLightTileSimpleShaderEnable"] = s.m_OutdoorLightTileSimpleShaderEnable;
+    j["OutdoorLightTileBatchCount"] = s.m_OutdoorLightTileBatchCount;
+    j["LightIntensityScale"] = s.m_LightIntensityScale;
+    j["LightForceIntensity"] = s.m_LightForceIntensity;
+    j["LightRadiusScale"] = s.m_LightRadiusScale;
+    j["LightAttenuationThreshold"] = s.m_LightAttenuationThreshold;
+    j["LightAttenuationThresholdEnable"] = s.m_LightAttenuationThresholdEnable;
+    j["LightWidthEnable"] = s.m_LightWidthEnable;
+    j["LightIntensityNormalizationEnable"] = s.m_LightIntensityNormalizationEnable;
+    j["SpecularLightingEnable"] = s.m_SpecularLightingEnable;
+    j["SkinLightingEnable"] = s.m_SkinLightingEnable;
+    j["TranslucencyLightingEnable"] = s.m_TranslucencyLightingEnable;
+    j["EmissiveEnable"] = s.m_EmissiveEnable;
+    j["UnlitEnable"] = s.m_UnlitEnable;
+    j["DrawLightSources"] = s.m_DrawLightSources;
+
+    j["LightLodSpecularFadeAreaStart"] = s.m_LightLodSpecularFadeAreaStart;
+    j["LightLodSpecularFadeAreaEnd"] = s.m_LightLodSpecularFadeAreaEnd;
+    j["LightLodRadiusFactor"] = s.m_LightLodRadiusFactor;
+    j["LightLodFadeArea"] = s.m_LightLodFadeArea;
+    j["LightLodMinArea"] = s.m_LightLodMinArea;
+
+    j["LightCullEnable"] = s.m_LightCullEnable;
+    j["LightDepthCullEnable"] = s.m_LightDepthCullEnable;
+    j["LightNormalCullEnable"] = s.m_LightNormalCullEnable;
+    j["LightConeCullEnable"] = s.m_LightConeCullEnable;
+    j["LightStencilMinArea"] = s.m_LightStencilMinArea;
+    j["LightStencilMethodEnable"] = s.m_LightStencilMethodEnable;
+    j["LightVolumeMethodEnable"] = s.m_LightVolumeMethodEnable;
+    j["LightVolumeDepthTestEnable"] = s.m_LightVolumeDepthTestEnable;
+    j["LightTileMinArea"] = s.m_LightTileMinArea;
+    j["LightTileOverlayEnable"] = s.m_LightTileOverlayEnable;
+    j["LightOverdrawMaxLayerCount"] = s.m_LightOverdrawMaxLayerCount;
+
+    j["PointLightsEnable"] = s.m_PointLightsEnable;
+    j["MaxPointLightCount"] = s.m_MaxPointLightCount;
+    j["SpotLightsEnable"] = s.m_SpotLightsEnable;
+    j["MaxSpotLightCount"] = s.m_MaxSpotLightCount;
+    j["MaxSpotLightShadowCount"] = s.m_MaxSpotLightShadowCount;
+    j["SpotLightShadowmapResolution"] = s.m_SpotLightShadowmapResolution;
+    j["SpotLightShadowmapQuality"] = s.m_SpotLightShadowmapQuality;
+    j["SpotLightNearPlane"] = s.m_SpotLightNearPlane;
+    j["SpotLightShadowmapPoissonFilterScale"] = s.m_SpotLightShadowmapPoissonFilterScale;
+    j["SpotLightShadowmapEnable"] = s.m_SpotLightShadowmapEnable;
+    j["DxSpotLightShadowmap16BitEnable"] = s.m_DxSpotLightShadowmap16BitEnable;
+    j["SpotLightShadomapLevel"] = static_cast<int>(s.m_SpotLightShadomapLevel);
+    j["LineLightsEnable"] = s.m_LineLightsEnable;
+    j["ConeLightsEnable"] = s.m_ConeLightsEnable;
+    j["LightProbesEnable"] = s.m_LightProbesEnable;
+
+    j["SkyEnable"] = s.m_SkyEnable;
+    j["SkyFogEnable"] = s.m_SkyFogEnable;
+    j["SkyEnvmapEnable"] = s.m_SkyEnvmapEnable;
+    j["SkyEnvmapUpdateEnable"] = s.m_SkyEnvmapUpdateEnable;
+    j["SkyEnvmapForceUpdateEnable"] = s.m_SkyEnvmapForceUpdateEnable;
+    j["SkyEnvmapMipmapGenEnable"] = s.m_SkyEnvmapMipmapGenEnable;
+    j["SkyEnvmapUse8BitTexture"] = s.m_SkyEnvmapUse8BitTexture;
+    j["SkyEnvmapResolution"] = s.m_SkyEnvmapResolution;
+    j["SkyEnvmapSidesPerFrameCount"] = s.m_SkyEnvmapSidesPerFrameCount;
+    j["SkyEnvmapFilterWidth"] = s.m_SkyEnvmapFilterWidth;
+    j["SkyEnvmapFilterMode"] = static_cast<int>(s.m_SkyEnvmapFilterMode);
+    j["SkyVisibilityEnvmapScalingEnable"] = s.m_SkyVisibilityEnvmapScalingEnable;
+    j["DrawDebugSkyEnvmapMipLevel"] = s.m_DrawDebugSkyEnvmapMipLevel;
+
+    j["DynamicEnvmapEnable"] = s.m_DynamicEnvmapEnable;
+    j["DynamicEnvmapLightingEnable"] = s.m_DynamicEnvmapLightingEnable;
+    j["DynamicEnvmapMipmapGenEnable"] = s.m_DynamicEnvmapMipmapGenEnable;
+    j["DynamicEnvmapResolution"] = s.m_DynamicEnvmapResolution;
+    j["DynamicEnvmapFilterWidth"] = s.m_DynamicEnvmapFilterWidth;
+    j["DynamicEnvmapFilterMode"] = static_cast<int>(s.m_DynamicEnvmapFilterMode);
+    j["DynamicEnvmapDefaultPosition"] = SerializeVec3(s.m_DynamicEnvmapDefaultPosition);
+    j["DrawDebugDynamicEnvmapMipLevel"] = s.m_DrawDebugDynamicEnvmapMipLevel;
+    j["StaticEnvmapEnable"] = s.m_StaticEnvmapEnable;
+    j["CustomEnvmapEnable"] = s.m_CustomEnvmapEnable;
+
+    j["PlanarReflectionEnable"] = s.m_PlanarReflectionEnable;
+    j["PlanarReflectionBlur"] = s.m_PlanarReflectionBlur;
+    j["PlanarReflectionWidth"] = s.m_PlanarReflectionWidth;
+    j["PlanarReflectionHeight"] = s.m_PlanarReflectionHeight;
+    j["PlanarReflectionCullFOV"] = s.m_PlanarReflectionCullFOV;
+    j["TempPlanarReflectionY"] = s.m_TempPlanarReflectionY;
+    j["PlanarReflectionDebugCullMode"] = s.m_PlanarReflectionDebugCullMode;
+    j["FreezePlanarReflectionCullFrustum"] = s.m_FreezePlanarReflectionCullFrustum;
+    j["ReflectionEnvmapSize"] = s.m_ReflectionEnvmapSize;
+
+    j["SubSurfaceColor"] = SerializeVec3(s.m_SubSurfaceColor);
+    j["SubSurfaceRolloffKeyLight"] = s.m_SubSurfaceRolloffKeyLight;
+    j["SubSurfaceRolloffLocalLight"] = s.m_SubSurfaceRolloffLocalLight;
+
+    j["DecalVolumeEnable"] = s.m_DecalVolumeEnable;
+    j["MaxDecalVolumeCount"] = s.m_MaxDecalVolumeCount;
+    j["DecalVolumeScale"] = s.m_DecalVolumeScale;
+    j["MaxDestructionVolumeCount"] = s.m_MaxDestructionVolumeCount;
+
+    j["ZPassEnable"] = s.m_ZPassEnable;
+    j["MainOpaqueZPassEnable"] = s.m_MainOpaqueZPassEnable;
+    j["OccluderMeshZPrepassEnable"] = s.m_OccluderMeshZPrepassEnable;
+    j["OccluderMeshZPrepassDebugEnable"] = s.m_OccluderMeshZPrepassDebugEnable;
+    j["ForegroundEnable"] = s.m_ForegroundEnable;
+    j["ForegroundZPassEnable"] = s.m_ForegroundZPassEnable;
+    j["ForegroundDepthClearEnable"] = s.m_ForegroundDepthClearEnable;
+    j["ForegroundAsMainEnable"] = s.m_ForegroundAsMainEnable;
+    j["ForegroundTransparentEnable"] = s.m_ForegroundTransparentEnable;
+    j["DrawTransparent"] = s.m_DrawTransparent;
+    j["DrawTransparentDecal"] = s.m_DrawTransparentDecal;
+    j["ScreenEffectEnable"] = s.m_ScreenEffectEnable;
+    j["FinalPostEnable"] = s.m_FinalPostEnable;
+    j["ViewFxEnable"] = s.m_ViewFxEnable;
+
+    j["LensFlaresEnable"] = s.m_LensFlaresEnable;
+    j["HalfResLensFlaresEnable"] = s.m_HalfResLensFlaresEnable;
+    j["LensFlareOcclusionEnable"] = s.m_LensFlareOcclusionEnable;
+
+    j["GBufferClearEnable"] = s.m_GBufferClearEnable;
+    j["GBufferAlphaTestSimpleEnable"] = s.m_GBufferAlphaTestSimpleEnable;
+    j["DxGBufferLight16BitEnable"] = s.m_DxGBufferLight16BitEnable;
+    j["DxGBufferNormal16BitEnable"] = s.m_DxGBufferNormal16BitEnable;
+    j["DxLinearDepth32BitFormatEnable"] = s.m_DxLinearDepth32BitFormatEnable;
+    j["DxDeferredCsPathEnable"] = s.m_DxDeferredCsPathEnable;
+    j["GBufferTestCount"] = s.m_GBufferTestCount;
+    j["GBufferLayout"] = static_cast<int>(s.m_GBufferLayout);
+
+    j["OverrideDynamicAO"] = s.m_OverrideDynamicAO;
+
+    j["WireframeEnable"] = s.m_WireframeEnable;
+    j["OpaqueSortBySolutionEnable"] = s.m_OpaqueSortBySolutionEnable;
+    j["GenericEntityRendererEnable"] = s.m_GenericEntityRendererEnable;
+    j["GenericEntityMaxVisibleEntityCount"] = s.m_GenericEntityMaxVisibleEntityCount;
+    j["SetupJobEnable"] = s.m_SetupJobEnable;
+    j["DynamicCullZBufferTestEnable"] = s.m_DynamicCullZBufferTestEnable;
+    j["DynamicCullDrawOccludedBoxesEnable"] = s.m_DynamicCullDrawOccludedBoxesEnable;
+    j["ViewMode"] = static_cast<int>(s.m_ViewMode);
+    j["OnlyTileIndex"] = s.m_OnlyTileIndex;
+    j["OnlyLightTileX"] = s.m_OnlyLightTileX;
+    j["OnlyLightTileY"] = s.m_OnlyLightTileY;
+    j["OnlyLightTileIndex"] = s.m_OnlyLightTileIndex;
+
+    bool hasDebug = s.m_DrawDebugGBuffer || s.m_DrawDebugZBufferEnable || s.m_DrawDebugShadowmaps;
+    if (hasDebug)
+    {
+        j["DrawDebugGBuffer"] = s.m_DrawDebugGBuffer;
+        j["DrawDebugZBufferEnable"] = s.m_DrawDebugZBufferEnable;
+        j["DrawDebugVelocityBuffer"] = s.m_DrawDebugVelocityBuffer;
+        j["DrawDebugMultisampleClassify"] = s.m_DrawDebugMultisampleClassify;
+        j["DrawDebugHalfResEnvironment"] = s.m_DrawDebugHalfResEnvironment;
+        j["DrawDebugShadowmaps"] = s.m_DrawDebugShadowmaps;
+        j["DrawDebugQuarterShadowmaps"] = s.m_DrawDebugQuarterShadowmaps;
+        j["DrawDebugTransShadowmap"] = s.m_DrawDebugTransShadowmap;
+        j["DrawDebugSpotLightShadowmaps"] = s.m_DrawDebugSpotLightShadowmaps;
+        j["DrawShadowFrustums"] = s.m_DrawShadowFrustums;
+        j["DrawDebugLightSources"] = s.m_DrawDebugLightSources;
+        j["DrawDebugLightShadowSources"] = s.m_DrawDebugLightShadowSources;
+        j["DrawDebugLightStats"] = s.m_DrawDebugLightStats;
+        j["DrawDebugLightTiles"] = s.m_DrawDebugLightTiles;
+        j["DrawDebugLightTileVolumes"] = s.m_DrawDebugLightTileVolumes;
+        j["DrawDebugLightTileFbGrid"] = s.m_DrawDebugLightTileFbGrid;
+        j["DrawDebugLightTileGrid"] = s.m_DrawDebugLightTileGrid;
+        j["DrawDebugLightTileSources"] = s.m_DrawDebugLightTileSources;
+        j["DrawDebugDynamicAO"] = s.m_DrawDebugDynamicAO;
+        j["DrawDebugDynamicEnvmap"] = s.m_DrawDebugDynamicEnvmap;
+        j["DrawDebugSkyEnvmap"] = s.m_DrawDebugSkyEnvmap;
+        j["DrawDebugPlanarReflection"] = s.m_DrawDebugPlanarReflection;
+        j["DrawDebugPlanarReflectionCullFrustum"] = s.m_DrawDebugPlanarReflectionCullFrustum;
+        j["DrawDebugDecalVolumes"] = s.m_DrawDebugDecalVolumes;
+        j["DrawDebugDestructionVolumes"] = s.m_DrawDebugDestructionVolumes;
+        j["DrawDebugLensFlares"] = s.m_DrawDebugLensFlares;
+        j["DrawDebugLensFlareOccluders"] = s.m_DrawDebugLensFlareOccluders;
+        j["DrawDebugWorldOcclusions"] = s.m_DrawDebugWorldOcclusions;
+        j["DrawDebugVisibleEntityTypes"] = s.m_DrawDebugVisibleEntityTypes;
+        j["DrawBoundingSpheres"] = s.m_DrawBoundingSpheres;
+        j["DrawSolidBoundingBoxes"] = s.m_DrawSolidBoundingBoxes;
+        j["DrawLineBoundingBoxes"] = s.m_DrawLineBoundingBoxes;
+        j["DrawFrustums"] = s.m_DrawFrustums;
+    }
+
+    return j;
+}
+
 void VisualEnvironmentEditor::DeserializeStateData(const json& j, StateEditData& data)
 {
     data.overrideEnabled = j.value("overrideEnabled", true);
@@ -820,6 +1066,245 @@ void VisualEnvironmentEditor::DeserializeMotionBlur(const json& j, fb::MotionBlu
     JSON_GET(j, "cutoffGradientScale", c.m_CutoffGradientScale);
 }
 
+void VisualEnvironmentEditor::DeserializeWorldRenderSettings(const json& j, fb::WorldRenderSettings& s)
+{
+    JSON_GET(j, "ViewportScale", s.m_ViewportScale);
+    JSON_GET(j, "FxaaQuality", s.m_FxaaQuality);
+    JSON_GET(j, "FxaaForceVendor", s.m_FxaaForceVendor);
+    JSON_GET_BOOL(j, "FxaaEnable", s.m_FxaaEnable);
+    JSON_GET(j, "CullScreenAreaScale", s.m_CullScreenAreaScale);
+    JSON_GET(j, "MultisampleCount", s.m_MultisampleCount);
+    JSON_GET(j, "MultisampleThreshold", s.m_MultisampleThreshold);
+    JSON_GET_BOOL(j, "HdrEnable", s.m_HdrEnable);
+    JSON_GET_BOOL(j, "HalfResEnable", s.m_HalfResEnable);
+    JSON_GET_BOOL(j, "BilateralHalfResCompositeEnable", s.m_BilateralHalfResCompositeEnable);
+    JSON_GET_BOOL(j, "TiledHalfResCompositeEnable", s.m_TiledHalfResCompositeEnable);
+    JSON_GET_BOOL(j, "TiledHalfResStencilOccludersEnable", s.m_TiledHalfResStencilOccludersEnable);
+    JSON_GET_BOOL(j, "OutputGammaCorrectionEnable", s.m_OutputGammaCorrectionEnable);
+    JSON_GET_BOOL(j, "Enable", s.m_Enable);
+
+    JSON_GET_BOOL(j, "ShadowmapsEnable", s.m_ShadowmapsEnable);
+    JSON_GET_BOOL(j, "GenerateShadowmapsEnable", s.m_GenerateShadowmapsEnable);
+    JSON_GET_BOOL(j, "ApplyShadowmapsEnable", s.m_ApplyShadowmapsEnable);
+    JSON_GET_BOOL(j, "SimpleShadowmapsEnable", s.m_SimpleShadowmapsEnable);
+    JSON_GET_BOOL(j, "TransparencyShadowmapsEnable", s.m_TransparencyShadowmapsEnable);
+    JSON_GET_BOOL(j, "CloudShadowEnable", s.m_CloudShadowEnable);
+    JSON_GET(j, "ShadowmapResolution", s.m_ShadowmapResolution);
+    JSON_GET(j, "ShadowmapQuality", s.m_ShadowmapQuality);
+    JSON_GET(j, "ShadowmapSliceCount", s.m_ShadowmapSliceCount);
+    JSON_GET(j, "ShadowmapViewDistance", s.m_ShadowmapViewDistance);
+    JSON_GET_BOOL(j, "ShadowmapViewDistanceScaleEnable", s.m_ShadowmapViewDistanceScaleEnable);
+    JSON_GET(j, "ShadowMinScreenArea", s.m_ShadowMinScreenArea);
+    JSON_GET(j, "ShadowmapMinScreenArea", s.m_ShadowmapMinScreenArea);
+    JSON_GET(j, "ShadowViewportScale", s.m_ShadowViewportScale);
+    JSON_GET(j, "ShadowmapSizeZScale", s.m_ShadowmapSizeZScale);
+    JSON_GET(j, "ShadowmapSliceSchemeWeight", s.m_ShadowmapSliceSchemeWeight);
+    JSON_GET(j, "ShadowmapFirstSliceScale", s.m_ShadowmapFirstSliceScale);
+    JSON_GET(j, "ShadowmapExtrusionLength", s.m_ShadowmapExtrusionLength);
+    JSON_GET(j, "ShadowmapMinFov", s.m_ShadowmapMinFov);
+    JSON_GET(j, "ShadowmapPoissonFilterScale", s.m_ShadowmapPoissonFilterScale);
+    JSON_GET_BOOL(j, "ShadowmapFixedDepthEnable", s.m_ShadowmapFixedDepthEnable);
+    JSON_GET_BOOL(j, "ShadowmapFixedMovementEnable", s.m_ShadowmapFixedMovementEnable);
+    JSON_GET_BOOL(j, "ShadowmapCullVolumeEnable", s.m_ShadowmapCullVolumeEnable);
+    JSON_GET_BOOL(j, "ShadowmapAccumEnable", s.m_ShadowmapAccumEnable);
+    JSON_GET_BOOL(j, "ShadowmapAccumBilinearEnable", s.m_ShadowmapAccumBilinearEnable);
+    JSON_GET_BOOL(j, "ColoredShadowmapSlicesEnable", s.m_ColoredShadowmapSlicesEnable);
+    JSON_GET_BOOL(j, "ZBufferShadowTestEnable", s.m_ZBufferShadowTestEnable);
+    JSON_GET_BOOL(j, "DxShadowmap16BitEnable", s.m_DxShadowmap16BitEnable);
+    JSON_GET(j, "OnlyShadowmapSlice", s.m_OnlyShadowmapSlice);
+
+    JSON_GET_BOOL(j, "MotionBlurEnable", s.m_MotionBlurEnable);
+    JSON_GET_BOOL(j, "MotionBlurGeometryPassEnable", s.m_MotionBlurGeometryPassEnable);
+    JSON_GET_BOOL(j, "MotionBlurStencilPassEnable", s.m_MotionBlurStencilPassEnable);
+    JSON_GET(j, "MotionBlurScale", s.m_MotionBlurScale);
+    JSON_GET(j, "MotionBlurMax", s.m_MotionBlurMax);
+    JSON_GET(j, "MotionBlurNoiseScale", s.m_MotionBlurNoiseScale);
+    JSON_GET(j, "MotionBlurQuality", s.m_MotionBlurQuality);
+    JSON_GET(j, "MotionBlurMaxSampleCount", s.m_MotionBlurMaxSampleCount);
+    JSON_GET(j, "MotionBlurFrameAverageCount", s.m_MotionBlurFrameAverageCount);
+    JSON_GET(j, "MotionBlurMaxFrameTime", s.m_MotionBlurMaxFrameTime);
+    JSON_GET(j, "ForceMotionBlurDepthCutoff", s.m_ForceMotionBlurDepthCutoff);
+    JSON_GET(j, "ForceMotionBlurCutoffGradientScale", s.m_ForceMotionBlurCutoffGradientScale);
+
+    JSON_GET_BOOL(j, "OutdoorLightEnable", s.m_OutdoorLightEnable);
+    JSON_GET_BOOL(j, "OutdoorKeyLightEnable", s.m_OutdoorKeyLightEnable);
+    JSON_GET_BOOL(j, "OutdoorSkyLightEnable", s.m_OutdoorSkyLightEnable);
+    JSON_GET_BOOL(j, "OutdoorLightSpecularEnable", s.m_OutdoorLightSpecularEnable);
+    JSON_GET_BOOL(j, "OutdoorLightTilingEnable", s.m_OutdoorLightTilingEnable);
+    JSON_GET_BOOL(j, "OutdoorLightTileRenderEnable", s.m_OutdoorLightTileRenderEnable);
+    JSON_GET_BOOL(j, "OutdoorLightTileBlendEnable", s.m_OutdoorLightTileBlendEnable);
+    JSON_GET_BOOL(j, "OutdoorLightTileSimpleShaderEnable", s.m_OutdoorLightTileSimpleShaderEnable);
+    JSON_GET(j, "OutdoorLightTileBatchCount", s.m_OutdoorLightTileBatchCount);
+    JSON_GET(j, "LightIntensityScale", s.m_LightIntensityScale);
+    JSON_GET(j, "LightForceIntensity", s.m_LightForceIntensity);
+    JSON_GET(j, "LightRadiusScale", s.m_LightRadiusScale);
+    JSON_GET(j, "LightAttenuationThreshold", s.m_LightAttenuationThreshold);
+    JSON_GET_BOOL(j, "LightAttenuationThresholdEnable", s.m_LightAttenuationThresholdEnable);
+    JSON_GET_BOOL(j, "LightWidthEnable", s.m_LightWidthEnable);
+    JSON_GET_BOOL(j, "LightIntensityNormalizationEnable", s.m_LightIntensityNormalizationEnable);
+    JSON_GET_BOOL(j, "SpecularLightingEnable", s.m_SpecularLightingEnable);
+    JSON_GET_BOOL(j, "SkinLightingEnable", s.m_SkinLightingEnable);
+    JSON_GET_BOOL(j, "TranslucencyLightingEnable", s.m_TranslucencyLightingEnable);
+    JSON_GET_BOOL(j, "EmissiveEnable", s.m_EmissiveEnable);
+    JSON_GET_BOOL(j, "UnlitEnable", s.m_UnlitEnable);
+    JSON_GET_BOOL(j, "DrawLightSources", s.m_DrawLightSources);
+
+    JSON_GET(j, "LightLodSpecularFadeAreaStart", s.m_LightLodSpecularFadeAreaStart);
+    JSON_GET(j, "LightLodSpecularFadeAreaEnd", s.m_LightLodSpecularFadeAreaEnd);
+    JSON_GET(j, "LightLodRadiusFactor", s.m_LightLodRadiusFactor);
+    JSON_GET(j, "LightLodFadeArea", s.m_LightLodFadeArea);
+    JSON_GET(j, "LightLodMinArea", s.m_LightLodMinArea);
+
+    JSON_GET_BOOL(j, "LightCullEnable", s.m_LightCullEnable);
+    JSON_GET_BOOL(j, "LightDepthCullEnable", s.m_LightDepthCullEnable);
+    JSON_GET_BOOL(j, "LightNormalCullEnable", s.m_LightNormalCullEnable);
+    JSON_GET_BOOL(j, "LightConeCullEnable", s.m_LightConeCullEnable);
+    JSON_GET(j, "LightStencilMinArea", s.m_LightStencilMinArea);
+    JSON_GET_BOOL(j, "LightStencilMethodEnable", s.m_LightStencilMethodEnable);
+    JSON_GET_BOOL(j, "LightVolumeMethodEnable", s.m_LightVolumeMethodEnable);
+    JSON_GET_BOOL(j, "LightVolumeDepthTestEnable", s.m_LightVolumeDepthTestEnable);
+    JSON_GET(j, "LightTileMinArea", s.m_LightTileMinArea);
+    JSON_GET_BOOL(j, "LightTileOverlayEnable", s.m_LightTileOverlayEnable);
+    JSON_GET(j, "LightOverdrawMaxLayerCount", s.m_LightOverdrawMaxLayerCount);
+
+    JSON_GET_BOOL(j, "PointLightsEnable", s.m_PointLightsEnable);
+    JSON_GET(j, "MaxPointLightCount", s.m_MaxPointLightCount);
+    JSON_GET_BOOL(j, "SpotLightsEnable", s.m_SpotLightsEnable);
+    JSON_GET(j, "MaxSpotLightCount", s.m_MaxSpotLightCount);
+    JSON_GET(j, "MaxSpotLightShadowCount", s.m_MaxSpotLightShadowCount);
+    JSON_GET(j, "SpotLightShadowmapResolution", s.m_SpotLightShadowmapResolution);
+    JSON_GET(j, "SpotLightShadowmapQuality", s.m_SpotLightShadowmapQuality);
+    JSON_GET(j, "SpotLightNearPlane", s.m_SpotLightNearPlane);
+    JSON_GET(j, "SpotLightShadowmapPoissonFilterScale", s.m_SpotLightShadowmapPoissonFilterScale);
+    JSON_GET_BOOL(j, "SpotLightShadowmapEnable", s.m_SpotLightShadowmapEnable);
+    JSON_GET_BOOL(j, "DxSpotLightShadowmap16BitEnable", s.m_DxSpotLightShadowmap16BitEnable);
+    JSON_GET_ENUM(j, "SpotLightShadomapLevel", s.m_SpotLightShadomapLevel, fb::QualityLevel);
+    JSON_GET_BOOL(j, "LineLightsEnable", s.m_LineLightsEnable);
+    JSON_GET_BOOL(j, "ConeLightsEnable", s.m_ConeLightsEnable);
+    JSON_GET_BOOL(j, "LightProbesEnable", s.m_LightProbesEnable);
+
+    JSON_GET_BOOL(j, "SkyEnable", s.m_SkyEnable);
+    JSON_GET_BOOL(j, "SkyFogEnable", s.m_SkyFogEnable);
+    JSON_GET_BOOL(j, "SkyEnvmapEnable", s.m_SkyEnvmapEnable);
+    JSON_GET_BOOL(j, "SkyEnvmapUpdateEnable", s.m_SkyEnvmapUpdateEnable);
+    JSON_GET_BOOL(j, "SkyEnvmapForceUpdateEnable", s.m_SkyEnvmapForceUpdateEnable);
+    JSON_GET_BOOL(j, "SkyEnvmapMipmapGenEnable", s.m_SkyEnvmapMipmapGenEnable);
+    JSON_GET_BOOL(j, "SkyEnvmapUse8BitTexture", s.m_SkyEnvmapUse8BitTexture);
+    JSON_GET(j, "SkyEnvmapResolution", s.m_SkyEnvmapResolution);
+    JSON_GET(j, "SkyEnvmapSidesPerFrameCount", s.m_SkyEnvmapSidesPerFrameCount);
+    JSON_GET(j, "SkyEnvmapFilterWidth", s.m_SkyEnvmapFilterWidth);
+    JSON_GET_ENUM(j, "SkyEnvmapFilterMode", s.m_SkyEnvmapFilterMode, fb::MipmapFilterMode);
+    JSON_GET_BOOL(j, "SkyVisibilityEnvmapScalingEnable", s.m_SkyVisibilityEnvmapScalingEnable);
+    JSON_GET(j, "DrawDebugSkyEnvmapMipLevel", s.m_DrawDebugSkyEnvmapMipLevel);
+
+    JSON_GET_BOOL(j, "DynamicEnvmapEnable", s.m_DynamicEnvmapEnable);
+    JSON_GET_BOOL(j, "DynamicEnvmapLightingEnable", s.m_DynamicEnvmapLightingEnable);
+    JSON_GET_BOOL(j, "DynamicEnvmapMipmapGenEnable", s.m_DynamicEnvmapMipmapGenEnable);
+    JSON_GET(j, "DynamicEnvmapResolution", s.m_DynamicEnvmapResolution);
+    JSON_GET(j, "DynamicEnvmapFilterWidth", s.m_DynamicEnvmapFilterWidth);
+    JSON_GET_ENUM(j, "DynamicEnvmapFilterMode", s.m_DynamicEnvmapFilterMode, fb::MipmapFilterMode);
+    JSON_GET_VEC3(j, "DynamicEnvmapDefaultPosition", s.m_DynamicEnvmapDefaultPosition);
+    JSON_GET(j, "DrawDebugDynamicEnvmapMipLevel", s.m_DrawDebugDynamicEnvmapMipLevel);
+    JSON_GET_BOOL(j, "StaticEnvmapEnable", s.m_StaticEnvmapEnable);
+    JSON_GET_BOOL(j, "CustomEnvmapEnable", s.m_CustomEnvmapEnable);
+
+    JSON_GET_BOOL(j, "PlanarReflectionEnable", s.m_PlanarReflectionEnable);
+    JSON_GET_BOOL(j, "PlanarReflectionBlur", s.m_PlanarReflectionBlur);
+    JSON_GET(j, "PlanarReflectionWidth", s.m_PlanarReflectionWidth);
+    JSON_GET(j, "PlanarReflectionHeight", s.m_PlanarReflectionHeight);
+    JSON_GET(j, "PlanarReflectionCullFOV", s.m_PlanarReflectionCullFOV);
+    JSON_GET(j, "TempPlanarReflectionY", s.m_TempPlanarReflectionY);
+    JSON_GET_BOOL(j, "PlanarReflectionDebugCullMode", s.m_PlanarReflectionDebugCullMode);
+    JSON_GET_BOOL(j, "FreezePlanarReflectionCullFrustum", s.m_FreezePlanarReflectionCullFrustum);
+    JSON_GET(j, "ReflectionEnvmapSize", s.m_ReflectionEnvmapSize);
+
+    JSON_GET_VEC3(j, "SubSurfaceColor", s.m_SubSurfaceColor);
+    JSON_GET(j, "SubSurfaceRolloffKeyLight", s.m_SubSurfaceRolloffKeyLight);
+    JSON_GET(j, "SubSurfaceRolloffLocalLight", s.m_SubSurfaceRolloffLocalLight);
+
+    JSON_GET_BOOL(j, "DecalVolumeEnable", s.m_DecalVolumeEnable);
+    JSON_GET(j, "MaxDecalVolumeCount", s.m_MaxDecalVolumeCount);
+    JSON_GET(j, "DecalVolumeScale", s.m_DecalVolumeScale);
+    JSON_GET(j, "MaxDestructionVolumeCount", s.m_MaxDestructionVolumeCount);
+
+    JSON_GET_BOOL(j, "ZPassEnable", s.m_ZPassEnable);
+    JSON_GET_BOOL(j, "MainOpaqueZPassEnable", s.m_MainOpaqueZPassEnable);
+    JSON_GET_BOOL(j, "OccluderMeshZPrepassEnable", s.m_OccluderMeshZPrepassEnable);
+    JSON_GET_BOOL(j, "OccluderMeshZPrepassDebugEnable", s.m_OccluderMeshZPrepassDebugEnable);
+    JSON_GET_BOOL(j, "ForegroundEnable", s.m_ForegroundEnable);
+    JSON_GET_BOOL(j, "ForegroundZPassEnable", s.m_ForegroundZPassEnable);
+    JSON_GET_BOOL(j, "ForegroundDepthClearEnable", s.m_ForegroundDepthClearEnable);
+    JSON_GET_BOOL(j, "ForegroundAsMainEnable", s.m_ForegroundAsMainEnable);
+    JSON_GET_BOOL(j, "ForegroundTransparentEnable", s.m_ForegroundTransparentEnable);
+    JSON_GET_BOOL(j, "DrawTransparent", s.m_DrawTransparent);
+    JSON_GET_BOOL(j, "DrawTransparentDecal", s.m_DrawTransparentDecal);
+    JSON_GET_BOOL(j, "ScreenEffectEnable", s.m_ScreenEffectEnable);
+    JSON_GET_BOOL(j, "FinalPostEnable", s.m_FinalPostEnable);
+    JSON_GET_BOOL(j, "ViewFxEnable", s.m_ViewFxEnable);
+
+    JSON_GET_BOOL(j, "LensFlaresEnable", s.m_LensFlaresEnable);
+    JSON_GET_BOOL(j, "HalfResLensFlaresEnable", s.m_HalfResLensFlaresEnable);
+    JSON_GET_BOOL(j, "LensFlareOcclusionEnable", s.m_LensFlareOcclusionEnable);
+
+    JSON_GET_BOOL(j, "GBufferClearEnable", s.m_GBufferClearEnable);
+    JSON_GET_BOOL(j, "GBufferAlphaTestSimpleEnable", s.m_GBufferAlphaTestSimpleEnable);
+    JSON_GET_BOOL(j, "DxGBufferLight16BitEnable", s.m_DxGBufferLight16BitEnable);
+    JSON_GET_BOOL(j, "DxGBufferNormal16BitEnable", s.m_DxGBufferNormal16BitEnable);
+    JSON_GET_BOOL(j, "DxLinearDepth32BitFormatEnable", s.m_DxLinearDepth32BitFormatEnable);
+    JSON_GET_BOOL(j, "DxDeferredCsPathEnable", s.m_DxDeferredCsPathEnable);
+    JSON_GET(j, "GBufferTestCount", s.m_GBufferTestCount);
+    JSON_GET_ENUM(j, "GBufferLayout", s.m_GBufferLayout, fb::ShaderGBufferLayout);
+
+    JSON_GET_BOOL(j, "OverrideDynamicAO", s.m_OverrideDynamicAO);
+
+    JSON_GET_BOOL(j, "WireframeEnable", s.m_WireframeEnable);
+    JSON_GET_BOOL(j, "OpaqueSortBySolutionEnable", s.m_OpaqueSortBySolutionEnable);
+    JSON_GET_BOOL(j, "GenericEntityRendererEnable", s.m_GenericEntityRendererEnable);
+    JSON_GET(j, "GenericEntityMaxVisibleEntityCount", s.m_GenericEntityMaxVisibleEntityCount);
+    JSON_GET_BOOL(j, "SetupJobEnable", s.m_SetupJobEnable);
+    JSON_GET_BOOL(j, "DynamicCullZBufferTestEnable", s.m_DynamicCullZBufferTestEnable);
+    JSON_GET_BOOL(j, "DynamicCullDrawOccludedBoxesEnable", s.m_DynamicCullDrawOccludedBoxesEnable);
+    JSON_GET_ENUM(j, "ViewMode", s.m_ViewMode, fb::WorldViewMode);
+    JSON_GET(j, "OnlyTileIndex", s.m_OnlyTileIndex);
+    JSON_GET(j, "OnlyLightTileX", s.m_OnlyLightTileX);
+    JSON_GET(j, "OnlyLightTileY", s.m_OnlyLightTileY);
+    JSON_GET(j, "OnlyLightTileIndex", s.m_OnlyLightTileIndex);
+
+    JSON_GET_BOOL(j, "DrawDebugGBuffer", s.m_DrawDebugGBuffer);
+    JSON_GET_BOOL(j, "DrawDebugZBufferEnable", s.m_DrawDebugZBufferEnable);
+    JSON_GET_BOOL(j, "DrawDebugVelocityBuffer", s.m_DrawDebugVelocityBuffer);
+    JSON_GET_BOOL(j, "DrawDebugMultisampleClassify", s.m_DrawDebugMultisampleClassify);
+    JSON_GET_BOOL(j, "DrawDebugHalfResEnvironment", s.m_DrawDebugHalfResEnvironment);
+    JSON_GET_BOOL(j, "DrawDebugShadowmaps", s.m_DrawDebugShadowmaps);
+    JSON_GET_BOOL(j, "DrawDebugQuarterShadowmaps", s.m_DrawDebugQuarterShadowmaps);
+    JSON_GET_BOOL(j, "DrawDebugTransShadowmap", s.m_DrawDebugTransShadowmap);
+    JSON_GET_BOOL(j, "DrawDebugSpotLightShadowmaps", s.m_DrawDebugSpotLightShadowmaps);
+    JSON_GET_BOOL(j, "DrawShadowFrustums", s.m_DrawShadowFrustums);
+    JSON_GET_BOOL(j, "DrawDebugLightSources", s.m_DrawDebugLightSources);
+    JSON_GET_BOOL(j, "DrawDebugLightShadowSources", s.m_DrawDebugLightShadowSources);
+    JSON_GET_BOOL(j, "DrawDebugLightStats", s.m_DrawDebugLightStats);
+    JSON_GET_BOOL(j, "DrawDebugLightTiles", s.m_DrawDebugLightTiles);
+    JSON_GET_BOOL(j, "DrawDebugLightTileVolumes", s.m_DrawDebugLightTileVolumes);
+    JSON_GET_BOOL(j, "DrawDebugLightTileFbGrid", s.m_DrawDebugLightTileFbGrid);
+    JSON_GET_BOOL(j, "DrawDebugLightTileGrid", s.m_DrawDebugLightTileGrid);
+    JSON_GET_BOOL(j, "DrawDebugLightTileSources", s.m_DrawDebugLightTileSources);
+    JSON_GET_BOOL(j, "DrawDebugDynamicAO", s.m_DrawDebugDynamicAO);
+    JSON_GET_BOOL(j, "DrawDebugDynamicEnvmap", s.m_DrawDebugDynamicEnvmap);
+    JSON_GET_BOOL(j, "DrawDebugSkyEnvmap", s.m_DrawDebugSkyEnvmap);
+    JSON_GET_BOOL(j, "DrawDebugPlanarReflection", s.m_DrawDebugPlanarReflection);
+    JSON_GET_BOOL(j, "DrawDebugPlanarReflectionCullFrustum", s.m_DrawDebugPlanarReflectionCullFrustum);
+    JSON_GET_BOOL(j, "DrawDebugDecalVolumes", s.m_DrawDebugDecalVolumes);
+    JSON_GET_BOOL(j, "DrawDebugDestructionVolumes", s.m_DrawDebugDestructionVolumes);
+    JSON_GET_BOOL(j, "DrawDebugLensFlares", s.m_DrawDebugLensFlares);
+    JSON_GET_BOOL(j, "DrawDebugLensFlareOccluders", s.m_DrawDebugLensFlareOccluders);
+    JSON_GET_BOOL(j, "DrawDebugWorldOcclusions", s.m_DrawDebugWorldOcclusions);
+    JSON_GET_BOOL(j, "DrawDebugVisibleEntityTypes", s.m_DrawDebugVisibleEntityTypes);
+    JSON_GET_BOOL(j, "DrawBoundingSpheres", s.m_DrawBoundingSpheres);
+    JSON_GET_BOOL(j, "DrawSolidBoundingBoxes", s.m_DrawSolidBoundingBoxes);
+    JSON_GET_BOOL(j, "DrawLineBoundingBoxes", s.m_DrawLineBoundingBoxes);
+    JSON_GET_BOOL(j, "DrawFrustums", s.m_DrawFrustums);
+}
+
 bool VisualEnvironmentEditor::SaveConfig(const std::filesystem::path& filePath)
 {
     try
@@ -885,22 +1370,8 @@ bool VisualEnvironmentEditor::SaveConfig(const std::filesystem::path& filePath)
 
         if (m_HasCapturedWorldRenderSettings && m_WorldRenderOverrideEnabled)
         {
-            json wrsJson;
+            json wrsJson = SerializeWorldRenderSettings(m_EditWorldRenderSettings);
             wrsJson["enabled"] = m_WorldRenderOverrideEnabled;
-            wrsJson["viewportScale"] = m_EditWorldRenderSettings.m_viewportScale;
-            wrsJson["fxaaQuality"] = m_EditWorldRenderSettings.m_fxaaQuality;
-            wrsJson["shadowmapResolution"] = m_EditWorldRenderSettings.m_shadowmapResolution;
-            wrsJson["shadowmapQuality"] = m_EditWorldRenderSettings.m_shadowmapQuality;
-            wrsJson["shadowViewDistance"] = m_EditWorldRenderSettings.m_shadowViewDistance;
-            wrsJson["motionBlurScale"] = m_EditWorldRenderSettings.m_motionBlurScale;
-            wrsJson["motionBlurMax"] = m_EditWorldRenderSettings.m_motionBlurMax;
-            wrsJson["motionBlurQuality"] = m_EditWorldRenderSettings.m_motionBlurQuality;
-            wrsJson["drawShadows"] = m_EditWorldRenderSettings.m_drawShadows;
-            wrsJson["skyEnable"] = m_EditWorldRenderSettings.m_skyEnable;
-            wrsJson["sunEnabled"] = m_EditWorldRenderSettings.m_sunEnabled;
-            wrsJson["depthOfField"] = m_EditWorldRenderSettings.m_depthOfField;
-            wrsJson["drawReflection"] = m_EditWorldRenderSettings.m_drawReflection;
-
             root["worldRender"] = wrsJson;
         }
 
@@ -1121,24 +1592,12 @@ bool VisualEnvironmentEditor::LoadConfig(const std::filesystem::path& filePath)
 
         if (root.contains("worldRender"))
         {
-            const auto& wrsJson = root["worldRender"];
+            const json& wrsJson = root["worldRender"];
             m_WorldRenderOverrideEnabled = wrsJson.value("enabled", false);
 
-            if (m_WorldRenderOverrideEnabled)
+            if (m_WorldRenderOverrideEnabled && m_HasCapturedWorldRenderSettings)
             {
-                m_EditWorldRenderSettings.m_viewportScale = wrsJson.value("viewportScale", m_EditWorldRenderSettings.m_viewportScale);
-                m_EditWorldRenderSettings.m_fxaaQuality = wrsJson.value("fxaaQuality", m_EditWorldRenderSettings.m_fxaaQuality);
-                m_EditWorldRenderSettings.m_shadowmapResolution = wrsJson.value("shadowmapResolution", m_EditWorldRenderSettings.m_shadowmapResolution);
-                m_EditWorldRenderSettings.m_shadowmapQuality = wrsJson.value("shadowmapQuality", m_EditWorldRenderSettings.m_shadowmapQuality);
-                m_EditWorldRenderSettings.m_shadowViewDistance = wrsJson.value("shadowViewDistance", m_EditWorldRenderSettings.m_shadowViewDistance);
-                m_EditWorldRenderSettings.m_motionBlurScale = wrsJson.value("motionBlurScale", m_EditWorldRenderSettings.m_motionBlurScale);
-                m_EditWorldRenderSettings.m_motionBlurMax = wrsJson.value("motionBlurMax", m_EditWorldRenderSettings.m_motionBlurMax);
-                m_EditWorldRenderSettings.m_motionBlurQuality = wrsJson.value("motionBlurQuality", m_EditWorldRenderSettings.m_motionBlurQuality);
-                m_EditWorldRenderSettings.m_drawShadows = wrsJson.value("drawShadows", m_EditWorldRenderSettings.m_drawShadows);
-                m_EditWorldRenderSettings.m_skyEnable = wrsJson.value("skyEnable", m_EditWorldRenderSettings.m_skyEnable);
-                m_EditWorldRenderSettings.m_sunEnabled = wrsJson.value("sunEnabled", m_EditWorldRenderSettings.m_sunEnabled);
-                m_EditWorldRenderSettings.m_depthOfField = wrsJson.value("depthOfField", m_EditWorldRenderSettings.m_depthOfField);
-                m_EditWorldRenderSettings.m_drawReflection = wrsJson.value("drawReflection", m_EditWorldRenderSettings.m_drawReflection);
+                DeserializeWorldRenderSettings(wrsJson, m_EditWorldRenderSettings);
             }
         }
 
