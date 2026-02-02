@@ -132,11 +132,6 @@ __m128* __fastcall hksub_17A4E90(
 {
     printf("calling compute skybox\n");
 
-    sky->log("sky: ");
-    ground->log("ground: ");
-    sunlight->log("sunlight: ");
-    backLightColor->log("backlight: ");
-
     return osub_17A4E90(a1, sky, ground, sunlight, sunLightDir, sunSize, backLightColor, backLightRotationX, backLightRotationY, backLightSize, skyBoxScale, outSkyBox);
 }
 
