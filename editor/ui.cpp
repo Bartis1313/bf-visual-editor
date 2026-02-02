@@ -508,6 +508,10 @@ void VisualEnvironmentEditor::Render()
             else
             {
                 ImGui::BeginChild("LeftPanel", ImVec2{ 0, 0 }, ImGuiChildFlags_Border | ImGuiChildFlags_ResizeX);
+                ImGui::SameLine();
+                if (ImGui::Button("Scan Names"))
+                    ScanVEDataFromResourceManager();
+
                 RenderStateSelector();
                 ImGui::EndChild();
 
@@ -535,6 +539,12 @@ void VisualEnvironmentEditor::Render()
         if (ImGui::BeginTabItem("Lights"))
         {
             RenderLightsTab();
+            ImGui::EndTabItem();
+        }
+
+        if (ImGui::BeginTabItem("Emitters"))
+        {
+            RenderEmitterTab();
             ImGui::EndTabItem();
         }
 
@@ -748,11 +758,15 @@ void VisualEnvironmentEditor::RenderOutdoorLightComponent(fb::OutdoorLightCompon
 
 void VisualEnvironmentEditor::RenderEnlightenComponent(fb::EnlightenComponentData* e, const fb::EnlightenComponentData* o)
 {
+    ImGui::Text("Disabling is not prefered!\nDisable if you want to set custom ground/sky lights");
+
     BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
     BoolEdit("SkyBox Enable", &e->m_SkyBoxEnable, &o->m_SkyBoxEnable);
 
     if (ImGui::TreeNode("SkyBox Colors##EN"))
     {
+        ImGui::Text("These only work with dynamic envmap or something, I don't know");
+
         Vec3Edit("Sky Color", &e->m_SkyBoxSkyColor, &o->m_SkyBoxSkyColor, true);
         Vec3Edit("Ground Color", &e->m_SkyBoxGroundColor, &o->m_SkyBoxGroundColor, true);
         Vec3Edit("Sun Light Color", &e->m_SkyBoxSunLightColor, &o->m_SkyBoxSunLightColor, true);
@@ -2209,4 +2223,286 @@ void VisualEnvironmentEditor::RenderLightDataEditor(LightDataEntry& entry)
     {
         ApplyLightOverride(entry);
     }
+}
+
+static bool containsIgnoreCase(const std::string& haystack, const std::string& needle)
+{
+    if (needle.empty()) return true;
+
+    auto itr = std::search(haystack.begin(), haystack.end(), needle.begin(), needle.end(),
+        [](char a, char b) { return std::tolower(a) == std::tolower(b); });
+    return itr != haystack.end();
+}
+
+void VisualEnvironmentEditor::RenderEmitterProperties()
+{
+    if (!m_SelectedEmitter)
+    {
+        ImGui::TextDisabled("Select an emitter");
+        return;
+    }
+
+    auto it = m_EmitterMap.find(m_SelectedEmitter);
+    if (it == m_EmitterMap.end())
+        return;
+
+    EmitterEditData& edit = it->second;
+    fb::EmitterTemplateData* d = edit.data;
+
+    if (!edit.captured)
+    {
+        edit.original.CaptureFrom(d);
+        edit.captured = true;
+    }
+
+    const auto& o = edit.original;
+
+    ImGui::Text("%s", edit.name.c_str());
+    if (edit.lastTemplate)
+        ImGui::TextColored(ImVec4{ 0.2f, 0.8f, 0.2f, 1.0f }, "Active");
+    ImGui::Separator();
+
+    if (ImGui::CollapsingHeader("Basic", ImGuiTreeNodeFlags_DefaultOpen))
+    {
+        FloatEdit("Time Scale", &d->m_TimeScale, &o.timeScale);
+        FloatEdit("Lifetime", &d->m_Lifetime, &o.lifetime);
+        UIntEdit("Max Count", &d->m_MaxCount, &o.maxCount);
+        UIntEdit("Lifetime Frames", &d->m_LifetimeFrameCount, &o.lifetimeFrameCount);
+    }
+
+    if (ImGui::CollapsingHeader("Distance & Culling"))
+    {
+        FloatEdit("Max Spawn Distance", &d->m_MaxSpawnDistance, &o.maxSpawnDistance);
+        FloatEdit("Visible After Dist", &d->m_VisibleAfterDistance, &o.visibleAfterDistance);
+        FloatEdit("Culling Factor", &d->m_ParticleCullingFactor, &o.particleCullingFactor);
+        FloatEdit("Mesh Culling Dist", &d->m_MeshCullingDistance, &o.meshCullingDistance);
+        FloatEdit("Min Screen Area", &d->m_MinScreenArea, &o.minScreenArea);
+        FloatEdit("Dist Scale Near", &d->m_DistanceScaleNearValue, &o.distanceScaleNearValue);
+        FloatEdit("Dist Scale Far", &d->m_DistanceScaleFarValue, &o.distanceScaleFarValue);
+        FloatEdit("Dist Scale Length", &d->m_DistanceScaleLength, &o.distanceScaleLength);
+        BoolEdit("Exclusion Volume Cull", &d->m_ExclusionVolumeCullEnable, &o.exclusionVolumeCullEnable);
+    }
+
+    if (ImGui::CollapsingHeader("Lighting"))
+    {
+        FloatEdit("Light Multiplier", &d->m_LightMultiplier, &o.lightMultiplier);
+        FloatEdit("Light Wrap Around", &d->m_LightWrapAroundFactor, &o.lightWrapAroundFactor);
+        FloatEdit("Vertex/Pixel Blend", &d->m_VertexPixelLightingBlendFactor, &o.vertexPixelLightingBlendFactor);
+        FloatEdit("Global/Local Blend", &d->m_GlobalLocalNormalBlendFactor, &o.globalLocalNormalBlendFactor);
+        FloatEdit("Soft Particles Fade", &d->m_SoftParticlesFadeDistanceMultiplier, &o.softParticlesFadeDistanceMultiplier);
+        BoolEdit("Emissive", &d->m_Emissive, &o.emissive);
+    }
+
+    if (ImGui::CollapsingHeader("Point Light"))
+    {
+        BoolEdit("Act As Point Light", &d->m_ActAsPointLight, &o.actAsPointLight);
+        Vec3Edit("Color", &d->m_PointLightColor, &o.pointLightColor, true);
+        Vec4Edit("Intensity", &d->m_PointLightIntensity, &o.pointLightIntensity, false);
+        Vec3Edit("Pivot", &d->m_PointLightPivot, &o.pointLightPivot, false);
+        FloatEdit("Radius", &d->m_PointLightRadius, &o.pointLightRadius);
+        FloatEdit("Min Clamp", &d->m_PointLightMinClamp, &o.pointLightMinClamp);
+        FloatEdit("Max Clamp", &d->m_PointLightMaxClamp, &o.pointLightMaxClamp);
+        FloatEdit("Random Min", &d->m_PointLightRandomIntensityMin, &o.pointLightRandomIntensityMin);
+        FloatEdit("Random Max", &d->m_PointLightRandomIntensityMax, &o.pointLightRandomIntensityMax);
+    }
+
+    if (ImGui::CollapsingHeader("Rendering"))
+    {
+        BoolEdit("Opaque", &d->m_Opaque, &o.opaque);
+        BoolEdit("Force Full Res", &d->m_ForceFullRes, &o.forceFullRes);
+        BoolEdit("Sun Shadow", &d->m_TransparencySunShadowEnable, &o.transparencySunShadowEnable);
+        BoolEdit("Force Nice Sorting", &d->m_ForceNiceSorting, &o.forceNiceSorting);
+    }
+
+    if (ImGui::CollapsingHeader("Behavior"))
+    {
+        BoolEdit("Local Space", &d->m_LocalSpace, &o.localSpace);
+        BoolEdit("Follow Spawn Source", &d->m_FollowSpawnSource, &o.followSpawnSource);
+        BoolEdit("Repeat Spawning", &d->m_RepeatParticleSpawning, &o.repeatParticleSpawning);
+        BoolEdit("Kill With Emitter", &d->m_KillParticlesWithEmitter, &o.killParticlesWithEmitter);
+    }
+
+    if (ImGui::CollapsingHeader("Color Processor"))
+    {
+        RenderColorProcessor(edit);
+    }
+
+    ImGui::Separator();
+    if (ImGui::Button("Reset"))
+        edit.original.RestoreTo(d);
+}
+
+void VisualEnvironmentEditor::RenderColorProcessor(EmitterEditData& edit)
+{
+    fb::EmitterTemplate* t = edit.lastTemplate;
+    if (!t)
+    {
+        ImGui::TextDisabled("No active instance - trigger its spawn or wait");
+        return;
+    }
+
+    auto* colorProc = t->getProcessor<fb::UpdateColorData>(fb::ProcessorType::PtUpdateColor);
+    if (!colorProc)
+    {
+        ImGui::TextDisabled("No color processor");
+        return;
+    }
+
+    if (!edit.colorCaptured)
+    {
+        edit.originalColor.CaptureFrom(t);
+        edit.colorCaptured = true;
+    }
+
+    const auto& oc = edit.originalColor;
+    Vec3Edit("Base Color", &colorProc->m_Color, &oc.color, true);
+
+    if (!colorProc->m_Pre)
+        return;
+
+    fb::TypeInfo* preType = colorProc->m_Pre->GetType();
+    if (!preType || preType->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+        return;
+
+    auto* classInfo = static_cast<fb::ClassInfo*>(preType);
+    if (classInfo->m_ClassId != fb::PolynomialColorInterpData::ClassId())
+        return;
+
+    auto* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
+    ImGui::Separator();
+    ImGui::Text("Polynomial Interpolation");
+    Vec3Edit("Color 0", &poly->m_Color0, &oc.color0, true);
+    Vec3Edit("Color 1", &poly->m_Color1, &oc.color1, true);
+    Vec4Edit("Coefficients", &poly->m_Coefficients, &oc.coefficients, false);
+}
+
+std::pair<size_t, size_t> VisualEnvironmentEditor::CountEmittersInNode(const EmitterTreeNode& node)
+{
+    size_t total = node.emitters.size();
+    size_t active = 0;
+
+    for (fb::EmitterTemplateData* data : node.emitters)
+    {
+        auto itr = m_EmitterMap.find(data);
+        if (itr != m_EmitterMap.end() && itr->second.lastTemplate)
+            active++;
+    }
+
+    for (const auto& [name, child] : node.children)
+    {
+        auto [childTotal, childActive] = CountEmittersInNode(child);
+        total += childTotal;
+        active += childActive;
+    }
+
+    return { total, active };
+}
+
+bool VisualEnvironmentEditor::NodeHasMatch(const EmitterTreeNode& node, const char* search)
+{
+    for (fb::EmitterTemplateData* data : node.emitters)
+    {
+        auto itr = m_EmitterMap.find(data);
+        if (itr != m_EmitterMap.end() && containsIgnoreCase(itr->second.name, search))
+            return true;
+    }
+    for (const auto& [name, child] : node.children)
+    {
+        if (NodeHasMatch(child, search))
+            return true;
+    }
+    return false;
+}
+
+void VisualEnvironmentEditor::RenderEmitterTreeNode(EmitterTreeNode& node)
+{
+    const char* search = m_EmitterSearchBuf;
+    bool isSearching = search[0] != '\0';
+
+    for (auto& [name, child] : node.children)
+    {
+        if (isSearching && !NodeHasMatch(child, search))
+            continue;
+
+        auto [total, active] = CountEmittersInNode(child);
+
+        char label[256];
+        sprintf_s(label, sizeof(label), active > 0 ? "%s (%u/%u)" : "%s (%u)", name.c_str(), active > 0 ? active : total, total);
+
+        if (active > 0)
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.2f, 0.8f, 0.2f, 1.0f));
+
+        ImGuiTreeNodeFlags flags = isSearching ? ImGuiTreeNodeFlags_DefaultOpen : ImGuiTreeNodeFlags_None;
+        bool open = ImGui::TreeNodeEx(label, flags);
+
+        if (active > 0)
+            ImGui::PopStyleColor();
+
+        if (open)
+        {
+            RenderEmitterTreeNode(child);
+            ImGui::TreePop();
+        }
+    }
+
+    for (fb::EmitterTemplateData* data : node.emitters)
+    {
+        auto itr = m_EmitterMap.find(data);
+        if (itr == m_EmitterMap.end())
+            continue;
+
+        if (isSearching && !containsIgnoreCase(itr->second.name, search))
+            continue;
+
+        RenderEmitterSelectable(data, itr->second);
+    }
+}
+
+void VisualEnvironmentEditor::RenderEmitterSelectable(fb::EmitterTemplateData* data, EmitterEditData& edit)
+{
+    bool isActive = edit.lastTemplate != nullptr;
+
+    const char* displayName = edit.name.c_str();
+    if (size_t pos = edit.name.find_last_of('/'); pos != std::string::npos)
+        displayName = edit.name.c_str() + pos + 1;
+
+    if (isActive)
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4{ 0.2f, 0.8f, 0.2f, 1.0f });
+
+    if (ImGui::Selectable(displayName, m_SelectedEmitter == data))
+        m_SelectedEmitter = data;
+
+    if (isActive)
+        ImGui::PopStyleColor();
+
+    if (ImGui::IsItemHovered())
+    {
+        ImGui::BeginTooltip();
+        ImGui::TextUnformatted(edit.name.c_str());
+        if (isActive)
+            ImGui::TextColored(ImVec4{ 0.2f, 0.8f, 0.2f, 1.0f }, "Active");
+        ImGui::EndTooltip();
+    }
+}
+
+void VisualEnvironmentEditor::RenderEmitterTab()
+{
+    if (ImGui::Button("Scan"))
+        ScanEmitters();
+
+    ImGui::SameLine();
+    ImGui::Text("(%zu)", m_EmitterMap.size());
+
+    ImGui::InputText("Search", m_EmitterSearchBuf, sizeof(m_EmitterSearchBuf));
+    ImGui::Separator();
+
+    ImGui::BeginChild("EmitterList", ImVec2(350, 0), ImGuiChildFlags_ResizeX);
+    RenderEmitterTreeNode(m_EmitterTree);
+    ImGui::EndChild();
+
+    ImGui::SameLine();
+
+    ImGui::BeginChild("EmitterProps", ImVec2(0, 0), true);
+    RenderEmitterProperties();
+    ImGui::EndChild();
 }

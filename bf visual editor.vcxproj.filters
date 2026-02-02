@@ -45,6 +45,9 @@
     <ClInclude Include="editor\types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SDK\sdkfb3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -85,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\2.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

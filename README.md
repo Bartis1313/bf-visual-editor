@@ -5,6 +5,7 @@ old project, recoded now and uses dynamic states
 - Edit whole VisualEnvironment + force its states
 - Edit WorldRenderSettings
 - Capture entities on runtime (you better load all resources for this to work correctly)
+- Edit every effect (WIP)
 - Tries to capture original values (not perfect after all)
 - Config per map
 

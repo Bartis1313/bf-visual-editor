@@ -979,6 +979,20 @@ namespace fb
 		bool m_disableInput;
 	};
 
+	class GameTime
+	{
+	public:
+		unsigned int m_ticks;
+		unsigned int m_tickFrequency;
+		unsigned int m_tickIndexInFrame;
+		unsigned int m_lastTickIndexInFrame;
+		unsigned int m_tickCountInFrame;
+		float m_deltaTime;
+		float m_passedDeltaTimeInFrame;
+		long double m_time;
+		bool m_useVariableDeltaTime;
+	};
+
 	class GameContext
 	{
 	public:
@@ -1356,7 +1370,91 @@ namespace fb
 		class WorldRenderer* m_worldRenderer;
 		bool m_fmvPlaying;
 		bool m_worldEnable;
+		char pad[0x2];
+		class EnlightenRenderer* m_enlightenRenderer;
 	};
+
+	class EnlightenRenderer
+	{
+	public:
+		enum EnlightenState : __int32
+		{
+			EnlightenState_Dynamic = 0x0,
+			EnlightenState_Static = 0x1,
+			EnlightenState_Disabled = 0x2,
+		};
+
+		char pad_0000[12]; //0x0000
+		EnlightenState state; //0x000C
+		char pad_0010[472]; //0x0010
+		class EnlightenRuntimeSettings* m_runtimeSettings; //0x01E8
+	};
+
+	class SystemSettings : public DataContainer
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 2444;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x023C2760;
+		}
+		char* m_Name; //0x0008
+	};//Size=0x000C
+
+	class EnlightenRuntimeSettings : public SystemSettings
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 2445;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x02405A88;
+		}
+		char _0x000C[4];
+		Vec3 m_AlbedoDefaultColor; //0x0010
+		float m_LocalLightForceRadius; //0x0020
+		__int32 m_DrawDebugSystemDependenciesEnable; //0x0024
+		float m_TemporalCoherenceThreshold; //0x0028
+		float m_SkyBoxScale; //0x002C
+		unsigned __int32 m_MinSystemUpdateCount; //0x0030
+		unsigned __int32 m_JobCount; //0x0034
+		__int32 m_DrawDebugSystemBoundingBoxEnable; //0x0038
+		unsigned __int32 m_LightProbeMaxUpdateSolveCount; //0x003C
+		float m_DrawDebugLightProbeSize; //0x0040
+		bool m_CompensateSunShadowHeightScale; //0x0044
+		bool m_SaveRadiosityTexturesEnable; //0x0045
+		bool m_ShadowsEnable; //0x0046
+		bool m_LightMapsEnable; //0x0047
+		bool m_LocalLightsEnable; //0x0048
+		bool m_LocalLightCullingEnable; //0x0049
+		bool m_LocalLightCustumFalloff; //0x004A
+		bool m_LightProbeForceUpdate; //0x004B
+		bool m_ForceDynamic; //0x004C
+		bool m_DrawDebugSystemsEnable; //0x004D
+		bool m_LightProbeEnable; //0x004E
+		bool m_LightProbeJobsEnable; //0x004F
+		bool m_DrawDebugLightProbes; //0x0050
+		bool m_DrawDebugLightProbeOcclusion; //0x0051
+		bool m_DrawDebugLightProbeStats; //0x0052
+		bool m_DrawDebugLightProbeBoundingBoxes; //0x0053
+		bool m_Enable; //0x0054
+		bool m_DrawSolveTaskPerformance; //0x0055
+		bool m_DrawDebugColoringEnable; //0x0056
+		bool m_DrawDebugTextures; //0x0057
+		bool m_DrawDebugBackFaces; //0x0058
+		bool m_DrawDebugTargetMeshes; //0x0059
+		bool m_DrawWarningsEnable; //0x005A
+		bool m_AlbedoForceUpdateEnable; //0x005B
+		bool m_AlbedoForceColorEnable; //0x005C
+		bool m_DrawDebugEntities; //0x005D
+		bool m_TerrainMapEnable; //0x005E
+		bool m_EmissiveEnable; //0x005F
+	};//Size=0x0060
 
 	class ClientLevel
 	{
@@ -2367,4 +2465,256 @@ namespace fb
 		}
 	};//Size=0x0024
 
+	enum EmittableType
+	{
+		Point, //0x0000
+		Quad, //0x0001
+		ScreenAlignedQuad, //0x0002
+		DirectionAlignedQuad, //0x0003
+		WorldAlignedQuad, //0x0004
+		Trail, //0x0005
+		ParticleMesh, //0x0006
+		EmittableTypeCount //0x0007
+	};
+
+	class EmitterComponentData : public DataContainer
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 805;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x02407480;
+		}
+	};//Size=0x0008
+
+	enum EmittableField
+	{
+		EfZero, //0x0000
+		EfOne, //0x0001
+		EfNormTime, //0x0002
+		EfEmitterNormTime, //0x0003
+		EfSpawnAnimationSpeed, //0x0004
+		EfSpawnAnimationFrameIndex, //0x0005
+		EfVelocity, //0x0006
+		EfParameters, //0x0007
+		EfRotation, //0x0008
+		EfSpeed, //0x0009
+		EfUserDefined, //0x000A
+		EfConstantFloat, //0x000B
+		EfConstantVec, //0x000C
+		EfNone //0x000D
+	};
+
+	class ProcessorData : public EmitterComponentData
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 818;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x024074AC;
+		}
+		char _0x0008[8];
+		Vec4 m_DefaultValues; //0x0010
+		ProcessorData* m_NextProcessor; //0x0020
+		class EmitterComponentData* m_Pre; //0x0024
+		EmittableField m_EvaluatorInput; //0x0028
+		bool m_Enable; //0x002C
+		char _0x002D[3];
+	};//Size=0x0030
+
+	class EmitterTemplateData : public DataContainer
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 804;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x02407504;
+		}
+		char _0x0008[8];
+		Vec4 m_PointLightIntensity; //0x0010
+		Vec3 m_PointLightPivot; //0x0020
+		Vec3 m_PointLightColor; //0x0030
+		unsigned __int32 m_MaxCount; //0x0040
+		char* m_Name; //0x0044
+		float m_TimeScale; //0x0048
+		unsigned __int32 m_LifetimeFrameCount; //0x004C
+		float m_Lifetime; //0x0050
+		class ProcessorData* m_RootProcessor; //0x0054
+		float m_VisibleAfterDistance; //0x0058
+		Array<float> m_ZOcclusionLookup; //0x005C
+		EmittableType m_EmittableType; //0x0060
+		class MeshAsset* m_Mesh; //0x0064
+		float m_DistanceScaleNearValue; //0x0068
+		float m_PointLightRadius; //0x006C
+		float m_VertexPixelLightingBlendFactor; //0x0070
+		float m_GlobalLocalNormalBlendFactor; //0x0074
+		float m_SoftParticlesFadeDistanceMultiplier; //0x0078
+		float m_LightWrapAroundFactor; //0x007C
+		float m_LightMultiplier; //0x0080
+		float m_DistanceScaleFarValue; //0x0084
+		float m_PointLightRandomIntensityMin; //0x0088
+		float m_MeshCullingDistance; //0x008C
+		float m_PointLightRandomIntensityMax; //0x0090
+		float m_MaxSpawnDistance; //0x0094
+		float m_MinScreenArea; //0x0098
+		float m_DistanceScaleLength; //0x009C
+		float m_PointLightMaxClamp; //0x00A0
+		float m_ParticleCullingFactor; //0x00A4
+		float m_PointLightMinClamp; //0x00A8
+		bool m_FollowSpawnSource; //0x00AC
+		bool m_RepeatParticleSpawning; //0x00AD
+		bool m_Emissive; //0x00AE
+		bool m_ExclusionVolumeCullEnable; //0x00AF
+		bool m_TransparencySunShadowEnable; //0x00B0
+		bool m_ForceFullRes; //0x00B1
+		bool m_LocalSpace; //0x00B2
+		bool m_Opaque; //0x00B3
+		bool m_ActAsPointLight; //0x00B4
+		bool m_KillParticlesWithEmitter; //0x00B5
+		bool m_ForceNiceSorting; //0x00B6
+		char _0x00B7[9];
+	};//Size=0x00C0
+
+	class UpdateColorData : public ProcessorData
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 827;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x02407210;
+		}
+		Vec3 m_Color; //0x0030
+	};//Size=0x0040
+
+	enum EmitterParameter
+	{
+		EmitterParameterNone, //0x0000
+		EmitterParameter1, //0x0001
+		EmitterParameter2, //0x0002
+		EmitterParameter3, //0x0003
+		EmitterParameterVec, //0x0004
+		EmitterParameterVecAverage, //0x0005
+		EmitterParameterDistance, //0x0006
+		EmitterParameter4 //0x0007
+	};
+
+	class EvaluatorData : public EmitterComponentData
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 806;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x024074D8;
+		}
+		EmitterParameter m_EmitterParameter; //0x0008
+	};//Size=0x000C
+
+	class PolynomialColorInterpData : public EvaluatorData
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 807;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x0240778C;
+		}
+		char _0x000C[4];
+		Vec3 m_Color0; //0x0010
+		Vec3 m_Color1; //0x0020
+		Vec4 m_Coefficients; //0x0030
+	};//Size=0x0040
+
+	enum ProcessorType
+	{
+		PtBaseEmitter, //0x0000
+		PtSpawnRate, //0x0001
+		PtSpawnSpeed, //0x0002
+		PtSpawnPosition, //0x0003
+		PtSpawnDirection, //0x0004
+		PtSpawnSize, //0x0005
+		PtSpawnAnimation, //0x0006
+		PtSpawnAnimationFrame, //0x0007
+		PtSpawnRotation, //0x0008
+		PtSpawnOrientation, //0x0009
+		PtSpawnRotationSpeed, //0x000A
+		PtUpdatePosition, //0x000B
+		PtUpdateAge, //0x000C
+		PtTurbulance, //0x000D
+		PtGravity, //0x000E
+		PtLocalForce, //0x000F
+		PtAirResistance, //0x0010
+		PtUpdateLinearVelocity, //0x0011
+		PtUpdateOrientation, //0x0012
+		PtEmitter, //0x0013
+		PtUpdateColor, //0x0014
+		PtUpdateColorLeaf, //0x0015
+		PtUpdateTransparency, //0x0016
+		PtUpdateTextureCoords, //0x0017
+		PtUpdateRotation, //0x0018
+		PtUpdateSizeX, //0x0019
+		PtUpdateSizeY, //0x001A
+		PtUpdateSizeZ, //0x001B
+		PtUpdateSize, //0x001C
+		PtUpdateAlphaLevelMin, //0x001D
+		PtUpdateAlphaLevelMax, //0x001E
+		PtUpdateAlphaLevelScale, //0x001F
+		PtUpdateClipScale, //0x0020
+		PtUpdateCameraProximity, //0x0021
+		ProcessorTypeCount //0x0022
+	};
+
+	class EmitterTemplate
+	{
+	public:
+		char pad[0x14];
+		eastl::vector<fb::ProcessorData*> m_processors;
+		unsigned __int8 m_processorIndices[ProcessorTypeCount];
+		char pad3[0x2];
+		fb::Vec2 m_uvPos;
+		fb::Vec2 m_uvSize;
+		fb::Vec2 m_uvPosNm;
+		fb::Vec2 m_uvSizeNm;
+
+		template<typename T, typename E>
+		requires std::is_enum_v<E>
+		T* getProcessor(E e)
+		{
+			unsigned __int8 v1{ };
+			v1 = m_processorIndices[e];
+			if (v1 == 0xFF)
+				return nullptr;
+
+			return (T*)m_processors.begin()[v1];
+		}
+	};
+
+	class IKeyboard
+	{
+	public:
+		virtual void init();	// V: 0x0
+		virtual void release();	// V: 0x4
+		virtual void preFrameUpdate(float);	// V: 0x8
+		virtual void update(float);	// V: 0xC
+		virtual bool isDown(int);	// V: 0x10
+		virtual bool wentDown(int);	// V: 0x14
+		virtual bool wentUp(int);	// V: 0x18
+		virtual void enableTypingMode(bool);	// V: 0x1C
+	};
 }

@@ -75,6 +75,8 @@ public:
     void AddOrUpdateEditEntry(fb::VisualEnvironmentState* state, const StateEditData& data);
     void RemoveEditEntry(const StateHash& hash);
 
+    void ScanEmitters();
+    void OnEmitterCreated(fb::EmitterTemplate* emitter, fb::EmitterTemplateData* data);
 private:
     VisualEnvironmentEditor();
     ~VisualEnvironmentEditor() = default;
@@ -256,6 +258,21 @@ private:
     ImVec4 m_ModifiedColor = ImVec4{ 1.0f, 0.8f, 0.2f, 1.0f };
     ImVec4 m_OriginalColor = ImVec4{ 0.5f, 0.8f, 1.0f, 1.0f };
 
+    std::unordered_map<fb::EmitterTemplateData*, EmitterEditData> m_EmitterMap;
+    fb::EmitterTemplateData* m_SelectedEmitter = nullptr;
+    EmitterTreeNode m_EmitterTree;
+    char m_EmitterSearchBuf[64] = {};
+    bool m_EmittersScanned = false;
+    void InsertIntoTree(fb::EmitterTemplateData* data, const std::string& fullPath);
+
+    void RenderEmitterTab();
+    void RenderEmitterTreeNode(EmitterTreeNode& node);
+    void RenderEmitterSelectable(fb::EmitterTemplateData* data, EmitterEditData& edit);
+    void RenderEmitterProperties();
+    std::pair<size_t, size_t> CountEmittersInNode(const EmitterTreeNode& node);
+    void RenderColorProcessor(EmitterEditData& edit);
+    bool NodeHasMatch(const EmitterTreeNode& node, const char* search);
+
     void RenderMenuBar();
     void RenderStatusBar();
     void RenderStateSelector();
@@ -312,7 +329,7 @@ bool VisualEnvironmentEditor::EnumCombo(const char* label, int* c, const int* o)
 {
     using NamesType = std::decay_t<decltype(magic_enum::enum_names<E>())>;
     const auto names = magic_enum::enum_names<E>();
-    const auto count = magic_enum::enum_count<E>();
+    constexpr auto count = magic_enum::enum_count<E>();
 
     bool mod = *c != *o;
     if (mod && m_HighlightModified)
@@ -360,7 +377,7 @@ bool VisualEnvironmentEditor::EnumCombo(const char* label, int* c)
 {
     using NamesType = std::decay_t<decltype(magic_enum::enum_names<E>())>;
     const auto names = magic_enum::enum_names<E>();
-    const auto count = magic_enum::enum_count<E>();
+    constexpr auto count = magic_enum::enum_count<E>();
 
     auto getter = [](void* data, int idx, const char** out_text) -> bool
         {

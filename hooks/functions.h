@@ -150,6 +150,54 @@ typedef void(__thiscall* tfb__VisualEnvironmentEntityDestrsub_F7A7E0)(fb::Visual
 inline tfb__VisualEnvironmentEntityDestrsub_F7A7E0 ofb__VisualEnvironmentEntityDestrsub_F7A7E0 = 0;
 void __fastcall hkfb__VisualEnvironmentEntityDestrsub_F7A7E0(fb::VisualEnvironmentEntity* _this);
 
+typedef int (__thiscall* tsub_1880390)(char* _this, int a2, fb::EmitterTemplateData* a3, char a4);
+inline tsub_1880390 osub_1880390 = 0;
+int __fastcall hksub_1880390(char* _this, void*, int a2, fb::EmitterTemplateData* a3, char a4);
+
+typedef fb::EmitterTemplate* (__thiscall* tfb__EmitterManager__createEmitterTemplate)(void* _this, fb::EmitterTemplateData* data);
+inline tfb__EmitterManager__createEmitterTemplate ofb__EmitterManager__createEmitterTemplate = 0;
+fb::EmitterTemplate* __fastcall hkfb__EmitterManager__createEmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data);
+
+typedef void(__thiscall* tfb__EmitterTemplate__EmitterTemplate)(void* _this, fb::EmitterTemplateData* data);
+inline tfb__EmitterTemplate__EmitterTemplate ofb__EmitterTemplate__EmitterTemplate = 0;
+void __fastcall hkfb__EmitterTemplate__EmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data);
+
+typedef int (__thiscall* tsub_17B0180)(fb::EnlightenRenderer* _this, int a2, __m128** a3, int a4, int a5);
+inline tsub_17B0180 osub_17B0180 = 0;
+int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5);
+
+typedef __m128* (__thiscall* tsub_17A4E90)(
+    fb::EnlightenRenderer* a1,
+    fb::Vec3* sky,
+    fb::Vec3* ground,
+    fb::Vec3* sunlight,
+    fb::Vec3 sunLightDir,
+    float sunSize,
+    fb::Vec3* backLightColor,
+    float backLightRotationX,
+    float backLightRotationY,
+    float backLightSize,
+    unsigned int skyBoxScale,
+    __m128* outSkyBox);
+
+inline tsub_17A4E90 osub_17A4E90 = 0;
+
+__m128* __fastcall hksub_17A4E90(
+    fb::EnlightenRenderer* a1,
+    void*,
+    fb::Vec3* sky,
+    fb::Vec3* ground,
+    fb::Vec3* sunlight,
+    fb::Vec3 sunLightDir,
+    float sunSize,
+    fb::Vec3* backLightColor,
+    float backLightRotationX,
+    float backLightRotationY,
+    float backLightSize,
+    unsigned int skyBoxScale,
+    __m128* outSkyBox);
+
+
 typedef HRESULT(__stdcall* tResizeBuffers)(
     IDXGISwapChain*,
     UINT,

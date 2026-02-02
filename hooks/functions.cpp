@@ -83,6 +83,63 @@ void __fastcall hkfb__VisualEnvironmentEntityDestrsub_F7A7E0(fb::VisualEnvironme
     ofb__VisualEnvironmentEntityDestrsub_F7A7E0(_this);
 }
 
+int __fastcall hksub_1880390(char* _this, void*, int a2, fb::EmitterTemplateData* a3, char a4)
+{
+    auto ret = osub_1880390(_this, a2, a3, a4);
+
+    return ret;
+}
+
+void __fastcall hkfb__EmitterTemplate__EmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data)
+{
+    if (data && data->m_Name)
+    {
+
+    }
+
+    ofb__EmitterTemplate__EmitterTemplate(_this, data);
+}
+
+fb::EmitterTemplate* __fastcall hkfb__EmitterManager__createEmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data)
+{
+    auto emitter = ofb__EmitterManager__createEmitterTemplate(_this, data);
+    
+    VisualEnvironmentEditor::Instance().OnEmitterCreated(emitter, data);
+
+    return emitter;
+}
+
+int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5)
+{
+    //_this->state = 0;
+    return osub_17B0180(_this, a2, a3, a4, a5);
+}
+
+__m128* __fastcall hksub_17A4E90(
+    fb::EnlightenRenderer* a1,
+    void*,
+    fb::Vec3* sky,
+    fb::Vec3* ground,
+    fb::Vec3* sunlight,
+    fb::Vec3 sunLightDir,
+    float sunSize,
+    fb::Vec3* backLightColor,
+    float backLightRotationX,
+    float backLightRotationY,
+    float backLightSize,
+    unsigned int skyBoxScale,
+    __m128* outSkyBox)
+{
+    printf("calling compute skybox\n");
+
+    sky->log("sky: ");
+    ground->log("ground: ");
+    sunlight->log("sunlight: ");
+    backLightColor->log("backlight: ");
+
+    return osub_17A4E90(a1, sky, ground, sunlight, sunLightDir, sunSize, backLightColor, backLightRotationX, backLightRotationY, backLightSize, skyBoxScale, outSkyBox);
+}
+
 void InitImGui(IDXGISwapChain* pSwapChain)
 {
     if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&g_pDevice)))
@@ -149,6 +206,7 @@ LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
         enabled = !enabled;
 
         fb::BorderInputNode::GetInstance()->m_mouse->enableCursorMode(enabled, 1);
+        fb::BorderInputNode::GetInstance()->m_keyboard->enableTypingMode(enabled);
 
         return 0;
     }

@@ -412,3 +412,217 @@ struct VisualEnvironmentGlobalData
         return c;
     }
 };
+
+struct EmitterEditData
+{
+    fb::EmitterTemplateData* data = nullptr;
+    fb::EmitterTemplate* lastTemplate = nullptr;
+    std::string name;
+    std::string category;
+
+    struct Snapshot
+    {
+        fb::Vec4 pointLightIntensity;
+        fb::Vec3 pointLightPivot;
+        fb::Vec3 pointLightColor;
+        unsigned int maxCount;
+        unsigned int lifetimeFrameCount;
+        float timeScale;
+        float lifetime;
+        float visibleAfterDistance;
+        float distanceScaleNearValue;
+        float pointLightRadius;
+        float vertexPixelLightingBlendFactor;
+        float globalLocalNormalBlendFactor;
+        float softParticlesFadeDistanceMultiplier;
+        float lightWrapAroundFactor;
+        float lightMultiplier;
+        float distanceScaleFarValue;
+        float pointLightRandomIntensityMin;
+        float meshCullingDistance;
+        float pointLightRandomIntensityMax;
+        float maxSpawnDistance;
+        float minScreenArea;
+        float distanceScaleLength;
+        float pointLightMaxClamp;
+        float particleCullingFactor;
+        float pointLightMinClamp;
+        fb::EmittableType emittableType;
+        bool followSpawnSource;
+        bool repeatParticleSpawning;
+        bool emissive;
+        bool exclusionVolumeCullEnable;
+        bool transparencySunShadowEnable;
+        bool forceFullRes;
+        bool localSpace;
+        bool opaque;
+        bool actAsPointLight;
+        bool killParticlesWithEmitter;
+        bool forceNiceSorting;
+
+        void CaptureFrom(const fb::EmitterTemplateData* d)
+        {
+            pointLightIntensity = d->m_PointLightIntensity;
+            pointLightPivot = d->m_PointLightPivot;
+            pointLightColor = d->m_PointLightColor;
+            maxCount = d->m_MaxCount;
+            lifetimeFrameCount = d->m_LifetimeFrameCount;
+            timeScale = d->m_TimeScale;
+            lifetime = d->m_Lifetime;
+            visibleAfterDistance = d->m_VisibleAfterDistance;
+            distanceScaleNearValue = d->m_DistanceScaleNearValue;
+            pointLightRadius = d->m_PointLightRadius;
+            vertexPixelLightingBlendFactor = d->m_VertexPixelLightingBlendFactor;
+            globalLocalNormalBlendFactor = d->m_GlobalLocalNormalBlendFactor;
+            softParticlesFadeDistanceMultiplier = d->m_SoftParticlesFadeDistanceMultiplier;
+            lightWrapAroundFactor = d->m_LightWrapAroundFactor;
+            lightMultiplier = d->m_LightMultiplier;
+            distanceScaleFarValue = d->m_DistanceScaleFarValue;
+            pointLightRandomIntensityMin = d->m_PointLightRandomIntensityMin;
+            meshCullingDistance = d->m_MeshCullingDistance;
+            pointLightRandomIntensityMax = d->m_PointLightRandomIntensityMax;
+            maxSpawnDistance = d->m_MaxSpawnDistance;
+            minScreenArea = d->m_MinScreenArea;
+            distanceScaleLength = d->m_DistanceScaleLength;
+            pointLightMaxClamp = d->m_PointLightMaxClamp;
+            particleCullingFactor = d->m_ParticleCullingFactor;
+            pointLightMinClamp = d->m_PointLightMinClamp;
+            emittableType = d->m_EmittableType;
+            followSpawnSource = d->m_FollowSpawnSource;
+            repeatParticleSpawning = d->m_RepeatParticleSpawning;
+            emissive = d->m_Emissive;
+            exclusionVolumeCullEnable = d->m_ExclusionVolumeCullEnable;
+            transparencySunShadowEnable = d->m_TransparencySunShadowEnable;
+            forceFullRes = d->m_ForceFullRes;
+            localSpace = d->m_LocalSpace;
+            opaque = d->m_Opaque;
+            actAsPointLight = d->m_ActAsPointLight;
+            killParticlesWithEmitter = d->m_KillParticlesWithEmitter;
+            forceNiceSorting = d->m_ForceNiceSorting;
+        }
+        void RestoreTo(fb::EmitterTemplateData* d) const
+        {
+            d->m_PointLightIntensity = pointLightIntensity;
+            d->m_PointLightPivot = pointLightPivot;
+            d->m_PointLightColor = pointLightColor;
+            d->m_MaxCount = maxCount;
+            d->m_LifetimeFrameCount = lifetimeFrameCount;
+            d->m_TimeScale = timeScale;
+            d->m_Lifetime = lifetime;
+            d->m_VisibleAfterDistance = visibleAfterDistance;
+            d->m_DistanceScaleNearValue = distanceScaleNearValue;
+            d->m_PointLightRadius = pointLightRadius;
+            d->m_VertexPixelLightingBlendFactor = vertexPixelLightingBlendFactor;
+            d->m_GlobalLocalNormalBlendFactor = globalLocalNormalBlendFactor;
+            d->m_SoftParticlesFadeDistanceMultiplier = softParticlesFadeDistanceMultiplier;
+            d->m_LightWrapAroundFactor = lightWrapAroundFactor;
+            d->m_LightMultiplier = lightMultiplier;
+            d->m_DistanceScaleFarValue = distanceScaleFarValue;
+            d->m_PointLightRandomIntensityMin = pointLightRandomIntensityMin;
+            d->m_MeshCullingDistance = meshCullingDistance;
+            d->m_PointLightRandomIntensityMax = pointLightRandomIntensityMax;
+            d->m_MaxSpawnDistance = maxSpawnDistance;
+            d->m_MinScreenArea = minScreenArea;
+            d->m_DistanceScaleLength = distanceScaleLength;
+            d->m_PointLightMaxClamp = pointLightMaxClamp;
+            d->m_ParticleCullingFactor = particleCullingFactor;
+            d->m_PointLightMinClamp = pointLightMinClamp;
+            d->m_EmittableType = emittableType;
+            d->m_FollowSpawnSource = followSpawnSource;
+            d->m_RepeatParticleSpawning = repeatParticleSpawning;
+            d->m_Emissive = emissive;
+            d->m_ExclusionVolumeCullEnable = exclusionVolumeCullEnable;
+            d->m_TransparencySunShadowEnable = transparencySunShadowEnable;
+            d->m_ForceFullRes = forceFullRes;
+            d->m_LocalSpace = localSpace;
+            d->m_Opaque = opaque;
+            d->m_ActAsPointLight = actAsPointLight;
+            d->m_KillParticlesWithEmitter = killParticlesWithEmitter;
+            d->m_ForceNiceSorting = forceNiceSorting;
+        }
+    };
+
+    // this should be probably vec snapshot, since access will be easier, not just for colors
+    struct ColorSnapshot
+    {
+        bool hasColorProcessor = false;
+        bool hasPolynomial = false;
+
+        fb::Vec3 color;
+        fb::Vec3 color0;
+        fb::Vec3 color1;
+        fb::Vec4 coefficients;
+
+        void CaptureFrom(fb::EmitterTemplate* emitter)
+        {
+            hasColorProcessor = false;
+            hasPolynomial = false;
+
+            if (!emitter)
+                return;
+
+            fb::UpdateColorData* colorProc = emitter->getProcessor<fb::UpdateColorData>(fb::ProcessorType::PtUpdateColor);
+            if (!colorProc)
+                return;
+
+            hasColorProcessor = true;
+            color = colorProc->m_Color;
+
+            if (colorProc->m_Pre && colorProc->m_Pre->GetType())
+            {
+                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(colorProc->m_Pre->GetType());
+                if (classInfo->m_ClassId == fb::PolynomialColorInterpData::ClassId())
+                {
+                    hasPolynomial = true;
+                    fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
+                    color0 = poly->m_Color0;
+                    color1 = poly->m_Color1;
+                    coefficients = poly->m_Coefficients;
+                }
+            }
+
+        }
+        void RestoreTo(fb::EmitterTemplate* emitter) const
+        {
+            if (!emitter || !hasColorProcessor)
+                return;
+
+            fb::UpdateColorData* colorProc = emitter->getProcessor<fb::UpdateColorData>(fb::ProcessorType::PtUpdateColor);
+            if (!colorProc)
+                return;
+
+            colorProc->m_Color = color;
+
+            if (hasPolynomial && colorProc->m_Pre)
+            {
+                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(colorProc->m_Pre->GetType());
+                if (classInfo->m_ClassId == fb::PolynomialColorInterpData::ClassId())
+                {
+                    fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
+                    poly->m_Color0 = color0;
+                    poly->m_Color1 = color1;
+                    poly->m_Coefficients = coefficients;
+                }
+            }
+
+        }
+    };
+
+    Snapshot original;
+    ColorSnapshot originalColor;
+    bool captured = false;
+    bool colorCaptured = false;
+};
+
+struct EmitterTreeNode
+{
+    std::string name;
+    std::map<std::string, EmitterTreeNode> children;
+    std::vector<fb::EmitterTemplateData*> emitters;
+
+    void Clear()
+    {
+        children.clear();
+        emitters.clear();
+    }
+};

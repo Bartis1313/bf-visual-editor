@@ -172,6 +172,8 @@ void VisualEnvironmentEditor::OnLevelUnloading()
     ClearLightData();
     m_GlobalVEData.Reset();
 
+    m_SelectedEmitter = nullptr;
+
     SetEditorState(EditorState::Unloading);
 }
 
@@ -312,6 +314,7 @@ void VisualEnvironmentEditor::OnManagerUpdateBegin(fb::VisualEnvironmentManager*
         m_HasCapturedWorldRenderSettings = false;
         m_CapturedMapName.clear();
         ClearLightData();
+
         SetEditorState(EditorState::Ready);
     }
 
@@ -330,16 +333,11 @@ void VisualEnvironmentEditor::OnManagerUpdateBegin(fb::VisualEnvironmentManager*
             m_HasCapturedOriginals = true;
             CaptureWorldRenderSettings();
 
-            if (!m_LightDataScanned)
-            {
-                ScanAllLightData();
-                ScanExistingLightEntities();
-            }
 
-            if (!m_VEDataScanned)
-            {
-                ScanVEDataFromResourceManager();
-            }
+            ScanAllLightData();
+            ScanExistingLightEntities();
+            ScanVEDataFromResourceManager();
+            ScanEmitters();
 
             SetEditorState(EditorState::Active);
 
@@ -458,6 +456,8 @@ void VisualEnvironmentEditor::OnVisualEnvironmentEntityCreated(fb::VisualEnviron
     if (itr != m_VEDataNameMap.end())
     {
         info.name = itr->second;
+
+        printf("Info name %s\n", info.name.c_str());
     }
 
     if (info.name.empty() && entity->m_referenceObjectData)
@@ -1400,4 +1400,100 @@ void VisualEnvironmentEditor::ScanVEDataFromResourceManager()
     LOG_INFO("Found %zu VEData entries", m_VEDataNameMap.size());
 
     m_VEDataScanned = true;
+}
+
+void VisualEnvironmentEditor::InsertIntoTree(fb::EmitterTemplateData* data, const std::string& fullPath)
+{
+    // split path: "FX/Weapons/Smoke/blabla"
+    // ["FX", "Weapons", "Smoke", "blabla"]
+    std::vector<std::string> parts;
+    std::stringstream ss(fullPath);
+    std::string part;
+
+    while (std::getline(ss, part, '/'))
+    {
+        if (!part.empty())
+            parts.push_back(part);
+    }
+
+    if (parts.empty())
+    {
+        m_EmitterTree.emitters.push_back(data);
+        return;
+    }
+
+    EmitterTreeNode* node = &m_EmitterTree;
+    for (size_t i = 0; i < parts.size() - 1; i++)
+    {
+        node = &node->children[parts[i]];
+        node->name = parts[i];
+    }
+
+    node->emitters.push_back(data);
+}
+
+void VisualEnvironmentEditor::ScanEmitters()
+{
+    m_EmitterMap.clear();
+    m_EmitterTree.Clear();
+
+    fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
+    if (!rm)
+        return;
+
+    for (const auto& comp : rm->m_compartments)
+    {
+        if (!comp)
+            continue;
+
+        for (const auto& obj : comp->m_objects)
+        {
+            if (!obj) continue;
+
+            fb::TypeInfo* typeInfo = obj->GetType();
+            if (!typeInfo || typeInfo->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                continue;
+
+            fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(typeInfo);
+            if (classInfo->m_ClassId != fb::EmitterTemplateData::ClassId())
+                continue;
+
+            fb::EmitterTemplateData* emitterData = static_cast<fb::EmitterTemplateData*>(obj);
+
+            EmitterEditData editData;
+            editData.data = emitterData;
+            // unknown should NEVER exist in this case
+            editData.name = emitterData->m_Name ? emitterData->m_Name : "Unknown";
+
+            m_EmitterMap[emitterData] = editData;
+            InsertIntoTree(emitterData, editData.name);
+        }
+    }
+
+    m_EmittersScanned = true;
+    LOG_INFO("Found %zu emitters", m_EmitterMap.size());
+
+}
+
+void VisualEnvironmentEditor::OnEmitterCreated(fb::EmitterTemplate* emitter, fb::EmitterTemplateData* data)
+{
+    if (!emitter || !data)
+        return;
+
+    auto it = m_EmitterMap.find(data);
+    if (it == m_EmitterMap.end())
+        return;
+
+    it->second.lastTemplate = emitter;
+
+    if (!it->second.captured)
+    {
+        it->second.original.CaptureFrom(data);
+        it->second.captured = true;
+    }
+    if (!it->second.colorCaptured)
+    {
+        it->second.originalColor.CaptureFrom(emitter);
+        it->second.colorCaptured = true;
+    }
 }

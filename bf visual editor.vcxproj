@@ -161,6 +161,7 @@
     <ClInclude Include="SDK\eastl.h" />
     <ClInclude Include="SDK\general.h" />
     <ClInclude Include="SDK\sdk.h" />
+    <ClInclude Include="SDK\sdkfb3.h" />
     <ClInclude Include="SDK\typeinfo.h" />
     <ClInclude Include="SDK\vfunc.h" />
     <ClInclude Include="utils\log.h" />
@@ -184,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\1.png" />
+    <Image Include="images\2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
