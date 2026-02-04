@@ -2562,13 +2562,13 @@ void VisualEnvironmentEditor::DrawTransformSphere(const fb::LinearTransform& t, 
     if (ImVec2 yEnd; render::worldToScreen(yWorld, yEnd))
     {
         render::line(origin, yEnd, ImColor{ 0, 255, 0, 255 }, 2.0f);
-        render::text(yEnd, "X", ImColor{ 0, 255, 0, 255 });
+        render::text(yEnd, "Y", ImColor{ 0, 255, 0, 255 });
     }
 
     if (ImVec2 zEnd; render::worldToScreen(zWorld, zEnd))
     {
         render::line(origin, zEnd, ImColor{ 0, 0, 255, 255 }, 2.0f);
-        render::text(zEnd, "X", ImColor{ 0, 0, 255, 255 });
+        render::text(zEnd, "Z", ImColor{ 0, 0, 255, 255 });
     }
 
     render::drawSphere(t.m_trans, 0.5f, 32, 12, IM_COL32_WHITE);
