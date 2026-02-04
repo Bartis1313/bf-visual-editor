@@ -1,6 +1,11 @@
 ## Editor frosbite
 old project, recoded now and uses dynamic states
 
+## How to use?
+Inject to the game, preferably before level loading since capturing some names is done at this stage.\
+Although not a MUST...\
+I am not responsible for any potential bans caused by injection, dirty screens and etc...
+
 ## What does it do
 - Edit whole VisualEnvironment + force its states
 - Edit WorldRenderSettings
