@@ -120,6 +120,14 @@ private:
     void ResetStateToOriginal(StateEditData& data);
     void OnStateRemoved(fb::VisualEnvironmentState* state);
     void InvalidateCapture();
+    void HandleEmptyStateList();
+    bool IsInUnloadingState() const;
+    bool DetectedStateListShrinkage(size_t currentCount) const;
+    void ResetStateTracking(size_t newCount);
+    bool DetectedMapChange() const;
+    void HandleMapChange();
+    void TryInitialCapture();
+    void RefreshStateData();
 
     bool HasCapturedState(fb::VisualEnvironmentState* state) const;
     void SortStatesByPriority();

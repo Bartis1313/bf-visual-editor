@@ -149,6 +149,7 @@ void VisualEnvironmentEditor::OnLevelLoaded()
     m_VEDataScanned = false;
 
     ClearLightData();
+    ScanVEDataFromResourceManager();
 
     SetEditorState(EditorState::Ready);
 }
@@ -265,114 +266,129 @@ void VisualEnvironmentEditor::SyncStateList(fb::VisualEnvironmentManager* manage
         m_SelectedStateIndex = m_StateOrder.empty() ? 0 : static_cast<int>(m_StateOrder.size()) - 1;
 }
 
+void VisualEnvironmentEditor::HandleEmptyStateList()
+{
+    if (m_HasCapturedOriginals && m_EditorState == EditorState::Active)
+    {
+        OnLevelUnloading();
+    }
+}
+
+bool VisualEnvironmentEditor::IsInUnloadingState() const
+{
+    return m_LevelUnloadingSignaled || m_EditorState == EditorState::Unloading;
+}
+
+bool VisualEnvironmentEditor::DetectedStateListShrinkage(size_t currentCount) const
+{
+    return m_LastKnownStateCount > 0 && currentCount < m_LastKnownStateCount;
+}
+
+void VisualEnvironmentEditor::ResetStateTracking(size_t newCount)
+{
+    m_StateDataMap.clear();
+    m_StateOrder.clear();
+    m_LastKnownStateCount = newCount;
+    m_SelectedStateIndex = 0;
+}
+
+bool VisualEnvironmentEditor::DetectedMapChange() const
+{
+    if (!m_HasCapturedOriginals || m_CapturedMapName.empty())
+        return false;
+
+    std::string currentMap = GetCurrentMapName();
+    return !currentMap.empty() && currentMap != m_CapturedMapName;
+}
+
+void VisualEnvironmentEditor::HandleMapChange()
+{
+    ResetStateTracking(0);
+    m_HasCapturedOriginals = false;
+    m_HasCapturedWorldRenderSettings = false;
+    m_CapturedMapName.clear();
+    ClearLightData();
+    SetEditorState(EditorState::Ready);
+}
+
+void VisualEnvironmentEditor::TryInitialCapture()
+{
+    std::string currentMap = GetCurrentMapName();
+
+    if (!IsPlayerAlive() || m_StateOrder.empty() || currentMap.empty())
+        return;
+
+    m_CapturedMapName = currentMap;
+    m_HasCapturedOriginals = true;
+
+    ScanVEDataFromResourceManager();
+    CaptureWorldRenderSettings();
+
+    if (!m_LightDataScanned)
+    {
+        ScanAllLightData();
+        ScanExistingLightEntities();
+    }
+
+    SetEditorState(EditorState::Active);
+
+    if (m_AutoLoadConfigs)
+    {
+        std::string configPath = GetConfigPath(m_CapturedMapName);
+        if (fs::exists(configPath))
+            LoadConfig(configPath);
+    }
+}
+
+void VisualEnvironmentEditor::RefreshStateData()
+{
+    if (!IsSafeToOperate() || m_StateOrder.empty())
+        return;
+
+    for (fb::VisualEnvironmentState* state : m_StateOrder)
+    {
+        if (!state || state->excluded)
+            continue;
+
+        auto itr = m_StateDataMap.find(state);
+        if (itr != m_StateDataMap.end())
+        {
+            CaptureStateData(state, itr->second);
+        }
+    }
+}
+
 void VisualEnvironmentEditor::OnManagerUpdateBegin(fb::VisualEnvironmentManager* manager)
 {
     if (!manager)
         return;
 
-    size_t currentCount = manager->m_states.size();
-    if (m_LevelUnloadingSignaled || m_EditorState == EditorState::Unloading)
+    size_t stateCount = manager->m_states.size();
+    if (IsInUnloadingState())
     {
-        if (currentCount > 0)
-        {
-            std::string currentMap = GetCurrentMapName();
-            if (!currentMap.empty())
-            {
-                TryRecoverFromUnloading(manager);
-            }
-            else
-            {
-                return;
-            }
-        }
-        else
-        {
-            return;
-        }
+        TryRecoverFromUnloading(manager);
     }
 
-    if (currentCount == 0)
+    if (DetectedMapChange())
     {
-        if (m_HasCapturedOriginals && m_EditorState == EditorState::Active)
-        {
-            OnLevelUnloading();
-        }
-        return;
+        HandleMapChange();
     }
 
-    if (m_LastKnownStateCount > 0 && currentCount < m_LastKnownStateCount)
-    {
-        m_StateDataMap.clear();
-        m_StateOrder.clear();
-        m_LastKnownStateCount = currentCount;
-        m_SelectedStateIndex = 0;
-        return;
-    }
-
-    std::string currentMap = GetCurrentMapName();
-    if (m_HasCapturedOriginals && !m_CapturedMapName.empty() &&
-        !currentMap.empty() && currentMap != m_CapturedMapName)
-    {
-        m_StateDataMap.clear();
-        m_StateOrder.clear();
-        m_LastKnownStateCount = 0;
-        m_SelectedStateIndex = 0;
-        m_HasCapturedOriginals = false;
-        m_HasCapturedWorldRenderSettings = false;
-        m_CapturedMapName.clear();
-        ClearLightData();
-
-        SetEditorState(EditorState::Ready);
-    }
-
-    if (m_EditorState == EditorState::Idle && currentCount > 0)
+    if (m_EditorState == EditorState::Idle)
     {
         SetEditorState(EditorState::Ready);
-    }
+    }  
 
     SyncStateList(manager);
 
     if (!m_HasCapturedOriginals)
     {
-        if (IsPlayerAlive() && !m_StateOrder.empty() && !currentMap.empty())
-        {
-            m_CapturedMapName = currentMap;
-            m_HasCapturedOriginals = true;
-            CaptureWorldRenderSettings();
-
-
-            ScanAllLightData();
-            ScanExistingLightEntities();
-            ScanVEDataFromResourceManager();
-            ScanEmitters();
-            ScanEffectAssets();
-
-            SetEditorState(EditorState::Active);
-
-            if (m_AutoLoadConfigs)
-            {
-                std::string configPath = GetConfigPath(m_CapturedMapName);
-                if (fs::exists(configPath))
-                    LoadConfig(configPath);
-            }
-        }
+        TryInitialCapture();
         return;
     }
 
-    if (IsSafeToOperate() && !m_StateOrder.empty())
-    {
-        for (fb::VisualEnvironmentState* state : m_StateOrder)
-        {
-            if (!state || state->excluded)
-                continue;
+    RefreshStateData();
 
-            auto itr = m_StateDataMap.find(state);
-            if (itr != m_StateDataMap.end())
-            {
-                CaptureStateData(state, itr->second);
-            }
-        }
-    }
 }
 
 void VisualEnvironmentEditor::OnManagerUpdateEnd(fb::VisualEnvironmentManager* manager)

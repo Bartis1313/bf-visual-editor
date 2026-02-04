@@ -1454,12 +1454,16 @@ bool VisualEnvironmentEditor::LoadConfig(const std::filesystem::path& filePath)
             {
                 int savedPriority = 0;
                 uint32_t savedMask = 0;
+                float savedVisibility = 1.0f;
 
                 if (stateJson.contains("hash"))
                 {
                     savedPriority = stateJson["hash"].value("priority", 0);
                     savedMask = stateJson["hash"].value("componentMask", 0u);
-                    LOG_INFO("LoadConfig: Reading state P%d M%08X from config", savedPriority, savedMask);
+                    savedVisibility = stateJson["hash"].value("visibility", 1.0f);
+                    LOG_INFO("LoadConfig: Reading state P%d M%08X V%.2f from config",
+                        savedPriority, savedMask, savedVisibility);
+
                 }
                 else
                 {
@@ -1492,9 +1496,10 @@ bool VisualEnvironmentEditor::LoadConfig(const std::filesystem::path& filePath)
                     StateHash currentHash = ComputeStateHash(state);
 
                     if (currentHash.priority == savedPriority &&
-                        currentHash.componentMask == savedMask)
+                        currentHash.componentMask == savedMask &&
+                        std::fabs(currentHash.visibility - savedVisibility) < 0.001f)
                     {
-                        LOG_INFO("LoadConfig: MATCHED state P%d to live state!", savedPriority);
+                        LOG_INFO("LoadConfig: MATCHED state P%d V%.2f to live state!", savedPriority, savedVisibility);
 
                         auto itr = m_StateDataMap.find(state);
                         if (itr != m_StateDataMap.end())
@@ -1540,7 +1545,7 @@ bool VisualEnvironmentEditor::LoadConfig(const std::filesystem::path& filePath)
                     StateEditEntry entry;
                     entry.hash.priority = savedPriority;
                     entry.hash.componentMask = savedMask;
-                    entry.hash.visibility = 1.0f;
+                    entry.hash.visibility = savedVisibility;
                     entry.editData = editData;
                     m_EditList.push_back(std::move(entry));
                 }

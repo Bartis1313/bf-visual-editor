@@ -6,59 +6,73 @@
 void render::drawSphere(const fb::Vec3& pos, float radius, int segments, int rings, const ImColor& color, float thickness)
 {
     ImDrawList* drawList = ImGui::GetBackgroundDrawList();
-    float segmentStep = math::PI_2 / static_cast<float>(segments);
 
-    auto drawRing = [drawList, color, thickness](const std::vector<fb::Vec3>& points)
+    auto drawRing = [drawList, color, thickness](const std::vector<fb::Vec3>& points, bool closed)
         {
-            std::vector<ImVec2> verts;
-            verts.reserve(points.size());
+            std::vector<std::pair<ImVec2, bool>> projected;
+            projected.reserve(points.size());
 
             for (const auto& p : points)
             {
-                if (ImVec2 screen; worldToScreen(p, screen))
-                    verts.push_back(screen);
+                ImVec2 screen;
+                bool valid = worldToScreen(p, screen);
+                projected.push_back({ screen, valid });
             }
 
-            if (verts.size() >= 2)
-                drawList->AddPolyline(verts.data(), verts.size(), color, ImDrawFlags_Closed, thickness);
+            for (size_t i = 0; i < projected.size(); i++)
+            {
+                size_t next = (i + 1) % projected.size();
+                if (!closed && next == 0)
+                    break;
+
+                if (projected[i].second && projected[next].second)
+                {
+                    drawList->AddLine(projected[i].first, projected[next].first, color, thickness);
+                }
+            }
         };
 
     for (int r = 1; r < rings; r++)
     {
-        float theta = math::PI * r / static_cast<float>(rings);
-        float ringRadius = radius * std::sin(theta);
-        float z = radius * std::cos(theta);
+        float phi = math::PI * r / static_cast<float>(rings);
+        float ringRadius = radius * std::sin(phi);
+        float z = radius * std::cos(phi);
 
         std::vector<fb::Vec3> points;
+        points.reserve(segments + 1);
+
         for (int i = 0; i <= segments; i++)
         {
-            float phi = i * segmentStep;
+            float theta = math::PI_2 * i / static_cast<float>(segments);
             points.push_back(
                 {
-                    pos.m_x + ringRadius * std::cos(phi),
-                    pos.m_y + ringRadius * std::sin(phi),
+                    pos.m_x + ringRadius * std::cos(theta),
+                    pos.m_y + ringRadius * std::sin(theta),
                     pos.m_z + z
                 });
         }
-        drawRing(points);
+        drawRing(points, true);
     }
 
-    for (int r = 0; r < rings / 2; r++)
+    int numMeridians = segments;
+    for (int m = 0; m < numMeridians; m++)
     {
-        float phi = math::PI * r / static_cast<float>(rings / 2);
+        float theta = math::PI_2 * m / static_cast<float>(numMeridians);
 
         std::vector<fb::Vec3> points;
-        for (int i = 0; i <= segments; i++)
+        points.reserve(rings + 1);
+
+        for (int i = 0; i <= rings; i++)
         {
-            float theta = i * segmentStep;
+            float phi = math::PI * i / static_cast<float>(rings);
             points.push_back(
                 {
-                    pos.m_x + radius * std::sin(theta) * std::cos(phi),
-                    pos.m_y + radius * std::sin(theta) * std::sin(phi),
-                    pos.m_z + radius * std::cos(theta)
+                    pos.m_x + radius * std::sin(phi) * std::cos(theta),
+                    pos.m_y + radius * std::sin(phi) * std::sin(theta),
+                    pos.m_z + radius * std::cos(phi)
                 });
         }
-        drawRing(points);
+        drawRing(points, false);
     }
 }
 
