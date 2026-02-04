@@ -2307,6 +2307,20 @@ namespace fb
 		LinearTransform m_viewProjectionMatrix;			// 0x3C0
 		LinearTransform m_viewProjectionMatrixTranspose;// 0x400
 		LinearTransform m_viewProjectionMatrixInverse;	// 0x440
+
+		BOOL Update()
+		{
+			DxRenderer* dxRenderer = DxRenderer::GetInstance();
+			if (dxRenderer == NULL)
+				return FALSE;
+			DWORD UPDATEMATRICES = 0x006C3A90;
+			FLOAT screenX = static_cast<FLOAT>(dxRenderer->m_screenInfo.m_nWindowWidth);
+			FLOAT screenY = static_cast<FLOAT>(dxRenderer->m_screenInfo.m_nWindowHeight);
+			this->m_desc.aspect = screenX / screenY;
+
+			((VOID(__fastcall*)(RenderView*, LPVOID))UPDATEMATRICES)(this, NULL);
+			return TRUE;
+		}
 	};
 
 	class GameRenderViewParams
@@ -2325,13 +2339,7 @@ namespace fb
 	public:
 		char pad[0x48];							// 0x08
 		GameRenderViewParams m_viewParams;	// 0x50
-
 	public:
-
-
-
-
-
 		static GameRenderer* Singleton()
 		{
 			DWORD GAMERENDERER = 0x02384D78;
@@ -2717,4 +2725,75 @@ namespace fb
 		virtual bool wentUp(int);	// V: 0x18
 		virtual void enableTypingMode(bool);	// V: 0x1C
 	};
+
+	struct EffectParams
+	{
+		union Value
+		{
+			__m128 v;
+			float f;
+			int i;
+			bool b;
+		};
+
+		enum ParameterType : __int32
+		{
+			PTInvalid = 0x0,
+			PTFloat = 0x1,
+			PTInt = 0x2,
+			PTBool = 0x3,
+			PTVector = 0x4,
+		};
+
+		Value m_parameterValue[4];
+		const char* m_parameterName[4];
+		ParameterType m_parameterType[4];
+		unsigned int m_paramCount;
+		char pad[8];
+	};
+
+	class EffectManager
+	{
+	public:
+		static EffectManager* GetInstance()
+		{
+			return *(EffectManager**)0x2380E10;
+		}
+
+		uint32_t stopEffect(uint32_t handle)
+		{
+			typedef uint32_t(__thiscall* tStopEffect)(void* _this, uint32_t handleId);
+			tStopEffect stopEffect = (tStopEffect)0x00F7F390;
+
+			return stopEffect(this, handle);
+		}
+
+		[[nodiscard]] uint32_t playEffect(fb::Asset* asset, fb::LinearTransform* tr, fb::EffectParams* params, bool isFirstPerson)
+		{
+			typedef uint32_t(__thiscall* tplayEffect)(
+				fb::EffectManager* _this,
+				fb::Asset* asset,
+				fb::LinearTransform* linear,
+				void* level,
+				fb::EffectParams* a5,
+				bool isFirstPerson,
+				char unkFlagZero);
+			tplayEffect playEffect = (tplayEffect)0x00F82D60;
+
+			return playEffect(this, asset, tr, fb::ClientGameContext::GetInstance()->m_level, params, isFirstPerson, 0);
+		}
+	};
+
+	class EffectBlueprint : public ObjectBlueprint
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 2437;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x023C4C0C;
+		}
+	};//Size=0x0024
 }

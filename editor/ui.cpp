@@ -1,5 +1,7 @@
 #include "editor.h"
 #include "../utils/log.h"
+#include "math.h"
+#include "render.h"
 
 #include <magic_enum/magic_enum.hpp>
 
@@ -478,6 +480,25 @@ void VisualEnvironmentEditor::RenderStateEditor(fb::VisualEnvironmentState* stat
 
 void VisualEnvironmentEditor::Render()
 {
+    // TODO: SHOULD BE NOT HERE
+    if (m_ShowLocalSphere)
+        DrawTransformSphere(m_SelectedEffectMatrix, 2.0f);
+
+    // TODO: SHOULD BE NOT HERE
+    if (m_ShowSpawnedEffects)
+    {
+        for (const auto& effect : m_SpawnedEffects)
+        {
+            if (ImVec2 pos; render::worldToScreen(effect.transform.m_trans, pos))
+            {
+                if (size_t posString = effect.effectName.rfind("/"); posString != std::string::npos)
+                {
+                    render::text(pos, effect.effectName.substr(posString), ImColor{ 0, 255, 255, 128 });
+                }
+            }
+        }
+    }
+
     if (!m_Enabled)
         return;
 
@@ -545,6 +566,12 @@ void VisualEnvironmentEditor::Render()
         if (ImGui::BeginTabItem("Emitters"))
         {
             RenderEmitterTab();
+            ImGui::EndTabItem();
+        }
+
+        if (ImGui::BeginTabItem("Play effect"))
+        {
+            RenderEffectSpawnerTab();
             ImGui::EndTabItem();
         }
 
@@ -1884,7 +1911,7 @@ void VisualEnvironmentEditor::RenderLightsTab()
 
     ImGui::SameLine();
     ImGui::SetNextItemWidth(100);
-    
+
     // no need for enumcombo here, special case
     const char* typeFilters[] = { "All", "SpotLight", "PointLight", "LocalLight" };
     ImGui::Combo("##LightType", &m_LightTypeFilter, typeFilters, IM_ARRAYSIZE(typeFilters));
@@ -2496,13 +2523,165 @@ void VisualEnvironmentEditor::RenderEmitterTab()
     ImGui::InputText("Search", m_EmitterSearchBuf, sizeof(m_EmitterSearchBuf));
     ImGui::Separator();
 
-    ImGui::BeginChild("EmitterList", ImVec2(350, 0), ImGuiChildFlags_ResizeX);
+    ImGui::BeginChild("EmitterList", ImVec2{ 350, 0 }, ImGuiChildFlags_ResizeX);
     RenderEmitterTreeNode(m_EmitterTree);
     ImGui::EndChild();
 
     ImGui::SameLine();
 
-    ImGui::BeginChild("EmitterProps", ImVec2(0, 0), true);
+    ImGui::BeginChild("EmitterProps", ImVec2{ 0, 0 }, true);
     RenderEmitterProperties();
     ImGui::EndChild();
+}
+
+void VisualEnvironmentEditor::DrawTransformSphere(const fb::LinearTransform& t, float axisLength)
+{
+    if (!m_SelectedEffect)
+        return;
+
+    ImVec2 origin;
+    if (!render::worldToScreen(t.m_trans, origin))
+        return;
+
+    fb::Vec3 xWorld = { t.m_trans.m_x + t.m_right.m_x * axisLength,
+                        t.m_trans.m_y + t.m_right.m_y * axisLength,
+                        t.m_trans.m_z + t.m_right.m_z * axisLength };
+    fb::Vec3 yWorld = { t.m_trans.m_x + t.m_up.m_x * axisLength,
+                        t.m_trans.m_y + t.m_up.m_y * axisLength,
+                        t.m_trans.m_z + t.m_up.m_z * axisLength };
+    fb::Vec3 zWorld = { t.m_trans.m_x + t.m_forward.m_x * axisLength,
+                        t.m_trans.m_y + t.m_forward.m_y * axisLength,
+                        t.m_trans.m_z + t.m_forward.m_z * axisLength };
+
+    if (ImVec2 xEnd; render::worldToScreen(xWorld, xEnd))
+    {
+        render::line(origin, xEnd, ImColor{ 255, 0, 0, 255 }, 2.0f);
+        render::text(xEnd, "X", ImColor{ 255, 0, 0, 255 });
+    }
+
+    if (ImVec2 yEnd; render::worldToScreen(yWorld, yEnd))
+    {
+        render::line(origin, yEnd, ImColor{ 0, 255, 0, 255 }, 2.0f);
+        render::text(yEnd, "X", ImColor{ 0, 255, 0, 255 });
+    }
+
+    if (ImVec2 zEnd; render::worldToScreen(zWorld, zEnd))
+    {
+        render::line(origin, zEnd, ImColor{ 0, 0, 255, 255 }, 2.0f);
+        render::text(zEnd, "X", ImColor{ 0, 0, 255, 255 });
+    }
+
+    render::drawSphere(t.m_trans, 0.5f, 32, 12, IM_COL32_WHITE);
+}
+
+void VisualEnvironmentEditor::RenderEffectSpawnerTab()
+{
+    if (ImGui::Button("Scan Effects"))
+        ScanEffectAssets();
+
+    ImGui::SameLine();
+    ImGui::Text("(%zu)", m_EffectAssets.size());
+
+    static char effectSearch[256] = "";
+    ImGui::InputText("Search##Effect", effectSearch, sizeof(effectSearch));
+
+    if (ImGui::BeginCombo("Effect", m_SelectedEffect ? m_SelectedEffect->m_Name : "None"))
+    {
+        for (const auto& [name, asset] : m_EffectAssets)
+        {
+            if (effectSearch[0] && !containsIgnoreCase(name, effectSearch))
+                continue;
+
+            if (ImGui::Selectable(name.c_str(), m_SelectedEffect == asset))
+            {
+                m_SelectedEffect = asset;
+            }
+        }
+        ImGui::EndCombo();
+    }
+
+    m_SpawnedEffects;
+
+    ImGui::Separator();
+
+    ImGui::Text("Transform");
+    ImGui::DragFloat3("Position", &m_SelectedEffectMatrix.m_trans.m_x, 0.1f);
+    ImGui::DragFloat3("Right (X)", &m_SelectedEffectMatrix.m_right.m_x, 0.01f);
+    ImGui::DragFloat3("Up (Y)", &m_SelectedEffectMatrix.m_up.m_x, 0.01f);
+    ImGui::DragFloat3("Forward (Z)", &m_SelectedEffectMatrix.m_forward.m_x, 0.01f);
+
+    if (ImGui::Button("Identity"))
+    {
+        m_SelectedEffectMatrix.m_right = { 1.0f, 0.0f, 0.0f };
+        m_SelectedEffectMatrix.m_up = { 0.0f, 1.0f, 0.0f };
+        m_SelectedEffectMatrix.m_forward = { 0.0f, 0.0f, 1.0f };
+    }
+
+    ImGui::SameLine();
+    if (ImGui::Button("From Camera (Position)"))
+    {
+        fb::GameRenderer::Singleton()->m_viewParams.view.Update();
+        m_SelectedEffectMatrix.m_trans = fb::GameRenderer::Singleton()->m_viewParams.view.m_viewMatrixInverse.m_trans;
+    }
+
+    ImGui::Separator();
+    ImGui::Checkbox("Show sphere", &m_ShowLocalSphere);
+    ImGui::Checkbox("Show spawned effects", &m_ShowSpawnedEffects);
+    ImGui::Separator();
+
+    ImGui::BeginDisabled(!m_SelectedEffect);
+    if (ImGui::Button("Spawn Effect", ImVec2{ 120, 25 }))
+    {
+        uint32_t handle = SpawnEffectAtTransform(m_SelectedEffect, m_SelectedEffectMatrix);
+        if (handle != 0)
+        {
+            m_SpawnedEffects.push_back({ handle, m_SelectedEffectMatrix, m_SelectedEffect->m_Name });
+        }
+    }
+    ImGui::EndDisabled();
+
+    ImGui::SameLine();
+    ImGui::BeginDisabled(m_SpawnedEffects.empty());
+    if (ImGui::Button("Stop All", ImVec2{ 120, 25 }))
+    {
+        for (const auto& effect : m_SpawnedEffects)
+            StopEffect(effect.handle);
+
+        m_SpawnedEffects.clear();
+    }
+    ImGui::EndDisabled();
+
+    if (!m_SpawnedEffects.empty())
+    {
+        ImGui::Separator();
+        ImGui::Text("Spawned Effects (%zu)", m_SpawnedEffects.size());
+
+        int toRemove = -1;
+        for (size_t i = 0; i < m_SpawnedEffects.size(); i++)
+        {
+            const auto& effect = m_SpawnedEffects[i];
+
+            ImGui::PushID(static_cast<int>(i));
+
+            ImGui::Text("[%u] %s", effect.handle, effect.effectName.c_str());
+            ImGui::SameLine();
+
+            if (ImGui::SmallButton("Go"))
+            {
+                m_SelectedEffectMatrix = effect.transform;
+            }
+            ImGui::SameLine();
+
+            if (ImGui::SmallButton("Stop"))
+            {
+                StopEffect(effect.handle);
+                toRemove = static_cast<int>(i);
+            }
+
+            ImGui::PopID();
+        }
+
+        if (toRemove >= 0)
+            m_SpawnedEffects.erase(m_SpawnedEffects.begin() + toRemove);
+    }
 }

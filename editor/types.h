@@ -626,3 +626,10 @@ struct EmitterTreeNode
         emitters.clear();
     }
 };
+
+struct SpawnedEffect
+{
+    uint32_t handle;
+    fb::LinearTransform transform;
+    std::string effectName;
+};

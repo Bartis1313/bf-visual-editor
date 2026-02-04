@@ -6,6 +6,7 @@ old project, recoded now and uses dynamic states
 - Edit WorldRenderSettings
 - Capture entities on runtime (you better load all resources for this to work correctly)
 - Edit every effect (WIP)
+- Play any effect from assets
 - Tries to capture original values (not perfect after all)
 - Config per map
 

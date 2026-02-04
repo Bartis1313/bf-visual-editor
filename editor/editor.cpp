@@ -173,6 +173,13 @@ void VisualEnvironmentEditor::OnLevelUnloading()
     m_GlobalVEData.Reset();
 
     m_SelectedEmitter = nullptr;
+    m_SelectedEffect = nullptr;
+
+    // TODO: should be func
+    for (const auto& effect : m_SpawnedEffects)
+        StopEffect(effect.handle);
+
+    m_SpawnedEffects.clear();
 
     SetEditorState(EditorState::Unloading);
 }
@@ -338,6 +345,7 @@ void VisualEnvironmentEditor::OnManagerUpdateBegin(fb::VisualEnvironmentManager*
             ScanExistingLightEntities();
             ScanVEDataFromResourceManager();
             ScanEmitters();
+            ScanEffectAssets();
 
             SetEditorState(EditorState::Active);
 
@@ -1475,25 +1483,89 @@ void VisualEnvironmentEditor::ScanEmitters()
 
 }
 
+// TODO: can loop ProcessorData next iterator until null and pre ptr check, instead of waiting for spawn
 void VisualEnvironmentEditor::OnEmitterCreated(fb::EmitterTemplate* emitter, fb::EmitterTemplateData* data)
 {
     if (!emitter || !data)
         return;
 
-    auto it = m_EmitterMap.find(data);
-    if (it == m_EmitterMap.end())
+    auto itr = m_EmitterMap.find(data);
+    if (itr == m_EmitterMap.end())
         return;
 
-    it->second.lastTemplate = emitter;
+    itr->second.lastTemplate = emitter;
 
-    if (!it->second.captured)
+    if (!itr->second.captured)
     {
-        it->second.original.CaptureFrom(data);
-        it->second.captured = true;
+        itr->second.original.CaptureFrom(data);
+        itr->second.captured = true;
     }
-    if (!it->second.colorCaptured)
+    if (!itr->second.colorCaptured)
     {
-        it->second.originalColor.CaptureFrom(emitter);
-        it->second.colorCaptured = true;
+        itr->second.originalColor.CaptureFrom(emitter);
+        itr->second.colorCaptured = true;
     }
+}
+
+void VisualEnvironmentEditor::ScanEffectAssets()
+{
+    m_EffectAssets.clear();
+
+    fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
+    if (!rm)
+        return;
+
+    for (const auto& comp : rm->m_compartments)
+    {
+        if (!comp)
+            continue;
+
+        for (const auto& obj : comp->m_objects)
+        {
+            if (!obj)
+                continue;
+
+            fb::TypeInfo* typeInfo = obj->GetType();
+            if (!typeInfo || typeInfo->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                continue;
+
+            fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(typeInfo);
+            if (classInfo->m_ClassId != fb::EffectBlueprint::ClassId())
+                continue;
+
+            // TODO: verify if only this is real root for effects
+            fb::EffectBlueprint* eB = static_cast<fb::EffectBlueprint*>(obj);
+            m_EffectAssets.emplace_back(eB->m_Name, eB);
+        }
+    }
+
+    std::sort(m_EffectAssets.begin(), m_EffectAssets.end(), [](const auto& a, const auto& b) { return a.first < b.first; });
+}
+
+uint32_t VisualEnvironmentEditor::SpawnEffectAtTransform(fb::Asset* effect, const fb::LinearTransform& transform)
+{
+    if (!effect)
+        return 0;
+
+    fb::EffectManager* effectManager = fb::EffectManager::GetInstance();
+    if (!effectManager)
+        return 0;
+
+    // TODO: figure out if that does anything with its keyvalues
+    fb::EffectParams params = { };
+    params.m_paramCount = 0;
+
+    return effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform), &params, false);
+}
+
+void VisualEnvironmentEditor::StopEffect(uint32_t handle)
+{
+    if (handle == 0)
+        return;
+
+    fb::EffectManager* effectManager = fb::EffectManager::GetInstance();
+    if (!effectManager)
+        return;
+
+    effectManager->stopEffect(handle);
 }

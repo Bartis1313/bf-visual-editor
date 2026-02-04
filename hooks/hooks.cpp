@@ -18,6 +18,7 @@ bool hooks::init()
     MH_CreateHook((LPVOID)0x00F7E030, hkfb__VisualEnvironmentEntityConstrsub_F7E030, (LPVOID*)&ofb__VisualEnvironmentEntityConstrsub_F7E030);
     MH_CreateHook((LPVOID)0x00F7A7E0, hkfb__VisualEnvironmentEntityDestrsub_F7A7E0, (LPVOID*)&ofb__VisualEnvironmentEntityDestrsub_F7A7E0);
     MH_CreateHook((LPVOID)0x018802E0, hkfb__EmitterManager__createEmitterTemplate, (LPVOID*)&ofb__EmitterManager__createEmitterTemplate);
+    //MH_CreateHook((LPVOID)0x00F82D60, hksub_F82D60, (LPVOID*)&osub_F82D60);
     //MH_CreateHook((LPVOID)0x004D5790, hkfb__InternalDatabasePartition_onPartitonLoaded, (LPVOID*)&ofb__InternalDatabasePartition_onPartitonLoaded);
     // EffectEntity
 

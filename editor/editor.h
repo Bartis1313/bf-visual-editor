@@ -150,6 +150,20 @@ private:
     char m_LightFilterBuffer[256] = "";
     int m_LightTypeFilter = 0;
 
+    bool m_ShowSpawnedEffects = true;
+    bool m_ShowLocalSphere = true;
+    fb::LinearTransform m_SelectedEffectMatrix = { };
+    fb::Asset* m_SelectedEffect = nullptr;
+
+    std::vector<SpawnedEffect> m_SpawnedEffects;
+    std::vector<std::pair<std::string, fb::Asset*>> m_EffectAssets;
+
+    void RenderEffectSpawnerTab();
+    void DrawTransformSphere(const fb::LinearTransform& transform, float axisLength);
+    void ScanEffectAssets();
+    uint32_t SpawnEffectAtTransform(fb::Asset* effect, const fb::LinearTransform& transform);
+    void StopEffect(uint32_t handle);
+
     void ScanAllLightData();
     void RegisterLightData(fb::LocalLightEntityData* data, const std::string& assetName, const std::string& containerType, void* container);
 
