@@ -10,7 +10,7 @@ I am not responsible for any potential bans caused by injection, dirty screens a
 - Edit whole VisualEnvironment + force its states
 - Edit WorldRenderSettings
 - Capture entities on runtime (you better load all resources for this to work correctly)
-- Edit every effect (WIP)
+- Edit every effect
 - Play any effect from assets
 - Tries to capture original values (not perfect after all)
 - Config per map

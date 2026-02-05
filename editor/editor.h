@@ -245,6 +245,10 @@ private:
     void DeserializeStateData(const json& j, StateEditData& data);
     json SerializeLightData(const LightDataEntry& entry) const;
     void DeserializeLightData(const json& j, LightDataEntry& entry);
+    void SerializeEmitterSnapshot(json& j, const EmitterEditData::Snapshot& s);
+    void DeserializeEmitterSnapshot(const json& j, EmitterEditData::Snapshot& s);
+    void SerializeColorSnapshot(json& j, const EmitterEditData::ColorSnapshot& s);
+    void DeserializeColorSnapshot(const json& j, EmitterEditData::ColorSnapshot& s);
 
 #define DECLARE_SERIAL_FUNCS(name, type) \
         json Serialize##name(const type& c) const; \
@@ -294,6 +298,9 @@ private:
     std::pair<size_t, size_t> CountEmittersInNode(const EmitterTreeNode& node);
     void RenderColorProcessor(EmitterEditData& edit);
     bool NodeHasMatch(const EmitterTreeNode& node, const char* search);
+    void CaptureCurrentEmitterState(const EmitterEditData& edit, EmitterEditData::Snapshot& outTemplate, EmitterEditData::ColorSnapshot& outColor);
+    std::vector<PendingEmitterEdit> m_PendingEmitterEdits;
+    void ApplyPendingEmitterEdits();
 
     void RenderMenuBar();
     void RenderStatusBar();

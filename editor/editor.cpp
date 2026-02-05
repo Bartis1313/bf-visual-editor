@@ -1,4 +1,4 @@
-#include "editor.h"
+﻿#include "editor.h"
 #include <fstream>
 #include <ShlObj.h>
 #include <set>
@@ -132,7 +132,6 @@ bool VisualEnvironmentEditor::IsSafeToOperate() const
 
 void VisualEnvironmentEditor::OnLevelLoaded()
 {
-
     std::string currentMap = GetCurrentMapName();
     LOG_INFO("OnLevelLoaded - CurrentMap: %s\n", currentMap.c_str());
 
@@ -149,8 +148,6 @@ void VisualEnvironmentEditor::OnLevelLoaded()
     m_VEDataScanned = false;
 
     ClearLightData();
-    ScanVEDataFromResourceManager();
-
     SetEditorState(EditorState::Ready);
 }
 
@@ -322,13 +319,11 @@ void VisualEnvironmentEditor::TryInitialCapture()
     m_HasCapturedOriginals = true;
 
     ScanVEDataFromResourceManager();
+    ScanEffectAssets();
+    ScanEmitters();
+    ScanAllLightData();
+    ScanExistingLightEntities();
     CaptureWorldRenderSettings();
-
-    if (!m_LightDataScanned)
-    {
-        ScanAllLightData();
-        ScanExistingLightEntities();
-    }
 
     SetEditorState(EditorState::Active);
 
@@ -1472,7 +1467,8 @@ void VisualEnvironmentEditor::ScanEmitters()
 
         for (const auto& obj : comp->m_objects)
         {
-            if (!obj) continue;
+            if (!obj)
+                continue;
 
             fb::TypeInfo* typeInfo = obj->GetType();
             if (!typeInfo || typeInfo->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
@@ -1486,20 +1482,38 @@ void VisualEnvironmentEditor::ScanEmitters()
 
             EmitterEditData editData;
             editData.data = emitterData;
-            // unknown should NEVER exist in this case
             editData.name = emitterData->m_Name ? emitterData->m_Name : "Unknown";
+            editData.original.CaptureFrom(emitterData);
+            editData.captured = true;
+
+            for (fb::ProcessorData* proc = emitterData->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+            {
+                fb::TypeInfo* type = proc->GetType();
+                if (!type || type->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                    continue;
+
+                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(type);
+
+                if (classInfo->m_ClassId == fb::UpdateColorData::ClassId())
+                {
+                    editData.colorProcessor = static_cast<fb::UpdateColorData*>(proc);
+                    editData.originalColor.CaptureFrom(editData.colorProcessor);
+                }  
+            }
+
 
             m_EmitterMap[emitterData] = editData;
             InsertIntoTree(emitterData, editData.name);
         }
     }
 
+    ApplyPendingEmitterEdits();
+
     m_EmittersScanned = true;
     LOG_INFO("Found %zu emitters", m_EmitterMap.size());
-
 }
 
-// TODO: can loop ProcessorData next iterator until null and pre ptr check, instead of waiting for spawn
+
 void VisualEnvironmentEditor::OnEmitterCreated(fb::EmitterTemplate* emitter, fb::EmitterTemplateData* data)
 {
     if (!emitter || !data)
@@ -1510,17 +1524,74 @@ void VisualEnvironmentEditor::OnEmitterCreated(fb::EmitterTemplate* emitter, fb:
         return;
 
     itr->second.lastTemplate = emitter;
+}
 
-    if (!itr->second.captured)
+void VisualEnvironmentEditor::CaptureCurrentEmitterState(const EmitterEditData& edit, EmitterEditData::Snapshot& outTemplate, EmitterEditData::ColorSnapshot& outColor)
+{
+    outTemplate.CaptureFrom(edit.data);
+
+    outColor.exists = false;
+    if (edit.colorProcessor)
     {
-        itr->second.original.CaptureFrom(data);
-        itr->second.captured = true;
+        outColor.exists = true;
+        outColor.color = edit.colorProcessor->m_Color;
+        outColor.hasPolynomial = false;
+
+        if (edit.colorProcessor->m_Pre)
+        {
+            fb::TypeInfo* type = edit.colorProcessor->m_Pre->GetType();
+            if (type && type->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
+            {
+                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(type);
+                if (classInfo->m_ClassId == fb::PolynomialColorInterpData::ClassId())
+                {
+                    outColor.hasPolynomial = true;
+                    fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(edit.colorProcessor->m_Pre);
+                    outColor.color0 = poly->m_Color0;
+                    outColor.color1 = poly->m_Color1;
+                    outColor.coefficients = poly->m_Coefficients;
+                }
+            }
+        }
     }
-    if (!itr->second.colorCaptured)
+}
+
+void VisualEnvironmentEditor::ApplyPendingEmitterEdits()
+{
+    if (m_PendingEmitterEdits.empty())
+        return;
+
+    int appliedCount = 0;
+
+    for (auto it = m_PendingEmitterEdits.begin(); it != m_PendingEmitterEdits.end(); )
     {
-        itr->second.originalColor.CaptureFrom(emitter);
-        itr->second.colorCaptured = true;
+        bool applied = false;
+
+        for (auto& [dataPtr, edit] : m_EmitterMap)
+        {
+            if (edit.name == it->name)
+            {
+                it->templateData.RestoreTo(edit.data);
+
+                if (it->hasColorData && edit.colorProcessor)
+                    it->colorData.RestoreTo(edit.colorProcessor);
+
+                edit.modified = true;
+                LOG_INFO("ApplyPendingEmitterEdits: Applied '%s'", it->name.c_str());
+                appliedCount++;
+                applied = true;
+                break;
+            }
+        }
+
+        if (applied)
+            it = m_PendingEmitterEdits.erase(it);
+        else
+            ++it;
     }
+
+    if (appliedCount > 0)
+        LOG_INFO("ApplyPendingEmitterEdits: Applied %d pending edits, %zu remaining",appliedCount, m_PendingEmitterEdits.size());
 }
 
 void VisualEnvironmentEditor::ScanEffectAssets()

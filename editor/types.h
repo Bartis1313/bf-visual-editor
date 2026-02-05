@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <string>
 #include <unordered_set>
@@ -415,6 +415,7 @@ struct VisualEnvironmentGlobalData
 
 struct EmitterEditData
 {
+    bool modified = false;
     fb::EmitterTemplateData* data = nullptr;
     fb::EmitterTemplate* lastTemplate = nullptr;
     std::string name;
@@ -545,7 +546,7 @@ struct EmitterEditData
     // this should be probably vec snapshot, since access will be easier, not just for colors
     struct ColorSnapshot
     {
-        bool hasColorProcessor = false;
+        bool exists = false;
         bool hasPolynomial = false;
 
         fb::Vec3 color;
@@ -553,42 +554,38 @@ struct EmitterEditData
         fb::Vec3 color1;
         fb::Vec4 coefficients;
 
-        void CaptureFrom(fb::EmitterTemplate* emitter)
+        void CaptureFrom(fb::UpdateColorData* colorProc)
         {
-            hasColorProcessor = false;
-            hasPolynomial = false;
-
-            if (!emitter)
-                return;
-
-            fb::UpdateColorData* colorProc = emitter->getProcessor<fb::UpdateColorData>(fb::ProcessorType::PtUpdateColor);
             if (!colorProc)
-                return;
-
-            hasColorProcessor = true;
-            color = colorProc->m_Color;
-
-            if (colorProc->m_Pre && colorProc->m_Pre->GetType())
             {
-                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(colorProc->m_Pre->GetType());
-                if (classInfo->m_ClassId == fb::PolynomialColorInterpData::ClassId())
-                {
-                    hasPolynomial = true;
-                    fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
-                    color0 = poly->m_Color0;
-                    color1 = poly->m_Color1;
-                    coefficients = poly->m_Coefficients;
-                }
+                exists = false;
+                return;
             }
 
-        }
-        void RestoreTo(fb::EmitterTemplate* emitter) const
-        {
-            if (!emitter || !hasColorProcessor)
-                return;
+            exists = true;
+            color = colorProc->m_Color;
 
-            fb::UpdateColorData* colorProc = emitter->getProcessor<fb::UpdateColorData>(fb::ProcessorType::PtUpdateColor);
-            if (!colorProc)
+            if (colorProc->m_Pre)
+            {
+                fb::TypeInfo* type = colorProc->m_Pre->GetType();
+                if (type && type->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
+                {
+                    fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(type);
+                    if (classInfo->m_ClassId == fb::PolynomialColorInterpData::ClassId())
+                    {
+                        hasPolynomial = true;
+                        fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
+                        color0 = poly->m_Color0;
+                        color1 = poly->m_Color1;
+                        coefficients = poly->m_Coefficients;
+                    }
+                }
+            }
+        }
+
+        void RestoreTo(fb::UpdateColorData* colorProc) const
+        {
+            if (!exists || !colorProc)
                 return;
 
             colorProc->m_Color = color;
@@ -604,14 +601,22 @@ struct EmitterEditData
                     poly->m_Coefficients = coefficients;
                 }
             }
-
         }
+
     };
 
+    fb::UpdateColorData* colorProcessor = nullptr;
     Snapshot original;
     ColorSnapshot originalColor;
     bool captured = false;
-    bool colorCaptured = false;
+};
+
+struct PendingEmitterEdit
+{
+    std::string name;
+    EmitterEditData::Snapshot templateData;
+    EmitterEditData::ColorSnapshot colorData;
+    bool hasColorData = false;
 };
 
 struct EmitterTreeNode

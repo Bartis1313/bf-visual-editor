@@ -50,14 +50,16 @@ namespace fb
 
 		fb::Guid* getInstanceGuid()
 		{
-			fb::DataContainer* result; // eax
+			if ((m_flags & 0x100) == 0)
+				return nullptr;
 
-			if ((this->m_flags & 0x100) == 0)
-				return 0;
-			result = this - 2;
-			if (this == (fb::DataContainer*)0x10)
-				return 0;
-			return (fb::Guid*)result;
+			// lea     eax, [ecx-10h]
+			fb::Guid* guid = reinterpret_cast<fb::Guid*>(this) - 1;
+
+			if (guid == nullptr)
+				return nullptr;
+
+			return guid;
 		}
 
 		bool is(const char* name)

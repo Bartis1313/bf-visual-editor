@@ -67,6 +67,14 @@ namespace fb
         unsigned short	m_Data2;	//0x0004
         unsigned short	m_Data3;	//0x0006
         unsigned char	m_Data4[8];	//0x0008
+
+        bool operator=(const fb::Guid* other)
+        {
+            return this->m_Data1 == other->m_Data1
+                && *(DWORD*)&this->m_Data2 == *(DWORD*)&other->m_Data2
+                && *(DWORD*)this->m_Data4 == *(DWORD*)other->m_Data4
+                && *(DWORD*)&this->m_Data4[4] == *(DWORD*)&other->m_Data4[4];
+        }
     };
     //Size=0x0010
 

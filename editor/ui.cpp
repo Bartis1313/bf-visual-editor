@@ -1684,7 +1684,7 @@ bool VisualEnvironmentEditor::Vec3Edit(const char* label, fb::Vec3* c, const fb:
         ImGui::PushStyleColor(ImGuiCol_Text, m_ModifiedColor);
 
     float v[3] = { c->m_x, c->m_y, c->m_z };
-    bool changed = isColor ? ImGui::ColorEdit3(label, v) : ImGui::DragFloat3(label, v, 0.01f);
+    bool changed = isColor ? ImGui::ColorEdit3(label, v, ImGuiColorEditFlags_HDR | ImGuiColorEditFlags_Float) : ImGui::DragFloat3(label, v, 0.01f);
     if (changed)
     {
         c->m_x = v[0];
@@ -1724,7 +1724,7 @@ bool VisualEnvironmentEditor::Vec4Edit(const char* label, fb::Vec4* c, const fb:
         ImGui::PushStyleColor(ImGuiCol_Text, m_ModifiedColor);
 
     float v[4] = { c->m_x, c->m_y, c->m_z, c->m_w };
-    bool changed = isColor ? ImGui::ColorEdit4(label, v) : ImGui::DragFloat4(label, v, 0.01f);
+    bool changed = isColor ? ImGui::ColorEdit4(label, v, ImGuiColorEditFlags_HDR | ImGuiColorEditFlags_Float) : ImGui::DragFloat4(label, v, 0.01f);
     if (changed)
     {
         c->m_x = v[0];
@@ -2085,7 +2085,7 @@ void VisualEnvironmentEditor::RenderLightDataEditor(LightDataEntry& entry)
     if (ImGui::TreeNodeEx("Common##Light", ImGuiTreeNodeFlags_DefaultOpen))
     {
         float color[3] = { entry.color.m_x, entry.color.m_y, entry.color.m_z };
-        if (ImGui::ColorEdit3("Color", color))
+        if (ImGui::ColorEdit3("Color", color, ImGuiColorEditFlags_HDR | ImGuiColorEditFlags_Float))
         {
             entry.color = { color[0], color[1], color[2] };
             changed = true;
@@ -2150,14 +2150,14 @@ void VisualEnvironmentEditor::RenderLightDataEditor(LightDataEntry& entry)
         if (ImGui::TreeNode("Color Scales##Light"))
         {
             float particleColor[3] = { entry.particleColorScale.m_x, entry.particleColorScale.m_y, entry.particleColorScale.m_z };
-            if (ImGui::ColorEdit3("Particle Color Scale", particleColor))
+            if (ImGui::ColorEdit3("Particle Color Scale", particleColor, ImGuiColorEditFlags_HDR | ImGuiColorEditFlags_Float))
             {
                 entry.particleColorScale = { particleColor[0], particleColor[1], particleColor[2] };
                 changed = true;
             }
 
             float enlightenColor[3] = { entry.enlightenColorScale.m_x, entry.enlightenColorScale.m_y, entry.enlightenColorScale.m_z };
-            if (ImGui::ColorEdit3("Enlighten Color Scale", enlightenColor))
+            if (ImGui::ColorEdit3("Enlighten Color Scale", enlightenColor, ImGuiColorEditFlags_HDR | ImGuiColorEditFlags_Float))
             {
                 entry.enlightenColorScale = { enlightenColor[0], enlightenColor[1], enlightenColor[2] };
                 changed = true;
@@ -2291,62 +2291,62 @@ void VisualEnvironmentEditor::RenderEmitterProperties()
 
     if (ImGui::CollapsingHeader("Basic", ImGuiTreeNodeFlags_DefaultOpen))
     {
-        FloatEdit("Time Scale", &d->m_TimeScale, &o.timeScale);
-        FloatEdit("Lifetime", &d->m_Lifetime, &o.lifetime);
-        UIntEdit("Max Count", &d->m_MaxCount, &o.maxCount);
-        UIntEdit("Lifetime Frames", &d->m_LifetimeFrameCount, &o.lifetimeFrameCount);
+        edit.modified |= FloatEdit("Time Scale", &d->m_TimeScale, &o.timeScale);
+        edit.modified |= FloatEdit("Lifetime", &d->m_Lifetime, &o.lifetime);
+        edit.modified |= UIntEdit("Max Count", &d->m_MaxCount, &o.maxCount);
+        edit.modified |= UIntEdit("Lifetime Frames", &d->m_LifetimeFrameCount, &o.lifetimeFrameCount);
     }
 
     if (ImGui::CollapsingHeader("Distance & Culling"))
     {
-        FloatEdit("Max Spawn Distance", &d->m_MaxSpawnDistance, &o.maxSpawnDistance);
-        FloatEdit("Visible After Dist", &d->m_VisibleAfterDistance, &o.visibleAfterDistance);
-        FloatEdit("Culling Factor", &d->m_ParticleCullingFactor, &o.particleCullingFactor);
-        FloatEdit("Mesh Culling Dist", &d->m_MeshCullingDistance, &o.meshCullingDistance);
-        FloatEdit("Min Screen Area", &d->m_MinScreenArea, &o.minScreenArea);
-        FloatEdit("Dist Scale Near", &d->m_DistanceScaleNearValue, &o.distanceScaleNearValue);
-        FloatEdit("Dist Scale Far", &d->m_DistanceScaleFarValue, &o.distanceScaleFarValue);
-        FloatEdit("Dist Scale Length", &d->m_DistanceScaleLength, &o.distanceScaleLength);
-        BoolEdit("Exclusion Volume Cull", &d->m_ExclusionVolumeCullEnable, &o.exclusionVolumeCullEnable);
+        edit.modified |= FloatEdit("Max Spawn Distance", &d->m_MaxSpawnDistance, &o.maxSpawnDistance);
+        edit.modified |= FloatEdit("Visible After Dist", &d->m_VisibleAfterDistance, &o.visibleAfterDistance);
+        edit.modified |= FloatEdit("Culling Factor", &d->m_ParticleCullingFactor, &o.particleCullingFactor);
+        edit.modified |= FloatEdit("Mesh Culling Dist", &d->m_MeshCullingDistance, &o.meshCullingDistance);
+        edit.modified |= FloatEdit("Min Screen Area", &d->m_MinScreenArea, &o.minScreenArea);
+        edit.modified |= FloatEdit("Dist Scale Near", &d->m_DistanceScaleNearValue, &o.distanceScaleNearValue);
+        edit.modified |= FloatEdit("Dist Scale Far", &d->m_DistanceScaleFarValue, &o.distanceScaleFarValue);
+        edit.modified |= FloatEdit("Dist Scale Length", &d->m_DistanceScaleLength, &o.distanceScaleLength);
+        edit.modified |= BoolEdit("Exclusion Volume Cull", &d->m_ExclusionVolumeCullEnable, &o.exclusionVolumeCullEnable);
     }
 
     if (ImGui::CollapsingHeader("Lighting"))
     {
-        FloatEdit("Light Multiplier", &d->m_LightMultiplier, &o.lightMultiplier);
-        FloatEdit("Light Wrap Around", &d->m_LightWrapAroundFactor, &o.lightWrapAroundFactor);
-        FloatEdit("Vertex/Pixel Blend", &d->m_VertexPixelLightingBlendFactor, &o.vertexPixelLightingBlendFactor);
-        FloatEdit("Global/Local Blend", &d->m_GlobalLocalNormalBlendFactor, &o.globalLocalNormalBlendFactor);
-        FloatEdit("Soft Particles Fade", &d->m_SoftParticlesFadeDistanceMultiplier, &o.softParticlesFadeDistanceMultiplier);
-        BoolEdit("Emissive", &d->m_Emissive, &o.emissive);
+        edit.modified |= FloatEdit("Light Multiplier", &d->m_LightMultiplier, &o.lightMultiplier);
+        edit.modified |= FloatEdit("Light Wrap Around", &d->m_LightWrapAroundFactor, &o.lightWrapAroundFactor);
+        edit.modified |= FloatEdit("Vertex/Pixel Blend", &d->m_VertexPixelLightingBlendFactor, &o.vertexPixelLightingBlendFactor);
+        edit.modified |= FloatEdit("Global/Local Blend", &d->m_GlobalLocalNormalBlendFactor, &o.globalLocalNormalBlendFactor);
+        edit.modified |= FloatEdit("Soft Particles Fade", &d->m_SoftParticlesFadeDistanceMultiplier, &o.softParticlesFadeDistanceMultiplier);
+        edit.modified |= BoolEdit("Emissive", &d->m_Emissive, &o.emissive);
     }
 
     if (ImGui::CollapsingHeader("Point Light"))
     {
-        BoolEdit("Act As Point Light", &d->m_ActAsPointLight, &o.actAsPointLight);
-        Vec3Edit("Color", &d->m_PointLightColor, &o.pointLightColor, true);
-        Vec4Edit("Intensity", &d->m_PointLightIntensity, &o.pointLightIntensity, false);
-        Vec3Edit("Pivot", &d->m_PointLightPivot, &o.pointLightPivot, false);
-        FloatEdit("Radius", &d->m_PointLightRadius, &o.pointLightRadius);
-        FloatEdit("Min Clamp", &d->m_PointLightMinClamp, &o.pointLightMinClamp);
-        FloatEdit("Max Clamp", &d->m_PointLightMaxClamp, &o.pointLightMaxClamp);
-        FloatEdit("Random Min", &d->m_PointLightRandomIntensityMin, &o.pointLightRandomIntensityMin);
-        FloatEdit("Random Max", &d->m_PointLightRandomIntensityMax, &o.pointLightRandomIntensityMax);
+        edit.modified |= BoolEdit("Act As Point Light", &d->m_ActAsPointLight, &o.actAsPointLight);
+        edit.modified |= Vec3Edit("Color", &d->m_PointLightColor, &o.pointLightColor, true);
+        edit.modified |= Vec4Edit("Intensity", &d->m_PointLightIntensity, &o.pointLightIntensity, false);
+        edit.modified |= Vec3Edit("Pivot", &d->m_PointLightPivot, &o.pointLightPivot, false);
+        edit.modified |= FloatEdit("Radius", &d->m_PointLightRadius, &o.pointLightRadius);
+        edit.modified |= FloatEdit("Min Clamp", &d->m_PointLightMinClamp, &o.pointLightMinClamp);
+        edit.modified |= FloatEdit("Max Clamp", &d->m_PointLightMaxClamp, &o.pointLightMaxClamp);
+        edit.modified |= FloatEdit("Random Min", &d->m_PointLightRandomIntensityMin, &o.pointLightRandomIntensityMin);
+        edit.modified |= FloatEdit("Random Max", &d->m_PointLightRandomIntensityMax, &o.pointLightRandomIntensityMax);
     }
 
     if (ImGui::CollapsingHeader("Rendering"))
     {
-        BoolEdit("Opaque", &d->m_Opaque, &o.opaque);
-        BoolEdit("Force Full Res", &d->m_ForceFullRes, &o.forceFullRes);
-        BoolEdit("Sun Shadow", &d->m_TransparencySunShadowEnable, &o.transparencySunShadowEnable);
-        BoolEdit("Force Nice Sorting", &d->m_ForceNiceSorting, &o.forceNiceSorting);
+        edit.modified |= BoolEdit("Opaque", &d->m_Opaque, &o.opaque);
+        edit.modified |= BoolEdit("Force Full Res", &d->m_ForceFullRes, &o.forceFullRes);
+        edit.modified |= BoolEdit("Sun Shadow", &d->m_TransparencySunShadowEnable, &o.transparencySunShadowEnable);
+        edit.modified |= BoolEdit("Force Nice Sorting", &d->m_ForceNiceSorting, &o.forceNiceSorting);
     }
 
     if (ImGui::CollapsingHeader("Behavior"))
     {
-        BoolEdit("Local Space", &d->m_LocalSpace, &o.localSpace);
-        BoolEdit("Follow Spawn Source", &d->m_FollowSpawnSource, &o.followSpawnSource);
-        BoolEdit("Repeat Spawning", &d->m_RepeatParticleSpawning, &o.repeatParticleSpawning);
-        BoolEdit("Kill With Emitter", &d->m_KillParticlesWithEmitter, &o.killParticlesWithEmitter);
+        edit.modified |= BoolEdit("Local Space", &d->m_LocalSpace, &o.localSpace);
+        edit.modified |= BoolEdit("Follow Spawn Source", &d->m_FollowSpawnSource, &o.followSpawnSource);
+        edit.modified |= BoolEdit("Repeat Spawning", &d->m_RepeatParticleSpawning, &o.repeatParticleSpawning);
+        edit.modified |= BoolEdit("Kill With Emitter", &d->m_KillParticlesWithEmitter, &o.killParticlesWithEmitter);
     }
 
     if (ImGui::CollapsingHeader("Color Processor"))
@@ -2356,29 +2356,19 @@ void VisualEnvironmentEditor::RenderEmitterProperties()
 
     ImGui::Separator();
     if (ImGui::Button("Reset"))
+    {
         edit.original.RestoreTo(d);
+        edit.modified = false;
+    }
 }
 
 void VisualEnvironmentEditor::RenderColorProcessor(EmitterEditData& edit)
 {
-    fb::EmitterTemplate* t = edit.lastTemplate;
-    if (!t)
-    {
-        ImGui::TextDisabled("No active instance - trigger its spawn or wait");
-        return;
-    }
-
-    auto* colorProc = t->getProcessor<fb::UpdateColorData>(fb::ProcessorType::PtUpdateColor);
+    fb::UpdateColorData* colorProc = edit.colorProcessor;
     if (!colorProc)
     {
         ImGui::TextDisabled("No color processor");
         return;
-    }
-
-    if (!edit.colorCaptured)
-    {
-        edit.originalColor.CaptureFrom(t);
-        edit.colorCaptured = true;
     }
 
     const auto& oc = edit.originalColor;
@@ -2391,16 +2381,16 @@ void VisualEnvironmentEditor::RenderColorProcessor(EmitterEditData& edit)
     if (!preType || preType->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
         return;
 
-    auto* classInfo = static_cast<fb::ClassInfo*>(preType);
+    fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(preType);
     if (classInfo->m_ClassId != fb::PolynomialColorInterpData::ClassId())
         return;
 
-    auto* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
+    fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
     ImGui::Separator();
     ImGui::Text("Polynomial Interpolation");
-    Vec3Edit("Color 0", &poly->m_Color0, &oc.color0, true);
-    Vec3Edit("Color 1", &poly->m_Color1, &oc.color1, true);
-    Vec4Edit("Coefficients", &poly->m_Coefficients, &oc.coefficients, false);
+    edit.modified |= Vec3Edit("Color 0", &poly->m_Color0, &oc.color0, true);
+    edit.modified |= Vec3Edit("Color 1", &poly->m_Color1, &oc.color1, true);
+    edit.modified |= Vec4Edit("Coefficients", &poly->m_Coefficients, &oc.coefficients, false);
 }
 
 std::pair<size_t, size_t> VisualEnvironmentEditor::CountEmittersInNode(const EmitterTreeNode& node)
@@ -2459,8 +2449,7 @@ void VisualEnvironmentEditor::RenderEmitterTreeNode(EmitterTreeNode& node)
         if (active > 0)
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.2f, 0.8f, 0.2f, 1.0f));
 
-        ImGuiTreeNodeFlags flags = isSearching ? ImGuiTreeNodeFlags_DefaultOpen : ImGuiTreeNodeFlags_None;
-        bool open = ImGui::TreeNodeEx(label, flags);
+        bool open = ImGui::TreeNodeEx(label, ImGuiTreeNodeFlags_DefaultOpen);
 
         if (active > 0)
             ImGui::PopStyleColor();
