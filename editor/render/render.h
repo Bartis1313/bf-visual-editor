@@ -1,8 +1,16 @@
 #pragma once
 
-#include "../SDK/sdk.h"
+#include "../../SDK/sdk.h"
 #include <imgui.h>
 #include <string>
+
+enum class NotifyType
+{
+	Info,
+	Success,
+	Warning,
+	Error
+};
 
 namespace render
 {
@@ -33,4 +41,24 @@ namespace render
 	void text(const ImVec2& pos, ImFont* font, const std::string& text, const ImColor& color, bool centered = true, bool dropShadow = false);
 	void text(const ImVec2& pos, const std::string& text, const ImColor& color, bool centered = true, bool dropShadow = false);
 	void line(const ImVec2& start, const ImVec2& end, const ImColor& color, float thickness = 1.0f);
+
+	struct ImNotify
+	{
+		ImNotify() = default;
+		ImNotify(const std::string& title, const std::string& message, float maxTime, NotifyType type)
+			: title{ title }, message{ message }, maxTime{ maxTime }, type{ type }
+		{
+			time = ImGui::GetTime();
+		}
+
+		float maxTime{ };
+		std::string title{ };
+		std::string message{ };
+		NotifyType type{ NotifyType::Info };
+		double time{ };
+		float alpha{ };
+
+		static void handle();
+		static void add(NotifyType type, const std::string& title, const std::string& message, float time = 5.0f);
+	};
 }

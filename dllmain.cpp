@@ -2,24 +2,35 @@
 
 #include "hooks/hooks.h"
 #include "SDK/sdk.h"
+#include <thread>
 
-DWORD WINAPI InitThread(LPVOID)
+std::jthread g_initThread;
+
+static void initThread(std::stop_token stopToken)
 {
-    while (!fb::DxRenderer::GetInstance() || !fb::DxRenderer::GetInstance()->pSwapChain)
+    while (!stopToken.stop_requested())
     {
-        Sleep(100);
+        if (fb::DxRenderer::GetInstance() && fb::DxRenderer::GetInstance()->pSwapChain)
+            break;
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
+
+    if (stopToken.stop_requested())
+        return;
 
 #ifdef _DEBUG
     AllocConsole();
-    freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
-    SetConsoleTitleA("debug");
+    FILE* dummy;
+    freopen_s(&dummy, "CONOUT$", "w", stdout);
+    freopen_s(&dummy, "CONOUT$", "w", stderr);
+    SetConsoleTitleA("VisEnv Debug");
 #endif
 
     if (!hooks::init())
-        return FALSE;
-
-    return TRUE;
+    {
+        return;
+    }
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule,
@@ -31,12 +42,19 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 
     if (ul_reason_for_call == DLL_PROCESS_ATTACH)
     {
-        CloseHandle(CreateThread(nullptr, 0, InitThread, nullptr, 0, nullptr));
+        g_initThread = std::jthread{ initThread };
     }
     else if (ul_reason_for_call == DLL_PROCESS_DETACH)
     {
-        if (!hooks::shutdown())
-            return FALSE;
+        g_initThread.request_stop();
+        if (g_initThread.joinable())
+            g_initThread.join();
+
+        hooks::shutdown();
+
+#ifdef _DEBUG
+        FreeConsole();
+#endif
     }
 
     return TRUE;

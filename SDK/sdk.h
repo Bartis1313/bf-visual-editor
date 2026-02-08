@@ -100,6 +100,18 @@ namespace fb
 			return 0x023C2C44;
 		}
 		char* m_Name; //0x0008
+
+		// try to get shorter debugname
+		std::string tryGetDebugName() const
+		{
+			std::string name{ m_Name };
+			const size_t pos = name.find_last_of("/\\");
+			if (pos != std::string::npos)
+				name = name.substr(pos + 1);
+
+			return name;
+		}
+
 	};//Size=0x000C
 
 	class TextureBaseAsset : public Asset
@@ -1073,8 +1085,8 @@ namespace fb
 		{
 			return 0x0240627C;
 		}
-		char padInherit[sizeof(DataContainer)];
-		char SKIPME[8];
+		char padInherit[sizeof(DataContainer)]; // 0x0000
+		char SKIPME[8]; // 0x0008
 		Vec3 m_DynamicEnvmapDefaultPosition; //0x0010
 		Vec3 m_SubSurfaceColor; //0x0020
 		float m_ViewportScale; //0x0030
@@ -2177,7 +2189,8 @@ namespace fb
 	{
 	public:
 		virtual void* dtor(void*);
-		virtual const char* getMessageName();
+		// non retail only
+		//virtual const char* getMessageName();
 
 		DWORD m_Category;
 		DWORD m_Type;
@@ -2798,4 +2811,12 @@ namespace fb
 			return 0x023C4C0C;
 		}
 	};//Size=0x0024
+
+	struct EnlightenMaterial
+	{
+		fb::Vec3 color;
+		fb::Guid guid;
+		unsigned __int64 shaderId;
+		bool emissive;
+	};
 }

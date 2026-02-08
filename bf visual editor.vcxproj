@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -94,6 +94,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -112,6 +113,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -128,6 +130,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -146,6 +149,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -154,10 +158,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="api.h" />
+    <ClInclude Include="editor\comps\comps_serialize.h" />
+    <ClInclude Include="editor\config\config.h" />
+    <ClInclude Include="editor\copy\copy.h" />
     <ClInclude Include="editor\editor.h" />
-    <ClInclude Include="editor\math.h" />
-    <ClInclude Include="editor\render.h" />
+    <ClInclude Include="editor\editor_context.h" />
+    <ClInclude Include="editor\effects\effects.h" />
+    <ClInclude Include="editor\emitters\emitters.h" />
+    <ClInclude Include="editor\global_ve\global_ve.h" />
+    <ClInclude Include="editor\lights\lights.h" />
+    <ClInclude Include="editor\render\math.h" />
+    <ClInclude Include="editor\serialize\serialize.h" />
+    <ClInclude Include="editor\settings\settings.h" />
+    <ClInclude Include="editor\states\states.h" />
     <ClInclude Include="editor\types.h" />
+    <ClInclude Include="editor\render\render.h" />
+    <ClInclude Include="editor\ui\ui_helpers.h" />
+    <ClInclude Include="editor\comps\comps.h" />
+    <ClInclude Include="editor\world_render\world_render.h" />
     <ClInclude Include="hooks\functions.h" />
     <ClInclude Include="hooks\hooks.h" />
     <ClInclude Include="SDK\eastl.h" />
@@ -170,12 +189,34 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="editor\config.cpp" />
-    <ClCompile Include="editor\copy.cpp" />
+    <ClCompile Include="editor\comps\comps_serialize.cpp" />
+    <ClCompile Include="editor\config\config.cpp" />
+    <ClCompile Include="editor\config\config_ui.cpp" />
+    <ClCompile Include="editor\copy\copy.cpp" />
     <ClCompile Include="editor\editor.cpp" />
-    <ClCompile Include="editor\hash.cpp" />
-    <ClCompile Include="editor\render.cpp" />
-    <ClCompile Include="editor\ui.cpp" />
+    <ClCompile Include="editor\editor_context.cpp" />
+    <ClCompile Include="editor\effects\effects.cpp" />
+    <ClCompile Include="editor\effects\effects_ui.cpp" />
+    <ClCompile Include="editor\emitters\emitters.cpp" />
+    <ClCompile Include="editor\emitters\emitters_serialize.cpp" />
+    <ClCompile Include="editor\emitters\emitters_ui.cpp" />
+    <ClCompile Include="editor\global_ve\global_ve.cpp" />
+    <ClCompile Include="editor\global_ve\global_ve_serialize.cpp" />
+    <ClCompile Include="editor\global_ve\global_ve_ui.cpp" />
+    <ClCompile Include="editor\lights\lights.cpp" />
+    <ClCompile Include="editor\lights\lights_serialize.cpp" />
+    <ClCompile Include="editor\lights\lights_ui.cpp" />
+    <ClCompile Include="editor\serialize\serialize.cpp" />
+    <ClCompile Include="editor\states\states_ui.cpp" />
+    <ClCompile Include="editor\states\states.cpp" />
+    <ClCompile Include="editor\states\states_capture.cpp" />
+    <ClCompile Include="editor\states\states_serialize.cpp" />
+    <ClCompile Include="editor\render\render.cpp" />
+    <ClCompile Include="editor\ui\ui_helpers.cpp" />
+    <ClCompile Include="editor\comps\comps.cpp" />
+    <ClCompile Include="editor\world_render\world_render.cpp" />
+    <ClCompile Include="editor\world_render\world_render_serialize.cpp" />
+    <ClCompile Include="editor\world_render\world_render_ui.cpp" />
     <ClCompile Include="hooks\functions.cpp" />
     <ClCompile Include="hooks\hooks.cpp" />
     <ClCompile Include="SDK\typeinfo.cpp" />

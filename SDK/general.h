@@ -6,6 +6,23 @@
 
 namespace fb
 {
+    constexpr uint32_t frostbiteHash(const char* str, size_t len)
+    {
+        uint32_t hash = 5381;
+        for (size_t i = 0; i < len; ++i)
+        {
+            hash = ((hash << 5) + hash) ^ static_cast<uint32_t>(str[i]);
+        }
+        return hash;
+    }
+}
+constexpr uint32_t operator"" _fbhash(const char* str, size_t len)
+{
+    return fb::frostbiteHash(str, len);
+}
+
+namespace fb
+{
     template<typename T> class WeakToken
     {
     public:

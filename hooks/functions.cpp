@@ -11,14 +11,14 @@ void __fastcall hkfb__VisualEnvironment__operator(fb::VisualEnvironment* _this, 
 {
     ofb__VisualEnvironment__operator(_this, _that);
 
-    VisualEnvironmentEditor::Instance().OnVisualEnvironmentUpdated(_this);
+    editor::onVisualEnvironmentUpdated(_this);
 }
 
 int __fastcall hkfb__VisualEnvironmentManager__update(fb::VisualEnvironmentManager* _this, void*, const void* a2)
 {
-    VisualEnvironmentEditor::Instance().OnManagerUpdateBegin(_this);
+    editor::onManagerUpdateBegin(_this);
     int ret = ofb__VisualEnvironmentManager__update(_this, a2);
-    VisualEnvironmentEditor::Instance().OnManagerUpdateEnd(_this);
+    editor::onManagerUpdateEnd(_this);
 
     return ret;
 }
@@ -34,9 +34,7 @@ void __fastcall hkfb__MessageManager__dispatchMessage(int pMessageManager, void*
 {
     if (pMessage)
     {
-        //printf("Message %s C%u T%u R%p\n", pMessage->GetType()->m_InfoData->m_Name, pMessage->m_Category, pMessage->m_Type, _ReturnAddress());
-
-        VisualEnvironmentEditor::Instance().OnMessage(pMessage->m_Category, pMessage->m_Type);
+        editor::onMessage(pMessage->m_Category, pMessage->m_Type);
     }
 
     ofb__MessageManager__dispatchMessage(pMessageManager, pMessage);
@@ -50,14 +48,13 @@ fb::EntityBusPeer* __cdecl hkfb__ClientEntityFactory__internalCreateEntity(fb::C
 int __fastcall hkfb__LocalLightEntity__LocalLightEntity(fb::LocalLightEntity* _this, void*, void* info, fb::LocalLightEntityData* data, int lightType)
 {
     int result = ofb__LocalLightEntity__LocalLightEntity(_this, info, data, lightType);
-    VisualEnvironmentEditor::Instance().OnLightEntityCreated(_this, data);
+    editor::onLightEntityCreated(_this, data);
     return result;
 }
 
 void __fastcall hkLocalLightEntityDestr(fb::LocalLightEntity* _this, void*)
 {
-    VisualEnvironmentEditor::Instance().OnLightEntityDestroyed(_this);
-
+    editor::onLightEntityDestroyed(_this);
     oLocalLightEntityDestr(_this);
 
 }
@@ -71,14 +68,14 @@ int __fastcall hkfb__VisualEnvironmentEntityConstrsub_F7E030(fb::VisualEnvironme
 {
     auto ret = ofb__VisualEnvironmentEntityConstrsub_F7E030(_this, a2, data);
 
-    VisualEnvironmentEditor::Instance().OnVisualEnvironmentEntityCreated(_this, data);
+    editor::onVisualEnvironmentEntityCreated(_this, data);
 
     return ret;
 }
 
 void __fastcall hkfb__VisualEnvironmentEntityDestrsub_F7A7E0(fb::VisualEnvironmentEntity* _this)
 {
-    VisualEnvironmentEditor::Instance().OnVisualEnvironmentEntityDestroyed(_this);
+    editor::onVisualEnvironmentEntityDestroyed(_this);
 
     ofb__VisualEnvironmentEntityDestrsub_F7A7E0(_this);
 }
@@ -104,7 +101,7 @@ fb::EmitterTemplate* __fastcall hkfb__EmitterManager__createEmitterTemplate(void
 {
     auto emitter = ofb__EmitterManager__createEmitterTemplate(_this, data);
     
-    VisualEnvironmentEditor::Instance().OnEmitterCreated(emitter, data);
+    editor::onEmitterCreated(emitter, data);
 
     return emitter;
 }
@@ -172,7 +169,7 @@ void RenderImGui()
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
     {
-        VisualEnvironmentEditor::Instance().Render();
+        editor::render();
     }
     ImGui::EndFrame();
     ImGui::Render();
@@ -185,6 +182,7 @@ HRESULT WINAPI hkD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UIN
 {
     if (!g_ImGuiInitialized)
     {
+        editor::init();
         InitImGui(pSwapChain);
     }
 
@@ -197,7 +195,7 @@ LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     if (msg == WM_KEYDOWN && wParam == VK_INSERT)
     {
-        bool& enabled = VisualEnvironmentEditor::Instance().IsEnabled();
+        bool& enabled = editor::isEnabled();
         enabled = !enabled;
 
         fb::BorderInputNode::GetInstance()->m_mouse->enableCursorMode(enabled, 1);
@@ -206,7 +204,7 @@ LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
         return 0;
     }
 
-    if (VisualEnvironmentEditor::Instance().IsEnabled())
+    if (editor::isEnabled())
     {
         if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
             return TRUE;

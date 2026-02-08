@@ -1,10 +1,8 @@
 #pragma once
 
+#include <cstdint>
 #include <string>
-#include <vector>
-#include <mutex>
-#include <cstdarg>
-#include <imgui.h>
+#include <format>
 
 namespace logger
 {
@@ -18,57 +16,50 @@ namespace logger
 
     struct Entry
     {
-        Level       level;
+        Level level;
         std::string message;
         std::string timestamp;
-        uint32_t    count = 1;
+        uint32_t count = 1;
     };
 
-    inline bool     AutoScroll = true;
-    inline bool     ShowTimestamps = true;
-    inline bool     CollapseDuplicates = true;
-    inline size_t   MaxEntries = 1000;
-    inline Level    MinLevel = Level_Info;
+    inline bool autoScroll = true;
+    inline bool showTimestamps = true;
+    inline bool collapseDuplicates = true;
+    inline bool textMode = false;
+    inline size_t maxEntries = 1000;
+    inline Level minLevel = Level_Info;
 
-    void vPrint(Level level, const char* fmt, va_list args);
-    void Print(Level level, const char* fmt, ...);
-    void Clear();
-    void Render(const char* title = "Console", bool* p_open = nullptr);
+    void addEntry(Level level, std::string message);
+    void clear();
+    void render(const char* title = "Console", bool* open = nullptr);
 
-    inline void Debug(const char* fmt, ...)
+    template<typename... Args>
+    void print(Level level, std::format_string<Args...> fmt, Args&&... args)
     {
-        va_list args;
-        va_start(args, fmt);
-        vPrint(Level_Debug, fmt, args);
-        va_end(args);
+        addEntry(level, std::format(fmt, std::forward<Args>(args)...));
     }
 
-    inline void Info(const char* fmt, ...)
+    template<typename... Args>
+    void debug(std::format_string<Args...> fmt, Args&&... args)
     {
-        va_list args;
-        va_start(args, fmt);
-        vPrint(Level_Info, fmt, args);
-        va_end(args);
+        print(Level_Debug, fmt, std::forward<Args>(args)...);
     }
 
-    inline void Warning(const char* fmt, ...)
+    template<typename... Args>
+    void info(std::format_string<Args...> fmt, Args&&... args)
     {
-        va_list args;
-        va_start(args, fmt);
-        vPrint(Level_Warning, fmt, args);
-        va_end(args);
+        print(Level_Info, fmt, std::forward<Args>(args)...);
     }
 
-    inline void Error(const char* fmt, ...)
+    template<typename... Args>
+    void warning(std::format_string<Args...> fmt, Args&&... args)
     {
-        va_list args;
-        va_start(args, fmt);
-        vPrint(Level_Error, fmt, args);
-        va_end(args);
+        print(Level_Warning, fmt, std::forward<Args>(args)...);
+    }
+
+    template<typename... Args>
+    void error(std::format_string<Args...> fmt, Args&&... args)
+    {
+        print(Level_Error, fmt, std::forward<Args>(args)...);
     }
 }
-
-#define LOG_DEBUG(fmt, ...)   logger::Print(logger::Level_Debug, fmt, ##__VA_ARGS__)
-#define LOG_INFO(fmt, ...)    logger::Print(logger::Level_Info, fmt, ##__VA_ARGS__)
-#define LOG_WARN(fmt, ...) logger::Print(logger::Level_Warning, fmt, ##__VA_ARGS__)
-#define LOG_ERROR(fmt, ...)   logger::Print(logger::Level_Error, fmt, ##__VA_ARGS__)

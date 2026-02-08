@@ -2,6 +2,7 @@
 #include "functions.h"
 
 #include "../utils/log.h"
+#include "../editor/editor.h"
 
 #include <MinHook.h>
 
@@ -31,13 +32,15 @@ bool hooks::init()
 
     MH_STATUS hS = MH_EnableHook(MH_ALL_HOOKS);
 
-    LOG_INFO("MH status %s\n", MH_StatusToString(hS));
+    logger::info("MH status {}", MH_StatusToString(hS));
 
     return hS == MH_OK;
 }
 
 bool hooks::shutdown()
 {
+    editor::shutdown();
+
     MH_DisableHook(MH_ALL_HOOKS);
     MH_RemoveHook(MH_ALL_HOOKS);
     MH_Uninitialize();

@@ -40,9 +40,7 @@ Tho this was last way I wanted to do it.
 In conclusion getting states from resource manager is the best + editing it globally
 
 #### Code
-For now, it's extremelly messy. SDK should have some classes marked with "Captured" name, since they don't leave typeinfo.
-Also editor class was not good idea, I have to recode this into more internal parts, which are never ever used anywhere else but in editor.cpp.
-Probably support for fb3 going to be added in some time.
+Probably support for fb3 going to be added in some time, and after final cleanup of code.
 
 # Demo
 ![preview](https://github.com/Bartis1313/bf-visual-editor/blob/7f3e7e56281ba563aa2bf15039e8df507df2225a/images/1.png)\
