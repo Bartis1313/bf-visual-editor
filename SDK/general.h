@@ -16,6 +16,7 @@ namespace fb
         return hash;
     }
 }
+
 constexpr uint32_t operator"" _fbhash(const char* str, size_t len)
 {
     return fb::frostbiteHash(str, len);

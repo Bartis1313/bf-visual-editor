@@ -72,138 +72,29 @@ namespace editor::global_ve
         ImGui::SameLine();
         if (ImGui::Button("Disable All"))
         {
-            data.outdoorLightOverrideEnabled = false;
-            data.enlightenOverrideEnabled = false;
-            data.tonemapOverrideEnabled = false;
-            data.colorCorrectionOverrideEnabled = false;
-            data.skyOverrideEnabled = false;
-            data.fogOverrideEnabled = false;
-            data.windOverrideEnabled = false;
-            data.sunFlareOverrideEnabled = false;
-            data.dynamicAOOverrideEnabled = false;
-            data.dofOverrideEnabled = false;
-            data.vignetteOverrideEnabled = false;
-            data.filmGrainOverrideEnabled = false;
-            data.lensScopeOverrideEnabled = false;
-            data.cameraParamsOverrideEnabled = false;
-            data.screenEffectOverrideEnabled = false;
-            data.damageEffectOverrideEnabled = false;
-            data.planarReflectionOverrideEnabled = false;
-            data.dynamicEnvmapOverrideEnabled = false;
-            data.characterLightingOverrideEnabled = false;
-            data.motionBlurOverrideEnabled = false;
+#define DISABLE(Type, field) data.field##OverrideEnabled = false;
+            VE_COMPONENTS(DISABLE)
+#undef DISABLE
         }
 
         ImGui::Separator();
 
         if (!data.globalOverrideEnabled)
         {
-            ImGui::TextColored(ImVec4{ 0.7f, 0.7f, 0.3f, 1.0f },
-                "Global overrides disabled. Enable checkbox above to apply edits to final output.");
+            ImGui::TextColored(ImVec4{ 0.7f, 0.7f, 0.3f, 1.0f }, "Global overrides disabled. Enable checkbox above to apply edits to final output.");
             ImGui::Separator();
         }
 
         ImGui::BeginChild("GlobalVEComponents", ImVec2{ 0, 0 }, false);
 
-        renderComponentSection("OutdoorLight", "Outdoor Light",
-            &data.outdoorLightOverrideEnabled, 0,
-            comps::renderOutdoorLightComponent,
-            &data.editOutdoorLight, &data.origOutdoorLight);
-
-        renderComponentSection("Enlighten", "Enlighten",
-            &data.enlightenOverrideEnabled, 1,
-            comps::renderEnlightenComponent,
-            &data.editEnlighten, &data.origEnlighten);
-
-        renderComponentSection("Tonemap", "Tonemap",
-            &data.tonemapOverrideEnabled, 2,
-            comps::renderTonemapComponent,
-            &data.editTonemap, &data.origTonemap);
-
-        renderComponentSection("ColorCorrection", "Color Correction",
-            &data.colorCorrectionOverrideEnabled, 3,
-            comps::renderColorCorrectionComponent,
-            &data.editColorCorrection, &data.origColorCorrection);
-
-        renderComponentSection("Sky", "Sky",
-            &data.skyOverrideEnabled, 4,
-            comps::renderSkyComponent,
-            &data.editSky, &data.origSky);
-
-        renderComponentSection("Fog", "Fog",
-            &data.fogOverrideEnabled, 5,
-            comps::renderFogComponent,
-            &data.editFog, &data.origFog);
-
-        renderComponentSection("Wind", "Wind",
-            &data.windOverrideEnabled, 6,
-            comps::renderWindComponent,
-            &data.editWind, &data.origWind);
-
-        renderComponentSection("SunFlare", "Sun Flare",
-            &data.sunFlareOverrideEnabled, 7,
-            comps::renderSunFlareComponent,
-            &data.editSunFlare, &data.origSunFlare);
-
-        renderComponentSection("DynamicAO", "Dynamic AO",
-            &data.dynamicAOOverrideEnabled, 8,
-            comps::renderDynamicAOComponent,
-            &data.editDynamicAO, &data.origDynamicAO);
-
-        renderComponentSection("Dof", "Depth of Field",
-            &data.dofOverrideEnabled, 9,
-            comps::renderDofComponent,
-            &data.editDof, &data.origDof);
-
-        renderComponentSection("Vignette", "Vignette",
-            &data.vignetteOverrideEnabled, 10,
-            comps::renderVignetteComponent,
-            &data.editVignette, &data.origVignette);
-
-        renderComponentSection("FilmGrain", "Film Grain",
-            &data.filmGrainOverrideEnabled, 11,
-            comps::renderFilmGrainComponent,
-            &data.editFilmGrain, &data.origFilmGrain);
-
-        renderComponentSection("LensScope", "Lens Scope",
-            &data.lensScopeOverrideEnabled, 12,
-            comps::renderLensScopeComponent,
-            &data.editLensScope, &data.origLensScope);
-
-        renderComponentSection("CameraParams", "Camera Params",
-            &data.cameraParamsOverrideEnabled, 13,
-            comps::renderCameraParamsComponent,
-            &data.editCameraParams, &data.origCameraParams);
-
-        renderComponentSection("ScreenEffect", "Screen Effect",
-            &data.screenEffectOverrideEnabled, 14,
-            comps::renderScreenEffectComponent,
-            &data.editScreenEffect, &data.origScreenEffect);
-
-        renderComponentSection("DamageEffect", "Damage Effect",
-            &data.damageEffectOverrideEnabled, 15,
-            comps::renderDamageEffectComponent,
-            &data.editDamageEffect, &data.origDamageEffect);
-
-        renderComponentSection("PlanarReflection", "Planar Reflection",
-            &data.planarReflectionOverrideEnabled, 16,
-            comps::renderPlanarReflectionComponent,
-            &data.editPlanarReflection, &data.origPlanarReflection);
-
-        renderComponentSection("DynamicEnvmap", "Dynamic Envmap",
-            &data.dynamicEnvmapOverrideEnabled, 17,
-            comps::renderDynamicEnvmapComponent,
-            &data.editDynamicEnvmap, &data.origDynamicEnvmap);
-
-        renderComponentSection("CharacterLighting", "Character Lighting",
-            &data.characterLightingOverrideEnabled, 18,
-            comps::renderCharacterLightingComponent,
-            &data.editCharacterLighting, &data.origCharacterLighting);
-
-        renderComponentSection("MotionBlur", "Motion Blur",
-            &data.motionBlurOverrideEnabled, 19,
-            comps::renderMotionBlurComponent,
-            &data.editMotionBlur, &data.origMotionBlur);
+        int idx = 0;
+#define RENDER(Type, field) \
+        renderComponentSection(#Type, PRETTY_CASE_NAME(#Type), \
+            &data.field##OverrideEnabled, idx++, \
+            comps::render##Type##Component, \
+            &data.edit##Type, &data.orig##Type);
+        VE_COMPONENTS(RENDER)
+#undef RENDER
 
         ImGui::EndChild();
     }

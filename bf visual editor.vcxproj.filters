@@ -90,6 +90,15 @@
     <ClInclude Include="editor\comps\comps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\comps\comps_serialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\serialize\serialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -122,9 +131,6 @@
     <ClCompile Include="editor\copy\copy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="editor\serialize\serialize.h">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="editor\serialize\serialize.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -135,9 +141,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\lights\lights_ui.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="editor\states\serialize_ui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\states\states_capture.cpp">
@@ -189,6 +192,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\comps\comps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\comps\comps_serialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\states\states_ui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

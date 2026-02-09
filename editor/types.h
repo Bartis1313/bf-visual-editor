@@ -128,7 +128,9 @@ struct LightDataEntry
 
     void ResetToOriginal()
     {
-        if (!origCaptured) return;
+        if (!origCaptured)
+            return;
+
         color = origColor;
         particleColorScale = origParticleColorScale;
         enlightenColorScale = origEnlightenColorScale;
@@ -156,35 +158,50 @@ struct LightDataEntry
     }
 };
 
+// X-macro for all Visual Environment components. Define once, use everywhere.
+//
+// Each entry is X(Type, field) where:
+//   Type  - PascalCase, used for type names and suffixes (fb::TypeComponentData, has##Type, orig##Type, edit##Type)
+//   field - camelCase, used for struct members and function names (state->field, copy::field())
+//
+// To use, define a macro taking (Type, field), invoke VE_COMPONENTS with it, then undef:
+//
+//   #define COPY_ALL(Type, field) copy::field(&data.orig##Type, &ve->field);
+//   VE_COMPONENTS(COPY_ALL)
+//   #undef COPY_ALL
+//
+// This expands to copy::outdoorLight(&data.origOutdoorLight, &ve->outdoorLight); for each component.
+// Adding a new component here automatically updates all places that use the macro.
+#define VE_COMPONENTS(X) \
+    X(OutdoorLight,      outdoorLight) \
+    X(Enlighten,         enlighten) \
+    X(Tonemap,           tonemap) \
+    X(ColorCorrection,   colorCorrection) \
+    X(Sky,               sky) \
+    X(Fog,               fog) \
+    X(Wind,              wind) \
+    X(SunFlare,          sunFlare) \
+    X(DynamicAO,         dynamicAO) \
+    X(Dof,               dof) \
+    X(Vignette,          vignette) \
+    X(FilmGrain,         filmGrain) \
+    X(LensScope,         lensScope) \
+    X(CameraParams,      cameraParams) \
+    X(ScreenEffect,      screenEffect) \
+    X(DamageEffect,      damageEffect) \
+    X(PlanarReflection,  planarReflection) \
+    X(DynamicEnvmap,     dynamicEnvmap) \
+    X(CharacterLighting, characterLighting) \
+    X(MotionBlur,        motionBlur)
+
 struct StateEditData
 {
-#define DECLARE_COMPONENT(name) \
-    bool has##name = false; \
-    void* captured##name = nullptr; \
-    fb::name##ComponentData orig##name{}; \
-    fb::name##ComponentData edit##name{}
-
-    DECLARE_COMPONENT(OutdoorLight);
-    DECLARE_COMPONENT(Enlighten);
-    DECLARE_COMPONENT(Tonemap);
-    DECLARE_COMPONENT(ColorCorrection);
-    DECLARE_COMPONENT(Sky);
-    DECLARE_COMPONENT(Fog);
-    DECLARE_COMPONENT(Wind);
-    DECLARE_COMPONENT(SunFlare);
-    DECLARE_COMPONENT(DynamicAO);
-    DECLARE_COMPONENT(Dof);
-    DECLARE_COMPONENT(Vignette);
-    DECLARE_COMPONENT(FilmGrain);
-    DECLARE_COMPONENT(LensScope);
-    DECLARE_COMPONENT(CameraParams);
-    DECLARE_COMPONENT(ScreenEffect);
-    DECLARE_COMPONENT(DamageEffect);
-    DECLARE_COMPONENT(PlanarReflection);
-    DECLARE_COMPONENT(DynamicEnvmap);
-    DECLARE_COMPONENT(CharacterLighting);
-    DECLARE_COMPONENT(MotionBlur);
-
+#define DECLARE_COMPONENT(Type, field) \
+        bool has##Type = false; \
+        void* captured##Type = nullptr; \
+        fb::Type##ComponentData orig##Type{}; \
+        fb::Type##ComponentData edit##Type{};
+    VE_COMPONENTS(DECLARE_COMPONENT)
 #undef DECLARE_COMPONENT
 
     bool overrideEnabled = true;
@@ -198,99 +215,29 @@ struct StateEditData
 
     void ResetCaptures()
     {
-        hasOutdoorLight = false;
-        hasEnlighten = false;
-        hasTonemap = false;
-        hasColorCorrection = false;
-        hasSky = false;
-        hasFog = false;
-        hasWind = false;
-        hasSunFlare = false;
-        hasDynamicAO = false;
-        hasDof = false;
-        hasVignette = false;
-        hasFilmGrain = false;
-        hasLensScope = false;
-        hasCameraParams = false;
-        hasScreenEffect = false;
-        hasDamageEffect = false;
-        hasPlanarReflection = false;
-        hasDynamicEnvmap = false;
-        hasCharacterLighting = false;
-        hasMotionBlur = false;
-
-        capturedOutdoorLight = nullptr;
-        capturedEnlighten = nullptr;
-        capturedTonemap = nullptr;
-        capturedColorCorrection = nullptr;
-        capturedSky = nullptr;
-        capturedFog = nullptr;
-        capturedWind = nullptr;
-        capturedSunFlare = nullptr;
-        capturedDynamicAO = nullptr;
-        capturedDof = nullptr;
-        capturedVignette = nullptr;
-        capturedFilmGrain = nullptr;
-        capturedLensScope = nullptr;
-        capturedCameraParams = nullptr;
-        capturedScreenEffect = nullptr;
-        capturedDamageEffect = nullptr;
-        capturedPlanarReflection = nullptr;
-        capturedDynamicEnvmap = nullptr;
-        capturedCharacterLighting = nullptr;
-        capturedMotionBlur = nullptr;
+#define RESET(Type, field) has##Type = false; captured##Type = nullptr;
+        VE_COMPONENTS(RESET)
+#undef RESET
     }
 
     int ComponentCount() const
     {
         int c = 0;
-        if (hasOutdoorLight) c++;
-        if (hasEnlighten) c++;
-        if (hasTonemap) c++;
-        if (hasColorCorrection) c++;
-        if (hasSky) c++;
-        if (hasFog) c++;
-        if (hasWind) c++;
-        if (hasSunFlare) c++;
-        if (hasDynamicAO) c++;
-        if (hasDof) c++;
-        if (hasVignette) c++;
-        if (hasFilmGrain) c++;
-        if (hasLensScope) c++;
-        if (hasCameraParams) c++;
-        if (hasScreenEffect) c++;
-        if (hasDamageEffect) c++;
-        if (hasPlanarReflection) c++;
-        if (hasDynamicEnvmap) c++;
-        if (hasCharacterLighting) c++;
-        if (hasMotionBlur) c++;
+#define COUNT(Type, field) c += has##Type;
+        VE_COMPONENTS(COUNT)
+#undef COUNT
         return c;
     }
 
     static int CountLiveComponents(fb::VisualEnvironmentState* state)
     {
-        if (!state) return 0;
+        if (!state)
+            return 0;
+
         int c = 0;
-        if (state->outdoorLight) c++;
-        if (state->enlighten) c++;
-        if (state->tonemap) c++;
-        if (state->colorCorrection) c++;
-        if (state->sky) c++;
-        if (state->fog) c++;
-        if (state->wind) c++;
-        if (state->sunFlare) c++;
-        if (state->dynamicAO) c++;
-        if (state->dof) c++;
-        if (state->vignette) c++;
-        if (state->filmGrain) c++;
-        if (state->lensScope) c++;
-        if (state->cameraParams) c++;
-        if (state->screenEffect) c++;
-        if (state->damageEffect) c++;
-        if (state->planarReflection) c++;
-        if (state->dynamicEnvmap) c++;
-        if (state->characterLighting) c++;
-        if (state->motionBlur) c++;
+#define COUNT(Type, field) c += (state->field != nullptr);
+        VE_COMPONENTS(COUNT)
+#undef COUNT
         return c;
     }
 };
@@ -301,121 +248,32 @@ struct StateEditEntry
     StateEditData editData;
 };
 
-// Should be deleted
 struct GlobalVEData
 {
-    fb::OutdoorLightComponentData origOutdoorLight{};
-    fb::OutdoorLightComponentData editOutdoorLight{};
-    bool outdoorLightOverrideEnabled = false;
+#define DECLARE_COMPONENT(Type, field) \
+        fb::Type##ComponentData orig##Type{}; \
+        fb::Type##ComponentData edit##Type{}; \
+        bool field##OverrideEnabled = false;
 
-    fb::EnlightenComponentData origEnlighten{};
-    fb::EnlightenComponentData editEnlighten{};
-    bool enlightenOverrideEnabled = false;
+    VE_COMPONENTS(DECLARE_COMPONENT)
+#undef DECLARE_COMPONENT
 
-    fb::TonemapComponentData origTonemap{};
-    fb::TonemapComponentData editTonemap{};
-    bool tonemapOverrideEnabled = false;
-
-    fb::ColorCorrectionComponentData origColorCorrection{};
-    fb::ColorCorrectionComponentData editColorCorrection{};
-    bool colorCorrectionOverrideEnabled = false;
-
-    fb::SkyComponentData origSky{};
-    fb::SkyComponentData editSky{};
-    bool skyOverrideEnabled = false;
-
-    fb::FogComponentData origFog{};
-    fb::FogComponentData editFog{};
-    bool fogOverrideEnabled = false;
-
-    fb::WindComponentData origWind{};
-    fb::WindComponentData editWind{};
-    bool windOverrideEnabled = false;
-
-    fb::SunFlareComponentData origSunFlare{};
-    fb::SunFlareComponentData editSunFlare{};
-    bool sunFlareOverrideEnabled = false;
-
-    fb::DynamicAOComponentData origDynamicAO{};
-    fb::DynamicAOComponentData editDynamicAO{};
-    bool dynamicAOOverrideEnabled = false;
-
-    fb::DofComponentData origDof{};
-    fb::DofComponentData editDof{};
-    bool dofOverrideEnabled = false;
-
-    fb::VignetteComponentData origVignette{};
-    fb::VignetteComponentData editVignette{};
-    bool vignetteOverrideEnabled = false;
-
-    fb::FilmGrainComponentData origFilmGrain{};
-    fb::FilmGrainComponentData editFilmGrain{};
-    bool filmGrainOverrideEnabled = false;
-
-    fb::LensScopeComponentData origLensScope{};
-    fb::LensScopeComponentData editLensScope{};
-    bool lensScopeOverrideEnabled = false;
-
-    fb::CameraParamsComponentData origCameraParams{};
-    fb::CameraParamsComponentData editCameraParams{};
-    bool cameraParamsOverrideEnabled = false;
-
-    fb::ScreenEffectComponentData origScreenEffect{};
-    fb::ScreenEffectComponentData editScreenEffect{};
-    bool screenEffectOverrideEnabled = false;
-
-    fb::DamageEffectComponentData origDamageEffect{};
-    fb::DamageEffectComponentData editDamageEffect{};
-    bool damageEffectOverrideEnabled = false;
-
-    fb::PlanarReflectionComponentData origPlanarReflection{};
-    fb::PlanarReflectionComponentData editPlanarReflection{};
-    bool planarReflectionOverrideEnabled = false;
-
-    fb::DynamicEnvmapComponentData origDynamicEnvmap{};
-    fb::DynamicEnvmapComponentData editDynamicEnvmap{};
-    bool dynamicEnvmapOverrideEnabled = false;
-
-    fb::CharacterLightingComponentData origCharacterLighting{};
-    fb::CharacterLightingComponentData editCharacterLighting{};
-    bool characterLightingOverrideEnabled = false;
-
-    fb::MotionBlurComponentData origMotionBlur{};
-    fb::MotionBlurComponentData editMotionBlur{};
-    bool motionBlurOverrideEnabled = false;
-
-    bool captured = false;
+        bool captured = false;
     bool globalOverrideEnabled = false;
 
-    void Reset() { *this = GlobalVEData{ }; }
+    void Reset() { *this = GlobalVEData{}; }
 
     int EnabledOverrideCount() const
     {
         int c = 0;
-        if (outdoorLightOverrideEnabled) c++;
-        if (enlightenOverrideEnabled) c++;
-        if (tonemapOverrideEnabled) c++;
-        if (colorCorrectionOverrideEnabled) c++;
-        if (skyOverrideEnabled) c++;
-        if (fogOverrideEnabled) c++;
-        if (windOverrideEnabled) c++;
-        if (sunFlareOverrideEnabled) c++;
-        if (dynamicAOOverrideEnabled) c++;
-        if (dofOverrideEnabled) c++;
-        if (vignetteOverrideEnabled) c++;
-        if (filmGrainOverrideEnabled) c++;
-        if (lensScopeOverrideEnabled) c++;
-        if (cameraParamsOverrideEnabled) c++;
-        if (screenEffectOverrideEnabled) c++;
-        if (damageEffectOverrideEnabled) c++;
-        if (planarReflectionOverrideEnabled) c++;
-        if (dynamicEnvmapOverrideEnabled) c++;
-        if (characterLightingOverrideEnabled) c++;
-        if (motionBlurOverrideEnabled) c++;
-        return c;
+#define COUNT(Type, field) c += field##OverrideEnabled;
+        VE_COMPONENTS(COUNT)
+#undef COUNT
+            return c;
     }
 };
 
+// EmitterTemplateData wrapper
 struct EmitterSnapshot
 {
     fb::Vec4 pointLightIntensity;
@@ -513,3 +371,31 @@ struct SpawnedEffect
     fb::LinearTransform transform;
     std::string effectName;
 };
+
+// should be moved from this file, dunno where
+template<size_t N>
+struct PrettyName
+{
+    char buf[N * 2]{};
+
+    constexpr PrettyName(const char* s)
+    {
+        size_t j = 0;
+        for (size_t i = 0; s[i]; ++i)
+        {
+            char c = s[i];
+            if (i > 0 && c >= 'A' && c <= 'Z')
+            {
+                bool prevLower = s[i - 1] >= 'a' && s[i - 1] <= 'z';
+                bool prevUpper = s[i - 1] >= 'A' && s[i - 1] <= 'Z';
+                bool nextLower = s[i + 1] && s[i + 1] >= 'a' && s[i + 1] <= 'z';
+
+                if (prevLower || (prevUpper && nextLower))
+                    buf[j++] = ' ';
+            }
+            buf[j++] = c;
+        }
+    }
+};
+
+#define PRETTY_CASE_NAME(str) (PrettyName<sizeof(str)>(str).buf)

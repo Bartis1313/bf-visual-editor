@@ -188,84 +188,30 @@ namespace editor::emitters
 
 void EmitterSnapshot::captureFrom(const fb::EmitterTemplateData* d)
 {
-    pointLightIntensity = d->m_PointLightIntensity;
-    pointLightPivot = d->m_PointLightPivot;
-    pointLightColor = d->m_PointLightColor;
-    maxCount = d->m_MaxCount;
+    using T = fb::EmitterTemplateData;
+
+    memcpy(&pointLightIntensity, &d->m_PointLightIntensity, offsetof(T, m_Name) - offsetof(T, m_PointLightIntensity));
     lifetimeFrameCount = d->m_LifetimeFrameCount;
     timeScale = d->m_TimeScale;
     lifetime = d->m_Lifetime;
     visibleAfterDistance = d->m_VisibleAfterDistance;
-    distanceScaleNearValue = d->m_DistanceScaleNearValue;
-    pointLightRadius = d->m_PointLightRadius;
-    vertexPixelLightingBlendFactor = d->m_VertexPixelLightingBlendFactor;
-    globalLocalNormalBlendFactor = d->m_GlobalLocalNormalBlendFactor;
-    softParticlesFadeDistanceMultiplier = d->m_SoftParticlesFadeDistanceMultiplier;
-    lightWrapAroundFactor = d->m_LightWrapAroundFactor;
-    lightMultiplier = d->m_LightMultiplier;
-    distanceScaleFarValue = d->m_DistanceScaleFarValue;
-    pointLightRandomIntensityMin = d->m_PointLightRandomIntensityMin;
-    meshCullingDistance = d->m_MeshCullingDistance;
-    pointLightRandomIntensityMax = d->m_PointLightRandomIntensityMax;
-    maxSpawnDistance = d->m_MaxSpawnDistance;
-    minScreenArea = d->m_MinScreenArea;
-    distanceScaleLength = d->m_DistanceScaleLength;
-    pointLightMaxClamp = d->m_PointLightMaxClamp;
-    particleCullingFactor = d->m_ParticleCullingFactor;
-    pointLightMinClamp = d->m_PointLightMinClamp;
     emittableType = d->m_EmittableType;
-    followSpawnSource = d->m_FollowSpawnSource;
-    repeatParticleSpawning = d->m_RepeatParticleSpawning;
-    emissive = d->m_Emissive;
-    exclusionVolumeCullEnable = d->m_ExclusionVolumeCullEnable;
-    transparencySunShadowEnable = d->m_TransparencySunShadowEnable;
-    forceFullRes = d->m_ForceFullRes;
-    localSpace = d->m_LocalSpace;
-    opaque = d->m_Opaque;
-    actAsPointLight = d->m_ActAsPointLight;
-    killParticlesWithEmitter = d->m_KillParticlesWithEmitter;
-    forceNiceSorting = d->m_ForceNiceSorting;
+    memcpy(&distanceScaleNearValue, &d->m_DistanceScaleNearValue, offsetof(T, m_FollowSpawnSource) - offsetof(T, m_DistanceScaleNearValue));
+    memcpy(&followSpawnSource, &d->m_FollowSpawnSource, offsetof(T, _0x00B7) - offsetof(T, m_FollowSpawnSource));
 }
 
 void EmitterSnapshot::restoreTo(fb::EmitterTemplateData* d) const
 {
-    d->m_PointLightIntensity = pointLightIntensity;
-    d->m_PointLightPivot = pointLightPivot;
-    d->m_PointLightColor = pointLightColor;
-    d->m_MaxCount = maxCount;
+    using T = fb::EmitterTemplateData;
+
+    memcpy(&d->m_PointLightIntensity, &pointLightIntensity, offsetof(T, m_Name) - offsetof(T, m_PointLightIntensity));
     d->m_LifetimeFrameCount = lifetimeFrameCount;
     d->m_TimeScale = timeScale;
     d->m_Lifetime = lifetime;
     d->m_VisibleAfterDistance = visibleAfterDistance;
-    d->m_DistanceScaleNearValue = distanceScaleNearValue;
-    d->m_PointLightRadius = pointLightRadius;
-    d->m_VertexPixelLightingBlendFactor = vertexPixelLightingBlendFactor;
-    d->m_GlobalLocalNormalBlendFactor = globalLocalNormalBlendFactor;
-    d->m_SoftParticlesFadeDistanceMultiplier = softParticlesFadeDistanceMultiplier;
-    d->m_LightWrapAroundFactor = lightWrapAroundFactor;
-    d->m_LightMultiplier = lightMultiplier;
-    d->m_DistanceScaleFarValue = distanceScaleFarValue;
-    d->m_PointLightRandomIntensityMin = pointLightRandomIntensityMin;
-    d->m_MeshCullingDistance = meshCullingDistance;
-    d->m_PointLightRandomIntensityMax = pointLightRandomIntensityMax;
-    d->m_MaxSpawnDistance = maxSpawnDistance;
-    d->m_MinScreenArea = minScreenArea;
-    d->m_DistanceScaleLength = distanceScaleLength;
-    d->m_PointLightMaxClamp = pointLightMaxClamp;
-    d->m_ParticleCullingFactor = particleCullingFactor;
-    d->m_PointLightMinClamp = pointLightMinClamp;
     d->m_EmittableType = emittableType;
-    d->m_FollowSpawnSource = followSpawnSource;
-    d->m_RepeatParticleSpawning = repeatParticleSpawning;
-    d->m_Emissive = emissive;
-    d->m_ExclusionVolumeCullEnable = exclusionVolumeCullEnable;
-    d->m_TransparencySunShadowEnable = transparencySunShadowEnable;
-    d->m_ForceFullRes = forceFullRes;
-    d->m_LocalSpace = localSpace;
-    d->m_Opaque = opaque;
-    d->m_ActAsPointLight = actAsPointLight;
-    d->m_KillParticlesWithEmitter = killParticlesWithEmitter;
-    d->m_ForceNiceSorting = forceNiceSorting;
+    memcpy(&d->m_DistanceScaleNearValue, &distanceScaleNearValue, offsetof(T, m_FollowSpawnSource) - offsetof(T, m_DistanceScaleNearValue));
+    memcpy(&d->m_FollowSpawnSource, &followSpawnSource, offsetof(T, _0x00B7) - offsetof(T, m_FollowSpawnSource));
 }
 
 void EmitterColorSnapshot::captureFrom(fb::UpdateColorData* colorProc)

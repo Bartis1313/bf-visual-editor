@@ -251,26 +251,11 @@ namespace editor::states
     {
         ImGui::BeginChild("ComponentList");
 
-        renderStateComponent("Outdoor Light", data.hasOutdoorLight, data.editOutdoorLight, data.origOutdoorLight, comps::renderOutdoorLightComponent);
-        renderStateComponent("Enlighten", data.hasEnlighten, data.editEnlighten, data.origEnlighten, comps::renderEnlightenComponent);
-        renderStateComponent("Tonemap", data.hasTonemap, data.editTonemap, data.origTonemap, comps::renderTonemapComponent);
-        renderStateComponent("Color Correction", data.hasColorCorrection, data.editColorCorrection, data.origColorCorrection, comps::renderColorCorrectionComponent);
-        renderStateComponent("Sky", data.hasSky, data.editSky, data.origSky, comps::renderSkyComponent);
-        renderStateComponent("Fog", data.hasFog, data.editFog, data.origFog, comps::renderFogComponent);
-        renderStateComponent("Wind", data.hasWind, data.editWind, data.origWind, comps::renderWindComponent);
-        renderStateComponent("Sun Flare", data.hasSunFlare, data.editSunFlare, data.origSunFlare, comps::renderSunFlareComponent);
-        renderStateComponent("Dynamic AO", data.hasDynamicAO, data.editDynamicAO, data.origDynamicAO, comps::renderDynamicAOComponent);
-        renderStateComponent("Depth of Field", data.hasDof, data.editDof, data.origDof, comps::renderDofComponent);
-        renderStateComponent("Vignette", data.hasVignette, data.editVignette, data.origVignette, comps::renderVignetteComponent);
-        renderStateComponent("Film Grain", data.hasFilmGrain, data.editFilmGrain, data.origFilmGrain, comps::renderFilmGrainComponent);
-        renderStateComponent("Lens Scope", data.hasLensScope, data.editLensScope, data.origLensScope, comps::renderLensScopeComponent);
-        renderStateComponent("Camera Params", data.hasCameraParams, data.editCameraParams, data.origCameraParams, comps::renderCameraParamsComponent);
-        renderStateComponent("Screen Effect", data.hasScreenEffect, data.editScreenEffect, data.origScreenEffect, comps::renderScreenEffectComponent);
-        renderStateComponent("Damage Effect", data.hasDamageEffect, data.editDamageEffect, data.origDamageEffect, comps::renderDamageEffectComponent);
-        renderStateComponent("Planar Reflection", data.hasPlanarReflection, data.editPlanarReflection, data.origPlanarReflection, comps::renderPlanarReflectionComponent);
-        renderStateComponent("Dynamic Envmap", data.hasDynamicEnvmap, data.editDynamicEnvmap, data.origDynamicEnvmap, comps::renderDynamicEnvmapComponent);
-        renderStateComponent("Character Lighting", data.hasCharacterLighting, data.editCharacterLighting, data.origCharacterLighting, comps::renderCharacterLightingComponent);
-        renderStateComponent("Motion Blur", data.hasMotionBlur, data.editMotionBlur, data.origMotionBlur, comps::renderMotionBlurComponent);
+#define RENDER(Type, field) \
+        renderStateComponent(PRETTY_CASE_NAME(#Type), data.has##Type, data.edit##Type, \
+                             data.orig##Type, comps::render##Type##Component);
+        VE_COMPONENTS(RENDER)
+#undef RENDER
 
         ImGui::EndChild();
     }

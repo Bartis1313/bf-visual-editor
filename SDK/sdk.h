@@ -2724,7 +2724,7 @@ namespace fb
 			if (v1 == 0xFF)
 				return nullptr;
 
-			return (T*)m_processors.begin()[v1];
+			return (T*)m_processors[v1];
 		}
 	};
 

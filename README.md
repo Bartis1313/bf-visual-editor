@@ -40,6 +40,11 @@ Tho this was last way I wanted to do it.
 In conclusion getting states from resource manager is the best + editing it globally
 
 #### Code
+Component handling uses macros (`VE_COMPONENTS`) to reduce repetition across \
+serialization, rendering, and state management. This trades some readability for \
+a single source of truth, add a component once, it propagates everywhere.
+
+A "proper" OOP approach would require more boilerplate than it eliminates.
 Probably support for fb3 going to be added in some time, and after final cleanup of code.
 
 # Demo
