@@ -32,7 +32,7 @@ static void initThread(std::stop_token stopToken)
     if (stopToken.stop_requested())
         return;
 
-#if defined(_DEBUG) || defined(BFVE_GAME_BF4)
+#if defined(_DEBUG)
     AllocConsole();
     FILE* dummy;
     freopen_s(&dummy, "CONOUT$", "w", stdout);
