@@ -1,5 +1,6 @@
 ## Editor frosbite
 old project, recoded now and uses dynamic states
+- works for bf3/bf4(x64)
 
 ## How to use?
 Inject to the game, preferably before level loading since capturing some names is done at this stage.\
@@ -48,6 +49,8 @@ A "proper" OOP approach would require more boilerplate than it eliminates.
 Probably support for fb3 going to be added in some time, and after final cleanup of code.
 
 # Demo
-![preview](https://github.com/Bartis1313/bf-visual-editor/blob/7f3e7e56281ba563aa2bf15039e8df507df2225a/images/1.png)\
+![preview](https://github.com/Bartis1313/bf-visual-editor/tree/master/images/1.png)\
+![preview](https://github.com/Bartis1313/bf-visual-editor/tree/master/images/4.png)\
+![preview](https://github.com/Bartis1313/bf-visual-editor/tree/master/images/5.png)\
 video below\
 [![video](https://img.youtube.com/vi/LeEkiGc7Ggw/maxresdefault.jpg)](https://www.youtube.com/watch?v=LeEkiGc7Ggw)

@@ -246,5 +246,11 @@
     <Image Include="images\3.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="images\4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
