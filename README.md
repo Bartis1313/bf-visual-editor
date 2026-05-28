@@ -49,8 +49,8 @@ A "proper" OOP approach would require more boilerplate than it eliminates.
 Probably support for fb3 going to be added in some time, and after final cleanup of code.
 
 # Demo
-![preview](https://github.com/Bartis1313/bf-visual-editor/tree/master/images/1.png?raw=true)\
-![preview](https://github.com/Bartis1313/bf-visual-editor/tree/master/images/4.png?raw=true)\
-![preview](https://github.com/Bartis1313/bf-visual-editor/tree/master/images/5.png?raw=true)\
+![preview](images/1.png)\
+![preview](images/4.png)\
+![preview](images/5.png)\
 video below\
 [![video](https://img.youtube.com/vi/LeEkiGc7Ggw/maxresdefault.jpg)](https://www.youtube.com/watch?v=LeEkiGc7Ggw)
