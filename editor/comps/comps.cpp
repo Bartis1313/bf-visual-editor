@@ -2,9 +2,11 @@
 
 #include "../ui/ui_helpers.h"
 
+#if defined(BFVE_GAME_BF3)
+
 namespace editor::comps
 {
-    void renderOutdoorLightComponent(fb::OutdoorLightComponentData* e, const fb::OutdoorLightComponentData* o)
+    void renderOutdoorLightComponent(fb::CapturedOutdoorLightComponentData* e, const fb::CapturedOutdoorLightComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
 
@@ -48,7 +50,7 @@ namespace editor::comps
         }
     }
 
-    void renderEnlightenComponent(fb::EnlightenComponentData* e, const fb::EnlightenComponentData* o)
+    void renderEnlightenComponent(fb::CapturedEnlightenComponentData* e, const fb::CapturedEnlightenComponentData* o)
     {
         ImGui::Text("Disabling is not prefered!\nDisable if you want to set custom ground/sky lights");
 
@@ -80,7 +82,7 @@ namespace editor::comps
         }
     }
 
-    void renderTonemapComponent(fb::TonemapComponentData* e, const fb::TonemapComponentData* o)
+    void renderTonemapComponent(fb::CapturedTonemapComponentData* e, const fb::CapturedTonemapComponentData* o)
     {
         int method = static_cast<int>(e->m_TonemapMethod);
         int origMethod = static_cast<int>(o->m_TonemapMethod);
@@ -102,7 +104,7 @@ namespace editor::comps
         }
     }
 
-    void renderColorCorrectionComponent(fb::ColorCorrectionComponentData* e, const fb::ColorCorrectionComponentData* o)
+    void renderColorCorrectionComponent(fb::CapturedColorCorrectionComponentData* e, const fb::CapturedColorCorrectionComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ui::BoolEdit("Color Grading Enable", &e->m_ColorGradingEnable, &o->m_ColorGradingEnable);
@@ -112,7 +114,7 @@ namespace editor::comps
         ui::FloatEdit("Hue", &e->m_Hue, &o->m_Hue, -180.0f, 180.0f);
     }
 
-    void renderSkyComponent(fb::SkyComponentData* e, const fb::SkyComponentData* o)
+    void renderSkyComponent(fb::CapturedSkyComponentData* e, const fb::CapturedSkyComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
 
@@ -176,7 +178,7 @@ namespace editor::comps
         }
     }
 
-    void renderFogComponent(fb::FogComponentData* e, const fb::FogComponentData* o)
+    void renderFogComponent(fb::CapturedFogComponentData* e, const fb::CapturedFogComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
 
@@ -185,7 +187,7 @@ namespace editor::comps
             ui::FloatEdit("Start", &e->m_Start, &o->m_Start);
             ui::FloatEdit("End", &e->m_End, &o->m_End);
             ui::FloatEdit("Distance Multiplier", &e->m_FogDistanceMultiplier, &o->m_FogDistanceMultiplier);
-            ui::Vec4Edit("Curve", &e->m_Curve, &o->m_Curve);
+            ui::CurveVec4Edit("Curve", &e->m_Curve, &o->m_Curve);
             ImGui::TreePop();
         }
 
@@ -195,7 +197,7 @@ namespace editor::comps
             ui::Vec3Edit("Color", &e->m_FogColor, &o->m_FogColor, true);
             ui::FloatEdit("Color Start", &e->m_FogColorStart, &o->m_FogColorStart);
             ui::FloatEdit("Color End", &e->m_FogColorEnd, &o->m_FogColorEnd);
-            ui::Vec4Edit("Color Curve", &e->m_FogColorCurve, &o->m_FogColorCurve);
+            ui::CurveVec4Edit("Color Curve", &e->m_FogColorCurve, &o->m_FogColorCurve);
             ImGui::TreePop();
         }
 
@@ -220,13 +222,13 @@ namespace editor::comps
         }
     }
 
-    void renderWindComponent(fb::WindComponentData* e, const fb::WindComponentData* o)
+    void renderWindComponent(fb::CapturedWindComponentData* e, const fb::CapturedWindComponentData* o)
     {
         ui::FloatEdit("Direction", &e->m_WindDirection, &o->m_WindDirection, 0.0f, 360.0f);
         ui::FloatEdit("Strength", &e->m_WindStrength, &o->m_WindStrength);
     }
 
-    void renderSunFlareComponent(fb::SunFlareComponentData* e, const fb::SunFlareComponentData* o)
+    void renderSunFlareComponent(fb::CapturedSunFlareComponentData* e, const fb::CapturedSunFlareComponentData* o)
     {
         ImGui::Indent();
 
@@ -345,10 +347,10 @@ namespace editor::comps
                 ui::BoolEdit("Enable", enable, origEnable);
                 ui::Vec2Edit("Size", size, origSize);
                 ui::FloatEdit("Ray Distance", rayDistance, origRayDistance);
-                ui::Vec4Edit("Alpha Screen Pos Curve", alphaScreenPosCurve, origAlphaScreenPosCurve);
-                ui::Vec4Edit("Alpha Occluder Curve", alphaOccluderCurve, origAlphaOccluderCurve);
-                ui::Vec4Edit("Size Screen Pos Curve", sizeScreenPosCurve, origSizeScreenPosCurve);
-                ui::Vec4Edit("Size Occluder Curve", sizeOccluderCurve, origSizeOccluderCurve);
+                ui::CurveVec4Edit("Alpha Screen Pos Curve", alphaScreenPosCurve, origAlphaScreenPosCurve);
+                ui::CurveVec4Edit("Alpha Occluder Curve", alphaOccluderCurve, origAlphaOccluderCurve);
+                ui::CurveVec4Edit("Size Screen Pos Curve", sizeScreenPosCurve, origSizeScreenPosCurve);
+                ui::CurveVec4Edit("Size Occluder Curve", sizeOccluderCurve, origSizeOccluderCurve);
 
                 ImGui::TreePop();
             }
@@ -357,7 +359,7 @@ namespace editor::comps
         ImGui::Unindent();
     }
 
-    void renderDynamicAOComponent(fb::DynamicAOComponentData* e, const fb::DynamicAOComponentData* o)
+    void renderDynamicAOComponent(fb::CapturedDynamicAOComponentData* e, const fb::CapturedDynamicAOComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
 
@@ -382,7 +384,7 @@ namespace editor::comps
         }
     }
 
-    void renderDofComponent(fb::DofComponentData* e, const fb::DofComponentData* o)
+    void renderDofComponent(fb::CapturedDofComponentData* e, const fb::CapturedDofComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
 
@@ -407,7 +409,7 @@ namespace editor::comps
         }
     }
 
-    void renderVignetteComponent(fb::VignetteComponentData* e, const fb::VignetteComponentData* o)
+    void renderVignetteComponent(fb::CapturedVignetteComponentData* e, const fb::CapturedVignetteComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ui::Vec3Edit("Color", &e->m_Color, &o->m_Color, true);
@@ -416,7 +418,7 @@ namespace editor::comps
         ui::FloatEdit("Exponent", &e->m_Exponent, &o->m_Exponent);
     }
 
-    void renderFilmGrainComponent(fb::FilmGrainComponentData* e, const fb::FilmGrainComponentData* o)
+    void renderFilmGrainComponent(fb::CapturedFilmGrainComponentData* e, const fb::CapturedFilmGrainComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ui::BoolEdit("Linear Filtering", &e->m_LinearFilteringEnable, &o->m_LinearFilteringEnable);
@@ -425,7 +427,7 @@ namespace editor::comps
         ui::Vec2Edit("Texture Scale", &e->m_TextureScale, &o->m_TextureScale);
     }
 
-    void renderLensScopeComponent(fb::LensScopeComponentData* e, const fb::LensScopeComponentData* o)
+    void renderLensScopeComponent(fb::CapturedLensScopeComponentData* e, const fb::CapturedLensScopeComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ui::Vec2Edit("Blur Center", &e->m_BlurCenter, &o->m_BlurCenter);
@@ -443,14 +445,14 @@ namespace editor::comps
         }
     }
 
-    void renderCameraParamsComponent(fb::CameraParamsComponentData* e, const fb::CameraParamsComponentData* o)
+    void renderCameraParamsComponent(fb::CapturedCameraParamsComponentData* e, const fb::CapturedCameraParamsComponentData* o)
     {
         ui::FloatEdit("View Distance", &e->m_ViewDistance, &o->m_ViewDistance);
         ui::FloatEdit("Near Plane", &e->m_NearPlane, &o->m_NearPlane);
         ui::FloatEdit("Sun Shadowmap View Distance", &e->m_SunShadowmapViewDistance, &o->m_SunShadowmapViewDistance);
     }
 
-    void renderScreenEffectComponent(fb::ScreenEffectComponentData* e, const fb::ScreenEffectComponentData* o)
+    void renderScreenEffectComponent(fb::CapturedScreenEffectComponentData* e, const fb::CapturedScreenEffectComponentData* o)
     {
         int type = static_cast<int>(e->m_FrameType);
         int origType = static_cast<int>(o->m_FrameType);
@@ -464,7 +466,7 @@ namespace editor::comps
         ui::FloatEdit("Angle", &e->m_Angle, &o->m_Angle, 0.0f, 360.0f);
     }
 
-    void renderDamageEffectComponent(fb::DamageEffectComponentData* e, const fb::DamageEffectComponentData* o)
+    void renderDamageEffectComponent(fb::CapturedDamageEffectComponentData* e, const fb::CapturedDamageEffectComponentData* o)
     {
         ui::BoolEdit("Debug Damage", &e->m_DebugDamage, &o->m_DebugDamage);
 
@@ -487,7 +489,7 @@ namespace editor::comps
         ui::FloatEdit("Max Opacity Damage %", &e->m_MaxOpacityDamagePercentage, &o->m_MaxOpacityDamagePercentage);
     }
 
-    void renderPlanarReflectionComponent(fb::PlanarReflectionComponentData* e, const fb::PlanarReflectionComponentData* o)
+    void renderPlanarReflectionComponent(fb::CapturedPlanarReflectionComponentData* e, const fb::CapturedPlanarReflectionComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ui::BoolEdit("Sky Render Enable", &e->m_SkyRenderEnable, &o->m_SkyRenderEnable);
@@ -508,7 +510,7 @@ namespace editor::comps
         ui::FloatEdit("V Deviation", &e->m_VerticalDeviation, &o->m_VerticalDeviation);
     }
 
-    void renderDynamicEnvmapComponent(fb::DynamicEnvmapComponentData* e, const fb::DynamicEnvmapComponentData* o)
+    void renderDynamicEnvmapComponent(fb::CapturedDynamicEnvmapComponentData* e, const fb::CapturedDynamicEnvmapComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ui::Vec3Edit("Sky Color", &e->m_SkyColorEnvmap, &o->m_SkyColorEnvmap, true);
@@ -516,7 +518,7 @@ namespace editor::comps
         ui::Vec3Edit("Key Color", &e->m_KeyColorEnvmap, &o->m_KeyColorEnvmap, true);
     }
 
-    void renderCharacterLightingComponent(fb::CharacterLightingComponentData* e, const fb::CharacterLightingComponentData* o)
+    void renderCharacterLightingComponent(fb::CapturedCharacterLightingComponentData* e, const fb::CapturedCharacterLightingComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_CharacterLightEnable, &o->m_CharacterLightEnable);
         ui::BoolEdit("First Person Enable", &e->m_FirstPersonEnable, &o->m_FirstPersonEnable);
@@ -535,7 +537,7 @@ namespace editor::comps
         ui::FloatEdit("Blend Factor", &e->m_BlendFactor, &o->m_BlendFactor, 0.0f, 1.0f);
     }
 
-    void renderMotionBlurComponent(fb::MotionBlurComponentData* e, const fb::MotionBlurComponentData* o)
+    void renderMotionBlurComponent(fb::CapturedMotionBlurComponentData* e, const fb::CapturedMotionBlurComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_MotionBlurEnable, &o->m_MotionBlurEnable);
         ui::FloatEdit("Cutoff Radius", &e->m_MotionBlurCutoffRadius, &o->m_MotionBlurCutoffRadius);
@@ -903,3 +905,5 @@ namespace editor::comps
         }
     }
 }
+
+#endif // BFVE_GAME_BF3

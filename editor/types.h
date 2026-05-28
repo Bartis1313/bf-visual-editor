@@ -5,7 +5,7 @@
 #include <map>
 #include <cmath>
 #include <type_traits>
-#include "../SDK/sdk.h"
+#include "../SDK/fb.h"
 
 template<typename T>
 concept enumable = std::is_enum_v<T>;
@@ -172,6 +172,31 @@ struct LightDataEntry
 //
 // This expands to copy::outdoorLight(&data.origOutdoorLight, &ve->outdoorLight); for each component.
 // Adding a new component here automatically updates all places that use the macro.
+#if defined(BFVE_GAME_BF4)
+#define VE_COMPONENTS(X) \
+    X(OutdoorLight,        outdoorLight) \
+    X(Enlighten,           enlighten) \
+    X(Tonemap,             tonemap) \
+    X(ColorCorrection,     colorCorrection) \
+    X(Sky,                 sky) \
+    X(Fog,                 fog) \
+    X(Wind,                wind) \
+    X(SunFlare,            sunFlare) \
+    X(DynamicAO,           dynamicAO) \
+    X(Dof,                 dof) \
+    X(Vignette,            vignette) \
+    X(FilmGrain,           filmGrain) \
+    X(LensScope,           lensScope) \
+    X(CameraParams,        cameraParams) \
+    X(ScreenEffect,        screenEffect) \
+    X(DamageEffect,        damageEffect) \
+    X(PlanarReflection,    planarReflection) \
+    X(DynamicEnvmap,       dynamicEnvmap) \
+    X(CharacterLighting,   characterLighting) \
+    X(VehicleLighting,     vehicleLighting) \
+    X(SubSurfaceScattering, subSurfaceScattering) \
+    X(MotionBlur,          motionBlur)
+#else
 #define VE_COMPONENTS(X) \
     X(OutdoorLight,      outdoorLight) \
     X(Enlighten,         enlighten) \
@@ -193,14 +218,15 @@ struct LightDataEntry
     X(DynamicEnvmap,     dynamicEnvmap) \
     X(CharacterLighting, characterLighting) \
     X(MotionBlur,        motionBlur)
+#endif
 
 struct StateEditData
 {
 #define DECLARE_COMPONENT(Type, field) \
         bool has##Type = false; \
         void* captured##Type = nullptr; \
-        fb::Type##ComponentData orig##Type{}; \
-        fb::Type##ComponentData edit##Type{};
+        fb::Captured##Type##ComponentData orig##Type{}; \
+        fb::Captured##Type##ComponentData edit##Type{};
     VE_COMPONENTS(DECLARE_COMPONENT)
 #undef DECLARE_COMPONENT
 
@@ -251,8 +277,8 @@ struct StateEditEntry
 struct GlobalVEData
 {
 #define DECLARE_COMPONENT(Type, field) \
-        fb::Type##ComponentData orig##Type{}; \
-        fb::Type##ComponentData edit##Type{}; \
+        fb::Captured##Type##ComponentData orig##Type{}; \
+        fb::Captured##Type##ComponentData edit##Type{}; \
         bool field##OverrideEnabled = false;
 
     VE_COMPONENTS(DECLARE_COMPONENT)
@@ -273,46 +299,56 @@ struct GlobalVEData
     }
 };
 
-// EmitterTemplateData wrapper
+// Per-game snapshot of an EmitterTemplateData. Fields shared by BF3 and BF4
+// are unconditional; per-game fields live under their respective #if so we
+// don't carry dead state for the other game. BF4 dropped the PointLight*
+// family entirely along with VisibleAfterDistance / ActAsPointLight; BF4
+// equivalents (per-particle effect parameters, motion stretch, etc.) live
+// in nested processor structs the editor doesn't yet expose.
 struct EmitterSnapshot
 {
-    fb::Vec4 pointLightIntensity;
-    fb::Vec3 pointLightPivot;
-    fb::Vec3 pointLightColor;
+    // Common to both games.
     unsigned int maxCount;
     unsigned int lifetimeFrameCount;
     float timeScale;
     float lifetime;
-    float visibleAfterDistance;
+    fb::EmittableType emittableType;
     float distanceScaleNearValue;
-    float pointLightRadius;
+    float distanceScaleFarValue;
+    float distanceScaleLength;
     float vertexPixelLightingBlendFactor;
     float globalLocalNormalBlendFactor;
     float softParticlesFadeDistanceMultiplier;
     float lightWrapAroundFactor;
     float lightMultiplier;
-    float distanceScaleFarValue;
-    float pointLightRandomIntensityMin;
     float meshCullingDistance;
-    float pointLightRandomIntensityMax;
     float maxSpawnDistance;
     float minScreenArea;
-    float distanceScaleLength;
-    float pointLightMaxClamp;
     float particleCullingFactor;
-    float pointLightMinClamp;
-    fb::EmittableType emittableType;
-    bool followSpawnSource;
-    bool repeatParticleSpawning;
-    bool emissive;
-    bool exclusionVolumeCullEnable;
-    bool transparencySunShadowEnable;
-    bool forceFullRes;
-    bool localSpace;
-    bool opaque;
-    bool actAsPointLight;
-    bool killParticlesWithEmitter;
-    bool forceNiceSorting;
+    bool  followSpawnSource;
+    bool  repeatParticleSpawning;
+    bool  emissive;
+    bool  exclusionVolumeCullEnable;
+    bool  transparencySunShadowEnable;
+    bool  forceFullRes;
+    bool  localSpace;
+    bool  opaque;
+    bool  killParticlesWithEmitter;
+    bool  forceNiceSorting;
+
+#if defined(BFVE_GAME_BF3)
+    // BF3-only: emitter can act as a point light directly.
+    fb::Vec4 pointLightIntensity;
+    fb::Vec3 pointLightPivot;
+    fb::Vec3 pointLightColor;
+    float    pointLightRadius;
+    float    pointLightRandomIntensityMin;
+    float    pointLightRandomIntensityMax;
+    float    pointLightMaxClamp;
+    float    pointLightMinClamp;
+    float    visibleAfterDistance;
+    bool     actAsPointLight;
+#endif
 
     void captureFrom(const fb::EmitterTemplateData* d);
     void restoreTo(fb::EmitterTemplateData* d) const;

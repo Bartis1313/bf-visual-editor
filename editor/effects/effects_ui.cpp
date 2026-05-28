@@ -83,7 +83,7 @@ namespace editor::effects
         static char effectSearch[256] = "";
         ImGui::InputText("Search##Effect", effectSearch, sizeof(effectSearch));
 
-        if (ImGui::BeginCombo("Effect", selected ? selected->m_Name : "None"))
+        if (ImGui::BeginCombo("Effect", selected ? selectedName.c_str() : "None"))
         {
             for (const auto& [name, asset] : assets)
             {
@@ -91,7 +91,10 @@ namespace editor::effects
                     continue;
 
                 if (ImGui::Selectable(name.c_str(), selected == asset))
+                {
                     selected = asset;
+                    selectedName = name;
+                }
             }
             ImGui::EndCombo();
         }
@@ -114,8 +117,13 @@ namespace editor::effects
         ImGui::SameLine();
         if (ImGui::Button("From Camera (Position)"))
         {
-            fb::GameRenderer::Singleton()->m_viewParams.view.Update();
-            transform.m_trans = fb::GameRenderer::Singleton()->m_viewParams.view.m_viewMatrixInverse.m_trans;
+            if (fb::RenderView* rv = fb::getActiveRenderView(fb::GameRenderer::Singleton()))
+            {
+#ifdef BFVE_GAME_BF3 
+                fb::updateRenderView(rv);
+#endif
+                transform.m_trans = fb::getViewMatrixInverse(rv)->m_trans;
+            }
         }
 
         ImGui::Separator();
@@ -129,7 +137,7 @@ namespace editor::effects
             uint32_t handle = spawnAtTransform(selected, transform);
             if (handle != 0)
             {
-                spawned.push_back({ handle, transform, selected->m_Name }); // ignore this warning, it will not be displayed on nullptr
+                spawned.push_back({ handle, transform, selectedName });
             }
         }
         ImGui::EndDisabled();

@@ -2,7 +2,7 @@
 
 #include "../serialize/serialize.h"
 
-#if defined(BFVE_GAME_BF3)
+#if defined(BFVE_GAME_BF4)
 
 namespace editor::comps
 {
@@ -19,11 +19,18 @@ namespace editor::comps
         j["skyLightAngleFactor"] = c.m_SkyLightAngleFactor;
         j["skyEnvmapShadowScale"] = c.m_SkyEnvmapShadowScale;
         j["sunShadowHeightScale"] = c.m_SunShadowHeightScale;
+        j["shadowSunRotationEnable"] = c.m_ShadowSunRotationEnable;
+        j["shadowSunRotationX"] = c.m_ShadowSunRotationX;
+        j["shadowSunRotationY"] = c.m_ShadowSunRotationY;
         j["cloudShadowEnable"] = c.m_CloudShadowEnable;
+        j["cloudShadowIsTopDown"] = c.m_CloudShadowIsTopDown;
         j["cloudShadowSpeed"] = serialize::vec2ToJson(c.m_CloudShadowSpeed);
         j["cloudShadowCoverage"] = c.m_CloudShadowCoverage;
         j["cloudShadowSize"] = c.m_CloudShadowSize;
         j["cloudShadowExponent"] = c.m_CloudShadowExponent;
+        j["cloudShadowStartFade"] = c.m_CloudShadowStartFade;
+        j["cloudShadowsFadeDistance"] = c.m_CloudShadowsFadeDistance;
+        j["cloudXZTranslation"] = serialize::vec2ToJson(c.m_CloudXZTranslation);
         j["translucencyDistortion"] = c.m_TranslucencyDistortion;
         j["translucencyAmbient"] = c.m_TranslucencyAmbient;
         j["translucencyScale"] = c.m_TranslucencyScale;
@@ -43,11 +50,18 @@ namespace editor::comps
         JSON_GET(j, "skyLightAngleFactor", c.m_SkyLightAngleFactor);
         JSON_GET(j, "skyEnvmapShadowScale", c.m_SkyEnvmapShadowScale);
         JSON_GET(j, "sunShadowHeightScale", c.m_SunShadowHeightScale);
+        JSON_GET_BOOL(j, "shadowSunRotationEnable", c.m_ShadowSunRotationEnable);
+        JSON_GET(j, "shadowSunRotationX", c.m_ShadowSunRotationX);
+        JSON_GET(j, "shadowSunRotationY", c.m_ShadowSunRotationY);
         JSON_GET_BOOL(j, "cloudShadowEnable", c.m_CloudShadowEnable);
+        JSON_GET_BOOL(j, "cloudShadowIsTopDown", c.m_CloudShadowIsTopDown);
         JSON_GET_VEC2(j, "cloudShadowSpeed", c.m_CloudShadowSpeed);
         JSON_GET(j, "cloudShadowCoverage", c.m_CloudShadowCoverage);
         JSON_GET(j, "cloudShadowSize", c.m_CloudShadowSize);
         JSON_GET(j, "cloudShadowExponent", c.m_CloudShadowExponent);
+        JSON_GET(j, "cloudShadowStartFade", c.m_CloudShadowStartFade);
+        JSON_GET(j, "cloudShadowsFadeDistance", c.m_CloudShadowsFadeDistance);
+        JSON_GET_VEC2(j, "cloudXZTranslation", c.m_CloudXZTranslation);
         JSON_GET(j, "translucencyDistortion", c.m_TranslucencyDistortion);
         JSON_GET(j, "translucencyAmbient", c.m_TranslucencyAmbient);
         JSON_GET(j, "translucencyScale", c.m_TranslucencyScale);
@@ -57,16 +71,18 @@ namespace editor::comps
     json serializeEnlighten(const fb::CapturedEnlightenComponentData& c)
     {
         json j;
-        j["enable"] = c.m_Enable;
         j["skyBoxEnable"] = c.m_SkyBoxEnable;
         j["skyBoxSkyColor"] = serialize::vec3ToJson(c.m_SkyBoxSkyColor);
         j["skyBoxGroundColor"] = serialize::vec3ToJson(c.m_SkyBoxGroundColor);
         j["skyBoxSunLightColor"] = serialize::vec3ToJson(c.m_SkyBoxSunLightColor);
         j["skyBoxBackLightColor"] = serialize::vec3ToJson(c.m_SkyBoxBackLightColor);
         j["terrainColor"] = serialize::vec3ToJson(c.m_TerrainColor);
+        j["opaqueAlphaTestSimpleScale"] = serialize::vec3ToJson(c.m_OpaqueAlphaTestSimpleScale);
+        j["overrideLightProbe"] = serialize::vec3ToJson(c.m_OverrideLightProbe);
         j["bounceScale"] = c.m_BounceScale;
         j["sunScale"] = c.m_SunScale;
         j["cullDistance"] = c.m_CullDistance;
+        j["cullRadius"] = c.m_CullRadius;
         j["skyBoxSunLightColorSize"] = c.m_SkyBoxSunLightColorSize;
         j["skyBoxBackLightColorSize"] = c.m_SkyBoxBackLightColorSize;
         j["skyBoxBackLightRotationX"] = c.m_SkyBoxBackLightRotationX;
@@ -76,16 +92,18 @@ namespace editor::comps
 
     void deserializeEnlighten(const json& j, fb::CapturedEnlightenComponentData& c)
     {
-        JSON_GET_BOOL(j, "enable", c.m_Enable);
         JSON_GET_BOOL(j, "skyBoxEnable", c.m_SkyBoxEnable);
         JSON_GET_VEC3(j, "skyBoxSkyColor", c.m_SkyBoxSkyColor);
         JSON_GET_VEC3(j, "skyBoxGroundColor", c.m_SkyBoxGroundColor);
         JSON_GET_VEC3(j, "skyBoxSunLightColor", c.m_SkyBoxSunLightColor);
         JSON_GET_VEC3(j, "skyBoxBackLightColor", c.m_SkyBoxBackLightColor);
         JSON_GET_VEC3(j, "terrainColor", c.m_TerrainColor);
+        JSON_GET_VEC3(j, "opaqueAlphaTestSimpleScale", c.m_OpaqueAlphaTestSimpleScale);
+        JSON_GET_VEC3(j, "overrideLightProbe", c.m_OverrideLightProbe);
         JSON_GET(j, "bounceScale", c.m_BounceScale);
         JSON_GET(j, "sunScale", c.m_SunScale);
         JSON_GET(j, "cullDistance", c.m_CullDistance);
+        JSON_GET(j, "cullRadius", c.m_CullRadius);
         JSON_GET(j, "skyBoxSunLightColorSize", c.m_SkyBoxSunLightColorSize);
         JSON_GET(j, "skyBoxBackLightColorSize", c.m_SkyBoxBackLightColorSize);
         JSON_GET(j, "skyBoxBackLightRotationX", c.m_SkyBoxBackLightRotationX);
@@ -146,6 +164,7 @@ namespace editor::comps
     {
         json j;
         j["enable"] = c.m_Enable;
+        j["indirectCubeMapOverride"] = c.m_IndirectCubeMapOverride;
         j["brightnessScale"] = c.m_BrightnessScale;
         j["sunSize"] = c.m_SunSize;
         j["sunScale"] = c.m_SunScale;
@@ -185,6 +204,7 @@ namespace editor::comps
     void deserializeSky(const json& j, fb::CapturedSkyComponentData& c)
     {
         JSON_GET_BOOL(j, "enable", c.m_Enable);
+        JSON_GET_BOOL(j, "indirectCubeMapOverride", c.m_IndirectCubeMapOverride);
         JSON_GET(j, "brightnessScale", c.m_BrightnessScale);
         JSON_GET(j, "sunSize", c.m_SunSize);
         JSON_GET(j, "sunScale", c.m_SunScale);
@@ -242,6 +262,15 @@ namespace editor::comps
         j["transparencyFadeStart"] = c.m_TransparencyFadeStart;
         j["transparencyFadeEnd"] = c.m_TransparencyFadeEnd;
         j["transparencyFadeClamp"] = c.m_TransparencyFadeClamp;
+        j["transparencyFadeCurve"] = serialize::vec4ToJson(c.m_TransparencyFadeCurve);
+        j["forwardLightScatteringEnabled"] = c.m_ForwardLightScatteringEnabled;
+        j["forwardLightScatteringColor"] = serialize::vec3ToJson(c.m_ForwardLightScatteringColor);
+        j["forwardLightScatteringPhaseG"] = c.m_ForwardLightScatteringPhaseG;
+        j["forwardLightScatteringStrength"] = c.m_ForwardLightScatteringStrength;
+        j["forwardLightScatteringPresence"] = c.m_ForwardLightScatteringPresence;
+        j["forwardLightScatteringMaxBlurLength"] = c.m_ForwardLightScatteringMaxBlurLength;
+        j["forwardLightScatteringExtinction"] = c.m_ForwardLightScatteringExtinction;
+        j["forwardLightScatteringSmoothness"] = c.m_ForwardLightScatteringSmoothness;
         return j;
     }
 
@@ -266,17 +295,39 @@ namespace editor::comps
         JSON_GET(j, "transparencyFadeStart", c.m_TransparencyFadeStart);
         JSON_GET(j, "transparencyFadeEnd", c.m_TransparencyFadeEnd);
         JSON_GET(j, "transparencyFadeClamp", c.m_TransparencyFadeClamp);
+        JSON_GET_VEC4(j, "transparencyFadeCurve", c.m_TransparencyFadeCurve);
+        JSON_GET_BOOL(j, "forwardLightScatteringEnabled", c.m_ForwardLightScatteringEnabled);
+        JSON_GET_VEC3(j, "forwardLightScatteringColor", c.m_ForwardLightScatteringColor);
+        JSON_GET(j, "forwardLightScatteringPhaseG", c.m_ForwardLightScatteringPhaseG);
+        JSON_GET(j, "forwardLightScatteringStrength", c.m_ForwardLightScatteringStrength);
+        JSON_GET(j, "forwardLightScatteringPresence", c.m_ForwardLightScatteringPresence);
+        JSON_GET(j, "forwardLightScatteringMaxBlurLength", c.m_ForwardLightScatteringMaxBlurLength);
+        JSON_GET(j, "forwardLightScatteringExtinction", c.m_ForwardLightScatteringExtinction);
+        JSON_GET(j, "forwardLightScatteringSmoothness", c.m_ForwardLightScatteringSmoothness);
     }
 
     json serializeWind(const fb::CapturedWindComponentData& c)
     {
-        return { {"windDirection", c.m_WindDirection}, {"windStrength", c.m_WindStrength} };
+        json j;
+        j["windDirection"] = c.m_WindDirection;
+        j["windStrength"] = c.m_WindStrength;
+        j["windVariationMultiplier"] = c.m_WindVariationMultiplier;
+        j["windVariationRateMultiplier"] = c.m_WindVariationRateMultiplier;
+        j["windMicroVariationMultiplier"] = c.m_WindMicroVariationMultiplier;
+        j["turbulenceMultiplier"] = c.m_TurbulenceMultiplier;
+        j["turbulenceScale"] = c.m_TurbulenceScale;
+        return j;
     }
 
     void deserializeWind(const json& j, fb::CapturedWindComponentData& c)
     {
         JSON_GET(j, "windDirection", c.m_WindDirection);
         JSON_GET(j, "windStrength", c.m_WindStrength);
+        JSON_GET(j, "windVariationMultiplier", c.m_WindVariationMultiplier);
+        JSON_GET(j, "windVariationRateMultiplier", c.m_WindVariationRateMultiplier);
+        JSON_GET(j, "windMicroVariationMultiplier", c.m_WindMicroVariationMultiplier);
+        JSON_GET(j, "turbulenceMultiplier", c.m_TurbulenceMultiplier);
+        JSON_GET(j, "turbulenceScale", c.m_TurbulenceScale);
     }
 
     json serializeSunFlare(const fb::CapturedSunFlareComponentData& c)
@@ -288,8 +339,16 @@ namespace editor::comps
 
 #define SERIALIZE_ELEMENT(n) \
         j["element" #n "Enable"] = c.m_Element##n##Enable; \
+        j["element" #n "RotationAlignedToRay"] = c.m_Element##n##RotationAlignedToRay; \
         j["element" #n "Size"] = serialize::vec2ToJson(c.m_Element##n##Size); \
-        j["element" #n "RayDistance"] = c.m_Element##n##RayDistance;
+        j["element" #n "RayDistance"] = c.m_Element##n##RayDistance; \
+        j["element" #n "RotationLocal"] = c.m_Element##n##RotationLocal; \
+        j["element" #n "RotationDistMultiplier"] = c.m_Element##n##RotationDistMultiplier; \
+        j["element" #n "AlphaScreenPosCurve"] = serialize::vec4ToJson(c.m_Element##n##AlphaScreenPosCurve); \
+        j["element" #n "AlphaOccluderCurve"] = serialize::vec4ToJson(c.m_Element##n##AlphaOccluderCurve); \
+        j["element" #n "SizeScreenPosCurve"] = serialize::vec4ToJson(c.m_Element##n##SizeScreenPosCurve); \
+        j["element" #n "SizeOccluderCurve"] = serialize::vec4ToJson(c.m_Element##n##SizeOccluderCurve); \
+        j["element" #n "RotationDistCurve"] = serialize::vec4ToJson(c.m_Element##n##RotationDistCurve);
 
         SERIALIZE_ELEMENT(1);
         SERIALIZE_ELEMENT(2);
@@ -298,7 +357,7 @@ namespace editor::comps
         SERIALIZE_ELEMENT(5);
 
 #undef SERIALIZE_ELEMENT
-            return j;
+        return j;
     }
 
     void deserializeSunFlare(const json& j, fb::CapturedSunFlareComponentData& c)
@@ -309,11 +368,19 @@ namespace editor::comps
 
 #define DESERIALIZE_ELEMENT(n) \
         JSON_GET_BOOL(j, "element" #n "Enable", c.m_Element##n##Enable); \
+        JSON_GET_BOOL(j, "element" #n "RotationAlignedToRay", c.m_Element##n##RotationAlignedToRay); \
         JSON_GET_VEC2(j, "element" #n "Size", c.m_Element##n##Size); \
-        JSON_GET(j, "element" #n "RayDistance", c.m_Element##n##RayDistance);
+        JSON_GET(j, "element" #n "RayDistance", c.m_Element##n##RayDistance); \
+        JSON_GET(j, "element" #n "RotationLocal", c.m_Element##n##RotationLocal); \
+        JSON_GET(j, "element" #n "RotationDistMultiplier", c.m_Element##n##RotationDistMultiplier); \
+        JSON_GET_VEC4(j, "element" #n "AlphaScreenPosCurve", c.m_Element##n##AlphaScreenPosCurve); \
+        JSON_GET_VEC4(j, "element" #n "AlphaOccluderCurve", c.m_Element##n##AlphaOccluderCurve); \
+        JSON_GET_VEC4(j, "element" #n "SizeScreenPosCurve", c.m_Element##n##SizeScreenPosCurve); \
+        JSON_GET_VEC4(j, "element" #n "SizeOccluderCurve", c.m_Element##n##SizeOccluderCurve); \
+        JSON_GET_VEC4(j, "element" #n "RotationDistCurve", c.m_Element##n##RotationDistCurve);
 
         DESERIALIZE_ELEMENT(1) DESERIALIZE_ELEMENT(2) DESERIALIZE_ELEMENT(3)
-            DESERIALIZE_ELEMENT(4) DESERIALIZE_ELEMENT(5)
+        DESERIALIZE_ELEMENT(4) DESERIALIZE_ELEMENT(5)
 
 #undef DESERIALIZE_ELEMENT
     }
@@ -354,32 +421,60 @@ namespace editor::comps
     {
         json j;
         j["enable"] = c.m_Enable;
-        j["blurFilter"] = static_cast<int>(c.m_BlurFilter);
+        j["debugDrawFocusPlane"] = c.m_DebugDrawFocusPlane;
         j["focusDistance"] = c.m_FocusDistance;
-        j["nearDistanceScale"] = c.m_NearDistanceScale;
-        j["farDistanceScale"] = c.m_FarDistanceScale;
-        j["blurFilterDeviation"] = c.m_BlurFilterDeviation;
+        j["blurFactor"] = c.m_BlurFactor;
         j["blurAdd"] = c.m_BlurAdd;
-        j["scale"] = c.m_Scale;
-        j["diffusionDofEnable"] = c.m_DiffusionDofEnable;
-        j["diffusionDofFocalLength"] = c.m_DiffusionDofFocalLength;
-        j["diffusionDofAperture"] = c.m_DiffusionDofAperture;
+
+        j["simpleDofBlurFilter"] = static_cast<int>(c.m_SimpleDofBlurFilter);
+        j["simpleDofMaxBlur"] = c.m_SimpleDofMaxBlur;
+        j["simpleDofNearStart"] = c.m_SimpleDofNearStart;
+        j["simpleDofNearEnd"] = c.m_SimpleDofNearEnd;
+        j["simpleDofFarStart"] = c.m_SimpleDofFarStart;
+        j["simpleDofFarEnd"] = c.m_SimpleDofFarEnd;
+
+        j["ironsightsDofActive"] = c.m_IronsightsDofActive;
+        j["ironsightsDofCircleBlur"] = c.m_IronsightsDofCircleBlur;
+        j["hipToIronsightsFade"] = c.m_HipToIronsightsFade;
+        j["ironsightsDofStartFade"] = c.m_IronsightsDofStartFade;
+        j["ironsightsFocalDistance"] = c.m_IronsightsFocalDistance;
+        j["ironsightsDofCircleDistance"] = c.m_IronsightsDofCircleDistance;
+
+        j["spriteDofNearStart"] = c.m_SpriteDofNearStart;
+        j["spriteDofNearEnd"] = c.m_SpriteDofNearEnd;
+        j["spriteDofFarStart"] = c.m_SpriteDofFarStart;
+        j["spriteDofFarEnd"] = c.m_SpriteDofFarEnd;
+        j["spriteDofMaxBlur"] = c.m_SpriteDofMaxBlur;
         return j;
     }
 
     void deserializeDof(const json& j, fb::CapturedDofComponentData& c)
     {
         JSON_GET_BOOL(j, "enable", c.m_Enable);
-        JSON_GET_ENUM(j, "blurFilter", c.m_BlurFilter, fb::BlurFilter);
+        JSON_GET_BOOL(j, "debugDrawFocusPlane", c.m_DebugDrawFocusPlane);
         JSON_GET(j, "focusDistance", c.m_FocusDistance);
-        JSON_GET(j, "nearDistanceScale", c.m_NearDistanceScale);
-        JSON_GET(j, "farDistanceScale", c.m_FarDistanceScale);
-        JSON_GET(j, "blurFilterDeviation", c.m_BlurFilterDeviation);
+        JSON_GET(j, "blurFactor", c.m_BlurFactor);
         JSON_GET(j, "blurAdd", c.m_BlurAdd);
-        JSON_GET(j, "scale", c.m_Scale);
-        JSON_GET_BOOL(j, "diffusionDofEnable", c.m_DiffusionDofEnable);
-        JSON_GET(j, "diffusionDofFocalLength", c.m_DiffusionDofFocalLength);
-        JSON_GET(j, "diffusionDofAperture", c.m_DiffusionDofAperture);
+
+        JSON_GET_ENUM(j, "simpleDofBlurFilter", c.m_SimpleDofBlurFilter, fb::BlurFilter);
+        JSON_GET(j, "simpleDofMaxBlur", c.m_SimpleDofMaxBlur);
+        JSON_GET(j, "simpleDofNearStart", c.m_SimpleDofNearStart);
+        JSON_GET(j, "simpleDofNearEnd", c.m_SimpleDofNearEnd);
+        JSON_GET(j, "simpleDofFarStart", c.m_SimpleDofFarStart);
+        JSON_GET(j, "simpleDofFarEnd", c.m_SimpleDofFarEnd);
+
+        JSON_GET_BOOL(j, "ironsightsDofActive", c.m_IronsightsDofActive);
+        JSON_GET_BOOL(j, "ironsightsDofCircleBlur", c.m_IronsightsDofCircleBlur);
+        JSON_GET(j, "hipToIronsightsFade", c.m_HipToIronsightsFade);
+        JSON_GET(j, "ironsightsDofStartFade", c.m_IronsightsDofStartFade);
+        JSON_GET(j, "ironsightsFocalDistance", c.m_IronsightsFocalDistance);
+        JSON_GET(j, "ironsightsDofCircleDistance", c.m_IronsightsDofCircleDistance);
+
+        JSON_GET(j, "spriteDofNearStart", c.m_SpriteDofNearStart);
+        JSON_GET(j, "spriteDofNearEnd", c.m_SpriteDofNearEnd);
+        JSON_GET(j, "spriteDofFarStart", c.m_SpriteDofFarStart);
+        JSON_GET(j, "spriteDofFarEnd", c.m_SpriteDofFarEnd);
+        JSON_GET(j, "spriteDofMaxBlur", c.m_SpriteDofMaxBlur);
     }
 
     json serializeVignette(const fb::CapturedVignetteComponentData& c)
@@ -529,7 +624,13 @@ namespace editor::comps
         json j;
         j["enable"] = c.m_Enable;
         j["skyRenderEnable"] = c.m_SkyRenderEnable;
+        j["terrainReflectionsEnable"] = c.m_TerrainReflectionsEnable;
+        j["overideOutdoorLightColors"] = c.m_OverideOutdoorLightColors;
         j["groundHeight"] = c.m_GroundHeight;
+        j["viewDistance"] = c.m_ViewDistance;
+        j["keyColorReflection"] = serialize::vec3ToJson(c.m_KeyColorReflection);
+        j["skyColorReflection"] = serialize::vec3ToJson(c.m_SkyColorReflection);
+        j["groundColorReflection"] = serialize::vec3ToJson(c.m_GroundColorReflection);
         j["horizontalBlurFilter"] = static_cast<int>(c.m_HorizontalBlurFilter);
         j["horizontalDeviation"] = c.m_HorizontalDeviation;
         j["verticalBlurFilter"] = static_cast<int>(c.m_VerticalBlurFilter);
@@ -541,7 +642,13 @@ namespace editor::comps
     {
         JSON_GET_BOOL(j, "enable", c.m_Enable);
         JSON_GET_BOOL(j, "skyRenderEnable", c.m_SkyRenderEnable);
+        JSON_GET_BOOL(j, "terrainReflectionsEnable", c.m_TerrainReflectionsEnable);
+        JSON_GET_BOOL(j, "overideOutdoorLightColors", c.m_OverideOutdoorLightColors);
         JSON_GET(j, "groundHeight", c.m_GroundHeight);
+        JSON_GET(j, "viewDistance", c.m_ViewDistance);
+        JSON_GET_VEC3(j, "keyColorReflection", c.m_KeyColorReflection);
+        JSON_GET_VEC3(j, "skyColorReflection", c.m_SkyColorReflection);
+        JSON_GET_VEC3(j, "groundColorReflection", c.m_GroundColorReflection);
         JSON_GET_ENUM(j, "horizontalBlurFilter", c.m_HorizontalBlurFilter, fb::BlurFilter);
         JSON_GET(j, "horizontalDeviation", c.m_HorizontalDeviation);
         JSON_GET_ENUM(j, "verticalBlurFilter", c.m_VerticalBlurFilter, fb::BlurFilter);
@@ -552,6 +659,7 @@ namespace editor::comps
     {
         json j;
         j["enable"] = c.m_Enable;
+        j["terrainReflectionsEnable"] = c.m_TerrainReflectionsEnable;
         j["skyColorEnvmap"] = serialize::vec3ToJson(c.m_SkyColorEnvmap);
         j["groundColorEnvmap"] = serialize::vec3ToJson(c.m_GroundColorEnvmap);
         j["keyColorEnvmap"] = serialize::vec3ToJson(c.m_KeyColorEnvmap);
@@ -561,6 +669,7 @@ namespace editor::comps
     void deserializeDynamicEnvmap(const json& j, fb::CapturedDynamicEnvmapComponentData& c)
     {
         JSON_GET_BOOL(j, "enable", c.m_Enable);
+        JSON_GET_BOOL(j, "terrainReflectionsEnable", c.m_TerrainReflectionsEnable);
         JSON_GET_VEC3(j, "skyColorEnvmap", c.m_SkyColorEnvmap);
         JSON_GET_VEC3(j, "groundColorEnvmap", c.m_GroundColorEnvmap);
         JSON_GET_VEC3(j, "keyColorEnvmap", c.m_KeyColorEnvmap);
@@ -579,6 +688,10 @@ namespace editor::comps
         j["topLightDirY"] = c.m_TopLightDirY;
         j["cameraUpRotation"] = c.m_CameraUpRotation;
         j["blendFactor"] = c.m_BlendFactor;
+        j["startFadeDistance"] = c.m_StartFadeDistance;
+        j["endFadeDistance"] = c.m_EndFadeDistance;
+        j["startFadeOutDistance"] = c.m_StartFadeOutDistance;
+        j["endFadeOutDistance"] = c.m_EndFadeOutDistance;
         return j;
     }
 
@@ -594,23 +707,105 @@ namespace editor::comps
         JSON_GET(j, "topLightDirY", c.m_TopLightDirY);
         JSON_GET(j, "cameraUpRotation", c.m_CameraUpRotation);
         JSON_GET(j, "blendFactor", c.m_BlendFactor);
+        JSON_GET(j, "startFadeDistance", c.m_StartFadeDistance);
+        JSON_GET(j, "endFadeDistance", c.m_EndFadeDistance);
+        JSON_GET(j, "startFadeOutDistance", c.m_StartFadeOutDistance);
+        JSON_GET(j, "endFadeOutDistance", c.m_EndFadeOutDistance);
     }
 
     json serializeMotionBlur(const fb::CapturedMotionBlurComponentData& c)
     {
         json j;
         j["motionBlurEnable"] = c.m_MotionBlurEnable;
+        j["motionBlurCentered"] = c.m_MotionBlurCentered;
+        j["motionBlurScale"] = c.m_MotionBlurScale;
         j["motionBlurCutoffRadius"] = c.m_MotionBlurCutoffRadius;
         j["cutoffGradientScale"] = c.m_CutoffGradientScale;
+        j["radialBlurEnable"] = c.m_RadialBlurEnable;
+        j["radialBlurCenter"] = serialize::vec2ToJson(c.m_RadialBlurCenter);
+        j["radialBlurOffset"] = c.m_RadialBlurOffset;
+        j["radialBlurScale"] = c.m_RadialBlurScale;
         return j;
     }
 
     void deserializeMotionBlur(const json& j, fb::CapturedMotionBlurComponentData& c)
     {
         JSON_GET_BOOL(j, "motionBlurEnable", c.m_MotionBlurEnable);
+        JSON_GET_BOOL(j, "motionBlurCentered", c.m_MotionBlurCentered);
+        JSON_GET(j, "motionBlurScale", c.m_MotionBlurScale);
         JSON_GET(j, "motionBlurCutoffRadius", c.m_MotionBlurCutoffRadius);
         JSON_GET(j, "cutoffGradientScale", c.m_CutoffGradientScale);
+        JSON_GET_BOOL(j, "radialBlurEnable", c.m_RadialBlurEnable);
+        JSON_GET_VEC2(j, "radialBlurCenter", c.m_RadialBlurCenter);
+        JSON_GET(j, "radialBlurOffset", c.m_RadialBlurOffset);
+        JSON_GET(j, "radialBlurScale", c.m_RadialBlurScale);
+    }
+
+    json serializeVehicleLighting(const fb::CapturedVehicleLightingComponentData& c)
+    {
+        json j;
+        j["vehicleLightEnable"] = c.m_VehicleLightEnable;
+        j["firstPersonEnable"] = c.m_FirstPersonEnable;
+        j["lockToCameraDirection"] = c.m_LockToCameraDirection;
+        j["vehicleLightingMode"] = static_cast<int>(c.m_VehicleLightingMode);
+        j["topLight"] = serialize::vec3ToJson(c.m_TopLight);
+        j["bottomLight"] = serialize::vec3ToJson(c.m_BottomLight);
+        j["topLightDirX"] = c.m_TopLightDirX;
+        j["topLightDirY"] = c.m_TopLightDirY;
+        j["cameraUpRotation"] = c.m_CameraUpRotation;
+        j["blendFactor"] = c.m_BlendFactor;
+        j["startFadeDistance"] = c.m_StartFadeDistance;
+        j["endFadeDistance"] = c.m_EndFadeDistance;
+        j["startFadeOutDistance"] = c.m_StartFadeOutDistance;
+        j["endFadeOutDistance"] = c.m_EndFadeOutDistance;
+        return j;
+    }
+
+    void deserializeVehicleLighting(const json& j, fb::CapturedVehicleLightingComponentData& c)
+    {
+        JSON_GET_BOOL(j, "vehicleLightEnable", c.m_VehicleLightEnable);
+        JSON_GET_BOOL(j, "firstPersonEnable", c.m_FirstPersonEnable);
+        JSON_GET_BOOL(j, "lockToCameraDirection", c.m_LockToCameraDirection);
+        JSON_GET_ENUM(j, "vehicleLightingMode", c.m_VehicleLightingMode, fb::VehicleLightingMode);
+        JSON_GET_VEC3(j, "topLight", c.m_TopLight);
+        JSON_GET_VEC3(j, "bottomLight", c.m_BottomLight);
+        JSON_GET(j, "topLightDirX", c.m_TopLightDirX);
+        JSON_GET(j, "topLightDirY", c.m_TopLightDirY);
+        JSON_GET(j, "cameraUpRotation", c.m_CameraUpRotation);
+        JSON_GET(j, "blendFactor", c.m_BlendFactor);
+        JSON_GET(j, "startFadeDistance", c.m_StartFadeDistance);
+        JSON_GET(j, "endFadeDistance", c.m_EndFadeDistance);
+        JSON_GET(j, "startFadeOutDistance", c.m_StartFadeOutDistance);
+        JSON_GET(j, "endFadeOutDistance", c.m_EndFadeOutDistance);
+    }
+
+    json serializeSubSurfaceScattering(const fb::CapturedSubSurfaceScatteringComponentData& c)
+    {
+        json j;
+        j["advancedSssEnable"] = c.m_AdvancedSssEnable;
+        j["simpleSssColor"] = serialize::vec3ToJson(c.m_SimpleSssColor);
+        j["simpleSssRolloffKeyLight"] = c.m_SimpleSssRolloffKeyLight;
+        j["simpleSssRolloffLocalLight"] = c.m_SimpleSssRolloffLocalLight;
+        j["advancedSssMat0Width"] = serialize::vec3ToJson(c.m_AdvancedSssMat0Width);
+        j["advancedSssMat1Width"] = serialize::vec3ToJson(c.m_AdvancedSssMat1Width);
+        j["advancedSssMat2Width"] = serialize::vec3ToJson(c.m_AdvancedSssMat2Width);
+        j["advancedSssMat3Width"] = serialize::vec3ToJson(c.m_AdvancedSssMat3Width);
+        j["advancedSssMat4Width"] = serialize::vec3ToJson(c.m_AdvancedSssMat4Width);
+        return j;
+    }
+
+    void deserializeSubSurfaceScattering(const json& j, fb::CapturedSubSurfaceScatteringComponentData& c)
+    {
+        JSON_GET_BOOL(j, "advancedSssEnable", c.m_AdvancedSssEnable);
+        JSON_GET_VEC3(j, "simpleSssColor", c.m_SimpleSssColor);
+        JSON_GET(j, "simpleSssRolloffKeyLight", c.m_SimpleSssRolloffKeyLight);
+        JSON_GET(j, "simpleSssRolloffLocalLight", c.m_SimpleSssRolloffLocalLight);
+        JSON_GET_VEC3(j, "advancedSssMat0Width", c.m_AdvancedSssMat0Width);
+        JSON_GET_VEC3(j, "advancedSssMat1Width", c.m_AdvancedSssMat1Width);
+        JSON_GET_VEC3(j, "advancedSssMat2Width", c.m_AdvancedSssMat2Width);
+        JSON_GET_VEC3(j, "advancedSssMat3Width", c.m_AdvancedSssMat3Width);
+        JSON_GET_VEC3(j, "advancedSssMat4Width", c.m_AdvancedSssMat4Width);
     }
 }
 
-#endif // BFVE_GAME_BF3
+#endif // BFVE_GAME_BF4

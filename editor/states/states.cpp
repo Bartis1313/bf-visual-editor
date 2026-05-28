@@ -297,7 +297,13 @@ namespace editor::states
             {
                 applyEdits(state, data);
                 if (auto mgr = getManager())
+                {
                     mgr->setDirty(true);
+#if defined(BFVE_GAME_BF4)
+                    mgr->forceStatesDirty();
+                    mgr->forceLutUpload();
+#endif
+                }
             }
         }
     }
@@ -311,7 +317,13 @@ namespace editor::states
         }
 
         if (auto* mgr = getManager())
+        {
             mgr->setDirty(true);
+#if defined(BFVE_GAME_BF4)
+            mgr->forceStatesDirty();
+            mgr->forceLutUpload();
+#endif
+        }
     }
 
     void resetAll()
@@ -394,7 +406,7 @@ namespace editor::states
                 if (!classInfo->isSubclassOf((fb::ClassInfo*)fb::ObjectBlueprint::ClassInfoPtr()))
                     continue;
 
-                fb::ObjectBlueprint* objBp = static_cast<fb::ObjectBlueprint*>(obj);
+                fb::ObjectBlueprint* objBp = reinterpret_cast<fb::ObjectBlueprint*>(obj);
                 if (!objBp->m_Object)
                     continue;
 
@@ -415,4 +427,25 @@ namespace editor::states
         logger::debug("Found {} VE data entries", veDataNameMap.size());
         veDataScanned = true;
     }
+
+#if defined(BFVE_GAME_BF4)
+    void scanExistingEntities()
+    {
+        fb::EntityList<fb::VisualEnvironmentEntity> ents{
+            (fb::ClassInfo*)fb::VisualEnvironmentEntity::ClassInfoPtr() };
+
+        size_t dispatched = 0;
+        fb::VisualEnvironmentEntity* ent;
+        while ((ent = ents.nextOfKind()) != nullptr)
+        {
+            // VEEntity has no direct m_data pointer pre-cached the same way
+            // LightEntity does — pass nullptr and let onEntityCreated fall
+            // back to entity->m_referenceObjectData->m_Blueprint for naming.
+            onEntityCreated(ent, nullptr);
+            ++dispatched;
+        }
+        logger::info("[states::scanExistingEntities] dispatched={} mapSize={}",
+            dispatched, stateEntityMap.size());
+    }
+#endif
 }

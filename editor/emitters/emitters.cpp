@@ -66,18 +66,150 @@ namespace editor::emitters
         node->emitters.push_back(data);
     }
 
+    static std::unordered_map<std::string, int> nameUseCounts;
+    static void RegisterEmitter(fb::EmitterTemplateData* emitterData, const std::string& displayName)
+    {
+        if (!emitterData) return;
+        if (emitterMap.count(emitterData)) return;
+
+        std::string baseName = displayName.empty() ? std::string{"Unknown"} : displayName;
+        int& useCount = nameUseCounts[baseName];
+        std::string finalName = (useCount == 0)
+            ? baseName
+            : baseName + " (" + std::to_string(useCount) + ")";
+        ++useCount;
+
+        EmitterEditData editData;
+        editData.data = emitterData;
+        editData.name = finalName;
+        editData.original.captureFrom(emitterData);
+        editData.captured = true;
+
+        for (fb::ProcessorData* proc = emitterData->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+        {
+            fb::TypeInfo* type = proc->GetType();
+            if (!type || type->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                continue;
+
+            fb::ClassInfo* procClassInfo = static_cast<fb::ClassInfo*>(type);
+            if (procClassInfo->m_ClassId == fb::UpdateColorData::ClassId())
+            {
+                editData.colorProcessor = static_cast<fb::UpdateColorData*>(proc);
+                editData.originalColor.captureFrom(editData.colorProcessor);
+            }
+        }
+
+        emitterMap[emitterData] = editData;
+        InsertIntoTree(emitterData, editData.name);
+    }
+
+#if defined(BFVE_GAME_BF4)
+    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath);
+
+    static void BF4_processEffectEntity(fb::EffectEntityData* effect, const std::string& parentPath)
+    {
+        if (!effect)
+            return;
+
+        for (auto comp : effect->m_Components)
+        {
+            if (!comp)
+                continue;
+
+            fb::TypeInfo* ti = comp->GetType();
+            if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                continue;
+
+            fb::ClassInfo* ci = static_cast<fb::ClassInfo*>(ti);
+
+            if (ci->isSubclassOf((fb::ClassInfo*)fb::EmitterEntityData::ClassInfoPtr()))
+            {
+                fb::EmitterEntityData* emEntity = reinterpret_cast<fb::EmitterEntityData*>(comp);
+                BF4_processEmitterAsset(emEntity->m_Emitter, parentPath);
+            }
+            else if (ci->isSubclassOf((fb::ClassInfo*)fb::EffectEntityData::ClassInfoPtr()))
+            {
+                BF4_processEffectEntity(reinterpret_cast<fb::EffectEntityData*>(comp), parentPath);
+            }
+        }
+    }
+
+    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath)
+    {
+        if (!asset)
+            return;
+
+        std::string emitterPath = parentPath;
+        std::string assetName = asset->tryGetDebugName();
+        if (!assetName.empty())
+        {
+            if (!emitterPath.empty()) emitterPath += '/';
+            emitterPath += assetName;
+        }
+
+        fb::TypeInfo* ti = asset->GetType();
+        if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+            return;
+
+        fb::ClassInfo* ci = static_cast<fb::ClassInfo*>(ti);
+        const uint32_t classId = ci->m_ClassId;
+
+        if (classId == fb::ScalableEmitterDocument::ClassId())
+        {
+            fb::ScalableEmitterDocument* doc = reinterpret_cast<fb::ScalableEmitterDocument*>(asset);
+            auto regWithTag = [&](fb::EmitterTemplateData* td, const char* tag)
+            {
+                if (!td) return;
+                if (emitterMap.count(td)) return;
+                std::string name = emitterPath;
+                if (tag && *tag) { name += " ["; name += tag; name += "]"; }
+                RegisterEmitter(td, name);
+            };
+            regWithTag(doc->m_TemplateDataUltra, "Ultra");
+            regWithTag(doc->m_TemplateDataHigh, "High");
+            regWithTag(doc->m_TemplateDataMedium, "Medium");
+            regWithTag(doc->m_TemplateDataLow, "Low");
+        }
+        else if (classId == fb::FlatEmitterDocument::ClassId())
+        {
+            auto* doc = reinterpret_cast<fb::FlatEmitterDocument*>(asset);
+            RegisterEmitter(doc->m_TemplateData, emitterPath);
+        }
+    }
+#endif // BFVE_GAME_BF4
+
     void scan()
     {
         emitterMap.clear();
         emitterTree.Clear();
+        nameUseCounts.clear();
 
         fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
         if (!rm)
+        {
+            logger::info("[emitters::scan] no ResourceManager");
             return;
+        }
+
+        [[maybe_unused]] size_t bpSeen = 0;
+        [[maybe_unused]] size_t bpSkipNullObject = 0;
+        [[maybe_unused]] size_t bpSkipNoInnerType = 0;
+        [[maybe_unused]] size_t bpSkipNotEffectEntity = 0;
+
+#if defined(BFVE_GAME_BF4)
+        std::unordered_map<std::string, size_t> classHistogram;
+        size_t totalCompartments = 0;
+        size_t totalObjects = 0;
+#endif
 
         for (const auto& comp : rm->m_compartments)
         {
-            if (!comp) continue;
+            if (!comp)
+                continue;
+
+#if defined(BFVE_GAME_BF4)
+            ++totalCompartments;
+#endif
 
             for (const auto& obj : comp->m_objects)
             {
@@ -88,50 +220,121 @@ namespace editor::emitters
                     continue;
 
                 fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(typeInfo);
-                if (classInfo->m_ClassId != fb::EmitterTemplateData::ClassId())
-                    continue;
+                const uint32_t classId = classInfo->m_ClassId;
+#if defined(BFVE_GAME_BF4)
+                ++totalObjects;
+                const char* clsName = (classInfo->m_InfoData && classInfo->m_InfoData->m_Name)
+                    ? classInfo->m_InfoData->m_Name : "?";
+                ++classHistogram[clsName];
+#endif
 
-                fb::EmitterTemplateData* emitterData = static_cast<fb::EmitterTemplateData*>(obj);
-
-                EmitterEditData editData;
-                editData.data = emitterData;
-                editData.name = emitterData->m_Name ? emitterData->m_Name : "Unknown";
-                editData.original.captureFrom(emitterData);
-                editData.captured = true;
-
-                for (fb::ProcessorData* proc = emitterData->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+#if defined(BFVE_GAME_BF3)
+                if (classId == fb::EmitterTemplateData::ClassId())
                 {
-                    fb::TypeInfo* type = proc->GetType();
-                    if (!type || type->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                        continue;
-
-                    fb::ClassInfo* procClassInfo = static_cast<fb::ClassInfo*>(type);
-                    if (procClassInfo->m_ClassId == fb::UpdateColorData::ClassId())
-                    {
-                        editData.colorProcessor = static_cast<fb::UpdateColorData*>(proc);
-                        editData.originalColor.captureFrom(editData.colorProcessor);
-                    }
+                    fb::EmitterTemplateData* emitterData = reinterpret_cast<fb::EmitterTemplateData*>(obj);
+                    const std::string name = emitterData->m_Name ? emitterData->m_Name : "Unknown";
+                    RegisterEmitter(emitterData, name);
                 }
+#else
+                if (classInfo->isSubclassOf((fb::ClassInfo*)fb::EffectBlueprint::ClassInfoPtr()))
+                {
+                    bpSeen++;
+                    fb::EffectBlueprint* bp = reinterpret_cast<fb::EffectBlueprint*>(obj);
+                    if (!bp->m_Object) 
+                    { 
+                        bpSkipNullObject++;
+                        continue;
+                    }
 
-                emitterMap[emitterData] = editData;
-                InsertIntoTree(emitterData, editData.name);
+                    fb::TypeInfo* innerType = bp->m_Object->GetType();
+                    if (!innerType || innerType->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                    { 
+                        bpSkipNoInnerType++;
+                        continue;
+                    }
+                    fb::ClassInfo* innerCi = static_cast<fb::ClassInfo*>(innerType);
+                    if (!innerCi->isSubclassOf((fb::ClassInfo*)fb::EffectEntityData::ClassInfoPtr()))
+                    { 
+                        bpSkipNotEffectEntity++;
+                        continue;
+                    }
+
+                    fb::EffectEntityData* effect = reinterpret_cast<fb::EffectEntityData*>(bp->m_Object);
+                    BF4_processEffectEntity(effect, bp->tryGetDebugName());
+                }
+#endif
             }
         }
 
         applyPendingEdits();
 
         scanned = true;
+#if defined(BFVE_GAME_BF4)
+        logger::info("Found {} emitters (compartments={} objects={} EffectBlueprints seen={} skip-null={} skip-notype={} skip-notEffect={})",
+            emitterMap.size(), totalCompartments, totalObjects,
+            bpSeen, bpSkipNullObject, bpSkipNoInnerType, bpSkipNotEffectEntity);
+
+        std::vector<std::pair<std::string, size_t>> sorted(classHistogram.begin(), classHistogram.end());
+        std::sort(sorted.begin(), sorted.end(),
+            [](const auto& a, const auto& b) { return a.second > b.second; });
+        const size_t topN = std::min<size_t>(30, sorted.size());
+        for (size_t i = 0; i < topN; ++i)
+            logger::info("  [scan-class] {}: {}", sorted[i].first, sorted[i].second);
+#else
         logger::info("Found {} emitters", emitterMap.size());
+#endif
     }
+
+#if defined(BFVE_GAME_BF4)
+    void onEmitterEntityCreatedBF4(fb::EmitterEntityData* data, void* entity)
+    {
+        if (!data || !data->m_Emitter)
+            return;
+
+        auto stamp = [&](fb::EmitterTemplateData* td)
+        {
+            if (!td) return;
+            auto it = emitterMap.find(td);
+            if (it != emitterMap.end())
+                it->second.lastTemplate = reinterpret_cast<fb::EmitterTemplate*>(entity);
+        };
+
+        auto* asset = data->m_Emitter;
+        fb::TypeInfo* ti = asset->GetType();
+        if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+            return;
+
+        const uint32_t classId = static_cast<fb::ClassInfo*>(ti)->m_ClassId;
+
+        if (classId == fb::ScalableEmitterDocument::ClassId())
+        {
+            auto* doc = reinterpret_cast<fb::ScalableEmitterDocument*>(asset);
+            stamp(doc->m_TemplateDataUltra);
+            stamp(doc->m_TemplateDataHigh);
+            stamp(doc->m_TemplateDataMedium);
+            stamp(doc->m_TemplateDataLow);
+        }
+        else if (classId == fb::FlatEmitterDocument::ClassId())
+        {
+            auto* doc = reinterpret_cast<fb::FlatEmitterDocument*>(asset);
+            stamp(doc->m_TemplateData);
+        }
+    }
+
+#endif
 
     void onCreated(fb::EmitterTemplate* emitter, fb::EmitterTemplateData* data)
     {
         if (!emitter || !data)
+        {
             return;
+        }
 
         auto it = emitterMap.find(data);
         if (it == emitterMap.end())
+        {
             return;
+        }
 
         it->second.lastTemplate = emitter;
     }
@@ -188,30 +391,95 @@ namespace editor::emitters
 
 void EmitterSnapshot::captureFrom(const fb::EmitterTemplateData* d)
 {
-    using T = fb::EmitterTemplateData;
+    if (!d)
+        return;
 
-    memcpy(&pointLightIntensity, &d->m_PointLightIntensity, offsetof(T, m_Name) - offsetof(T, m_PointLightIntensity));
-    lifetimeFrameCount = d->m_LifetimeFrameCount;
-    timeScale = d->m_TimeScale;
-    lifetime = d->m_Lifetime;
-    visibleAfterDistance = d->m_VisibleAfterDistance;
-    emittableType = d->m_EmittableType;
-    memcpy(&distanceScaleNearValue, &d->m_DistanceScaleNearValue, offsetof(T, m_FollowSpawnSource) - offsetof(T, m_DistanceScaleNearValue));
-    memcpy(&followSpawnSource, &d->m_FollowSpawnSource, offsetof(T, _0x00B7) - offsetof(T, m_FollowSpawnSource));
+    maxCount                            = d->m_MaxCount;
+    lifetimeFrameCount                  = d->m_LifetimeFrameCount;
+    timeScale                           = d->m_TimeScale;
+    lifetime                            = d->m_Lifetime;
+    emittableType                       = d->m_EmittableType;
+    distanceScaleNearValue              = d->m_DistanceScaleNearValue;
+    distanceScaleFarValue               = d->m_DistanceScaleFarValue;
+    distanceScaleLength                 = d->m_DistanceScaleLength;
+    vertexPixelLightingBlendFactor      = d->m_VertexPixelLightingBlendFactor;
+    globalLocalNormalBlendFactor        = d->m_GlobalLocalNormalBlendFactor;
+    softParticlesFadeDistanceMultiplier = d->m_SoftParticlesFadeDistanceMultiplier;
+    lightWrapAroundFactor               = d->m_LightWrapAroundFactor;
+    lightMultiplier                     = d->m_LightMultiplier;
+    meshCullingDistance                 = d->m_MeshCullingDistance;
+    maxSpawnDistance                    = d->m_MaxSpawnDistance;
+    minScreenArea                       = d->m_MinScreenArea;
+    particleCullingFactor               = d->m_ParticleCullingFactor;
+    followSpawnSource                   = d->m_FollowSpawnSource;
+    repeatParticleSpawning              = d->m_RepeatParticleSpawning;
+    emissive                            = d->m_Emissive;
+    exclusionVolumeCullEnable           = d->m_ExclusionVolumeCullEnable;
+    transparencySunShadowEnable         = d->m_TransparencySunShadowEnable;
+    forceFullRes                        = d->m_ForceFullRes;
+    localSpace                          = d->m_LocalSpace;
+    opaque                              = d->m_Opaque;
+    killParticlesWithEmitter            = d->m_KillParticlesWithEmitter;
+    forceNiceSorting                    = d->m_ForceNiceSorting;
+
+#if defined(BFVE_GAME_BF3)
+    pointLightIntensity          = d->m_PointLightIntensity;
+    pointLightPivot              = d->m_PointLightPivot;
+    pointLightColor              = d->m_PointLightColor;
+    pointLightRadius             = d->m_PointLightRadius;
+    pointLightRandomIntensityMin = d->m_PointLightRandomIntensityMin;
+    pointLightRandomIntensityMax = d->m_PointLightRandomIntensityMax;
+    pointLightMaxClamp           = d->m_PointLightMaxClamp;
+    pointLightMinClamp           = d->m_PointLightMinClamp;
+    visibleAfterDistance         = d->m_VisibleAfterDistance;
+    actAsPointLight              = d->m_ActAsPointLight;
+#endif
 }
 
 void EmitterSnapshot::restoreTo(fb::EmitterTemplateData* d) const
 {
-    using T = fb::EmitterTemplateData;
+    if (!d) return;
 
-    memcpy(&d->m_PointLightIntensity, &pointLightIntensity, offsetof(T, m_Name) - offsetof(T, m_PointLightIntensity));
-    d->m_LifetimeFrameCount = lifetimeFrameCount;
-    d->m_TimeScale = timeScale;
-    d->m_Lifetime = lifetime;
-    d->m_VisibleAfterDistance = visibleAfterDistance;
-    d->m_EmittableType = emittableType;
-    memcpy(&d->m_DistanceScaleNearValue, &distanceScaleNearValue, offsetof(T, m_FollowSpawnSource) - offsetof(T, m_DistanceScaleNearValue));
-    memcpy(&d->m_FollowSpawnSource, &followSpawnSource, offsetof(T, _0x00B7) - offsetof(T, m_FollowSpawnSource));
+    d->m_MaxCount                            = maxCount;
+    d->m_LifetimeFrameCount                  = lifetimeFrameCount;
+    d->m_TimeScale                           = timeScale;
+    d->m_Lifetime                            = lifetime;
+    d->m_EmittableType                       = emittableType;
+    d->m_DistanceScaleNearValue              = distanceScaleNearValue;
+    d->m_DistanceScaleFarValue               = distanceScaleFarValue;
+    d->m_DistanceScaleLength                 = distanceScaleLength;
+    d->m_VertexPixelLightingBlendFactor      = vertexPixelLightingBlendFactor;
+    d->m_GlobalLocalNormalBlendFactor        = globalLocalNormalBlendFactor;
+    d->m_SoftParticlesFadeDistanceMultiplier = softParticlesFadeDistanceMultiplier;
+    d->m_LightWrapAroundFactor               = lightWrapAroundFactor;
+    d->m_LightMultiplier                     = lightMultiplier;
+    d->m_MeshCullingDistance                 = meshCullingDistance;
+    d->m_MaxSpawnDistance                    = maxSpawnDistance;
+    d->m_MinScreenArea                       = minScreenArea;
+    d->m_ParticleCullingFactor               = particleCullingFactor;
+    d->m_FollowSpawnSource                   = followSpawnSource;
+    d->m_RepeatParticleSpawning              = repeatParticleSpawning;
+    d->m_Emissive                            = emissive;
+    d->m_ExclusionVolumeCullEnable           = exclusionVolumeCullEnable;
+    d->m_TransparencySunShadowEnable         = transparencySunShadowEnable;
+    d->m_ForceFullRes                        = forceFullRes;
+    d->m_LocalSpace                          = localSpace;
+    d->m_Opaque                              = opaque;
+    d->m_KillParticlesWithEmitter            = killParticlesWithEmitter;
+    d->m_ForceNiceSorting                    = forceNiceSorting;
+
+#if defined(BFVE_GAME_BF3)
+    d->m_PointLightIntensity            = pointLightIntensity;
+    d->m_PointLightPivot                = pointLightPivot;
+    d->m_PointLightColor                = pointLightColor;
+    d->m_PointLightRadius               = pointLightRadius;
+    d->m_PointLightRandomIntensityMin   = pointLightRandomIntensityMin;
+    d->m_PointLightRandomIntensityMax   = pointLightRandomIntensityMax;
+    d->m_PointLightMaxClamp             = pointLightMaxClamp;
+    d->m_PointLightMinClamp             = pointLightMinClamp;
+    d->m_VisibleAfterDistance           = visibleAfterDistance;
+    d->m_ActAsPointLight                = actAsPointLight;
+#endif
 }
 
 void EmitterColorSnapshot::captureFrom(fb::UpdateColorData* colorProc)

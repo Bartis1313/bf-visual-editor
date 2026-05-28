@@ -22,6 +22,7 @@ namespace editor::effects
     inline std::vector<std::pair<std::string, fb::Asset*>> assets;
     inline std::vector<SpawnedEffect> spawned;
     inline fb::Asset* selected = nullptr;
+    inline std::string selectedName;
     inline fb::LinearTransform transform = { };
     inline bool showSpawnedEffects = true;
     inline bool showLocalSphere = true;

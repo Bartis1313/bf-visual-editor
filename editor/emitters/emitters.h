@@ -18,6 +18,10 @@ namespace editor::emitters
 
     void onCreated(fb::EmitterTemplate* emitter, fb::EmitterTemplateData* data);
 
+#if defined(BFVE_GAME_BF4)
+    void onEmitterEntityCreatedBF4(fb::EmitterEntityData* data, void* entity);
+#endif
+
     std::unordered_map<fb::EmitterTemplateData*, EmitterEditData>& getMap();
     EmitterTreeNode& getTree();
     fb::EmitterTemplateData* getSelected();

@@ -89,7 +89,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;BFVE_GAME_BF3;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -108,7 +108,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;BFVE_GAME_BF3;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -125,7 +125,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;BFVE_GAME_BF4;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -144,7 +144,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;BFVISUALEDITOR_EXPORTS;_WINDOWS;_USRDLL;BFVE_GAME_BF4;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -180,11 +180,16 @@
     <ClInclude Include="hooks\functions.h" />
     <ClInclude Include="hooks\hooks.h" />
     <ClInclude Include="SDK\eastl.h" />
+    <ClInclude Include="SDK\fb.h" />
     <ClInclude Include="SDK\general.h" />
     <ClInclude Include="SDK\sdk.h" />
     <ClInclude Include="SDK\sdkfb3.h" />
     <ClInclude Include="SDK\typeinfo.h" />
     <ClInclude Include="SDK\vfunc.h" />
+    <ClInclude Include="SDK_bf4\classes.h" />
+    <ClInclude Include="SDK_bf4\declarations.h" />
+    <ClInclude Include="SDK_bf4\enums.h" />
+    <ClInclude Include="SDK_bf4\structs.h" />
     <ClInclude Include="utils\log.h" />
   </ItemGroup>
   <ItemGroup>
@@ -214,9 +219,14 @@
     <ClCompile Include="editor\render\render.cpp" />
     <ClCompile Include="editor\ui\ui_helpers.cpp" />
     <ClCompile Include="editor\comps\comps.cpp" />
+    <ClCompile Include="editor\comps\comps_bf4.cpp" />
+    <ClCompile Include="editor\comps\comps_serialize_bf4.cpp" />
+    <ClCompile Include="editor\copy\copy_bf4.cpp" />
     <ClCompile Include="editor\world_render\world_render.cpp" />
     <ClCompile Include="editor\world_render\world_render_serialize.cpp" />
+    <ClCompile Include="editor\world_render\world_render_serialize_bf4.cpp" />
     <ClCompile Include="editor\world_render\world_render_ui.cpp" />
+    <ClCompile Include="editor\world_render\world_render_ui_bf4.cpp" />
     <ClCompile Include="hooks\functions.cpp" />
     <ClCompile Include="hooks\hooks.cpp" />
     <ClCompile Include="SDK\typeinfo.cpp" />

@@ -1,6 +1,6 @@
 #include <imgui.h>
 #include <magic_enum/magic_enum.hpp>
-#include "../../SDK/sdk.h"
+#include "../../SDK/fb.h"
 #include <algorithm>
 #include <ranges>
 
@@ -15,6 +15,8 @@ namespace editor::ui
     bool Vec2Edit(const char* label, fb::Vec2* current, const fb::Vec2* original);
     bool Vec3Edit(const char* label, fb::Vec3* current, const fb::Vec3* original, bool isColor = false);
     bool Vec4Edit(const char* label, fb::Vec4* current, const fb::Vec4* original, bool isColor = false);
+    bool HdrColor3Edit(const char* label, fb::Vec3* current, const fb::Vec3* original);
+    bool CurveVec4Edit(const char* label, fb::Vec4* current, const fb::Vec4* original);
     bool FloatEdit(const char* label, float* current, const float* original, float min = 0.f, float max = 0.f, const char* format = "%.3f");
     bool BoolEdit(const char* label, bool* current, const bool* original);
     bool IntEdit(const char* label, int* current, const int* original, int min = 0, int max = 0);

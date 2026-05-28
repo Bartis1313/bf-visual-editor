@@ -31,8 +31,20 @@ namespace editor::lights
 
     static void RegisterLightData(fb::LocalLightEntityData* data, const std::string& assetName, const std::string& containerType, void* container)
     {
-        if (!data || entries.count(data))
+        if (!data)
             return;
+
+        if (auto it = entries.find(data); it != entries.end())
+        {
+            auto& e = it->second;
+            const bool placeholderName =
+                e.assetName.empty() || e.assetName == "(dynamic)" || e.assetName == "(unknown)";
+            const bool placeholderContainer =
+                e.containerType.empty() || e.containerType == "Runtime";
+            if (placeholderName) e.assetName = assetName;
+            if (placeholderContainer) e.containerType = containerType;
+            return;
+        }
 
         LightDataEntry& entry = entries[data];
         entry.dataPtr = data;
@@ -104,10 +116,9 @@ namespace editor::lights
 
     void scanAll()
     {
-        entries.clear();
-
         fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
-        if (!rm) return;
+        if (!rm)
+            return;
 
         logger::debug("Scanning ResourceManager for light data...");
 
@@ -127,17 +138,17 @@ namespace editor::lights
                 uint32_t classId = classInfo->m_ClassId;
 
                 if (classId == fb::SpatialPrefabBlueprint::ClassId())
-                    ProcessLightContainer(static_cast<fb::SpatialPrefabBlueprint*>(obj), "SpatialPrefabBlueprint");
+                    ProcessLightContainer(reinterpret_cast<fb::SpatialPrefabBlueprint*>(obj), "SpatialPrefabBlueprint");
                 else if (classId == fb::ObjectBlueprint::ClassId())
-                    ProcessObjectBlueprint(static_cast<fb::ObjectBlueprint*>(obj));
+                    ProcessObjectBlueprint(reinterpret_cast<fb::ObjectBlueprint*>(obj));
                 else if (classId == fb::PrefabBlueprint::ClassId())
-                    ProcessLightContainer(static_cast<fb::PrefabBlueprint*>(obj), "PrefabBlueprint");
+                    ProcessLightContainer(reinterpret_cast<fb::PrefabBlueprint*>(obj), "PrefabBlueprint");
                 else if (classId == fb::WorldPartData::ClassId())
-                    ProcessLightContainer(static_cast<fb::WorldPartData*>(obj), "WorldPartData");
+                    ProcessLightContainer(reinterpret_cast<fb::WorldPartData*>(obj), "WorldPartData");
                 else if (classId == fb::SubWorldData::ClassId())
-                    ProcessLightContainer(static_cast<fb::SubWorldData*>(obj), "SubWorldData");
+                    ProcessLightContainer(reinterpret_cast<fb::SubWorldData*>(obj), "SubWorldData");
                 else if (classId == fb::LogicPrefabBlueprint::ClassId())
-                    ProcessLightContainer(static_cast<fb::LogicPrefabBlueprint*>(obj), "LogicPrefabBlueprint");
+                    ProcessLightContainer(reinterpret_cast<fb::LogicPrefabBlueprint*>(obj), "LogicPrefabBlueprint");
             }
         }
 
@@ -147,35 +158,28 @@ namespace editor::lights
 
     void scanExistingEntities()
     {
-        fb::EntityList<fb::SpotLightEntity> spotLights{ (fb::ClassInfo*)fb::SpotLightEntity::ClassInfoPtr() };
-        fb::EntityList<fb::PointLightEntity> pointLights{ (fb::ClassInfo*)fb::PointLightEntity::ClassInfoPtr() };
-        fb::EntityList<fb::LocalLightEntity> localLights{ (fb::ClassInfo*)fb::LocalLightEntity::ClassInfoPtr() };
+#if defined(BFVE_GAME_BF4)
+        // sub_140CC7EE0 ctor uses sub_1407DAFC0(this+0x30, this, 1)
+        fb::EntityList<fb::LocalLightEntity> lights{ (fb::ClassInfo*)fb::LocalLightEntity::ClassInfoPtr(), 0x30 };
 
-        auto processLight = [](fb::LocalLightEntity* light)
-            {
-                if (!light || !light->m_data) return;
-                onEntityCreated(light, light->m_data);
-            };
-
-        fb::SpotLightEntity* spot;
-        while ((spot = spotLights.nextOfKind()) != nullptr)
-            processLight(spot);
-
-        fb::PointLightEntity* point;
-        while ((point = pointLights.nextOfKind()) != nullptr)
-            processLight(point);
-
-        fb::LocalLightEntity* local;
-        while ((local = localLights.nextOfKind()) != nullptr)
-            processLight(local);
-
-        size_t totalActive = 0;
+        size_t dispatched = 0;
+        fb::LocalLightEntity* light;
+        while ((light = lights.nextOfKind()) != nullptr)
         {
-            for (const auto& [ptr, entry] : entries)
-                totalActive += entry.activeEntities.size();
+            if (!light->m_data)
+                continue;
+
+            onEntityCreated(light, light->m_data);
+            ++dispatched;
         }
 
-        logger::debug("Scanned existing entities: {} active", totalActive);
+        size_t totalActive = 0;
+        for (const auto& [ptr, entry] : entries)
+            totalActive += entry.activeEntities.size();
+
+        logger::debug("[lights::scanExistingEntities] dispatched={} active={}",
+            dispatched, totalActive);
+#endif
     }
 
     void scanAndApplyOverrides()
@@ -304,6 +308,21 @@ namespace editor::lights
         }
     }
 
+#if defined(BFVE_GAME_BF4)
+    static void clearPropertyOverridesBF4(fb::LocalLightEntity* entity)
+    {
+        if (!entity)
+            return;
+
+        auto base = reinterpret_cast<char*>(entity);
+        *reinterpret_cast<uint64_t*>(base + 0x40) &= ~1ULL; // m_Color
+        *reinterpret_cast<uint64_t*>(base + 0x90) &= ~1ULL; // m_Intensity
+        *reinterpret_cast<uint64_t*>(base + 0xA0) &= ~1ULL; // m_EnlightenColorScale
+        *reinterpret_cast<uint64_t*>(base + 0xB0) &= ~1ULL; // m_Radius
+        *reinterpret_cast<uint64_t*>(base + 0xC0) &= ~1ULL; // m_ParticleColorScale
+    }
+#endif
+
     void applyOverride(LightDataEntry& entry)
     {
         if (!entry.dataPtr)
@@ -314,7 +333,12 @@ namespace editor::lights
         for (auto entity : entry.activeEntities)
         {
             if (entity)
+            {
+#if defined(BFVE_GAME_BF4)
+                clearPropertyOverridesBF4(entity);
+#endif
                 entity->setDirty();
+            }
         }
     }
 
@@ -374,6 +398,9 @@ namespace editor::lights
         if (entry.hasOverride)
         {
             applyToData(data, entry);
+#if defined(BFVE_GAME_BF4)
+            clearPropertyOverridesBF4(entity);
+#endif
             entity->setDirty();
         }
     }

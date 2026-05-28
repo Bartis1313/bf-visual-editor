@@ -1,11 +1,16 @@
 #include "functions.h"
 
-#include "../SDK/sdk.h"
+#include "../SDK/fb.h"
 
 #include <iostream>
+#include <algorithm>
 #include "../editor/editor.h"
+#include "../utils/log.h"
+#include "../editor/emitters/emitters.h"
 
 LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+#if defined(BFVE_GAME_BF3)
 
 void __fastcall hkfb__VisualEnvironment__operator(fb::VisualEnvironment* _this, void*, fb::VisualEnvironment* _that)
 {
@@ -89,11 +94,6 @@ int __fastcall hksub_1880390(char* _this, void*, int a2, fb::EmitterTemplateData
 
 void __fastcall hkfb__EmitterTemplate__EmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data)
 {
-    if (data && data->m_Name)
-    {
-
-    }
-
     ofb__EmitterTemplate__EmitterTemplate(_this, data);
 }
 
@@ -131,6 +131,7 @@ __m128* __fastcall hksub_17A4E90(
 
     return osub_17A4E90(a1, sky, ground, sunlight, sunLightDir, sunSize, backLightColor, backLightRotationX, backLightRotationY, backLightSize, skyBoxScale, outSkyBox);
 }
+#endif // BFVE_GAME_BF3
 
 void InitImGui(IDXGISwapChain* pSwapChain)
 {
@@ -198,8 +199,13 @@ LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
         bool& enabled = editor::isEnabled();
         enabled = !enabled;
 
-        fb::BorderInputNode::GetInstance()->m_mouse->enableCursorMode(enabled, 1);
-        fb::BorderInputNode::GetInstance()->m_keyboard->enableTypingMode(enabled);
+        if (fb::BorderInputNode* bin = fb::BorderInputNode::GetInstance())
+        {      
+            if (bin->m_mouse)
+                bin->m_mouse->enableCursorMode(enabled, 1);
+            if (bin->m_keyboard)
+                bin->m_keyboard->enableTypingMode(enabled);       
+        }
 
         return 0;
     }
@@ -266,3 +272,66 @@ HRESULT __stdcall hkResizeBuffers(
 
     return hr;
 }
+
+#if defined(BFVE_GAME_BF4)
+
+void hkBf4_VisualEnvironmentManager_update(fb::VisualEnvironmentManager* _this, const void* a2)
+{
+    editor::onManagerUpdate_BF4(_this);
+
+    oBf4_VisualEnvironmentManager_update(_this, a2);
+
+    editor::onManagerUpdateEnd(_this);
+}
+
+void hkBf4_VisualEnvironment_operator(fb::VisualEnvironment* _this, fb::VisualEnvironment* _that)
+{
+    oBf4_VisualEnvironment_operator(_this, _that);
+}
+
+void hkBf4_MessageManager_dispatch(void* pMessageManager, fb::Message* pMessage)
+{
+    if (pMessage)
+        editor::onMessage(pMessage->m_Category, pMessage->m_Type);
+
+    oBf4_MessageManager_dispatch(pMessageManager, pMessage);
+}
+
+void* hkBf4_VisualEnvironmentEntity_ctor(fb::VisualEnvironmentEntity* _this, void* a2, void* a3)
+{
+    void* ret = oBf4_VisualEnvironmentEntity_ctor(_this, a2, a3);
+    editor::onVisualEnvironmentEntityCreated(_this, reinterpret_cast<fb::VisualEnvironmentEntityData*>(a3));
+    return ret;
+}
+
+void hkBf4_VisualEnvironmentEntity_dtor(fb::VisualEnvironmentEntity* _this)
+{
+    editor::onVisualEnvironmentEntityDestroyed(_this);
+    oBf4_VisualEnvironmentEntity_dtor(_this);
+}
+
+void* hkBf4_LocalLightEntity_ctor(fb::LocalLightEntity* _this, void* a2, fb::LocalLightEntityData* data, int lightType)
+{
+    void* ret = oBf4_LocalLightEntity_ctor(_this, a2, data, lightType);
+    editor::onLightEntityCreated(_this, data);
+    return ret;
+}
+
+void hkBf4_LocalLightEntity_dtor(fb::LocalLightEntity* _this)
+{
+    editor::onLightEntityDestroyed(_this);
+    oBf4_LocalLightEntity_dtor(_this);
+}
+
+void* hkBf4_EmitterEntity_ctor(
+    void* _this, void* a2, fb::EmitterEntityData* data)
+{
+    void* ret = oBf4_EmitterEntity_ctor(_this, a2, data);
+
+    //logger::info("ADD EMITTER");
+
+    editor::emitters::onEmitterEntityCreatedBF4(data, _this);
+    return ret;
+}
+
+#endif // BFVE_GAME_BF4

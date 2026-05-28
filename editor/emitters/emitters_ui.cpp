@@ -149,9 +149,9 @@ namespace editor::emitters
         fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
         ImGui::Separator();
         ImGui::Text("Polynomial Interpolation");
-        edit.modified |= ui::Vec3Edit("Color 0", &poly->m_Color0, &oc.color0, true);
-        edit.modified |= ui::Vec3Edit("Color 1", &poly->m_Color1, &oc.color1, true);
-        edit.modified |= ui::Vec4Edit("Coefficients", &poly->m_Coefficients, &oc.coefficients, false);
+        edit.modified |= ui::HdrColor3Edit("Color 0", &poly->m_Color0, &oc.color0);
+        edit.modified |= ui::HdrColor3Edit("Color 1", &poly->m_Color1, &oc.color1);
+        edit.modified |= ui::CurveVec4Edit("Coefficients", &poly->m_Coefficients, &oc.coefficients);
     }
 
     static void renderEmitterProperties()
@@ -195,7 +195,9 @@ namespace editor::emitters
         if (ImGui::CollapsingHeader("Distance & Culling"))
         {
             edit.modified |= ui::FloatEdit("Max Spawn Distance", &d->m_MaxSpawnDistance, &o.maxSpawnDistance);
+#if defined(BFVE_GAME_BF3)
             edit.modified |= ui::FloatEdit("Visible After Dist", &d->m_VisibleAfterDistance, &o.visibleAfterDistance);
+#endif
             edit.modified |= ui::FloatEdit("Culling Factor", &d->m_ParticleCullingFactor, &o.particleCullingFactor);
             edit.modified |= ui::FloatEdit("Mesh Culling Dist", &d->m_MeshCullingDistance, &o.meshCullingDistance);
             edit.modified |= ui::FloatEdit("Min Screen Area", &d->m_MinScreenArea, &o.minScreenArea);
@@ -215,10 +217,11 @@ namespace editor::emitters
             edit.modified |= ui::BoolEdit("Emissive", &d->m_Emissive, &o.emissive);
         }
 
+#if defined(BFVE_GAME_BF3)
         if (ImGui::CollapsingHeader("Point Light"))
         {
             edit.modified |= ui::BoolEdit("Act As Point Light", &d->m_ActAsPointLight, &o.actAsPointLight);
-            edit.modified |= ui::Vec3Edit("Color", &d->m_PointLightColor, &o.pointLightColor, true);
+            edit.modified |= ui::HdrColor3Edit("Color", &d->m_PointLightColor, &o.pointLightColor);
             edit.modified |= ui::Vec4Edit("Intensity", &d->m_PointLightIntensity, &o.pointLightIntensity, false);
             edit.modified |= ui::Vec3Edit("Pivot", &d->m_PointLightPivot, &o.pointLightPivot, false);
             edit.modified |= ui::FloatEdit("Radius", &d->m_PointLightRadius, &o.pointLightRadius);
@@ -227,6 +230,7 @@ namespace editor::emitters
             edit.modified |= ui::FloatEdit("Random Min", &d->m_PointLightRandomIntensityMin, &o.pointLightRandomIntensityMin);
             edit.modified |= ui::FloatEdit("Random Max", &d->m_PointLightRandomIntensityMax, &o.pointLightRandomIntensityMax);
         }
+#endif
 
         if (ImGui::CollapsingHeader("Rendering"))
         {

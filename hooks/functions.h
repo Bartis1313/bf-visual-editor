@@ -29,7 +29,7 @@
 //    class DataContext;
 //}
 
-#include "../SDK/sdk.h"
+#include "../SDK/fb.h"
 
 struct IDXGISwapChain;
 
@@ -57,17 +57,17 @@ typedef int(__thiscall* tsub_1F21E10)(DWORD* _this, int a2);
 inline tsub_1F21E10 osub_1F21E10 = 0;
 int __fastcall hksub_1F21E10(DWORD* _this, void*, int a2);
 
-typedef void(__cdecl* tfb__lerpColor)(fb::ColorCorrectionComponentData* a, fb::ColorCorrectionComponentData* b, float t, fb::ColorCorrectionComponentData* dest);
+typedef void(__cdecl* tfb__lerpColor)(fb::CapturedColorCorrectionComponentData* a, fb::CapturedColorCorrectionComponentData* b, float t, fb::CapturedColorCorrectionComponentData* dest);
 inline tfb__lerpColor ofb__lerpColor = 0;
-void __cdecl hkfb__lerpColor(fb::ColorCorrectionComponentData* a, fb::ColorCorrectionComponentData* b, float t, fb::ColorCorrectionComponentData* dest);
+void __cdecl hkfb__lerpColor(fb::CapturedColorCorrectionComponentData* a, fb::CapturedColorCorrectionComponentData* b, float t, fb::CapturedColorCorrectionComponentData* dest);
 
-typedef void(__cdecl* tfb__lerpWind)(fb::WindComponentData* a, fb::WindComponentData* b, float t, fb::WindComponentData* dest);
+typedef void(__cdecl* tfb__lerpWind)(fb::CapturedWindComponentData* a, fb::CapturedWindComponentData* b, float t, fb::CapturedWindComponentData* dest);
 inline tfb__lerpWind ofb__lerpWind = 0;
-void __cdecl hkfb__lerpWind(fb::WindComponentData* a, fb::WindComponentData* b, float t, fb::WindComponentData* dest);
+void __cdecl hkfb__lerpWind(fb::CapturedWindComponentData* a, fb::CapturedWindComponentData* b, float t, fb::CapturedWindComponentData* dest);
 
-typedef void(__cdecl* tfb__lerpCharacterLight)(fb::CharacterLightingComponentData* a, fb::CharacterLightingComponentData* b, float t, fb::CharacterLightingComponentData* dest);
+typedef void(__cdecl* tfb__lerpCharacterLight)(fb::CapturedCharacterLightingComponentData* a, fb::CapturedCharacterLightingComponentData* b, float t, fb::CapturedCharacterLightingComponentData* dest);
 inline tfb__lerpCharacterLight ofb__lerpCharacterLight = 0;
-void __cdecl hkfb__lerpCharacterLight(fb::CharacterLightingComponentData* a, fb::CharacterLightingComponentData* b, float t, fb::CharacterLightingComponentData* dest);
+void __cdecl hkfb__lerpCharacterLight(fb::CapturedCharacterLightingComponentData* a, fb::CapturedCharacterLightingComponentData* b, float t, fb::CapturedCharacterLightingComponentData* dest);
 
 struct GRect_float 
 {
@@ -113,22 +113,22 @@ inline fn_sub_1763720 original_sub_1763720 = nullptr;
 
 int __fastcall hooked_sub_1763720(void* thisPtr, void* edx, int size, void* offsetOut, void* sourceData);
 
-typedef void(__thiscall* tfb__InternalDatabasePartition_addInstance)(fb::InternalDatabasePartition* _this, fb::DataContainer* obj);
-inline tfb__InternalDatabasePartition_addInstance ofb__InternalDatabasePartition_addInstance = 0;
-void __fastcall hkfb__InternalDatabasePartition_addInstance(fb::InternalDatabasePartition* _this, void* edx, fb::DataContainer* obj);
+//typedef void(__thiscall* tfb__InternalDatabasePartition_addInstance)(fb::InternalDatabasePartition* _this, fb::DataContainer* obj);
+//inline tfb__InternalDatabasePartition_addInstance ofb__InternalDatabasePartition_addInstance = 0;
+//void __fastcall hkfb__InternalDatabasePartition_addInstance(fb::InternalDatabasePartition* _this, void* edx, fb::DataContainer* obj);
 
 //vfunc
-typedef void(__thiscall* tfb__InternalDatabasePartition_onPartitonLoaded)(fb::InternalDatabasePartition* _this);
-inline tfb__InternalDatabasePartition_onPartitonLoaded ofb__InternalDatabasePartition_onPartitonLoaded = 0;
-void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDatabasePartition* _this, void* edx);
+//typedef void(__thiscall* tfb__InternalDatabasePartition_onPartitonLoaded)(fb::InternalDatabasePartition* _this);
+//inline tfb__InternalDatabasePartition_onPartitonLoaded ofb__InternalDatabasePartition_onPartitonLoaded = 0;
+//void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDatabasePartition* _this, void* edx);
 
 typedef void(__thiscall* tfb__MessageManager__dispatchMessage)(int pMessageManager, fb::Message* pMessage);
 inline tfb__MessageManager__dispatchMessage ofb__MessageManager__dispatchMessage = 0;
 void __fastcall hkfb__MessageManager__dispatchMessage(int pMessageManager, void* edx, fb::Message* pMessage);
 
-typedef fb::EntityBusPeer* (__cdecl* tfb__ClientEntityFactory__internalCreateEntity)(fb::ClientEntityFactoryParams* params, fb::DataContext* dc);
-inline tfb__ClientEntityFactory__internalCreateEntity ofb__ClientEntityFactory__internalCreateEntity = 0;
-fb::EntityBusPeer* __cdecl hkfb__ClientEntityFactory__internalCreateEntity(fb::ClientEntityFactoryParams* params, fb::DataContext* dc);
+//typedef fb::EntityBusPeer* (__cdecl* tfb__ClientEntityFactory__internalCreateEntity)(fb::ClientEntityFactoryParams* params, fb::DataContext* dc);
+//inline tfb__ClientEntityFactory__internalCreateEntity ofb__ClientEntityFactory__internalCreateEntity = 0;
+//fb::EntityBusPeer* __cdecl hkfb__ClientEntityFactory__internalCreateEntity(fb::ClientEntityFactoryParams* params, fb::DataContext* dc);
 
 typedef int(__thiscall* tfb__LocalLightEntity__LocalLightEntity)(fb::LocalLightEntity* _this, void* info, fb::LocalLightEntityData* data, int lightType);
 inline tfb__LocalLightEntity__LocalLightEntity ofb__LocalLightEntity__LocalLightEntity = 0;
@@ -162,40 +162,40 @@ typedef void(__thiscall* tfb__EmitterTemplate__EmitterTemplate)(void* _this, fb:
 inline tfb__EmitterTemplate__EmitterTemplate ofb__EmitterTemplate__EmitterTemplate = 0;
 void __fastcall hkfb__EmitterTemplate__EmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data);
 
-typedef int (__thiscall* tsub_17B0180)(fb::EnlightenRenderer* _this, int a2, __m128** a3, int a4, int a5);
-inline tsub_17B0180 osub_17B0180 = 0;
-int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5);
-
-typedef __m128* (__thiscall* tsub_17A4E90)(
-    fb::EnlightenRenderer* a1,
-    fb::Vec3* sky,
-    fb::Vec3* ground,
-    fb::Vec3* sunlight,
-    fb::Vec3 sunLightDir,
-    float sunSize,
-    fb::Vec3* backLightColor,
-    float backLightRotationX,
-    float backLightRotationY,
-    float backLightSize,
-    unsigned int skyBoxScale,
-    __m128* outSkyBox);
-
-inline tsub_17A4E90 osub_17A4E90 = 0;
-
-__m128* __fastcall hksub_17A4E90(
-    fb::EnlightenRenderer* a1,
-    void*,
-    fb::Vec3* sky,
-    fb::Vec3* ground,
-    fb::Vec3* sunlight,
-    fb::Vec3 sunLightDir,
-    float sunSize,
-    fb::Vec3* backLightColor,
-    float backLightRotationX,
-    float backLightRotationY,
-    float backLightSize,
-    unsigned int skyBoxScale,
-    __m128* outSkyBox);
+//typedef int (__thiscall* tsub_17B0180)(fb::EnlightenRenderer* _this, int a2, __m128** a3, int a4, int a5);
+//inline tsub_17B0180 osub_17B0180 = 0;
+//int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5);
+//
+//typedef __m128* (__thiscall* tsub_17A4E90)(
+//    fb::EnlightenRenderer* a1,
+//    fb::Vec3* sky,
+//    fb::Vec3* ground,
+//    fb::Vec3* sunlight,
+//    fb::Vec3 sunLightDir,
+//    float sunSize,
+//    fb::Vec3* backLightColor,
+//    float backLightRotationX,
+//    float backLightRotationY,
+//    float backLightSize,
+//    unsigned int skyBoxScale,
+//    __m128* outSkyBox);
+//
+//inline tsub_17A4E90 osub_17A4E90 = 0;
+//
+//__m128* __fastcall hksub_17A4E90(
+//    fb::EnlightenRenderer* a1,
+//    void*,
+//    fb::Vec3* sky,
+//    fb::Vec3* ground,
+//    fb::Vec3* sunlight,
+//    fb::Vec3 sunLightDir,
+//    float sunSize,
+//    fb::Vec3* backLightColor,
+//    float backLightRotationX,
+//    float backLightRotationY,
+//    float backLightSize,
+//    unsigned int skyBoxScale,
+//    __m128* outSkyBox);
 
 
 typedef HRESULT(__stdcall* tResizeBuffers)(
@@ -226,3 +226,39 @@ inline WNDPROC g_oWndProc = nullptr;
 inline bool g_ImGuiInitialized = false;
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+#if defined(BFVE_GAME_BF4)
+
+typedef void(*tBf4_VisualEnvironmentManager_update)(fb::VisualEnvironmentManager* _this, const void* a2);
+inline tBf4_VisualEnvironmentManager_update oBf4_VisualEnvironmentManager_update = nullptr;
+void hkBf4_VisualEnvironmentManager_update(fb::VisualEnvironmentManager* _this, const void* a2);
+
+typedef void(*tBf4_VisualEnvironment_operator)(fb::VisualEnvironment* _this, fb::VisualEnvironment* _that);
+inline tBf4_VisualEnvironment_operator oBf4_VisualEnvironment_operator = nullptr;
+void hkBf4_VisualEnvironment_operator(fb::VisualEnvironment* _this, fb::VisualEnvironment* _that);
+
+typedef void(*tBf4_MessageManager_dispatch)(void* pMessageManager, fb::Message* pMessage);
+inline tBf4_MessageManager_dispatch oBf4_MessageManager_dispatch = nullptr;
+void hkBf4_MessageManager_dispatch(void* pMessageManager, fb::Message* pMessage);
+
+typedef void* (*tBf4_VisualEnvironmentEntity_ctor)(fb::VisualEnvironmentEntity* _this, void* a2, void* a3);
+inline tBf4_VisualEnvironmentEntity_ctor oBf4_VisualEnvironmentEntity_ctor = nullptr;
+void* hkBf4_VisualEnvironmentEntity_ctor(fb::VisualEnvironmentEntity* _this, void* a2, void* a3);
+
+typedef void(*tBf4_VisualEnvironmentEntity_dtor)(fb::VisualEnvironmentEntity* _this);
+inline tBf4_VisualEnvironmentEntity_dtor oBf4_VisualEnvironmentEntity_dtor = nullptr;
+void hkBf4_VisualEnvironmentEntity_dtor(fb::VisualEnvironmentEntity* _this);
+
+typedef void* (*tBf4_LocalLightEntity_ctor)(fb::LocalLightEntity* _this, void* a2, fb::LocalLightEntityData* data, int lightType);
+inline tBf4_LocalLightEntity_ctor oBf4_LocalLightEntity_ctor = nullptr;
+void* hkBf4_LocalLightEntity_ctor(fb::LocalLightEntity* _this, void* a2, fb::LocalLightEntityData* data, int lightType);
+
+typedef void(*tBf4_LocalLightEntity_dtor)(fb::LocalLightEntity* _this);
+inline tBf4_LocalLightEntity_dtor oBf4_LocalLightEntity_dtor = nullptr;
+void hkBf4_LocalLightEntity_dtor(fb::LocalLightEntity* _this);
+
+typedef void* (*tBf4_EmitterEntity_ctor)(void* _this, void* a2, fb::EmitterEntityData* data);
+inline tBf4_EmitterEntity_ctor oBf4_EmitterEntity_ctor = nullptr;
+void* hkBf4_EmitterEntity_ctor(void* _this, void* a2, fb::EmitterEntityData* data);
+
+#endif // BFVE_GAME_BF4

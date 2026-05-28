@@ -68,11 +68,12 @@ namespace editor
         hasCapturedOriginals = false;
 
         states::clear();
-        lights::clear();
         emitters::clear();
         effects::clear();
         global_ve::clear();
         world_render::clear();
+
+        lights::scanAll();
 
         if (autoLoadConfigs && !currentMap.empty())
         {
@@ -169,6 +170,60 @@ namespace editor
         }
     }
 
+#if defined(BFVE_GAME_BF4)
+    void onManagerUpdate_BF4(fb::VisualEnvironmentManager* manager)
+    {
+        if (!manager)
+            return;
+
+        if (detectedMapChange())
+        {
+            states::clear();
+            world_render::clear();
+            hasCapturedOriginals = false;
+            capturedMapName.clear();
+            setEditorState(EditorState::Ready);
+        }
+
+        if (editorState == EditorState::Idle)
+            setEditorState(EditorState::Ready);
+
+        states::syncWithManager(manager);
+
+        if (!hasCapturedOriginals)
+        {
+            std::string currentMap = getCurrentMapName();
+            if (!isPlayerAlive() || manager->m_states.empty() || currentMap.empty())
+                return;
+
+            capturedMapName = currentMap;
+            hasCapturedOriginals = true;
+
+            states::scanVEDataNames();
+            states::scanExistingEntities();
+            lights::scanAll();
+            lights::scanExistingEntities();
+            emitters::scan();
+            world_render::capture();
+            setEditorState(EditorState::Active);
+
+            logger::info("[BF4] initial capture (map: {}, states: {}, lights: {}, emitters: {})",
+                currentMap, manager->m_states.size(),
+                lights::getEntries().size(), emitters::getMap().size());
+
+            if (autoLoadConfigs)
+            {
+                std::string configPath = getConfigPath(capturedMapName);
+                if (fs::exists(configPath))
+                    config::load(configPath);
+            }
+            return;
+        }
+
+        states::refreshData();
+    }
+#endif
+
     void onManagerUpdateBegin(fb::VisualEnvironmentManager* manager)
     {
         if (!manager)
@@ -233,7 +288,33 @@ namespace editor
         }
 
         if (appliedAny)
+        {
             manager->setDirty(true);
+#if defined(BFVE_GAME_BF4)
+            manager->forceStatesDirty();
+            manager->forceLutUpload();
+#endif
+        }
+
+#if defined(BFVE_GAME_BF4)
+        auto& g = global_ve::getData();
+        bool anyGlobal = false;
+#define ANY_GLOBAL(Type, field) anyGlobal = anyGlobal || g.field##OverrideEnabled;
+        VE_COMPONENTS(ANY_GLOBAL)
+#undef ANY_GLOBAL
+        onVisualEnvironmentUpdated(&manager->getEnv());
+        if (anyGlobal && g.globalOverrideEnabled)
+        {
+            manager->setDirty(true);
+            manager->forceStatesDirty();
+            manager->forceLutUpload();
+
+            if (g.characterLightingOverrideEnabled)
+                manager->rebakeCharacterLightingSH();
+            if (g.vehicleLightingOverrideEnabled)
+                manager->rebakeVehicleLightingSH();
+        }
+#endif
     }
 
     void onVisualEnvironmentUpdated(fb::VisualEnvironment* ve)

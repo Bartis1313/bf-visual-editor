@@ -48,6 +48,9 @@
     <ClInclude Include="SDK\sdkfb3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SDK\fb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="editor\emitters\emitters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -97,6 +100,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="editor\serialize\serialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK_bf4\enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK_bf4\classes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK_bf4\declarations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK_bf4\structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -195,6 +210,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\comps\comps_serialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\comps\comps_bf4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\comps\comps_serialize_bf4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\copy\copy_bf4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\world_render\world_render_ui_bf4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\world_render\world_render_serialize_bf4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\states\states_ui.cpp">

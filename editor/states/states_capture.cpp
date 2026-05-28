@@ -31,8 +31,10 @@ namespace editor::states
             return;
 
 #define APPLY(Type, field) \
-            if (!levelUnloadingSignaled && data.has##Type && state->field) \
-                copy::field(state->field, &data.edit##Type);
+            if (!levelUnloadingSignaled && data.has##Type && state->field) { \
+                copy::field(state->field, &data.edit##Type); \
+                copy::forceOverrides(state->field, copy::MaskInfo_##Type); \
+            }
         VE_COMPONENTS(APPLY)
 #undef APPLY
     }

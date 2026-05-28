@@ -217,4 +217,10 @@ namespace fb
         virtual TypeInfo* GetType();
 
     };//Size=0x0008
+
+    class TypeInfoObject
+    {
+    public:
+        virtual TypeInfo* GetType();
+    };
 }

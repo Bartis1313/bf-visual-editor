@@ -141,7 +141,7 @@ namespace fb
 	};//Size=0x000C
 
 
-	class OutdoorLightComponentData
+	class CapturedOutdoorLightComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -177,7 +177,7 @@ namespace fb
 		char _0x00DE[2];
 	};//Size=0x00E0
 
-	class EnlightenComponentData
+	class CapturedEnlightenComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -215,7 +215,7 @@ namespace fb
 		TonemapMethodCount //0x0004
 	};
 
-	class TonemapComponentData
+	class CapturedTonemapComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -239,7 +239,7 @@ namespace fb
 		char _0x0091[15];
 	};//Size=0x00A0
 
-	class ColorCorrectionComponentData
+	class CapturedColorCorrectionComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -261,7 +261,7 @@ namespace fb
 		char _0x009E[2];
 	};//Size=0x00A0
 
-	class SkyComponentData
+	class CapturedSkyComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -318,7 +318,7 @@ namespace fb
 		char _0x012D[3];
 	};//Size=0x0130
 
-	class FogComponentData
+	class CapturedFogComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -352,7 +352,7 @@ namespace fb
 		char _0x00C8[8];
 	};//Size=0x00D0
 
-	class WindComponentData
+	class CapturedWindComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -382,7 +382,7 @@ namespace fb
 		}
 	};//Size=0x000C
 
-	class SunFlareComponentData
+	class CapturedSunFlareComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -443,7 +443,7 @@ namespace fb
 		char _0x0217[9];
 	};//Size=0x0220
 
-	class DynamicAOComponentData
+	class CapturedDynamicAOComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -480,7 +480,7 @@ namespace fb
 		BfGaussian31Pixels //0x0006
 	};
 
-	class DofComponentData
+	class CapturedDofComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -506,7 +506,7 @@ namespace fb
 		char _0x008A[6];
 	};//Size=0x0090
 
-	class VignetteComponentData
+	class CapturedVignetteComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -527,7 +527,7 @@ namespace fb
 		char _0x008D[3];
 	};//Size=0x0090
 
-	class FilmGrainComponentData
+	class CapturedFilmGrainComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -548,7 +548,7 @@ namespace fb
 		char _0x0083[13];
 	};//Size=0x0090
 
-	class LensScopeComponentData
+	class CapturedLensScopeComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -573,7 +573,7 @@ namespace fb
 		char _0x00B9[7];
 	};//Size=0x00C0
 
-	class CameraParamsComponentData
+	class CapturedCameraParamsComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -597,7 +597,7 @@ namespace fb
 		ScreenEffectFrameType_SingleSquareFramePart //0x0002
 	};
 
-	class ScreenEffectComponentData
+	class CapturedScreenEffectComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -619,7 +619,7 @@ namespace fb
 		char _0x008C[4];
 	};//Size=0x0090
 
-	class DamageEffectComponentData
+	class CapturedDamageEffectComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -648,7 +648,7 @@ namespace fb
 		char _0x00C9[7];
 	};//Size=0x00D0
 
-	class ShaderParamsComponentData
+	class CapturedShaderParamsComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -664,7 +664,7 @@ namespace fb
 		char _0x0074[12];
 	};//Size=0x0080
 
-	class PlanarReflectionComponentData
+	class CapturedPlanarReflectionComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -685,7 +685,7 @@ namespace fb
 		char _0x0076[10];
 	};//Size=0x0080
 
-	class DynamicEnvmapComponentData
+	class CapturedDynamicEnvmapComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -709,28 +709,7 @@ namespace fb
 		CharacterLightingMode_Blend //0x0001
 	};
 
-	class CharacterLightingComponentData2
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1579;
-		}
-		char pad[0x60];
-		Vec3 m_BottomLight; //0x0060
-		Vec3 m_TopLight; //0x0070
-		CharacterLightingMode m_CharacterLightingMode; //0x0080
-		float m_CameraUpRotation; //0x0084
-		float m_TopLightDirY; //0x0088
-		float m_BlendFactor; //0x008C
-		float m_TopLightDirX; //0x0090
-		bool m_LockToCameraDirection; //0x0094
-		bool m_FirstPersonEnable; //0x0095
-		bool m_CharacterLightEnable; //0x0096
-		char _0x0097[9];
-	};
-
-	class CharacterLightingComponentData
+	class CapturedCharacterLightingComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -754,7 +733,7 @@ namespace fb
 		char _0x0097[9];
 	};//Size=0x00A0
 
-	class MotionBlurComponentData
+	class CapturedMotionBlurComponentData
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -791,27 +770,27 @@ namespace fb
 	class VisualEnvironment
 	{
 	public:
-		OutdoorLightComponentData outdoorLight; //0x0000
-		EnlightenComponentData enlighten; //0x0080
-		TonemapComponentData tonemap; //0x0100
-		ColorCorrectionComponentData colorCorrection; //0x0140
-		SkyComponentData sky; //0x0180
-		FogComponentData fog; //0x0250
-		WindComponentData wind; //0x02C0
-		SunFlareComponentData sunFlare; //0x02D0
-		DynamicAOComponentData dynamicAO; //0x0490
-		DofComponentData dof; //0x04C0
-		VignetteComponentData vignette; //0x04F0
-		FilmGrainComponentData filmGrain; //0x0520
-		LensScopeComponentData lensScope; //0x0550
-		CameraParamsComponentData cameraParams; //0x05B0
-		ScreenEffectComponentData screenEffect; //0x05C0
-		DamageEffectComponentData damageEffect; //0x05F0
-		ShaderParamsComponentData shaderparams[16]; //0x0660
-		PlanarReflectionComponentData planarReflection; //0x0860
-		DynamicEnvmapComponentData dynamicEnvmap; //0x0880
-		CharacterLightingComponentData characterLighting; //0x08C0
-		MotionBlurComponentData motionBlur; //0x0900
+		CapturedOutdoorLightComponentData outdoorLight; //0x0000
+		CapturedEnlightenComponentData enlighten; //0x0080
+		CapturedTonemapComponentData tonemap; //0x0100
+		CapturedColorCorrectionComponentData colorCorrection; //0x0140
+		CapturedSkyComponentData sky; //0x0180
+		CapturedFogComponentData fog; //0x0250
+		CapturedWindComponentData wind; //0x02C0
+		CapturedSunFlareComponentData sunFlare; //0x02D0
+		CapturedDynamicAOComponentData dynamicAO; //0x0490
+		CapturedDofComponentData dof; //0x04C0
+		CapturedVignetteComponentData vignette; //0x04F0
+		CapturedFilmGrainComponentData filmGrain; //0x0520
+		CapturedLensScopeComponentData lensScope; //0x0550
+		CapturedCameraParamsComponentData cameraParams; //0x05B0
+		CapturedScreenEffectComponentData screenEffect; //0x05C0
+		CapturedDamageEffectComponentData damageEffect; //0x05F0
+		CapturedShaderParamsComponentData shaderparams[16]; //0x0660
+		CapturedPlanarReflectionComponentData planarReflection; //0x0860
+		CapturedDynamicEnvmapComponentData dynamicEnvmap; //0x0880
+		CapturedCharacterLightingComponentData characterLighting; //0x08C0
+		CapturedMotionBlurComponentData motionBlur; //0x0900
 		int32_t debug; //0x0910
 		char pad_0914[8]; //0x0914
 		uint32_t shaderparamsCount; //0x091C
@@ -840,27 +819,27 @@ namespace fb
 		char pad_0x0A[0x2];
 		int stateId;
 		Vec4 activeEffectPosition;
-		OutdoorLightComponentData* outdoorLight; //0x0000
-		EnlightenComponentData* enlighten; //0x0080
-		TonemapComponentData* tonemap; //0x0100
-		ColorCorrectionComponentData* colorCorrection; //0x0140
-		SkyComponentData* sky; //0x0180
-		FogComponentData* fog; //0x0250
-		WindComponentData* wind; //0x02C0
-		SunFlareComponentData* sunFlare; //0x02D0
-		DynamicAOComponentData* dynamicAO; //0x0490
-		DofComponentData* dof; //0x04C0
-		VignetteComponentData* vignette; //0x04F0
-		FilmGrainComponentData* filmGrain; //0x0520
-		LensScopeComponentData* lensScope; //0x0550
-		CameraParamsComponentData* cameraParams; //0x05B0
-		ScreenEffectComponentData* screenEffect; //0x05C0
-		DamageEffectComponentData* damageEffect; //0x05F0
-		PlanarReflectionComponentData* planarReflection; //0x0860
-		DynamicEnvmapComponentData* dynamicEnvmap; //0x0880
-		CharacterLightingComponentData* characterLighting; //0x08C0
-		MotionBlurComponentData* motionBlur; //0x0900
-		ShaderParamsComponentData* shaderparams[16]; //0x0660
+		CapturedOutdoorLightComponentData* outdoorLight; //0x0000
+		CapturedEnlightenComponentData* enlighten; //0x0080
+		CapturedTonemapComponentData* tonemap; //0x0100
+		CapturedColorCorrectionComponentData* colorCorrection; //0x0140
+		CapturedSkyComponentData* sky; //0x0180
+		CapturedFogComponentData* fog; //0x0250
+		CapturedWindComponentData* wind; //0x02C0
+		CapturedSunFlareComponentData* sunFlare; //0x02D0
+		CapturedDynamicAOComponentData* dynamicAO; //0x0490
+		CapturedDofComponentData* dof; //0x04C0
+		CapturedVignetteComponentData* vignette; //0x04F0
+		CapturedFilmGrainComponentData* filmGrain; //0x0520
+		CapturedLensScopeComponentData* lensScope; //0x0550
+		CapturedCameraParamsComponentData* cameraParams; //0x05B0
+		CapturedScreenEffectComponentData* screenEffect; //0x05C0
+		CapturedDamageEffectComponentData* damageEffect; //0x05F0
+		CapturedPlanarReflectionComponentData* planarReflection; //0x0860
+		CapturedDynamicEnvmapComponentData* dynamicEnvmap; //0x0880
+		CapturedCharacterLightingComponentData* characterLighting; //0x08C0
+		CapturedMotionBlurComponentData* motionBlur; //0x0900
+		CapturedShaderParamsComponentData* shaderparams[16]; //0x0660
 		// debug
 	};
 
@@ -1074,7 +1053,7 @@ namespace fb
 		QualityLevel_Ultra //0x0003
 	};
 
-	class WorldRenderSettings
+	class WorldRenderSettingsBase
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -2819,4 +2798,36 @@ namespace fb
 		unsigned __int64 shaderId;
 		bool emissive;
 	};
+
+	// Cross-game accessors mirroring sdkfb3.h's helpers. See the BF4 SDK for
+	// why these exist (BF4 GameRenderer/RenderView layout diverged).
+	inline RenderView* getActiveRenderView(GameRenderer* gr)
+	{
+		return gr ? &gr->m_viewParams.view : nullptr;
+	}
+	inline LinearTransform* getViewMatrix(RenderView* v)            { return v ? &v->m_viewMatrix : nullptr; }
+	inline LinearTransform* getViewMatrixInverse(RenderView* v)     { return v ? &v->m_viewMatrixInverse : nullptr; }
+	inline LinearTransform* getProjectionMatrix(RenderView* v)      { return v ? &v->m_projectionMatrix : nullptr; }
+	inline LinearTransform* getViewProjectionMatrix(RenderView* v)  { return v ? &v->m_viewProjectionMatrix : nullptr; }
+	inline void updateRenderView(RenderView* v)                     { if (v) v->Update(); }
+
+	// Cross-game ClientGameContext accessors (BF4 paths live in sdkfb3.h).
+	inline ClientPlayer* getLocalPlayer(ClientGameContext* ctx)
+	{
+		if (!ctx || !ctx->m_clientPlayerManager) return nullptr;
+		return ctx->m_clientPlayerManager->m_localPlayer;
+	}
+
+	inline const char* getCurrentLevelName(ClientGameContext* ctx)
+	{
+		if (!ctx || !ctx->m_level || !ctx->m_level->m_levelData) return nullptr;
+		return ctx->m_level->m_levelData->name;
+	}
+
+	inline WorldRenderSettings* getLiveWorldRenderSettings(ClientGameContext* ctx)
+	{
+		if (!ctx || !ctx->m_level || !ctx->m_level->m_worldRenderModule || !ctx->m_level->m_worldRenderModule->m_worldRenderer)
+			return nullptr;
+		return ctx->m_level->m_worldRenderModule->m_worldRenderer->m_worldRenderSettings;
+	}
 }

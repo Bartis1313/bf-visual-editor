@@ -2,6 +2,8 @@
 #include "../ui/ui_helpers.h"
 #include <imgui.h>
 
+#if defined(BFVE_GAME_BF3)
+
 namespace editor::world_render
 {
     void renderTab()
@@ -399,3 +401,5 @@ namespace editor::world_render
         ImGui::EndChild();
     }
 }
+
+#endif // BFVE_GAME_BF3

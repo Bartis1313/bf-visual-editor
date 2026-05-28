@@ -1,6 +1,8 @@
 #include "world_render.h"
 #include "../serialize/serialize.h"
 
+#if defined(BFVE_GAME_BF3)
+
 namespace editor::world_render
 {
     json serialize()
@@ -497,3 +499,5 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "DrawFrustums", e->m_DrawFrustums);
     }
 }
+
+#endif // BFVE_GAME_BF3

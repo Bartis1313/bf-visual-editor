@@ -12,19 +12,14 @@ namespace editor
     // not really alive, we just check attached player
     bool isPlayerAlive()
     {
-        fb::ClientGameContext* ctx = fb::ClientGameContext::GetInstance();
-        if (!ctx || !ctx->m_clientPlayerManager)
-            return false;
-        fb::ClientPlayer* localPlayer = ctx->m_clientPlayerManager->m_localPlayer;
+        fb::ClientPlayer* localPlayer = fb::getLocalPlayer(fb::ClientGameContext::GetInstance());
         return localPlayer && localPlayer->isAlive();
     }
 
     std::string getCurrentMapName()
     {
-        fb::ClientGameContext* ctx = fb::ClientGameContext::GetInstance();
-        if (!ctx || !ctx->m_level || !ctx->m_level->m_levelData || !ctx->m_level->m_levelData->name)
-            return {};
-        return ctx->m_level->m_levelData->name;
+        const char* name = fb::getCurrentLevelName(fb::ClientGameContext::GetInstance());
+        return name ? std::string{ name } : std::string{};
     }
 
     fb::VisualEnvironmentManager* getManager()
@@ -34,10 +29,7 @@ namespace editor
 
     fb::WorldRenderSettings* getWorldRenderSettings()
     {
-        fb::ClientGameContext* ctx = fb::ClientGameContext::GetInstance();
-        if (!ctx || !ctx->m_level || !ctx->m_level->m_worldRenderModule || !ctx->m_level->m_worldRenderModule->m_worldRenderer)
-            return nullptr;
-        return ctx->m_level->m_worldRenderModule->m_worldRenderer->m_worldRenderSettings;
+        return fb::getLiveWorldRenderSettings(fb::ClientGameContext::GetInstance());
     }
 
     std::string getConfigDir()

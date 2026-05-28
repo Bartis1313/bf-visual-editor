@@ -172,12 +172,8 @@ namespace editor::lights
 
         if (ImGui::TreeNodeEx("Common##Light", ImGuiTreeNodeFlags_DefaultOpen))
         {
-            float color[3] = { entry.color.m_x, entry.color.m_y, entry.color.m_z };
-            if (ImGui::ColorEdit3("Color", color, ImGuiColorEditFlags_HDR | ImGuiColorEditFlags_Float))
-            {
-                entry.color = { color[0], color[1], color[2] };
+            if (ui::HdrColor3Edit("Color", &entry.color, &entry.origColor))
                 changed = true;
-            }
 
             if (ui::FloatEdit("Radius", &entry.radius, &entry.origRadius))
                 changed = true;

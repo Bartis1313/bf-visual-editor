@@ -1,18 +1,20 @@
 ﻿#include "copy.h"
 #include <cstring>
 
+#if defined(BFVE_GAME_BF3)
+
 // COPY RULES:
 // instead of memcpy whole object we copy only important fields
 // this is because changing textures, realm will be very invalid
 // and for trick we still use memcpy but partialy
 namespace editor::copy
 {
-    void outdoorLight(fb::OutdoorLightComponentData* dst, const fb::OutdoorLightComponentData* src)
+    void outdoorLight(fb::CapturedOutdoorLightComponentData* dst, const fb::CapturedOutdoorLightComponentData* src)
     {
         if (!dst || !src)
             return;
 
-        using T = fb::OutdoorLightComponentData;
+        using T = fb::CapturedOutdoorLightComponentData;
 
         memcpy(&dst->m_SunColor, &src->m_SunColor, offsetof(T, _0x0078) - offsetof(T, m_SunColor));
         memcpy(&dst->m_SkyColor, &src->m_SkyColor, offsetof(T, m_Realm) - offsetof(T, m_SkyColor));
@@ -20,34 +22,34 @@ namespace editor::copy
         memcpy(&dst->m_TranslucencyDistortion, &src->m_TranslucencyDistortion, offsetof(T, _0x00DE) - offsetof(T, m_TranslucencyDistortion));
     }
 
-    void enlighten(fb::EnlightenComponentData* dst, const fb::EnlightenComponentData* src)
+    void enlighten(fb::CapturedEnlightenComponentData* dst, const fb::CapturedEnlightenComponentData* src)
     {
         if (!dst || !src)
             return;
 
-        using T = fb::EnlightenComponentData;
+        using T = fb::CapturedEnlightenComponentData;
 
         memcpy(&dst->m_SkyBoxSkyColor, &src->m_SkyBoxSkyColor, offsetof(T, m_Realm) - offsetof(T, m_SkyBoxSkyColor));
         memcpy(&dst->m_SkyBoxBackLightRotationY, &src->m_SkyBoxBackLightRotationY, offsetof(T, _0x00D2) - offsetof(T, m_SkyBoxBackLightRotationY));
     }
 
-    void tonemap(fb::TonemapComponentData* dst, const fb::TonemapComponentData* src)
+    void tonemap(fb::CapturedTonemapComponentData* dst, const fb::CapturedTonemapComponentData* src)
     {
         if (!dst || !src)
             return;
 
-        using T = fb::TonemapComponentData;
+        using T = fb::CapturedTonemapComponentData;
 
         memcpy(&dst->m_BloomScale, &src->m_BloomScale, offsetof(T, m_Realm) - offsetof(T, m_BloomScale));
         memcpy(&dst->m_TonemapMethod, &src->m_TonemapMethod, offsetof(T, _0x0091) - offsetof(T, m_TonemapMethod));
     }
 
-    void colorCorrection(fb::ColorCorrectionComponentData* dst, const fb::ColorCorrectionComponentData* src)
+    void colorCorrection(fb::CapturedColorCorrectionComponentData* dst, const fb::CapturedColorCorrectionComponentData* src)
     {
         if (!dst || !src)
             return;
 
-        using T = fb::ColorCorrectionComponentData;
+        using T = fb::CapturedColorCorrectionComponentData;
 
         memcpy(&dst->m_Contrast, &src->m_Contrast, offsetof(T, m_Realm) - offsetof(T, m_Contrast));
 
@@ -56,12 +58,12 @@ namespace editor::copy
         dst->m_Enable = src->m_Enable;
     }
 
-    void sky(fb::SkyComponentData* dst, const fb::SkyComponentData* src)
+    void sky(fb::CapturedSkyComponentData* dst, const fb::CapturedSkyComponentData* src)
     {
         if (!dst || !src)
             return;
 
-        using T = fb::SkyComponentData;
+        using T = fb::CapturedSkyComponentData;
 
         memcpy(&dst->m_CloudLayerSunColor, &src->m_CloudLayerSunColor, offsetof(T, m_SkyGradientTexture) - offsetof(T, m_CloudLayerSunColor));
         memcpy(&dst->m_SunSize, &src->m_SunSize, offsetof(T, m_Realm) - offsetof(T, m_SunSize));
@@ -73,18 +75,18 @@ namespace editor::copy
         memcpy(&dst->m_CustomEnvmapScale, &src->m_CustomEnvmapScale, offsetof(T, _0x012D) - offsetof(T, m_CustomEnvmapScale));
     }
 
-    void fog(fb::FogComponentData* dst, const fb::FogComponentData* src)
+    void fog(fb::CapturedFogComponentData* dst, const fb::CapturedFogComponentData* src)
     {
         if (!dst || !src)
             return;
 
-        using T = fb::FogComponentData;
+        using T = fb::CapturedFogComponentData;
 
         memcpy(&dst->m_Curve, &src->m_Curve, offsetof(T, m_Realm) - offsetof(T, m_Curve));
         memcpy(&dst->m_End, &src->m_End, offsetof(T, _0x00C8) - offsetof(T, m_End));
     }
 
-    void wind(fb::WindComponentData* dst, const fb::WindComponentData* src)
+    void wind(fb::CapturedWindComponentData* dst, const fb::CapturedWindComponentData* src)
     {
         if (!dst || !src)
             return;
@@ -93,7 +95,7 @@ namespace editor::copy
         dst->m_WindStrength = src->m_WindStrength;
     }
 
-    void sunFlare(fb::SunFlareComponentData* dst, const fb::SunFlareComponentData* src)
+    void sunFlare(fb::CapturedSunFlareComponentData* dst, const fb::CapturedSunFlareComponentData* src)
     {
         if (!dst || !src) 
             return;
@@ -116,27 +118,27 @@ namespace editor::copy
 #undef COPY_ELEMENT
     }
 
-    void dynamicAO(fb::DynamicAOComponentData* dst, const fb::DynamicAOComponentData* src)
+    void dynamicAO(fb::CapturedDynamicAOComponentData* dst, const fb::CapturedDynamicAOComponentData* src)
     {
         if (!dst || !src)
             return;
 
-        using T = fb::DynamicAOComponentData;
+        using T = fb::CapturedDynamicAOComponentData;
 
         memcpy(&dst->m_SsaoMaxDistanceOuter, &src->m_SsaoMaxDistanceOuter, offsetof(T, _0x008D) - offsetof(T, m_SsaoMaxDistanceOuter));
     }
 
-    void dof(fb::DofComponentData* dst, const fb::DofComponentData* src)
+    void dof(fb::CapturedDofComponentData* dst, const fb::CapturedDofComponentData* src)
     {
         if (!dst || !src) 
             return;
 
-        using T = fb::DofComponentData;
+        using T = fb::CapturedDofComponentData;
 
         memcpy(&dst->m_NearDistanceScale, &src->m_NearDistanceScale, offsetof(T, _0x008A) - offsetof(T, m_NearDistanceScale));
     }
 
-    void vignette(fb::VignetteComponentData* dst, const fb::VignetteComponentData* src)
+    void vignette(fb::CapturedVignetteComponentData* dst, const fb::CapturedVignetteComponentData* src)
     {
         if (!dst || !src) 
             return;
@@ -148,7 +150,7 @@ namespace editor::copy
         dst->m_Exponent = src->m_Exponent;
     }
 
-    void filmGrain(fb::FilmGrainComponentData* dst, const fb::FilmGrainComponentData* src)
+    void filmGrain(fb::CapturedFilmGrainComponentData* dst, const fb::CapturedFilmGrainComponentData* src)
     {
         if (!dst || !src) 
             return;
@@ -160,12 +162,12 @@ namespace editor::copy
         dst->m_TextureScale = src->m_TextureScale;
     }
 
-    void lensScope(fb::LensScopeComponentData* dst, const fb::LensScopeComponentData* src)
+    void lensScope(fb::CapturedLensScopeComponentData* dst, const fb::CapturedLensScopeComponentData* src)
     {
         if (!dst || !src) 
             return;
 
-        using T = fb::LensScopeComponentData;
+        using T = fb::CapturedLensScopeComponentData;
 
         memcpy(&dst->m_ChromaticAberrationColor1, &src->m_ChromaticAberrationColor1, offsetof(T, _0x0078) - offsetof(T, m_ChromaticAberrationColor1));
         memcpy(&dst->m_ChromaticAberrationColor2, &src->m_ChromaticAberrationColor2, offsetof(T, m_Realm) - offsetof(T, m_ChromaticAberrationColor2));
@@ -173,7 +175,7 @@ namespace editor::copy
         dst->m_Enable = src->m_Enable;
     }
 
-    void cameraParams(fb::CameraParamsComponentData* dst, const fb::CameraParamsComponentData* src)
+    void cameraParams(fb::CapturedCameraParamsComponentData* dst, const fb::CapturedCameraParamsComponentData* src)
     {
         if (!dst || !src) 
             return;
@@ -183,7 +185,7 @@ namespace editor::copy
         dst->m_SunShadowmapViewDistance = src->m_SunShadowmapViewDistance;
     }
 
-    void screenEffect(fb::ScreenEffectComponentData* dst, const fb::ScreenEffectComponentData* src)
+    void screenEffect(fb::CapturedScreenEffectComponentData* dst, const fb::CapturedScreenEffectComponentData* src)
     {
         if (!dst || !src) 
             return;
@@ -196,12 +198,12 @@ namespace editor::copy
         dst->m_Angle = src->m_Angle;
     }
 
-    void damageEffect(fb::DamageEffectComponentData* dst, const fb::DamageEffectComponentData* src)
+    void damageEffect(fb::CapturedDamageEffectComponentData* dst, const fb::CapturedDamageEffectComponentData* src)
     {
         if (!dst || !src) 
             return;
 
-        using T = fb::DamageEffectComponentData;
+        using T = fb::CapturedDamageEffectComponentData;
 
         memcpy(&dst->m_RightDamage, &src->m_RightDamage, offsetof(T, m_Shader) - offsetof(T, m_RightDamage));
         memcpy(&dst->m_StartCriticalEffectHealthThreshold, &src->m_StartCriticalEffectHealthThreshold, offsetof(T, m_Realm) - offsetof(T, m_StartCriticalEffectHealthThreshold));
@@ -209,17 +211,17 @@ namespace editor::copy
         dst->m_DebugDamage = src->m_DebugDamage;
     }
 
-    void planarReflection(fb::PlanarReflectionComponentData* dst, const fb::PlanarReflectionComponentData* src)
+    void planarReflection(fb::CapturedPlanarReflectionComponentData* dst, const fb::CapturedPlanarReflectionComponentData* src)
     {
         if (!dst || !src) 
             return;
 
-        using T = fb::PlanarReflectionComponentData;
+        using T = fb::CapturedPlanarReflectionComponentData;
 
         memcpy(&dst->m_VerticalBlurFilter, &src->m_VerticalBlurFilter, offsetof(T, _0x0076) - offsetof(T, m_VerticalBlurFilter));
     }
 
-    void dynamicEnvmap(fb::DynamicEnvmapComponentData* dst, const fb::DynamicEnvmapComponentData* src)
+    void dynamicEnvmap(fb::CapturedDynamicEnvmapComponentData* dst, const fb::CapturedDynamicEnvmapComponentData* src)
     {
         if (!dst || !src) 
             return;
@@ -230,17 +232,17 @@ namespace editor::copy
         dst->m_KeyColorEnvmap = src->m_KeyColorEnvmap;
     }
 
-    void characterLighting(fb::CharacterLightingComponentData* dst, const fb::CharacterLightingComponentData* src)
+    void characterLighting(fb::CapturedCharacterLightingComponentData* dst, const fb::CapturedCharacterLightingComponentData* src)
     {
         if (!dst || !src) 
             return;
 
-        using T = fb::CharacterLightingComponentData;
+        using T = fb::CapturedCharacterLightingComponentData;
 
         memcpy(&dst->m_BottomLight, &src->m_BottomLight, offsetof(T, _0x0097) - offsetof(T, m_BottomLight));
     }
 
-    void motionBlur(fb::MotionBlurComponentData* dst, const fb::MotionBlurComponentData* src)
+    void motionBlur(fb::CapturedMotionBlurComponentData* dst, const fb::CapturedMotionBlurComponentData* src)
     {
         if (!dst || !src)
             return;
@@ -262,3 +264,5 @@ namespace editor::copy
         memcpy(reinterpret_cast<char*>(dst) + startOffset, reinterpret_cast<const char*>(src) + startOffset, copySize);
     }
 }
+
+#endif // BFVE_GAME_BF3

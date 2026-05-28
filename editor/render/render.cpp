@@ -83,24 +83,42 @@ bool render::worldToScreen(const fb::Vec3& world, ImVec2& out)
     if (!renderer)
         return false;
 
-    renderer->m_viewParams.view.Update();
+    fb::RenderView* rv = fb::getActiveRenderView(renderer);
+    if (!rv)
+        return false;
+    fb::updateRenderView(rv);
 
-    alignas(16) fb::Vec3 w = world;
-    alignas(16) fb::Vec3 o{ };
-
-    fb::LinearTransform* view = &renderer->m_viewParams.view.m_viewMatrix;
-    fb::LinearTransform* projection = &renderer->m_viewParams.view.m_projectionMatrix;
-
-    typedef bool(__cdecl* tWorldToScreen)(fb::Vec3*, fb::LinearTransform*, fb::LinearTransform*, fb::Vec3*);
-    tWorldToScreen _WorldToScreen = (tWorldToScreen)0x00764A90;
-
-    bool ret = _WorldToScreen(&w, view, projection, &o);
-    if (!ret)
+    const fb::LinearTransform* vp = fb::getViewProjectionMatrix(rv);
+    if (!vp)
         return false;
 
-    out.x = o.m_x;
-    out.y = o.m_y;
+    const float* m[4] =
+    {
+        reinterpret_cast<const float*>(&vp->m_right),
+        reinterpret_cast<const float*>(&vp->m_up),
+        reinterpret_cast<const float*>(&vp->m_forward),
+        reinterpret_cast<const float*>(&vp->m_trans),
+    };
 
+    const float w = m[0][3] * world.m_x + m[1][3] * world.m_y + m[2][3] * world.m_z + m[3][3];
+    if (w < 0.01f)
+        return false;
+
+    const float x = m[0][0] * world.m_x + m[1][0] * world.m_y + m[2][0] * world.m_z + m[3][0];
+    const float y = m[0][1] * world.m_x + m[1][1] * world.m_y + m[2][1] * world.m_z + m[3][1];
+
+    const ImVec2 size = ImGui::GetIO().DisplaySize;
+    const float hw = size.x * 0.5f;
+    const float hh = size.y * 0.5f;
+
+    const float ox = hw + hw * x / w;
+    const float oy = hh - hh * y / w;
+
+    if (ox < 0.0f || ox >= size.x || oy < 0.0f || oy >= size.y)
+        return false;
+
+    out.x = ox;
+    out.y = oy;
     return true;
 }
 

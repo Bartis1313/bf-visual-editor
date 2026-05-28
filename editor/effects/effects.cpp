@@ -4,6 +4,8 @@
 #include "../../utils/log.h"
 #include <imgui.h>
 #include <algorithm>
+#include <unordered_map>
+#include <unordered_set>
 
 namespace editor::effects
 {
@@ -27,6 +29,7 @@ namespace editor::effects
         assets.clear();
         spawned.clear();
         selected = nullptr;
+        selectedName.clear();
     }
 
     void scanAssets()
@@ -36,6 +39,9 @@ namespace editor::effects
         fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
         if (!rm)
             return;
+
+        std::unordered_set<fb::EffectBlueprint*> seen;
+        std::unordered_map<std::string, int> nameUseCounts;
 
         for (const auto& comp : rm->m_compartments)
         {
@@ -53,8 +59,18 @@ namespace editor::effects
                 if (classInfo->m_ClassId != fb::EffectBlueprint::ClassId())
                     continue;
 
-                fb::EffectBlueprint* eB = static_cast<fb::EffectBlueprint*>(obj);
-                assets.emplace_back(eB->m_Name, eB);
+                fb::EffectBlueprint* eB = reinterpret_cast<fb::EffectBlueprint*>(obj);
+                if (!seen.insert(eB).second)
+                    continue;
+
+                std::string baseName = eB->m_Name ? eB->m_Name : "Unknown";
+                int& useCount = nameUseCounts[baseName];
+                std::string finalName = (useCount == 0)
+                    ? baseName
+                    : baseName + " (" + std::to_string(useCount) + ")";
+                ++useCount;
+
+                assets.emplace_back(std::move(finalName), eB);
             }
         }
 
@@ -76,7 +92,8 @@ namespace editor::effects
         fb::EffectParams params = {};
         params.m_paramCount = 0;
 
-        return effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform), &params, false);
+        uint32_t handle = effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform), &params, false);
+        return handle;
     }
 
     void stop(uint32_t handle)

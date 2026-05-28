@@ -46,6 +46,10 @@ namespace editor::states
     void scanVEDataNames();
     std::unordered_map<fb::VisualEnvironmentEntityData*, std::string>& getVEDataNameMap();
 
+#if defined(BFVE_GAME_BF4) // should be for bf3 too
+    void scanExistingEntities();
+#endif
+
     void restoreEditValuesFromEntry(StateEditData& dst, const StateEditData& src);
     void copyEditDataDirectly(StateEditData& dst, const StateEditData& src);
 
