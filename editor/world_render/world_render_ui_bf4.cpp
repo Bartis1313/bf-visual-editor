@@ -1,4 +1,4 @@
-#include "world_render.h"
+﻿#include "world_render.h"
 #include "../ui/ui_helpers.h"
 #include <imgui.h>
 
@@ -161,7 +161,7 @@ namespace editor::world_render
             changed |= ui::BoolEdit("Centered", &e->m_MotionBlurCenteredEnable, &o->m_MotionBlurCenteredEnable);
 
             ImGui::Separator();
-            changed |= ui::Vec3Edit("Clear Color", &e->m_MotionBlurClearColor, &o->m_MotionBlurClearColor, true);
+            changed |= ui::HdrColor3Edit("Clear Color", &e->m_MotionBlurClearColor, &o->m_MotionBlurClearColor);
             changed |= ui::FloatEdit("Scale", &e->m_MotionBlurScale, &o->m_MotionBlurScale, 0.0f, 2.0f);
             changed |= ui::FloatEdit("Fixed Shutter Time", &e->m_MotionBlurFixedShutterTime, &o->m_MotionBlurFixedShutterTime);
             changed |= ui::FloatEdit("Max", &e->m_MotionBlurMax, &o->m_MotionBlurMax);

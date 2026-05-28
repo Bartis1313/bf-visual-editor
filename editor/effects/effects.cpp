@@ -80,6 +80,8 @@ namespace editor::effects
         logger::info("Scanned {} effect assets", assets.size());
     }
 
+    // crash due to that
+#pragma optimize("", off)
     uint32_t spawnAtTransform(fb::Asset* effect, const fb::LinearTransform& transform)
     {
         if (!effect)
@@ -95,6 +97,7 @@ namespace editor::effects
         uint32_t handle = effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform), &params, false);
         return handle;
     }
+#pragma optimize("", on)
 
     void stop(uint32_t handle)
     {

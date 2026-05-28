@@ -72,12 +72,35 @@ namespace editor::ui
         if (mod && highlightModified)
             ImGui::PushStyleColor(ImGuiCol_Text, modifiedColor);
 
-        float I = (std::max)({ c->m_x, c->m_y, c->m_z });
-        if (I < 1e-4f) I = 1e-4f;
-        float n[3] = { c->m_x / I, c->m_y / I, c->m_z / I };
-
         ImGui::PushID(label);
 
+        ImGuiStorage* st = ImGui::GetStateStorage();
+        const ImGuiID kI  = ImGui::GetID("##hdrI");
+        const ImGuiID kNx = ImGui::GetID("##hdrNx");
+        const ImGuiID kNy = ImGui::GetID("##hdrNy");
+        const ImGuiID kNz = ImGui::GetID("##hdrNz");
+
+        float I  = st->GetFloat(kI,  -1.0f);
+        float nx = st->GetFloat(kNx, 0.0f);
+        float ny = st->GetFloat(kNy, 0.0f);
+        float nz = st->GetFloat(kNz, 0.0f);
+
+        const bool firstTime = I < 0.0f;
+        const bool external = firstTime
+            || fabsf(c->m_x - nx * I) > 1e-4f
+            || fabsf(c->m_y - ny * I) > 1e-4f
+            || fabsf(c->m_z - nz * I) > 1e-4f;
+
+        if (external)
+        {
+            I = (std::max)({ c->m_x, c->m_y, c->m_z });
+            if (I < 1e-4f) I = 1e-4f;
+            nx = c->m_x / I;
+            ny = c->m_y / I;
+            nz = c->m_z / I;
+        }
+
+        float n[3] = { nx, ny, nz };
         bool colorChanged = ImGui::ColorEdit3("##tint", n, ImGuiColorEditFlags_Float | ImGuiColorEditFlags_NoInputs);
 
         ImGui::SameLine();
@@ -97,6 +120,11 @@ namespace editor::ui
             c->m_y = n[1] * I;
             c->m_z = n[2] * I;
         }
+
+        st->SetFloat(kI,  I);
+        st->SetFloat(kNx, n[0]);
+        st->SetFloat(kNy, n[1]);
+        st->SetFloat(kNz, n[2]);
 
         ImGui::PopID();
 

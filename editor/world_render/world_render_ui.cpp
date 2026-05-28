@@ -1,4 +1,4 @@
-#include "world_render.h"
+﻿#include "world_render.h"
 #include "../ui/ui_helpers.h"
 #include <imgui.h>
 
@@ -245,7 +245,7 @@ namespace editor::world_render
 
         if (ImGui::TreeNode("Subsurface Scattering"))
         {
-            changed |= ui::Vec3Edit("Color", &e->m_SubSurfaceColor, &o->m_SubSurfaceColor, true);
+            changed |= ui::HdrColor3Edit("Color", &e->m_SubSurfaceColor, &o->m_SubSurfaceColor);
             changed |= ui::FloatEdit("Rolloff Key Light", &e->m_SubSurfaceRolloffKeyLight, &o->m_SubSurfaceRolloffKeyLight);
             changed |= ui::FloatEdit("Rolloff Local Light", &e->m_SubSurfaceRolloffLocalLight, &o->m_SubSurfaceRolloffLocalLight);
             ImGui::TreePop();

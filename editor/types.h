@@ -13,14 +13,19 @@ concept enumable = std::is_enum_v<T>;
 struct StateHash
 {
     int priority = 0;
-    float visibility = 0.0f;
     uint32_t componentMask = 0;
+    std::string name;
+    float visibility = 0.0f;
 
     bool operator==(const StateHash& other) const
     {
-        return priority == other.priority &&
-            componentMask == other.componentMask &&
-            std::fabs(visibility - other.visibility) < 0.001f;
+        if (priority != other.priority || componentMask != other.componentMask)
+            return false;
+
+        if (!name.empty() || !other.name.empty())
+            return name == other.name;
+
+        return std::fabs(visibility - other.visibility) < 0.001f;
     }
 };
 

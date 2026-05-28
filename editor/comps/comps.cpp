@@ -1,4 +1,4 @@
-#include "comps.h"
+﻿#include "comps.h"
 
 #include "../ui/ui_helpers.h"
 
@@ -12,7 +12,7 @@ namespace editor::comps
 
         if (ImGui::TreeNode("Sun##OL"))
         {
-            ui::Vec3Edit("Sun Color", &e->m_SunColor, &o->m_SunColor, true);
+            ui::HdrColor3Edit("Sun Color", &e->m_SunColor, &o->m_SunColor);
             // temp solution to normalize, engine will crash on ub values
             ui::FloatEdit("Sun Rotation X", &e->m_SunRotationX, &o->m_SunRotationX, -179.9f, 179.9f);
             ui::FloatEdit("Sun Rotation Y", &e->m_SunRotationY, &o->m_SunRotationY, -179.9f, 179.9f);
@@ -23,8 +23,8 @@ namespace editor::comps
 
         if (ImGui::TreeNode("Sky##OL"))
         {
-            ui::Vec3Edit("Sky Color", &e->m_SkyColor, &o->m_SkyColor, true);
-            ui::Vec3Edit("Ground Color", &e->m_GroundColor, &o->m_GroundColor, true);
+            ui::HdrColor3Edit("Sky Color", &e->m_SkyColor, &o->m_SkyColor);
+            ui::HdrColor3Edit("Ground Color", &e->m_GroundColor, &o->m_GroundColor);
             ui::FloatEdit("Sky Light Angle Factor", &e->m_SkyLightAngleFactor, &o->m_SkyLightAngleFactor);
             ui::FloatEdit("Sky Envmap Shadow Scale", &e->m_SkyEnvmapShadowScale, &o->m_SkyEnvmapShadowScale);
             ImGui::TreePop();
@@ -61,11 +61,11 @@ namespace editor::comps
         {
             ImGui::Text("These only work with dynamic envmap or something, I don't know");
 
-            ui::Vec3Edit("Sky Color", &e->m_SkyBoxSkyColor, &o->m_SkyBoxSkyColor, true);
-            ui::Vec3Edit("Ground Color", &e->m_SkyBoxGroundColor, &o->m_SkyBoxGroundColor, true);
-            ui::Vec3Edit("Sun Light Color", &e->m_SkyBoxSunLightColor, &o->m_SkyBoxSunLightColor, true);
-            ui::Vec3Edit("Back Light Color", &e->m_SkyBoxBackLightColor, &o->m_SkyBoxBackLightColor, true);
-            ui::Vec3Edit("Terrain Color", &e->m_TerrainColor, &o->m_TerrainColor, true);
+            ui::HdrColor3Edit("Sky Color", &e->m_SkyBoxSkyColor, &o->m_SkyBoxSkyColor);
+            ui::HdrColor3Edit("Ground Color", &e->m_SkyBoxGroundColor, &o->m_SkyBoxGroundColor);
+            ui::HdrColor3Edit("Sun Light Color", &e->m_SkyBoxSunLightColor, &o->m_SkyBoxSunLightColor);
+            ui::HdrColor3Edit("Back Light Color", &e->m_SkyBoxBackLightColor, &o->m_SkyBoxBackLightColor);
+            ui::HdrColor3Edit("Terrain Color", &e->m_TerrainColor, &o->m_TerrainColor);
             ImGui::TreePop();
         }
 
@@ -130,7 +130,7 @@ namespace editor::comps
 
         if (ImGui::TreeNode("Cloud Layer 1##Sky"))
         {
-            ui::Vec3Edit("Color##CL1", &e->m_CloudLayer1Color, &o->m_CloudLayer1Color, true);
+            ui::HdrColor3Edit("Color##CL1", &e->m_CloudLayer1Color, &o->m_CloudLayer1Color);
             ui::FloatEdit("Altitude##CL1", &e->m_CloudLayer1Altitude, &o->m_CloudLayer1Altitude);
             ui::FloatEdit("Tile Factor##CL1", &e->m_CloudLayer1TileFactor, &o->m_CloudLayer1TileFactor);
             ui::FloatEdit("Rotation##CL1", &e->m_CloudLayer1Rotation, &o->m_CloudLayer1Rotation, 0.0f, 360.0f);
@@ -144,7 +144,7 @@ namespace editor::comps
 
         if (ImGui::TreeNode("Cloud Layer 2##Sky"))
         {
-            ui::Vec3Edit("Color##CL2", &e->m_CloudLayer2Color, &o->m_CloudLayer2Color, true);
+            ui::HdrColor3Edit("Color##CL2", &e->m_CloudLayer2Color, &o->m_CloudLayer2Color);
             ui::FloatEdit("Altitude##CL2", &e->m_CloudLayer2Altitude, &o->m_CloudLayer2Altitude);
             ui::FloatEdit("Tile Factor##CL2", &e->m_CloudLayer2TileFactor, &o->m_CloudLayer2TileFactor);
             ui::FloatEdit("Rotation##CL2", &e->m_CloudLayer2Rotation, &o->m_CloudLayer2Rotation, 0.0f, 360.0f);
@@ -156,7 +156,7 @@ namespace editor::comps
             ImGui::TreePop();
         }
 
-        ui::Vec3Edit("Cloud Layer Sun Color", &e->m_CloudLayerSunColor, &o->m_CloudLayerSunColor, true);
+        ui::HdrColor3Edit("Cloud Layer Sun Color", &e->m_CloudLayerSunColor, &o->m_CloudLayerSunColor);
 
         if (ImGui::TreeNode("Panoramic##Sky"))
         {
@@ -194,7 +194,7 @@ namespace editor::comps
         if (ImGui::TreeNode("Fog Color##Fog"))
         {
             ui::BoolEdit("Enable##FogColor", &e->m_FogColorEnable, &o->m_FogColorEnable);
-            ui::Vec3Edit("Color", &e->m_FogColor, &o->m_FogColor, true);
+            ui::HdrColor3Edit("Color", &e->m_FogColor, &o->m_FogColor);
             ui::FloatEdit("Color Start", &e->m_FogColorStart, &o->m_FogColorStart);
             ui::FloatEdit("Color End", &e->m_FogColorEnd, &o->m_FogColorEnd);
             ui::CurveVec4Edit("Color Curve", &e->m_FogColorCurve, &o->m_FogColorCurve);
@@ -412,7 +412,7 @@ namespace editor::comps
     void renderVignetteComponent(fb::CapturedVignetteComponentData* e, const fb::CapturedVignetteComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
-        ui::Vec3Edit("Color", &e->m_Color, &o->m_Color, true);
+        ui::HdrColor3Edit("Color", &e->m_Color, &o->m_Color);
         ui::Vec2Edit("Scale", &e->m_Scale, &o->m_Scale);
         ui::FloatEdit("Opacity", &e->m_Opacity, &o->m_Opacity, 0.0f, 1.0f);
         ui::FloatEdit("Exponent", &e->m_Exponent, &o->m_Exponent);
@@ -436,8 +436,8 @@ namespace editor::comps
 
         if (ImGui::TreeNode("Chromatic Aberration##LS"))
         {
-            ui::Vec3Edit("Color 1", &e->m_ChromaticAberrationColor1, &o->m_ChromaticAberrationColor1, true);
-            ui::Vec3Edit("Color 2", &e->m_ChromaticAberrationColor2, &o->m_ChromaticAberrationColor2, true);
+            ui::HdrColor3Edit("Color 1", &e->m_ChromaticAberrationColor1, &o->m_ChromaticAberrationColor1);
+            ui::HdrColor3Edit("Color 2", &e->m_ChromaticAberrationColor2, &o->m_ChromaticAberrationColor2);
             ui::Vec2Edit("Displacement 1", &e->m_ChromaticAberrationDisplacement1, &o->m_ChromaticAberrationDisplacement1);
             ui::Vec2Edit("Displacement 2", &e->m_ChromaticAberrationDisplacement2, &o->m_ChromaticAberrationDisplacement2);
             ui::Vec2Edit("Strengths", &e->m_ChromaticAberrationStrengths, &o->m_ChromaticAberrationStrengths);
@@ -513,9 +513,9 @@ namespace editor::comps
     void renderDynamicEnvmapComponent(fb::CapturedDynamicEnvmapComponentData* e, const fb::CapturedDynamicEnvmapComponentData* o)
     {
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
-        ui::Vec3Edit("Sky Color", &e->m_SkyColorEnvmap, &o->m_SkyColorEnvmap, true);
-        ui::Vec3Edit("Ground Color", &e->m_GroundColorEnvmap, &o->m_GroundColorEnvmap, true);
-        ui::Vec3Edit("Key Color", &e->m_KeyColorEnvmap, &o->m_KeyColorEnvmap, true);
+        ui::HdrColor3Edit("Sky Color", &e->m_SkyColorEnvmap, &o->m_SkyColorEnvmap);
+        ui::HdrColor3Edit("Ground Color", &e->m_GroundColorEnvmap, &o->m_GroundColorEnvmap);
+        ui::HdrColor3Edit("Key Color", &e->m_KeyColorEnvmap, &o->m_KeyColorEnvmap);
     }
 
     void renderCharacterLightingComponent(fb::CapturedCharacterLightingComponentData* e, const fb::CapturedCharacterLightingComponentData* o)
@@ -529,8 +529,8 @@ namespace editor::comps
         if (ui::EnumCombo<fb::CharacterLightingMode>("Lighting Mode", &mode, &origMode))
             e->m_CharacterLightingMode = static_cast<fb::CharacterLightingMode>(mode);
 
-        ui::Vec3Edit("Top Light", &e->m_TopLight, &o->m_TopLight, true);
-        ui::Vec3Edit("Bottom Light", &e->m_BottomLight, &o->m_BottomLight, true);
+        ui::HdrColor3Edit("Top Light", &e->m_TopLight, &o->m_TopLight);
+        ui::HdrColor3Edit("Bottom Light", &e->m_BottomLight, &o->m_BottomLight);
         ui::FloatEdit("Top Light Dir X", &e->m_TopLightDirX, &o->m_TopLightDirX);
         ui::FloatEdit("Top Light Dir Y", &e->m_TopLightDirY, &o->m_TopLightDirY);
         ui::FloatEdit("Camera Up Rotation", &e->m_CameraUpRotation, &o->m_CameraUpRotation);
@@ -754,7 +754,7 @@ namespace editor::comps
 
         if (ImGui::TreeNode("Subsurface Scattering"))
         {
-            ui::Vec3Edit("Color", &e->m_SubSurfaceColor, &o->m_SubSurfaceColor, true);
+            ui::HdrColor3Edit("Color", &e->m_SubSurfaceColor, &o->m_SubSurfaceColor);
             ui::FloatEdit("Rolloff Key Light", &e->m_SubSurfaceRolloffKeyLight, &o->m_SubSurfaceRolloffKeyLight);
             ui::FloatEdit("Rolloff Local Light", &e->m_SubSurfaceRolloffLocalLight, &o->m_SubSurfaceRolloffLocalLight);
             ImGui::TreePop();

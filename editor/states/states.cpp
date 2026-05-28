@@ -81,6 +81,9 @@ namespace editor::states
 
         hash.priority = state->priority;
         hash.visibility = state->visibility;
+        auto itr = stateEntityMap.find(state);
+        if (itr != stateEntityMap.end() && !itr->second.name.empty())
+            hash.name = itr->second.name;
         hash.componentMask = 0U;
 
         if (state->outdoorLight)      hash.componentMask |= Comp_OutdoorLight;

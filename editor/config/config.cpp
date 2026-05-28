@@ -42,6 +42,7 @@ namespace editor::config
             json stateEntry;
             stateEntry["priority"] = entry.hash.priority;
             stateEntry["componentMask"] = entry.hash.componentMask;
+            stateEntry["name"] = entry.hash.name;
             stateEntry["visibility"] = entry.hash.visibility;
             stateEntry["data"] = states::serializeStateData(entry.editData);
             statesJson.push_back(stateEntry);
@@ -113,6 +114,7 @@ namespace editor::config
                 StateEditEntry entry{ };
                 entry.hash.priority = stateEntry.value("priority", 0);
                 entry.hash.componentMask = stateEntry.value("componentMask", 0u);
+                entry.hash.name = stateEntry.value("name", std::string{});
                 entry.hash.visibility = stateEntry.value("visibility", 1.0f);
 
                 if (stateEntry.contains("data") && stateEntry["data"].is_object())
