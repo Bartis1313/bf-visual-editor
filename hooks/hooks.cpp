@@ -23,18 +23,7 @@ bool hooks::init()
     MH_CreateHook((LPVOID)0x018802E0, hkfb__EmitterManager__createEmitterTemplate, (LPVOID*)&ofb__EmitterManager__createEmitterTemplate);
     //MH_CreateHook((LPVOID)0x00F82D60, hksub_F82D60, (LPVOID*)&osub_F82D60);
     //MH_CreateHook((LPVOID)0x004D5790, hkfb__InternalDatabasePartition_onPartitonLoaded, (LPVOID*)&ofb__InternalDatabasePartition_onPartitonLoaded);
-    // EffectEntity
 #elif defined(BFVE_GAME_BF4)
-    // ---------------------------------------------------------------------
-    // Battlefield 4 (Frostbite 3) hooks.
-    //
-    // Calling convention is plain x64 fastcall — no separate `edx` parameter.
-    // BF4 hook signatures live in functions.h under BFVE_GAME_BF4 with hkBf4_*
-    // names and bodies in functions.cpp.
-    //
-    // The 0x140626A80 dispatch entry point is a 2-instruction thunk that
-    // does `mov rcx, [rcx]; jmp 0x140626810` — we hook the real callee.
-    // ---------------------------------------------------------------------
     MH_CreateHook((LPVOID)0x140CC53B0, hkBf4_VisualEnvironmentManager_update, (LPVOID*)&oBf4_VisualEnvironmentManager_update);
     MH_CreateHook((LPVOID)0x140B79380, hkBf4_VisualEnvironment_operator, (LPVOID*)&oBf4_VisualEnvironment_operator);
     MH_CreateHook((LPVOID)0x140626810, hkBf4_MessageManager_dispatch, (LPVOID*)&oBf4_MessageManager_dispatch);

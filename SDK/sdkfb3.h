@@ -1053,7 +1053,65 @@ namespace fb
         virtual void setCursorRect(bool, unsigned int, unsigned int, unsigned int, unsigned int);
         virtual void setMouseSensitivity(float);
         virtual void setUIOwnsInput(bool);
-    };
+
+        enum class InputButtons : BYTE
+        {
+            IDB_Button_0 = 0,
+            IDB_Button_1 = 1,
+            IDB_Button_2 = 2,
+            IDB_Button_3 = 3,
+            IDB_Button_4 = 4,
+            IDB_Button_5 = 5,
+            IDB_Button_6 = 6,
+            IDB_Button_7 = 7,
+            IDB_Button_Undefined = 8
+        };
+
+    public:
+        class MouseDevice
+        {
+        public:
+            class MouseState
+            {
+            public:
+                long x; //0x0000
+                long y; //0x0004
+                long z; //0x0008
+                unsigned char buttons[0x8]; //0x000C
+            };
+
+            virtual void Function0(); // 0x0000
+            virtual void Read(float SampleTime, bool VisualFrame); //0x0008 
+            virtual const char* Name(void); //0x0010 
+            virtual const char* Name(unsigned int); // 0x0018 
+            virtual unsigned int ControlCount(); // 0x0020 
+            virtual bool IsConnected(); // 0x0028
+            virtual bool IsAnalogue(unsigned int); // 0x0030
+            virtual float GetValue(unsigned int);	// 0x0038
+
+            char _0x0008[144];
+            __int64 m_HWND; //0x0098 
+            __int64 m_pWindowProcedure; //0x00A0 
+            char _0x00A8[40];
+            BYTE m_CursorMode; //0x00D0 
+            BYTE m_UIOwnsInput; //0x00D1 
+            BYTE m_ShowCursor; //0x00D2 
+            BYTE m_CursorConfined; //0x00D3 
+            BYTE m_HasOverflowed; //0x00D4 
+            BYTE m_UseRawMouseInput; //0x00D5 
+            BYTE m_WindowActive; //0x00D6 
+            char _0x00D7[25];
+            MouseState m_Current; //0x00F0
+            MouseState m_Buffer; //0x0104
+            char _0x0118[24];
+
+        }; //Size = 0x0130
+
+        char _0x0000[16 - 8];
+        MouseDevice* m_pDevice; // 0x0010
+
+
+    };//Size=0x0040
 
     class IKeyboard
     {

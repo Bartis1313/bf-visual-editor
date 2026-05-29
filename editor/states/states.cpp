@@ -11,7 +11,8 @@ namespace editor::states
     std::unordered_map<fb::VisualEnvironmentState*, StateEntityInfo> stateEntityMap;
     std::vector<fb::VisualEnvironmentState*> stateOrder;
     std::vector<StateEditEntry> editList;
-    int selectedIndex = 0;
+    int selectedStateId = -1; // cuz states readd frequently
+    int selectedIndex = 0; // fallback
     size_t lastKnownCount = 0;
     std::unordered_map<fb::VisualEnvironmentEntityData*, std::string> veDataNameMap;
     bool veDataScanned = false;
@@ -32,6 +33,7 @@ namespace editor::states
         stateEntityMap.clear();
         stateOrder.clear();
         editList.clear();
+        selectedStateId = -1;
         selectedIndex = 0;
         lastKnownCount = 0;
         veDataNameMap.clear();
@@ -49,8 +51,32 @@ namespace editor::states
         return itr != stateDataMap.end() ? &itr->second : nullptr;
     }
 
-    int getSelectedIndex() { return selectedIndex; }
-    void setSelectedIndex(int idx) { selectedIndex = idx; }
+    int getSelectedIndex()
+    {
+        if (stateOrder.empty())
+            return 0;
+
+        if (selectedStateId >= 0)
+        {
+            for (int i = 0; i < static_cast<int>(stateOrder.size()); i++)
+            {
+                auto* s = stateOrder[i];
+                if (s && s->stateId == selectedStateId)
+                    return i;
+            }
+        }
+
+        return std::clamp(selectedIndex, 0, static_cast<int>(stateOrder.size()) - 1);
+    }
+
+    void setSelectedIndex(int idx)
+    {
+        selectedIndex = idx;
+        if (idx >= 0 && idx < static_cast<int>(stateOrder.size()) && stateOrder[idx])
+            selectedStateId = stateOrder[idx]->stateId;
+        else
+            selectedStateId = -1;
+    }
 
     int getActiveOverrideCount()
     {

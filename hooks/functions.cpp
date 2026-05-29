@@ -200,11 +200,24 @@ LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
         enabled = !enabled;
 
         if (fb::BorderInputNode* bin = fb::BorderInputNode::GetInstance())
-        {      
+        {
+#ifdef BFVE_GAME_BF3
             if (bin->m_mouse)
                 bin->m_mouse->enableCursorMode(enabled, 1);
             if (bin->m_keyboard)
-                bin->m_keyboard->enableTypingMode(enabled);       
+                bin->m_keyboard->enableTypingMode(enabled);
+#elif defined(BFVE_GAME_BF4)
+
+            if (bin->m_keyboard)
+                bin->m_keyboard->enableTypingMode(enabled);
+
+            if (bin->m_mouse && bin->m_mouse->m_pDevice)
+            {
+                const bool gameOwnsCursor = bin->m_mouse->m_pDevice->m_UIOwnsInput;
+                if (!gameOwnsCursor)
+                    bin->m_mouse->enableCursorMode(enabled, 1);
+            }
+#endif
         }
 
         return 0;
