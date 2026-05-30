@@ -7,6 +7,11 @@ Inject to the game, preferably before level loading since capturing some names i
 Although not a MUST...\
 I am not responsible for any potential bans caused by injection, dirty screens and etc...
 
+## Building the project
+1. vcpkg ![link](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started-msbuild?pivots=shell-powershell)
+2. set x86 for bf3, x64 for bf4
+3. click build, and use the dll.
+
 ## What does it do
 - Edit whole VisualEnvironment + force its states
 - Edit WorldRenderSettings
