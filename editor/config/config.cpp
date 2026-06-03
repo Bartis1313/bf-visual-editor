@@ -16,8 +16,7 @@ namespace fs = std::filesystem;
 
 namespace editor::config
 {
-    // TODO: MOVE THIS!!!!!!
-    static constexpr float CONFIG_VERSION = 2.0f;
+    static constexpr float CONFIG_VERSION = 3.0f;
 
     void init()
     {
@@ -81,7 +80,7 @@ namespace editor::config
                 emitterEntry["hasColor"] = false;
             }
 
-            emittersJson[edit.name] = emitterEntry;
+            emittersJson[edit.key] = emitterEntry;
         }
         root["emitters"] = emittersJson;
 
@@ -187,7 +186,7 @@ namespace editor::config
                 bool found = false;
                 for (auto& [dataPtr, edit] : emitterMap)
                 {
-                    if (edit.name == name)
+                    if (edit.key == name)
                     {
                         EmitterSnapshot snap;
                         emitters::deserializeSnapshot(emitterJson["template"], snap);
@@ -210,7 +209,7 @@ namespace editor::config
                 if (!found)
                 {
                     PendingEmitterEdit pendingEdit;
-                    pendingEdit.name = name;
+                    pendingEdit.key = name;
                     emitters::deserializeSnapshot(emitterJson["template"], pendingEdit.templateData);
 
                     if (emitterJson.value("hasColor", false))

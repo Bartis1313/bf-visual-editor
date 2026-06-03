@@ -378,6 +378,7 @@ struct EmitterEditData
     fb::EmitterTemplateData* data = nullptr;
     fb::EmitterTemplate* lastTemplate = nullptr;
     std::string name;
+    std::string key;
     std::string category;
     fb::UpdateColorData* colorProcessor = nullptr;
     EmitterSnapshot original;
@@ -387,7 +388,7 @@ struct EmitterEditData
 
 struct PendingEmitterEdit
 {
-    std::string name;
+    std::string key; // name/key
     EmitterSnapshot templateData;
     EmitterColorSnapshot colorData;
     bool hasColorData = false;

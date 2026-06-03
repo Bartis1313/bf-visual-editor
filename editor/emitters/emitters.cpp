@@ -67,7 +67,9 @@ namespace editor::emitters
     }
 
     static std::unordered_map<std::string, int> nameUseCounts;
-    static void RegisterEmitter(fb::EmitterTemplateData* emitterData, const std::string& displayName)
+    static std::unordered_map<std::string, int> keyUseCounts; // fallback
+
+    static void RegisterEmitter(fb::EmitterTemplateData* emitterData, const std::string& displayName, const std::string& stableKey)
     {
         if (!emitterData) return;
         if (emitterMap.count(emitterData)) return;
@@ -79,9 +81,17 @@ namespace editor::emitters
             : baseName + " (" + std::to_string(useCount) + ")";
         ++useCount;
 
+        std::string finalKey = stableKey.empty() ? finalName : stableKey;
+        if (int& keyCount = keyUseCounts[finalKey]; keyCount++ > 0)
+        {
+            logger::warning("[emitters] duplicate emitter key '{}' (#{}), disambiguating", finalKey.c_str(), keyCount - 1);
+            finalKey += " #" + std::to_string(keyCount - 1);
+        }
+
         EmitterEditData editData;
         editData.data = emitterData;
         editData.name = finalName;
+        editData.key = finalKey;
         editData.original.captureFrom(emitterData);
         editData.captured = true;
 
@@ -154,6 +164,8 @@ namespace editor::emitters
         fb::ClassInfo* ci = static_cast<fb::ClassInfo*>(ti);
         const uint32_t classId = ci->m_ClassId;
 
+        std::string docPath = asset->m_Name ? std::string{asset->m_Name} : std::string{ };
+
         if (classId == fb::ScalableEmitterDocument::ClassId())
         {
             fb::ScalableEmitterDocument* doc = reinterpret_cast<fb::ScalableEmitterDocument*>(asset);
@@ -162,8 +174,13 @@ namespace editor::emitters
                 if (!td) return;
                 if (emitterMap.count(td)) return;
                 std::string name = emitterPath;
-                if (tag && *tag) { name += " ["; name += tag; name += "]"; }
-                RegisterEmitter(td, name);
+                std::string key = docPath;
+                if (tag && *tag)
+                {
+                    name += " ["; name += tag; name += "]";
+                    key  += " ["; key  += tag; key  += "]";
+                }
+                RegisterEmitter(td, name, key);
             };
             regWithTag(doc->m_TemplateDataUltra, "Ultra");
             regWithTag(doc->m_TemplateDataHigh, "High");
@@ -173,7 +190,7 @@ namespace editor::emitters
         else if (classId == fb::FlatEmitterDocument::ClassId())
         {
             auto* doc = reinterpret_cast<fb::FlatEmitterDocument*>(asset);
-            RegisterEmitter(doc->m_TemplateData, emitterPath);
+            RegisterEmitter(doc->m_TemplateData, emitterPath, docPath);
         }
     }
 #endif // BFVE_GAME_BF4
@@ -183,6 +200,7 @@ namespace editor::emitters
         emitterMap.clear();
         emitterTree.Clear();
         nameUseCounts.clear();
+        keyUseCounts.clear();
 
         fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
         if (!rm)
@@ -233,7 +251,7 @@ namespace editor::emitters
                 {
                     fb::EmitterTemplateData* emitterData = reinterpret_cast<fb::EmitterTemplateData*>(obj);
                     const std::string name = emitterData->m_Name ? emitterData->m_Name : "Unknown";
-                    RegisterEmitter(emitterData, name);
+                    RegisterEmitter(emitterData, name, name);
                 }
 #else
                 if (classInfo->isSubclassOf((fb::ClassInfo*)fb::EffectBlueprint::ClassInfoPtr()))
@@ -363,7 +381,7 @@ namespace editor::emitters
 
             for (auto& [dataPtr, edit] : emitterMap)
             {
-                if (edit.name == it->name)
+                if (edit.key == it->key)
                 {
                     it->templateData.restoreTo(edit.data);
 
@@ -371,7 +389,7 @@ namespace editor::emitters
                         it->colorData.restoreTo(edit.colorProcessor);
 
                     edit.modified = true;
-                    logger::info("ApplyPendingEmitterEdits: Applied '{}'", it->name.c_str());
+                    logger::info("ApplyPendingEmitterEdits: Applied '{}'", it->key.c_str());
                     appliedCount++;
                     applied = true;
                     break;
