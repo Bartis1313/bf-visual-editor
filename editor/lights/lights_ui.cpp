@@ -30,6 +30,15 @@ namespace editor::lights
         if (ImGui::Button("Reset All"))
             resetAll();
 
+        ImGui::Checkbox("Debug Overlay", &showOverlay);
+        if (showOverlay)
+        {
+            ImGui::SameLine();
+            ImGui::Checkbox("Only Closest To Crosshair", &showOnlyClosest);
+            ImGui::SetNextItemWidth(160);
+            ImGui::SliderFloat("Max Distance (m)", &overlayMaxDistance, 5.0f, 500.0f, "%.0f");
+        }
+
         ImGui::Separator();
 
         std::vector<std::pair<fb::LocalLightEntityData*, LightDataEntry*>> entries;
@@ -75,9 +84,11 @@ namespace editor::lights
 
             if (!filterStr.empty())
             {
-                std::string lowerName = entry->assetName;
-                std::transform(lowerName.begin(), lowerName.end(), lowerName.begin(), ::tolower);
-                if (lowerName.find(filterStr) == std::string::npos)
+                char ptrHex[40];
+                sprintf_s(ptrHex, "light_%p", static_cast<void*>(dataPtr));
+                std::string haystack = entry->assetName + " " + ptrHex;
+                std::transform(haystack.begin(), haystack.end(), haystack.begin(), ::tolower);
+                if (haystack.find(filterStr) == std::string::npos)
                     continue;
             }
 
@@ -95,11 +106,22 @@ namespace editor::lights
             ImGui::TextColored(ImVec4{ 0.6f, 0.6f, 0.8f, 1.0f }, "%s", typePrefix);
             ImGui::SameLine();
 
+            // UGLYYYYYYYYYYYY
+            const bool nameUnresolved =
+                entry->assetName.empty() || entry->assetName == "(dynamic)" ||
+                entry->assetName == "(unknown)" || entry->assetName == "(unnamed)";
+
             char header[512];
-            sprintf_s(header, "%s - %zu active%s###LightHeader",
-                entry->assetName.c_str(),
-                entry->ActiveCount(),
-                entry->hasOverride ? " [MODIFIED]" : "");
+            if (nameUnresolved)
+                sprintf_s(header, "light_%p - %zu active%s###LightHeader",
+                    static_cast<void*>(dataPtr),
+                    entry->ActiveCount(),
+                    entry->hasOverride ? " [MODIFIED]" : "");
+            else
+                sprintf_s(header, "%s - %zu active%s###LightHeader",
+                    entry->assetName.c_str(),
+                    entry->ActiveCount(),
+                    entry->hasOverride ? " [MODIFIED]" : "");
 
             ImGui::PushStyleColor(ImGuiCol_Text, textColor);
             bool open = ImGui::CollapsingHeader(header);
@@ -123,6 +145,7 @@ namespace editor::lights
                     ImGui::Text("  Radius: %.2f", entry->origRadius);
                     ImGui::Text("  Intensity: %.2f", entry->origIntensity);
                 }
+                ImGui::Text("Container %s", entry->containerType.c_str());
                 ImGui::EndTooltip();
             }
 

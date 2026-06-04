@@ -1053,7 +1053,7 @@ namespace fb
 		QualityLevel_Ultra //0x0003
 	};
 
-	class WorldRenderSettingsBase
+	class WorldRenderSettings/*Base*/
 	{
 	public:
 		static __inline unsigned int ClassId()
@@ -1759,6 +1759,12 @@ namespace fb
 		}
 		char _0x0010[144];
 
+		LinearTransform& transform()
+		{
+			return *reinterpret_cast<LinearTransform*>(reinterpret_cast<char*>(this) + 0x20);
+		}
+		const Vec3& position() { return transform().m_trans; }
+
 		void setDirty()
 		{
 			typedef __int16(__thiscall* tSetDirty)(void* _this);
@@ -1767,7 +1773,6 @@ namespace fb
 			oSetDirty(this);
 		}
 	};//Size=0x00A0
-
 
 	class EntityCreator
 	{
@@ -2105,6 +2110,15 @@ namespace fb
 		}
 		GameObjectData* m_Object; //0x0020
 	};//Size=0x0024
+
+	class VehicleBlueprint : public ObjectBlueprint
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 2435;
+		}
+	};
 
 	class WorldPartData : public SpatialPrefabBlueprint
 	{

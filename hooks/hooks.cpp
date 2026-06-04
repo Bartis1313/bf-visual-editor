@@ -32,6 +32,7 @@ bool hooks::init()
     MH_CreateHook((LPVOID)0x140CC7EE0, hkBf4_LocalLightEntity_ctor, (LPVOID*)&oBf4_LocalLightEntity_ctor);
     MH_CreateHook((LPVOID)0x140CC9010, hkBf4_LocalLightEntity_dtor, (LPVOID*)&oBf4_LocalLightEntity_dtor);
     MH_CreateHook((LPVOID)0x1407A7D60, hkBf4_EmitterEntity_ctor, (LPVOID*)&oBf4_EmitterEntity_ctor);
+    MH_CreateHook((LPVOID)0x1409104D0, hkplayeff, (LPVOID*)&ofb4playeff);
 
 #endif
 

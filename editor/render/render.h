@@ -37,7 +37,9 @@ namespace render
 
 
 	bool worldToScreen(const fb::Vec3& world, ImVec2& out);
+	bool worldToScreen(const fb::Vec3& world, ImVec2& out, float& depth);
 	void drawSphere(const fb::Vec3& pos, float radius, int segments, int rings, const ImColor& color, float thickness = 1.0f);
+	void circle(const ImVec2& center, float radius, const ImColor& color, int segments = 20, float thickness = 1.5f);
 	void text(const ImVec2& pos, ImFont* font, const std::string& text, const ImColor& color, bool centered = true, bool dropShadow = false);
 	void text(const ImVec2& pos, const std::string& text, const ImColor& color, bool centered = true, bool dropShadow = false);
 	void line(const ImVec2& start, const ImVec2& end, const ImColor& color, float thickness = 1.0f);

@@ -29,6 +29,13 @@ namespace editor::lights
     void renderTab();
     void renderEditor(LightDataEntry& entry);
 
+    fb::LocalLightEntity* closestLightToCrosshair(float* outScreenDist = nullptr);
+    void renderOverlay();
+
+    inline bool showOverlay = false;
+    inline bool showOnlyClosest = false;
+    inline float overlayMaxDistance = 100.0f;
+
     json serialize(const LightDataEntry& entry);
     void deserialize(const json& j, LightDataEntry& entry);
 }

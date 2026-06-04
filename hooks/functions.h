@@ -118,6 +118,7 @@ int __fastcall hooked_sub_1763720(void* thisPtr, void* edx, int size, void* offs
 //void __fastcall hkfb__InternalDatabasePartition_addInstance(fb::InternalDatabasePartition* _this, void* edx, fb::DataContainer* obj);
 
 //vfunc
+
 //typedef void(__thiscall* tfb__InternalDatabasePartition_onPartitonLoaded)(fb::InternalDatabasePartition* _this);
 //inline tfb__InternalDatabasePartition_onPartitonLoaded ofb__InternalDatabasePartition_onPartitonLoaded = 0;
 //void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDatabasePartition* _this, void* edx);
@@ -260,5 +261,9 @@ void hkBf4_LocalLightEntity_dtor(fb::LocalLightEntity* _this);
 typedef void* (*tBf4_EmitterEntity_ctor)(void* _this, void* a2, fb::EmitterEntityData* data);
 inline tBf4_EmitterEntity_ctor oBf4_EmitterEntity_ctor = nullptr;
 void* hkBf4_EmitterEntity_ctor(void* _this, void* a2, fb::EmitterEntityData* data);
+
+typedef uint32_t(*bf4playeff)(fb::EffectManager*, fb::Asset*, fb::LinearTransform*, void* /*level*/, char /*flags*/, fb::EffectParams*, const __m128* /*velVec*/, char /*trailingFlag*/);
+inline bf4playeff ofb4playeff = nullptr;
+uint32_t hkplayeff(fb::EffectManager* effectManager, fb::Asset* asset, fb::LinearTransform* tr, void* level, char flags, fb::EffectParams* params, const __m128* velVec, char trailingFlag);
 
 #endif // BFVE_GAME_BF4

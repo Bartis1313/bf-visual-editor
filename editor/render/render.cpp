@@ -77,49 +77,91 @@ void render::drawSphere(const fb::Vec3& pos, float radius, int segments, int rin
     }
 }
 
-bool render::worldToScreen(const fb::Vec3& world, ImVec2& out)
+namespace
 {
-    fb::GameRenderer* renderer = fb::GameRenderer::Singleton();
-    if (!renderer)
-        return false;
-
-    fb::RenderView* rv = fb::getActiveRenderView(renderer);
-    if (!rv)
-        return false;
-    fb::updateRenderView(rv);
-
-    const fb::LinearTransform* vp = fb::getViewProjectionMatrix(rv);
-    if (!vp)
-        return false;
-
-    const float* m[4] =
+    // little optimazation
+    struct ProjCache
     {
-        reinterpret_cast<const float*>(&vp->m_right),
-        reinterpret_cast<const float*>(&vp->m_up),
-        reinterpret_cast<const float*>(&vp->m_forward),
-        reinterpret_cast<const float*>(&vp->m_trans),
-    };
+        int frame = -1;
+        bool valid = false;
+        float m[4][4];
+        ImVec2 size;
+    } g_proj;
 
+    static void ensureProjCache()
+    {
+        const int frame = ImGui::GetFrameCount();
+        if (g_proj.frame == frame)
+            return;
+
+        g_proj.frame = frame;
+        g_proj.valid = false;
+
+        fb::GameRenderer* renderer = fb::GameRenderer::Singleton();
+        if (!renderer)
+            return;
+        fb::RenderView* rv = fb::getActiveRenderView(renderer);
+        if (!rv)
+            return;
+        fb::updateRenderView(rv);
+        const fb::LinearTransform* vp = fb::getViewProjectionMatrix(rv);
+        if (!vp)
+            return;
+
+        const float* rows[4] =
+        {
+            reinterpret_cast<const float*>(&vp->m_right),
+            reinterpret_cast<const float*>(&vp->m_up),
+            reinterpret_cast<const float*>(&vp->m_forward),
+            reinterpret_cast<const float*>(&vp->m_trans),
+        };
+        for (int i = 0; i < 4; ++i)
+            for (int j = 0; j < 4; ++j)
+                g_proj.m[i][j] = rows[i][j];
+
+        g_proj.size = ImGui::GetIO().DisplaySize;
+        g_proj.valid = true;
+    }
+}
+
+bool render::worldToScreen(const fb::Vec3& world, ImVec2& out, float& depth)
+{
+    ensureProjCache();
+    if (!g_proj.valid)
+        return false;
+
+    const auto& m = g_proj.m;
     const float w = m[0][3] * world.m_x + m[1][3] * world.m_y + m[2][3] * world.m_z + m[3][3];
+    depth = w;
     if (w < 0.01f)
         return false;
 
     const float x = m[0][0] * world.m_x + m[1][0] * world.m_y + m[2][0] * world.m_z + m[3][0];
     const float y = m[0][1] * world.m_x + m[1][1] * world.m_y + m[2][1] * world.m_z + m[3][1];
 
-    const ImVec2 size = ImGui::GetIO().DisplaySize;
-    const float hw = size.x * 0.5f;
-    const float hh = size.y * 0.5f;
+    const float hw = g_proj.size.x * 0.5f;
+    const float hh = g_proj.size.y * 0.5f;
 
     const float ox = hw + hw * x / w;
     const float oy = hh - hh * y / w;
 
-    if (ox < 0.0f || ox >= size.x || oy < 0.0f || oy >= size.y)
+    if (ox < 0.0f || ox >= g_proj.size.x || oy < 0.0f || oy >= g_proj.size.y)
         return false;
 
     out.x = ox;
     out.y = oy;
     return true;
+}
+
+bool render::worldToScreen(const fb::Vec3& world, ImVec2& out)
+{
+    float depth;
+    return worldToScreen(world, out, depth);
+}
+
+void render::circle(const ImVec2& center, float radius, const ImColor& color, int segments, float thickness)
+{
+    ImGui::GetBackgroundDrawList()->AddCircle(center, radius, color, segments, thickness);
 }
 
 void render::text(const ImVec2& pos, ImFont* font, const std::string& text, const ImColor& color, bool centered, bool dropShadow)

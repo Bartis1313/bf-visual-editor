@@ -94,7 +94,15 @@ namespace editor::effects
         fb::EffectParams params = {};
         params.m_paramCount = 0;
 
-        uint32_t handle = effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform), &params, false);
+        uint32_t handle = 0;
+        __try
+        {
+            handle = effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform), &params, false);
+        }
+        __except (EXCEPTION_EXECUTE_HANDLER)
+        {
+            return 0;
+		}
         return handle;
     }
 #pragma optimize("", on)

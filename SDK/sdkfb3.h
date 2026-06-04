@@ -806,6 +806,12 @@ namespace fb
         char pad[40];
         LocalLightEntityData* m_data;
 
+        LinearTransform& transform()
+        {
+            return *reinterpret_cast<LinearTransform*>(reinterpret_cast<char*>(this) + 0x50);
+        }
+        const Vec3& position() { return transform().m_trans; }
+
         void setDirty()
         {
             using fn_t = void(__fastcall*)(LocalLightEntity*);
@@ -1268,6 +1274,8 @@ namespace fb
         char pad[8];
     };
 
+    inline void* g_lastEffectLevel = nullptr;
+
     class EffectManager
     {
     public:
@@ -1284,21 +1292,29 @@ namespace fb
             return 0;
         }
 
-        void* getLevelForPlayEffect()
+        static void* entityGetLevel(void* entity)
         {
-            void* levelSub = *reinterpret_cast<void**>(reinterpret_cast<char*>(this) + 0x16A8);
-            if (!levelSub)
+            if (!entity)
                 return nullptr;
 
-            if (*reinterpret_cast<uintptr_t*>(levelSub) != 0x141DA3370) // vtable sanity check
-                return nullptr;
-
-            return levelSub;
+            using fn_t = void* (__fastcall*)(void*);
+            return reinterpret_cast<fn_t>(0x1407FA550)(entity);
         }
 
-        [[nodiscard]] uint32_t playEffect(fb::Asset* asset, fb::LinearTransform* tr, fb::EffectParams* params, bool isFirstPerson)
+        void* getLevelForPlayEffect()
         {
-            using fn_t = uint32_t(__fastcall*)(EffectManager*, Asset*, LinearTransform*, void* /*level*/, char /*flags*/, EffectParams*, const __m128* /*velVec*/, char /*trailingFlag*/);
+            if (g_lastEffectLevel)
+                return g_lastEffectLevel;
+
+            return nullptr; // better, or get it somehow from some "good" effect ent
+        }
+
+#pragma optimize("", off)
+        [[nodiscard]] uint32_t playEffect(fb::Asset* asset, fb::LinearTransform* tr, fb::EffectParams* /*params*/, bool isFirstPerson)
+        {
+            using fn_t = uint32_t(__fastcall*)(EffectManager*, Asset*, LinearTransform*,
+                void* /*level*/, char /*flags*/, void* /*extraOword*/,
+                const __m128* /*velVec*/, char /*trailingFlag*/);
 
             if (!asset)
                 return 0;
@@ -1307,11 +1323,13 @@ namespace fb
             if (!level)
                 return 0;
 
-            static const __m128 zero = _mm_setzero_ps();
-            auto fn = reinterpret_cast<fn_t>(0x1409104D0);
+            __m128i extra = _mm_setzero_si128();  // a6: position override
+            __m128 vel = _mm_setzero_ps(); // a7: velocity vector
 
-            return fn(this, asset, tr, level, static_cast<char>(isFirstPerson ? 0x8 : 0), params, &zero, static_cast<char>(0));
+            auto fn = reinterpret_cast<fn_t>(0x1409104D0);
+            return fn(this, asset, tr, level, static_cast<char>(isFirstPerson ? 0x8 : 0), &extra, &vel, static_cast<char>(0));
         }
+#pragma optimize("", on)
     };
 
     class EmitterTemplate

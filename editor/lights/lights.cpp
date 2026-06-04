@@ -1,6 +1,12 @@
 #include "lights.h"
 #include "../editor_context.h"
 #include "../../utils/log.h"
+#include "../render/render.h"
+
+#include <imgui.h>
+#include <cfloat>
+#include <cmath>
+#include <cstdio>
 
 namespace editor::lights
 {
@@ -94,7 +100,7 @@ namespace editor::lights
         }
     }
 
-    static void ProcessObjectBlueprint(fb::ObjectBlueprint* objBp)
+    static void ProcessObjectBlueprint(fb::ObjectBlueprint* objBp, const char* containerTypeName = "ObjectBlueprint")
     {
         if (!objBp || !objBp->m_Object)
             return;
@@ -110,7 +116,7 @@ namespace editor::lights
             classInfo->m_ClassId == fb::PointLightEntityData::ClassId() ||
             classInfo->m_ClassId == fb::LocalLightEntityData::ClassId())
         {
-            RegisterLightData(static_cast<fb::LocalLightEntityData*>(objBp->m_Object), assetName, "ObjectBlueprint", objBp);
+            RegisterLightData(static_cast<fb::LocalLightEntityData*>(objBp->m_Object), assetName, containerTypeName, objBp);
         }
     }
 
@@ -149,6 +155,8 @@ namespace editor::lights
                     ProcessLightContainer(reinterpret_cast<fb::SubWorldData*>(obj), "SubWorldData");
                 else if (classId == fb::LogicPrefabBlueprint::ClassId())
                     ProcessLightContainer(reinterpret_cast<fb::LogicPrefabBlueprint*>(obj), "LogicPrefabBlueprint");
+                else if (classId == fb::VehicleBlueprint::ClassId())
+                    ProcessObjectBlueprint(reinterpret_cast<fb::VehicleBlueprint*>(obj), "VehicleBlueprint");
             }
         }
 
@@ -414,6 +422,107 @@ namespace editor::lights
         {
             if (entry.activeEntities.erase(entity))
                 break;
+        }
+    }
+
+    fb::LocalLightEntity* closestLightToCrosshair(float* outScreenDist)
+    {
+        const ImVec2 disp = ImGui::GetIO().DisplaySize;
+        const ImVec2 center{ disp.x * 0.5f, disp.y * 0.5f };
+
+        fb::LocalLightEntity* best = nullptr;
+        float bestSqr = FLT_MAX;
+
+        for (auto& [dataPtr, entry] : entries)
+        {
+            for (fb::LocalLightEntity* e : entry.activeEntities)
+            {
+                if (!e)
+                    continue;
+
+                ImVec2 sp;
+                if (!render::worldToScreen(e->position(), sp))
+                    continue;
+
+                const float dx = sp.x - center.x;
+                const float dy = sp.y - center.y;
+                const float sqr = dx * dx + dy * dy;
+                if (sqr < bestSqr)
+                {
+                    bestSqr = sqr;
+                    best = e;
+                }
+            }
+        }
+
+        if (best && outScreenDist)
+            *outScreenDist = std::sqrt(bestSqr);
+        return best;
+    }
+
+    void renderOverlay()
+    {
+        if (!showOverlay)
+            return;
+
+        fb::LocalLightEntity* closest = closestLightToCrosshair();
+
+        for (auto& [dataPtr, entry] : entries)
+        {
+            for (fb::LocalLightEntity* e : entry.activeEntities)
+            {
+                if (!e)
+                    continue;
+
+                const bool isClosest = (e == closest);
+                if (showOnlyClosest && !isClosest)
+                    continue;
+
+                const fb::Vec3& pos = e->position();
+                ImVec2 sp{ };
+                float depth = 0.0f;
+                if (!render::worldToScreen(pos, sp, depth))
+                    continue;
+
+                if (depth > overlayMaxDistance)
+                    continue;
+
+                const ImColor col = isClosest ? render::Colors::Yellow : render::Colors::LightBlue;
+
+                float markerR = 0.0f;
+                if (isClosest)
+                {
+                    render::drawSphere(pos, 0.35f, 16, 8, col);
+                    markerR = 20.0f;
+                }
+                else
+                {
+                    markerR = 700.0f / depth;
+                    if (markerR < 3.0f)  markerR = 3.0f;
+                    if (markerR > 26.0f) markerR = 26.0f;
+                    render::circle(sp, markerR, col);
+                }
+
+                const bool unresolved =
+                    entry.assetName.empty() || entry.assetName == "(dynamic)" ||
+                    entry.assetName == "(unknown)" || entry.assetName == "(unnamed)";
+                char nameBuf[64] = { };
+                if (unresolved)
+                    std::snprintf(nameBuf, sizeof(nameBuf), "light_%p", static_cast<void*>(dataPtr));
+
+                char buf[256];
+                std::snprintf(buf, sizeof(buf), "%s [%s]  %.0fm",
+                    unresolved ? nameBuf : entry.assetName.c_str(),
+                    entry.lightType.c_str(), depth);
+
+                ImDrawList* dl = ImGui::GetBackgroundDrawList();
+                ImFont* font = ImGui::GetFont();
+                const float fontSize = ImGui::GetFontSize() * 1.25f;
+                const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
+                const ImVec2 tpos{ sp.x - ts.x * 0.5f, sp.y + markerR + 3.0f };
+                dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
+                dl->AddText(font, fontSize, tpos, col, buf);
+            }
         }
     }
 }

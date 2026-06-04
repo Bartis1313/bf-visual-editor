@@ -11,6 +11,7 @@
 
 #include <fstream>
 #include <filesystem>
+#include <cstdio>
 
 namespace fs = std::filesystem;
 
@@ -52,8 +53,17 @@ namespace editor::config
         {
             for (const auto& [dataPtr, entry] : lights::getEntries())
             {
-                if (entry.hasOverride)
-                    lightsJson[entry.assetName] = lights::serialize(entry);
+                if (!entry.hasOverride)
+                    continue;
+                
+                // UGLYYYYYYYYYYYYYY
+                const bool unresolved =
+                    entry.assetName.empty() || entry.assetName == "(dynamic)" ||
+                    entry.assetName == "(unknown)" || entry.assetName == "(unnamed)";
+
+                char ptrKey[32];
+                sprintf_s(ptrKey, "ptr:%p", static_cast<void*>(dataPtr));
+                lightsJson[unresolved ? ptrKey : entry.assetName] = lights::serialize(entry);
             }
         }
         root["lights"] = lightsJson;
@@ -157,9 +167,22 @@ namespace editor::config
         {
             for (const auto& [name, lightJson] : root["lights"].items())
             {
+                const bool byPtr = name.rfind("ptr:", 0) == 0;
                 for (auto& [dataPtr, entry] : lights::getEntries())
                 {
-                    if (entry.assetName == name)
+                    bool match;
+                    if (byPtr)
+                    {
+                        char ptrKey[32];
+                        sprintf_s(ptrKey, "ptr:%p", static_cast<void*>(dataPtr));
+                        match = (name == ptrKey);
+                    }
+                    else
+                    {
+                        match = (entry.assetName == name);
+                    }
+
+                    if (match)
                     {
                         lights::deserialize(lightJson, entry);
                         if (entry.hasOverride)

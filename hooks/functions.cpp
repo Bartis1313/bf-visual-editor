@@ -45,10 +45,10 @@ void __fastcall hkfb__MessageManager__dispatchMessage(int pMessageManager, void*
     ofb__MessageManager__dispatchMessage(pMessageManager, pMessage);
 }
 
-fb::EntityBusPeer* __cdecl hkfb__ClientEntityFactory__internalCreateEntity(fb::ClientEntityFactoryParams* params, fb::DataContext* dc)
-{
-    return ofb__ClientEntityFactory__internalCreateEntity(params, dc);
-}
+//fb::EntityBusPeer* __cdecl hkfb__ClientEntityFactory__internalCreateEntity(fb::ClientEntityFactoryParams* params, fb::DataContext* dc)
+//{
+//    return ofb__ClientEntityFactory__internalCreateEntity(params, dc);
+//}
 
 int __fastcall hkfb__LocalLightEntity__LocalLightEntity(fb::LocalLightEntity* _this, void*, void* info, fb::LocalLightEntityData* data, int lightType)
 {
@@ -106,31 +106,31 @@ fb::EmitterTemplate* __fastcall hkfb__EmitterManager__createEmitterTemplate(void
     return emitter;
 }
 
-int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5)
-{
-    //_this->state = 0;
-    return osub_17B0180(_this, a2, a3, a4, a5);
-}
-
-__m128* __fastcall hksub_17A4E90(
-    fb::EnlightenRenderer* a1,
-    void*,
-    fb::Vec3* sky,
-    fb::Vec3* ground,
-    fb::Vec3* sunlight,
-    fb::Vec3 sunLightDir,
-    float sunSize,
-    fb::Vec3* backLightColor,
-    float backLightRotationX,
-    float backLightRotationY,
-    float backLightSize,
-    unsigned int skyBoxScale,
-    __m128* outSkyBox)
-{
-    printf("calling compute skybox\n");
-
-    return osub_17A4E90(a1, sky, ground, sunlight, sunLightDir, sunSize, backLightColor, backLightRotationX, backLightRotationY, backLightSize, skyBoxScale, outSkyBox);
-}
+//int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5)
+//{
+//    //_this->state = 0;
+//    return osub_17B0180(_this, a2, a3, a4, a5);
+//}
+//
+//__m128* __fastcall hksub_17A4E90(
+//    fb::EnlightenRenderer* a1,
+//    void*,
+//    fb::Vec3* sky,
+//    fb::Vec3* ground,
+//    fb::Vec3* sunlight,
+//    fb::Vec3 sunLightDir,
+//    float sunSize,
+//    fb::Vec3* backLightColor,
+//    float backLightRotationX,
+//    float backLightRotationY,
+//    float backLightSize,
+//    unsigned int skyBoxScale,
+//    __m128* outSkyBox)
+//{
+//    printf("calling compute skybox\n");
+//
+//    return osub_17A4E90(a1, sky, ground, sunlight, sunLightDir, sunSize, backLightColor, backLightRotationX, backLightRotationY, backLightSize, skyBoxScale, outSkyBox);
+//}
 #endif // BFVE_GAME_BF3
 
 void InitImGui(IDXGISwapChain* pSwapChain)
@@ -345,6 +345,16 @@ void* hkBf4_EmitterEntity_ctor(
 
     editor::emitters::onEmitterEntityCreatedBF4(data, _this);
     return ret;
+}
+
+uint_fast32_t hkplayeff(fb::EffectManager* effectManager, fb::Asset* asset, fb::LinearTransform* tr, void* level, char flags, fb::EffectParams* params, const __m128* velVec, char trailingFlag)
+{
+    if (level)
+        fb::g_lastEffectLevel = level;
+
+    uint_fast32_t handle = ofb4playeff(effectManager, asset, tr, level, flags, params, velVec, trailingFlag);
+
+    return handle;
 }
 
 #endif // BFVE_GAME_BF4
