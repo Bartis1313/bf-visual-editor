@@ -549,6 +549,7 @@ namespace editor
     {
         effects::renderOverlay();
         lights::renderOverlay();
+        emitters::renderOverlay();
         render::ImNotify::handle();
 
         renderMenu();

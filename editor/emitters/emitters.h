@@ -33,6 +33,10 @@ namespace editor::emitters
 
     void renderTab();
 
+    void renderOverlay();
+    inline bool showOverlay = false;
+    inline float overlayMaxDistance = 100.0f;
+
     void serializeSnapshot(json& j, const EmitterSnapshot& s);
     void deserializeSnapshot(const json& j, EmitterSnapshot& s);
     void serializeColorSnapshot(json& j, const EmitterColorSnapshot& s);

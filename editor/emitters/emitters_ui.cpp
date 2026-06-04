@@ -133,7 +133,7 @@ namespace editor::emitters
         }
 
         const auto& oc = edit.originalColor;
-        ui::Vec3Edit("Base Color", &colorProc->m_Color, &oc.color, true);
+        edit.modified |= ui::Vec3Edit("Base Color", &colorProc->m_Color, &oc.color, true);
 
         if (!colorProc->m_Pre)
             return;
@@ -268,6 +268,17 @@ namespace editor::emitters
 
         ImGui::SameLine();
         ImGui::Text("(%zu)", getMap().size());
+
+#if defined(BFVE_GAME_BF4)
+        ImGui::SameLine();
+        ImGui::Checkbox("Debug Overlay", &showOverlay);
+        if (showOverlay)
+        {
+            ImGui::SameLine();
+            ImGui::SetNextItemWidth(160);
+            ImGui::SliderFloat("Max Distance (m)", &overlayMaxDistance, 5.0f, 500.0f, "%.0f");
+        }
+#endif
 
         ImGui::InputText("Search", searchBuf, sizeof(searchBuf));
         ImGui::Separator();
