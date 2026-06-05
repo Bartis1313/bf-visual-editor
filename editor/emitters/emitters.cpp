@@ -81,8 +81,13 @@ namespace editor::emitters
     }
 
     static std::unordered_map<std::string, int> nameUseCounts;
+    static std::unordered_map<std::string, std::vector<fb::EmitterAsset*>> nameToDocs;
 
-    static void RegisterEmitter(fb::EmitterTemplateData* emitterData, const std::string& displayName)
+#if defined(BFVE_GAME_BF4)
+    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath);
+#endif
+
+    static void RegisterEmitter(fb::EmitterTemplateData* emitterData, const std::string& displayName, fb::EmitterAsset* sourceDoc = nullptr)
     {
         if (!emitterData) return;
         if (emitterMap.count(emitterData)) return;
@@ -92,6 +97,9 @@ namespace editor::emitters
         std::string finalName = (useCount == 0) ? baseName
             : baseName + " (" + std::to_string(useCount) + ")";
         ++useCount;
+
+        if (sourceDoc)
+            nameToDocs[baseName].push_back(sourceDoc);
 
         EmitterEditData editData;
         editData.data = emitterData;
@@ -112,10 +120,33 @@ namespace editor::emitters
                 editData.colorProcessor = static_cast<fb::UpdateColorData*>(proc);
                 editData.originalColor.captureFrom(editData.colorProcessor);
             }
+            else if (procClassInfo->m_ClassId == fb::SpawnColorRandomData::ClassId())
+            {
+                editData.spawnColorProcessor = static_cast<fb::SpawnColorRandomData*>(proc);
+                editData.originalSpawnColor.captureFrom(editData.spawnColorProcessor);
+            }
         }
 
         emitterMap[emitterData] = editData;
         InsertIntoTree(emitterData, editData.name);
+
+#if defined(BFVE_GAME_BF4)
+        for (fb::ProcessorData* proc = emitterData->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+        {
+            fb::TypeInfo* type = proc->GetType();
+            if (!type || type->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                continue;
+
+            if (static_cast<fb::ClassInfo*>(type)->m_ClassId != fb::EmitterData::ClassId())
+                continue;
+
+            for (fb::EmitterDocument* child : static_cast<fb::EmitterData*>(proc)->m_EmitterAssets)
+            {
+                if (child)
+                    BF4_processEmitterAsset(child, finalName);
+            }
+        }
+#endif
     }
 
 #if defined(BFVE_GAME_BF4)
@@ -181,7 +212,7 @@ namespace editor::emitters
                     {
                         name += " ["; name += tag; name += "]";
                     }
-                    RegisterEmitter(td, name);
+                    RegisterEmitter(td, name, asset);
                 };
             regWithTag(doc->m_TemplateDataUltra, "Ultra");
             regWithTag(doc->m_TemplateDataHigh, "High");
@@ -191,7 +222,7 @@ namespace editor::emitters
         else if (classId == fb::FlatEmitterDocument::ClassId())
         {
             auto* doc = reinterpret_cast<fb::FlatEmitterDocument*>(asset);
-            RegisterEmitter(doc->m_TemplateData, emitterPath);
+            RegisterEmitter(doc->m_TemplateData, emitterPath, asset);
         }
     }
 #endif // BFVE_GAME_BF4
@@ -201,6 +232,7 @@ namespace editor::emitters
         emitterMap.clear();
         emitterTree.Clear();
         nameUseCounts.clear();
+        nameToDocs.clear();
 
         fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
         if (!rm)
@@ -313,6 +345,29 @@ namespace editor::emitters
         const size_t topN = std::min<size_t>(30, sorted.size());
         for (size_t i = 0; i < topN; ++i)
             logger::info("  [scan-class] {}: {}", sorted[i].first, sorted[i].second);
+
+        size_t repeatedNames = 0;
+        for (const auto& [name, docs] : nameToDocs)
+        {
+            if (docs.size() < 2)
+                continue;
+
+            ++repeatedNames;
+            bool allSameName = true;
+            const std::string firstDocName = docs.front() ? docs.front()->tryGetDebugName() : std::string{ };
+            for (fb::EmitterAsset* d : docs)
+            {
+                if (!d || d->tryGetDebugName() != firstDocName)
+                    allSameName = false;
+            }
+
+            logger::info("  [repeat] '{}' x{} - docName='{}' sameAssetName={}",
+                name, docs.size(), firstDocName, allSameName ? "yes" : "no");
+            for (fb::EmitterAsset* d : docs)
+                logger::info("      doc={} name='{}'",
+                    static_cast<void*>(d), d ? d->tryGetDebugName() : std::string{});
+        }
+        logger::info("Repeated names: {}", repeatedNames);
 #else
         logger::info("Found {} emitters", emitterMap.size());
 #endif
@@ -432,7 +487,7 @@ namespace editor::emitters
         it->second.lastTemplate = emitter;
     }
 
-    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor)
+    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor, EmitterSpawnColorSnapshot& outSpawnColor)
     {
         outTemplate.captureFrom(edit.data);
 
@@ -440,6 +495,12 @@ namespace editor::emitters
         if (edit.colorProcessor)
         {
             outColor.captureFrom(edit.colorProcessor);
+        }
+
+        outSpawnColor.exists = false;
+        if (edit.spawnColorProcessor)
+        {
+            outSpawnColor.captureFrom(edit.spawnColorProcessor);
         }
     }
 
@@ -462,6 +523,9 @@ namespace editor::emitters
 
                     if (it->hasColorData && edit.colorProcessor)
                         it->colorData.restoreTo(edit.colorProcessor);
+
+                    if (it->hasSpawnColorData && edit.spawnColorProcessor)
+                        it->spawnColorData.restoreTo(edit.spawnColorProcessor);
 
                     edit.modified = true;
                     logger::info("ApplyPendingEmitterEdits: Applied '{}'", it->key.c_str());
@@ -627,6 +691,28 @@ void EmitterColorSnapshot::restoreTo(fb::UpdateColorData* colorProc) const
             }
         }
     }
+}
+
+void EmitterSpawnColorSnapshot::captureFrom(fb::SpawnColorRandomData* proc)
+{
+    if (!proc)
+    {
+        exists = false;
+        return;
+    }
+
+    exists = true;
+    color0 = proc->m_Color0;
+    color1 = proc->m_Color1;
+}
+
+void EmitterSpawnColorSnapshot::restoreTo(fb::SpawnColorRandomData* proc) const
+{
+    if (!exists || !proc)
+        return;
+
+    proc->m_Color0 = color0;
+    proc->m_Color1 = color1;
 }
 
 #if defined(BFVE_GAME_BF4)

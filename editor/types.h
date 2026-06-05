@@ -372,6 +372,16 @@ struct EmitterColorSnapshot
     void restoreTo(fb::UpdateColorData* colorProc) const;
 };
 
+struct EmitterSpawnColorSnapshot
+{
+    bool exists = false;
+    fb::Vec3 color0;
+    fb::Vec3 color1;
+
+    void captureFrom(fb::SpawnColorRandomData* proc);
+    void restoreTo(fb::SpawnColorRandomData* proc) const;
+};
+
 struct EmitterEditData
 {
     bool modified = false;
@@ -381,8 +391,10 @@ struct EmitterEditData
     std::string key;
     std::string category;
     fb::UpdateColorData* colorProcessor = nullptr;
+    fb::SpawnColorRandomData* spawnColorProcessor = nullptr;
     EmitterSnapshot original;
     EmitterColorSnapshot originalColor;
+    EmitterSpawnColorSnapshot originalSpawnColor;
     bool captured = false;
 };
 
@@ -392,6 +404,8 @@ struct PendingEmitterEdit
     EmitterSnapshot templateData;
     EmitterColorSnapshot colorData;
     bool hasColorData = false;
+    EmitterSpawnColorSnapshot spawnColorData;
+    bool hasSpawnColorData = false;
 };
 
 struct EmitterTreeNode

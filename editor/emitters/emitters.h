@@ -29,7 +29,7 @@ namespace editor::emitters
 
     std::vector<PendingEmitterEdit>& getPendingEdits();
     void applyPendingEdits();
-    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor);
+    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor, EmitterSpawnColorSnapshot& outSpawnColor);
 
     void renderTab();
 
@@ -41,4 +41,6 @@ namespace editor::emitters
     void deserializeSnapshot(const json& j, EmitterSnapshot& s);
     void serializeColorSnapshot(json& j, const EmitterColorSnapshot& s);
     void deserializeColorSnapshot(const json& j, EmitterColorSnapshot& s);
+    void serializeSpawnColorSnapshot(json& j, const EmitterSpawnColorSnapshot& s);
+    void deserializeSpawnColorSnapshot(const json& j, EmitterSpawnColorSnapshot& s);
 }

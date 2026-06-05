@@ -154,6 +154,20 @@ namespace editor::emitters
         edit.modified |= ui::CurveVec4Edit("Coefficients", &poly->m_Coefficients, &oc.coefficients);
     }
 
+    static void renderSpawnColor(EmitterEditData& edit)
+    {
+        fb::SpawnColorRandomData* proc = edit.spawnColorProcessor;
+        if (!proc)
+        {
+            ImGui::TextDisabled("No spawn color processor");
+            return;
+        }
+
+        const auto& osc = edit.originalSpawnColor;
+        edit.modified |= ui::HdrColor3Edit("Spawn Color 0", &proc->m_Color0, &osc.color0);
+        edit.modified |= ui::HdrColor3Edit("Spawn Color 1", &proc->m_Color1, &osc.color1);
+    }
+
     static void renderEmitterProperties()
     {
         fb::EmitterTemplateData* selected = getSelected();
@@ -253,10 +267,17 @@ namespace editor::emitters
             renderColorProcessor(edit);
         }
 
+        if (ImGui::CollapsingHeader("Spawn Color"))
+        {
+            renderSpawnColor(edit);
+        }
+
         ImGui::Separator();
         if (ImGui::Button("Reset"))
         {
             edit.original.restoreTo(d);
+            if (edit.spawnColorProcessor)
+                edit.originalSpawnColor.restoreTo(edit.spawnColorProcessor);
             edit.modified = false;
         }
     }

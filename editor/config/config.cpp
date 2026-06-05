@@ -77,7 +77,8 @@ namespace editor::config
             json emitterEntry;
             EmitterSnapshot current;
             EmitterColorSnapshot colorCurrent;
-            emitters::captureCurrentState(edit, current, colorCurrent);
+            EmitterSpawnColorSnapshot spawnColorCurrent;
+            emitters::captureCurrentState(edit, current, colorCurrent, spawnColorCurrent);
 
             emitters::serializeSnapshot(emitterEntry["template"], current);
             if (colorCurrent.exists)
@@ -88,6 +89,16 @@ namespace editor::config
             else
             {
                 emitterEntry["hasColor"] = false;
+            }
+
+            if (spawnColorCurrent.exists)
+            {
+                emitterEntry["hasSpawnColor"] = true;
+                emitters::serializeSpawnColorSnapshot(emitterEntry["spawnColor"], spawnColorCurrent);
+            }
+            else
+            {
+                emitterEntry["hasSpawnColor"] = false;
             }
 
             emittersJson[edit.key] = emitterEntry;
@@ -222,6 +233,13 @@ namespace editor::config
                             colorSnap.restoreTo(edit.colorProcessor);
                         }
 
+                        if (emitterJson.value("hasSpawnColor", false) && edit.spawnColorProcessor)
+                        {
+                            EmitterSpawnColorSnapshot spawnSnap;
+                            emitters::deserializeSpawnColorSnapshot(emitterJson["spawnColor"], spawnSnap);
+                            spawnSnap.restoreTo(edit.spawnColorProcessor);
+                        }
+
                         edit.modified = true;
                         emittersApplied++;
                         found = true;
@@ -239,6 +257,12 @@ namespace editor::config
                     {
                         pendingEdit.hasColorData = true;
                         emitters::deserializeColorSnapshot(emitterJson["color"], pendingEdit.colorData);
+                    }
+
+                    if (emitterJson.value("hasSpawnColor", false))
+                    {
+                        pendingEdit.hasSpawnColorData = true;
+                        emitters::deserializeSpawnColorSnapshot(emitterJson["spawnColor"], pendingEdit.spawnColorData);
                     }
 
                     pendingEdits.push_back(pendingEdit);

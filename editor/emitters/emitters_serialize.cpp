@@ -124,4 +124,24 @@ namespace editor::emitters
             JSON_GET_VEC4(j, "coefficients", s.coefficients);
         }
     }
+
+    void serializeSpawnColorSnapshot(json& j, const EmitterSpawnColorSnapshot& s)
+    {
+        JSON_SET(j, "exists", s.exists);
+        if (!s.exists)
+            return;
+
+        JSON_SET_VEC3(j, "color0", s.color0);
+        JSON_SET_VEC3(j, "color1", s.color1);
+    }
+
+    void deserializeSpawnColorSnapshot(const json& j, EmitterSpawnColorSnapshot& s)
+    {
+        JSON_GET_BOOL(j, "exists", s.exists);
+        if (!s.exists)
+            return;
+
+        JSON_GET_VEC3(j, "color0", s.color0);
+        JSON_GET_VEC3(j, "color1", s.color1);
+    }
 }
