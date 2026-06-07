@@ -38,7 +38,7 @@ namespace editor::emitters
         bool eI(const char* l, int* v) { return ui::IntEdit(l, v, origOf(v)); }
         bool eU(const char* l, uint32_t* v) { return ui::UIntEdit(l, v, origOf(v)); }
         bool eCol(const char* l, fb::Vec3* v) { return ui::HdrColor3Edit(l, v, origOf(v)); }
-		bool eCol4(const char* l, fb::Vec4* v) { return ui::Vec4Edit(l, v, origOf(v), true); }
+		bool eCol4(const char* l, fb::Vec4* v) { return ui::CurveVec4Edit(l, v, origOf(v)); }
 
         template <typename E>
         bool eEnum(const char* l, E* v)
@@ -191,7 +191,7 @@ namespace editor::emitters
                 ch |= eEnum("Operation", &d->m_Operation);
                 if (ImGui::TreeNode("First Operand"))
                 {
-                    ch |= eF4("Coefficients##op1", &d->m_FirstOperand.m_Coefficients);
+                    ch |= eCol4("Coefficients##op1", &d->m_FirstOperand.m_Coefficients);
                     ch |= eF("Scale##op1", &d->m_FirstOperand.m_ScaleValue);
                     ch |= eF("Min Clamp##op1", &d->m_FirstOperand.m_MinClamp);
                     ch |= eF("Max Clamp##op1", &d->m_FirstOperand.m_MaxClamp);
@@ -199,7 +199,7 @@ namespace editor::emitters
                 }
                 if (ImGui::TreeNode("Second Operand"))
                 {
-                    ch |= eF4("Coefficients##op2", &d->m_SecondOperand.m_Coefficients);
+                    ch |= eCol4("Coefficients##op2", &d->m_SecondOperand.m_Coefficients);
                     ch |= eF("Scale##op2", &d->m_SecondOperand.m_ScaleValue);
                     ch |= eF("Min Clamp##op2", &d->m_SecondOperand.m_MinClamp);
                     ch |= eF("Max Clamp##op2", &d->m_SecondOperand.m_MaxClamp);
