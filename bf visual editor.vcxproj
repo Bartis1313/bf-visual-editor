@@ -203,6 +203,7 @@
     <ClCompile Include="editor\effects\effects.cpp" />
     <ClCompile Include="editor\effects\effects_ui.cpp" />
     <ClCompile Include="editor\emitters\emitters.cpp" />
+    <ClCompile Include="editor\emitters\emitters_nodes.cpp" />
     <ClCompile Include="editor\emitters\emitters_serialize.cpp" />
     <ClCompile Include="editor\emitters\emitters_ui.cpp" />
     <ClCompile Include="editor\global_ve\global_ve.cpp" />

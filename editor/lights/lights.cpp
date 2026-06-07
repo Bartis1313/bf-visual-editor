@@ -7,6 +7,8 @@
 #include <cfloat>
 #include <cmath>
 #include <cstdio>
+#include <vector>
+#include <algorithm>
 
 namespace editor::lights
 {
@@ -16,6 +18,78 @@ namespace editor::lights
     static int typeFilter = 0;
 
     std::unordered_map<fb::LocalLightEntityData*, LightDataEntry>& getEntries() { return entries; }
+
+    bool isUnresolvedName(const std::string& name)
+    {
+        return name.empty() || name == "(dynamic)" || name == "(unknown)" || name == "(unnamed)";
+    }
+
+    bool entryWorldPos(const LightDataEntry& entry, fb::Vec3& out)
+    {
+        for (fb::LocalLightEntity* e : entry.activeEntities)
+        {
+            if (!e)
+                continue;
+            out = e->position();
+            return true;
+        }
+        return false;
+    }
+
+    std::unordered_map<fb::LocalLightEntityData*, std::string> buildDisplayNames()
+    {
+        std::unordered_map<fb::LocalLightEntityData*, std::string> result;
+        result.reserve(entries.size());
+
+        std::unordered_map<std::string, std::vector<fb::LocalLightEntityData*>> byName;
+        for (auto& [ptr, entry] : entries)
+        {
+            if (isUnresolvedName(entry.assetName))
+            {
+                char buf[40];
+                std::snprintf(buf, sizeof(buf), "light_%p", static_cast<void*>(ptr));
+                result[ptr] = buf;
+            }
+            else
+            {
+                byName[entry.assetName].push_back(ptr);
+            }
+        }
+
+        for (auto& [name, ptrs] : byName)
+        {
+            if (ptrs.size() == 1)
+            {
+                result[ptrs[0]] = name;
+                continue;
+            }
+
+            std::sort(ptrs.begin(), ptrs.end(),
+                [](fb::LocalLightEntityData* a, fb::LocalLightEntityData* b)
+                {
+                    fb::Vec3 pa{}, pb{};
+                    const bool ha = entryWorldPos(entries[a], pa);
+                    const bool hb = entryWorldPos(entries[b], pb);
+                    if (ha != hb) return ha;
+                    if (ha && hb)
+                    {
+                        if (pa.m_x != pb.m_x) return pa.m_x < pb.m_x;
+                        if (pa.m_y != pb.m_y) return pa.m_y < pb.m_y;
+                        if (pa.m_z != pb.m_z) return pa.m_z < pb.m_z;
+                    }
+                    return a < b;
+                });
+
+            for (size_t i = 0; i < ptrs.size(); ++i)
+            {
+                char buf[256];
+                std::snprintf(buf, sizeof(buf), "%s (%zu)", name.c_str(), i + 1);
+                result[ptrs[i]] = buf;
+            }
+        }
+
+        return result;
+    }
 
     void init()
     {
@@ -467,8 +541,23 @@ namespace editor::lights
 
         fb::LocalLightEntity* closest = closestLightToCrosshair();
 
+        const auto displayNames = buildDisplayNames();
+
+        const ImVec2 disp = ImGui::GetIO().DisplaySize;
+        const ImVec2 center{ disp.x * 0.5f, disp.y * 0.5f };
+        ImDrawList* dl = ImGui::GetBackgroundDrawList();
+        ImFont* font = ImGui::GetFont();
+        const float fontSize = ImGui::GetFontSize() * 1.25f;
+
         for (auto& [dataPtr, entry] : entries)
         {
+            bool haveLabel = false;
+            float bestCenterSqr = FLT_MAX;
+            ImVec2 labelSp{};
+            float labelMarkerR = 0.0f;
+            float labelDepth = 0.0f;
+            ImColor labelCol = render::Colors::LightBlue;
+
             for (fb::LocalLightEntity* e : entry.activeEntities)
             {
                 if (!e)
@@ -503,26 +592,39 @@ namespace editor::lights
                     render::circle(sp, markerR, col);
                 }
 
-                const bool unresolved =
-                    entry.assetName.empty() || entry.assetName == "(dynamic)" ||
-                    entry.assetName == "(unknown)" || entry.assetName == "(unnamed)";
-                char nameBuf[64] = { };
-                if (unresolved)
-                    std::snprintf(nameBuf, sizeof(nameBuf), "light_%p", static_cast<void*>(dataPtr));
-
-                char buf[256];
-                std::snprintf(buf, sizeof(buf), "%s [%s]  %.0fm",
-                    unresolved ? nameBuf : entry.assetName.c_str(),
-                    entry.lightType.c_str(), depth);
-
-                ImDrawList* dl = ImGui::GetBackgroundDrawList();
-                ImFont* font = ImGui::GetFont();
-                const float fontSize = ImGui::GetFontSize() * 1.25f;
-                const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
-                const ImVec2 tpos{ sp.x - ts.x * 0.5f, sp.y + markerR + 3.0f };
-                dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
-                dl->AddText(font, fontSize, tpos, col, buf);
+                const float dx = sp.x - center.x, dy = sp.y - center.y;
+                const float csqr = isClosest ? -1.0f : dx * dx + dy * dy;
+                if (csqr < bestCenterSqr)
+                {
+                    bestCenterSqr = csqr;
+                    labelSp = sp;
+                    labelMarkerR = markerR;
+                    labelDepth = depth;
+                    labelCol = col;
+                    haveLabel = true;
+                }
             }
+
+            if (!haveLabel)
+                continue;
+
+            const auto nameIt = displayNames.find(dataPtr);
+            const char* dispName = nameIt != displayNames.end()
+                ? nameIt->second.c_str() : entry.assetName.c_str();
+
+            const size_t count = entry.activeEntities.size();
+            char buf[256];
+            if (count > 1)
+                std::snprintf(buf, sizeof(buf), "%s [%s] x%zu  %.0fm",
+                    dispName, entry.lightType.c_str(), count, labelDepth);
+            else
+                std::snprintf(buf, sizeof(buf), "%s [%s]  %.0fm",
+                    dispName, entry.lightType.c_str(), labelDepth);
+
+            const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
+            const ImVec2 tpos{ labelSp.x - ts.x * 0.5f, labelSp.y + labelMarkerR + 3.0f };
+            dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
+            dl->AddText(font, fontSize, tpos, labelCol, buf);
         }
     }
 }

@@ -1,14 +1,77 @@
 #include "lights.h"
 #include "../serialize/serialize.h"
 
+#include <cstdio>
+#include <cmath>
+
 namespace editor::lights
 {
+    std::string makeLightKey(const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr)
+    {
+        const bool unresolved = isUnresolvedName(entry.assetName);
+
+        fb::Vec3 pos{};
+        if (entry.saveWithPosition && entryWorldPos(entry, pos))
+        {
+            const char* base = unresolved ? "light" : entry.assetName.c_str();
+            char buf[192];
+            std::snprintf(buf, sizeof(buf), "%s@%.2f,%.2f,%.2f", base, pos.m_x, pos.m_y, pos.m_z);
+            return buf;
+        }
+
+        if (unresolved)
+        {
+            char ptrKey[32];
+            std::snprintf(ptrKey, sizeof(ptrKey), "ptr:%p", static_cast<void*>(dataPtr));
+            return ptrKey;
+        }
+
+        return entry.assetName;
+    }
+
+    KeyMatch matchLightKey(const std::string& key, const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr)
+    {
+        if (key.rfind("ptr:", 0) == 0)
+        {
+            char ptrKey[32];
+            std::snprintf(ptrKey, sizeof(ptrKey), "ptr:%p", static_cast<void*>(dataPtr));
+            return key == ptrKey ? KeyMatch::Exact : KeyMatch::None;
+        }
+
+        const auto at = key.find('@');
+        if (at == std::string::npos)
+        {
+            return entry.assetName == key ? KeyMatch::Exact : KeyMatch::None;
+        }
+
+        const std::string namePart = key.substr(0, at);
+        float x = 0.f, y = 0.f, z = 0.f;
+        if (sscanf_s(key.c_str() + at + 1, "%f,%f,%f", &x, &y, &z) != 3)
+            return KeyMatch::None;
+
+        const bool nameMatches =
+            entry.assetName == namePart ||
+            (namePart == "light" && isUnresolvedName(entry.assetName));
+
+        fb::Vec3 pos{};
+        if (entryWorldPos(entry, pos) &&
+            std::fabs(pos.m_x - x) < 0.01f &&
+            std::fabs(pos.m_y - y) < 0.01f &&
+            std::fabs(pos.m_z - z) < 0.01f)
+        {
+            return KeyMatch::Exact;
+        }
+
+        return nameMatches ? KeyMatch::Name : KeyMatch::None;
+    }
+
     json serialize(const LightDataEntry& entry)
     {
         json j;
 
         j["lightType"] = entry.lightType;
         j["hasOverride"] = entry.hasOverride;
+        j["saveWithPosition"] = entry.saveWithPosition;
 
         if (!entry.hasOverride)
             return j;
@@ -52,6 +115,7 @@ namespace editor::lights
     void deserialize(const json& j, LightDataEntry& entry)
     {
         JSON_GET_BOOL(j, "hasOverride", entry.hasOverride);
+        JSON_GET_BOOL(j, "saveWithPosition", entry.saveWithPosition);
 
         if (!entry.hasOverride)
             return;

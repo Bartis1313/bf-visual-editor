@@ -3,6 +3,8 @@
 #include <string>
 #include <unordered_set>
 #include <map>
+#include <vector>
+#include <cstdint>
 #include <cmath>
 #include <type_traits>
 #include "../SDK/fb.h"
@@ -101,6 +103,8 @@ struct LightDataEntry
     float origTranslucencyDistortion = 0.f;
 
     bool hasOverride = false;
+
+    bool saveWithPosition = false;
 
     fb::Vec3 color{};
     fb::Vec3 particleColorScale{};
@@ -382,6 +386,24 @@ struct EmitterSpawnColorSnapshot
     void restoreTo(fb::SpawnColorRandomData* proc) const;
 };
 
+struct EmitterProcNode
+{
+    uint32_t classId = 0;
+    std::vector<uint8_t> procBytes; // processor value region [0x20, totalSize)
+    bool hasPre = false;
+    uint32_t preClassId = 0;
+    std::vector<uint8_t> preBytes;  // evaluator value region [0x18, totalSize)
+};
+
+struct EmitterProcSnapshot
+{
+    bool exists = false;
+    std::vector<EmitterProcNode> nodes;
+
+    void captureFrom(fb::EmitterTemplateData* d);
+    void restoreTo(fb::EmitterTemplateData* d) const;
+};
+
 struct EmitterEditData
 {
     bool modified = false;
@@ -392,6 +414,7 @@ struct EmitterEditData
     std::string category;
     fb::UpdateColorData* colorProcessor = nullptr;
     fb::SpawnColorRandomData* spawnColorProcessor = nullptr;
+    std::string typeSummary;
     EmitterSnapshot original;
     EmitterColorSnapshot originalColor;
     EmitterSpawnColorSnapshot originalSpawnColor;
@@ -406,6 +429,8 @@ struct PendingEmitterEdit
     bool hasColorData = false;
     EmitterSpawnColorSnapshot spawnColorData;
     bool hasSpawnColorData = false;
+    EmitterProcSnapshot procData;
+    bool hasProcData = false;
 };
 
 struct EmitterTreeNode
@@ -413,6 +438,7 @@ struct EmitterTreeNode
     std::string name;
     std::map<std::string, EmitterTreeNode> children;
     std::vector<fb::EmitterTemplateData*> emitters;
+    bool searchVisible = false;
 
     void Clear()
     {

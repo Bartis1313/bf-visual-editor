@@ -144,4 +144,73 @@ namespace editor::emitters
         JSON_GET_VEC3(j, "color0", s.color0);
         JSON_GET_VEC3(j, "color1", s.color1);
     }
+
+    static std::string toHex(const std::vector<uint8_t>& b)
+    {
+        static const char* h = "0123456789abcdef";
+        std::string s;
+        s.reserve(b.size() * 2);
+        for (uint8_t c : b) { s.push_back(h[c >> 4]); s.push_back(h[c & 0xF]); }
+        return s;
+    }
+
+    static std::vector<uint8_t> fromHex(const std::string& s)
+    {
+        auto val = [](char c) -> int {
+            if (c >= '0' && c <= '9') return c - '0';
+            if (c >= 'a' && c <= 'f') return c - 'a' + 10;
+            if (c >= 'A' && c <= 'F') return c - 'A' + 10;
+            return 0;
+        };
+        std::vector<uint8_t> b;
+        b.reserve(s.size() / 2);
+        for (size_t i = 0; i + 1 < s.size(); i += 2)
+            b.push_back(static_cast<uint8_t>((val(s[i]) << 4) | val(s[i + 1])));
+        return b;
+    }
+
+    void serializeProcSnapshot(json& j, const EmitterProcSnapshot& s)
+    {
+        j["exists"] = s.exists;
+        if (!s.exists)
+            return;
+
+        json arr = json::array();
+        for (const auto& n : s.nodes)
+        {
+            json nj;
+            nj["cid"] = n.classId;
+            if (!n.procBytes.empty()) nj["proc"] = toHex(n.procBytes);
+            if (n.hasPre)
+            {
+                nj["preCid"] = n.preClassId;
+                if (!n.preBytes.empty()) nj["pre"] = toHex(n.preBytes);
+            }
+            arr.push_back(std::move(nj));
+        }
+        j["nodes"] = std::move(arr);
+    }
+
+    void deserializeProcSnapshot(const json& j, EmitterProcSnapshot& s)
+    {
+        s.exists = false;
+        s.nodes.clear();
+        if (!j.value("exists", false) || !j.contains("nodes") || !j["nodes"].is_array())
+            return;
+
+        for (const auto& nj : j["nodes"])
+        {
+            EmitterProcNode n;
+            n.classId = nj.value("cid", 0u);
+            if (nj.contains("proc")) n.procBytes = fromHex(nj["proc"].get<std::string>());
+            if (nj.contains("preCid"))
+            {
+                n.hasPre = true;
+                n.preClassId = nj.value("preCid", 0u);
+                if (nj.contains("pre")) n.preBytes = fromHex(nj["pre"].get<std::string>());
+            }
+            s.nodes.push_back(std::move(n));
+        }
+        s.exists = !s.nodes.empty();
+    }
 }

@@ -167,6 +167,9 @@
     <ClCompile Include="editor\emitters\emitters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="editor\emitters\emitters_nodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="editor\emitters\emitters_serialize.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

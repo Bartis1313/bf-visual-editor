@@ -29,9 +29,14 @@ namespace editor::emitters
 
     std::vector<PendingEmitterEdit>& getPendingEdits();
     void applyPendingEdits();
-    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor, EmitterSpawnColorSnapshot& outSpawnColor);
+    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor, EmitterSpawnColorSnapshot& outSpawnColor, EmitterProcSnapshot& outProc);
+
+    void serializeProcSnapshot(json& j, const EmitterProcSnapshot& s);
+    void deserializeProcSnapshot(const json& j, EmitterProcSnapshot& s);
 
     void renderTab();
+
+    void renderProcessorGraph(EmitterEditData& edit);
 
     void renderOverlay();
     inline bool showOverlay = false;

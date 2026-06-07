@@ -5,6 +5,7 @@
 #include <sstream>
 #include <imgui.h>
 #include <cstdio>
+#include <cstring>
 #include <cfloat>
 #include <unordered_set>
 #include <mutex>
@@ -52,16 +53,22 @@ namespace editor::emitters
         g_emitterNames.clear();
     }
 
+    static std::string normalizePath(const char* m)
+    {
+        std::string s = m ? m : "";
+        for (auto& c : s)
+            if (c == '\\') c = '/';
+        return s;
+    }
+
     static void InsertIntoTree(fb::EmitterTemplateData* data, const std::string& fullPath)
     {
         std::vector<std::string> parts;
-        std::stringstream ss(fullPath);
-        std::string part;
-
-        while (std::getline(ss, part, '/'))
         {
-            if (!part.empty())
-                parts.push_back(part);
+            std::stringstream ss(fullPath);
+            std::string part;
+            while (std::getline(ss, part, '/'))
+                if (!part.empty()) parts.push_back(part);
         }
 
         if (parts.empty())
@@ -71,21 +78,20 @@ namespace editor::emitters
         }
 
         EmitterTreeNode* node = &emitterTree;
-        for (size_t i = 0; i < parts.size() - 1; i++)
+        for (size_t i = 0; i + 1 < parts.size(); ++i)
         {
             node = &node->children[parts[i]];
             node->name = parts[i];
         }
-
         node->emitters.push_back(data);
     }
 
+#if defined(BFVE_GAME_BF4)
+    static std::unordered_set<fb::EmitterAsset*> g_placedDocs;
+#endif
+
     static std::unordered_map<std::string, int> nameUseCounts;
     static std::unordered_map<std::string, std::vector<fb::EmitterAsset*>> nameToDocs;
-
-#if defined(BFVE_GAME_BF4)
-    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath);
-#endif
 
     static void RegisterEmitter(fb::EmitterTemplateData* emitterData, const std::string& displayName, fb::EmitterAsset* sourceDoc = nullptr)
     {
@@ -108,6 +114,7 @@ namespace editor::emitters
         editData.original.captureFrom(emitterData);
         editData.captured = true;
 
+        std::string summary{ };
         for (fb::ProcessorData* proc = emitterData->m_RootProcessor; proc; proc = proc->m_NextProcessor)
         {
             fb::TypeInfo* type = proc->GetType();
@@ -125,34 +132,31 @@ namespace editor::emitters
                 editData.spawnColorProcessor = static_cast<fb::SpawnColorRandomData*>(proc);
                 editData.originalSpawnColor.captureFrom(editData.spawnColorProcessor);
             }
+
+            const char* cname = (procClassInfo->m_InfoData && procClassInfo->m_InfoData->m_Name)
+                ? procClassInfo->m_InfoData->m_Name : nullptr;
+            if (cname)
+            {
+                std::string f = cname;
+                if (f.size() > 4 && f.compare(f.size() - 4, 4, "Data") == 0)
+                    f.erase(f.size() - 4);
+                if (f.rfind("UpdateShaderParam", 0) != 0) // shaderparams aren't meaningful
+                {
+                    if (!summary.empty()) summary += ", ";
+                    summary += f;
+                }
+            }
         }
+        editData.typeSummary = summary;
 
         emitterMap[emitterData] = editData;
         InsertIntoTree(emitterData, editData.name);
-
-#if defined(BFVE_GAME_BF4)
-        for (fb::ProcessorData* proc = emitterData->m_RootProcessor; proc; proc = proc->m_NextProcessor)
-        {
-            fb::TypeInfo* type = proc->GetType();
-            if (!type || type->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                continue;
-
-            if (static_cast<fb::ClassInfo*>(type)->m_ClassId != fb::EmitterData::ClassId())
-                continue;
-
-            for (fb::EmitterDocument* child : static_cast<fb::EmitterData*>(proc)->m_EmitterAssets)
-            {
-                if (child)
-                    BF4_processEmitterAsset(child, finalName);
-            }
-        }
-#endif
     }
 
 #if defined(BFVE_GAME_BF4)
-    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath);
+    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath, int& emCounter);
 
-    static void BF4_processEffectEntity(fb::EffectEntityData* effect, const std::string& parentPath)
+    static void BF4_processEffectEntity(fb::EffectEntityData* effect, const std::string& parentPath, int& emCounter)
     {
         if (!effect)
             return;
@@ -171,58 +175,82 @@ namespace editor::emitters
             if (ci->isSubclassOf((fb::ClassInfo*)fb::EmitterEntityData::ClassInfoPtr()))
             {
                 fb::EmitterEntityData* emEntity = reinterpret_cast<fb::EmitterEntityData*>(comp);
-                BF4_processEmitterAsset(emEntity->m_Emitter, parentPath);
+                BF4_processEmitterAsset(emEntity->m_Emitter, parentPath, emCounter);
             }
             else if (ci->isSubclassOf((fb::ClassInfo*)fb::EffectEntityData::ClassInfoPtr()))
             {
-                BF4_processEffectEntity(reinterpret_cast<fb::EffectEntityData*>(comp), parentPath);
+                BF4_processEffectEntity(reinterpret_cast<fb::EffectEntityData*>(comp), parentPath, emCounter);
             }
         }
     }
 
-    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath)
+    static void BF4_processEmitterAsset(fb::EmitterAsset* asset, const std::string& parentPath, int& emCounter)
     {
         if (!asset)
             return;
 
-        std::string emitterPath = parentPath;
-        std::string assetName = asset->tryGetDebugName();
-        if (!assetName.empty())
-        {
-            if (!emitterPath.empty()) emitterPath += '/';
-            emitterPath += assetName;
-        }
-
         fb::TypeInfo* ti = asset->GetType();
         if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
             return;
+        const uint32_t classId = static_cast<fb::ClassInfo*>(ti)->m_ClassId;
 
-        fb::ClassInfo* ci = static_cast<fb::ClassInfo*>(ti);
-        const uint32_t classId = ci->m_ClassId;
+        const bool alreadyPlaced = g_placedDocs.count(asset) != 0;
+        std::string leafName = asset->tryGetDebugName();
+        if (leafName.empty())
+            leafName = "emitter " + std::to_string(alreadyPlaced ? 0 : emCounter++);
+
+        std::string emitterPath = parentPath;
+        if (!emitterPath.empty()) emitterPath += '/';
+        emitterPath += leafName;
+
+        const bool firstVisit = g_placedDocs.insert(asset).second;
+
+        std::vector<fb::EmitterTemplateData*> templates;
 
         if (classId == fb::ScalableEmitterDocument::ClassId())
         {
-            fb::ScalableEmitterDocument* doc = reinterpret_cast<fb::ScalableEmitterDocument*>(asset);
-            auto regWithTag = [&](fb::EmitterTemplateData* td, const char* tag)
-                {
-                    if (!td) return;
-                    if (emitterMap.count(td)) return;
-                    std::string name = emitterPath;
-                    if (tag && *tag)
-                    {
-                        name += " ["; name += tag; name += "]";
-                    }
-                    RegisterEmitter(td, name, asset);
-                };
-            regWithTag(doc->m_TemplateDataUltra, "Ultra");
-            regWithTag(doc->m_TemplateDataHigh, "High");
-            regWithTag(doc->m_TemplateDataMedium, "Medium");
-            regWithTag(doc->m_TemplateDataLow, "Low");
+            auto* doc = reinterpret_cast<fb::ScalableEmitterDocument*>(asset);
+            struct Q { fb::EmitterTemplateData* td; const char* tag; };
+            const Q qs[] = {
+                { doc->m_TemplateDataUltra,  "Ultra"  },
+                { doc->m_TemplateDataHigh,   "High"   },
+                { doc->m_TemplateDataMedium, "Medium" },
+                { doc->m_TemplateDataLow,    "Low"    },
+            };
+            for (const auto& q : qs)
+            {
+                if (!q.td) continue;
+                RegisterEmitter(q.td, emitterPath + " [" + q.tag + "]", asset);
+                templates.push_back(q.td);
+            }
         }
         else if (classId == fb::FlatEmitterDocument::ClassId())
         {
             auto* doc = reinterpret_cast<fb::FlatEmitterDocument*>(asset);
-            RegisterEmitter(doc->m_TemplateData, emitterPath, asset);
+            if (doc->m_TemplateData)
+            {
+                RegisterEmitter(doc->m_TemplateData, emitterPath, asset);
+                templates.push_back(doc->m_TemplateData);
+            }
+        }
+
+        // sub emitters
+        if (firstVisit)
+        {
+            for (fb::EmitterTemplateData* td : templates)
+            {
+                for (fb::ProcessorData* proc = td->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+                {
+                    fb::TypeInfo* pti = proc->GetType();
+                    if (!pti || pti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                        continue;
+                    if (static_cast<fb::ClassInfo*>(pti)->m_ClassId != fb::EmitterData::ClassId())
+                        continue;
+                    for (fb::EmitterDocument* child : static_cast<fb::EmitterData*>(proc)->m_EmitterAssets)
+                        if (child)
+                            BF4_processEmitterAsset(child, parentPath, emCounter);
+                }
+            }
         }
     }
 #endif // BFVE_GAME_BF4
@@ -233,6 +261,9 @@ namespace editor::emitters
         emitterTree.Clear();
         nameUseCounts.clear();
         nameToDocs.clear();
+#if defined(BFVE_GAME_BF4)
+        g_placedDocs.clear();
+#endif
 
         fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
         if (!rm)
@@ -284,7 +315,7 @@ namespace editor::emitters
                 {
                     fb::EmitterTemplateData* emitterData = reinterpret_cast<fb::EmitterTemplateData*>(obj);
                     const std::string name = emitterData->m_Name ? emitterData->m_Name : "Unknown";
-                    RegisterEmitter(emitterData, name);
+                    RegisterEmitter(emitterData, name); // InsertIntoTree happens inside
                 }
 #else
                 if (classInfo->isSubclassOf((fb::ClassInfo*)fb::EffectBlueprint::ClassInfoPtr()))
@@ -311,7 +342,8 @@ namespace editor::emitters
                     }
 
                     fb::EffectEntityData* effect = reinterpret_cast<fb::EffectEntityData*>(bp->m_Object);
-                    BF4_processEffectEntity(effect, bp->tryGetDebugName());
+                    int emCounter = 0;
+                    BF4_processEffectEntity(effect, normalizePath(bp->m_Name), emCounter);
                 }
                 else if (classId == fb::ScalableEmitterDocument::ClassId()
                       || classId == fb::FlatEmitterDocument::ClassId())
@@ -323,11 +355,16 @@ namespace editor::emitters
         }
 
 #if defined(BFVE_GAME_BF4)
+        // Loose docs not referenced by any effect go under one folder. Anonymous
+        // ones (no debug name) are skipped as noise.
+        int orphanCounter = 0;
         for (fb::EmitterAsset* asset : pendingDocs)
         {
             if (!asset || asset->tryGetDebugName().empty())
                 continue;
-            BF4_processEmitterAsset(asset, std::string{});
+            if (g_placedDocs.count(asset))
+                continue; // already listed under the effect that uses it
+            BF4_processEmitterAsset(asset, "(unreferenced documents)", orphanCounter);
         }
 #endif
 
@@ -487,7 +524,7 @@ namespace editor::emitters
         it->second.lastTemplate = emitter;
     }
 
-    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor, EmitterSpawnColorSnapshot& outSpawnColor)
+    void captureCurrentState(const EmitterEditData& edit, EmitterSnapshot& outTemplate, EmitterColorSnapshot& outColor, EmitterSpawnColorSnapshot& outSpawnColor, EmitterProcSnapshot& outProc)
     {
         outTemplate.captureFrom(edit.data);
 
@@ -502,6 +539,8 @@ namespace editor::emitters
         {
             outSpawnColor.captureFrom(edit.spawnColorProcessor);
         }
+
+        outProc.captureFrom(edit.data);
     }
 
     void applyPendingEdits()
@@ -526,6 +565,9 @@ namespace editor::emitters
 
                     if (it->hasSpawnColorData && edit.spawnColorProcessor)
                         it->spawnColorData.restoreTo(edit.spawnColorProcessor);
+
+                    if (it->hasProcData)
+                        it->procData.restoreTo(edit.data);
 
                     edit.modified = true;
                     logger::info("ApplyPendingEmitterEdits: Applied '{}'", it->key.c_str());
@@ -713,6 +755,108 @@ void EmitterSpawnColorSnapshot::restoreTo(fb::SpawnColorRandomData* proc) const
 
     proc->m_Color0 = color0;
     proc->m_Color1 = color1;
+}
+
+#if defined(BFVE_GAME_BF4)
+namespace
+{
+    // typeinfo dump
+    constexpr size_t kProcValueStart = 0x20;
+    constexpr size_t kEvalValueStart = 0x18;
+
+    uint32_t classIdOf(fb::DataContainer* o)
+    {
+        fb::TypeInfo* ti = o ? o->GetType() : nullptr;
+        if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class) return 0;
+        return static_cast<fb::ClassInfo*>(ti)->m_ClassId;
+    }
+    size_t totalSizeOf(fb::DataContainer* o)
+    {
+        fb::TypeInfo* ti = o ? o->GetType() : nullptr;
+        auto* tid = ti ? ti->GetTypeInfoData() : nullptr;
+        return tid ? tid->m_TotalSize : 0;
+    }
+
+    bool procHasPointers(uint32_t cid)
+    {
+        return cid == fb::EmitterData::ClassId() || cid == fb::BaseEmitterData::ClassId()
+            || cid == fb::UpdateTextureCoordsData::ClassId() || cid == fb::UpdateClipScaleData::ClassId();
+    }
+    bool evalHasPointers(uint32_t cid)
+    {
+        return cid == fb::SampleTextureData::ClassId();
+    }
+}
+#endif
+
+void EmitterProcSnapshot::captureFrom(fb::EmitterTemplateData* d)
+{
+    exists = false;
+    nodes.clear();
+#if defined(BFVE_GAME_BF4)
+    if (!d)
+        return;
+
+    for (fb::ProcessorData* proc = d->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+    {
+        EmitterProcNode n;
+        n.classId = classIdOf(proc);
+        if (n.classId && !procHasPointers(n.classId))
+        {
+            const size_t sz = totalSizeOf(proc);
+            if (sz > kProcValueStart)
+            {
+                auto* base = reinterpret_cast<const uint8_t*>(proc);
+                n.procBytes.assign(base + kProcValueStart, base + sz);
+            }
+        }
+        if (proc->m_Pre)
+        {
+            const uint32_t pcid = classIdOf(proc->m_Pre);
+            if (pcid && !evalHasPointers(pcid))
+            {
+                const size_t psz = totalSizeOf(proc->m_Pre);
+                if (psz > kEvalValueStart)
+                {
+                    auto* pbase = reinterpret_cast<const uint8_t*>(proc->m_Pre);
+                    n.hasPre = true;
+                    n.preClassId = pcid;
+                    n.preBytes.assign(pbase + kEvalValueStart, pbase + psz);
+                }
+            }
+        }
+        nodes.push_back(std::move(n));
+    }
+    exists = !nodes.empty();
+#else
+    (void)d;
+#endif
+}
+
+void EmitterProcSnapshot::restoreTo(fb::EmitterTemplateData* d) const
+{
+#if defined(BFVE_GAME_BF4)
+    if (!exists || !d) return;
+    size_t i = 0;
+    for (fb::ProcessorData* proc = d->m_RootProcessor; proc && i < nodes.size(); proc = proc->m_NextProcessor, ++i)
+    {
+        const EmitterProcNode& n = nodes[i];
+        if (!n.procBytes.empty() && classIdOf(proc) == n.classId)
+        {
+            const size_t sz = totalSizeOf(proc);
+            if (sz >= kProcValueStart && n.procBytes.size() == sz - kProcValueStart)
+                std::memcpy(reinterpret_cast<uint8_t*>(proc) + kProcValueStart, n.procBytes.data(), n.procBytes.size());
+        }
+        if (n.hasPre && proc->m_Pre && !n.preBytes.empty() && classIdOf(proc->m_Pre) == n.preClassId)
+        {
+            const size_t psz = totalSizeOf(proc->m_Pre);
+            if (psz >= kEvalValueStart && n.preBytes.size() == psz - kEvalValueStart)
+                std::memcpy(reinterpret_cast<uint8_t*>(proc->m_Pre) + kEvalValueStart, n.preBytes.data(), n.preBytes.size());
+        }
+    }
+#else
+    (void)d;
+#endif
 }
 
 #if defined(BFVE_GAME_BF4)

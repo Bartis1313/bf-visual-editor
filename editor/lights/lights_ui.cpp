@@ -41,6 +41,13 @@ namespace editor::lights
 
         ImGui::Separator();
 
+        const auto displayNames = buildDisplayNames();
+        auto labelOf = [&](fb::LocalLightEntityData* ptr, const LightDataEntry* e) -> const std::string&
+        {
+            const auto it = displayNames.find(ptr);
+            return it != displayNames.end() ? it->second : e->assetName;
+        };
+
         std::vector<std::pair<fb::LocalLightEntityData*, LightDataEntry*>> entries;
         {
             for (auto& [ptr, entry] : getEntries())
@@ -69,7 +76,7 @@ namespace editor::lights
         std::string filterStr = filterBuffer;
         std::transform(filterStr.begin(), filterStr.end(), filterStr.begin(), ::tolower);
         std::sort(entries.begin(), entries.end(),
-            [](const auto& a, const auto& b) { return a.second->assetName < b.second->assetName; });
+            [&](const auto& a, const auto& b) { return labelOf(a.first, a.second) < labelOf(b.first, b.second); });
 
         ImGui::BeginChild("LightList", ImVec2(0, 0), true);
 
@@ -82,11 +89,11 @@ namespace editor::lights
             if (typeFilter == 3 && (entry->isSpotLight || entry->isPointLight))
                 continue;
 
+            const std::string& dispName = labelOf(dataPtr, entry);
+
             if (!filterStr.empty())
             {
-                char ptrHex[40];
-                sprintf_s(ptrHex, "light_%p", static_cast<void*>(dataPtr));
-                std::string haystack = entry->assetName + " " + ptrHex;
+                std::string haystack = dispName + " " + entry->assetName;
                 std::transform(haystack.begin(), haystack.end(), haystack.begin(), ::tolower);
                 if (haystack.find(filterStr) == std::string::npos)
                     continue;
@@ -106,22 +113,11 @@ namespace editor::lights
             ImGui::TextColored(ImVec4{ 0.6f, 0.6f, 0.8f, 1.0f }, "%s", typePrefix);
             ImGui::SameLine();
 
-            // UGLYYYYYYYYYYYY
-            const bool nameUnresolved =
-                entry->assetName.empty() || entry->assetName == "(dynamic)" ||
-                entry->assetName == "(unknown)" || entry->assetName == "(unnamed)";
-
             char header[512];
-            if (nameUnresolved)
-                sprintf_s(header, "light_%p - %zu active%s###LightHeader",
-                    static_cast<void*>(dataPtr),
-                    entry->ActiveCount(),
-                    entry->hasOverride ? " [MODIFIED]" : "");
-            else
-                sprintf_s(header, "%s - %zu active%s###LightHeader",
-                    entry->assetName.c_str(),
-                    entry->ActiveCount(),
-                    entry->hasOverride ? " [MODIFIED]" : "");
+            sprintf_s(header, "%s - %zu active%s###LightHeader",
+                dispName.c_str(),
+                entry->ActiveCount(),
+                entry->hasOverride ? " [MODIFIED]" : "");
 
             ImGui::PushStyleColor(ImGuiCol_Text, textColor);
             bool open = ImGui::CollapsingHeader(header);
@@ -183,6 +179,36 @@ namespace editor::lights
             entry.ResetToOriginal();
             if (entry.hasOverride)
                 changed = true;
+        }
+
+        {
+            fb::Vec3 pos{ };
+            const bool hasPos = entryWorldPos(entry, pos);
+
+            if (!hasPos)
+                ImGui::BeginDisabled();
+            ImGui::Checkbox("Save with position", &entry.saveWithPosition);
+            if (!hasPos)
+                ImGui::EndDisabled();
+
+            if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled))
+            {
+                ImGui::BeginTooltip();
+                ImGui::TextUnformatted("Key this light in the config by world position (name@x,y,z)");
+                ImGui::TextUnformatted("Use for STATIC lights! Leave off for dynamic ones (e.g. flashlights).");
+                if (hasPos)
+                    ImGui::Text("Current: %.2f, %.2f, %.2f", pos.m_x, pos.m_y, pos.m_z);
+                else
+                    ImGui::TextUnformatted("No active entity - position unknown yet.");
+                ImGui::EndTooltip();
+            }
+
+            if (entry.saveWithPosition && entry.ActiveCount() > 1)
+            {
+                ImGui::SameLine();
+                ImGui::TextColored(ImVec4{ 1.0f, 0.6f, 0.2f, 1.0f },
+                    "(!) %zu instances share this data - first position used", entry.ActiveCount());
+            }
         }
 
         if (!entry.hasOverride)

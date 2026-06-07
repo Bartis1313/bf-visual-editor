@@ -55,15 +55,8 @@ namespace editor::config
             {
                 if (!entry.hasOverride)
                     continue;
-                
-                // UGLYYYYYYYYYYYYYY
-                const bool unresolved =
-                    entry.assetName.empty() || entry.assetName == "(dynamic)" ||
-                    entry.assetName == "(unknown)" || entry.assetName == "(unnamed)";
 
-                char ptrKey[32];
-                sprintf_s(ptrKey, "ptr:%p", static_cast<void*>(dataPtr));
-                lightsJson[unresolved ? ptrKey : entry.assetName] = lights::serialize(entry);
+                lightsJson[lights::makeLightKey(entry, dataPtr)] = lights::serialize(entry);
             }
         }
         root["lights"] = lightsJson;
@@ -78,9 +71,12 @@ namespace editor::config
             EmitterSnapshot current;
             EmitterColorSnapshot colorCurrent;
             EmitterSpawnColorSnapshot spawnColorCurrent;
-            emitters::captureCurrentState(edit, current, colorCurrent, spawnColorCurrent);
+            EmitterProcSnapshot procCurrent;
+            emitters::captureCurrentState(edit, current, colorCurrent, spawnColorCurrent, procCurrent);
 
             emitters::serializeSnapshot(emitterEntry["template"], current);
+            if (procCurrent.exists)
+                emitters::serializeProcSnapshot(emitterEntry["processors"], procCurrent);
             if (colorCurrent.exists)
             {
                 emitterEntry["hasColor"] = true;
@@ -178,30 +174,23 @@ namespace editor::config
         {
             for (const auto& [name, lightJson] : root["lights"].items())
             {
-                const bool byPtr = name.rfind("ptr:", 0) == 0;
+                LightDataEntry* exact = nullptr;
+                LightDataEntry* byName = nullptr;
                 for (auto& [dataPtr, entry] : lights::getEntries())
                 {
-                    bool match;
-                    if (byPtr)
-                    {
-                        char ptrKey[32];
-                        sprintf_s(ptrKey, "ptr:%p", static_cast<void*>(dataPtr));
-                        match = (name == ptrKey);
-                    }
-                    else
-                    {
-                        match = (entry.assetName == name);
-                    }
+                    const auto m = lights::matchLightKey(name, entry, dataPtr);
+                    if (m == lights::KeyMatch::Exact) { exact = &entry; break; }
+                    if (m == lights::KeyMatch::Name && !byName) byName = &entry;
+                }
 
-                    if (match)
+                LightDataEntry* target = exact ? exact : byName;
+                if (target)
+                {
+                    lights::deserialize(lightJson, *target);
+                    if (target->hasOverride)
                     {
-                        lights::deserialize(lightJson, entry);
-                        if (entry.hasOverride)
-                        {
-                            lights::applyOverride(entry);
-                            lightsApplied++;
-                        }
-                        break;
+                        lights::applyOverride(*target);
+                        lightsApplied++;
                     }
                 }
             }
@@ -240,6 +229,13 @@ namespace editor::config
                             spawnSnap.restoreTo(edit.spawnColorProcessor);
                         }
 
+                        if (emitterJson.contains("processors"))
+                        {
+                            EmitterProcSnapshot procSnap;
+                            emitters::deserializeProcSnapshot(emitterJson["processors"], procSnap);
+                            procSnap.restoreTo(edit.data);
+                        }
+
                         edit.modified = true;
                         emittersApplied++;
                         found = true;
@@ -263,6 +259,12 @@ namespace editor::config
                     {
                         pendingEdit.hasSpawnColorData = true;
                         emitters::deserializeSpawnColorSnapshot(emitterJson["spawnColor"], pendingEdit.spawnColorData);
+                    }
+
+                    if (emitterJson.contains("processors"))
+                    {
+                        pendingEdit.hasProcData = true;
+                        emitters::deserializeProcSnapshot(emitterJson["processors"], pendingEdit.procData);
                     }
 
                     pendingEdits.push_back(pendingEdit);

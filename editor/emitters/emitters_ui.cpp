@@ -7,53 +7,49 @@
 namespace editor::emitters
 {
     static char searchBuf[64] = {};
+    static bool searchChanged = false;
+
+    static bool computeSearchVisible(EmitterTreeNode& node, const char* search)
+    {
+        bool match = false;
+        auto& map = getMap();
+        for (fb::EmitterTemplateData* data : node.emitters)
+        {
+            auto it = map.find(data);
+            if (it != map.end() && ui::containsIgnoreCase(it->second.name, search)) { match = true; break; }
+        }
+
+        bool anyChild = false;
+        for (auto& [key, child] : node.children)
+            anyChild |= computeSearchVisible(child, search);
+
+        node.searchVisible = match || anyChild;
+        return node.searchVisible;
+    }
 
     static std::pair<size_t, size_t> countEmittersInNode(const EmitterTreeNode& node)
     {
-        auto& emitterMap = getMap();
+        auto& map = getMap();
         size_t total = node.emitters.size();
         size_t active = 0;
-
         for (fb::EmitterTemplateData* data : node.emitters)
         {
-            auto it = emitterMap.find(data);
-            if (it != emitterMap.end() && it->second.lastTemplate)
+            auto it = map.find(data);
+            if (it != map.end() && it->second.lastTemplate)
                 active++;
         }
-
         for (const auto& [name, child] : node.children)
         {
-            auto [childTotal, childActive] = countEmittersInNode(child);
-            total += childTotal;
-            active += childActive;
+            auto [ct, ca] = countEmittersInNode(child);
+            total += ct;
+            active += ca;
         }
-
         return { total, active };
-    }
-
-    static bool nodeHasMatch(const EmitterTreeNode& node, const char* search)
-    {
-        auto& emitterMap = getMap();
-
-        for (fb::EmitterTemplateData* data : node.emitters)
-        {
-            auto it = emitterMap.find(data);
-            if (it != emitterMap.end() && ui::containsIgnoreCase(it->second.name, search))
-                return true;
-        }
-
-        for (const auto& [name, child] : node.children)
-        {
-            if (nodeHasMatch(child, search))
-                return true;
-        }
-
-        return false;
     }
 
     static void renderEmitterSelectable(fb::EmitterTemplateData* data, EmitterEditData& edit)
     {
-        bool isActive = edit.lastTemplate != nullptr;
+        const bool isActive = edit.lastTemplate != nullptr;
 
         const char* displayName = edit.name.c_str();
         if (size_t pos = edit.name.find_last_of('/'); pos != std::string::npos)
@@ -74,6 +70,12 @@ namespace editor::emitters
             ImGui::TextUnformatted(edit.name.c_str());
             if (isActive)
                 ImGui::TextColored(ImVec4{ 0.2f, 0.8f, 0.2f, 1.0f }, "Active");
+            if (!edit.typeSummary.empty())
+            {
+                ImGui::PushTextWrapPos(ImGui::GetFontSize() * 25.0f);
+                ImGui::TextDisabled("%s", edit.typeSummary.c_str());
+                ImGui::PopTextWrapPos();
+            }
             ImGui::EndTooltip();
         }
     }
@@ -82,23 +84,27 @@ namespace editor::emitters
     {
         auto& emitterMap = getMap();
         const char* search = searchBuf;
-        bool isSearching = search[0] != '\0';
+        const bool isSearching = search[0] != '\0';
 
         for (auto& [name, child] : node.children)
         {
-            if (isSearching && !nodeHasMatch(child, search))
+            if (isSearching && !child.searchVisible)
                 continue;
 
             auto [total, active] = countEmittersInNode(child);
+            ImGui::PushID(&child);
 
             char label[256];
-            sprintf_s(label, sizeof(label), active > 0 ? "%s (%zu/%zu)" : "%s (%zu)",
+            sprintf_s(label, sizeof(label), active > 0 ? "%s (%zu/%zu)###n" : "%s (%zu)###n",
                 name.c_str(), active > 0 ? active : total, total);
 
             if (active > 0)
                 ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.2f, 0.8f, 0.2f, 1.0f));
 
-            bool open = ImGui::TreeNodeEx(label, ImGuiTreeNodeFlags_DefaultOpen);
+            if (isSearching && searchChanged)
+                ImGui::SetNextItemOpen(true);
+
+            const bool open = ImGui::TreeNodeEx(label);
 
             if (active > 0)
                 ImGui::PopStyleColor();
@@ -108,6 +114,8 @@ namespace editor::emitters
                 renderEmitterTreeNode(child);
                 ImGui::TreePop();
             }
+
+            ImGui::PopID();
         }
 
         for (fb::EmitterTemplateData* data : node.emitters)
@@ -115,57 +123,10 @@ namespace editor::emitters
             auto it = emitterMap.find(data);
             if (it == emitterMap.end())
                 continue;
-
             if (isSearching && !ui::containsIgnoreCase(it->second.name, search))
                 continue;
-
             renderEmitterSelectable(data, it->second);
         }
-    }
-
-    static void renderColorProcessor(EmitterEditData& edit)
-    {
-        fb::UpdateColorData* colorProc = edit.colorProcessor;
-        if (!colorProc)
-        {
-            ImGui::TextDisabled("No color processor");
-            return;
-        }
-
-        const auto& oc = edit.originalColor;
-        edit.modified |= ui::Vec3Edit("Base Color", &colorProc->m_Color, &oc.color, true);
-
-        if (!colorProc->m_Pre)
-            return;
-
-        fb::TypeInfo* preType = colorProc->m_Pre->GetType();
-        if (!preType || preType->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-            return;
-
-        fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(preType);
-        if (classInfo->m_ClassId != fb::PolynomialColorInterpData::ClassId())
-            return;
-
-        fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
-        ImGui::Separator();
-        ImGui::Text("Polynomial Interpolation");
-        edit.modified |= ui::HdrColor3Edit("Color 0", &poly->m_Color0, &oc.color0);
-        edit.modified |= ui::HdrColor3Edit("Color 1", &poly->m_Color1, &oc.color1);
-        edit.modified |= ui::CurveVec4Edit("Coefficients", &poly->m_Coefficients, &oc.coefficients);
-    }
-
-    static void renderSpawnColor(EmitterEditData& edit)
-    {
-        fb::SpawnColorRandomData* proc = edit.spawnColorProcessor;
-        if (!proc)
-        {
-            ImGui::TextDisabled("No spawn color processor");
-            return;
-        }
-
-        const auto& osc = edit.originalSpawnColor;
-        edit.modified |= ui::HdrColor3Edit("Spawn Color 0", &proc->m_Color0, &osc.color0);
-        edit.modified |= ui::HdrColor3Edit("Spawn Color 1", &proc->m_Color1, &osc.color1);
     }
 
     static void renderEmitterProperties()
@@ -196,6 +157,12 @@ namespace editor::emitters
         ImGui::Text("%s", edit.name.c_str());
         if (edit.lastTemplate)
             ImGui::TextColored(ImVec4{ 0.2f, 0.8f, 0.2f, 1.0f }, "Active");
+        if (!edit.typeSummary.empty())
+        {
+            ImGui::PushTextWrapPos(0.0f);
+            ImGui::TextDisabled("Contains: %s", edit.typeSummary.c_str());
+            ImGui::PopTextWrapPos();
+        }
         ImGui::Separator();
 
         if (ImGui::CollapsingHeader("Basic", ImGuiTreeNodeFlags_DefaultOpen))
@@ -262,15 +229,8 @@ namespace editor::emitters
             edit.modified |= ui::BoolEdit("Kill With Emitter", &d->m_KillParticlesWithEmitter, &o.killParticlesWithEmitter);
         }
 
-        if (ImGui::CollapsingHeader("Color Processor"))
-        {
-            renderColorProcessor(edit);
-        }
-
-        if (ImGui::CollapsingHeader("Spawn Color"))
-        {
-            renderSpawnColor(edit);
-        }
+        ImGui::SeparatorText("Processors");
+        renderProcessorGraph(edit);
 
         ImGui::Separator();
         if (ImGui::Button("Reset"))
@@ -301,7 +261,9 @@ namespace editor::emitters
         }
 #endif
 
-        ImGui::InputText("Search", searchBuf, sizeof(searchBuf));
+        searchChanged = ImGui::InputText("Search", searchBuf, sizeof(searchBuf));
+        if (searchChanged && searchBuf[0])
+            computeSearchVisible(getTree(), searchBuf);
         ImGui::Separator();
 
         ImGui::BeginChild("EmitterList", ImVec2{ 350, 0 }, ImGuiChildFlags_ResizeX);
