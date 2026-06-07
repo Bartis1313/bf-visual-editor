@@ -38,6 +38,11 @@ namespace editor::emitters
 
     void renderProcessorGraph(EmitterEditData& edit);
 
+    // Pristine full-byte copy of every processor/evaluator in the chain (keyed by
+    // live ptr) for change-highlighting + Reset. BF4 only (empty on BF3).
+    std::unordered_map<void*, std::vector<uint8_t>> captureProcOriginals(fb::EmitterTemplateData* d);
+    void resetProcessorEdits(EmitterEditData& edit);
+
     void renderOverlay();
     inline bool showOverlay = false;
     inline float overlayMaxDistance = 100.0f;

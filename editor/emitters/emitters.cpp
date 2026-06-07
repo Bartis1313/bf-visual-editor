@@ -148,6 +148,7 @@ namespace editor::emitters
             }
         }
         editData.typeSummary = summary;
+        editData.origProcBytes = captureProcOriginals(emitterData);
 
         emitterMap[emitterData] = editData;
         InsertIntoTree(emitterData, editData.name);
@@ -788,6 +789,70 @@ namespace
     }
 }
 #endif
+
+namespace editor::emitters
+{
+    std::unordered_map<void*, std::vector<uint8_t>> captureProcOriginals(fb::EmitterTemplateData* d)
+    {
+        std::unordered_map<void*, std::vector<uint8_t>> m;
+#if defined(BFVE_GAME_BF4)
+        if (!d) return m;
+        for (fb::ProcessorData* proc = d->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+        {
+            const size_t sz = totalSizeOf(proc);
+            if (sz)
+            {
+                auto* b = reinterpret_cast<const uint8_t*>(proc);
+                m[proc].assign(b, b + sz);
+            }
+            if (proc->m_Pre)
+            {
+                const size_t psz = totalSizeOf(proc->m_Pre);
+                if (psz)
+                {
+                    auto* pb = reinterpret_cast<const uint8_t*>(proc->m_Pre);
+                    m[proc->m_Pre].assign(pb, pb + psz);
+                }
+            }
+        }
+#else
+        (void)d;
+#endif
+        return m;
+    }
+
+    void resetProcessorEdits(EmitterEditData& edit)
+    {
+#if defined(BFVE_GAME_BF4)
+        fb::EmitterTemplateData* d = edit.data;
+        if (!d) return;
+        for (fb::ProcessorData* proc = d->m_RootProcessor; proc; proc = proc->m_NextProcessor)
+        {
+            auto it = edit.origProcBytes.find(proc);
+            if (it != edit.origProcBytes.end() && !procHasPointers(classIdOf(proc)))
+            {
+                const size_t sz = totalSizeOf(proc);
+                if (sz >= kProcValueStart && it->second.size() == sz)
+                    std::memcpy(reinterpret_cast<uint8_t*>(proc) + kProcValueStart,
+                        it->second.data() + kProcValueStart, sz - kProcValueStart);
+            }
+            if (proc->m_Pre)
+            {
+                auto pit = edit.origProcBytes.find(proc->m_Pre);
+                if (pit != edit.origProcBytes.end() && !evalHasPointers(classIdOf(proc->m_Pre)))
+                {
+                    const size_t psz = totalSizeOf(proc->m_Pre);
+                    if (psz >= kEvalValueStart && pit->second.size() == psz)
+                        std::memcpy(reinterpret_cast<uint8_t*>(proc->m_Pre) + kEvalValueStart,
+                            pit->second.data() + kEvalValueStart, psz - kEvalValueStart);
+                }
+            }
+        }
+#else
+        (void)edit;
+#endif
+    }
+}
 
 void EmitterProcSnapshot::captureFrom(fb::EmitterTemplateData* d)
 {

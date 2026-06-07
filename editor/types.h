@@ -2,6 +2,7 @@
 
 #include <string>
 #include <unordered_set>
+#include <unordered_map>
 #include <map>
 #include <vector>
 #include <cstdint>
@@ -418,6 +419,7 @@ struct EmitterEditData
     EmitterSnapshot original;
     EmitterColorSnapshot originalColor;
     EmitterSpawnColorSnapshot originalSpawnColor;
+    std::unordered_map<void*, std::vector<uint8_t>> origProcBytes;
     bool captured = false;
 };
 

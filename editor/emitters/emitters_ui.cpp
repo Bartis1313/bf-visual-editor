@@ -236,6 +236,7 @@ namespace editor::emitters
         if (ImGui::Button("Reset"))
         {
             edit.original.restoreTo(d);
+            resetProcessorEdits(edit);
             if (edit.spawnColorProcessor)
                 edit.originalSpawnColor.restoreTo(edit.spawnColorProcessor);
             edit.modified = false;

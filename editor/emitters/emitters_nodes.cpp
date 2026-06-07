@@ -14,22 +14,46 @@ namespace editor::emitters
 
     namespace
     {
-        bool eF(const char* l, float* v, float sp = 0.01f) { return ImGui::DragFloat(l, v, sp); }
-        bool eF2(const char* l, fb::Vec2* v) { return ImGui::DragFloat2(l, &v->m_x, 0.01f); }
-        bool eF3(const char* l, fb::Vec3* v) { return ImGui::DragFloat3(l, &v->m_x, 0.01f); }
-        bool eF4(const char* l, fb::Vec4* v) { return ImGui::DragFloat4(l, &v->m_x, 0.01f); }
-        bool eB(const char* l, bool* v) { return ImGui::Checkbox(l, v); }
-        bool eI(const char* l, int* v) { return ImGui::DragInt(l, v); }
-        bool eU(const char* l, uint32_t* v) { return ImGui::DragScalar(l, ImGuiDataType_U32, v); }
-        bool eCol(const char* l, fb::Vec3* v)
+        struct OrigCtx { const uint8_t* live = nullptr; const uint8_t* orig = nullptr; size_t size = 0; };
+        OrigCtx g_orig;
+
+        template <typename T>
+        const T* origOf(const T* live)
         {
-            return ui::HdrColor3Edit(l, v, v);
+            if (!g_orig.orig || !g_orig.live)
+                return live;
+
+            const size_t off = reinterpret_cast<const uint8_t*>(live) - g_orig.live;
+            if (off + sizeof(T) > g_orig.size)
+                return live;
+
+            return reinterpret_cast<const T*>(g_orig.orig + off);
         }
+
+        bool eF(const char* l, float* v) { return ui::FloatEdit(l, v, origOf(v)); }
+        bool eF2(const char* l, fb::Vec2* v) { return ui::Vec2Edit(l, v, origOf(v)); }
+        bool eF3(const char* l, fb::Vec3* v) { return ui::Vec3Edit(l, v, origOf(v), false); }
+        bool eF4(const char* l, fb::Vec4* v) { return ui::Vec4Edit(l, v, origOf(v), false); }
+        bool eB(const char* l, bool* v) { return ui::BoolEdit(l, v, origOf(v)); }
+        bool eI(const char* l, int* v) { return ui::IntEdit(l, v, origOf(v)); }
+        bool eU(const char* l, uint32_t* v) { return ui::UIntEdit(l, v, origOf(v)); }
+        bool eCol(const char* l, fb::Vec3* v) { return ui::HdrColor3Edit(l, v, origOf(v)); }
+		bool eCol4(const char* l, fb::Vec4* v) { return ui::Vec4Edit(l, v, origOf(v), true); }
 
         template <typename E>
         bool eEnum(const char* l, E* v)
         {
-            return ui::EnumCombo<E>(l, reinterpret_cast<int*>(v));
+            int* cur = reinterpret_cast<int*>(v);
+            return ui::EnumCombo<E>(l, cur, origOf(cur));
+        }
+
+        void setOrigCtx(EmitterEditData& edit, fb::DataContainer* obj)
+        {
+            auto it = edit.origProcBytes.find(obj);
+            if (it != edit.origProcBytes.end())
+                g_orig = { reinterpret_cast<const uint8_t*>(obj), it->second.data(), it->second.size() };
+            else
+                g_orig = {};
         }
 
         bool startsWith(const char* s, const char* p)
@@ -81,7 +105,7 @@ namespace editor::emitters
             {
                 auto* d = static_cast<fb::PolynomialData*>(ev);
                 ch |= eF("Scale", &d->m_ScaleValue);
-                ch |= eF4("Coefficients", &d->m_Coefficients);
+                ch |= eCol4("Coefficients", &d->m_Coefficients);
                 ch |= eF("Min Clamp", &d->m_MinClamp);
                 ch |= eF("Max Clamp", &d->m_MaxClamp);
             }
@@ -90,7 +114,7 @@ namespace editor::emitters
                 auto* d = static_cast<fb::PolynomialColorInterpData*>(ev);
                 ch |= eCol("Color 0", &d->m_Color0);
                 ch |= eCol("Color 1", &d->m_Color1);
-                ch |= eF4("Coefficients", &d->m_Coefficients);
+                ch |= eCol4("Coefficients", &d->m_Coefficients);
             }
             else if (classId == fb::SphereEvaluatorData::ClassId())
             {
@@ -443,13 +467,18 @@ namespace editor::emitters
                 ImGui::Indent();
                 bool ch = false;
 
+                setOrigCtx(edit, proc);
                 ch |= eEnum("Input", &proc->m_EvaluatorInput);
-
                 if (ci)
                     ch |= renderProcessorFields(proc, ci, classId);
 
                 if (proc->m_Pre)
+                {
+                    setOrigCtx(edit, proc->m_Pre);
                     ch |= renderEvaluator(proc->m_Pre);
+                }
+
+                g_orig = { };
 
                 if (ch)
                     edit.modified = true;
