@@ -17,7 +17,7 @@ namespace fs = std::filesystem;
 
 namespace editor::config
 {
-    static constexpr float CONFIG_VERSION = 3.0f;
+    static constexpr float CONFIG_VERSION = 4.0f;
 
     void init()
     {
