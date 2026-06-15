@@ -51,12 +51,15 @@ namespace editor::config
 
         json lightsJson = json::object();
         {
+            auto displayNames = lights::buildDisplayNames();
             for (const auto& [dataPtr, entry] : lights::getEntries())
             {
                 if (!entry.hasOverride)
                     continue;
 
-                lightsJson[lights::makeLightKey(entry, dataPtr)] = lights::serialize(entry);
+                const auto it = displayNames.find(dataPtr);
+                const std::string& disp = (it != displayNames.end()) ? it->second : entry.assetName;
+                lightsJson[lights::makeLightKey(entry, dataPtr, disp)] = lights::serialize(entry);
             }
         }
         root["lights"] = lightsJson;
@@ -172,13 +175,17 @@ namespace editor::config
 
         if (root.contains("lights") && root["lights"].is_object())
         {
+            auto displayNames = lights::buildDisplayNames();
             for (const auto& [name, lightJson] : root["lights"].items())
             {
                 LightDataEntry* exact = nullptr;
                 LightDataEntry* byName = nullptr;
                 for (auto& [dataPtr, entry] : lights::getEntries())
                 {
-                    const auto m = lights::matchLightKey(name, entry, dataPtr);
+                    const auto it = displayNames.find(dataPtr);
+                    const std::string& disp = (it != displayNames.end()) ? it->second : entry.assetName;
+
+                    const auto m = lights::matchLightKey(name, entry, dataPtr, disp);
                     if (m == lights::KeyMatch::Exact) { exact = &entry; break; }
                     if (m == lights::KeyMatch::Name && !byName) byName = &entry;
                 }

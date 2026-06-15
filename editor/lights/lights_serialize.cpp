@@ -6,7 +6,7 @@
 
 namespace editor::lights
 {
-    std::string makeLightKey(const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr)
+    std::string makeLightKey(const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr, const std::string& displayName)
     {
         const bool unresolved = isUnresolvedName(entry.assetName);
 
@@ -26,10 +26,10 @@ namespace editor::lights
             return ptrKey;
         }
 
-        return entry.assetName;
+        return unresolved ? entry.assetName : displayName;
     }
 
-    KeyMatch matchLightKey(const std::string& key, const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr)
+    KeyMatch matchLightKey(const std::string& key, const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr, const std::string& displayName)
     {
         if (key.rfind("ptr:", 0) == 0)
         {
@@ -41,7 +41,11 @@ namespace editor::lights
         const auto at = key.find('@');
         if (at == std::string::npos)
         {
-            return entry.assetName == key ? KeyMatch::Exact : KeyMatch::None;
+            if (displayName == key)
+                return KeyMatch::Exact;
+            if (entry.assetName == key)
+                return KeyMatch::Name;
+            return KeyMatch::None;
         }
 
         const std::string namePart = key.substr(0, at);

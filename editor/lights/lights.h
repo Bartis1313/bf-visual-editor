@@ -45,6 +45,6 @@ namespace editor::lights
     std::unordered_map<fb::LocalLightEntityData*, std::string> buildDisplayNames();
     enum class KeyMatch { None, Name, Exact };
 
-    std::string makeLightKey(const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr);
-    KeyMatch    matchLightKey(const std::string& key, const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr);
+    std::string makeLightKey(const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr, const std::string& displayName);
+    KeyMatch matchLightKey(const std::string& key, const LightDataEntry& entry, fb::LocalLightEntityData* dataPtr, const std::string& displayName);
 }
