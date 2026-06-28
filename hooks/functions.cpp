@@ -1,4 +1,4 @@
-#include "functions.h"
+﻿#include "functions.h"
 
 #include "../SDK/fb.h"
 
@@ -28,12 +28,12 @@ int __fastcall hkfb__VisualEnvironmentManager__update(fb::VisualEnvironmentManag
     return ret;
 }
 
-void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDatabasePartition* _this, void* edx)
-{
-    //printf("Ret addr %p\n", _ReturnAddress());
-
-    ofb__InternalDatabasePartition_onPartitonLoaded(_this);
-}
+//void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDatabasePartition* _this, void* edx)
+//{
+//    //printf("Ret addr %p\n", _ReturnAddress());
+//
+//    ofb__InternalDatabasePartition_onPartitonLoaded(_this);
+//}
 
 void __fastcall hkfb__MessageManager__dispatchMessage(int pMessageManager, void* edx, fb::Message* pMessage)
 {
@@ -97,10 +97,17 @@ void __fastcall hkfb__EmitterTemplate__EmitterTemplate(void* _this, void*, fb::E
     ofb__EmitterTemplate__EmitterTemplate(_this, data);
 }
 
+void* __fastcall hkfb__ClientEmitterEntity__ctor(void* _this, void*, void* a2, void* a3, fb::EmitterEntityData* data)
+{
+    void* ret = ofb__ClientEmitterEntity__ctor(_this, a2, a3, data);
+    editor::emitters::onEmitterEntityCreated(data, _this);
+    return ret;
+}
+
 fb::EmitterTemplate* __fastcall hkfb__EmitterManager__createEmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data)
 {
     auto emitter = ofb__EmitterManager__createEmitterTemplate(_this, data);
-    
+
     editor::onEmitterCreated(emitter, data);
 
     return emitter;

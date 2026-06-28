@@ -10,8 +10,6 @@
 
 namespace editor::emitters
 {
-#if defined(BFVE_GAME_BF4)
-
     namespace
     {
         struct OrigCtx { const uint8_t* live = nullptr; const uint8_t* orig = nullptr; size_t size = 0; };
@@ -38,7 +36,7 @@ namespace editor::emitters
         bool eI(const char* l, int* v) { return ui::IntEdit(l, v, origOf(v)); }
         bool eU(const char* l, uint32_t* v) { return ui::UIntEdit(l, v, origOf(v)); }
         bool eCol(const char* l, fb::Vec3* v) { return ui::HdrColor3Edit(l, v, origOf(v)); }
-		bool eCol4(const char* l, fb::Vec4* v) { return ui::CurveVec4Edit(l, v, origOf(v)); }
+        bool eCol4(const char* l, fb::Vec4* v) { return ui::CurveVec4Edit(l, v, origOf(v)); }
 
         template <typename E>
         bool eEnum(const char* l, E* v)
@@ -92,6 +90,8 @@ namespace editor::emitters
             if (startsWith(name, "PreRoll")) return { "Sim", ImVec4{ 0.80f, 0.80f, 0.55f, 1.0f } };
             return { "Node", ImVec4{ 0.75f, 0.75f, 0.75f, 1.0f } };
         }
+
+#if defined(BFVE_GAME_BF4)
 
         bool renderEvaluatorFields(fb::EvaluatorData* ev, uint32_t classId)
         {
@@ -218,31 +218,6 @@ namespace editor::emitters
             {
                 ImGui::TextDisabled("(no editor for this evaluator)");
             }
-            return ch;
-        }
-
-        bool renderEvaluator(fb::EvaluatorData* ev)
-        {
-            fb::TypeInfo* ti = ev->GetType();
-            const char* raw = rawClassName(ti);
-            const uint32_t classId = (ti && ti->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
-                ? static_cast<fb::ClassInfo*>(ti)->m_ClassId : 0u;
-
-            ImGui::PushID(ev);
-            char label[160];
-            std::snprintf(label, sizeof(label), "Pre: %s###eval", friendlyName(raw).c_str());
-
-            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4{ 0.85f, 0.80f, 0.55f, 1.0f });
-            const bool open = ImGui::TreeNodeEx(label, ImGuiTreeNodeFlags_DefaultOpen);
-            ImGui::PopStyleColor();
-
-            bool ch = false;
-            if (open)
-            {
-                ch = renderEvaluatorFields(ev, classId);
-                ImGui::TreePop();
-            }
-            ImGui::PopID();
             return ch;
         }
 
@@ -436,6 +411,257 @@ namespace editor::emitters
             return ch;
         }
 
+        bool isShaderParam(fb::ProcessorData* proc)
+        {
+            fb::TypeInfo* ti = proc ? proc->GetType() : nullptr;
+            if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                return false;
+
+            return static_cast<fb::ClassInfo*>(ti)->isSubclassOf((fb::ClassInfo*)fb::UpdateShaderParam01Data::ClassInfoPtr());
+        }
+
+#else // BFVE_GAME_BF3
+
+        bool renderEvaluatorFields(fb::EvaluatorData* ev, uint32_t classId)
+        {
+            bool ch = false;
+            if (classId == fb::ConstantEvaluatorData::ClassId())
+            {
+                ch |= eF("Scale", &static_cast<fb::ConstantEvaluatorData*>(ev)->m_Scale);
+            }
+            else if (classId == fb::PolynomialData::ClassId())
+            {
+                auto* d = static_cast<fb::PolynomialData*>(ev);
+                ch |= eF("Scale", &d->m_ScaleValue);
+                ch |= eCol4("Coefficients", &d->m_Coefficients);
+                ch |= eF("Min Clamp", &d->m_MinClamp);
+                ch |= eF("Max Clamp", &d->m_MaxClamp);
+            }
+            else if (classId == fb::PolynomialColorInterpData::ClassId())
+            {
+                auto* d = static_cast<fb::PolynomialColorInterpData*>(ev);
+                ch |= eCol("Color 0", &d->m_Color0);
+                ch |= eCol("Color 1", &d->m_Color1);
+                ch |= eCol4("Coefficients", &d->m_Coefficients);
+            }
+            else if (classId == fb::SphereEvaluatorData::ClassId())
+            {
+                auto* d = static_cast<fb::SphereEvaluatorData*>(ev);
+                ch |= eF("Radius", &d->m_Radius);
+                ch |= eF3("Scale", &d->m_Scale);
+                ch |= eF3("Pivot", &d->m_Pivot);
+            }
+            else if (classId == fb::BoxEvaluatorData::ClassId())
+            {
+                auto* d = static_cast<fb::BoxEvaluatorData*>(ev);
+                ch |= eF3("Dimensions", &d->m_Dimensions);
+                ch |= eF3("Pivot", &d->m_Pivot);
+            }
+            else if (classId == fb::RandomEvaluatorData::ClassId())
+            {
+                auto* d = static_cast<fb::RandomEvaluatorData*>(ev);
+                ch |= eF("Min", &d->m_Min);
+                ch |= eF("Max", &d->m_Max);
+            }
+            else if (classId == fb::RandomXYZEvaluatorData::ClassId())
+            {
+                auto* d = static_cast<fb::RandomXYZEvaluatorData*>(ev);
+                ch |= eF("Min X", &d->m_MinX); ImGui::SameLine(); ch |= eF("Max X", &d->m_MaxX);
+                ch |= eF("Min Y", &d->m_MinY); ImGui::SameLine(); ch |= eF("Max Y", &d->m_MaxY);
+                ch |= eF("Min Z", &d->m_MinZ); ImGui::SameLine(); ch |= eF("Max Z", &d->m_MaxZ);
+            }
+            else if (classId == fb::RotateVectorData::ClassId())
+            {
+                auto* d = static_cast<fb::RotateVectorData*>(ev);
+                ch |= eF("Angle", &d->m_Angle);
+                ch |= eB("Input Affects Phi", &d->m_InputAffectsPhi);
+                ch |= eB("Rotate Within Plane", &d->m_RotateWithinPlane);
+            }
+            else if (classId == fb::CameraProximityEvaluatorData::ClassId())
+            {
+                auto* d = static_cast<fb::CameraProximityEvaluatorData*>(ev);
+                ch |= eF("Forward Offset", &d->m_ForwardOffset);
+                ch |= eF3("Size", &d->m_Size);
+                ch |= eF3("Offset", &d->m_Offset);
+                ch |= eF3("Inner Radius Dir", &d->m_InnerRadiusDirection);
+                ch |= eF("Inner Radius", &d->m_InnerRadius);
+            }
+            else if (classId == fb::SampleTextureData::ClassId())
+            {
+                auto* d = static_cast<fb::SampleTextureData*>(ev);
+                ch |= eF3("Color Intensity Min", &d->m_ColorIntensityMin);
+                ch |= eF3("Color Intensity Max", &d->m_ColorIntensityMax);
+                ch |= eF2("Texture Dimensions", &d->m_TextureDimensions);
+                ch |= eF("Origin U", &d->m_TextureOriginU);
+                ch |= eF("Origin V", &d->m_TextureOriginV);
+                ImGui::TextDisabled("Gradient samples: %d", static_cast<int>(d->m_GradientData.size()));
+            }
+            else if (classId == fb::PolynomialOperatorData::ClassId())
+            {
+                auto* d = static_cast<fb::PolynomialOperatorData*>(ev);
+                ch |= eEnum("Operation", &d->m_Operation);
+                if (ImGui::TreeNode("First Operand"))
+                {
+                    ch |= eCol4("Coefficients##op1", &d->m_FirstOperand.m_Coefficients);
+                    ch |= eF("Scale##op1", &d->m_FirstOperand.m_ScaleValue);
+                    ch |= eF("Min Clamp##op1", &d->m_FirstOperand.m_MinClamp);
+                    ch |= eF("Max Clamp##op1", &d->m_FirstOperand.m_MaxClamp);
+                    ImGui::TreePop();
+                }
+                if (ImGui::TreeNode("Second Operand"))
+                {
+                    ch |= eCol4("Coefficients##op2", &d->m_SecondOperand.m_Coefficients);
+                    ch |= eF("Scale##op2", &d->m_SecondOperand.m_ScaleValue);
+                    ch |= eF("Min Clamp##op2", &d->m_SecondOperand.m_MinClamp);
+                    ch |= eF("Max Clamp##op2", &d->m_SecondOperand.m_MaxClamp);
+                    ImGui::TreePop();
+                }
+                ch |= eF("Result Min Clamp", &d->m_MinClampResult);
+                ch |= eF("Result Max Clamp", &d->m_MaxClampResult);
+            }
+            else
+            {
+                ImGui::TextDisabled("(no editor for this evaluator)");
+            }
+            return ch;
+        }
+
+        bool renderProcessorFields(fb::ProcessorData* proc, fb::ClassInfo* /*ci*/, uint32_t classId)
+        {
+            bool ch = false;
+            if (classId == fb::UpdateColorData::ClassId())
+            {
+                ch |= eCol("Color", &static_cast<fb::UpdateColorData*>(proc)->m_Color);
+            }
+            else if (classId == fb::UpdateSizeData::ClassId())
+            {
+                ch |= eF2("Pivot", &static_cast<fb::UpdateSizeData*>(proc)->m_Pivot);
+            }
+            else if (classId == fb::UpdateAlphaLevelScaleData::ClassId())
+            {
+                ch |= eF("Exponent", &static_cast<fb::UpdateAlphaLevelScaleData*>(proc)->m_Exponent);
+            }
+            else if (classId == fb::UpdateAlphaLevelMaxData::ClassId())
+            {
+                ch |= eF("Max Level", &static_cast<fb::UpdateAlphaLevelMaxData*>(proc)->m_MaxLevel);
+            }
+            else if (classId == fb::UpdateAlphaLevelMinData::ClassId())
+            {
+                ch |= eF("Min Level", &static_cast<fb::UpdateAlphaLevelMinData*>(proc)->m_MinLevel);
+            }
+            else if (classId == fb::UpdateTransparencyData::ClassId())
+            {
+                ch |= eF("Cull Threshold", &static_cast<fb::UpdateTransparencyData*>(proc)->m_CullThreshold);
+            }
+            else if (classId == fb::UpdateCameraProximityData::ClassId())
+            {
+                auto* d = static_cast<fb::UpdateCameraProximityData*>(proc);
+                ch |= eF("Forward Offset", &d->m_ForwardOffset);
+                ch |= eF3("Size", &d->m_Size);
+            }
+            else if (classId == fb::UpdateAgeData::ClassId())
+            {
+                ch |= eF("Lifetime", &static_cast<fb::UpdateAgeData*>(proc)->m_Lifetime);
+            }
+            else if (classId == fb::TurbulanceData::ClassId())
+            {
+                ch |= eF("Intensity", &static_cast<fb::TurbulanceData*>(proc)->m_Intensity);
+            }
+            else if (classId == fb::AirResistanceData::ClassId())
+            {
+                ch |= eF("Drag Factor", &static_cast<fb::AirResistanceData*>(proc)->m_DragFactor);
+            }
+            else if (classId == fb::LocalForceData::ClassId())
+            {
+                ch |= eF3("Local Force", &static_cast<fb::LocalForceData*>(proc)->m_LocalForce);
+            }
+            else if (classId == fb::GravityData::ClassId())
+            {
+                ch |= eF("Gravity", &static_cast<fb::GravityData*>(proc)->m_Gravity);
+            }
+            else if (classId == fb::SpawnRotationSpeedData::ClassId())
+            {
+                ch |= eF("Rotation Speed", &static_cast<fb::SpawnRotationSpeedData*>(proc)->m_RotationSpeed);
+            }
+            else if (classId == fb::SpawnRotationData::ClassId())
+            {
+                ch |= eF("Rotation", &static_cast<fb::SpawnRotationData*>(proc)->m_Rotation);
+            }
+            else if (classId == fb::SpawnAnimationFrameData::ClassId())
+            {
+                ch |= eU("Animation Frame", &static_cast<fb::SpawnAnimationFrameData*>(proc)->m_AnimationFrame);
+            }
+            else if (classId == fb::SpawnAnimationData::ClassId())
+            {
+                ch |= eF("Animation Speed", &static_cast<fb::SpawnAnimationData*>(proc)->m_AnimationSpeed);
+            }
+            else if (classId == fb::SpawnSizeData::ClassId())
+            {
+                ch |= eF("Size", &static_cast<fb::SpawnSizeData*>(proc)->m_Size);
+            }
+            else if (classId == fb::SpawnSpeedData::ClassId())
+            {
+                ch |= eF("Speed", &static_cast<fb::SpawnSpeedData*>(proc)->m_Speed);
+            }
+            else if (classId == fb::SpawnDirectionData::ClassId())
+            {
+                auto* d = static_cast<fb::SpawnDirectionData*>(proc);
+                ch |= eF("Direction From Origin", &d->m_DirectionFromEmitterOrigin);
+                ch |= eB("Inherit Speed & Dir", &d->m_InheritSpeedAndDirectionFromEmitter);
+            }
+            else if (classId == fb::SpawnRateData::ClassId())
+            {
+                auto* d = static_cast<fb::SpawnRateData*>(proc);
+                ch |= eF("Spawn Rate", &d->m_SpawnRate);
+                ch |= eF("Trail Segment Length", &d->m_TrailSegmentLength);
+                ch |= eB("Distribute Over Time", &d->m_DistributeOverTime);
+                ch |= eB("Distribute Over Distance", &d->m_DistributeOverDistance);
+            }
+            else if (classId == fb::EmitterData::ClassId())
+            {
+                ImGui::TextDisabled("Sub-emitters: %d", static_cast<int>(static_cast<fb::EmitterData*>(proc)->m_EmitterAssets.size()));
+            }
+            else if (classId == fb::BaseEmitterData::ClassId())
+            {
+                ImGui::TextDisabled("Base sub-emitter document");
+            }
+            else
+            {
+                ImGui::TextDisabled("(no own fields)");
+            }
+            return ch;
+        }
+
+        // BF3 emitters carry no UpdateShaderParam processors in the chain.
+        bool isShaderParam(fb::ProcessorData*) { return false; }
+
+#endif
+
+        bool renderEvaluator(fb::EvaluatorData* ev)
+        {
+            fb::TypeInfo* ti = ev->GetType();
+            const char* raw = rawClassName(ti);
+            const uint32_t classId = (ti && ti->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
+                ? static_cast<fb::ClassInfo*>(ti)->m_ClassId : 0u;
+
+            ImGui::PushID(ev);
+            char label[160];
+            std::snprintf(label, sizeof(label), "Pre: %s###eval", friendlyName(raw).c_str());
+
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4{ 0.85f, 0.80f, 0.55f, 1.0f });
+            const bool open = ImGui::TreeNodeEx(label, ImGuiTreeNodeFlags_DefaultOpen);
+            ImGui::PopStyleColor();
+
+            bool ch = false;
+            if (open)
+            {
+                ch = renderEvaluatorFields(ev, classId);
+                ImGui::TreePop();
+            }
+            ImGui::PopID();
+            return ch;
+        }
+
         void renderProcessorSection(EmitterEditData& edit, fb::ProcessorData* proc)
         {
             fb::TypeInfo* ti = proc->GetType();
@@ -475,7 +701,7 @@ namespace editor::emitters
                 if (proc->m_Pre)
                 {
                     setOrigCtx(edit, proc->m_Pre);
-                    ch |= renderEvaluator(proc->m_Pre);
+                    ch |= renderEvaluator(static_cast<fb::EvaluatorData*>(proc->m_Pre));
                 }
 
                 g_orig = { };
@@ -487,15 +713,6 @@ namespace editor::emitters
             }
 
             ImGui::PopID();
-        }
-
-        bool isShaderParam(fb::ProcessorData* proc)
-        {
-            fb::TypeInfo* ti = proc ? proc->GetType() : nullptr;
-            if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                return false;
-
-            return static_cast<fb::ClassInfo*>(ti)->isSubclassOf((fb::ClassInfo*)fb::UpdateShaderParam01Data::ClassInfoPtr());
         }
     }
 
@@ -512,13 +729,4 @@ namespace editor::emitters
             if (!isShaderParam(proc))
                 renderProcessorSection(edit, proc);
     }
-
-#else // !BFVE_GAME_BF4
-
-    void renderProcessorGraph(EmitterEditData&)
-    {
-        ImGui::TextDisabled("Processor graph is BF4-only for now.");
-    }
-
-#endif
 }

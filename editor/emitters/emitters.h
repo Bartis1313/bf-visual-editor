@@ -20,6 +20,8 @@ namespace editor::emitters
 
 #if defined(BFVE_GAME_BF4)
     void onEmitterEntityCreatedBF4(fb::EmitterEntityData* data, void* entity);
+#elif defined(BFVE_GAME_BF3)
+    void onEmitterEntityCreated(fb::EmitterEntityData* data, void* entity);
 #endif
 
     std::unordered_map<fb::EmitterTemplateData*, EmitterEditData>& getMap();

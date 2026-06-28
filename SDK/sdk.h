@@ -9,38 +9,37 @@
 #include "eastl.h"
 #include "vfunc.h"
 
+#include <string>
+#include <cstring>
+
+#include "../SDK_bf3/enums.h"
+#include "../SDK_bf3/declarations.h"
+#include "../SDK_bf3/structs.h"
+
+#define _DataContainer_
+#define _Asset_
+#define _WorldRenderSettings_
+#define _SystemSettings_
+#define _EnlightenRuntimeSettings_
+#define _LevelData_
+#define _ClientRoundOverEntity_
+#define _EntityBusPeer_
+#define _Entity_
+#define _SpatialEntity_
+#define _LocalLightEntity_
+#define _SpotLightEntity_
+#define _PointLightEntity_
+#define _GameEntity_
+#define _ClientGameEntity_
+#define _VisualEnvironmentEntity_
+#define _EmitterComponentData_
+#define _ProcessorData_
+
 namespace fb
 {
-	struct Vec4
-	{
-		float m_x; //0x0000
-		float m_y; //0x0004
-		float m_z; //0x0008
-		float m_w; //0x000C
-	};//Size=0x0010
 
-	struct Vec3
-	{
-		float m_x; //0x0000
-		float m_y; //0x0004
-		float m_z; //0x0008
-		char _0x000C[4];
-	};//Size=0x0010
 
-	struct Vec2
-	{
-		float m_x; //0x0000
-		float m_y; //0x0004
-	};//Size=0x0008
 
-	enum Realm : __int32
-	{
-		Realm_Client = 0x0,
-		Realm_Server = 0x1,
-		Realm_ClientAndServer = 0x2,
-		Realm_None = 0x3,
-		Realm_Pipeline = 0x4,
-	};
 
 	class DataContainer : public ITypedObject
 	{
@@ -114,31 +113,7 @@ namespace fb
 
 	};//Size=0x000C
 
-	class TextureBaseAsset : public Asset
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2366;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02BF1CC4;
-		}
-	};//Size=0x000C
 
-	class TextureAsset : public TextureBaseAsset
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2369;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02BF1CF0;
-		}
-	};//Size=0x000C
 
 
 	class CapturedOutdoorLightComponentData
@@ -206,14 +181,6 @@ namespace fb
 		char _0x00D2[14];
 	};//Size=0x00E0
 
-	enum TonemapMethod
-	{
-		TonemapMethod_None, //0x0000
-		TonemapMethod_Linear, //0x0001
-		TonemapMethod_Filmic, //0x0002
-		TonemapMethod_FilmicNeutral, //0x0003
-		TonemapMethodCount //0x0004
-	};
 
 	class CapturedTonemapComponentData
 	{
@@ -369,18 +336,6 @@ namespace fb
 		char _0x006C[4];
 	};//Size=0x0070
 
-	class SurfaceShaderBaseAsset : public Asset
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2345;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02BF26FC;
-		}
-	};//Size=0x000C
 
 	class CapturedSunFlareComponentData
 	{
@@ -469,16 +424,6 @@ namespace fb
 		char _0x008D[3];
 	};//Size=0x0090
 
-	enum BlurFilter
-	{
-		BfNone, //0x0000
-		BfGaussian3Pixels, //0x0001
-		BfGaussian5Pixels, //0x0002
-		BfGaussian7Pixels, //0x0003
-		BfGaussian9Pixels, //0x0004
-		BfGaussian15Pixels, //0x0005
-		BfGaussian31Pixels //0x0006
-	};
 
 	class CapturedDofComponentData
 	{
@@ -590,12 +535,6 @@ namespace fb
 		char _0x006C[4];
 	};//Size=0x0070
 
-	enum ScreenEffectFrameType
-	{
-		ScreenEffectFrameType_FullFrame, //0x0000
-		ScreenEffectFrameType_SingleFramePart, //0x0001
-		ScreenEffectFrameType_SingleSquareFramePart //0x0002
-	};
 
 	class CapturedScreenEffectComponentData
 	{
@@ -703,11 +642,6 @@ namespace fb
 		char _0x0091[15];
 	};//Size=0x00A0
 
-	enum CharacterLightingMode
-	{
-		CharacterLightingMode_Add, //0x0000
-		CharacterLightingMode_Blend //0x0001
-	};
 
 	class CapturedCharacterLightingComponentData
 	{
@@ -1002,56 +936,9 @@ namespace fb
 		INT m_realm;											// 0x2C
 	}; // 0x30
 
-	enum MipmapFilterMode
-	{
-		MipmapFilterMode_Box, //0x0000
-		MipmapFilterMode_Renormalize, //0x0001
-		MipmapFilterMode_Poisson13, //0x0002
-		MipmapFilterMode_Poisson13Clamped //0x0003
-	};
 
-	enum WorldViewMode
-	{
-		WorldViewMode_Default, //0x0000
-		WorldViewMode_RawLinear, //0x0001
-		WorldViewMode_RawLinearAlpha, //0x0002
-		WorldViewMode_Diffuse, //0x0003
-		WorldViewMode_Specular, //0x0004
-		WorldViewMode_Emissive, //0x0005
-		WorldViewMode_Normal, //0x0006
-		WorldViewMode_Smoothness, //0x0007
-		WorldViewMode_Material, //0x0008
-		WorldViewMode_Light, //0x0009
-		WorldViewMode_LightDiffuse, //0x000A
-		WorldViewMode_LightSpecular, //0x000B
-		WorldViewMode_LightIndirect, //0x000C
-		WorldViewMode_LightTranslucency, //0x000D
-		WorldViewMode_LightOverdraw, //0x000E
-		WorldViewMode_SkyVisibility, //0x000F
-		WorldViewMode_SkyVisibilityRaw, //0x0010
-		WorldViewMode_Overdraw, //0x0011
-		WorldViewMode_DynamicAO, //0x0012
-		WorldViewMode_Occluders, //0x0013
-		WorldViewMode_RadiosityLightMaps, //0x0014
-		WorldViewMode_RadiosityDiffuseColor, //0x0015
-		WorldViewMode_RadiosityTargetUV, //0x0016
-		WorldViewMode_VelocityVector, //0x0017
-		WorldViewMode_DistortionVector //0x0018
-	};
 
-	enum ShaderGBufferLayout
-	{
-		ShaderGBufferLayout_Default, //0x0000
-		ShaderGBufferLayout_Test //0x0001
-	};
 
-	enum QualityLevel
-	{
-		QualityLevel_Low, //0x0000
-		QualityLevel_Medium, //0x0001
-		QualityLevel_High, //0x0002
-		QualityLevel_Ultra //0x0003
-	};
 
 	class WorldRenderSettings/*Base*/
 	{
@@ -1342,12 +1229,12 @@ namespace fb
 		virtual void removeModule(); // (struct fb::IWorldRenderModule *);	// V: 0x1C
 		virtual void addPrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *);	// V: 0x20
 		virtual void removePrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *);	// V: 0x24
-		virtual struct ITexture* getHDRRenderTargetColorTexture(unsigned int);	// V: 0x28
-		virtual struct ITexture* getGeometryBufferTextures();	// V: 0x2C
+		virtual class ITexture* getHDRRenderTargetColorTexture(unsigned int);	// V: 0x28
+		virtual class ITexture* getGeometryBufferTextures();	// V: 0x2C
 		virtual unsigned int getGeometryBufferTextureCount();	// V: 0x30
 		virtual class PostProcessSystem* getPostProcessSystem();	// V: 0x34
 		virtual DWORD getHudRenderTargetView();	// V: 0x38
-		virtual struct fb::ITexture* getHudRenderTargetTexture();	// V: 0x3C
+		virtual class fb::ITexture* getHudRenderTargetTexture();	// V: 0x3C
 		virtual DWORD getWorldOcclusionQueryModule();	// V: 0x40
 		char _0x0004[32];
 		DWORD m_viewWidth; //0x0024 
@@ -1497,13 +1384,6 @@ namespace fb
 		}
 	};
 
-	struct LinearTransform
-	{
-		Vec3 m_right; //0x0000
-		Vec3 m_up; //0x0010
-		Vec3 m_forward; //0x0020
-		Vec3 m_trans; //0x0030
-	};//Size=0x0040
 
 	class ClientRoundOverEntity
 	{
@@ -1572,128 +1452,6 @@ namespace fb
 		T* m_data;
 	};
 
-	class GameDataContainerAsset : public Asset
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2408;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C50B0;
-		}
-		class GameDataContainer* m_Data; //0x000C
-	};//Size=0x0010
-
-	class GameDataContainer : public DataContainer
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1534;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C2D44;
-		}
-	};//Size=0x0008
-
-	class GameObjectData : public GameDataContainer
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1540;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4F88;
-		}
-		unsigned __int16 m_IndexInBlueprint; //0x0008
-		__int8 m_IsEventConnectionTarget; //0x000A
-		__int8 m_IsPropertyConnectionTarget; //0x000B
-	};//Size=0x000C
-
-	class EntityData : public GameObjectData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1695;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4FD4;
-		}
-	};//Size=0x000C
-
-	class SpatialEntityData : public EntityData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1856;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C5000;
-		}
-		char _0x000C[4];
-		LinearTransform m_Transform; //0x0010
-	};//Size=0x0050
-
-	struct LensFlareElement
-	{
-		Vec4 m_SizeCamDistCurve; //0x0000
-		Vec4 m_SizeAngleCurve; //0x0010
-		Vec2 m_Size; //0x0020
-		char _0x0028[8];
-		Vec4 m_SizeOccluderCurve; //0x0030
-		Vec4 m_SizeScreenPosCurve; //0x0040
-		Vec4 m_AlphaCamDistCurve; //0x0050
-		Vec4 m_AlphaOccluderCurve; //0x0060
-		Vec4 m_AlphaAngleCurve; //0x0070
-		Vec4 m_AlphaScreenPosCurve; //0x0080
-		float m_SizeCamDistMax; //0x0090
-		float m_RayDistance; //0x0094
-		class SurfaceShaderBaseAsset* m_Shader; //0x0098
-		float m_AlphaCamDistMax; //0x009C
-	};//Size=0x00A0
-
-	class LensFlareEntityData : public SpatialEntityData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1865;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02405CF4;
-		}
-		Array<LensFlareElement> m_Elements; //0x0050
-		float m_OccluderSize; //0x0054
-		bool m_Visible; //0x0058
-		bool m_HalfRes; //0x0059
-		bool m_DebugDrawOccluder; //0x005A
-		char _0x005B[5];
-	};//Size=0x0060
-
-	class LensFlareEntity : public EntityWithBusAndData<LensFlareEntityData>
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 404;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02404D68;
-		}
-		char _0x000C[132];
-	};//Size=0x0090
-
 	class SpatialEntity : public Entity
 	{
 	public:
@@ -1716,35 +1474,7 @@ namespace fb
 		T* m_data;							// 0x14
 	}; // 0x18
 
-	enum EnlightenColorMode
-	{
-		EnlightenColorMode_Multiply, //0x0000
-		EnlightenColorMode_Override //0x0001
-	};
 
-	class LocalLightEntityData : public SpatialEntityData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1862;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02405D30;
-		}
-		Vec3 m_Color; //0x0050
-		Vec3 m_ParticleColorScale; //0x0060
-		Vec3 m_EnlightenColorScale; //0x0070
-		float m_Radius; //0x0080
-		float m_Intensity; //0x0084
-		float m_AttenuationOffset; //0x0088
-		EnlightenColorMode m_EnlightenColorMode; //0x008C
-		bool m_EnlightenEnable; //0x0090
-		bool m_Visible; //0x0091
-		bool m_SpecularEnable; //0x0092
-		char _0x0093[13];
-	};//Size=0x00A0
 
 	class LocalLightEntity : public SpatialEntityWithBusAndData<LocalLightEntityData>
 	{
@@ -1938,37 +1668,6 @@ namespace fb
 		}
 	};
 
-	enum SpotLightShape
-	{
-		SpotLightShape_Cone, //0x0000
-		SpotLightShape_Frustum, //0x0001
-		SpotLightShape_OrthoFrustum //0x0002
-	};
-
-	class SpotLightEntityData : public LocalLightEntityData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1863;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02405D88;
-		}
-		SpotLightShape m_Shape; //0x00A0
-		float m_ConeInnerAngle; //0x00A4
-		float m_ConeOuterAngle; //0x00A8
-		float m_FrustumFov; //0x00AC
-		float m_FrustumAspect; //0x00B0
-		float m_OrthoWidth; //0x00B4
-		float m_OrthoHeight; //0x00B8
-		TextureAsset* m_Texture; //0x00BC
-		QualityLevel m_CastShadowsMinLevel; //0x00C0
-		bool m_CastShadowsEnable; //0x00C4
-		char _0x00C5[11];
-	};//Size=0x00D0
-
 	class SpotLightEntity : public LocalLightEntity
 	{
 	public:
@@ -1982,192 +1681,6 @@ namespace fb
 		}
 		char _0x00A0[16];
 	};//Size=0x00B0
-
-	struct PropertyConnection
-	{
-		DataContainer* m_Source; //0x0000
-		DataContainer* m_Target; //0x0004
-		__int32 m_SourceFieldId; //0x0008
-		__int32 m_TargetFieldId; //0x000C
-	};//Size=0x0010
-
-	struct LinkConnection
-	{
-		DataContainer* m_Source; //0x0000
-		DataContainer* m_Target; //0x0004
-		__int32 m_SourceFieldId; //0x0008
-		__int32 m_TargetFieldId; //0x000C
-	};//Size=0x0010
-
-	struct EventSpec
-	{
-		__int32 m_Id; //0x0000
-	};//Size=0x0004
-
-	enum EventConnectionTargetType
-	{
-		EventConnectionTargetType_Invalid, //0x0000
-		EventConnectionTargetType_ClientAndServer, //0x0001
-		EventConnectionTargetType_Client, //0x0002
-		EventConnectionTargetType_Server, //0x0003
-		EventConnectionTargetType_NetworkedClient, //0x0004
-		EventConnectionTargetType_NetworkedClientAndServer //0x0005
-	};
-
-	struct EventConnection
-	{
-		DataContainer* m_Source; //0x0000
-		DataContainer* m_Target; //0x0004
-		EventSpec m_SourceEvent; //0x0008
-		EventSpec m_TargetEvent; //0x000C
-		EventConnectionTargetType m_TargetType; //0x0010
-	};//Size=0x0014
-
-	class DataBusData : public Asset
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2416;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C2D18;
-		}
-		Array<PropertyConnection> m_PropertyConnections; //0x000C
-		Array<LinkConnection> m_LinkConnections; //0x0010
-	};//Size=0x0014
-
-	class EntityBusData : public DataBusData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2417;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4D38;
-		}
-		Array<EventConnection> m_EventConnections; //0x0014
-		class InterfaceDescriptorData* m_Descriptor; //0x0018
-		bool m_NeedNetworkId; //0x001C
-		bool m_InterfaceHasConnections; //0x001D
-		bool m_AlwaysCreateEntityBusClient; //0x001E
-		bool m_AlwaysCreateEntityBusServer; //0x001F
-	};//Size=0x0020
-
-	class Blueprint : public EntityBusData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2418;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4D90;
-		}
-	};//Size=0x0020
-
-	class PrefabBlueprint : public Blueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2419;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4E14;
-		}
-		Array<GameObjectData*> m_Objects; //0x0020
-	};//Size=0x0024
-
-	class SpatialPrefabBlueprint : public PrefabBlueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2421;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4E40;
-		}
-	};//Size=0x0024
-
-	class ObjectBlueprint : public Blueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2426;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4DE8;
-		}
-		GameObjectData* m_Object; //0x0020
-	};//Size=0x0024
-
-	class VehicleBlueprint : public ObjectBlueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2435;
-		}
-	};
-
-	class WorldPartData : public SpatialPrefabBlueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2425;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C6A80;
-		}
-		Guid m_HackToSolveRealTimeTweakingIssue; //0x0024
-		char _0x0024[16];
-		bool m_UseDeferredEntityCreation; //0x0034
-		bool m_Enabled; //0x0035
-		char _0x0036[2];
-	};//Size=0x0038
-
-	class SubWorldData : public SpatialPrefabBlueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2422;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C6AAC;
-		}
-		class RegistryContainer* m_RegistryContainer; //0x0024
-		bool m_IsWin32SubLevel; //0x0028
-		bool m_IsXenonSubLevel; //0x0029
-		bool m_IsPs3SubLevel; //0x002A
-		bool m_RememberStateOnStreamOut; //0x002B
-	};//Size=0x002C
-
-	class LogicPrefabBlueprint : public PrefabBlueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2420;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4E6C;
-		}
-	};//Size=0x0024
 
 	class InternalDatabasePartition
 	{
@@ -2206,24 +1719,6 @@ namespace fb
 
 	}; // fb::DataContext
 
-	class PointLightEntityData : public LocalLightEntityData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1864;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02405D5C;
-		}
-		float m_Width; //0x00A0
-		float m_TranslucencyAmbient; //0x00A4
-		float m_TranslucencyScale; //0x00A8
-		unsigned __int32 m_TranslucencyPower; //0x00AC
-		float m_TranslucencyDistortion; //0x00B0
-		char _0x00B4[12];
-	};//Size=0x00C0
 
 	class PointLightEntity : public LocalLightEntity
 	{
@@ -2382,42 +1877,7 @@ namespace fb
 		}
 	};//Size=0x0020
 
-	class ReferenceObjectData : public GameObjectData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2006;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4ED4;
-		}
-		char _0x000C[4];
-		LinearTransform m_BlueprintTransform; //0x0010
-		Blueprint* m_Blueprint; //0x0050
-		class ObjectVariation* m_ObjectVariation; //0x0054
-		int /*StreamRealm*/ m_StreamRealm; //0x0058
-		bool m_CastSunShadowEnable; //0x005C
-		bool m_Excluded; //0x005D
-		char _0x005E[2];
-	};//Size=0x0060
 
-	class VisualEnvironmentReferenceObjectData : public ReferenceObjectData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2007;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023FCE18;
-		}
-		__int32 m_Priority; //0x0060
-		bool m_OverrideVisibility; //0x0064
-		char _0x0065[11];
-	};//Size=0x0070
 
 	class VisualEnvironmentEntity : public ClientGameEntity
 	{
@@ -2435,63 +1895,9 @@ namespace fb
 		fb::VisualEnvironmentState m_state;
 	};//Size=0x0130
 
-	class GameEntityData : public SpatialEntityData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1884;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C5058;
-		}
-		Array<GameObjectData*> m_Components; //0x0050
-		bool m_Enabled; //0x0054
-		__int8 m_RuntimeComponentCount; //0x0055
-		char _0x0056[10];
-	};//Size=0x0060
 
-	class VisualEnvironmentEntityData : public GameEntityData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 1921;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023FCD94;
-		}
-		float m_Visibility; //0x0060
-		__int32 m_Priority; //0x0064
-		char _0x0068[8];
-	};//Size=0x0070
 
-	class VisualEnvironmentBlueprint : public ObjectBlueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2427;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023FCDC0;
-		}
-	};//Size=0x0024
 
-	enum EmittableType
-	{
-		Point, //0x0000
-		Quad, //0x0001
-		ScreenAlignedQuad, //0x0002
-		DirectionAlignedQuad, //0x0003
-		WorldAlignedQuad, //0x0004
-		Trail, //0x0005
-		ParticleMesh, //0x0006
-		EmittableTypeCount //0x0007
-	};
 
 	class EmitterComponentData : public DataContainer
 	{
@@ -2506,23 +1912,6 @@ namespace fb
 		}
 	};//Size=0x0008
 
-	enum EmittableField
-	{
-		EfZero, //0x0000
-		EfOne, //0x0001
-		EfNormTime, //0x0002
-		EfEmitterNormTime, //0x0003
-		EfSpawnAnimationSpeed, //0x0004
-		EfSpawnAnimationFrameIndex, //0x0005
-		EfVelocity, //0x0006
-		EfParameters, //0x0007
-		EfRotation, //0x0008
-		EfSpeed, //0x0009
-		EfUserDefined, //0x000A
-		EfConstantFloat, //0x000B
-		EfConstantVec, //0x000C
-		EfNone //0x000D
-	};
 
 	class ProcessorData : public EmitterComponentData
 	{
@@ -2544,157 +1933,21 @@ namespace fb
 		char _0x002D[3];
 	};//Size=0x0030
 
-	class EmitterTemplateData : public DataContainer
+
+	class SpawnColorRandomData : public ProcessorData
 	{
 	public:
 		static __inline unsigned int ClassId()
 		{
-			return 804;
+			return 0xFFFFFFFF; // sentinel: no BF3 processor uses this id
 		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02407504;
-		}
-		char _0x0008[8];
-		Vec4 m_PointLightIntensity; //0x0010
-		Vec3 m_PointLightPivot; //0x0020
-		Vec3 m_PointLightColor; //0x0030
-		unsigned __int32 m_MaxCount; //0x0040
-		char* m_Name; //0x0044
-		float m_TimeScale; //0x0048
-		unsigned __int32 m_LifetimeFrameCount; //0x004C
-		float m_Lifetime; //0x0050
-		class ProcessorData* m_RootProcessor; //0x0054
-		float m_VisibleAfterDistance; //0x0058
-		Array<float> m_ZOcclusionLookup; //0x005C
-		EmittableType m_EmittableType; //0x0060
-		class MeshAsset* m_Mesh; //0x0064
-		float m_DistanceScaleNearValue; //0x0068
-		float m_PointLightRadius; //0x006C
-		float m_VertexPixelLightingBlendFactor; //0x0070
-		float m_GlobalLocalNormalBlendFactor; //0x0074
-		float m_SoftParticlesFadeDistanceMultiplier; //0x0078
-		float m_LightWrapAroundFactor; //0x007C
-		float m_LightMultiplier; //0x0080
-		float m_DistanceScaleFarValue; //0x0084
-		float m_PointLightRandomIntensityMin; //0x0088
-		float m_MeshCullingDistance; //0x008C
-		float m_PointLightRandomIntensityMax; //0x0090
-		float m_MaxSpawnDistance; //0x0094
-		float m_MinScreenArea; //0x0098
-		float m_DistanceScaleLength; //0x009C
-		float m_PointLightMaxClamp; //0x00A0
-		float m_ParticleCullingFactor; //0x00A4
-		float m_PointLightMinClamp; //0x00A8
-		bool m_FollowSpawnSource; //0x00AC
-		bool m_RepeatParticleSpawning; //0x00AD
-		bool m_Emissive; //0x00AE
-		bool m_ExclusionVolumeCullEnable; //0x00AF
-		bool m_TransparencySunShadowEnable; //0x00B0
-		bool m_ForceFullRes; //0x00B1
-		bool m_LocalSpace; //0x00B2
-		bool m_Opaque; //0x00B3
-		bool m_ActAsPointLight; //0x00B4
-		bool m_KillParticlesWithEmitter; //0x00B5
-		bool m_ForceNiceSorting; //0x00B6
-		char _0x00B7[9];
-	};//Size=0x00C0
+		Vec3 m_Color0; //0x0030
+		Vec3 m_Color1; //0x0040
+	};//Size=0x0050
 
-	class UpdateColorData : public ProcessorData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 827;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x02407210;
-		}
-		Vec3 m_Color; //0x0030
-	};//Size=0x0040
-
-	enum EmitterParameter
-	{
-		EmitterParameterNone, //0x0000
-		EmitterParameter1, //0x0001
-		EmitterParameter2, //0x0002
-		EmitterParameter3, //0x0003
-		EmitterParameterVec, //0x0004
-		EmitterParameterVecAverage, //0x0005
-		EmitterParameterDistance, //0x0006
-		EmitterParameter4 //0x0007
-	};
-
-	class EvaluatorData : public EmitterComponentData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 806;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x024074D8;
-		}
-		EmitterParameter m_EmitterParameter; //0x0008
-	};//Size=0x000C
-
-	class PolynomialColorInterpData : public EvaluatorData
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 807;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x0240778C;
-		}
-		char _0x000C[4];
-		Vec3 m_Color0; //0x0010
-		Vec3 m_Color1; //0x0020
-		Vec4 m_Coefficients; //0x0030
-	};//Size=0x0040
-
-	enum ProcessorType
-	{
-		PtBaseEmitter, //0x0000
-		PtSpawnRate, //0x0001
-		PtSpawnSpeed, //0x0002
-		PtSpawnPosition, //0x0003
-		PtSpawnDirection, //0x0004
-		PtSpawnSize, //0x0005
-		PtSpawnAnimation, //0x0006
-		PtSpawnAnimationFrame, //0x0007
-		PtSpawnRotation, //0x0008
-		PtSpawnOrientation, //0x0009
-		PtSpawnRotationSpeed, //0x000A
-		PtUpdatePosition, //0x000B
-		PtUpdateAge, //0x000C
-		PtTurbulance, //0x000D
-		PtGravity, //0x000E
-		PtLocalForce, //0x000F
-		PtAirResistance, //0x0010
-		PtUpdateLinearVelocity, //0x0011
-		PtUpdateOrientation, //0x0012
-		PtEmitter, //0x0013
-		PtUpdateColor, //0x0014
-		PtUpdateColorLeaf, //0x0015
-		PtUpdateTransparency, //0x0016
-		PtUpdateTextureCoords, //0x0017
-		PtUpdateRotation, //0x0018
-		PtUpdateSizeX, //0x0019
-		PtUpdateSizeY, //0x001A
-		PtUpdateSizeZ, //0x001B
-		PtUpdateSize, //0x001C
-		PtUpdateAlphaLevelMin, //0x001D
-		PtUpdateAlphaLevelMax, //0x001E
-		PtUpdateAlphaLevelScale, //0x001F
-		PtUpdateClipScale, //0x0020
-		PtUpdateCameraProximity, //0x0021
-		ProcessorTypeCount //0x0022
-	};
+	class EmitterAsset;
+	class EmitterEntityData;
+	class EmitterDocument; // fwd: only used as Array<EmitterDocument*> element
 
 	class EmitterTemplate
 	{
@@ -2792,18 +2045,6 @@ namespace fb
 		}
 	};
 
-	class EffectBlueprint : public ObjectBlueprint
-	{
-	public:
-		static __inline unsigned int ClassId()
-		{
-			return 2437;
-		}
-		static __inline uintptr_t ClassInfoPtr()
-		{
-			return 0x023C4C0C;
-		}
-	};//Size=0x0024
 
 	struct EnlightenMaterial
 	{
@@ -2813,8 +2054,6 @@ namespace fb
 		bool emissive;
 	};
 
-	// Cross-game accessors mirroring sdkfb3.h's helpers. See the BF4 SDK for
-	// why these exist (BF4 GameRenderer/RenderView layout diverged).
 	inline RenderView* getActiveRenderView(GameRenderer* gr)
 	{
 		return gr ? &gr->m_viewParams.view : nullptr;
@@ -2825,7 +2064,6 @@ namespace fb
 	inline LinearTransform* getViewProjectionMatrix(RenderView* v)  { return v ? &v->m_viewProjectionMatrix : nullptr; }
 	inline void updateRenderView(RenderView* v)                     { if (v) v->Update(); }
 
-	// Cross-game ClientGameContext accessors (BF4 paths live in sdkfb3.h).
 	inline ClientPlayer* getLocalPlayer(ClientGameContext* ctx)
 	{
 		if (!ctx || !ctx->m_clientPlayerManager) return nullptr;
@@ -2845,3 +2083,5 @@ namespace fb
 		return ctx->m_level->m_worldRenderModule->m_worldRenderer->m_worldRenderSettings;
 	}
 }
+
+#include "../SDK_bf3/classes.h"

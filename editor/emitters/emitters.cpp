@@ -924,6 +924,23 @@ void EmitterProcSnapshot::restoreTo(fb::EmitterTemplateData* d) const
 #endif
 }
 
+static bool entityIsSubclassOf(void* e, fb::ClassInfo* base)
+{
+    fb::TypeInfo* ti = reinterpret_cast<fb::ITypedObject*>(e)->GetType();
+    if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+        return false;
+    return static_cast<fb::ClassInfo*>(ti)->isSubclassOf(base);
+}
+
+static fb::EmitterEntityData* emitterData(void* emitterEntity)
+{
+#if defined(BFVE_GAME_BF4)
+    return *reinterpret_cast<fb::EmitterEntityData**>(reinterpret_cast<char*>(emitterEntity) + 0x80);
+#else
+    return *reinterpret_cast<fb::EmitterEntityData**>(reinterpret_cast<char*>(emitterEntity) + 0x74);
+#endif
+}
+
 #if defined(BFVE_GAME_BF4)
 static bool readEmitterPos(void* e, fb::Vec3& out)
 {
@@ -959,75 +976,249 @@ static bool readEmitterPos(void* e, fb::Vec3& out)
     }
 }
 
+static int bf4GatherChildren(void* e, void** out, int maxN)
+{
+    __try
+    {
+        int n = 0;
+        for (void* c = *reinterpret_cast<void**>(reinterpret_cast<char*>(e) + 0xA0);
+             c && n < maxN;
+             c = *reinterpret_cast<void**>(reinterpret_cast<char*>(c) + 0x98))
+        {
+            out[n++] = c;
+        }
+        return n;
+    }
+    __except (1) { return -1; }
+}
+
+static bool drawEmitterMarkerBf4(void* emitter, fb::EmitterEntityData* data, ImDrawList* dl, ImFont* font, float fontSize)
+{
+    fb::Vec3 pos{ };
+    if (!readEmitterPos(emitter, pos))
+        return false;
+
+    ImVec2 sp{ };
+    float depth = 0.0f;
+    if (!render::worldToScreen(pos, sp, depth))
+        return true;
+
+    if (depth > editor::emitters::overlayMaxDistance)
+        return true;
+
+    const ImColor col = render::Colors::Orange;
+
+    float r = 700.0f / depth;
+    if (r < 3.0f)  r = 3.0f;
+    if (r > 24.0f) r = 24.0f;
+    render::circle(sp, r, col);
+
+    const std::string name = editor::emitters::resolveEmitterName(data ? data : emitterData(emitter));
+
+    char buf[256];
+    if (!name.empty())
+        std::snprintf(buf, sizeof(buf), "%s  %.0fm", name.c_str(), depth);
+    else
+        std::snprintf(buf, sizeof(buf), "emitter  %.0fm", depth);
+
+    const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
+    const ImVec2 tpos{ sp.x - ts.x * 0.5f, sp.y + r + 3.0f };
+    dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
+    dl->AddText(font, fontSize, tpos, col, buf);
+    return true;
+}
+
 void editor::emitters::renderOverlay()
 {
     if (!showOverlay)
         return;
 
-    std::vector<void*> ents;
-    ents.assign(g_emitterEntities.begin(), g_emitterEntities.end());
+    ImDrawList* dl = ImGui::GetBackgroundDrawList();
+    ImFont* font = ImGui::GetFont();
+    const float fontSize = ImGui::GetFontSize() * 1.2f;
+
+    fb::ClassInfo* const emitterClass = reinterpret_cast<fb::ClassInfo*>(fb::EmitterEntity::ClassInfoPtr());
+
+    std::unordered_set<void*> drawn;
+    fb::EntityList<void> fx{ reinterpret_cast<void*>(fb::EffectEntity::ClassInfoPtr()), 0x28 };
+    void* e;
+    while ((e = fx.nextOfKind()) != nullptr)
+    {
+        void* kids[20];
+        const int n = bf4GatherChildren(e, kids, sizeof(kids));
+        for (int i = 0; i < n; ++i)
+        {
+            void* emitter = kids[i];
+            if (!entityIsSubclassOf(emitter, emitterClass))
+                continue;
+            if (!drawn.insert(emitter).second)
+                continue;
+            drawEmitterMarkerBf4(emitter, emitterData(emitter), dl, font, fontSize);
+        }
+    }
+
+    std::vector<void*> dead;
+    for (void* emitter : g_emitterEntities)
+    {
+        if (drawn.count(emitter))
+            continue;
+
+        fb::EmitterEntityData* data = nullptr;
+        if (auto it = g_emitterData.find(emitter); it != g_emitterData.end())
+            data = it->second;
+
+        if (!drawEmitterMarkerBf4(emitter, data, dl, font, fontSize))
+            dead.push_back(emitter);
+    }
+
+    for (void* d : dead)
+    {
+        g_emitterEntities.erase(d);
+        g_emitterData.erase(d);
+        g_emitterNames.erase(d);
+    }
+}
+#else // BFVE_GAME_BF3
+
+using getWorldTransform_t = void(__thiscall*)(void* thisptr, fb::LinearTransform* out);
+static const getWorldTransform_t getWorldTransform = reinterpret_cast<getWorldTransform_t>(0x0054B770);
+
+static bool readEmitterWorldPos(void* e, fb::Vec3& out)
+{
+    __try
+    {
+        alignas(16) fb::LinearTransform xf{ };
+        getWorldTransform(e, &xf);
+        out = xf.m_trans;
+        return true;
+    }
+    __except (1)
+    {
+        return false;
+    }
+}
+
+// didnt bother to understand this layour, ghetto and works
+static int sehGatherChildren(void* e, void** out, int maxN)
+{
+    __try
+    {
+        int n = 0;
+        for (void* c = *reinterpret_cast<void**>(reinterpret_cast<char*>(e) + 0x60);
+             c && n < maxN;
+             c = *reinterpret_cast<void**>(reinterpret_cast<char*>(c) + 0x5C))
+        {
+            out[n++] = c;
+        }
+		//printf("Child count for %p: %d\n", e, n);
+
+        return n;
+    }
+    __except (1) { return -1; }
+}
+
+static std::string resolveEmitterName(fb::EmitterEntityData* data)
+{
+    if (!data || !data->m_Emitter)
+        return {};
+
+    return data->m_Emitter->tryGetDebugName();
+}
+
+static bool drawEmitterMarker(void* emitter, fb::EmitterEntityData* data, ImDrawList* dl, ImFont* font, float fontSize)
+{
+    fb::Vec3 pos{ };
+    if (!readEmitterWorldPos(emitter, pos))
+        return false;
+
+    ImVec2 sp{ };
+    float depth = 0.0f;
+    if (!render::worldToScreen(pos, sp, depth))
+        return true;
+
+    if (depth > editor::emitters::overlayMaxDistance)
+        return true;
+
+    const ImColor col = render::Colors::Orange;
+
+    float r = 700.0f / depth;
+    if (r < 3.0f)  r = 3.0f;
+    if (r > 24.0f) r = 24.0f;
+    render::circle(sp, r, col);
+
+    const std::string name = resolveEmitterName(data ? data : emitterData(emitter));
+
+    char buf[256];
+    if (!name.empty())
+        std::snprintf(buf, sizeof(buf), "%s  %.0fm", name.c_str(), depth);
+    else
+        std::snprintf(buf, sizeof(buf), "emitter  %.0fm", depth);
+
+    const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
+    const ImVec2 tpos{ sp.x - ts.x * 0.5f, sp.y + r + 3.0f };
+    dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
+    dl->AddText(font, fontSize, tpos, col, buf);
+    return true;
+}
+
+void editor::emitters::onEmitterEntityCreated(fb::EmitterEntityData* data, void* entity)
+{
+    if (!entity)
+        return;
+
+    g_emitterEntities.insert(entity);
+    if (data)
+        g_emitterData[entity] = data;
+}
+
+void editor::emitters::renderOverlay()
+{
+    if (!showOverlay)
+        return;
 
     ImDrawList* dl = ImGui::GetBackgroundDrawList();
     ImFont* font = ImGui::GetFont();
     const float fontSize = ImGui::GetFontSize() * 1.2f;
 
-    std::vector<void*> dead;
-    for (void* e : ents)
+    fb::ClassInfo* const emitterClass = reinterpret_cast<fb::ClassInfo*>(fb::ClientEmitterEntity::ClassInfoPtr());
+
+    std::unordered_set<void*> drawn;
+    fb::EntityList<void> fx{ reinterpret_cast<fb::ClassInfo*>(fb::EffectEntity::ClassInfoPtr()) };
+    void* e;
+    while ((e = fx.nextOfKind()) != nullptr)
     {
-        fb::Vec3 pos{ };
-        if (!readEmitterPos(e, pos))
+        void* kids[20];
+        const int n = sehGatherChildren(e, kids, sizeof(kids));
+        for (int i = 0; i < n; ++i)
         {
-            dead.push_back(e);
-            continue;
+            void* emitter = kids[i];
+            if (!entityIsSubclassOf(emitter, emitterClass))
+                continue;
+            if (!drawn.insert(emitter).second)
+                continue;
+            drawEmitterMarker(emitter, emitterData(emitter), dl, font, fontSize);
         }
-
-        ImVec2 sp{ };
-        float depth = 0.0f;
-        if (!render::worldToScreen(pos, sp, depth))
-            continue;
-        if (depth > overlayMaxDistance)
-            continue;
-
-        const ImColor col = render::Colors::Orange;
-
-        float r = 700.0f / depth;
-        if (r < 3.0f)  r = 3.0f;
-        if (r > 24.0f) r = 24.0f;
-        render::circle(sp, r, col);
-
-        auto nameIt = g_emitterNames.find(e);
-        if (nameIt == g_emitterNames.end())
-        {
-            if (auto dataIt = g_emitterData.find(e); dataIt != g_emitterData.end())
-            {
-                std::string resolved = resolveEmitterName(dataIt->second);
-                if (!resolved.empty())
-                    nameIt = g_emitterNames.emplace(e, std::move(resolved)).first;
-            }
-        }
-
-        char buf[256];
-        if (nameIt != g_emitterNames.end())
-            std::snprintf(buf, sizeof(buf), "%s  %.0fm", nameIt->second.c_str(), depth);
-        else
-            std::snprintf(buf, sizeof(buf), "emitter_%p  %.0fm", e, depth);
-
-        const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
-        const ImVec2 tpos{ sp.x - ts.x * 0.5f, sp.y + r + 3.0f };
-        dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
-        dl->AddText(font, fontSize, tpos, col, buf);
     }
 
-    if (!dead.empty())
+    std::vector<void*> dead;
+    for (void* emitter : g_emitterEntities)
     {
-        for (void* d : dead)
-        {
-            g_emitterEntities.erase(d);
-            g_emitterData.erase(d);
-            g_emitterNames.erase(d);
-        }
+        if (drawn.count(emitter))
+            continue;
+
+        fb::EmitterEntityData* data = nullptr;
+        if (auto it = g_emitterData.find(emitter); it != g_emitterData.end())
+            data = it->second;
+
+        if (!drawEmitterMarker(emitter, data, dl, font, fontSize))
+            dead.push_back(emitter);
+    }
+
+    for (void* d : dead)
+    {
+        g_emitterEntities.erase(d);
+        g_emitterData.erase(d);
     }
 }
-#else
-void editor::emitters::renderOverlay() {}
+
 #endif

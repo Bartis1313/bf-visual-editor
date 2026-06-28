@@ -261,6 +261,25 @@ namespace editor::lights
 
         logger::debug("[lights::scanExistingEntities] dispatched={} active={}",
             dispatched, totalActive);
+
+#elif defined(BFVE_GAME_BF3)
+        fb::EntityList<fb::LocalLightEntity> lights{ (fb::ClassInfo*)fb::LocalLightEntity::ClassInfoPtr() };
+        size_t dispatched = 0;
+        fb::LocalLightEntity* light;
+        while ((light = lights.nextOfKind()) != nullptr)
+        {
+            if (!light->m_data)
+                continue;
+
+            onEntityCreated(light, light->m_data);
+            ++dispatched;
+        }
+        size_t totalActive = 0;
+        for (const auto& [ptr, entry] : entries)
+            totalActive += entry.activeEntities.size();
+
+        logger::debug("[lights::scanExistingEntities] dispatched={} active={}",
+			dispatched, totalActive);   
 #endif
     }
 

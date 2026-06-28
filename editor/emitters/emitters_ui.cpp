@@ -251,7 +251,6 @@ namespace editor::emitters
         ImGui::SameLine();
         ImGui::Text("(%zu)", getMap().size());
 
-#if defined(BFVE_GAME_BF4)
         ImGui::SameLine();
         ImGui::Checkbox("Debug Overlay", &showOverlay);
         if (showOverlay)
@@ -260,7 +259,6 @@ namespace editor::emitters
             ImGui::SetNextItemWidth(160);
             ImGui::SliderFloat("Max Distance (m)", &overlayMaxDistance, 5.0f, 500.0f, "%.0f");
         }
-#endif
 
         searchChanged = ImGui::InputText("Search", searchBuf, sizeof(searchBuf));
         if (searchChanged && searchBuf[0])

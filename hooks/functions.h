@@ -163,6 +163,10 @@ typedef void(__thiscall* tfb__EmitterTemplate__EmitterTemplate)(void* _this, fb:
 inline tfb__EmitterTemplate__EmitterTemplate ofb__EmitterTemplate__EmitterTemplate = 0;
 void __fastcall hkfb__EmitterTemplate__EmitterTemplate(void* _this, void*, fb::EmitterTemplateData* data);
 
+typedef void* (__thiscall* tfb__ClientEmitterEntity__ctor)(void* _this, void* a2, void* a3, fb::EmitterEntityData* data);
+inline tfb__ClientEmitterEntity__ctor ofb__ClientEmitterEntity__ctor = 0;
+void* __fastcall hkfb__ClientEmitterEntity__ctor(void* _this, void*, void* a2, void* a3, fb::EmitterEntityData* data);
+
 //typedef int (__thiscall* tsub_17B0180)(fb::EnlightenRenderer* _this, int a2, __m128** a3, int a4, int a5);
 //inline tsub_17B0180 osub_17B0180 = 0;
 //int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5);

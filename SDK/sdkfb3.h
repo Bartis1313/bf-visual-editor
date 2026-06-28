@@ -36,7 +36,6 @@ enum ShaderGBufferLayout
 #define _PointLightEntity_
 #define _SpotLightEntity_
 #define _VisualEnvironmentEntity_
-#define _LevelData_
 #define _WorldRenderSettingsBase_
 
 namespace fb
@@ -1169,13 +1168,6 @@ namespace fb
     class GameWorld;
     class ClientLevel;
 
-#define _LevelData_
-    class LevelData
-    {
-    public:
-        char pad[0x10];
-        char* name;
-    };
 
     class ClientLevel
     {
@@ -1474,7 +1466,7 @@ namespace fb
 
         ClientLevel* lvl = reinterpret_cast<ClientLevel*>(ctx->m_pLevel);
         if (lvl->m_levelData)
-            return lvl->m_levelData->name;
+            return lvl->m_levelData->m_Name;
 
         return nullptr;
     }

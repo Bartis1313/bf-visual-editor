@@ -114,6 +114,18 @@
     <ClInclude Include="SDK_bf4\structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SDK_bf3\classes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK_bf3\declarations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK_bf3\structs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK_bf3\enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

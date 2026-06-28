@@ -186,6 +186,10 @@
     <ClInclude Include="SDK\sdkfb3.h" />
     <ClInclude Include="SDK\typeinfo.h" />
     <ClInclude Include="SDK\vfunc.h" />
+    <ClInclude Include="SDK_bf3\classes.h" />
+    <ClInclude Include="SDK_bf3\declarations.h" />
+    <ClInclude Include="SDK_bf3\enums.h" />
+    <ClInclude Include="SDK_bf3\structs.h" />
     <ClInclude Include="SDK_bf4\classes.h" />
     <ClInclude Include="SDK_bf4\declarations.h" />
     <ClInclude Include="SDK_bf4\enums.h" />
