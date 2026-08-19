@@ -1045,7 +1045,7 @@ void editor::emitters::renderOverlay()
     while ((e = fx.nextOfKind()) != nullptr)
     {
         void* kids[20];
-        const int n = bf4GatherChildren(e, kids, sizeof(kids));
+        const int n = bf4GatherChildren(e, kids, static_cast<int>(std::size(kids)));
         for (int i = 0; i < n; ++i)
         {
             void* emitter = kids[i];
