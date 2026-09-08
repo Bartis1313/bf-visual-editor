@@ -119,7 +119,7 @@ namespace editor::effects
         {
             if (fb::RenderView* rv = fb::getActiveRenderView(fb::GameRenderer::Singleton()))
             {
-#ifdef BFVE_GAME_BF3 
+#ifdef BFVE_GAME_BF3
                 fb::updateRenderView(rv);
 #endif
                 transform.m_trans = fb::getViewMatrixInverse(rv)->m_trans;

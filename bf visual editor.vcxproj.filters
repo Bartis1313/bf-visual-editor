@@ -66,10 +66,25 @@
     <ClInclude Include="editor\ui\ui_helpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="editor\ui\file_dialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="editor\lights\lights.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="editor\lights\lights_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="editor\copy\copy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\textures\texgen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\textures\surfacepick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\textures\textures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="editor\effects\effects.h">
@@ -126,6 +141,9 @@
     <ClInclude Include="SDK_bf3\enums.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="editor\camera\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -164,10 +182,16 @@
     <ClCompile Include="editor\ui\ui_helpers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="editor\ui\file_dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="editor\lights\lights_serialize.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\lights\lights_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\lights\lights_flares.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\states\states_capture.cpp">
@@ -212,6 +236,24 @@
     <ClCompile Include="editor\world_render\world_render_serialize.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="editor\textures\texgen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\textures\surfacepick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\textures\textures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\textures\textures_serialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\textures\textures_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\textures\textures_shaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="editor\effects\effects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -243,6 +285,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editor\states\states_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\camera\camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

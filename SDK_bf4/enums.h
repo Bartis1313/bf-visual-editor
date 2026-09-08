@@ -1,6 +1,6 @@
 ////////////////////////////////////////
 // RuntimeId: 10135
-// TypeInfo:  0x0000000142C91920
+// TypeInfo: 0x0000000142C91920
 enum TwinkleNavigationState
 {
     NavigationState_None, //0x0000
@@ -12,7 +12,7 @@ enum TwinkleNavigationState
 
 ////////////////////////////////////////
 // RuntimeId: 10083
-// TypeInfo:  0x0000000142C8F1D8
+// TypeInfo: 0x0000000142C8F1D8
 enum SpartaOnlineEnvironment
 {
     SpartaOnlineEnvironment_Development, //0x0000
@@ -24,7 +24,7 @@ enum SpartaOnlineEnvironment
 
 ////////////////////////////////////////
 // RuntimeId: 10068
-// TypeInfo:  0x0000000142C8F378
+// TypeInfo: 0x0000000142C8F378
 enum SpartaInteractiveNotificationActions
 {
     SpartaNotificationAction_Join, //0x0000
@@ -33,7 +33,7 @@ enum SpartaInteractiveNotificationActions
 
 ////////////////////////////////////////
 // RuntimeId: 10058
-// TypeInfo:  0x0000000142C8F3D8
+// TypeInfo: 0x0000000142C8F3D8
 enum SpartaMenuVOMother
 {
     VO_SpartaMenuWelcomeBack, //0x0000
@@ -60,7 +60,7 @@ enum SpartaMenuVOMother
 
 ////////////////////////////////////////
 // RuntimeId: 10053
-// TypeInfo:  0x0000000142C8F418
+// TypeInfo: 0x0000000142C8F418
 enum SpartaPresenceUserTitleInfoEvent
 {
     SpartaPresenceUserTitleInfoEvent_Update, //0x0000
@@ -70,7 +70,7 @@ enum SpartaPresenceUserTitleInfoEvent
 
 ////////////////////////////////////////
 // RuntimeId: 10048
-// TypeInfo:  0x0000000142C8F498
+// TypeInfo: 0x0000000142C8F498
 enum SpartaMatchmakingResult
 {
     SpartaMatchmakingResult_Success, //0x0000
@@ -80,7 +80,7 @@ enum SpartaMatchmakingResult
 
 ////////////////////////////////////////
 // RuntimeId: 10045
-// TypeInfo:  0x0000000142C8F4D8
+// TypeInfo: 0x0000000142C8F4D8
 enum SpartaMatchmakingRequestEvent
 {
     SpartaMatchmakingRequestEvent_StartMatchmaking, //0x0000
@@ -89,7 +89,7 @@ enum SpartaMatchmakingRequestEvent
 
 ////////////////////////////////////////
 // RuntimeId: 10041
-// TypeInfo:  0x0000000142C8F538
+// TypeInfo: 0x0000000142C8F538
 enum SpartaUserProfileImageSize
 {
     SpartaUserProfileImageSize_Small, //0x0000
@@ -99,7 +99,7 @@ enum SpartaUserProfileImageSize
 
 ////////////////////////////////////////
 // RuntimeId: 10039
-// TypeInfo:  0x0000000142C8F558
+// TypeInfo: 0x0000000142C8F558
 enum SpartaPartyResponseResult
 {
     SpartaPartyResponseResult_Success, //0x0000
@@ -114,7 +114,7 @@ enum SpartaPartyResponseResult
 
 ////////////////////////////////////////
 // RuntimeId: 10037
-// TypeInfo:  0x0000000142C8F578
+// TypeInfo: 0x0000000142C8F578
 enum SpartaPartyResponseEvent
 {
     SpartaPartyResponseEvent_GameSessionAvailable, //0x0000
@@ -133,7 +133,7 @@ enum SpartaPartyResponseEvent
 
 ////////////////////////////////////////
 // RuntimeId: 10035
-// TypeInfo:  0x0000000142C8F598
+// TypeInfo: 0x0000000142C8F598
 enum SpartaPartyRequestEvent
 {
     SpartaPartyRequestEvent_CreateParty, //0x0000
@@ -151,7 +151,7 @@ enum SpartaPartyRequestEvent
 
 ////////////////////////////////////////
 // RuntimeId: 10026
-// TypeInfo:  0x0000000142C8F698
+// TypeInfo: 0x0000000142C8F698
 enum DisconnectionType
 {
     DisconnectionType_Ok, //0x0000
@@ -161,7 +161,7 @@ enum DisconnectionType
 
 ////////////////////////////////////////
 // RuntimeId: 10022
-// TypeInfo:  0x0000000142C8F6F8
+// TypeInfo: 0x0000000142C8F6F8
 enum CommerceCheckoutStatus
 {
     CommerceCheckoutStatus_Purchased, //0x0000
@@ -172,7 +172,7 @@ enum CommerceCheckoutStatus
 
 ////////////////////////////////////////
 // RuntimeId: 09882
-// TypeInfo:  0x0000000142C89548
+// TypeInfo: 0x0000000142C89548
 enum WeaponAnimType
 {
     WeaponAnimType_NoAddon, //0x0000
@@ -188,7 +188,7 @@ enum WeaponAnimType
 
 ////////////////////////////////////////
 // RuntimeId: 09874
-// TypeInfo:  0x0000000142C89568
+// TypeInfo: 0x0000000142C89568
 enum GrenadeType
 {
     GrenadeType_NotSet, //0x0000
@@ -199,7 +199,7 @@ enum GrenadeType
 
 ////////////////////////////////////////
 // RuntimeId: 09848
-// TypeInfo:  0x0000000142C89588
+// TypeInfo: 0x0000000142C89588
 enum ZoomLevelActivateEventType
 {
     ZoomLevelActivateEventType_Disable, //0x0000
@@ -209,7 +209,7 @@ enum ZoomLevelActivateEventType
 
 ////////////////////////////////////////
 // RuntimeId: 09783
-// TypeInfo:  0x0000000142C895A8
+// TypeInfo: 0x0000000142C895A8
 enum SightType
 {
     SightType_None, //0x0000
@@ -219,7 +219,7 @@ enum SightType
 
 ////////////////////////////////////////
 // RuntimeId: 09777
-// TypeInfo:  0x0000000142C895C8
+// TypeInfo: 0x0000000142C895C8
 enum WeaponOverrideValueType
 {
     OverrideValue_BulletEntity_DistributeDamageOverTime, //0x0000
@@ -231,7 +231,7 @@ enum WeaponOverrideValueType
 
 ////////////////////////////////////////
 // RuntimeId: 09775
-// TypeInfo:  0x0000000142C895E8
+// TypeInfo: 0x0000000142C895E8
 enum QuickThrowTypeEnum
 {
     QttHand, //0x0000
@@ -240,7 +240,7 @@ enum QuickThrowTypeEnum
 
 ////////////////////////////////////////
 // RuntimeId: 09767
-// TypeInfo:  0x0000000142C89608
+// TypeInfo: 0x0000000142C89608
 enum WeaponClassEnum
 {
     wc12gauge, //0x0000
@@ -289,7 +289,7 @@ enum WeaponClassEnum
 
 ////////////////////////////////////////
 // RuntimeId: 09765
-// TypeInfo:  0x0000000142C89628
+// TypeInfo: 0x0000000142C89628
 enum WeaponAnimBaseSetEnum
 {
     wabsRif, //0x0000
@@ -306,7 +306,7 @@ enum WeaponAnimBaseSetEnum
 
 ////////////////////////////////////////
 // RuntimeId: 09757
-// TypeInfo:  0x0000000142C89648
+// TypeInfo: 0x0000000142C89648
 enum AnimatedAimingEnum
 {
     AnimatedAimingTwoHanded, //0x0000
@@ -316,7 +316,7 @@ enum AnimatedAimingEnum
 
 ////////////////////////////////////////
 // RuntimeId: 09755
-// TypeInfo:  0x0000000142C89668
+// TypeInfo: 0x0000000142C89668
 enum AnimatedFireEnum
 {
     AnimatedFireAutomatic, //0x0000
@@ -328,7 +328,7 @@ enum AnimatedFireEnum
 
 ////////////////////////////////////////
 // RuntimeId: 09705
-// TypeInfo:  0x0000000142C89688
+// TypeInfo: 0x0000000142C89688
 enum WeaponSwitchingEnum
 {
     wsSlot0, //0x0000
@@ -350,7 +350,7 @@ enum WeaponSwitchingEnum
 
 ////////////////////////////////////////
 // RuntimeId: 09703
-// TypeInfo:  0x0000000142C89948
+// TypeInfo: 0x0000000142C89948
 enum SoldierBuffId
 {
     SBImprovedBodyArmor, //0x0000
@@ -359,7 +359,7 @@ enum SoldierBuffId
 
 ////////////////////////////////////////
 // RuntimeId: 09701
-// TypeInfo:  0x0000000142C89968
+// TypeInfo: 0x0000000142C89968
 enum PlayerRole
 {
     PRSquadLeader, //0x0000
@@ -369,7 +369,7 @@ enum PlayerRole
 
 ////////////////////////////////////////
 // RuntimeId: 09668
-// TypeInfo:  0x0000000142C89A68
+// TypeInfo: 0x0000000142C89A68
 enum DeathAnimationOperation
 {
     DALessThan, //0x0000
@@ -379,7 +379,7 @@ enum DeathAnimationOperation
 
 ////////////////////////////////////////
 // RuntimeId: 09633
-// TypeInfo:  0x0000000142C896A8
+// TypeInfo: 0x0000000142C896A8
 enum PickupPlayerEnum
 {
     PickupPlayerEnum_None, //0x0000
@@ -390,7 +390,7 @@ enum PickupPlayerEnum
 
 ////////////////////////////////////////
 // RuntimeId: 09627
-// TypeInfo:  0x0000000142C896C8
+// TypeInfo: 0x0000000142C896C8
 enum EventGateState
 {
     EGSInvalid, //0x0000
@@ -403,7 +403,7 @@ enum EventGateState
 
 ////////////////////////////////////////
 // RuntimeId: 09617
-// TypeInfo:  0x0000000142C89AC8
+// TypeInfo: 0x0000000142C89AC8
 enum AIHitReactionAnimationType
 {
     AIHitReactionAnimationType_1, //0x0000
@@ -416,7 +416,7 @@ enum AIHitReactionAnimationType
 
 ////////////////////////////////////////
 // RuntimeId: 09586
-// TypeInfo:  0x0000000142C896E8
+// TypeInfo: 0x0000000142C896E8
 enum SocketType
 {
     SocketType_Undefined, //0x0000
@@ -426,7 +426,7 @@ enum SocketType
 
 ////////////////////////////////////////
 // RuntimeId: 09554
-// TypeInfo:  0x0000000142C89BC8
+// TypeInfo: 0x0000000142C89BC8
 enum AIDeathReactionAnimationType
 {
     AIDeathReactionAnimationType_1, //0x0000
@@ -439,7 +439,7 @@ enum AIDeathReactionAnimationType
 
 ////////////////////////////////////////
 // RuntimeId: 09546
-// TypeInfo:  0x0000000142C89C48
+// TypeInfo: 0x0000000142C89C48
 enum AIAltFireFromAntState
 {
     AltFireFromAntState_NoForcedFire, //0x0000
@@ -449,7 +449,7 @@ enum AIAltFireFromAntState
 
 ////////////////////////////////////////
 // RuntimeId: 09450
-// TypeInfo:  0x0000000142C819B8
+// TypeInfo: 0x0000000142C819B8
 enum RailRideHeliPointToSide
 {
     Front, //0x0000
@@ -459,7 +459,7 @@ enum RailRideHeliPointToSide
 
 ////////////////////////////////////////
 // RuntimeId: 09441
-// TypeInfo:  0x0000000142C81600
+// TypeInfo: 0x0000000142C81600
 enum OriginTokenType
 {
     OriginTokenType_Ticket, //0x0000
@@ -468,7 +468,7 @@ enum OriginTokenType
 
 ////////////////////////////////////////
 // RuntimeId: 09384
-// TypeInfo:  0x0000000142C7ED48
+// TypeInfo: 0x0000000142C7ED48
 enum BackendType
 {
     Backend_Lan, //0x0000
@@ -481,7 +481,7 @@ enum BackendType
 
 ////////////////////////////////////////
 // RuntimeId: 09344
-// TypeInfo:  0x0000000142C7ED68
+// TypeInfo: 0x0000000142C7ED68
 enum OnlineEnvironment
 {
     OnlineEnvironment_Development, //0x0000
@@ -493,7 +493,7 @@ enum OnlineEnvironment
 
 ////////////////////////////////////////
 // RuntimeId: 09340
-// TypeInfo:  0x0000000142C7ED88
+// TypeInfo: 0x0000000142C7ED88
 enum OriginPartyType
 {
     OriginPartyType_Public, //0x0000
@@ -503,7 +503,7 @@ enum OriginPartyType
 
 ////////////////////////////////////////
 // RuntimeId: 09288
-// TypeInfo:  0x0000000142C7CF20
+// TypeInfo: 0x0000000142C7CF20
 enum MatchmakingSessionMode
 {
     MatchmakingSessionMode_FindDedicatedServer, //0x0000
@@ -515,7 +515,7 @@ enum MatchmakingSessionMode
 
 ////////////////////////////////////////
 // RuntimeId: 09266
-// TypeInfo:  0x0000000142C7D080
+// TypeInfo: 0x0000000142C7D080
 enum MatchmakingRankedMode
 {
     MatchmakingRankedMode_Ranked, //0x0000
@@ -525,7 +525,7 @@ enum MatchmakingRankedMode
 
 ////////////////////////////////////////
 // RuntimeId: 09258
-// TypeInfo:  0x0000000142C7CF40
+// TypeInfo: 0x0000000142C7CF40
 enum MatchmakingVirtualizationMode
 {
     MatchmakingVirtualizationMode_Virtualized, //0x0000
@@ -535,7 +535,7 @@ enum MatchmakingVirtualizationMode
 
 ////////////////////////////////////////
 // RuntimeId: 09256
-// TypeInfo:  0x0000000142C7CF60
+// TypeInfo: 0x0000000142C7CF60
 enum MatchmakingPlatform
 {
     MatchmakingPlatform_PC, //0x0000
@@ -552,7 +552,7 @@ enum MatchmakingPlatform
 
 ////////////////////////////////////////
 // RuntimeId: 09224
-// TypeInfo:  0x0000000142C7D420
+// TypeInfo: 0x0000000142C7D420
 enum InviteType
 {
     InviteType_Invalid, //0x0000
@@ -566,7 +566,7 @@ enum InviteType
 
 ////////////////////////////////////////
 // RuntimeId: 09222
-// TypeInfo:  0x0000000142C7D440
+// TypeInfo: 0x0000000142C7D440
 enum InvitePlatform
 {
     InvitePlatform_Invalid, //0x0000
@@ -581,7 +581,7 @@ enum InvitePlatform
 
 ////////////////////////////////////////
 // RuntimeId: 09214
-// TypeInfo:  0x0000000142C7CF80
+// TypeInfo: 0x0000000142C7CF80
 enum GamePeer2PeerMode
 {
     GamePeer2PeerMode_FullMesh, //0x0000
@@ -591,7 +591,7 @@ enum GamePeer2PeerMode
 
 ////////////////////////////////////////
 // RuntimeId: 09212
-// TypeInfo:  0x0000000142C7CFA0
+// TypeInfo: 0x0000000142C7CFA0
 enum GameNetworkTopology
 {
     GameNetworkTopology_Disabled, //0x0000
@@ -602,7 +602,7 @@ enum GameNetworkTopology
 
 ////////////////////////////////////////
 // RuntimeId: 09149
-// TypeInfo:  0x0000000142C7AEF0
+// TypeInfo: 0x0000000142C7AEF0
 enum ExecuteOnPropertyChangeType
 {
     ExecuteOnPropertyChangeType_DontExecute, //0x0000
@@ -612,7 +612,7 @@ enum ExecuteOnPropertyChangeType
 
 ////////////////////////////////////////
 // RuntimeId: 09127
-// TypeInfo:  0x0000000142C78F88
+// TypeInfo: 0x0000000142C78F88
 enum PostProcessDofMode
 {
     PostProcessDofMode_Gaussian, //0x0000
@@ -621,7 +621,7 @@ enum PostProcessDofMode
 
 ////////////////////////////////////////
 // RuntimeId: 09125
-// TypeInfo:  0x0000000142C78E48
+// TypeInfo: 0x0000000142C78E48
 enum PostProcessAAMode
 {
     PostProcessAAMode_None, //0x0000
@@ -634,7 +634,7 @@ enum PostProcessAAMode
 
 ////////////////////////////////////////
 // RuntimeId: 09123
-// TypeInfo:  0x0000000142C78E68
+// TypeInfo: 0x0000000142C78E68
 enum ScaleResampleMode
 {
     ScaleResampleMode_Point, //0x0000
@@ -647,7 +647,7 @@ enum ScaleResampleMode
 
 ////////////////////////////////////////
 // RuntimeId: 09121
-// TypeInfo:  0x0000000142C78E88
+// TypeInfo: 0x0000000142C78E88
 enum MipmapFilterMode
 {
     MipmapFilterMode_Box, //0x0000
@@ -658,7 +658,7 @@ enum MipmapFilterMode
 
 ////////////////////////////////////////
 // RuntimeId: 09119
-// TypeInfo:  0x0000000142C78EA8
+// TypeInfo: 0x0000000142C78EA8
 enum WorldViewMode
 {
     WorldViewMode_Default, //0x0000
@@ -699,7 +699,7 @@ enum WorldViewMode
 
 ////////////////////////////////////////
 // RuntimeId: 09103
-// TypeInfo:  0x0000000142C78EC8
+// TypeInfo: 0x0000000142C78EC8
 enum EmitterParamOverride
 {
     EmitterParamOverride_EmitterParameter1, //0x0000
@@ -710,7 +710,7 @@ enum EmitterParamOverride
 
 ////////////////////////////////////////
 // RuntimeId: 09097
-// TypeInfo:  0x0000000142C78EE8
+// TypeInfo: 0x0000000142C78EE8
 enum VehicleLightingMode
 {
     VehicleLightingMode_Add, //0x0000
@@ -719,7 +719,7 @@ enum VehicleLightingMode
 
 ////////////////////////////////////////
 // RuntimeId: 09093
-// TypeInfo:  0x0000000142C78F08
+// TypeInfo: 0x0000000142C78F08
 enum CharacterLightingMode
 {
     CharacterLightingMode_Add, //0x0000
@@ -728,7 +728,7 @@ enum CharacterLightingMode
 
 ////////////////////////////////////////
 // RuntimeId: 09087
-// TypeInfo:  0x0000000142C78F28
+// TypeInfo: 0x0000000142C78F28
 enum ScreenEffectFrameType
 {
     ScreenEffectFrameType_FullFrame, //0x0000
@@ -738,7 +738,7 @@ enum ScreenEffectFrameType
 
 ////////////////////////////////////////
 // RuntimeId: 09041
-// TypeInfo:  0x0000000142C78F48
+// TypeInfo: 0x0000000142C78F48
 enum EnlightenColorMode
 {
     EnlightenColorMode_Multiply, //0x0000
@@ -747,7 +747,7 @@ enum EnlightenColorMode
 
 ////////////////////////////////////////
 // RuntimeId: 09009
-// TypeInfo:  0x0000000142C78F68
+// TypeInfo: 0x0000000142C78F68
 enum RenderVolumeTransformType
 {
     RenderVolumeTransformType_WorldSpaceInv, //0x0000
@@ -756,7 +756,7 @@ enum RenderVolumeTransformType
 
 ////////////////////////////////////////
 // RuntimeId: 08945
-// TypeInfo:  0x0000000142C73FD8
+// TypeInfo: 0x0000000142C73FD8
 enum SoldierChangeAction
 {
     SCA_Done, //0x0000
@@ -766,7 +766,7 @@ enum SoldierChangeAction
 
 ////////////////////////////////////////
 // RuntimeId: 08887
-// TypeInfo:  0x0000000142C73D58
+// TypeInfo: 0x0000000142C73D58
 enum UIGraphPriority
 {
     UIGraphPriority_Low, //0x0000
@@ -778,7 +778,7 @@ enum UIGraphPriority
 
 ////////////////////////////////////////
 // RuntimeId: 08841
-// TypeInfo:  0x0000000142C73D78
+// TypeInfo: 0x0000000142C73D78
 enum DataSetParamType
 {
     DSPT_Default, //0x0000
@@ -790,7 +790,7 @@ enum DataSetParamType
 
 ////////////////////////////////////////
 // RuntimeId: 08835
-// TypeInfo:  0x0000000142C73D98
+// TypeInfo: 0x0000000142C73D98
 enum WidgetVerticalAlignment
 {
     WVA_Top, //0x0000
@@ -800,7 +800,7 @@ enum WidgetVerticalAlignment
 
 ////////////////////////////////////////
 // RuntimeId: 08833
-// TypeInfo:  0x0000000142C73DB8
+// TypeInfo: 0x0000000142C73DB8
 enum WidgetHorisontalAlignment
 {
     WHA_Left, //0x0000
@@ -810,7 +810,7 @@ enum WidgetHorisontalAlignment
 
 ////////////////////////////////////////
 // RuntimeId: 08791
-// TypeInfo:  0x0000000142C73DD8
+// TypeInfo: 0x0000000142C73DD8
 enum UIScreenPurpose
 {
     UIScreenPurpose_Standard, //0x0000
@@ -821,7 +821,7 @@ enum UIScreenPurpose
 
 ////////////////////////////////////////
 // RuntimeId: 08789
-// TypeInfo:  0x0000000142C73DF8
+// TypeInfo: 0x0000000142C73DF8
 enum UILogicOperator
 {
     UILogicOperator_None, //0x0000
@@ -834,7 +834,7 @@ enum UILogicOperator
 
 ////////////////////////////////////////
 // RuntimeId: 08787
-// TypeInfo:  0x0000000142C746D8
+// TypeInfo: 0x0000000142C746D8
 enum UIInputEvent
 {
     UIInputEvent_None, //0x0000
@@ -854,7 +854,7 @@ enum UIInputEvent
 
 ////////////////////////////////////////
 // RuntimeId: 08785
-// TypeInfo:  0x0000000142C73E18
+// TypeInfo: 0x0000000142C73E18
 enum UIWidgetEventID
 {
     UIWidgetEventID_None, //0x0000
@@ -917,7 +917,7 @@ enum UIWidgetEventID
 
 ////////////////////////////////////////
 // RuntimeId: 08779
-// TypeInfo:  0x0000000142C73E38
+// TypeInfo: 0x0000000142C73E38
 enum UIInterruptID
 {
     UIInterruptID_None, //0x0000
@@ -926,7 +926,7 @@ enum UIInterruptID
 
 ////////////////////////////////////////
 // RuntimeId: 08769
-// TypeInfo:  0x0000000142C73E58
+// TypeInfo: 0x0000000142C73E58
 enum UIColorType
 {
     UIColorType_Unselected, //0x0000
@@ -952,7 +952,7 @@ enum UIColorType
 
 ////////////////////////////////////////
 // RuntimeId: 08747
-// TypeInfo:  0x0000000142C746F8
+// TypeInfo: 0x0000000142C746F8
 enum UIConsoleKeyboardStatus
 {
     UIConsoleKeyboardStatus_Success, //0x0000
@@ -965,7 +965,7 @@ enum UIConsoleKeyboardStatus
 
 ////////////////////////////////////////
 // RuntimeId: 08745
-// TypeInfo:  0x0000000142C74718
+// TypeInfo: 0x0000000142C74718
 enum UIAnalogInput
 {
     UIAnalogInput_Size, //0x0000
@@ -974,7 +974,7 @@ enum UIAnalogInput
 
 ////////////////////////////////////////
 // RuntimeId: 08743
-// TypeInfo:  0x0000000142C74738
+// TypeInfo: 0x0000000142C74738
 enum UIAnalogInputEventType
 {
     UIAnalogInputEventType_Moved, //0x0000
@@ -983,7 +983,7 @@ enum UIAnalogInputEventType
 
 ////////////////////////////////////////
 // RuntimeId: 08741
-// TypeInfo:  0x0000000142C73E78
+// TypeInfo: 0x0000000142C73E78
 enum UIInputAction
 {
     UIInputAction_NavigateUp, //0x0000
@@ -1093,7 +1093,7 @@ enum UIInputAction
 
 ////////////////////////////////////////
 // RuntimeId: 08739
-// TypeInfo:  0x0000000142C74758
+// TypeInfo: 0x0000000142C74758
 enum UITouchEventType
 {
     UITouchEventType_Start, //0x0000
@@ -1103,7 +1103,7 @@ enum UITouchEventType
 
 ////////////////////////////////////////
 // RuntimeId: 08737
-// TypeInfo:  0x0000000142C74778
+// TypeInfo: 0x0000000142C74778
 enum UIInputActionEventType
 {
     UIInputActionEventType_Pressed, //0x0000
@@ -1113,7 +1113,7 @@ enum UIInputActionEventType
 
 ////////////////////////////////////////
 // RuntimeId: 08735
-// TypeInfo:  0x0000000142C74798
+// TypeInfo: 0x0000000142C74798
 enum UIKeyboardEventType
 {
     UIKeyboardEventType_KeyDown, //0x0000
@@ -1123,7 +1123,7 @@ enum UIKeyboardEventType
 
 ////////////////////////////////////////
 // RuntimeId: 08733
-// TypeInfo:  0x0000000142C747B8
+// TypeInfo: 0x0000000142C747B8
 enum UIMouseEventType
 {
     UIMouseEventType_MouseMove, //0x0000
@@ -1134,7 +1134,7 @@ enum UIMouseEventType
 
 ////////////////////////////////////////
 // RuntimeId: 08731
-// TypeInfo:  0x0000000142C747D8
+// TypeInfo: 0x0000000142C747D8
 enum UIMouseButton
 {
     UIMouseButton_Left, //0x0000
@@ -1147,7 +1147,7 @@ enum UIMouseButton
 
 ////////////////////////////////////////
 // RuntimeId: 08729
-// TypeInfo:  0x0000000142C747F8
+// TypeInfo: 0x0000000142C747F8
 enum UISystemType
 {
     UISystem_None, //0x0000
@@ -1156,7 +1156,7 @@ enum UISystemType
 
 ////////////////////////////////////////
 // RuntimeId: 08725
-// TypeInfo:  0x0000000142C73E98
+// TypeInfo: 0x0000000142C73E98
 enum UIState
 {
     UIState_Menu, //0x0000
@@ -1176,7 +1176,7 @@ enum UIState
 
 ////////////////////////////////////////
 // RuntimeId: 08721
-// TypeInfo:  0x0000000142C73EB8
+// TypeInfo: 0x0000000142C73EB8
 enum UIUpdateType
 {
     UIUpdateType_Always, //0x0000
@@ -1187,7 +1187,7 @@ enum UIUpdateType
 
 ////////////////////////////////////////
 // RuntimeId: 08714
-// TypeInfo:  0x0000000142C710D0
+// TypeInfo: 0x0000000142C710D0
 enum TerrainRenderMode
 {
     TerrainRenderMode_Default, //0x0000
@@ -1201,7 +1201,7 @@ enum TerrainRenderMode
 
 ////////////////////////////////////////
 // RuntimeId: 08649
-// TypeInfo:  0x0000000142C6FA20
+// TypeInfo: 0x0000000142C6FA20
 enum RasterTreeBuildMode
 {
     RasterTreeBuildMode_InlinePersistentStreamRest, //0x0000
@@ -1211,7 +1211,7 @@ enum RasterTreeBuildMode
 
 ////////////////////////////////////////
 // RuntimeId: 08635
-// TypeInfo:  0x0000000142C6FA40
+// TypeInfo: 0x0000000142C6FA40
 enum TerrainDrawPassType
 {
     TerrainDrawPassType_SinglePass, //0x0000
@@ -1221,7 +1221,7 @@ enum TerrainDrawPassType
 
 ////////////////////////////////////////
 // RuntimeId: 08629
-// TypeInfo:  0x0000000142C6FA60
+// TypeInfo: 0x0000000142C6FA60
 enum TerrainBrushDetailOperation
 {
     Lerp, //0x0000
@@ -1231,7 +1231,7 @@ enum TerrainBrushDetailOperation
 
 ////////////////////////////////////////
 // RuntimeId: 08623
-// TypeInfo:  0x0000000142C6FA80
+// TypeInfo: 0x0000000142C6FA80
 enum TerrainLayerType
 {
     TerrainLayerType_IgnoreMask, //0x0000
@@ -1241,7 +1241,7 @@ enum TerrainLayerType
 
 ////////////////////////////////////////
 // RuntimeId: 08613
-// TypeInfo:  0x0000000142C6FAA0
+// TypeInfo: 0x0000000142C6FAA0
 enum MeshScatteringInstanceDataMode
 {
     MeshScatteringInstanceDataMode_None, //0x0000
@@ -1254,7 +1254,7 @@ enum MeshScatteringInstanceDataMode
 
 ////////////////////////////////////////
 // RuntimeId: 08611
-// TypeInfo:  0x0000000142C6FAC0
+// TypeInfo: 0x0000000142C6FAC0
 enum UndergrowthOrientationMode
 {
     UndergrowthOrientationMode_Horizontal, //0x0000
@@ -1264,7 +1264,7 @@ enum UndergrowthOrientationMode
 
 ////////////////////////////////////////
 // RuntimeId: 08609
-// TypeInfo:  0x0000000142C6FAE0
+// TypeInfo: 0x0000000142C6FAE0
 enum MeshScatteringOrientationMode
 {
     MeshScatteringOrientationMode_Horizontal, //0x0000
@@ -1274,7 +1274,7 @@ enum MeshScatteringOrientationMode
 
 ////////////////////////////////////////
 // RuntimeId: 08607
-// TypeInfo:  0x0000000142C6FB00
+// TypeInfo: 0x0000000142C6FB00
 enum UndergrowthRotationMode
 {
     UndergrowthRotationMode_Random, //0x0000
@@ -1284,7 +1284,7 @@ enum UndergrowthRotationMode
 
 ////////////////////////////////////////
 // RuntimeId: 08605
-// TypeInfo:  0x0000000142C6FB20
+// TypeInfo: 0x0000000142C6FB20
 enum MeshScatteringRotationMode
 {
     MeshScatteringRotationMode_Random, //0x0000
@@ -1294,7 +1294,7 @@ enum MeshScatteringRotationMode
 
 ////////////////////////////////////////
 // RuntimeId: 08603
-// TypeInfo:  0x0000000142C6FB40
+// TypeInfo: 0x0000000142C6FB40
 enum MeshScatteringElevationMode
 {
     MeshScatteringElevationMode_SnapBoundingBox, //0x0000
@@ -1303,7 +1303,7 @@ enum MeshScatteringElevationMode
 
 ////////////////////////////////////////
 // RuntimeId: 08587
-// TypeInfo:  0x0000000142C6FB60
+// TypeInfo: 0x0000000142C6FB60
 enum DensityMap_FilterType
 {
     DensityMapFilter_SecondOrderDifference, //0x0000
@@ -1315,7 +1315,7 @@ enum DensityMap_FilterType
 
 ////////////////////////////////////////
 // RuntimeId: 08581
-// TypeInfo:  0x0000000142C6FB80
+// TypeInfo: 0x0000000142C6FB80
 enum SampleCenter
 {
     SampleCenter_Center, //0x0000
@@ -1324,7 +1324,7 @@ enum SampleCenter
 
 ////////////////////////////////////////
 // RuntimeId: 08577
-// TypeInfo:  0x0000000142C6FBA0
+// TypeInfo: 0x0000000142C6FBA0
 enum RasterNodeUsage
 {
     RasterNodeUsage_Default, //0x0000
@@ -1336,7 +1336,7 @@ enum RasterNodeUsage
 
 ////////////////////////////////////////
 // RuntimeId: 08549
-// TypeInfo:  0x0000000142C6C438
+// TypeInfo: 0x0000000142C6C438
 enum TextureCompressQualityMode
 {
     TextureCompressQualityMode_Default, //0x0000
@@ -1346,7 +1346,7 @@ enum TextureCompressQualityMode
 
 ////////////////////////////////////////
 // RuntimeId: 08547
-// TypeInfo:  0x0000000142C6C658
+// TypeInfo: 0x0000000142C6C658
 enum ShaderConstantSystemTexture
 {
     ShaderConstantSystemTexture_DepthBufferTexture, //0x0000
@@ -1355,7 +1355,7 @@ enum ShaderConstantSystemTexture
 
 ////////////////////////////////////////
 // RuntimeId: 08545
-// TypeInfo:  0x0000000142C6C678
+// TypeInfo: 0x0000000142C6C678
 enum ShaderTimeType
 {
     ShaderTimeType_Game, //0x0000
@@ -1364,7 +1364,7 @@ enum ShaderTimeType
 
 ////////////////////////////////////////
 // RuntimeId: 08543
-// TypeInfo:  0x0000000142C6C698
+// TypeInfo: 0x0000000142C6C698
 enum ShaderInterpolationType
 {
     ShaderInterpolationType_Linear, //0x0000
@@ -1381,7 +1381,7 @@ enum ShaderInterpolationType
 
 ////////////////////////////////////////
 // RuntimeId: 08541
-// TypeInfo:  0x0000000142C6C6B8
+// TypeInfo: 0x0000000142C6C6B8
 enum ShaderDepthBiasGroup
 {
     ShaderDepthBiasGroup_Default, //0x0000
@@ -1401,7 +1401,7 @@ enum ShaderDepthBiasGroup
 
 ////////////////////////////////////////
 // RuntimeId: 08539
-// TypeInfo:  0x0000000142C6C6D8
+// TypeInfo: 0x0000000142C6C6D8
 enum ShaderTextureCoordType
 {
     ShaderTextureCoordType_Unknown, //0x0000
@@ -1411,7 +1411,7 @@ enum ShaderTextureCoordType
 
 ////////////////////////////////////////
 // RuntimeId: 08537
-// TypeInfo:  0x0000000142C6C6F8
+// TypeInfo: 0x0000000142C6C6F8
 enum ShaderValueFormat
 {
     ShaderValueFormat_Half, //0x0000
@@ -1423,7 +1423,7 @@ enum ShaderValueFormat
 
 ////////////////////////////////////////
 // RuntimeId: 08535
-// TypeInfo:  0x0000000142C6C718
+// TypeInfo: 0x0000000142C6C718
 enum ShaderValueType
 {
     ShaderValueType_None, //0x0000
@@ -1517,7 +1517,7 @@ enum ShaderValueType
 
 ////////////////////////////////////////
 // RuntimeId: 08533
-// TypeInfo:  0x0000000142C6C738
+// TypeInfo: 0x0000000142C6C738
 enum ShaderGeometrySpace
 {
     ShaderGeometrySpace_Object, //0x0000
@@ -1529,7 +1529,7 @@ enum ShaderGeometrySpace
 
 ////////////////////////////////////////
 // RuntimeId: 08531
-// TypeInfo:  0x0000000142C6C758
+// TypeInfo: 0x0000000142C6C758
 enum XenonTessellationMode
 {
     XenonTessellationMode_Discrete, //0x0000
@@ -1539,7 +1539,7 @@ enum XenonTessellationMode
 
 ////////////////////////////////////////
 // RuntimeId: 08529
-// TypeInfo:  0x0000000142C6C778
+// TypeInfo: 0x0000000142C6C778
 enum ShaderShadowmapMethod
 {
     ShaderShadowmapMethod_None, //0x0000
@@ -1551,7 +1551,7 @@ enum ShaderShadowmapMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08527
-// TypeInfo:  0x0000000142C6C798
+// TypeInfo: 0x0000000142C6C798
 enum ShaderShadowmapQuality
 {
     ShaderShadowmapQuality_Pcf2x2, //0x0000
@@ -1561,7 +1561,7 @@ enum ShaderShadowmapQuality
 
 ////////////////////////////////////////
 // RuntimeId: 08525
-// TypeInfo:  0x0000000142C6C7B8
+// TypeInfo: 0x0000000142C6C7B8
 enum ShaderObjectLighting
 {
     ShaderObjectLighting_None, //0x0000
@@ -1572,7 +1572,7 @@ enum ShaderObjectLighting
 
 ////////////////////////////////////////
 // RuntimeId: 08523
-// TypeInfo:  0x0000000142C6C7D8
+// TypeInfo: 0x0000000142C6C7D8
 enum ShaderDebugRenderMode
 {
     ShaderDebugRenderMode_None, //0x0000
@@ -1583,7 +1583,7 @@ enum ShaderDebugRenderMode
 
 ////////////////////////////////////////
 // RuntimeId: 08521
-// TypeInfo:  0x0000000142C6C7F8
+// TypeInfo: 0x0000000142C6C7F8
 enum ShaderRenderMode
 {
     ShaderRenderMode_Default, //0x0000
@@ -1604,7 +1604,7 @@ enum ShaderRenderMode
 
 ////////////////////////////////////////
 // RuntimeId: 08519
-// TypeInfo:  0x0000000142C6C818
+// TypeInfo: 0x0000000142C6C818
 enum ShaderSkinningMethod
 {
     ShaderSkinningMethod_None, //0x0000
@@ -1619,7 +1619,7 @@ enum ShaderSkinningMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08517
-// TypeInfo:  0x0000000142C6C838
+// TypeInfo: 0x0000000142C6C838
 enum ShaderInstancingMethod
 {
     ShaderInstancingMethod_None, //0x0000
@@ -1639,7 +1639,7 @@ enum ShaderInstancingMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08515
-// TypeInfo:  0x0000000142C6C858
+// TypeInfo: 0x0000000142C6C858
 enum ShaderBlendMode
 {
     ShaderBlendMode_Lerp, //0x0000
@@ -1655,7 +1655,7 @@ enum ShaderBlendMode
 
 ////////////////////////////////////////
 // RuntimeId: 08513
-// TypeInfo:  0x0000000142C6C878
+// TypeInfo: 0x0000000142C6C878
 enum SurfaceShaderType
 {
     SurfaceShaderType_Opaque, //0x0000
@@ -1668,7 +1668,7 @@ enum SurfaceShaderType
 
 ////////////////////////////////////////
 // RuntimeId: 08505
-// TypeInfo:  0x0000000142C6C458
+// TypeInfo: 0x0000000142C6C458
 enum TerrainShaderParameterDataType
 {
     TerrainShaderParameterDataType_Bool, //0x0000
@@ -1680,7 +1680,7 @@ enum TerrainShaderParameterDataType
 
 ////////////////////////////////////////
 // RuntimeId: 08501
-// TypeInfo:  0x0000000142C6C898
+// TypeInfo: 0x0000000142C6C898
 enum ShaderParameterDataType
 {
     ShaderParameterDataType_Vector //0x0000
@@ -1688,7 +1688,7 @@ enum ShaderParameterDataType
 
 ////////////////////////////////////////
 // RuntimeId: 08499
-// TypeInfo:  0x0000000142C6C8B8
+// TypeInfo: 0x0000000142C6C8B8
 enum UnitType
 {
     UnitType_Meter, //0x0000
@@ -1697,7 +1697,7 @@ enum UnitType
 
 ////////////////////////////////////////
 // RuntimeId: 08497
-// TypeInfo:  0x0000000142C6C8D8
+// TypeInfo: 0x0000000142C6C8D8
 enum DistortionSpaceType
 {
     DistortionSpaceType_CameraSpace, //0x0000
@@ -1706,7 +1706,7 @@ enum DistortionSpaceType
 
 ////////////////////////////////////////
 // RuntimeId: 08495
-// TypeInfo:  0x0000000142C6C8F8
+// TypeInfo: 0x0000000142C6C8F8
 enum XenonShaderBranchType
 {
     XsbtDefault, //0x0000
@@ -1717,7 +1717,7 @@ enum XenonShaderBranchType
 
 ////////////////////////////////////////
 // RuntimeId: 08493
-// TypeInfo:  0x0000000142C6C918
+// TypeInfo: 0x0000000142C6C918
 enum ShaderBranchMethod
 {
     SbmStatic, //0x0000
@@ -1729,7 +1729,7 @@ enum ShaderBranchMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08491
-// TypeInfo:  0x0000000142C6C938
+// TypeInfo: 0x0000000142C6C938
 enum ShaderComparisonOperator
 {
     ScoEquals, //0x0000
@@ -1742,7 +1742,7 @@ enum ShaderComparisonOperator
 
 ////////////////////////////////////////
 // RuntimeId: 08489
-// TypeInfo:  0x0000000142C6C958
+// TypeInfo: 0x0000000142C6C958
 enum BlendShaderMode
 {
     BsmLerp, //0x0000
@@ -1759,7 +1759,7 @@ enum BlendShaderMode
 
 ////////////////////////////////////////
 // RuntimeId: 08487
-// TypeInfo:  0x0000000142C6C978
+// TypeInfo: 0x0000000142C6C978
 enum CurveShaderType
 {
     CstSine, //0x0000
@@ -1771,7 +1771,7 @@ enum CurveShaderType
 
 ////////////////////////////////////////
 // RuntimeId: 08485
-// TypeInfo:  0x0000000142C6C998
+// TypeInfo: 0x0000000142C6C998
 enum EyeVectorSpace
 {
     EyeVectorSpace_World, //0x0000
@@ -1781,7 +1781,7 @@ enum EyeVectorSpace
 
 ////////////////////////////////////////
 // RuntimeId: 08483
-// TypeInfo:  0x0000000142C6C9B8
+// TypeInfo: 0x0000000142C6C9B8
 enum PixelNormalSpace
 {
     PnsTangent //0x0000
@@ -1789,7 +1789,7 @@ enum PixelNormalSpace
 
 ////////////////////////////////////////
 // RuntimeId: 08481
-// TypeInfo:  0x0000000142C6C9D8
+// TypeInfo: 0x0000000142C6C9D8
 enum VertexNormalSpace
 {
     VnsObject, //0x0000
@@ -1799,7 +1799,7 @@ enum VertexNormalSpace
 
 ////////////////////////////////////////
 // RuntimeId: 08479
-// TypeInfo:  0x0000000142C6C9F8
+// TypeInfo: 0x0000000142C6C9F8
 enum ShaderPositionSpace
 {
     ShaderPositionSpace_Object, //0x0000
@@ -1808,7 +1808,7 @@ enum ShaderPositionSpace
 
 ////////////////////////////////////////
 // RuntimeId: 08477
-// TypeInfo:  0x0000000142C6CA18
+// TypeInfo: 0x0000000142C6CA18
 enum ShaderTextureDecompression
 {
     ShaderTextureDecompression_None, //0x0000
@@ -1822,7 +1822,7 @@ enum ShaderTextureDecompression
 
 ////////////////////////////////////////
 // RuntimeId: 08475
-// TypeInfo:  0x0000000142C6CA38
+// TypeInfo: 0x0000000142C6CA38
 enum ShaderValueParameterType
 {
     SvptLiteral, //0x0000
@@ -1834,7 +1834,7 @@ enum ShaderValueParameterType
 
 ////////////////////////////////////////
 // RuntimeId: 08473
-// TypeInfo:  0x0000000142C6CA58
+// TypeInfo: 0x0000000142C6CA58
 enum ShaderLightingModel
 {
     ShaderLightingModel_Standard, //0x0000
@@ -1847,7 +1847,7 @@ enum ShaderLightingModel
 
 ////////////////////////////////////////
 // RuntimeId: 08471
-// TypeInfo:  0x0000000142C6CA78
+// TypeInfo: 0x0000000142C6CA78
 enum ShaderPortType
 {
     SptBool, //0x0000
@@ -1861,7 +1861,7 @@ enum ShaderPortType
 
 ////////////////////////////////////////
 // RuntimeId: 08453
-// TypeInfo:  0x0000000142C6C478
+// TypeInfo: 0x0000000142C6C478
 enum ShaderTessellationType
 {
     ShaderTessellationType_None, //0x0000
@@ -1872,7 +1872,7 @@ enum ShaderTessellationType
 
 ////////////////////////////////////////
 // RuntimeId: 08451
-// TypeInfo:  0x0000000142C6C498
+// TypeInfo: 0x0000000142C6C498
 enum ShaderParameterType
 {
     ShaderParameterType_Bool, //0x0000
@@ -1888,7 +1888,7 @@ enum ShaderParameterType
 
 ////////////////////////////////////////
 // RuntimeId: 08443
-// TypeInfo:  0x0000000142C6CAB8
+// TypeInfo: 0x0000000142C6CAB8
 enum ShaderConstantFunction
 {
     ShaderConstantFunction_ViewMatrix, //0x0000
@@ -1958,7 +1958,7 @@ enum ShaderConstantFunction
 
 ////////////////////////////////////////
 // RuntimeId: 08435
-// TypeInfo:  0x0000000142C6C4B8
+// TypeInfo: 0x0000000142C6C4B8
 enum BlurFilter
 {
     BfNone, //0x0000
@@ -1972,7 +1972,7 @@ enum BlurFilter
 
 ////////////////////////////////////////
 // RuntimeId: 08431
-// TypeInfo:  0x0000000142C6C4D8
+// TypeInfo: 0x0000000142C6C4D8
 enum BlurMethod
 {
     BlurMethod_Gaussian, //0x0000
@@ -1981,7 +1981,7 @@ enum BlurMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08429
-// TypeInfo:  0x0000000142C6C4F8
+// TypeInfo: 0x0000000142C6C4F8
 enum DofMethod
 {
     DofMethod_Gaussian, //0x0000
@@ -1990,7 +1990,7 @@ enum DofMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08427
-// TypeInfo:  0x0000000142C6C518
+// TypeInfo: 0x0000000142C6C518
 enum DynamicAOMethod
 {
     DynamicAOMethod_SSAO, //0x0000
@@ -1999,7 +1999,7 @@ enum DynamicAOMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08425
-// TypeInfo:  0x0000000142C6C538
+// TypeInfo: 0x0000000142C6C538
 enum PostProcessDebugMode
 {
     PpdmDefault, //0x0000
@@ -2013,7 +2013,7 @@ enum PostProcessDebugMode
 
 ////////////////////////////////////////
 // RuntimeId: 08409
-// TypeInfo:  0x0000000142C6C558
+// TypeInfo: 0x0000000142C6C558
 enum TonemapMethod
 {
     TonemapMethod_None, //0x0000
@@ -2025,7 +2025,7 @@ enum TonemapMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08407
-// TypeInfo:  0x0000000142C6CB18
+// TypeInfo: 0x0000000142C6CB18
 enum EntropyCodecType
 {
     EntropyCodecType_Arithmetic //0x0000
@@ -2033,7 +2033,7 @@ enum EntropyCodecType
 
 ////////////////////////////////////////
 // RuntimeId: 08405
-// TypeInfo:  0x0000000142C6C578
+// TypeInfo: 0x0000000142C6C578
 enum PointCloudAttributeQuantization
 {
     PointCloudAttributeQuantization_s5e5, //0x0000
@@ -2046,7 +2046,7 @@ enum PointCloudAttributeQuantization
 
 ////////////////////////////////////////
 // RuntimeId: 08403
-// TypeInfo:  0x0000000142C6C598
+// TypeInfo: 0x0000000142C6C598
 enum PointCloudAttributeUsage
 {
     PointCloudAttributeUsage_Position, //0x0000
@@ -2058,7 +2058,7 @@ enum PointCloudAttributeUsage
 
 ////////////////////////////////////////
 // RuntimeId: 08401
-// TypeInfo:  0x0000000142C6CB38
+// TypeInfo: 0x0000000142C6CB38
 enum MeshSubsetCategoryFlags
 {
     MeshSubsetCategoryFlags_Opaque, //0x0000
@@ -2073,7 +2073,7 @@ enum MeshSubsetCategoryFlags
 
 ////////////////////////////////////////
 // RuntimeId: 08399
-// TypeInfo:  0x0000000142C6CB58
+// TypeInfo: 0x0000000142C6CB58
 enum MeshSubsetCategory
 {
     MeshSubsetCategory_Opaque, //0x0000
@@ -2085,7 +2085,7 @@ enum MeshSubsetCategory
 
 ////////////////////////////////////////
 // RuntimeId: 08397
-// TypeInfo:  0x0000000142C6CB78
+// TypeInfo: 0x0000000142C6CB78
 enum MeshType
 {
     MeshType_Rigid, //0x0000
@@ -2095,7 +2095,7 @@ enum MeshType
 
 ////////////////////////////////////////
 // RuntimeId: 08395
-// TypeInfo:  0x0000000142C6CB98
+// TypeInfo: 0x0000000142C6CB98
 enum MeshLimits
 {
     MaxMeshLodCount //0x0000
@@ -2103,7 +2103,7 @@ enum MeshLimits
 
 ////////////////////////////////////////
 // RuntimeId: 08393
-// TypeInfo:  0x0000000142C6CBB8
+// TypeInfo: 0x0000000142C6CBB8
 enum MeshHandleFlags
 {
     InvalidMeshHandle //0x0000
@@ -2111,7 +2111,7 @@ enum MeshHandleFlags
 
 ////////////////////////////////////////
 // RuntimeId: 08355
-// TypeInfo:  0x0000000142C6C5B8
+// TypeInfo: 0x0000000142C6C5B8
 enum ProceduralAnimationWindMethod
 {
     Wind_Cloth, //0x0000
@@ -2120,7 +2120,7 @@ enum ProceduralAnimationWindMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08351
-// TypeInfo:  0x0000000142C6C5D8
+// TypeInfo: 0x0000000142C6C5D8
 enum ProceduralAnimationWiggleMethod
 {
     Wiggle_Palmtree, //0x0000
@@ -2130,7 +2130,7 @@ enum ProceduralAnimationWiggleMethod
 
 ////////////////////////////////////////
 // RuntimeId: 08347
-// TypeInfo:  0x0000000142C6C5F8
+// TypeInfo: 0x0000000142C6C5F8
 enum EnlightenType
 {
     EnlightenType_Dynamic, //0x0000
@@ -2141,7 +2141,7 @@ enum EnlightenType
 
 ////////////////////////////////////////
 // RuntimeId: 08334
-// TypeInfo:  0x0000000142C690C8
+// TypeInfo: 0x0000000142C690C8
 enum SpotLightShape
 {
     SpotLightShape_Cone, //0x0000
@@ -2151,7 +2151,7 @@ enum SpotLightShape
 
 ////////////////////////////////////////
 // RuntimeId: 08320
-// TypeInfo:  0x0000000142C69108
+// TypeInfo: 0x0000000142C69108
 enum VertexElementClassification
 {
     VertexElementClassification_PerVertex, //0x0000
@@ -2161,7 +2161,7 @@ enum VertexElementClassification
 
 ////////////////////////////////////////
 // RuntimeId: 08318
-// TypeInfo:  0x0000000142C69128
+// TypeInfo: 0x0000000142C69128
 enum VertexElementUsage
 {
     VertexElementUsage_Unknown, //0x0000
@@ -2263,7 +2263,7 @@ enum VertexElementUsage
 
 ////////////////////////////////////////
 // RuntimeId: 08316
-// TypeInfo:  0x0000000142C69148
+// TypeInfo: 0x0000000142C69148
 enum VertexElementFormat
 {
     VertexElementFormat_None, //0x0000
@@ -2322,7 +2322,7 @@ enum VertexElementFormat
 
 ////////////////////////////////////////
 // RuntimeId: 08302
-// TypeInfo:  0x0000000142C69168
+// TypeInfo: 0x0000000142C69168
 enum ShaderProgram
 {
     ShaderProgram_DebugRender_Font2d, //0x0000
@@ -2359,7 +2359,7 @@ enum ShaderProgram
 
 ////////////////////////////////////////
 // RuntimeId: 08292
-// TypeInfo:  0x0000000142C69188
+// TypeInfo: 0x0000000142C69188
 enum ShaderRenderPath
 {
     ShaderRenderPath_Dx10, //0x0000
@@ -2377,7 +2377,7 @@ enum ShaderRenderPath
 
 ////////////////////////////////////////
 // RuntimeId: 08290
-// TypeInfo:  0x0000000142C691A8
+// TypeInfo: 0x0000000142C691A8
 enum ShaderStageType
 {
     ShaderStageType_Vertex, //0x0000
@@ -2391,7 +2391,7 @@ enum ShaderStageType
 
 ////////////////////////////////////////
 // RuntimeId: 08288
-// TypeInfo:  0x0000000142C691C8
+// TypeInfo: 0x0000000142C691C8
 enum StencilOperation
 {
     StencilOperation_Keep, //0x0000
@@ -2406,7 +2406,7 @@ enum StencilOperation
 
 ////////////////////////////////////////
 // RuntimeId: 08286
-// TypeInfo:  0x0000000142C691E8
+// TypeInfo: 0x0000000142C691E8
 enum DepthStencilCompareFunc
 {
     DepthStencilCompareFunc_Never, //0x0000
@@ -2421,7 +2421,7 @@ enum DepthStencilCompareFunc
 
 ////////////////////////////////////////
 // RuntimeId: 08284
-// TypeInfo:  0x0000000142C69208
+// TypeInfo: 0x0000000142C69208
 enum RenderFillMode
 {
     RenderFillMode_Solid, //0x0000
@@ -2430,7 +2430,7 @@ enum RenderFillMode
 
 ////////////////////////////////////////
 // RuntimeId: 08282
-// TypeInfo:  0x0000000142C69228
+// TypeInfo: 0x0000000142C69228
 enum RenderDepthMode
 {
     RenderDepthMode_Disabled, //0x0000
@@ -2441,7 +2441,7 @@ enum RenderDepthMode
 
 ////////////////////////////////////////
 // RuntimeId: 08280
-// TypeInfo:  0x0000000142C69248
+// TypeInfo: 0x0000000142C69248
 enum RenderClearMask
 {
     RenderClearMask_Color0, //0x0000
@@ -2460,7 +2460,7 @@ enum RenderClearMask
 
 ////////////////////////////////////////
 // RuntimeId: 08278
-// TypeInfo:  0x0000000142C69268
+// TypeInfo: 0x0000000142C69268
 enum RenderWriteMask
 {
     RenderWriteMask_Red, //0x0000
@@ -2474,7 +2474,7 @@ enum RenderWriteMask
 
 ////////////////////////////////////////
 // RuntimeId: 08276
-// TypeInfo:  0x0000000142C69288
+// TypeInfo: 0x0000000142C69288
 enum RenderBlendOp
 {
     RenderBlendOp_Add, //0x0000
@@ -2486,7 +2486,7 @@ enum RenderBlendOp
 
 ////////////////////////////////////////
 // RuntimeId: 08274
-// TypeInfo:  0x0000000142C692A8
+// TypeInfo: 0x0000000142C692A8
 enum RenderBlendMode
 {
     RenderBlendMode_Zero, //0x0000
@@ -2506,7 +2506,7 @@ enum RenderBlendMode
 
 ////////////////////////////////////////
 // RuntimeId: 08272
-// TypeInfo:  0x0000000142C692C8
+// TypeInfo: 0x0000000142C692C8
 enum RenderCullMode
 {
     RenderCullMode_None, //0x0000
@@ -2516,7 +2516,7 @@ enum RenderCullMode
 
 ////////////////////////////////////////
 // RuntimeId: 08270
-// TypeInfo:  0x0000000142C692E8
+// TypeInfo: 0x0000000142C692E8
 enum IndexBufferFormat
 {
     IndexBufferFormat_16Bit, //0x0000
@@ -2525,7 +2525,7 @@ enum IndexBufferFormat
 
 ////////////////////////////////////////
 // RuntimeId: 08268
-// TypeInfo:  0x0000000142C69308
+// TypeInfo: 0x0000000142C69308
 enum PrimitiveType
 {
     PrimitiveType_PointList, //0x0000
@@ -2539,7 +2539,7 @@ enum PrimitiveType
 
 ////////////////////////////////////////
 // RuntimeId: 08266
-// TypeInfo:  0x0000000142C69328
+// TypeInfo: 0x0000000142C69328
 enum TextureFilter
 {
     TfNone, //0x0000
@@ -2551,7 +2551,7 @@ enum TextureFilter
 
 ////////////////////////////////////////
 // RuntimeId: 08264
-// TypeInfo:  0x0000000142C69348
+// TypeInfo: 0x0000000142C69348
 enum TextureAddress
 {
     TaWrap, //0x0000
@@ -2563,7 +2563,7 @@ enum TextureAddress
 
 ////////////////////////////////////////
 // RuntimeId: 08262
-// TypeInfo:  0x0000000142C69368
+// TypeInfo: 0x0000000142C69368
 enum TextureType
 {
     TextureType_1d, //0x0000
@@ -2577,7 +2577,7 @@ enum TextureType
 
 ////////////////////////////////////////
 // RuntimeId: 08260
-// TypeInfo:  0x0000000142C69388
+// TypeInfo: 0x0000000142C69388
 enum RenderBufferFormat
 {
     RenderBufferFormat_Unknown, //0x0000
@@ -2603,7 +2603,7 @@ enum RenderBufferFormat
 
 ////////////////////////////////////////
 // RuntimeId: 08258
-// TypeInfo:  0x0000000142C693A8
+// TypeInfo: 0x0000000142C693A8
 enum TextureFormat
 {
     TextureFormat_DXT1, //0x0000
@@ -2654,7 +2654,7 @@ enum TextureFormat
 
 ////////////////////////////////////////
 // RuntimeId: 08195
-// TypeInfo:  0x0000000142C65128
+// TypeInfo: 0x0000000142C65128
 enum RigidBodyCollisionLayer
 {
     RigidBodyCollisionLayer_Invalid, //0x0000
@@ -2680,7 +2680,7 @@ enum RigidBodyCollisionLayer
 
 ////////////////////////////////////////
 // RuntimeId: 08193
-// TypeInfo:  0x0000000142C65148
+// TypeInfo: 0x0000000142C65148
 enum RigidBodyQualityType
 {
     RigidBodyQualityType_Invalid, //0x0000
@@ -2694,7 +2694,7 @@ enum RigidBodyQualityType
 
 ////////////////////////////////////////
 // RuntimeId: 08191
-// TypeInfo:  0x0000000142C65168
+// TypeInfo: 0x0000000142C65168
 enum RigidBodyMotionType
 {
     RigidBodyMotionType_Invalid, //0x0000
@@ -2706,7 +2706,7 @@ enum RigidBodyMotionType
 
 ////////////////////////////////////////
 // RuntimeId: 08189
-// TypeInfo:  0x0000000142C65188
+// TypeInfo: 0x0000000142C65188
 enum RigidBodyType
 {
     RBTypeCollision, //0x0000
@@ -2719,7 +2719,7 @@ enum RigidBodyType
 
 ////////////////////////////////////////
 // RuntimeId: 08183
-// TypeInfo:  0x0000000142C65328
+// TypeInfo: 0x0000000142C65328
 enum PhysicsWorldType
 {
     PhysicsWorldType_Client, //0x0000
@@ -2730,7 +2730,7 @@ enum PhysicsWorldType
 
 ////////////////////////////////////////
 // RuntimeId: 08163
-// TypeInfo:  0x0000000142C651A8
+// TypeInfo: 0x0000000142C651A8
 enum ProximityObjectType
 {
     PotProximityDisabled, //0x0000
@@ -2743,7 +2743,7 @@ enum ProximityObjectType
 
 ////////////////////////////////////////
 // RuntimeId: 08119
-// TypeInfo:  0x0000000142C651C8
+// TypeInfo: 0x0000000142C651C8
 enum ForceMagnitudeInputType
 {
     FMITYaw, //0x0000
@@ -2755,7 +2755,7 @@ enum ForceMagnitudeInputType
 
 ////////////////////////////////////////
 // RuntimeId: 08117
-// TypeInfo:  0x0000000142C651E8
+// TypeInfo: 0x0000000142C651E8
 enum PropellerType
 {
     PropellerType_Regular, //0x0000
@@ -2764,7 +2764,7 @@ enum PropellerType
 
 ////////////////////////////////////////
 // RuntimeId: 08105
-// TypeInfo:  0x0000000142C65208
+// TypeInfo: 0x0000000142C65208
 enum VehicleInputTweakType
 {
     CombinedTimedSpeedTweakType, //0x0000
@@ -2775,7 +2775,7 @@ enum VehicleInputTweakType
 
 ////////////////////////////////////////
 // RuntimeId: 08101
-// TypeInfo:  0x0000000142C65228
+// TypeInfo: 0x0000000142C65228
 enum StabilizerProperty
 {
     SPPitchAngle, //0x0000
@@ -2790,7 +2790,7 @@ enum StabilizerProperty
 
 ////////////////////////////////////////
 // RuntimeId: 08075
-// TypeInfo:  0x0000000142C65248
+// TypeInfo: 0x0000000142C65248
 enum SpaceType
 {
     STBody, //0x0000
@@ -2799,7 +2799,7 @@ enum SpaceType
 
 ////////////////////////////////////////
 // RuntimeId: 08073
-// TypeInfo:  0x0000000142C65268
+// TypeInfo: 0x0000000142C65268
 enum ForceType
 {
     FTForce, //0x0000
@@ -2808,7 +2808,7 @@ enum ForceType
 
 ////////////////////////////////////////
 // RuntimeId: 08071
-// TypeInfo:  0x0000000142C65288
+// TypeInfo: 0x0000000142C65288
 enum ForceCondition
 {
     FCNever, //0x0000
@@ -2821,7 +2821,7 @@ enum ForceCondition
 
 ////////////////////////////////////////
 // RuntimeId: 08061
-// TypeInfo:  0x0000000142C652A8
+// TypeInfo: 0x0000000142C652A8
 enum VehicleMode
 {
     VmIdle, //0x0000
@@ -2835,7 +2835,7 @@ enum VehicleMode
 
 ////////////////////////////////////////
 // RuntimeId: 08037
-// TypeInfo:  0x0000000142C652C8
+// TypeInfo: 0x0000000142C652C8
 enum CharacterStateType
 {
     CharacterStateType_OnGround, //0x0000
@@ -2858,7 +2858,7 @@ enum CharacterStateType
 
 ////////////////////////////////////////
 // RuntimeId: 08025
-// TypeInfo:  0x0000000142C652E8
+// TypeInfo: 0x0000000142C652E8
 enum CharacterPoseCollisionType
 {
     CharacterPoseCollisionType_Capsule, //0x0000
@@ -2867,7 +2867,7 @@ enum CharacterPoseCollisionType
 
 ////////////////////////////////////////
 // RuntimeId: 08023
-// TypeInfo:  0x0000000142C65308
+// TypeInfo: 0x0000000142C65308
 enum CharacterPoseType
 {
     CharacterPoseType_Stand, //0x0000
@@ -2878,7 +2878,7 @@ enum CharacterPoseType
 
 ////////////////////////////////////////
 // RuntimeId: 07979
-// TypeInfo:  0x0000000142C621C0
+// TypeInfo: 0x0000000142C621C0
 enum PathfindingChoice
 {
     PathfindingChoice_Off, //0x0000
@@ -2888,7 +2888,7 @@ enum PathfindingChoice
 
 ////////////////////////////////////////
 // RuntimeId: 07971
-// TypeInfo:  0x0000000142C61EB0
+// TypeInfo: 0x0000000142C61EB0
 enum SecureReason
 {
     SecureReason_Ok, //0x0000
@@ -2938,7 +2938,7 @@ enum SecureReason
 
 ////////////////////////////////////////
 // RuntimeId: 07959
-// TypeInfo:  0x0000000142C610C0
+// TypeInfo: 0x0000000142C610C0
 enum AnimationControlModeEnum
 {
     AnimationControlModeEnum_PlaceTrajectoryAtObject, //0x0000
@@ -2948,7 +2948,7 @@ enum AnimationControlModeEnum
 
 ////////////////////////////////////////
 // RuntimeId: 07957
-// TypeInfo:  0x0000000142C610E0
+// TypeInfo: 0x0000000142C610E0
 enum JointOutputModeEnum
 {
     JointOutputModeEnum_NoOutput, //0x0000
@@ -2958,7 +2958,7 @@ enum JointOutputModeEnum
 
 ////////////////////////////////////////
 // RuntimeId: 07955
-// TypeInfo:  0x0000000142C61100
+// TypeInfo: 0x0000000142C61100
 enum AntAnimatableComponentMeshRenderContext
 {
     AntAnimatableComponentMeshRenderContext_World, //0x0000
@@ -2968,7 +2968,7 @@ enum AntAnimatableComponentMeshRenderContext
 
 ////////////////////////////////////////
 // RuntimeId: 07953
-// TypeInfo:  0x0000000142C61120
+// TypeInfo: 0x0000000142C61120
 enum AntAnimatableComponentMeshRenderType
 {
     AntAnimatableComponentMeshRenderType_Default, //0x0000
@@ -2978,7 +2978,7 @@ enum AntAnimatableComponentMeshRenderType
 
 ////////////////////////////////////////
 // RuntimeId: 07951
-// TypeInfo:  0x0000000142C61140
+// TypeInfo: 0x0000000142C61140
 enum AntControllerComplexity
 {
     AntControllerComplexity_High, //0x0000
@@ -2988,7 +2988,7 @@ enum AntControllerComplexity
 
 ////////////////////////////////////////
 // RuntimeId: 07929
-// TypeInfo:  0x0000000142C611E0
+// TypeInfo: 0x0000000142C611E0
 enum RecordEntryInputType
 {
     RecordEntryInputType_FireInput, //0x0000
@@ -3004,7 +3004,7 @@ enum RecordEntryInputType
 
 ////////////////////////////////////////
 // RuntimeId: 07905
-// TypeInfo:  0x0000000142C61160
+// TypeInfo: 0x0000000142C61160
 enum GroundAttachMethod
 {
     GroundAttachMethod_SyncRaycast, //0x0000
@@ -3013,7 +3013,7 @@ enum GroundAttachMethod
 
 ////////////////////////////////////////
 // RuntimeId: 07899
-// TypeInfo:  0x0000000142C61180
+// TypeInfo: 0x0000000142C61180
 enum FadeTrackKeyframeType
 {
     FadeTrackKeyframeType_FadeOut, //0x0000
@@ -3023,7 +3023,7 @@ enum FadeTrackKeyframeType
 
 ////////////////////////////////////////
 // RuntimeId: 07883
-// TypeInfo:  0x0000000142C61200
+// TypeInfo: 0x0000000142C61200
 enum CompareOperation
 {
     Equal, //0x0000
@@ -3036,7 +3036,7 @@ enum CompareOperation
 
 ////////////////////////////////////////
 // RuntimeId: 07879
-// TypeInfo:  0x0000000142C5EFC0
+// TypeInfo: 0x0000000142C5EFC0
 enum WeaponUnlocks
 {
     WeaponUnlocks_MaxAmount //0x0000
@@ -3044,7 +3044,7 @@ enum WeaponUnlocks
 
 ////////////////////////////////////////
 // RuntimeId: 07877
-// TypeInfo:  0x0000000142C5EFE0
+// TypeInfo: 0x0000000142C5EFE0
 enum WeaponSlot
 {
     WeaponSlot_0, //0x0000
@@ -3063,7 +3063,7 @@ enum WeaponSlot
 
 ////////////////////////////////////////
 // RuntimeId: 07875
-// TypeInfo:  0x0000000142C5F000
+// TypeInfo: 0x0000000142C5F000
 enum GearSlot
 {
     GearSlot_Melee, //0x0000
@@ -3084,7 +3084,7 @@ enum GearSlot
 
 ////////////////////////////////////////
 // RuntimeId: 07871
-// TypeInfo:  0x0000000142C5EEC0
+// TypeInfo: 0x0000000142C5EEC0
 enum FOVTransitionType
 {
     FOVTransitionType_Linear, //0x0000
@@ -3094,7 +3094,7 @@ enum FOVTransitionType
 
 ////////////////////////////////////////
 // RuntimeId: 07827
-// TypeInfo:  0x0000000142C5EEE0
+// TypeInfo: 0x0000000142C5EEE0
 enum LockType
 {
     LockAlways, //0x0000
@@ -3107,7 +3107,7 @@ enum LockType
 
 ////////////////////////////////////////
 // RuntimeId: 07821
-// TypeInfo:  0x0000000142C5F040
+// TypeInfo: 0x0000000142C5F040
 enum WeaponFiringEvent
 {
     WeaponFiringEvent_Push, //0x0000
@@ -3130,7 +3130,7 @@ enum WeaponFiringEvent
 
 ////////////////////////////////////////
 // RuntimeId: 07801
-// TypeInfo:  0x0000000142C5EF00
+// TypeInfo: 0x0000000142C5EF00
 enum ReloadLogic
 {
     rlWeaponSwitchCancelsUnfinishedReload, //0x0000
@@ -3139,7 +3139,7 @@ enum ReloadLogic
 
 ////////////////////////////////////////
 // RuntimeId: 07799
-// TypeInfo:  0x0000000142C5EF20
+// TypeInfo: 0x0000000142C5EF20
 enum ReloadType
 {
     rtSingleBullet, //0x0000
@@ -3149,7 +3149,7 @@ enum ReloadType
 
 ////////////////////////////////////////
 // RuntimeId: 07797
-// TypeInfo:  0x0000000142C5EF40
+// TypeInfo: 0x0000000142C5EF40
 enum FireLogicType
 {
     fltSingleFire, //0x0000
@@ -3163,7 +3163,7 @@ enum FireLogicType
 
 ////////////////////////////////////////
 // RuntimeId: 07769
-// TypeInfo:  0x0000000142C5EF60
+// TypeInfo: 0x0000000142C5EF60
 enum WarnTarget
 {
     wtWarnSoldierAndVehicle, //0x0000
@@ -3174,7 +3174,7 @@ enum WarnTarget
 
 ////////////////////////////////////////
 // RuntimeId: 07757
-// TypeInfo:  0x0000000142C5EF80
+// TypeInfo: 0x0000000142C5EF80
 enum AntHitReactionWeaponType
 {
     AntHitReactionWeaponType_Pistol, //0x0000
@@ -3190,7 +3190,7 @@ enum AntHitReactionWeaponType
 
 ////////////////////////////////////////
 // RuntimeId: 07747
-// TypeInfo:  0x0000000142C5F240
+// TypeInfo: 0x0000000142C5F240
 enum RouteType
 {
     RouteStop, //0x0000
@@ -3199,7 +3199,7 @@ enum RouteType
 
 ////////////////////////////////////////
 // RuntimeId: 07745
-// TypeInfo:  0x0000000142C5F260
+// TypeInfo: 0x0000000142C5F260
 enum WaypointsSnappingSettings
 {
     UseShapeSettings, //0x0000
@@ -3209,7 +3209,7 @@ enum WaypointsSnappingSettings
 
 ////////////////////////////////////////
 // RuntimeId: 07731
-// TypeInfo:  0x0000000142C5EFA0
+// TypeInfo: 0x0000000142C5EFA0
 enum WarningPlayerType
 {
     WPTInflictor, //0x0000
@@ -3218,7 +3218,7 @@ enum WarningPlayerType
 
 ////////////////////////////////////////
 // RuntimeId: 07667
-// TypeInfo:  0x0000000142C58F30
+// TypeInfo: 0x0000000142C58F30
 enum CameraRelativeControlEnum
 {
     UseProfileOptions, //0x0000
@@ -3227,7 +3227,7 @@ enum CameraRelativeControlEnum
 
 ////////////////////////////////////////
 // RuntimeId: 07649
-// TypeInfo:  0x0000000142C58F50
+// TypeInfo: 0x0000000142C58F50
 enum RotationChannel
 {
     RotationChannel_Pitch, //0x0000
@@ -3237,7 +3237,7 @@ enum RotationChannel
 
 ////////////////////////////////////////
 // RuntimeId: 07631
-// TypeInfo:  0x0000000142C58F70
+// TypeInfo: 0x0000000142C58F70
 enum RotationAxisEnum
 {
     RALeft, //0x0000
@@ -3247,7 +3247,7 @@ enum RotationAxisEnum
 
 ////////////////////////////////////////
 // RuntimeId: 07587
-// TypeInfo:  0x0000000142C58F90
+// TypeInfo: 0x0000000142C58F90
 enum UnlockAvailability
 {
     UnlockAvailability_All, //0x0000
@@ -3257,7 +3257,7 @@ enum UnlockAvailability
 
 ////////////////////////////////////////
 // RuntimeId: 07583
-// TypeInfo:  0x0000000142C592B0
+// TypeInfo: 0x0000000142C592B0
 enum UIMessageType
 {
     UIMessageType_Text, //0x0000
@@ -3300,7 +3300,7 @@ enum UIMessageType
 
 ////////////////////////////////////////
 // RuntimeId: 07567
-// TypeInfo:  0x0000000142C58FB0
+// TypeInfo: 0x0000000142C58FB0
 enum UIScreenRenderingPass
 {
     UIScreenRenderingPass_RenderTarget, //0x0000
@@ -3311,7 +3311,7 @@ enum UIScreenRenderingPass
 
 ////////////////////////////////////////
 // RuntimeId: 07565
-// TypeInfo:  0x0000000142C58FD0
+// TypeInfo: 0x0000000142C58FD0
 enum UIScreenProjectionMode
 {
     UIScreenProjectionMode_Default, //0x0000
@@ -3322,7 +3322,7 @@ enum UIScreenProjectionMode
 
 ////////////////////////////////////////
 // RuntimeId: 07507
-// TypeInfo:  0x0000000142C58FF0
+// TypeInfo: 0x0000000142C58FF0
 enum UIElementBlendType
 {
     UIElementBlendType_Solid, //0x0000
@@ -3341,7 +3341,7 @@ enum UIElementBlendType
 
 ////////////////////////////////////////
 // RuntimeId: 07489
-// TypeInfo:  0x0000000142C59010
+// TypeInfo: 0x0000000142C59010
 enum UIElementAlignment
 {
     UIElementAlignment_Left, //0x0000
@@ -3355,7 +3355,7 @@ enum UIElementAlignment
 
 ////////////////////////////////////////
 // RuntimeId: 07485
-// TypeInfo:  0x0000000142C59030
+// TypeInfo: 0x0000000142C59030
 enum UITextEntryType
 {
     UITextEntryType_Passthrough, //0x0000
@@ -3371,7 +3371,7 @@ enum UITextEntryType
 
 ////////////////////////////////////////
 // RuntimeId: 07455
-// TypeInfo:  0x0000000142C59050
+// TypeInfo: 0x0000000142C59050
 enum UILayoutMode
 {
     UILayoutMode_AnchorOffset, //0x0000
@@ -3380,7 +3380,7 @@ enum UILayoutMode
 
 ////////////////////////////////////////
 // RuntimeId: 07453
-// TypeInfo:  0x0000000142C59070
+// TypeInfo: 0x0000000142C59070
 enum UITextureMappingCompartment
 {
     UITextureMappingCompartment_Default, //0x0000
@@ -3389,7 +3389,7 @@ enum UITextureMappingCompartment
 
 ////////////////////////////////////////
 // RuntimeId: 07415
-// TypeInfo:  0x0000000142C594D0
+// TypeInfo: 0x0000000142C594D0
 enum CharacterPoseAction
 {
     CPTNoAction, //0x0000
@@ -3400,7 +3400,7 @@ enum CharacterPoseAction
 
 ////////////////////////////////////////
 // RuntimeId: 07401
-// TypeInfo:  0x0000000142C59090
+// TypeInfo: 0x0000000142C59090
 enum AreaTriggerInclude
 {
     ATNone, //0x0000
@@ -3413,7 +3413,7 @@ enum AreaTriggerInclude
 
 ////////////////////////////////////////
 // RuntimeId: 07371
-// TypeInfo:  0x0000000142C590B0
+// TypeInfo: 0x0000000142C590B0
 enum CameraMovementActionMode
 {
     CameraMovementActionMode_Start, //0x0000
@@ -3423,7 +3423,7 @@ enum CameraMovementActionMode
 
 ////////////////////////////////////////
 // RuntimeId: 07347
-// TypeInfo:  0x0000000142C590D0
+// TypeInfo: 0x0000000142C590D0
 enum DebugMenuItemType
 {
     DmitItem, //0x0000
@@ -3432,7 +3432,7 @@ enum DebugMenuItemType
 
 ////////////////////////////////////////
 // RuntimeId: 07286
-// TypeInfo:  0x0000000142C590F0
+// TypeInfo: 0x0000000142C590F0
 enum EntryEnterRestriction
 {
     EntryEnterRestriction_NoRestriction, //0x0000
@@ -3441,7 +3441,7 @@ enum EntryEnterRestriction
 
 ////////////////////////////////////////
 // RuntimeId: 07284
-// TypeInfo:  0x0000000142C59570
+// TypeInfo: 0x0000000142C59570
 enum PlayerSpawnType
 {
     PlayerSpawnType_HumanPlayer, //0x0000
@@ -3453,7 +3453,7 @@ enum PlayerSpawnType
 
 ////////////////////////////////////////
 // RuntimeId: 07264
-// TypeInfo:  0x0000000142C50C50
+// TypeInfo: 0x0000000142C50C50
 enum Difficulty
 {
     Difficulty_Easy, //0x0000
@@ -3465,7 +3465,7 @@ enum Difficulty
 
 ////////////////////////////////////////
 // RuntimeId: 07260
-// TypeInfo:  0x0000000142C50E10
+// TypeInfo: 0x0000000142C50E10
 enum VoiceChannel
 {
     VoiceChannel_Off, //0x0000
@@ -3477,7 +3477,7 @@ enum VoiceChannel
 
 ////////////////////////////////////////
 // RuntimeId: 07258
-// TypeInfo:  0x0000000142C50E30
+// TypeInfo: 0x0000000142C50E30
 enum SquadId
 {
     SquadNone, //0x0000
@@ -3518,7 +3518,7 @@ enum SquadId
 
 ////////////////////////////////////////
 // RuntimeId: 07256
-// TypeInfo:  0x0000000142C50E50
+// TypeInfo: 0x0000000142C50E50
 enum FactionId
 {
     FactionNeutral, //0x0000
@@ -3531,7 +3531,7 @@ enum FactionId
 
 ////////////////////////////////////////
 // RuntimeId: 07254
-// TypeInfo:  0x0000000142C50E70
+// TypeInfo: 0x0000000142C50E70
 enum TeamId
 {
     TeamNeutral, //0x0000
@@ -3556,7 +3556,7 @@ enum TeamId
 
 ////////////////////////////////////////
 // RuntimeId: 07205
-// TypeInfo:  0x0000000142C50EB0
+// TypeInfo: 0x0000000142C50EB0
 enum IKEffectorEnum
 {
     IKLeftHand, //0x0000
@@ -3565,7 +3565,7 @@ enum IKEffectorEnum
 
 ////////////////////////////////////////
 // RuntimeId: 07203
-// TypeInfo:  0x0000000142C50ED0
+// TypeInfo: 0x0000000142C50ED0
 enum RotationAxis
 {
     raX, //0x0000
@@ -3575,7 +3575,7 @@ enum RotationAxis
 
 ////////////////////////////////////////
 // RuntimeId: 07201
-// TypeInfo:  0x0000000142C50EF0
+// TypeInfo: 0x0000000142C50EF0
 enum WheelPhysicsType
 {
     wptNormal, //0x0000
@@ -3585,7 +3585,7 @@ enum WheelPhysicsType
 
 ////////////////////////////////////////
 // RuntimeId: 07199
-// TypeInfo:  0x0000000142C50C70
+// TypeInfo: 0x0000000142C50C70
 enum EntryClass
 {
     ecPrimary, //0x0000
@@ -3594,7 +3594,7 @@ enum EntryClass
 
 ////////////////////////////////////////
 // RuntimeId: 07164
-// TypeInfo:  0x0000000142C50F70
+// TypeInfo: 0x0000000142C50F70
 enum CustomizationConstants
 {
     MaxVisualSockets, //0x0000
@@ -3603,7 +3603,7 @@ enum CustomizationConstants
 
 ////////////////////////////////////////
 // RuntimeId: 07146
-// TypeInfo:  0x0000000142C50FB0
+// TypeInfo: 0x0000000142C50FB0
 enum WeaponClassification
 {
     WCNone, //0x0000
@@ -3613,7 +3613,7 @@ enum WeaponClassification
 
 ////////////////////////////////////////
 // RuntimeId: 07140
-// TypeInfo:  0x0000000142C50C90
+// TypeInfo: 0x0000000142C50C90
 enum BuoyantParts
 {
     BuoyantPart_Hips, //0x0000
@@ -3635,7 +3635,7 @@ enum BuoyantParts
 
 ////////////////////////////////////////
 // RuntimeId: 07128
-// TypeInfo:  0x0000000142C50CB0
+// TypeInfo: 0x0000000142C50CB0
 enum HitReactionType
 {
     HRT_Body, //0x0000
@@ -3657,7 +3657,7 @@ enum HitReactionType
 
 ////////////////////////////////////////
 // RuntimeId: 07110
-// TypeInfo:  0x0000000142C50CD0
+// TypeInfo: 0x0000000142C50CD0
 enum AntEntryIdEnum
 {
     AntEntryIdEnum_Humvee_Driver, //0x0000
@@ -3684,7 +3684,7 @@ enum AntEntryIdEnum
 
 ////////////////////////////////////////
 // RuntimeId: 07101
-// TypeInfo:  0x0000000142C50CF0
+// TypeInfo: 0x0000000142C50CF0
 enum EntrySpottingSettings
 {
     ESSDefault, //0x0000
@@ -3695,7 +3695,7 @@ enum EntrySpottingSettings
 
 ////////////////////////////////////////
 // RuntimeId: 07097
-// TypeInfo:  0x0000000142C50D10
+// TypeInfo: 0x0000000142C50D10
 enum EntrySeatType
 {
     EST_Driver, //0x0000
@@ -3705,7 +3705,7 @@ enum EntrySeatType
 
 ////////////////////////////////////////
 // RuntimeId: 07085
-// TypeInfo:  0x0000000142C51090
+// TypeInfo: 0x0000000142C51090
 enum PartComponentConstants
 {
     MaxHealthStateCount //0x0000
@@ -3713,7 +3713,7 @@ enum PartComponentConstants
 
 ////////////////////////////////////////
 // RuntimeId: 07068
-// TypeInfo:  0x0000000142C50D30
+// TypeInfo: 0x0000000142C50D30
 enum PersonViewMode
 {
     PersonViewMode_FirstPerson, //0x0000
@@ -3722,7 +3722,7 @@ enum PersonViewMode
 
 ////////////////////////////////////////
 // RuntimeId: 07051
-// TypeInfo:  0x0000000142C50D50
+// TypeInfo: 0x0000000142C50D50
 enum CharacterCameraForwardAxis
 {
     CharacterCameraForwardAxis_XAxis, //0x0000
@@ -3732,7 +3732,7 @@ enum CharacterCameraForwardAxis
 
 ////////////////////////////////////////
 // RuntimeId: 07045
-// TypeInfo:  0x0000000142C50D70
+// TypeInfo: 0x0000000142C50D70
 enum TargetMode
 {
     TargetMode_FirstPerson, //0x0000
@@ -3742,7 +3742,7 @@ enum TargetMode
 
 ////////////////////////////////////////
 // RuntimeId: 06953
-// TypeInfo:  0x0000000142C50D90
+// TypeInfo: 0x0000000142C50D90
 enum ANTLayerBlendType
 {
     ANTLayerBlendType_OverrideBlend, //0x0000
@@ -3752,7 +3752,7 @@ enum ANTLayerBlendType
 
 ////////////////////////////////////////
 // RuntimeId: 06951
-// TypeInfo:  0x0000000142C50DB0
+// TypeInfo: 0x0000000142C50DB0
 enum ANTClipEndRule
 {
     ANTClipEndRule_None, //0x0000
@@ -3764,7 +3764,7 @@ enum ANTClipEndRule
 
 ////////////////////////////////////////
 // RuntimeId: 06949
-// TypeInfo:  0x0000000142C51170
+// TypeInfo: 0x0000000142C51170
 enum ANTBlendAttachment
 {
     ANTBlendAttachment_Both, //0x0000
@@ -3774,7 +3774,7 @@ enum ANTBlendAttachment
 
 ////////////////////////////////////////
 // RuntimeId: 06947
-// TypeInfo:  0x0000000142C50DD0
+// TypeInfo: 0x0000000142C50DD0
 enum ANTBlendCurveType
 {
     ANTBlendCurveType_SnapIn, //0x0000
@@ -3787,7 +3787,7 @@ enum ANTBlendCurveType
 
 ////////////////////////////////////////
 // RuntimeId: 06898
-// TypeInfo:  0x0000000142C4AC80
+// TypeInfo: 0x0000000142C4AC80
 enum InputDeviceMessageEvent
 {
     IDME_ThrowGrenade, //0x0000
@@ -3799,7 +3799,7 @@ enum InputDeviceMessageEvent
 
 ////////////////////////////////////////
 // RuntimeId: 06896
-// TypeInfo:  0x0000000142C4ACA0
+// TypeInfo: 0x0000000142C4ACA0
 enum InputDeviceKeys
 {
     IDK_None, //0x0000
@@ -3952,7 +3952,7 @@ enum InputDeviceKeys
 
 ////////////////////////////////////////
 // RuntimeId: 06894
-// TypeInfo:  0x0000000142C4ACC0
+// TypeInfo: 0x0000000142C4ACC0
 enum InputDevicePOVs
 {
     IDP_POV_0, //0x0000
@@ -3963,7 +3963,7 @@ enum InputDevicePOVs
 
 ////////////////////////////////////////
 // RuntimeId: 06892
-// TypeInfo:  0x0000000142C4ACE0
+// TypeInfo: 0x0000000142C4ACE0
 enum InputDeviceMouseButtons
 {
     IDB_Button_0, //0x0000
@@ -3979,7 +3979,7 @@ enum InputDeviceMouseButtons
 
 ////////////////////////////////////////
 // RuntimeId: 06890
-// TypeInfo:  0x0000000142C4AD00
+// TypeInfo: 0x0000000142C4AD00
 enum InputDeviceMotionControllerButtons
 {
     IDMCB_Rup, //0x0000
@@ -4000,7 +4000,7 @@ enum InputDeviceMotionControllerButtons
 
 ////////////////////////////////////////
 // RuntimeId: 06888
-// TypeInfo:  0x0000000142C4AD20
+// TypeInfo: 0x0000000142C4AD20
 enum InputDevicePadButtons
 {
     IDB_Lup, //0x0000
@@ -4069,7 +4069,7 @@ enum InputDevicePadButtons
 
 ////////////////////////////////////////
 // RuntimeId: 06886
-// TypeInfo:  0x0000000142C4AD40
+// TypeInfo: 0x0000000142C4AD40
 enum InputDeviceAxes
 {
     IDA_Axis0X, //0x0000
@@ -4101,7 +4101,7 @@ enum InputDeviceAxes
 
 ////////////////////////////////////////
 // RuntimeId: 06884
-// TypeInfo:  0x0000000142C4AD60
+// TypeInfo: 0x0000000142C4AD60
 enum InputConceptIdentifiers
 {
     ConceptMoveFB, //0x0000
@@ -4362,7 +4362,7 @@ enum InputConceptIdentifiers
 
 ////////////////////////////////////////
 // RuntimeId: 06850
-// TypeInfo:  0x0000000142C4AF20
+// TypeInfo: 0x0000000142C4AF20
 enum PoseTransition
 {
     PTStandToProne, //0x0000
@@ -4375,7 +4375,7 @@ enum PoseTransition
 
 ////////////////////////////////////////
 // RuntimeId: 06842
-// TypeInfo:  0x0000000142C4AD80
+// TypeInfo: 0x0000000142C4AD80
 enum EntryInputActionType
 {
     EntryInputActionTypeAnalog, //0x0000
@@ -4385,7 +4385,7 @@ enum EntryInputActionType
 
 ////////////////////////////////////////
 // RuntimeId: 06832
-// TypeInfo:  0x0000000142C4ADA0
+// TypeInfo: 0x0000000142C4ADA0
 enum InputActionMapSlot
 {
     InputActionMapSlot_Undefined, //0x0000
@@ -4434,7 +4434,7 @@ enum InputActionMapSlot
 
 ////////////////////////////////////////
 // RuntimeId: 06830
-// TypeInfo:  0x0000000142C4ADC0
+// TypeInfo: 0x0000000142C4ADC0
 enum InputActionMapPlatform
 {
     IAMPWin32, //0x0000
@@ -4445,7 +4445,7 @@ enum InputActionMapPlatform
 
 ////////////////////////////////////////
 // RuntimeId: 06824
-// TypeInfo:  0x0000000142C4AF40
+// TypeInfo: 0x0000000142C4AF40
 enum SpottingType
 {
     STGunner, //0x0000
@@ -4459,7 +4459,7 @@ enum SpottingType
 
 ////////////////////////////////////////
 // RuntimeId: 06810
-// TypeInfo:  0x0000000142C4AF60
+// TypeInfo: 0x0000000142C4AF60
 enum UIHudIcon
 {
     UIHudIcon_Unused, //0x0000
@@ -4629,7 +4629,7 @@ enum UIHudIcon
 
 ////////////////////////////////////////
 // RuntimeId: 06808
-// TypeInfo:  0x0000000142C4ADE0
+// TypeInfo: 0x0000000142C4ADE0
 enum UIPartIdentifier
 {
     HCI_None, //0x0000
@@ -4641,7 +4641,7 @@ enum UIPartIdentifier
 
 ////////////////////////////////////////
 // RuntimeId: 06806
-// TypeInfo:  0x0000000142C4AF80
+// TypeInfo: 0x0000000142C4AF80
 enum CollisionMethodEnum
 {
     CMESimple, //0x0000
@@ -4650,7 +4650,7 @@ enum CollisionMethodEnum
 
 ////////////////////////////////////////
 // RuntimeId: 06776
-// TypeInfo:  0x0000000142C4AFA0
+// TypeInfo: 0x0000000142C4AFA0
 enum ServerFpsState
 {
     ServerFpsState_Disabled, //0x0000
@@ -4662,7 +4662,7 @@ enum ServerFpsState
 
 ////////////////////////////////////////
 // RuntimeId: 06774
-// TypeInfo:  0x0000000142C4AE00
+// TypeInfo: 0x0000000142C4AE00
 enum LogFileCollisionMode
 {
     LFCM_Overwrite, //0x0000
@@ -4672,7 +4672,7 @@ enum LogFileCollisionMode
 
 ////////////////////////////////////////
 // RuntimeId: 06772
-// TypeInfo:  0x0000000142C4AE20
+// TypeInfo: 0x0000000142C4AE20
 enum SKU
 {
     WW, //0x0000
@@ -4686,7 +4686,7 @@ enum SKU
 
 ////////////////////////////////////////
 // RuntimeId: 06758
-// TypeInfo:  0x0000000142C4AE40
+// TypeInfo: 0x0000000142C4AE40
 enum DamageIndicationType
 {
     DamageIndicationType_GiverPlayer, //0x0000
@@ -4695,7 +4695,7 @@ enum DamageIndicationType
 
 ////////////////////////////////////////
 // RuntimeId: 06730
-// TypeInfo:  0x0000000142C4B060
+// TypeInfo: 0x0000000142C4B060
 enum ExitToMenuReason
 {
     ExitToMenuReason_None, //0x0000
@@ -4727,7 +4727,7 @@ enum ExitToMenuReason
 
 ////////////////////////////////////////
 // RuntimeId: 06717
-// TypeInfo:  0x0000000142C4AE60
+// TypeInfo: 0x0000000142C4AE60
 enum EntitlementType
 {
     EntitlementType_Ignored, //0x0000
@@ -4737,7 +4737,7 @@ enum EntitlementType
 
 ////////////////////////////////////////
 // RuntimeId: 06701
-// TypeInfo:  0x0000000142C4AE80
+// TypeInfo: 0x0000000142C4AE80
 enum DynamicAvoidanceMode
 {
     DynamicAvoidanceMode_Never, //0x0000
@@ -4748,7 +4748,7 @@ enum DynamicAvoidanceMode
 
 ////////////////////////////////////////
 // RuntimeId: 06689
-// TypeInfo:  0x0000000142C45028
+// TypeInfo: 0x0000000142C45028
 enum ModelAnimationTransformType
 {
     ModelAnimationTransformType_World, //0x0000
@@ -4758,7 +4758,7 @@ enum ModelAnimationTransformType
 
 ////////////////////////////////////////
 // RuntimeId: 06687
-// TypeInfo:  0x0000000142C45048
+// TypeInfo: 0x0000000142C45048
 enum ModelAnimationUpdateOrder
 {
     ModelAnimationUpdateOrder_PostAnimation, //0x0000
@@ -4768,7 +4768,7 @@ enum ModelAnimationUpdateOrder
 
 ////////////////////////////////////////
 // RuntimeId: 06673
-// TypeInfo:  0x0000000142C45248
+// TypeInfo: 0x0000000142C45248
 enum ScoringVisibilityType
 {
     ScoringVisibilityType_Major, //0x0000
@@ -4778,7 +4778,7 @@ enum ScoringVisibilityType
 
 ////////////////////////////////////////
 // RuntimeId: 06639
-// TypeInfo:  0x0000000142C45068
+// TypeInfo: 0x0000000142C45068
 enum ProfileOptionsType
 {
     GstAudio, //0x0000
@@ -4795,7 +4795,7 @@ enum ProfileOptionsType
 
 ////////////////////////////////////////
 // RuntimeId: 06613
-// TypeInfo:  0x0000000142C45088
+// TypeInfo: 0x0000000142C45088
 enum PersistentValueHistoryType
 {
     PersistentValueHistoryType_None, //0x0000
@@ -4806,7 +4806,7 @@ enum PersistentValueHistoryType
 
 ////////////////////////////////////////
 // RuntimeId: 06603
-// TypeInfo:  0x0000000142C450A8
+// TypeInfo: 0x0000000142C450A8
 enum RichPresencePropertyType
 {
     RichPresencePropertyType_Float, //0x0000
@@ -4817,7 +4817,7 @@ enum RichPresencePropertyType
 
 ////////////////////////////////////////
 // RuntimeId: 06587
-// TypeInfo:  0x0000000142C452A8
+// TypeInfo: 0x0000000142C452A8
 enum PersistenceGameType
 {
     PersistenceGameType_Singleplayer, //0x0000
@@ -4828,7 +4828,7 @@ enum PersistenceGameType
 
 ////////////////////////////////////////
 // RuntimeId: 06583
-// TypeInfo:  0x0000000142C452C8
+// TypeInfo: 0x0000000142C452C8
 enum StatPeriod
 {
     StatPeriod_AllTime, //0x0000
@@ -4841,7 +4841,7 @@ enum StatPeriod
 
 ////////////////////////////////////////
 // RuntimeId: 06573
-// TypeInfo:  0x0000000142C45308
+// TypeInfo: 0x0000000142C45308
 enum PersistentValueDataKind
 {
     PersistentValueDataKind_Raw, //0x0000
@@ -4853,7 +4853,7 @@ enum PersistentValueDataKind
 
 ////////////////////////////////////////
 // RuntimeId: 06571
-// TypeInfo:  0x0000000142C450C8
+// TypeInfo: 0x0000000142C450C8
 enum PersistentValueDataType
 {
     PersistentValueDataType_Decimal, //0x0000
@@ -4863,7 +4863,7 @@ enum PersistentValueDataType
 
 ////////////////////////////////////////
 // RuntimeId: 06569
-// TypeInfo:  0x0000000142C450E8
+// TypeInfo: 0x0000000142C450E8
 enum PersistentValueType
 {
     PersistentValueType_Set, //0x0000
@@ -4875,7 +4875,7 @@ enum PersistentValueType
 
 ////////////////////////////////////////
 // RuntimeId: 06567
-// TypeInfo:  0x0000000142C45108
+// TypeInfo: 0x0000000142C45108
 enum ConsumableGroup
 {
     ConsumableGroup_0, //0x0000
@@ -4891,7 +4891,7 @@ enum ConsumableGroup
 
 ////////////////////////////////////////
 // RuntimeId: 06563
-// TypeInfo:  0x0000000142C45128
+// TypeInfo: 0x0000000142C45128
 enum PathfindingReplayMode
 {
     PathfindingReplayMode_Disabled, //0x0000
@@ -4901,7 +4901,7 @@ enum PathfindingReplayMode
 
 ////////////////////////////////////////
 // RuntimeId: 06473
-// TypeInfo:  0x0000000142C45148
+// TypeInfo: 0x0000000142C45148
 enum EventCompareGateType
 {
     EventCompareGate_Equals, //0x0000
@@ -4914,7 +4914,7 @@ enum EventCompareGateType
 
 ////////////////////////////////////////
 // RuntimeId: 06459
-// TypeInfo:  0x0000000142C45328
+// TypeInfo: 0x0000000142C45328
 enum MapMarkerColorType
 {
     MMCTRed, //0x0000
@@ -4924,7 +4924,7 @@ enum MapMarkerColorType
 
 ////////////////////////////////////////
 // RuntimeId: 06457
-// TypeInfo:  0x0000000142C45168
+// TypeInfo: 0x0000000142C45168
 enum MapMarkerType
 {
     MMTMissionObjective, //0x0000
@@ -4940,7 +4940,7 @@ enum MapMarkerType
 
 ////////////////////////////////////////
 // RuntimeId: 06445
-// TypeInfo:  0x0000000142C45188
+// TypeInfo: 0x0000000142C45188
 enum MessageReciever
 {
     MrAll, //0x0000
@@ -4951,7 +4951,7 @@ enum MessageReciever
 
 ////////////////////////////////////////
 // RuntimeId: 06441
-// TypeInfo:  0x0000000142C451A8
+// TypeInfo: 0x0000000142C451A8
 enum ObjectiveType
 {
     OTPrimary, //0x0000
@@ -4961,7 +4961,7 @@ enum ObjectiveType
 
 ////////////////////////////////////////
 // RuntimeId: 06431
-// TypeInfo:  0x0000000142C451C8
+// TypeInfo: 0x0000000142C451C8
 enum BlinkType
 {
     BTHold, //0x0000
@@ -4971,7 +4971,7 @@ enum BlinkType
 
 ////////////////////////////////////////
 // RuntimeId: 06429
-// TypeInfo:  0x0000000142C451E8
+// TypeInfo: 0x0000000142C451E8
 enum InteractionEntityType
 {
     IET_None, //0x0000
@@ -4983,7 +4983,7 @@ enum InteractionEntityType
 
 ////////////////////////////////////////
 // RuntimeId: 06427
-// TypeInfo:  0x0000000142C45348
+// TypeInfo: 0x0000000142C45348
 enum DisableTeamType
 {
     DttDisable, //0x0000
@@ -4992,7 +4992,7 @@ enum DisableTeamType
 
 ////////////////////////////////////////
 // RuntimeId: 06423
-// TypeInfo:  0x0000000142C45208
+// TypeInfo: 0x0000000142C45208
 enum KillAllPlayerEnum
 {
     KillAllPlayer_Both, //0x0000
@@ -5002,7 +5002,7 @@ enum KillAllPlayerEnum
 
 ////////////////////////////////////////
 // RuntimeId: 06186
-// TypeInfo:  0x0000000142C3A910
+// TypeInfo: 0x0000000142C3A910
 enum PickupAction
 {
     PickupAction_Pickup, //0x0000
@@ -5014,7 +5014,7 @@ enum PickupAction
 
 ////////////////////////////////////////
 // RuntimeId: 06156
-// TypeInfo:  0x0000000142C3ACB0
+// TypeInfo: 0x0000000142C3ACB0
 enum PickupItemType
 {
     PITWeapon, //0x0000
@@ -5023,7 +5023,7 @@ enum PickupItemType
 
 ////////////////////////////////////////
 // RuntimeId: 06055
-// TypeInfo:  0x0000000142C35EA8
+// TypeInfo: 0x0000000142C35EA8
 enum GunMasterNotificationType
 {
     GunMasterNotificationType_LevelUp, //0x0000
@@ -5035,7 +5035,7 @@ enum GunMasterNotificationType
 
 ////////////////////////////////////////
 // RuntimeId: 06051
-// TypeInfo:  0x0000000142C35F08
+// TypeInfo: 0x0000000142C35F08
 enum CoopPlayerEvent
 {
     CoopPlayerEvent_Connecting, //0x0000
@@ -5047,7 +5047,7 @@ enum CoopPlayerEvent
 
 ////////////////////////////////////////
 // RuntimeId: 06041
-// TypeInfo:  0x0000000142C36028
+// TypeInfo: 0x0000000142C36028
 enum PlayerKilledWeaponType
 {
     PlayerKilledWeaponType_Unknown, //0x0000
@@ -5058,7 +5058,7 @@ enum PlayerKilledWeaponType
 
 ////////////////////////////////////////
 // RuntimeId: 06012
-// TypeInfo:  0x0000000142C36368
+// TypeInfo: 0x0000000142C36368
 enum CameraIds
 {
     NoCameraId, //0x0000
@@ -5069,7 +5069,7 @@ enum CameraIds
 
 ////////////////////////////////////////
 // RuntimeId: 06010
-// TypeInfo:  0x0000000142C36388
+// TypeInfo: 0x0000000142C36388
 enum MenuResponse
 {
     ResponseOk, //0x0000
@@ -5080,7 +5080,7 @@ enum MenuResponse
 
 ////////////////////////////////////////
 // RuntimeId: 06008
-// TypeInfo:  0x0000000142C363A8
+// TypeInfo: 0x0000000142C363A8
 enum HudTextReceiver
 {
     HudTextReceiver_Team, //0x0000
@@ -5091,7 +5091,7 @@ enum HudTextReceiver
 
 ////////////////////////////////////////
 // RuntimeId: 05972
-// TypeInfo:  0x0000000142C367C8
+// TypeInfo: 0x0000000142C367C8
 enum ChangeGameSettingType
 {
     CGSNone, //0x0000
@@ -5101,7 +5101,7 @@ enum ChangeGameSettingType
 
 ////////////////////////////////////////
 // RuntimeId: 05935
-// TypeInfo:  0x0000000142C347F8
+// TypeInfo: 0x0000000142C347F8
 enum ProfileOptionsLoadStatus
 {
     ProfileOptionsLoadStatus_Empty, //0x0000
@@ -5111,7 +5111,7 @@ enum ProfileOptionsLoadStatus
 
 ////////////////////////////////////////
 // RuntimeId: 05929
-// TypeInfo:  0x0000000142C34898
+// TypeInfo: 0x0000000142C34898
 enum TinyEvent
 {
     TinyEvent_AckTimeSyncDone, //0x0000
@@ -5131,7 +5131,7 @@ enum TinyEvent
 
 ////////////////////////////////////////
 // RuntimeId: 05910
-// TypeInfo:  0x0000000142C34A58
+// TypeInfo: 0x0000000142C34A58
 enum AdministrationRestrictionLevel
 {
     AdministrationRestrictionLevel_Zero, //0x0000
@@ -5143,7 +5143,7 @@ enum AdministrationRestrictionLevel
 
 ////////////////////////////////////////
 // RuntimeId: 05908
-// TypeInfo:  0x0000000142C34A78
+// TypeInfo: 0x0000000142C34A78
 enum AdministrationEventType
 {
     AdministrationEventType_Add, //0x0000
@@ -5156,7 +5156,7 @@ enum AdministrationEventType
 
 ////////////////////////////////////////
 // RuntimeId: 05796
-// TypeInfo:  0x0000000142C2F670
+// TypeInfo: 0x0000000142C2F670
 enum ClientGameType
 {
     ClientGameType_SinglePlayer, //0x0000
@@ -5167,7 +5167,7 @@ enum ClientGameType
 
 ////////////////////////////////////////
 // RuntimeId: 05794
-// TypeInfo:  0x0000000142C2F690
+// TypeInfo: 0x0000000142C2F690
 enum ClientState
 {
     ClientState_WaitingForStaticBundleLoad, //0x0000
@@ -5192,7 +5192,7 @@ enum ClientState
 
 ////////////////////////////////////////
 // RuntimeId: 05633
-// TypeInfo:  0x0000000142C28F10
+// TypeInfo: 0x0000000142C28F10
 enum UIBundleType
 {
     UIBundleType_Static, //0x0000
@@ -5202,7 +5202,7 @@ enum UIBundleType
 
 ////////////////////////////////////////
 // RuntimeId: 05496
-// TypeInfo:  0x0000000142C26498
+// TypeInfo: 0x0000000142C26498
 enum CurveType
 {
     CurveType_Basic_Linear, //0x0000
@@ -5213,7 +5213,7 @@ enum CurveType
 
 ////////////////////////////////////////
 // RuntimeId: 05494
-// TypeInfo:  0x0000000142C264B8
+// TypeInfo: 0x0000000142C264B8
 enum InfinityType
 {
     InfinityType_Constant, //0x0000
@@ -5225,7 +5225,7 @@ enum InfinityType
 
 ////////////////////////////////////////
 // RuntimeId: 05482
-// TypeInfo:  0x0000000142C264D8
+// TypeInfo: 0x0000000142C264D8
 enum LayeredTransform_BlendType
 {
     LayeredTransform_BlendType_WorldOverride, //0x0000
@@ -5237,7 +5237,7 @@ enum LayeredTransform_BlendType
 
 ////////////////////////////////////////
 // RuntimeId: 05400
-// TypeInfo:  0x0000000142C22328
+// TypeInfo: 0x0000000142C22328
 enum AnimTangentType
 {
     kTangentFixed, //0x0000
@@ -5253,7 +5253,7 @@ enum AnimTangentType
 
 ////////////////////////////////////////
 // RuntimeId: 05398
-// TypeInfo:  0x0000000142C22348
+// TypeInfo: 0x0000000142C22348
 enum CurveInfinityType
 {
     CurveInfinityType_Constant, //0x0000
@@ -5265,7 +5265,7 @@ enum CurveInfinityType
 
 ////////////////////////////////////////
 // RuntimeId: 05396
-// TypeInfo:  0x0000000142C22368
+// TypeInfo: 0x0000000142C22368
 enum TransformPart
 {
     TransformPart_TranslationX, //0x0000
@@ -5278,7 +5278,7 @@ enum TransformPart
 
 ////////////////////////////////////////
 // RuntimeId: 05362
-// TypeInfo:  0x0000000142C22388
+// TypeInfo: 0x0000000142C22388
 enum InterpolationType
 {
     InterpolationType_None, //0x0000
@@ -5289,7 +5289,7 @@ enum InterpolationType
 
 ////////////////////////////////////////
 // RuntimeId: 05278
-// TypeInfo:  0x0000000142C1DCA8
+// TypeInfo: 0x0000000142C1DCA8
 enum GameplayBones
 {
     GameplayBones_UndefinedBone, //0x0000
@@ -5307,7 +5307,7 @@ enum GameplayBones
 
 ////////////////////////////////////////
 // RuntimeId: 05242
-// TypeInfo:  0x0000000142C1DCC8
+// TypeInfo: 0x0000000142C1DCC8
 enum CompareOp
 {
     CompareOp_Equal, //0x0000
@@ -5320,7 +5320,7 @@ enum CompareOp
 
 ////////////////////////////////////////
 // RuntimeId: 05234
-// TypeInfo:  0x0000000142C1DCE8
+// TypeInfo: 0x0000000142C1DCE8
 enum VectorMathOp
 {
     VectorMathOp_Add, //0x0000
@@ -5338,7 +5338,7 @@ enum VectorMathOp
 
 ////////////////////////////////////////
 // RuntimeId: 05230
-// TypeInfo:  0x0000000142C1DEA8
+// TypeInfo: 0x0000000142C1DEA8
 enum MathOp
 {
     MathOp_Add, //0x0000
@@ -5353,7 +5353,7 @@ enum MathOp
 
 ////////////////////////////////////////
 // RuntimeId: 05212
-// TypeInfo:  0x0000000142C1DD08
+// TypeInfo: 0x0000000142C1DD08
 enum ModifierAxis
 {
     maLeft, //0x0000
@@ -5363,7 +5363,7 @@ enum ModifierAxis
 
 ////////////////////////////////////////
 // RuntimeId: 05198
-// TypeInfo:  0x0000000142C1DD28
+// TypeInfo: 0x0000000142C1DD28
 enum ModifierEuler
 {
     Roll, //0x0000
@@ -5374,7 +5374,7 @@ enum ModifierEuler
 
 ////////////////////////////////////////
 // RuntimeId: 05130
-// TypeInfo:  0x0000000142C1DD48
+// TypeInfo: 0x0000000142C1DD48
 enum ExecutionModeType
 {
     ExecutionMode_Play, //0x0000
@@ -5384,7 +5384,7 @@ enum ExecutionModeType
 
 ////////////////////////////////////////
 // RuntimeId: 05128
-// TypeInfo:  0x0000000142C1DD68
+// TypeInfo: 0x0000000142C1DD68
 enum EntityUpdateOrder
 {
     EntityUpdateOrder_Async, //0x0000
@@ -5394,7 +5394,7 @@ enum EntityUpdateOrder
 
 ////////////////////////////////////////
 // RuntimeId: 05126
-// TypeInfo:  0x0000000142C1DD88
+// TypeInfo: 0x0000000142C1DD88
 enum UpdatePass
 {
     UpdatePass_PreSim, //0x0000
@@ -5411,7 +5411,7 @@ enum UpdatePass
 
 ////////////////////////////////////////
 // RuntimeId: 05102
-// TypeInfo:  0x0000000142C1DEC8
+// TypeInfo: 0x0000000142C1DEC8
 enum EntityInitPass
 {
     EntityInitPass_Early, //0x0000
@@ -5421,7 +5421,7 @@ enum EntityInitPass
 
 ////////////////////////////////////////
 // RuntimeId: 05100
-// TypeInfo:  0x0000000142C1DEE8
+// TypeInfo: 0x0000000142C1DEE8
 enum EntityCreatorType
 {
     EntityCreatorType_Unknown, //0x0000
@@ -5433,7 +5433,7 @@ enum EntityCreatorType
 
 ////////////////////////////////////////
 // RuntimeId: 05096
-// TypeInfo:  0x0000000142C1DDA8
+// TypeInfo: 0x0000000142C1DDA8
 enum SubRealm
 {
     SubRealm_All, //0x0000
@@ -5443,7 +5443,7 @@ enum SubRealm
 
 ////////////////////////////////////////
 // RuntimeId: 05078
-// TypeInfo:  0x0000000142C1DDC8
+// TypeInfo: 0x0000000142C1DDC8
 enum StreamRealm
 {
     StreamRealm_None, //0x0000
@@ -5453,7 +5453,7 @@ enum StreamRealm
 
 ////////////////////////////////////////
 // RuntimeId: 05076
-// TypeInfo:  0x0000000142C1DDE8
+// TypeInfo: 0x0000000142C1DDE8
 enum RadiosityTypeOverride
 {
     RadiosityTypeOverride_None, //0x0000
@@ -5464,7 +5464,7 @@ enum RadiosityTypeOverride
 
 ////////////////////////////////////////
 // RuntimeId: 05050
-// TypeInfo:  0x0000000142C1DE08
+// TypeInfo: 0x0000000142C1DE08
 enum EventConnectionTargetType
 {
     EventConnectionTargetType_Invalid, //0x0000
@@ -5477,7 +5477,7 @@ enum EventConnectionTargetType
 
 ////////////////////////////////////////
 // RuntimeId: 05042
-// TypeInfo:  0x0000000142C1DF28
+// TypeInfo: 0x0000000142C1DF28
 enum EmitterParameter
 {
     EmitterParameterNone, //0x0000
@@ -5493,7 +5493,7 @@ enum EmitterParameter
 
 ////////////////////////////////////////
 // RuntimeId: 05034
-// TypeInfo:  0x0000000142C1DE28
+// TypeInfo: 0x0000000142C1DE28
 enum EffectParameterType
 {
     EffectParameterType_Float, //0x0000
@@ -5504,7 +5504,7 @@ enum EffectParameterType
 
 ////////////////////////////////////////
 // RuntimeId: 05006
-// TypeInfo:  0x0000000142C1DE48
+// TypeInfo: 0x0000000142C1DE48
 enum BundleHeapType
 {
     BundleHeapType_OwnWithParentSmallblock, //0x0000
@@ -5518,7 +5518,7 @@ enum BundleHeapType
 
 ////////////////////////////////////////
 // RuntimeId: 04921
-// TypeInfo:  0x0000000142C151F0
+// TypeInfo: 0x0000000142C151F0
 enum PerParticleParams
 {
     FloatCount //0x0000
@@ -5526,7 +5526,7 @@ enum PerParticleParams
 
 ////////////////////////////////////////
 // RuntimeId: 04915
-// TypeInfo:  0x0000000142C150F0
+// TypeInfo: 0x0000000142C150F0
 enum EmitterDrawOrder
 {
     EmitterDrawOrder_Default, //0x0000
@@ -5536,7 +5536,7 @@ enum EmitterDrawOrder
 
 ////////////////////////////////////////
 // RuntimeId: 04913
-// TypeInfo:  0x0000000142C15210
+// TypeInfo: 0x0000000142C15210
 enum ProcessorType
 {
     PtBaseEmitter, //0x0000
@@ -5600,7 +5600,7 @@ enum ProcessorType
 
 ////////////////////////////////////////
 // RuntimeId: 04911
-// TypeInfo:  0x0000000142C15230
+// TypeInfo: 0x0000000142C15230
 enum EvaluatorType
 {
     EtNone, //0x0000
@@ -5623,7 +5623,7 @@ enum EvaluatorType
 
 ////////////////////////////////////////
 // RuntimeId: 04909
-// TypeInfo:  0x0000000142C15110
+// TypeInfo: 0x0000000142C15110
 enum EmittableAlignment
 {
     EmittableAlignment_Screen, //0x0000
@@ -5637,7 +5637,7 @@ enum EmittableAlignment
 
 ////////////////////////////////////////
 // RuntimeId: 04907
-// TypeInfo:  0x0000000142C15130
+// TypeInfo: 0x0000000142C15130
 enum EmittableType
 {
     EmittableType_Point, //0x0000
@@ -5656,7 +5656,7 @@ enum EmittableType
 
 ////////////////////////////////////////
 // RuntimeId: 04905
-// TypeInfo:  0x0000000142C15150
+// TypeInfo: 0x0000000142C15150
 enum EmittableField
 {
     EfZero, //0x0000
@@ -5683,7 +5683,7 @@ enum EmittableField
 
 ////////////////////////////////////////
 // RuntimeId: 04859
-// TypeInfo:  0x0000000142C15170
+// TypeInfo: 0x0000000142C15170
 enum EmitterCollisionPriority
 {
     EmitterCollisionPriority_Low, //0x0000
@@ -5693,7 +5693,7 @@ enum EmitterCollisionPriority
 
 ////////////////////////////////////////
 // RuntimeId: 04857
-// TypeInfo:  0x0000000142C15190
+// TypeInfo: 0x0000000142C15190
 enum EmitterCollisionMethod
 {
     EmitterCollisionMethod_RayCast, //0x0000
@@ -5702,7 +5702,7 @@ enum EmitterCollisionMethod
 
 ////////////////////////////////////////
 // RuntimeId: 04823
-// TypeInfo:  0x0000000142C151B0
+// TypeInfo: 0x0000000142C151B0
 enum TurbulenceNoiseType
 {
     TurbulenceNoiseType_Random, //0x0000
@@ -5713,7 +5713,7 @@ enum TurbulenceNoiseType
 
 ////////////////////////////////////////
 // RuntimeId: 04755
-// TypeInfo:  0x0000000142C151D0
+// TypeInfo: 0x0000000142C151D0
 enum PolynomialOperation
 {
     Multiplication, //0x0000
@@ -5723,7 +5723,7 @@ enum PolynomialOperation
 
 ////////////////////////////////////////
 // RuntimeId: 04726
-// TypeInfo:  0x0000000142C12B80
+// TypeInfo: 0x0000000142C12B80
 enum BreakableControllerComponentNetworkIdMultiplier
 {
     BreakableControllerComponentNetworkIdMultiplier_HidePartObjects, //0x0000
@@ -5733,7 +5733,7 @@ enum BreakableControllerComponentNetworkIdMultiplier
 
 ////////////////////////////////////////
 // RuntimeId: 04724
-// TypeInfo:  0x0000000142C12BA0
+// TypeInfo: 0x0000000142C12BA0
 enum BreakableControllerComponentNetworkId
 {
     BreakableControllerComponentNetworkId_Collapsed, //0x0000
@@ -5743,7 +5743,7 @@ enum BreakableControllerComponentNetworkId
 
 ////////////////////////////////////////
 // RuntimeId: 04647
-// TypeInfo:  0x0000000142C09250
+// TypeInfo: 0x0000000142C09250
 enum SoundTestTransformBehavior
 {
     SoundTestTransformBehavior_Static //0x0000
@@ -5751,7 +5751,7 @@ enum SoundTestTransformBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 04641
-// TypeInfo:  0x0000000142C09270
+// TypeInfo: 0x0000000142C09270
 enum SoundTestParamBehavior
 {
     SoundTestParamBehavior_Constant, //0x0000
@@ -5761,7 +5761,7 @@ enum SoundTestParamBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 04619
-// TypeInfo:  0x0000000142C09950
+// TypeInfo: 0x0000000142C09950
 enum SoundPatchDefaultEvent
 {
     SoundPatchDefaultEvent_Start, //0x0000
@@ -5772,7 +5772,7 @@ enum SoundPatchDefaultEvent
 
 ////////////////////////////////////////
 // RuntimeId: 04605
-// TypeInfo:  0x0000000142C09290
+// TypeInfo: 0x0000000142C09290
 enum StreamStarveMode
 {
     StreamStarveMode_Off, //0x0000
@@ -5782,7 +5782,7 @@ enum StreamStarveMode
 
 ////////////////////////////////////////
 // RuntimeId: 04601
-// TypeInfo:  0x0000000142C09970
+// TypeInfo: 0x0000000142C09970
 enum SoundWaveStreamingMode
 {
     SoundWaveStreamingMode_Normal, //0x0000
@@ -5792,7 +5792,7 @@ enum SoundWaveStreamingMode
 
 ////////////////////////////////////////
 // RuntimeId: 04591
-// TypeInfo:  0x0000000142C092B0
+// TypeInfo: 0x0000000142C092B0
 enum LoopType
 {
     LtNone, //0x0000
@@ -5803,7 +5803,7 @@ enum LoopType
 
 ////////////////////////////////////////
 // RuntimeId: 04579
-// TypeInfo:  0x0000000142C092D0
+// TypeInfo: 0x0000000142C092D0
 enum MixerValueAccumulateMode
 {
     MixerValueAccumulateMode_None, //0x0000
@@ -5813,7 +5813,7 @@ enum MixerValueAccumulateMode
 
 ////////////////////////////////////////
 // RuntimeId: 04569
-// TypeInfo:  0x0000000142C09990
+// TypeInfo: 0x0000000142C09990
 enum MixGroupPropertyType
 {
     MixGroupPropertyType_Gain, //0x0000
@@ -5826,7 +5826,7 @@ enum MixGroupPropertyType
 
 ////////////////////////////////////////
 // RuntimeId: 04563
-// TypeInfo:  0x0000000142C092F0
+// TypeInfo: 0x0000000142C092F0
 enum MixGroupState
 {
     MixGroupState_Normal, //0x0000
@@ -5837,7 +5837,7 @@ enum MixGroupState
 
 ////////////////////////////////////////
 // RuntimeId: 04559
-// TypeInfo:  0x0000000142C099B0
+// TypeInfo: 0x0000000142C099B0
 enum MixerValueUIScale
 {
     MixerValueUIScale_Linear, //0x0000
@@ -5846,7 +5846,7 @@ enum MixerValueUIScale
 
 ////////////////////////////////////////
 // RuntimeId: 04557
-// TypeInfo:  0x0000000142C099D0
+// TypeInfo: 0x0000000142C099D0
 enum MixerValueUIOrientation
 {
     MixerValueUIOrientation_Horizontal, //0x0000
@@ -5855,7 +5855,7 @@ enum MixerValueUIOrientation
 
 ////////////////////////////////////////
 // RuntimeId: 04555
-// TypeInfo:  0x0000000142C099F0
+// TypeInfo: 0x0000000142C099F0
 enum MixerValueUI
 {
     MixerValueUI_None, //0x0000
@@ -5866,7 +5866,7 @@ enum MixerValueUI
 
 ////////////////////////////////////////
 // RuntimeId: 04493
-// TypeInfo:  0x0000000142C09310
+// TypeInfo: 0x0000000142C09310
 enum EventSequencerPlayback
 {
     EventSequencerPlayback_Sequential, //0x0000
@@ -5876,7 +5876,7 @@ enum EventSequencerPlayback
 
 ////////////////////////////////////////
 // RuntimeId: 04485
-// TypeInfo:  0x0000000142C09330
+// TypeInfo: 0x0000000142C09330
 enum TimerMode
 {
     TimerMode_Repeating, //0x0000
@@ -5885,7 +5885,7 @@ enum TimerMode
 
 ////////////////////////////////////////
 // RuntimeId: 04471
-// TypeInfo:  0x0000000142C09350
+// TypeInfo: 0x0000000142C09350
 enum AngleUnit
 {
     AngleUnit_Radians, //0x0000
@@ -5894,7 +5894,7 @@ enum AngleUnit
 
 ////////////////////////////////////////
 // RuntimeId: 04469
-// TypeInfo:  0x0000000142C09370
+// TypeInfo: 0x0000000142C09370
 enum SimpleTransformOperation
 {
     SimpleTransformOperation_Add, //0x0000
@@ -5921,7 +5921,7 @@ enum SimpleTransformOperation
 
 ////////////////////////////////////////
 // RuntimeId: 04449
-// TypeInfo:  0x0000000142C09390
+// TypeInfo: 0x0000000142C09390
 enum ParameterFilterLinearNodeVersion
 {
     ParameterFilterLinearNodeVersion_2010_2, //0x0000
@@ -5930,7 +5930,7 @@ enum ParameterFilterLinearNodeVersion
 
 ////////////////////////////////////////
 // RuntimeId: 04445
-// TypeInfo:  0x0000000142C093B0
+// TypeInfo: 0x0000000142C093B0
 enum ParameterFilterLpNodeVersion
 {
     ParameterFilterLpNodeVersion_2010_2, //0x0000
@@ -5939,7 +5939,7 @@ enum ParameterFilterLpNodeVersion
 
 ////////////////////////////////////////
 // RuntimeId: 04441
-// TypeInfo:  0x0000000142C093D0
+// TypeInfo: 0x0000000142C093D0
 enum NumberGeneratorMode
 {
     NumberGeneratorMode_RandomUniform //0x0000
@@ -5947,7 +5947,7 @@ enum NumberGeneratorMode
 
 ////////////////////////////////////////
 // RuntimeId: 04439
-// TypeInfo:  0x0000000142C093F0
+// TypeInfo: 0x0000000142C093F0
 enum NumberGeneratorNodeVersion
 {
     NumberGeneratorNodeVersion_2010_2, //0x0000
@@ -5956,7 +5956,7 @@ enum NumberGeneratorNodeVersion
 
 ////////////////////////////////////////
 // RuntimeId: 04433
-// TypeInfo:  0x0000000142C09410
+// TypeInfo: 0x0000000142C09410
 enum FaderType
 {
     FaderType_Linear, //0x0000
@@ -5965,7 +5965,7 @@ enum FaderType
 
 ////////////////////////////////////////
 // RuntimeId: 04423
-// TypeInfo:  0x0000000142C09430
+// TypeInfo: 0x0000000142C09430
 enum LogicalExpressionOperator
 {
     LogicalExpressionOperator_And, //0x0000
@@ -5976,7 +5976,7 @@ enum LogicalExpressionOperator
 
 ////////////////////////////////////////
 // RuntimeId: 04383
-// TypeInfo:  0x0000000142C09450
+// TypeInfo: 0x0000000142C09450
 enum DebugRenderType
 {
     DebugRenderType_Text, //0x0000
@@ -5986,7 +5986,7 @@ enum DebugRenderType
 
 ////////////////////////////////////////
 // RuntimeId: 04375
-// TypeInfo:  0x0000000142C09470
+// TypeInfo: 0x0000000142C09470
 enum ConditionType
 {
     ConditionType_And, //0x0000
@@ -6002,7 +6002,7 @@ enum ConditionType
 
 ////////////////////////////////////////
 // RuntimeId: 04367
-// TypeInfo:  0x0000000142C09490
+// TypeInfo: 0x0000000142C09490
 enum VoiceOverPronunciationFallback
 {
     VoiceOverPronunciationFallback_None, //0x0000
@@ -6011,7 +6011,7 @@ enum VoiceOverPronunciationFallback
 
 ////////////////////////////////////////
 // RuntimeId: 04363
-// TypeInfo:  0x0000000142C094B0
+// TypeInfo: 0x0000000142C094B0
 enum VoiceOverConversationQueueGroupPolyphony
 {
     VoiceOverConversationQueueGroupPolyphony_Sources, //0x0000
@@ -6021,7 +6021,7 @@ enum VoiceOverConversationQueueGroupPolyphony
 
 ////////////////////////////////////////
 // RuntimeId: 04353
-// TypeInfo:  0x0000000142C094D0
+// TypeInfo: 0x0000000142C094D0
 enum VoiceOverWaveNameTranslation
 {
     VoiceOverWaveNameTranslation_FullName, //0x0000
@@ -6031,7 +6031,7 @@ enum VoiceOverWaveNameTranslation
 
 ////////////////////////////////////////
 // RuntimeId: 04325
-// TypeInfo:  0x0000000142C094F0
+// TypeInfo: 0x0000000142C094F0
 enum VoiceOverConversationQueueMode
 {
     VoiceOverConversationQueueMode_Always, //0x0000
@@ -6041,7 +6041,7 @@ enum VoiceOverConversationQueueMode
 
 ////////////////////////////////////////
 // RuntimeId: 04323
-// TypeInfo:  0x0000000142C09510
+// TypeInfo: 0x0000000142C09510
 enum VoiceOverConversationInterruptMode
 {
     VoiceOverConversationInterruptMode_Disallow, //0x0000
@@ -6051,7 +6051,7 @@ enum VoiceOverConversationInterruptMode
 
 ////////////////////////////////////////
 // RuntimeId: 04317
-// TypeInfo:  0x0000000142C09530
+// TypeInfo: 0x0000000142C09530
 enum VoiceOverDialogTakeBehavior
 {
     VoiceOverDialogTakeBehavior_Start, //0x0000
@@ -6061,7 +6061,7 @@ enum VoiceOverDialogTakeBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 04303
-// TypeInfo:  0x0000000142C09550
+// TypeInfo: 0x0000000142C09550
 enum VoiceOverContainerConditionMode
 {
     VoiceOverContainerConditionMode_All, //0x0000
@@ -6070,7 +6070,7 @@ enum VoiceOverContainerConditionMode
 
 ////////////////////////////////////////
 // RuntimeId: 04299
-// TypeInfo:  0x0000000142C09570
+// TypeInfo: 0x0000000142C09570
 enum VoiceOverLogicFlowMode
 {
     VoiceOverLogicFlowMode_All, //0x0000
@@ -6079,7 +6079,7 @@ enum VoiceOverLogicFlowMode
 
 ////////////////////////////////////////
 // RuntimeId: 04283
-// TypeInfo:  0x0000000142C09590
+// TypeInfo: 0x0000000142C09590
 enum VoiceOverLabelCompareMode
 {
     VoiceOverLabelCompareMode_Any, //0x0000
@@ -6089,7 +6089,7 @@ enum VoiceOverLabelCompareMode
 
 ////////////////////////////////////////
 // RuntimeId: 04281
-// TypeInfo:  0x0000000142C095B0
+// TypeInfo: 0x0000000142C095B0
 enum VoiceOverLabelSourceMode
 {
     VoiceOverLabelSourceMode_Combined, //0x0000
@@ -6098,7 +6098,7 @@ enum VoiceOverLabelSourceMode
 
 ////////////////////////////////////////
 // RuntimeId: 04241
-// TypeInfo:  0x0000000142C095D0
+// TypeInfo: 0x0000000142C095D0
 enum VoiceOverCompareExpressionType
 {
     VoiceOverCompareExpressionType_Equals, //0x0000
@@ -6111,7 +6111,7 @@ enum VoiceOverCompareExpressionType
 
 ////////////////////////////////////////
 // RuntimeId: 04235
-// TypeInfo:  0x0000000142C095F0
+// TypeInfo: 0x0000000142C095F0
 enum VoiceOverArithmeticExpressionType
 {
     VoiceOverArithmeticExpressionType_Addition, //0x0000
@@ -6123,7 +6123,7 @@ enum VoiceOverArithmeticExpressionType
 
 ////////////////////////////////////////
 // RuntimeId: 04205
-// TypeInfo:  0x0000000142C09610
+// TypeInfo: 0x0000000142C09610
 enum VoiceOverValueType
 {
     VoiceOverValueType_Boolean, //0x0000
@@ -6136,7 +6136,7 @@ enum VoiceOverValueType
 
 ////////////////////////////////////////
 // RuntimeId: 04197
-// TypeInfo:  0x0000000142C09A70
+// TypeInfo: 0x0000000142C09A70
 enum MusicMarkerType
 {
     MusicMarkerType_None, //0x0000
@@ -6146,7 +6146,7 @@ enum MusicMarkerType
 
 ////////////////////////////////////////
 // RuntimeId: 04193
-// TypeInfo:  0x0000000142C09630
+// TypeInfo: 0x0000000142C09630
 enum MusicFadeType
 {
     MusicFadeType_Seconds, //0x0000
@@ -6157,7 +6157,7 @@ enum MusicFadeType
 
 ////////////////////////////////////////
 // RuntimeId: 04187
-// TypeInfo:  0x0000000142C09650
+// TypeInfo: 0x0000000142C09650
 enum MusicPlaylistType
 {
     MusicPlaylistType_PlayFirstAndShuffle, //0x0000
@@ -6168,7 +6168,7 @@ enum MusicPlaylistType
 
 ////////////////////////////////////////
 // RuntimeId: 04175
-// TypeInfo:  0x0000000142C09670
+// TypeInfo: 0x0000000142C09670
 enum MusicSyncType
 {
     MusicSyncType_Beat, //0x0000
@@ -6178,7 +6178,7 @@ enum MusicSyncType
 
 ////////////////////////////////////////
 // RuntimeId: 04173
-// TypeInfo:  0x0000000142C09690
+// TypeInfo: 0x0000000142C09690
 enum MusicSelectorTriggerType
 {
     MusicSelectorTriggerType_Interrupt, //0x0000
@@ -6188,7 +6188,7 @@ enum MusicSelectorTriggerType
 
 ////////////////////////////////////////
 // RuntimeId: 04151
-// TypeInfo:  0x0000000142C096B0
+// TypeInfo: 0x0000000142C096B0
 enum MusicPhraseSelectionType
 {
     MusicPhraseSelectionType_PlayFirstAndShuffle, //0x0000
@@ -6202,7 +6202,7 @@ enum MusicPhraseSelectionType
 
 ////////////////////////////////////////
 // RuntimeId: 04125
-// TypeInfo:  0x0000000142C096D0
+// TypeInfo: 0x0000000142C096D0
 enum PropertySortScopeStageOrder
 {
     PropertySortScopeStageOrder_Ascending, //0x0000
@@ -6211,7 +6211,7 @@ enum PropertySortScopeStageOrder
 
 ////////////////////////////////////////
 // RuntimeId: 04123
-// TypeInfo:  0x0000000142C096F0
+// TypeInfo: 0x0000000142C096F0
 enum ScopeStageSortProperty
 {
     ScopeStageSortProperty_DistanceToListener, //0x0000
@@ -6220,7 +6220,7 @@ enum ScopeStageSortProperty
 
 ////////////////////////////////////////
 // RuntimeId: 04099
-// TypeInfo:  0x0000000142C09710
+// TypeInfo: 0x0000000142C09710
 enum SoundWaveVariationSelection
 {
     SoundWaveVariationSelection_Sequential, //0x0000
@@ -6229,7 +6229,7 @@ enum SoundWaveVariationSelection
 
 ////////////////////////////////////////
 // RuntimeId: 04097
-// TypeInfo:  0x0000000142C09A90
+// TypeInfo: 0x0000000142C09A90
 enum SoundWaveVoicePriority
 {
     SoundWaveVoicePriority_Low, //0x0000
@@ -6241,7 +6241,7 @@ enum SoundWaveVoicePriority
 
 ////////////////////////////////////////
 // RuntimeId: 04093
-// TypeInfo:  0x0000000142C09730
+// TypeInfo: 0x0000000142C09730
 enum SoundDataReadTarget
 {
     SoundDataReadTarget_Primary, //0x0000
@@ -6250,7 +6250,7 @@ enum SoundDataReadTarget
 
 ////////////////////////////////////////
 // RuntimeId: 04091
-// TypeInfo:  0x0000000142C09750
+// TypeInfo: 0x0000000142C09750
 enum SoundDataReleaseBehavior
 {
     SoundDataReleaseBehavior_Explicit, //0x0000
@@ -6260,7 +6260,7 @@ enum SoundDataReleaseBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 04089
-// TypeInfo:  0x0000000142C09770
+// TypeInfo: 0x0000000142C09770
 enum SoundDataRequestBehavior
 {
     SoundDataRequestBehavior_Explicit, //0x0000
@@ -6269,7 +6269,7 @@ enum SoundDataRequestBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 04085
-// TypeInfo:  0x0000000142C09AB0
+// TypeInfo: 0x0000000142C09AB0
 enum SoundDataState
 {
     SoundDataState_Pending, //0x0000
@@ -6280,7 +6280,7 @@ enum SoundDataState
 
 ////////////////////////////////////////
 // RuntimeId: 04083
-// TypeInfo:  0x0000000142C09AD0
+// TypeInfo: 0x0000000142C09AD0
 enum SoundDataRequestResult
 {
     SoundDataRequestResult_NotRequested, //0x0000
@@ -6290,7 +6290,7 @@ enum SoundDataRequestResult
 
 ////////////////////////////////////////
 // RuntimeId: 04081
-// TypeInfo:  0x0000000142C09AF0
+// TypeInfo: 0x0000000142C09AF0
 enum SoundDataReadPriority
 {
     SoundDataReadPriority_Low, //0x0000
@@ -6301,7 +6301,7 @@ enum SoundDataReadPriority
 
 ////////////////////////////////////////
 // RuntimeId: 04053
-// TypeInfo:  0x0000000142C09790
+// TypeInfo: 0x0000000142C09790
 enum SoundGraphPluginConnectionType
 {
     SoundGraphPluginConnectionType_Unconnected, //0x0000
@@ -6311,7 +6311,7 @@ enum SoundGraphPluginConnectionType
 
 ////////////////////////////////////////
 // RuntimeId: 04049
-// TypeInfo:  0x0000000142C097B0
+// TypeInfo: 0x0000000142C097B0
 enum FadeCurveType
 {
     FadeCurveType_LinearAmplitude, //0x0000
@@ -6321,7 +6321,7 @@ enum FadeCurveType
 
 ////////////////////////////////////////
 // RuntimeId: 04041
-// TypeInfo:  0x0000000142C09B50
+// TypeInfo: 0x0000000142C09B50
 enum AudioSystemSpeakerSetup
 {
     FiveDotOne, //0x0000
@@ -6330,7 +6330,7 @@ enum AudioSystemSpeakerSetup
 
 ////////////////////////////////////////
 // RuntimeId: 04037
-// TypeInfo:  0x0000000142C097D0
+// TypeInfo: 0x0000000142C097D0
 enum VuMeterMode
 {
     VuMeterMode_Rms, //0x0000
@@ -6340,7 +6340,7 @@ enum VuMeterMode
 
 ////////////////////////////////////////
 // RuntimeId: 04023
-// TypeInfo:  0x0000000142C097F0
+// TypeInfo: 0x0000000142C097F0
 enum TimeStretchEfficiency
 {
     TimeStretchEfficiency_1, //0x0000
@@ -6357,7 +6357,7 @@ enum TimeStretchEfficiency
 
 ////////////////////////////////////////
 // RuntimeId: 04021
-// TypeInfo:  0x0000000142C09810
+// TypeInfo: 0x0000000142C09810
 enum TimeStretchMultiChannelMode
 {
     TimeStretchMultiChannelMode_IndependentChannels, //0x0000
@@ -6366,7 +6366,7 @@ enum TimeStretchMultiChannelMode
 
 ////////////////////////////////////////
 // RuntimeId: 04015
-// TypeInfo:  0x0000000142C09830
+// TypeInfo: 0x0000000142C09830
 enum SamplerNodeVersion
 {
     SamplerNodeVersion_2010_2, //0x0000
@@ -6375,7 +6375,7 @@ enum SamplerNodeVersion
 
 ////////////////////////////////////////
 // RuntimeId: 04009
-// TypeInfo:  0x0000000142C09B70
+// TypeInfo: 0x0000000142C09B70
 enum RouteChannel
 {
     RouteChannel_0, //0x0000
@@ -6445,7 +6445,7 @@ enum RouteChannel
 
 ////////////////////////////////////////
 // RuntimeId: 03999
-// TypeInfo:  0x0000000142C09850
+// TypeInfo: 0x0000000142C09850
 enum Pan2dOutputChannelCount
 {
     Pan2dOutputChannelCount_Two, //0x0000
@@ -6456,7 +6456,7 @@ enum Pan2dOutputChannelCount
 
 ////////////////////////////////////////
 // RuntimeId: 03983
-// TypeInfo:  0x0000000142C09870
+// TypeInfo: 0x0000000142C09870
 enum OutputReverbMode
 {
     OutputReverbMode_PostGain, //0x0000
@@ -6465,7 +6465,7 @@ enum OutputReverbMode
 
 ////////////////////////////////////////
 // RuntimeId: 03975
-// TypeInfo:  0x0000000142C09890
+// TypeInfo: 0x0000000142C09890
 enum OutputTransformSource
 {
     OutputTransformSource_Sound, //0x0000
@@ -6475,7 +6475,7 @@ enum OutputTransformSource
 
 ////////////////////////////////////////
 // RuntimeId: 03955
-// TypeInfo:  0x0000000142C098B0
+// TypeInfo: 0x0000000142C098B0
 enum LimiterChannelMode
 {
     LimiterChannelMode_Independent, //0x0000
@@ -6484,7 +6484,7 @@ enum LimiterChannelMode
 
 ////////////////////////////////////////
 // RuntimeId: 03943
-// TypeInfo:  0x0000000142C098D0
+// TypeInfo: 0x0000000142C098D0
 enum GainFaderFadeType
 {
     GainFaderFadeType_LinearAmplitude, //0x0000
@@ -6494,7 +6494,7 @@ enum GainFaderFadeType
 
 ////////////////////////////////////////
 // RuntimeId: 03937
-// TypeInfo:  0x0000000142C098F0
+// TypeInfo: 0x0000000142C098F0
 enum FrequencyShiftSsbFilter
 {
     FrequencyShiftSsbFilter_None, //0x0000
@@ -6503,7 +6503,7 @@ enum FrequencyShiftSsbFilter
 
 ////////////////////////////////////////
 // RuntimeId: 03927
-// TypeInfo:  0x0000000142C09910
+// TypeInfo: 0x0000000142C09910
 enum ExpanderChannelMode
 {
     ExpanderChannelMode_Independent, //0x0000
@@ -6512,7 +6512,7 @@ enum ExpanderChannelMode
 
 ////////////////////////////////////////
 // RuntimeId: 03913
-// TypeInfo:  0x0000000142C09930
+// TypeInfo: 0x0000000142C09930
 enum CompressorChannelMode
 {
     CompressorChannelMode_Independent, //0x0000
@@ -6521,7 +6521,7 @@ enum CompressorChannelMode
 
 ////////////////////////////////////////
 // RuntimeId: 03899
-// TypeInfo:  0x0000000142C004E0
+// TypeInfo: 0x0000000142C004E0
 enum WaypointVaultType
 {
     WaypointVaultType_VaultOverHigh, //0x0000
@@ -6536,7 +6536,7 @@ enum WaypointVaultType
 
 ////////////////////////////////////////
 // RuntimeId: 03879
-// TypeInfo:  0x0000000142C00500
+// TypeInfo: 0x0000000142C00500
 enum AntPackagingType
 {
     AntPackagingType_Chunk, //0x0000
@@ -6547,7 +6547,7 @@ enum AntPackagingType
 
 ////////////////////////////////////////
 // RuntimeId: 03875
-// TypeInfo:  0x0000000142C00540
+// TypeInfo: 0x0000000142C00540
 enum AntRuntimeType
 {
     AntRuntimeType_Traditional, //0x0000
@@ -6557,7 +6557,7 @@ enum AntRuntimeType
 
 ////////////////////////////////////////
 // RuntimeId: 03873
-// TypeInfo:  0x0000000142C00560
+// TypeInfo: 0x0000000142C00560
 enum AntRefType
 {
     AntRefType_None, //0x0000
@@ -6567,7 +6567,7 @@ enum AntRefType
 
 ////////////////////////////////////////
 // RuntimeId: 03870
-// TypeInfo:  0x0000000142BFFC30
+// TypeInfo: 0x0000000142BFFC30
 enum DiceUIAnalogPadType
 {
     DiceUIAnalogPadType_LeftStick, //0x0000
@@ -6579,7 +6579,7 @@ enum DiceUIAnalogPadType
 
 ////////////////////////////////////////
 // RuntimeId: 03856
-// TypeInfo:  0x0000000142BFFC50
+// TypeInfo: 0x0000000142BFFC50
 enum DiceUIAnalogStick
 {
     DiceUIAnalogStick_Left, //0x0000
@@ -6588,7 +6588,7 @@ enum DiceUIAnalogStick
 
 ////////////////////////////////////////
 // RuntimeId: 03843
-// TypeInfo:  0x0000000142BFEE48
+// TypeInfo: 0x0000000142BFEE48
 enum GamePlatform
 {
     GamePlatform_Ps3, //0x0000
@@ -6603,7 +6603,7 @@ enum GamePlatform
 
 ////////////////////////////////////////
 // RuntimeId: 03839
-// TypeInfo:  0x0000000142BFEE68
+// TypeInfo: 0x0000000142BFEE68
 enum HardwareProfile
 {
     Hardware_Autodetect, //0x0000
@@ -6615,7 +6615,7 @@ enum HardwareProfile
 
 ////////////////////////////////////////
 // RuntimeId: 03837
-// TypeInfo:  0x0000000142BFEE88
+// TypeInfo: 0x0000000142BFEE88
 enum CoreLogLevel
 {
     CllNone, //0x0000
@@ -6633,7 +6633,7 @@ enum CoreLogLevel
 
 ////////////////////////////////////////
 // RuntimeId: 03827
-// TypeInfo:  0x0000000142BFEEC8
+// TypeInfo: 0x0000000142BFEEC8
 enum QualityScalableEnabled
 {
     QualityScalableEnabled_Low, //0x0000
@@ -6645,7 +6645,7 @@ enum QualityScalableEnabled
 
 ////////////////////////////////////////
 // RuntimeId: 03819
-// TypeInfo:  0x0000000142BFEEE8
+// TypeInfo: 0x0000000142BFEEE8
 enum QualityLevel
 {
     QualityLevel_Low, //0x0000
@@ -6658,7 +6658,7 @@ enum QualityLevel
 
 ////////////////////////////////////////
 // RuntimeId: 03809
-// TypeInfo:  0x0000000142BFEEA8
+// TypeInfo: 0x0000000142BFEEA8
 enum FieldAccessType
 {
     FieldAccessType_Source, //0x0000
@@ -6668,7 +6668,7 @@ enum FieldAccessType
 
 ////////////////////////////////////////
 // RuntimeId: 03795
-// TypeInfo:  0x0000000142BFEF08
+// TypeInfo: 0x0000000142BFEF08
 enum Realm
 {
     Realm_Client, //0x0000
@@ -6680,7 +6680,7 @@ enum Realm
 
 ////////////////////////////////////////
 // RuntimeId: 03793
-// TypeInfo:  0x0000000142BFEF28
+// TypeInfo: 0x0000000142BFEF28
 enum LanguageFormat
 {
     LanguageFormat_English, //0x0000
@@ -6703,7 +6703,7 @@ enum LanguageFormat
 
 ////////////////////////////////////////
 // RuntimeId: 03760
-// TypeInfo:  0x0000000142BFDDA8
+// TypeInfo: 0x0000000142BFDDA8
 enum SplineType
 {
     SplineType_5ControlPoints, //0x0000
@@ -6713,7 +6713,7 @@ enum SplineType
 
 ////////////////////////////////////////
 // RuntimeId: 03756
-// TypeInfo:  0x0000000142BFDDC8
+// TypeInfo: 0x0000000142BFDDC8
 enum AudioCurveType
 {
     AudioCurveType_Spline, //0x0000
@@ -6724,7 +6724,7 @@ enum AudioCurveType
 
 ////////////////////////////////////////
 // RuntimeId: 03654
-// TypeInfo:  0x0000000142BFAF88
+// TypeInfo: 0x0000000142BFAF88
 enum VehicleStateType
 {
     VehicleStateType_Normal, //0x0000
@@ -6735,7 +6735,7 @@ enum VehicleStateType
 
 ////////////////////////////////////////
 // RuntimeId: 03648
-// TypeInfo:  0x0000000142BFAFA8
+// TypeInfo: 0x0000000142BFAFA8
 enum ScoreboardPosition
 {
     ScoreboardPosition_FirstPlace, //0x0000
@@ -6748,7 +6748,7 @@ enum ScoreboardPosition
 
 ////////////////////////////////////////
 // RuntimeId: 03608
-// TypeInfo:  0x0000000142BFAFC8
+// TypeInfo: 0x0000000142BFAFC8
 enum OrderType
 {
     OrderType_None, //0x0000
@@ -6782,7 +6782,7 @@ enum OrderType
 
 ////////////////////////////////////////
 // RuntimeId: 03606
-// TypeInfo:  0x0000000142BFAFE8
+// TypeInfo: 0x0000000142BFAFE8
 enum SpotType
 {
     SpotType_None, //0x0000
@@ -6796,7 +6796,7 @@ enum SpotType
 
 ////////////////////////////////////////
 // RuntimeId: 03598
-// TypeInfo:  0x0000000142BFB008
+// TypeInfo: 0x0000000142BFB008
 enum SpectatorMode
 {
     SpectatorMode_TableTop, //0x0000
@@ -6808,7 +6808,7 @@ enum SpectatorMode
 
 ////////////////////////////////////////
 // RuntimeId: 03538
-// TypeInfo:  0x0000000142BFAF28
+// TypeInfo: 0x0000000142BFAF28
 enum ScoringBucketType
 {
     ScoringBucketType_Disabled, //0x0000
@@ -6821,7 +6821,7 @@ enum ScoringBucketType
 
 ////////////////////////////////////////
 // RuntimeId: 03536
-// TypeInfo:  0x0000000142BFAF48
+// TypeInfo: 0x0000000142BFAF48
 enum ScoringBucket
 {
     ScoringBucket_General, //0x0000
@@ -6876,7 +6876,7 @@ enum ScoringBucket
 
 ////////////////////////////////////////
 // RuntimeId: 03508
-// TypeInfo:  0x0000000142BFB028
+// TypeInfo: 0x0000000142BFB028
 enum PremiumCategory
 {
     ExpansionPackCategory, //0x0000
@@ -6887,7 +6887,7 @@ enum PremiumCategory
 
 ////////////////////////////////////////
 // RuntimeId: 03428
-// TypeInfo:  0x0000000142BF08B8
+// TypeInfo: 0x0000000142BF08B8
 enum UIPerformanceMetric
 {
     UIPerformanceMetric_FramesPerSecond, //0x0000
@@ -6899,7 +6899,7 @@ enum UIPerformanceMetric
 
 ////////////////////////////////////////
 // RuntimeId: 03290
-// TypeInfo:  0x0000000142BF08D8
+// TypeInfo: 0x0000000142BF08D8
 enum UIOptionsConsoleControlsShown
 {
     UIOptionsConsoleControlsShown_None, //0x0000
@@ -6912,7 +6912,7 @@ enum UIOptionsConsoleControlsShown
 
 ////////////////////////////////////////
 // RuntimeId: 03268
-// TypeInfo:  0x0000000142BF08F8
+// TypeInfo: 0x0000000142BF08F8
 enum SquadDeployMapPack
 {
     SquadDeployMapPack_Base, //0x0000
@@ -6929,7 +6929,7 @@ enum SquadDeployMapPack
 
 ////////////////////////////////////////
 // RuntimeId: 03266
-// TypeInfo:  0x0000000142BF0918
+// TypeInfo: 0x0000000142BF0918
 enum SquadDeployGameMode
 {
     SquadDeployGameMode_Conquest, //0x0000
@@ -6959,7 +6959,7 @@ enum SquadDeployGameMode
 
 ////////////////////////////////////////
 // RuntimeId: 03262
-// TypeInfo:  0x0000000142BF0938
+// TypeInfo: 0x0000000142BF0938
 enum UIOptionsSliderDisplay
 {
     UIOptionsSliderDisplay_PercentOfMax, //0x0000
@@ -6972,7 +6972,7 @@ enum UIOptionsSliderDisplay
 
 ////////////////////////////////////////
 // RuntimeId: 03260
-// TypeInfo:  0x0000000142BF0958
+// TypeInfo: 0x0000000142BF0958
 enum UIOptionsSpecialCase
 {
     UIOptionsSpecialCase_Normal, //0x0000
@@ -7003,7 +7003,7 @@ enum UIOptionsSpecialCase
 
 ////////////////////////////////////////
 // RuntimeId: 03226
-// TypeInfo:  0x0000000142BF0978
+// TypeInfo: 0x0000000142BF0978
 enum BFUIColorizationMode
 {
     BFUIColorizationMode_ElementColor, //0x0000
@@ -7013,7 +7013,7 @@ enum BFUIColorizationMode
 
 ////////////////////////////////////////
 // RuntimeId: 03204
-// TypeInfo:  0x0000000142BF0998
+// TypeInfo: 0x0000000142BF0998
 enum UIWorldZoneType
 {
     UIWorldZoneType_Interaction, //0x0000
@@ -7025,7 +7025,7 @@ enum UIWorldZoneType
 
 ////////////////////////////////////////
 // RuntimeId: 03098
-// TypeInfo:  0x0000000142BF09B8
+// TypeInfo: 0x0000000142BF09B8
 enum UIHitIndicatorIconType
 {
     UIHitIndicatorIconType_Low, //0x0000
@@ -7036,7 +7036,7 @@ enum UIHitIndicatorIconType
 
 ////////////////////////////////////////
 // RuntimeId: 03058
-// TypeInfo:  0x0000000142BF09D8
+// TypeInfo: 0x0000000142BF09D8
 enum UIBattlelogDataSource
 {
     BattlelogDataSource_ChallengeTypes, //0x0000
@@ -7047,7 +7047,7 @@ enum UIBattlelogDataSource
 
 ////////////////////////////////////////
 // RuntimeId: 03050
-// TypeInfo:  0x0000000142BF09F8
+// TypeInfo: 0x0000000142BF09F8
 enum UIAutoListType
 {
     FriendsAll, //0x0000
@@ -7067,7 +7067,7 @@ enum UIAutoListType
 
 ////////////////////////////////////////
 // RuntimeId: 02974
-// TypeInfo:  0x0000000142BF0A18
+// TypeInfo: 0x0000000142BF0A18
 enum UICommoRoseTextAlignment
 {
     UICommoRoseTextAlignment_Left, //0x0000
@@ -7077,7 +7077,7 @@ enum UICommoRoseTextAlignment
 
 ////////////////////////////////////////
 // RuntimeId: 02926
-// TypeInfo:  0x0000000142BF0A38
+// TypeInfo: 0x0000000142BF0A38
 enum UIVisualWidgetType
 {
     UIVisualWidgetType_Default, //0x0000
@@ -7092,7 +7092,7 @@ enum UIVisualWidgetType
 
 ////////////////////////////////////////
 // RuntimeId: 02924
-// TypeInfo:  0x0000000142BF0A58
+// TypeInfo: 0x0000000142BF0A58
 enum UIPlayerFilter
 {
     UIPlayerFilter_All, //0x0000
@@ -7104,7 +7104,7 @@ enum UIPlayerFilter
 
 ////////////////////////////////////////
 // RuntimeId: 02896
-// TypeInfo:  0x0000000142BF0A78
+// TypeInfo: 0x0000000142BF0A78
 enum ServerTypeValues
 {
     ServerType_OFFICIAL, //0x0000
@@ -7115,7 +7115,7 @@ enum ServerTypeValues
 
 ////////////////////////////////////////
 // RuntimeId: 02840
-// TypeInfo:  0x0000000142BF0FB8
+// TypeInfo: 0x0000000142BF0FB8
 enum VirtualGameState
 {
     VirtualGameState_Inactive, //0x0000
@@ -7127,7 +7127,7 @@ enum VirtualGameState
 
 ////////////////////////////////////////
 // RuntimeId: 02826
-// TypeInfo:  0x0000000142BF0A98
+// TypeInfo: 0x0000000142BF0A98
 enum NucleusEnvironment
 {
     NucleusEnv_1Box, //0x0000
@@ -7138,7 +7138,7 @@ enum NucleusEnvironment
 
 ////////////////////////////////////////
 // RuntimeId: 02814
-// TypeInfo:  0x0000000142BF0AB8
+// TypeInfo: 0x0000000142BF0AB8
 enum BFModMask
 {
     BFModMaskMapPack_Base, //0x0000
@@ -7155,7 +7155,7 @@ enum BFModMask
 
 ////////////////////////////////////////
 // RuntimeId: 02804
-// TypeInfo:  0x0000000142BF0AD8
+// TypeInfo: 0x0000000142BF0AD8
 enum BattlepackItemType
 {
     BattlepackItemType_Accessory, //0x0000
@@ -7172,7 +7172,7 @@ enum BattlepackItemType
 
 ////////////////////////////////////////
 // RuntimeId: 02802
-// TypeInfo:  0x0000000142BF0AF8
+// TypeInfo: 0x0000000142BF0AF8
 enum RarenessLevel
 {
     RarenessLevel_Standard, //0x0000
@@ -7186,7 +7186,7 @@ enum RarenessLevel
 
 ////////////////////////////////////////
 // RuntimeId: 02744
-// TypeInfo:  0x0000000142BF0B18
+// TypeInfo: 0x0000000142BF0B18
 enum AwardKitAssociation
 {
     AwardKitAssociation_Undefined, //0x0000
@@ -7201,7 +7201,7 @@ enum AwardKitAssociation
 
 ////////////////////////////////////////
 // RuntimeId: 02742
-// TypeInfo:  0x0000000142BF0B38
+// TypeInfo: 0x0000000142BF0B38
 enum StatsMultiplicity
 {
     StatsMultiplicity_Invalid, //0x0000
@@ -7212,7 +7212,7 @@ enum StatsMultiplicity
 
 ////////////////////////////////////////
 // RuntimeId: 02740
-// TypeInfo:  0x0000000142BF0B58
+// TypeInfo: 0x0000000142BF0B58
 enum AwardGroup
 {
     AwardGroup_Undefined, //0x0000
@@ -7229,7 +7229,7 @@ enum AwardGroup
 
 ////////////////////////////////////////
 // RuntimeId: 02738
-// TypeInfo:  0x0000000142BF0B78
+// TypeInfo: 0x0000000142BF0B78
 enum AwardType
 {
     AwardType_OnceGlobally, //0x0000
@@ -7241,7 +7241,7 @@ enum AwardType
 
 ////////////////////////////////////////
 // RuntimeId: 02736
-// TypeInfo:  0x0000000142BF1018
+// TypeInfo: 0x0000000142BF1018
 enum AIGlobalEngageState
 {
     AIGlobalEngageState_Unavailable, //0x0000
@@ -7252,7 +7252,7 @@ enum AIGlobalEngageState
 
 ////////////////////////////////////////
 // RuntimeId: 02732
-// TypeInfo:  0x0000000142BF1038
+// TypeInfo: 0x0000000142BF1038
 enum AICombatIntensity
 {
     AICombatIntensity_None, //0x0000
@@ -7263,7 +7263,7 @@ enum AICombatIntensity
 
 ////////////////////////////////////////
 // RuntimeId: 02730
-// TypeInfo:  0x0000000142BF1058
+// TypeInfo: 0x0000000142BF1058
 enum AISuppressionState
 {
     AISuppressionState_None, //0x0000
@@ -7275,7 +7275,7 @@ enum AISuppressionState
 
 ////////////////////////////////////////
 // RuntimeId: 02726
-// TypeInfo:  0x0000000142BF1078
+// TypeInfo: 0x0000000142BF1078
 enum AIStunReactionAnimationType
 {
     AIStunReactionAnimationType_1, //0x0000
@@ -7288,7 +7288,7 @@ enum AIStunReactionAnimationType
 
 ////////////////////////////////////////
 // RuntimeId: 02706
-// TypeInfo:  0x0000000142BF0B98
+// TypeInfo: 0x0000000142BF0B98
 enum CoverExitStyle
 {
     CoverExitStyle_ExitCover, //0x0000
@@ -7300,7 +7300,7 @@ enum CoverExitStyle
 
 ////////////////////////////////////////
 // RuntimeId: 02704
-// TypeInfo:  0x0000000142BF0BB8
+// TypeInfo: 0x0000000142BF0BB8
 enum CoverEnterStrategy
 {
     CoverEnterStrategy_EnterNormally, //0x0000
@@ -7310,7 +7310,7 @@ enum CoverEnterStrategy
 
 ////////////////////////////////////////
 // RuntimeId: 02702
-// TypeInfo:  0x0000000142BF0BD8
+// TypeInfo: 0x0000000142BF0BD8
 enum CoverIdleType
 {
     CoverIdleType_Calm, //0x0000
@@ -7323,7 +7323,7 @@ enum CoverIdleType
 
 ////////////////////////////////////////
 // RuntimeId: 02700
-// TypeInfo:  0x0000000142BF0BF8
+// TypeInfo: 0x0000000142BF0BF8
 enum CoverPeekType
 {
     CoverPeekType_Out, //0x0000
@@ -7333,7 +7333,7 @@ enum CoverPeekType
 
 ////////////////////////////////////////
 // RuntimeId: 02698
-// TypeInfo:  0x0000000142BF10D8
+// TypeInfo: 0x0000000142BF10D8
 enum AntCoverFireType
 {
     AntCoverFireType_PeekFire, //0x0000
@@ -7351,7 +7351,7 @@ enum AntCoverFireType
 
 ////////////////////////////////////////
 // RuntimeId: 02696
-// TypeInfo:  0x0000000142BF0C18
+// TypeInfo: 0x0000000142BF0C18
 enum CoverFireType
 {
     CoverFireType_NoFire, //0x0000
@@ -7373,7 +7373,7 @@ enum CoverFireType
 
 ////////////////////////////////////////
 // RuntimeId: 02688
-// TypeInfo:  0x0000000142BF0C38
+// TypeInfo: 0x0000000142BF0C38
 enum AntSpeedLevel
 {
     AntSpeedLevel_Still, //0x0000
@@ -7395,7 +7395,7 @@ enum AntSpeedLevel
 
 ////////////////////////////////////////
 // RuntimeId: 02686
-// TypeInfo:  0x0000000142BF0C58
+// TypeInfo: 0x0000000142BF0C58
 enum AntAttentionStateEnum
 {
     AntAttentionStateEnum_Relaxed, //0x0000
@@ -7410,7 +7410,7 @@ enum AntAttentionStateEnum
 
 ////////////////////////////////////////
 // RuntimeId: 02684
-// TypeInfo:  0x0000000142BF0C78
+// TypeInfo: 0x0000000142BF0C78
 enum AntCoverEnum
 {
     AntCoverEnum_RightCover, //0x0000
@@ -7425,7 +7425,7 @@ enum AntCoverEnum
 
 ////////////////////////////////////////
 // RuntimeId: 02682
-// TypeInfo:  0x0000000142BF0C98
+// TypeInfo: 0x0000000142BF0C98
 enum AntPoseEnum
 {
     AntPoseEnum_Stand, //0x0000
@@ -7437,7 +7437,7 @@ enum AntPoseEnum
 
 ////////////////////////////////////////
 // RuntimeId: 02646
-// TypeInfo:  0x0000000142BE23E8
+// TypeInfo: 0x0000000142BE23E8
 enum InventoryType
 {
     IT_None, //0x0000
@@ -7451,7 +7451,7 @@ enum InventoryType
 
 ////////////////////////////////////////
 // RuntimeId: 02544
-// TypeInfo:  0x0000000142BE2408
+// TypeInfo: 0x0000000142BE2408
 enum IngameMenuCategoryType
 {
     IngameMenuCategoryType_Singleplayer, //0x0000
@@ -7460,7 +7460,7 @@ enum IngameMenuCategoryType
 
 ////////////////////////////////////////
 // RuntimeId: 02532
-// TypeInfo:  0x0000000142BE2428
+// TypeInfo: 0x0000000142BE2428
 enum UISettingSymbols
 {
     UISettingSymbols_Pluses, //0x0000
@@ -7470,7 +7470,7 @@ enum UISettingSymbols
 
 ////////////////////////////////////////
 // RuntimeId: 02530
-// TypeInfo:  0x0000000142BE26A8
+// TypeInfo: 0x0000000142BE26A8
 enum UISettingType
 {
     UISettingType_Slider, //0x0000
@@ -7483,7 +7483,7 @@ enum UISettingType
 
 ////////////////////////////////////////
 // RuntimeId: 02464
-// TypeInfo:  0x0000000142BE26C8
+// TypeInfo: 0x0000000142BE26C8
 enum UIWidgetEventQuery
 {
     UIWidgetEventQuery_FireEvent //0x0000
@@ -7491,7 +7491,7 @@ enum UIWidgetEventQuery
 
 ////////////////////////////////////////
 // RuntimeId: 02446
-// TypeInfo:  0x0000000142BE26E8
+// TypeInfo: 0x0000000142BE26E8
 enum UIStreamInstallGroupType
 {
     UIStreamInstallGroupType_Campaign, //0x0000
@@ -7501,7 +7501,7 @@ enum UIStreamInstallGroupType
 
 ////////////////////////////////////////
 // RuntimeId: 02401
-// TypeInfo:  0x0000000142BE2448
+// TypeInfo: 0x0000000142BE2448
 enum DTagUploadPolicy
 {
     DTUP_FirstTimeSeenAndEndOfRound, //0x0000
@@ -7510,7 +7510,7 @@ enum DTagUploadPolicy
 
 ////////////////////////////////////////
 // RuntimeId: 02354
-// TypeInfo:  0x0000000142BE2468
+// TypeInfo: 0x0000000142BE2468
 enum CapturePointUIType
 {
     CapturePointUIType_Default, //0x0000
@@ -7520,7 +7520,7 @@ enum CapturePointUIType
 
 ////////////////////////////////////////
 // RuntimeId: 02352
-// TypeInfo:  0x0000000142BE2488
+// TypeInfo: 0x0000000142BE2488
 enum CapturableType
 {
     CTDefault, //0x0000
@@ -7530,7 +7530,7 @@ enum CapturableType
 
 ////////////////////////////////////////
 // RuntimeId: 02344
-// TypeInfo:  0x0000000142BE23C8
+// TypeInfo: 0x0000000142BE23C8
 enum TicketDecreaseType
 {
     TDTOnKilled, //0x0000
@@ -7540,7 +7540,7 @@ enum TicketDecreaseType
 
 ////////////////////////////////////////
 // RuntimeId: 02338
-// TypeInfo:  0x0000000142BE24A8
+// TypeInfo: 0x0000000142BE24A8
 enum StatEventCast
 {
     SendToSingle, //0x0000
@@ -7551,7 +7551,7 @@ enum StatEventCast
 
 ////////////////////////////////////////
 // RuntimeId: 02328
-// TypeInfo:  0x0000000142BE24C8
+// TypeInfo: 0x0000000142BE24C8
 enum TeamAssignMode
 {
     TamEqualTeams, //0x0000
@@ -7561,7 +7561,7 @@ enum TeamAssignMode
 
 ////////////////////////////////////////
 // RuntimeId: 02314
-// TypeInfo:  0x0000000142BE24E8
+// TypeInfo: 0x0000000142BE24E8
 enum VehicleCategory
 {
     VehicleCategory_Land, //0x0000
@@ -7570,7 +7570,7 @@ enum VehicleCategory
 
 ////////////////////////////////////////
 // RuntimeId: 02304
-// TypeInfo:  0x0000000142BE2508
+// TypeInfo: 0x0000000142BE2508
 enum PlayerDefaultLogoType
 {
     PlayerDefaultLogoType_Land, //0x0000
@@ -7579,7 +7579,7 @@ enum PlayerDefaultLogoType
 
 ////////////////////////////////////////
 // RuntimeId: 02298
-// TypeInfo:  0x0000000142BE2528
+// TypeInfo: 0x0000000142BE2528
 enum SoldierEmote
 {
     SoldierEmote_Spot, //0x0000
@@ -7601,7 +7601,7 @@ enum SoldierEmote
 
 ////////////////////////////////////////
 // RuntimeId: 02277
-// TypeInfo:  0x0000000142BE2828
+// TypeInfo: 0x0000000142BE2828
 enum UIPopupType
 {
     PopupType_MemCard, //0x0000
@@ -7637,7 +7637,7 @@ enum UIPopupType
 
 ////////////////////////////////////////
 // RuntimeId: 02273
-// TypeInfo:  0x0000000142BE2548
+// TypeInfo: 0x0000000142BE2548
 enum UIScaleMode
 {
     noScaling, //0x0000
@@ -7650,7 +7650,7 @@ enum UIScaleMode
 
 ////////////////////////////////////////
 // RuntimeId: 02271
-// TypeInfo:  0x0000000142BE2568
+// TypeInfo: 0x0000000142BE2568
 enum UIAlignMode
 {
     topLeft, //0x0000
@@ -7661,7 +7661,7 @@ enum UIAlignMode
 
 ////////////////////////////////////////
 // RuntimeId: 02237
-// TypeInfo:  0x0000000142BE2588
+// TypeInfo: 0x0000000142BE2588
 enum UIListEmptyRowType
 {
     emptyRow_28px, //0x0000
@@ -7671,7 +7671,7 @@ enum UIListEmptyRowType
 
 ////////////////////////////////////////
 // RuntimeId: 02235
-// TypeInfo:  0x0000000142BE25A8
+// TypeInfo: 0x0000000142BE25A8
 enum UIListUnFocusMode
 {
     DeSelect, //0x0000
@@ -7681,7 +7681,7 @@ enum UIListUnFocusMode
 
 ////////////////////////////////////////
 // RuntimeId: 02233
-// TypeInfo:  0x0000000142BE25C8
+// TypeInfo: 0x0000000142BE25C8
 enum UIListRowType
 {
     MixedRows, //0x0000
@@ -7733,7 +7733,7 @@ enum UIListRowType
 
 ////////////////////////////////////////
 // RuntimeId: 02231
-// TypeInfo:  0x0000000142BE25E8
+// TypeInfo: 0x0000000142BE25E8
 enum UIListNavigationType
 {
     loop, //0x0000
@@ -7746,7 +7746,7 @@ enum UIListNavigationType
 
 ////////////////////////////////////////
 // RuntimeId: 02217
-// TypeInfo:  0x0000000142BE2608
+// TypeInfo: 0x0000000142BE2608
 enum PLMGameState
 {
     PLMGameState_MenuMain, //0x0000
@@ -7763,7 +7763,7 @@ enum PLMGameState
 
 ////////////////////////////////////////
 // RuntimeId: 02215
-// TypeInfo:  0x0000000142BE2888
+// TypeInfo: 0x0000000142BE2888
 enum UIServerFilterType
 {
     UIServerFilterType_Slots, //0x0000
@@ -7778,7 +7778,7 @@ enum UIServerFilterType
 
 ////////////////////////////////////////
 // RuntimeId: 02191
-// TypeInfo:  0x0000000142BE2628
+// TypeInfo: 0x0000000142BE2628
 enum UIInputActionAxisDisplay
 {
     UIInputActionAxisDisplay_Positive, //0x0000
@@ -7789,7 +7789,7 @@ enum UIInputActionAxisDisplay
 
 ////////////////////////////////////////
 // RuntimeId: 02165
-// TypeInfo:  0x0000000142BE2648
+// TypeInfo: 0x0000000142BE2648
 enum UICreditsTextType
 {
     UICreditsTextType_Header, //0x0000
@@ -7801,7 +7801,7 @@ enum UICreditsTextType
 
 ////////////////////////////////////////
 // RuntimeId: 02149
-// TypeInfo:  0x0000000142BE2668
+// TypeInfo: 0x0000000142BE2668
 enum UIIconMode
 {
     UIIconMode_Default, //0x0000
@@ -7813,7 +7813,7 @@ enum UIIconMode
 
 ////////////////////////////////////////
 // RuntimeId: 02147
-// TypeInfo:  0x0000000142BE2688
+// TypeInfo: 0x0000000142BE2688
 enum UIIconState
 {
     UIIconState_Default, //0x0000
@@ -7833,7 +7833,7 @@ enum UIIconState
 
 ////////////////////////////////////////
 // RuntimeId: 02126
-// TypeInfo:  0x0000000142BD9048
+// TypeInfo: 0x0000000142BD9048
 enum ScreenActionInputEventType
 {
     ScreenActionInputEventType_RuleRecognition, //0x0000
@@ -7854,7 +7854,7 @@ enum ScreenActionInputEventType
 
 ////////////////////////////////////////
 // RuntimeId: 02122
-// TypeInfo:  0x0000000142BD9068
+// TypeInfo: 0x0000000142BD9068
 enum XBoneSystemPhrase
 {
     XBoneSystemPhrase_OpenMenu, //0x0000
@@ -7867,7 +7867,7 @@ enum XBoneSystemPhrase
 
 ////////////////////////////////////////
 // RuntimeId: 02096
-// TypeInfo:  0x0000000142BD9088
+// TypeInfo: 0x0000000142BD9088
 enum NuiSpeechTargetDataType
 {
     NuiSpeechTargetDataType_String, //0x0000
@@ -7877,7 +7877,7 @@ enum NuiSpeechTargetDataType
 
 ////////////////////////////////////////
 // RuntimeId: 02086
-// TypeInfo:  0x0000000142BD90A8
+// TypeInfo: 0x0000000142BD90A8
 enum NuiSpeechFocusPointAction
 {
     NuiSpeechFocusPointAction_Attack, //0x0000
@@ -7886,7 +7886,7 @@ enum NuiSpeechFocusPointAction
 
 ////////////////////////////////////////
 // RuntimeId: 02082
-// TypeInfo:  0x0000000142BD90C8
+// TypeInfo: 0x0000000142BD90C8
 enum NuiSpeechCommoroseApplicabilityCondition
 {
     NuiSpeechCommoroseApplicabilityCondition_Always, //0x0000
@@ -7901,7 +7901,7 @@ enum NuiSpeechCommoroseApplicabilityCondition
 
 ////////////////////////////////////////
 // RuntimeId: 02078
-// TypeInfo:  0x0000000142BD90E8
+// TypeInfo: 0x0000000142BD90E8
 enum NuiSpeechPhraseHintMode
 {
     NuiSpeechPhraseType_Always, //0x0000
@@ -7911,7 +7911,7 @@ enum NuiSpeechPhraseHintMode
 
 ////////////////////////////////////////
 // RuntimeId: 02076
-// TypeInfo:  0x0000000142BD9108
+// TypeInfo: 0x0000000142BD9108
 enum NuiSpeechPhraseType
 {
     NuiSpeechPhraseType_InputAction, //0x0000
@@ -7926,7 +7926,7 @@ enum NuiSpeechPhraseType
 
 ////////////////////////////////////////
 // RuntimeId: 02044
-// TypeInfo:  0x0000000142BD9128
+// TypeInfo: 0x0000000142BD9128
 enum Dialect
 {
     Dialect_DE, //0x0000
@@ -7945,7 +7945,7 @@ enum Dialect
 
 ////////////////////////////////////////
 // RuntimeId: 01944
-// TypeInfo:  0x0000000142BD9148
+// TypeInfo: 0x0000000142BD9148
 enum DogTagCategory
 {
     DTC_Invalid, //0x0000
@@ -7969,7 +7969,7 @@ enum DogTagCategory
 
 ////////////////////////////////////////
 // RuntimeId: 01938
-// TypeInfo:  0x0000000142BD92A8
+// TypeInfo: 0x0000000142BD92A8
 enum CriteriaType
 {
     CriteriaType_IAR_InARound, //0x0000
@@ -7990,7 +7990,7 @@ enum CriteriaType
 
 ////////////////////////////////////////
 // RuntimeId: 01936
-// TypeInfo:  0x0000000142BD92C8
+// TypeInfo: 0x0000000142BD92C8
 enum StatEvent
 {
     StatEvent_Kill, //0x0000
@@ -8203,7 +8203,7 @@ enum StatEvent
 
 ////////////////////////////////////////
 // RuntimeId: 01906
-// TypeInfo:  0x0000000142BD9168
+// TypeInfo: 0x0000000142BD9168
 enum RadarScanMode
 {
     RSM_LeftToRight, //0x0000
@@ -8214,7 +8214,7 @@ enum RadarScanMode
 
 ////////////////////////////////////////
 // RuntimeId: 01886
-// TypeInfo:  0x0000000142BD92E8
+// TypeInfo: 0x0000000142BD92E8
 enum CommanderActionState
 {
     CommanderActionState_Disabled, //0x0000
@@ -8228,7 +8228,7 @@ enum CommanderActionState
 
 ////////////////////////////////////////
 // RuntimeId: 01884
-// TypeInfo:  0x0000000142BD9188
+// TypeInfo: 0x0000000142BD9188
 enum CommanderActionType
 {
     CommanderActionType_SectorScan, //0x0000
@@ -8257,7 +8257,7 @@ enum CommanderActionType
 
 ////////////////////////////////////////
 // RuntimeId: 01882
-// TypeInfo:  0x0000000142BD9308
+// TypeInfo: 0x0000000142BD9308
 enum CommanderCameraType
 {
     CommanderCameraType_NoCamera, //0x0000
@@ -8270,7 +8270,7 @@ enum CommanderCameraType
 
 ////////////////////////////////////////
 // RuntimeId: 01880
-// TypeInfo:  0x0000000142BD9328
+// TypeInfo: 0x0000000142BD9328
 enum CommanderOrderReplyType
 {
     CommanderOrderReplyType_Pending, //0x0000
@@ -8281,7 +8281,7 @@ enum CommanderOrderReplyType
 
 ////////////////////////////////////////
 // RuntimeId: 01878
-// TypeInfo:  0x0000000142BD9348
+// TypeInfo: 0x0000000142BD9348
 enum CommanderOrderType
 {
     CommanderOrderType_None, //0x0000
@@ -8292,7 +8292,7 @@ enum CommanderOrderType
 
 ////////////////////////////////////////
 // RuntimeId: 01876
-// TypeInfo:  0x0000000142BD9368
+// TypeInfo: 0x0000000142BD9368
 enum EMPType
 {
     EMPType_Local, //0x0000
@@ -8302,7 +8302,7 @@ enum EMPType
 
 ////////////////////////////////////////
 // RuntimeId: 01874
-// TypeInfo:  0x0000000142BD9388
+// TypeInfo: 0x0000000142BD9388
 enum CommanderRating
 {
     CommanderRating_Positive, //0x0000
@@ -8312,7 +8312,7 @@ enum CommanderRating
 
 ////////////////////////////////////////
 // RuntimeId: 01870
-// TypeInfo:  0x0000000142BD93A8
+// TypeInfo: 0x0000000142BD93A8
 enum ChatChannelType
 {
     CctSayAll, //0x0000
@@ -8326,7 +8326,7 @@ enum ChatChannelType
 
 ////////////////////////////////////////
 // RuntimeId: 01718
-// TypeInfo:  0x0000000142BD1B20
+// TypeInfo: 0x0000000142BD1B20
 enum IntensityClass
 {
     IntensityClass_Low, //0x0000
@@ -8337,7 +8337,7 @@ enum IntensityClass
 
 ////////////////////////////////////////
 // RuntimeId: 01716
-// TypeInfo:  0x0000000142BD1BA0
+// TypeInfo: 0x0000000142BD1BA0
 enum FiringWeaponClass
 {
     WeaponClass_AssaultRifle, //0x0000
@@ -8349,7 +8349,7 @@ enum FiringWeaponClass
 
 ////////////////////////////////////////
 // RuntimeId: 01662
-// TypeInfo:  0x0000000142BD1AC0
+// TypeInfo: 0x0000000142BD1AC0
 enum Pose
 {
     Pose_Stand, //0x0000
@@ -8358,7 +8358,7 @@ enum Pose
 
 ////////////////////////////////////////
 // RuntimeId: 01660
-// TypeInfo:  0x0000000142BD1BE0
+// TypeInfo: 0x0000000142BD1BE0
 enum MoveSpeed
 {
     MoveSpeed_Walk, //0x0000
@@ -8368,7 +8368,7 @@ enum MoveSpeed
 
 ////////////////////////////////////////
 // RuntimeId: 01656
-// TypeInfo:  0x0000000142BD1EE0
+// TypeInfo: 0x0000000142BD1EE0
 enum BFReadinessLevel
 {
     RLPatrol, //0x0000
@@ -8379,7 +8379,7 @@ enum BFReadinessLevel
 
 ////////////////////////////////////////
 // RuntimeId: 01612
-// TypeInfo:  0x0000000142BD1BC0
+// TypeInfo: 0x0000000142BD1BC0
 enum TacticsEnumeration
 {
     TacticsEnumeration_None, //0x0000
@@ -8395,7 +8395,7 @@ enum TacticsEnumeration
 
 ////////////////////////////////////////
 // RuntimeId: 01610
-// TypeInfo:  0x0000000142BD1C20
+// TypeInfo: 0x0000000142BD1C20
 enum ExecutionPriority
 {
     ExecutionPriority_All, //0x0000
@@ -8405,7 +8405,7 @@ enum ExecutionPriority
 
 ////////////////////////////////////////
 // RuntimeId: 01608
-// TypeInfo:  0x0000000142BD1B60
+// TypeInfo: 0x0000000142BD1B60
 enum AI2ShootType
 {
     AI2ShootType_OneBurstPerTarget, //0x0000
@@ -8414,7 +8414,7 @@ enum AI2ShootType
 
 ////////////////////////////////////////
 // RuntimeId: 01606
-// TypeInfo:  0x0000000142BD1AA0
+// TypeInfo: 0x0000000142BD1AA0
 enum IdleReadiness
 {
     IdleReadiness_Relaxed, //0x0000
@@ -8423,7 +8423,7 @@ enum IdleReadiness
 
 ////////////////////////////////////////
 // RuntimeId: 01598
-// TypeInfo:  0x0000000142BD1D40
+// TypeInfo: 0x0000000142BD1D40
 enum BFCoverType
 {
     BFCoverType_Stand, //0x0000
@@ -8436,7 +8436,7 @@ enum BFCoverType
 
 ////////////////////////////////////////
 // RuntimeId: 01588
-// TypeInfo:  0x0000000142BD1E80
+// TypeInfo: 0x0000000142BD1E80
 enum CoverQueryScoreRuntimeFlags
 {
     CoverQueryScoreRuntimeFlags_NeedTarget, //0x0000
@@ -8445,7 +8445,7 @@ enum CoverQueryScoreRuntimeFlags
 
 ////////////////////////////////////////
 // RuntimeId: 01574
-// TypeInfo:  0x0000000142BD1B40
+// TypeInfo: 0x0000000142BD1B40
 enum CoverQueryStyle
 {
     CoverQueryStyle_Distance, //0x0000
@@ -8455,7 +8455,7 @@ enum CoverQueryStyle
 
 ////////////////////////////////////////
 // RuntimeId: 01572
-// TypeInfo:  0x0000000142BD1AE0
+// TypeInfo: 0x0000000142BD1AE0
 enum CoverQueryCurveXSource
 {
     CoverQueryCurveXSource_Custom, //0x0000
@@ -8464,7 +8464,7 @@ enum CoverQueryCurveXSource
 
 ////////////////////////////////////////
 // RuntimeId: 01570
-// TypeInfo:  0x0000000142BD1B80
+// TypeInfo: 0x0000000142BD1B80
 enum CoverQueryDirection
 {
     CoverQueryDirection_CoverDirection, //0x0000
@@ -8479,7 +8479,7 @@ enum CoverQueryDirection
 
 ////////////////////////////////////////
 // RuntimeId: 01568
-// TypeInfo:  0x0000000142BD1B00
+// TypeInfo: 0x0000000142BD1B00
 enum CoverQueryPosition
 {
     CoverQueryPosition_ActorPosition, //0x0000
@@ -8491,7 +8491,7 @@ enum CoverQueryPosition
 
 ////////////////////////////////////////
 // RuntimeId: 01558
-// TypeInfo:  0x0000000142BD1C00
+// TypeInfo: 0x0000000142BD1C00
 enum BFCoverSelectionMethod
 {
     CSMAgainstThreatPosition, //0x0000
@@ -8503,7 +8503,7 @@ enum BFCoverSelectionMethod
 
 ////////////////////////////////////////
 // RuntimeId: 01514
-// TypeInfo:  0x0000000142BCE478
+// TypeInfo: 0x0000000142BCE478
 enum VoPrimaryFireType
 {
     VoPrimaryFireType_AssaultRifle, //0x0000
@@ -8515,7 +8515,7 @@ enum VoPrimaryFireType
 
 ////////////////////////////////////////
 // RuntimeId: 01512
-// TypeInfo:  0x0000000142BCE518
+// TypeInfo: 0x0000000142BCE518
 enum CombatEnvironment
 {
     CombatEnvironment_Default, //0x0000
@@ -8525,7 +8525,7 @@ enum CombatEnvironment
 
 ////////////////////////////////////////
 // RuntimeId: 01510
-// TypeInfo:  0x0000000142BCE458
+// TypeInfo: 0x0000000142BCE458
 enum ValidAgainst
 {
     ValidAgainst_Nothing, //0x0000
@@ -8539,7 +8539,7 @@ enum ValidAgainst
 
 ////////////////////////////////////////
 // RuntimeId: 01496
-// TypeInfo:  0x0000000142BCE438
+// TypeInfo: 0x0000000142BCE438
 enum BFAIProjectileCurveType
 {
     BFAIProjectileType_Straight, //0x0000
@@ -8548,7 +8548,7 @@ enum BFAIProjectileCurveType
 
 ////////////////////////////////////////
 // RuntimeId: 01490
-// TypeInfo:  0x0000000142BCE498
+// TypeInfo: 0x0000000142BCE498
 enum Action
 {
     Action_Revive //0x0000
@@ -8556,7 +8556,7 @@ enum Action
 
 ////////////////////////////////////////
 // RuntimeId: 00817
-// TypeInfo:  0x0000000142BACFA0
+// TypeInfo: 0x0000000142BACFA0
 enum LevolutionType
 {
     LevolutionType_Setpiece, //0x0000
@@ -8568,7 +8568,7 @@ enum LevolutionType
 
 ////////////////////////////////////////
 // RuntimeId: 00793
-// TypeInfo:  0x0000000142BAD200
+// TypeInfo: 0x0000000142BAD200
 enum FriendJoinEventType
 {
     FriendJoinEventType_None, //0x0000
@@ -8588,7 +8588,7 @@ enum FriendJoinEventType
 
 ////////////////////////////////////////
 // RuntimeId: 00757
-// TypeInfo:  0x0000000142BAD560
+// TypeInfo: 0x0000000142BAD560
 enum SwitchTeamsResult
 {
     SwitchTeamsResult_Success, //0x0000
@@ -8602,7 +8602,7 @@ enum SwitchTeamsResult
 
 ////////////////////////////////////////
 // RuntimeId: 00725
-// TypeInfo:  0x0000000142BAD880
+// TypeInfo: 0x0000000142BAD880
 enum BoostState
 {
     BoostState_None, //0x0000
@@ -8614,7 +8614,7 @@ enum BoostState
 
 ////////////////////////////////////////
 // RuntimeId: 00722
-// TypeInfo:  0x0000000142BAD8C0
+// TypeInfo: 0x0000000142BAD8C0
 enum VeniceNetworkUnlockGainedType
 {
     VeniceNetworkUnlockGainedType_Bucket, //0x0000
@@ -8626,7 +8626,7 @@ enum VeniceNetworkUnlockGainedType
 
 ////////////////////////////////////////
 // RuntimeId: 00700
-// TypeInfo:  0x0000000142BADB60
+// TypeInfo: 0x0000000142BADB60
 enum PushNotificationPresentStyle
 {
     PushNotificationPresentStyle_Silent, //0x0000
@@ -8636,7 +8636,7 @@ enum PushNotificationPresentStyle
 
 ////////////////////////////////////////
 // RuntimeId: 00693
-// TypeInfo:  0x0000000142BADC20
+// TypeInfo: 0x0000000142BADC20
 enum ServerUnlockSystemType
 {
     ServerUnlockSystemType_All, //0x0000
@@ -8650,7 +8650,7 @@ enum ServerUnlockSystemType
 
 ////////////////////////////////////////
 // RuntimeId: 00686
-// TypeInfo:  0x0000000142BADCE0
+// TypeInfo: 0x0000000142BADCE0
 enum ServerMapSequencerEventType
 {
     ServerMapSequencerEventType_Add, //0x0000
@@ -8671,7 +8671,7 @@ enum ServerMapSequencerEventType
 
 ////////////////////////////////////////
 // RuntimeId: 00673
-// TypeInfo:  0x0000000142BADE60
+// TypeInfo: 0x0000000142BADE60
 enum UIIOStatus
 {
     UIIOStatus_LoadStart, //0x0000
@@ -8682,7 +8682,7 @@ enum UIIOStatus
 
 ////////////////////////////////////////
 // RuntimeId: 00669
-// TypeInfo:  0x0000000142BADEC0
+// TypeInfo: 0x0000000142BADEC0
 enum UITooltipMessageType
 {
     UITooltipMessageType_Show, //0x0000
@@ -8692,7 +8692,7 @@ enum UITooltipMessageType
 
 ////////////////////////////////////////
 // RuntimeId: 00638
-// TypeInfo:  0x0000000142BAE280
+// TypeInfo: 0x0000000142BAE280
 enum UIObjectiveEventType
 {
     UIObjectiveEventType_Show, //0x0000
@@ -8703,7 +8703,7 @@ enum UIObjectiveEventType
 
 ////////////////////////////////////////
 // RuntimeId: 00535
-// TypeInfo:  0x0000000142BACFC0
+// TypeInfo: 0x0000000142BACFC0
 enum PropertyInterpolationMode
 {
     PropertyInterpolationMode_In, //0x0000
@@ -8715,7 +8715,7 @@ enum PropertyInterpolationMode
 
 ////////////////////////////////////////
 // RuntimeId: 00533
-// TypeInfo:  0x0000000142BACFE0
+// TypeInfo: 0x0000000142BACFE0
 enum PropertyInterpolationType
 {
     PropertyInterpolationType_Linear, //0x0000
@@ -8734,7 +8734,7 @@ enum PropertyInterpolationType
 
 ////////////////////////////////////////
 // RuntimeId: 00523
-// TypeInfo:  0x0000000142BAD000
+// TypeInfo: 0x0000000142BAD000
 enum StackedSpawningBehaviour
 {
     StackedSpawningBehaviour_Fill, //0x0000
@@ -8744,7 +8744,7 @@ enum StackedSpawningBehaviour
 
 ////////////////////////////////////////
 // RuntimeId: 00519
-// TypeInfo:  0x0000000142BAED80
+// TypeInfo: 0x0000000142BAED80
 enum DeathExperienceSmoothing
 {
     DeathExperienceSmoothing_EaseInAndOut, //0x0000
@@ -8756,7 +8756,7 @@ enum DeathExperienceSmoothing
 
 ////////////////////////////////////////
 // RuntimeId: 00515
-// TypeInfo:  0x0000000142BAD020
+// TypeInfo: 0x0000000142BAD020
 enum UnlockEntityPlayerQueryType
 {
     UnlockEntityPlayerQueryType_ActiveWeaponUnlocks, //0x0000
@@ -8768,7 +8768,7 @@ enum UnlockEntityPlayerQueryType
 
 ////////////////////////////////////////
 // RuntimeId: 00513
-// TypeInfo:  0x0000000142BAD040
+// TypeInfo: 0x0000000142BAD040
 enum UnlockEntityLogic
 {
     UnlockEntityLogic_AND, //0x0000
@@ -8777,7 +8777,7 @@ enum UnlockEntityLogic
 
 ////////////////////////////////////////
 // RuntimeId: 00447
-// TypeInfo:  0x0000000142BAD060
+// TypeInfo: 0x0000000142BAD060
 enum TrackPlayerEntityType
 {
     TrackPlayerEntityType_None, //0x0000
@@ -8787,7 +8787,7 @@ enum TrackPlayerEntityType
 
 ////////////////////////////////////////
 // RuntimeId: 00325
-// TypeInfo:  0x0000000142BAD080
+// TypeInfo: 0x0000000142BAD080
 enum SpecialMovesPoseType
 {
     SpecialMovesPoseType_None, //0x0000
@@ -8798,7 +8798,7 @@ enum SpecialMovesPoseType
 
 ////////////////////////////////////////
 // RuntimeId: 00299
-// TypeInfo:  0x0000000142BAD0A0
+// TypeInfo: 0x0000000142BAD0A0
 enum AwarenessTargetType
 {
     AwarenessTargetType_LookAt, //0x0000
@@ -8808,7 +8808,7 @@ enum AwarenessTargetType
 
 ////////////////////////////////////////
 // RuntimeId: 00169
-// TypeInfo:  0x0000000142BAD0C0
+// TypeInfo: 0x0000000142BAD0C0
 enum TabletCommanderPlatform
 {
     TabletCommanderPlatform_Unknown, //0x0000
@@ -8818,7 +8818,7 @@ enum TabletCommanderPlatform
 
 ////////////////////////////////////////
 // RuntimeId: 00167
-// TypeInfo:  0x0000000142BAD0E0
+// TypeInfo: 0x0000000142BAD0E0
 enum TabletCommanderChatChannel
 {
     TabletCommanderChatChannel_All, //0x0000
@@ -8829,7 +8829,7 @@ enum TabletCommanderChatChannel
 
 ////////////////////////////////////////
 // RuntimeId: 00165
-// TypeInfo:  0x0000000142BAF0A0
+// TypeInfo: 0x0000000142BAF0A0
 enum TabletCommanderMessageType
 {
     TabletCommanderMessageType_TryConnect, //0x0000
@@ -8875,7 +8875,7 @@ enum TabletCommanderMessageType
 
 ////////////////////////////////////////
 // RuntimeId: 00163
-// TypeInfo:  0x0000000142BAD100
+// TypeInfo: 0x0000000142BAD100
 enum TabletCommanderPacketType
 {
     TabletCommanderPacketType_HighFrequency, //0x0000
@@ -8886,7 +8886,7 @@ enum TabletCommanderPacketType
 
 ////////////////////////////////////////
 // RuntimeId: 00161
-// TypeInfo:  0x0000000142BAD120
+// TypeInfo: 0x0000000142BAD120
 enum TabletCommanderConnectionDeniedReason
 {
     TabletCommanderConnectionDeniedReason_None, //0x0000
@@ -8899,7 +8899,7 @@ enum TabletCommanderConnectionDeniedReason
 
 ////////////////////////////////////////
 // RuntimeId: 00159
-// TypeInfo:  0x0000000142BAD140
+// TypeInfo: 0x0000000142BAD140
 enum TabletCommanderGameMode
 {
     TabletCommanderGameMode_None, //0x0000
@@ -8911,7 +8911,7 @@ enum TabletCommanderGameMode
 
 ////////////////////////////////////////
 // RuntimeId: 00157
-// TypeInfo:  0x0000000142BAD160
+// TypeInfo: 0x0000000142BAD160
 enum TabletCommanderObjectiveType
 {
     TabletCommanderObjectiveType_HomeBase, //0x0000
@@ -8924,7 +8924,7 @@ enum TabletCommanderObjectiveType
 
 ////////////////////////////////////////
 // RuntimeId: 00155
-// TypeInfo:  0x0000000142BAF0C0
+// TypeInfo: 0x0000000142BAF0C0
 enum TabletCommanderProtocol
 {
     TabletCommanderProtocol_Version //0x0000
@@ -8932,7 +8932,7 @@ enum TabletCommanderProtocol
 
 ////////////////////////////////////////
 // RuntimeId: 00129
-// TypeInfo:  0x0000000142BA3958
+// TypeInfo: 0x0000000142BA3958
 enum ServerUnlockListEventType
 {
     ServerUnlockListEventType_Add, //0x0000
@@ -8948,7 +8948,7 @@ enum ServerUnlockListEventType
 
 ////////////////////////////////////////
 // RuntimeId: 00123
-// TypeInfo:  0x0000000142BA39F8
+// TypeInfo: 0x0000000142BA39F8
 enum AddGameBanResponseType
 {
     AddGameBanResponseType_Success, //0x0000
@@ -8959,7 +8959,7 @@ enum AddGameBanResponseType
 
 ////////////////////////////////////////
 // RuntimeId: 00037
-// TypeInfo:  0x0000000142BA4498
+// TypeInfo: 0x0000000142BA4498
 enum JoinGameType
 {
     JoinGameType_ViaServerBrowser, //0x0000
@@ -8969,7 +8969,7 @@ enum JoinGameType
 
 ////////////////////////////////////////
 // RuntimeId: 00007
-// TypeInfo:  0x0000000142BA38B8
+// TypeInfo: 0x0000000142BA38B8
 enum Moments
 {
     Moment_RankUp, //0x0000

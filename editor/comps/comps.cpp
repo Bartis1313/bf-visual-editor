@@ -1,6 +1,7 @@
 ﻿#include "comps.h"
 
 #include "../ui/ui_helpers.h"
+#include "../textures/textures.h"
 
 #if defined(BFVE_GAME_BF3)
 
@@ -125,6 +126,12 @@ namespace editor::comps
             ui::FloatEdit("Sun Scale", &e->m_SunScale, &o->m_SunScale);
             ui::FloatEdit("Sky Visibility Exponent", &e->m_SkyVisibilityExponent, &o->m_SkyVisibilityExponent);
             ui::FloatEdit("Sky Envmap 8Bit Tex Scale", &e->m_SkyEnvmap8BitTexScale, &o->m_SkyEnvmap8BitTexScale);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Textures##Sky"))
+        {
+            editor::textures::renderSkyTextureSlots();
             ImGui::TreePop();
         }
 

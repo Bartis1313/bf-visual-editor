@@ -97,6 +97,7 @@
       <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
+      <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
@@ -116,6 +117,7 @@
       <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
+      <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
@@ -133,6 +135,7 @@
       <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
+      <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
@@ -152,6 +155,7 @@
       <EnableModules>false</EnableModules>
     </ClCompile>
     <Link>
+      <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
@@ -165,9 +169,13 @@
     <ClInclude Include="editor\editor.h" />
     <ClInclude Include="editor\editor_context.h" />
     <ClInclude Include="editor\effects\effects.h" />
+    <ClInclude Include="editor\textures\textures.h" />
+    <ClInclude Include="editor\textures\texgen.h" />
+    <ClInclude Include="editor\textures\surfacepick.h" />
     <ClInclude Include="editor\emitters\emitters.h" />
     <ClInclude Include="editor\global_ve\global_ve.h" />
     <ClInclude Include="editor\lights\lights.h" />
+    <ClInclude Include="editor\lights\lights_internal.h" />
     <ClInclude Include="editor\render\math.h" />
     <ClInclude Include="editor\serialize\serialize.h" />
     <ClInclude Include="editor\settings\settings.h" />
@@ -175,6 +183,8 @@
     <ClInclude Include="editor\types.h" />
     <ClInclude Include="editor\render\render.h" />
     <ClInclude Include="editor\ui\ui_helpers.h" />
+    <ClInclude Include="editor\ui\file_dialog.h" />
+    <ClInclude Include="editor\camera\camera.h" />
     <ClInclude Include="editor\comps\comps.h" />
     <ClInclude Include="editor\world_render\world_render.h" />
     <ClInclude Include="hooks\functions.h" />
@@ -204,6 +214,12 @@
     <ClCompile Include="editor\copy\copy.cpp" />
     <ClCompile Include="editor\editor.cpp" />
     <ClCompile Include="editor\editor_context.cpp" />
+    <ClCompile Include="editor\textures\textures.cpp" />
+    <ClCompile Include="editor\textures\textures_shaders.cpp" />
+    <ClCompile Include="editor\textures\textures_ui.cpp" />
+    <ClCompile Include="editor\textures\textures_serialize.cpp" />
+    <ClCompile Include="editor\textures\texgen.cpp" />
+    <ClCompile Include="editor\textures\surfacepick.cpp" />
     <ClCompile Include="editor\effects\effects.cpp" />
     <ClCompile Include="editor\effects\effects_ui.cpp" />
     <ClCompile Include="editor\emitters\emitters.cpp" />
@@ -216,6 +232,7 @@
     <ClCompile Include="editor\lights\lights.cpp" />
     <ClCompile Include="editor\lights\lights_serialize.cpp" />
     <ClCompile Include="editor\lights\lights_ui.cpp" />
+    <ClCompile Include="editor\lights\lights_flares.cpp" />
     <ClCompile Include="editor\serialize\serialize.cpp" />
     <ClCompile Include="editor\states\states_ui.cpp" />
     <ClCompile Include="editor\states\states.cpp" />
@@ -223,6 +240,8 @@
     <ClCompile Include="editor\states\states_serialize.cpp" />
     <ClCompile Include="editor\render\render.cpp" />
     <ClCompile Include="editor\ui\ui_helpers.cpp" />
+    <ClCompile Include="editor\ui\file_dialog.cpp" />
+    <ClCompile Include="editor\camera\camera.cpp" />
     <ClCompile Include="editor\comps\comps.cpp" />
     <ClCompile Include="editor\comps\comps_bf4.cpp" />
     <ClCompile Include="editor\comps\comps_serialize_bf4.cpp" />

@@ -51,12 +51,8 @@ namespace editor::effects
             {
                 if (!obj) continue;
 
-                fb::TypeInfo* typeInfo = obj->GetType();
-                if (!typeInfo || typeInfo->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                    continue;
-
-                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(typeInfo);
-                if (classInfo->m_ClassId != fb::EffectBlueprint::ClassId())
+                fb::ClassInfo* classInfo = fb::classOf(obj);
+                if (!classInfo || classInfo->m_ClassId != fb::EffectBlueprint::ClassId())
                     continue;
 
                 fb::EffectBlueprint* eB = reinterpret_cast<fb::EffectBlueprint*>(obj);
@@ -80,7 +76,7 @@ namespace editor::effects
         logger::info("Scanned {} effect assets", assets.size());
     }
 
-    // crash due to that
+// crash due to that
 #pragma optimize("", off)
     uint32_t spawnAtTransform(fb::Asset* effect, const fb::LinearTransform& transform)
     {
@@ -94,15 +90,9 @@ namespace editor::effects
         fb::EffectParams params = {};
         params.m_paramCount = 0;
 
-        uint32_t handle = 0;
-        __try
-        {
-            handle = effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform), &params, false);
-        }
-        __except (EXCEPTION_EXECUTE_HANDLER)
-        {
-            return 0;
-		}
+        const uint32_t handle =
+            effectManager->playEffect(effect, const_cast<fb::LinearTransform*>(&transform),
+                                      &params, false);
         return handle;
     }
 #pragma optimize("", on)

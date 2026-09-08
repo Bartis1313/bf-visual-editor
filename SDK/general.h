@@ -1,5 +1,6 @@
 #pragma once
 
+
 #include <Windows.h>
 #include <cstdint>
 #include <cassert>
@@ -24,6 +25,17 @@ constexpr uint32_t operator"" _fbhash(const char* str, size_t len)
 
 namespace fb
 {
+    __forceinline bool isValidPtr(const void* p)
+    {
+#if defined(_WIN64)
+        return p >= reinterpret_cast<const void*>(0x10000ull) &&
+               p < reinterpret_cast<const void*>(0x000F000000000000ull);
+#else
+        return p >= reinterpret_cast<const void*>(0x10000u) &&
+               p < reinterpret_cast<const void*>(0xFFF00000u);
+#endif
+    }
+
     template<typename T> class WeakToken
     {
     public:
@@ -38,38 +50,18 @@ namespace fb
 
         T* Get()
         {
-            __try
-            {
-
-                if (m_Token && m_Token->m_RealPtr)
-                {
-                    DWORD_PTR realPtr = (DWORD_PTR)m_Token->m_RealPtr;
-                    return (T*)(realPtr - sizeof(DWORD_PTR));
-                }
-            }
-            __except (1)
-            {
+            if (!m_Token || !m_Token->m_RealPtr)
                 return NULL;
-            }
-            return NULL;
+
+            return (T*)((DWORD_PTR)m_Token->m_RealPtr - sizeof(DWORD_PTR));
         }
 
         T* Get8()
         {
-            __try
-            {
-
-                if (m_Token && m_Token->m_RealPtr)
-                {
-                    DWORD_PTR realPtr = (DWORD_PTR)m_Token->m_RealPtr;
-                    return (T*)(realPtr - 8);
-                }
-            }
-            __except (1)
-            {
+            if (!m_Token || !m_Token->m_RealPtr)
                 return NULL;
-            }
-            return NULL;
+
+            return (T*)((DWORD_PTR)m_Token->m_RealPtr - 8);
         }
     };
     //Size=0x0008
@@ -81,10 +73,10 @@ namespace fb
 
     struct Guid
     {
-        unsigned long	m_Data1;	//0x0000
-        unsigned short	m_Data2;	//0x0004
-        unsigned short	m_Data3;	//0x0006
-        unsigned char	m_Data4[8];	//0x0008
+        unsigned long m_Data1; //0x0000
+        unsigned short m_Data2; //0x0004
+        unsigned short m_Data3; //0x0006
+        unsigned char m_Data4[8]; //0x0008
 
         bool operator=(const fb::Guid* other)
         {
@@ -102,13 +94,13 @@ namespace fb
         {
             struct
             {
-                unsigned char m_R;	//0x0000
-                unsigned char m_G;	//0x0001
-                unsigned char m_B;	//0x0002
-                unsigned char m_A;	//0x0003
+                unsigned char m_R; //0x0000
+                unsigned char m_G; //0x0001
+                unsigned char m_B; //0x0002
+                unsigned char m_A; //0x0003
             };
 
-            unsigned int m_Data;	//0x0000
+            unsigned int m_Data; //0x0000
         };
 
         Color32(unsigned char r1, unsigned char g1, unsigned char b1, unsigned char a1)

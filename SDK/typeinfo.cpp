@@ -97,4 +97,10 @@ namespace fb
     {
         return ((ValueTypeInfoData*)m_InfoData);
     }
+
+    ClassInfo* classOf(void* obj)
+    {
+        TypeInfo* t = obj ? static_cast<ITypedObject*>(obj)->GetType() : nullptr;
+        return t && t->GetTypeCode() == kTypeCode_Class ? static_cast<ClassInfo*>(t) : nullptr;
+    }
 }

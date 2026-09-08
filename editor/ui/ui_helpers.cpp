@@ -75,12 +75,12 @@ namespace editor::ui
         ImGui::PushID(label);
 
         ImGuiStorage* st = ImGui::GetStateStorage();
-        const ImGuiID kI  = ImGui::GetID("##hdrI");
+        const ImGuiID kI = ImGui::GetID("##hdrI");
         const ImGuiID kNx = ImGui::GetID("##hdrNx");
         const ImGuiID kNy = ImGui::GetID("##hdrNy");
         const ImGuiID kNz = ImGui::GetID("##hdrNz");
 
-        float I  = st->GetFloat(kI,  -1.0f);
+        float I = st->GetFloat(kI, -1.0f);
         float nx = st->GetFloat(kNx, 0.0f);
         float ny = st->GetFloat(kNy, 0.0f);
         float nz = st->GetFloat(kNz, 0.0f);
@@ -121,7 +121,7 @@ namespace editor::ui
             c->m_z = n[2] * I;
         }
 
-        st->SetFloat(kI,  I);
+        st->SetFloat(kI, I);
         st->SetFloat(kNx, n[0]);
         st->SetFloat(kNy, n[1]);
         st->SetFloat(kNz, n[2]);

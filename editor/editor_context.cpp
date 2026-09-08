@@ -43,12 +43,27 @@ namespace editor
             CoTaskMemFree(path);
             return result;
         }
-        return "."; // fs::current_path();
+        return ".";
+    }
+
+    std::string getEditorRoot()
+    {
+        return getConfigDir() + "/" + CONFIG_DIRECTORY;
+    }
+
+    std::string getDumpsDir()
+    {
+        return getEditorRoot() + "/Dumps";
+    }
+
+    std::string getTexturesDir()
+    {
+        return getEditorRoot() + "/Textures";
     }
 
     std::string getConfigPath(const std::string& mapName)
     {
-        return getConfigDir() + "/" + CONFIG_DIRECTORY + "/" + sanitizeMapName(mapName) + ".json";
+        return getEditorRoot() + "/" + sanitizeMapName(mapName) + ".json";
     }
 
     std::string sanitizeMapName(const std::string& mapName)
@@ -66,7 +81,7 @@ namespace editor
         std::vector<std::string> configs;
         try
         {
-            fs::path configDir = fs::path(getConfigDir()) / CONFIG_DIRECTORY;
+            fs::path configDir = fs::path(getEditorRoot());
             if (fs::exists(configDir))
             {
                 for (const auto& entry : fs::directory_iterator(configDir))

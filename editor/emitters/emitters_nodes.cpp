@@ -59,12 +59,9 @@ namespace editor::emitters
             return std::strncmp(s, p, std::strlen(p)) == 0;
         }
 
-        const char* rawClassName(fb::TypeInfo* ti)
+        const char* rawClassName(fb::ClassInfo* ci)
         {
-            if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                return "?";
-            auto ci = static_cast<fb::ClassInfo*>(ti);
-            return (ci->m_InfoData && ci->m_InfoData->m_Name) ? ci->m_InfoData->m_Name : "?";
+            return (ci && ci->m_InfoData && ci->m_InfoData->m_Name) ? ci->m_InfoData->m_Name : "?";
         }
 
         std::string friendlyName(const char* raw)
@@ -79,7 +76,7 @@ namespace editor::emitters
 
         Category categoryOf(const char* name)
         {
-            if (startsWith(name, "Spawn"))  return { "Spawn",  ImVec4{ 0.55f, 0.85f, 0.45f, 1.0f } };
+            if (startsWith(name, "Spawn")) return { "Spawn", ImVec4{ 0.55f, 0.85f, 0.45f, 1.0f } };
             if (startsWith(name, "Update")) return { "Update", ImVec4{ 0.45f, 0.70f, 0.95f, 1.0f } };
             if (startsWith(name, "Gravity") || startsWith(name, "LocalForce") ||
                 startsWith(name, "WorldForces") || startsWith(name, "WorldWind") ||
@@ -413,11 +410,8 @@ namespace editor::emitters
 
         bool isShaderParam(fb::ProcessorData* proc)
         {
-            fb::TypeInfo* ti = proc ? proc->GetType() : nullptr;
-            if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                return false;
-
-            return static_cast<fb::ClassInfo*>(ti)->isSubclassOf((fb::ClassInfo*)fb::UpdateShaderParam01Data::ClassInfoPtr());
+            fb::ClassInfo* ci = fb::classOf(proc);
+            return ci && ci->isSubclassOf((fb::ClassInfo*)fb::UpdateShaderParam01Data::ClassInfoPtr());
         }
 
 #else // BFVE_GAME_BF3
@@ -639,10 +633,9 @@ namespace editor::emitters
 
         bool renderEvaluator(fb::EvaluatorData* ev)
         {
-            fb::TypeInfo* ti = ev->GetType();
-            const char* raw = rawClassName(ti);
-            const uint32_t classId = (ti && ti->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
-                ? static_cast<fb::ClassInfo*>(ti)->m_ClassId : 0u;
+            fb::ClassInfo* ci = fb::classOf(ev);
+            const char* raw = rawClassName(ci);
+            const uint32_t classId = ci ? ci->m_ClassId : 0u;
 
             ImGui::PushID(ev);
             char label[160];
@@ -664,10 +657,8 @@ namespace editor::emitters
 
         void renderProcessorSection(EmitterEditData& edit, fb::ProcessorData* proc)
         {
-            fb::TypeInfo* ti = proc->GetType();
-            fb::ClassInfo* ci = (ti && ti->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
-                ? static_cast<fb::ClassInfo*>(ti) : nullptr;
-            const char* raw = rawClassName(ti);
+            fb::ClassInfo* ci = fb::classOf(proc);
+            const char* raw = rawClassName(ci);
             const uint32_t classId = ci ? ci->m_ClassId : 0u;
 
             const Category cat = categoryOf(raw);

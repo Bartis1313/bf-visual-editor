@@ -38,6 +38,9 @@ namespace editor::emitters
 
     void renderTab();
 
+    inline char searchFilter[64] = {};
+    inline bool focusTab = false;
+
     void renderProcessorGraph(EmitterEditData& edit);
 
     // Pristine full-byte copy of every processor/evaluator in the chain (keyed by
@@ -46,6 +49,9 @@ namespace editor::emitters
     void resetProcessorEdits(EmitterEditData& edit);
 
     void renderOverlay();
+    bool nearestEmitter(const fb::Vec3& pos, float maxDist, std::string& name, float* distance = nullptr);
+    size_t trackedEmitterCount();
+    void lightOwners(std::unordered_map<void*, std::string>& out);
     inline bool showOverlay = false;
     inline float overlayMaxDistance = 100.0f;
 

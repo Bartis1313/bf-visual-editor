@@ -1,0 +1,147 @@
+#pragma once
+
+#if defined(BFVE_GAME_BF3)
+
+// globals
+#define OFF_g_borderInputNode 0x02384EB8
+#define OFF_g_clientGameContext 0x02380B58
+#define OFF_g_visualEnvironmentManager 0x023B6844
+#define OFF_g_entityWorld 0x0236B60C
+#define OFF_g_resourceManager 0x0230D220
+#define OFF_g_shaderSystem 0x02356C90
+#define OFF_g_textureStreamingManager 0x023577EC
+#define OFF_g_meshVariationManager 0x023B3E88
+#define OFF_g_gameRenderer 0x02384D78
+#define OFF_g_settingsManager 0x022ED35C
+#define OFF_Settings_UISettings 0x022E39C0
+#define OFF_g_clientCameraManager 0x0238AADC 
+
+// vtables
+#define OFF_vt_DxTexture 0x0209BD18
+#define OFF_vt_RigidMeshEntity 0x02238658
+#define OFF_vt_CompositeMeshEntity 0x02238578
+#define OFF_vt_ClientStaticModelGroupMember 0x0214A418
+#define OFF_vt_SurfaceShader 0x02097218
+#define OFF_vt_ClientCameraManager 0x021491DC
+
+// functions
+#define OFF_RenderView_setTransform 0x006BBFC0
+#define OFF_RenderView_setFov 0x006BBE00
+#define OFF_RenderView_updateMatrices 0x006C3A90
+#define OFF_SettingsManager_getSettings 0x0049EB60
+#define OFF_DebugRenderer2_singleton 0x004B2EA0
+#define OFF_DebugRenderer2_setTransparent 0x004A6350
+#define OFF_DebugRenderer2_setDoubleSided 0x004A6370
+#define OFF_DebugRenderer2_setDepthTest 0x004A6390
+#define OFF_DebugRenderer2_setDepthWrite 0x004A63B0
+#define OFF_DebugRenderer2_beginVertices 0x004B92A0
+#define OFF_DebugRenderer2_endVertices 0x004AA9A0
+#define OFF_DebugRenderer2_drawText 0x004B7610
+#define OFF_DebugRenderer2_drawLine2d 0x004B9980
+#define OFF_DebugRenderer2_drawLineRect2d 0x004BA2E0
+#define OFF_DebugRenderer2_drawRect2d 0x004BA4F0
+#define OFF_TextureStreamingManager_getOnDemandStatus 0x006C0DC0
+#define OFF_TextureStreamingManager_loadOnDemand 0x006C4680
+#define OFF_TextureStreamingManager_unloadOnDemand 0x006CF320
+#define OFF_EffectEntity_getWorldTransform 0x0054B770
+#define OFF_EntityWorld_kindOfQuery 0x00549B00
+#define OFF_EffectManager_stopEffect 0x00F7F390
+#define OFF_EffectManager_playEffect 0x00F82D60
+#define OFF_LocalLightEntity_setDirty 0x017A8260
+#define OFF_g_arenaMap 0x0230D938 // MemoryArena* per 64K page: 0 none, -1 malloc, -2 reserved (sub_503D00)
+#define OFF_MemoryArena_alloc 0x0041BE10 // thiscall (size, align)
+#define OFF_operator_delete 0x00425930 // arena-map lookup, be careful with not hitting debugbreak
+#define OFF_g_dxRenderer 0x023577D4
+#define OFF_g_effectManager 0x02380E10
+
+// hook targets
+#define OFF_VisualEnvironment_operatorAssign 0x01791F30
+#define OFF_VisualEnvironmentManager_update 0x01797FD0
+#define OFF_MessageManager_dispatchMessage 0x004A6050
+#define OFF_LocalLightEntity_ctor 0x017A6220
+#define OFF_LocalLightEntity_dtor 0x017A81F0
+#define OFF_LensFlareEntity_buildShaders 0x017B0600
+#define OFF_DxTexture_releaseGpu 0x006BFAE0
+#define OFF_DxTexture_create 0x006CAE90
+#define OFF_DxTexture_reassign 0x006BFB40
+#define OFF_ClientCameraManager_getTransform 0x010911C0
+#define OFF_ShaderParameterBlock_setVector 0x00693930
+#define OFF_VisualEnvironmentEntity_ctor 0x00F7E030
+#define OFF_VisualEnvironmentEntity_dtor 0x00F7A7E0
+#define OFF_EmitterManager_createEmitterTemplate 0x018802E0
+#define OFF_ClientEmitterEntity_ctor 0x01884710
+#define OFF_GameRenderer_createUpdateJob 0x00FB97A0
+#define OFF_InternalDatabasePartition_onPartitionLoaded 0x004D5790
+#define OFF_ClientGameContext_unloadLevel 0x00F72D50
+
+#elif defined(BFVE_GAME_BF4)
+
+// globals
+#define OFF_g_textureStreamingManager 0x142738070
+#define OFF_g_meshVariationManager 0x1427382C8
+#define OFF_g_shaderDatabase 0x14273A618
+#define OFF_g_shaderSystemAllocator 0x1425FDE60
+#define OFF_g_meshSetRegistryOwner 0x1427384A8
+#define OFF_g_effectManager 0x142676F60
+#define OFF_g_settingsManager 0x14261E930
+#define OFF_Settings_UISettings 0x142364C60
+#define OFF_g_resourceManager 0x14261E9E0
+#define OFF_g_clientGameContext 0x142670D80
+#define OFF_g_borderInputNode 0x142671FB0
+#define OFF_g_gameRenderer 0x142672378
+#define OFF_g_worldRenderSettings 0x1426724A0
+#define OFF_g_dxRenderer 0x142738080
+#define OFF_g_visualEnvironmentManager 0x14273D6F8
+
+// vtables
+#define OFF_vt_DxTexture 0x141DD1410
+#define OFF_vt_RigidMeshEntity 0x141DEFDF0
+#define OFF_vt_CompositeMeshEntity 0x141DF93C0
+#define OFF_vt_ClientEmitterEntity 0x141CF2EC0
+
+// functions
+#define OFF_RenderView_setTransform 0x140B8A0A0
+#define OFF_RenderView_setFov 0x140B89EE0
+#define OFF_SettingsManager_getSettings 0x140688C50
+#define OFF_SettingsManager_apply 0x140687BE0
+#define OFF_TextureStreamingManager_getOnDemandStatus 0x140B85BA0
+#define OFF_TextureStreamingManager_loadOnDemand 0x140B877E0
+#define OFF_TextureStreamingManager_unloadOnDemand 0x140B8B140
+#define OFF_SurfaceShaderInstance_create 0x140C1BCA0
+#define OFF_MeshSetRegistry_find 0x140691EC0
+#define OFF_StaticModelGroupMember_getInstanceTransform 0x14099CCB0
+#define OFF_LocalLightEntity_setDirty 0x140CCE9E0
+#define OFF_Malloc_allocAligned 0x14064DA60 // (size, align); sub_140627980 frees it
+#define OFF_operator_delete 0x140627980 // arena-map lookup, be careful with not hitting debugbreak
+#define OFF_VisualEnvironmentManager_rebakeCharacterLightingSH 0x140CC60E0
+#define OFF_VisualEnvironmentManager_rebakeVehicleLightingSH 0x140CC71D0
+#define OFF_EffectManager_stopEffect 0x1409135B0
+#define OFF_Entity_getLevel 0x1407FA550
+#define OFF_EffectManager_playEffect 0x1409104D0
+#define OFF_DebugRenderer_singleton 0x14063DCA0
+#define OFF_DebugRenderer2_singleton 0x14063D0C0
+#define OFF_DebugRenderer2_drawText 0x14063E2E0
+#define OFF_DebugRenderer2_drawLine2d 0x14063DEB0
+#define OFF_DebugRenderer2_drawLineRect2d 0x14063DF20
+#define OFF_DebugRenderer2_drawRect2d 0x14063E0B0
+#define OFF_EntityWorld_getFirstIterableLink 0x1407CD5D0
+
+// hook targets
+#define OFF_VisualEnvironmentManager_update 0x140CC53B0
+#define OFF_VisualEnvironment_operatorAssign 0x140B79380
+#define OFF_MessageManager_dispatchMessage 0x140626810
+#define OFF_VisualEnvironmentEntity_ctor 0x1408EA570
+#define OFF_VisualEnvironmentEntity_dtor 0x1408EBAC0
+#define OFF_LocalLightEntity_ctor 0x140CC7EE0
+#define OFF_LocalLightEntity_dtor 0x140CC9010
+#define OFF_GameRenderer_createUpdateJob 0x14083F0E0
+#define OFF_ClientCameraManager_getTransform 0x1408AB5B0
+#define OFF_EmitterEntity_ctor 0x1407A7D60
+#define OFF_ShaderParameterBlock_setVector 0x140C26490
+#define OFF_LensFlareEntity_buildShaders 0x140CCCDA0
+#define OFF_DxTexture_releaseGpu 0x140C11FA0
+#define OFF_DxTexture_create 0x140BEC8F0
+#define OFF_DxTexture_assign 0x140C0A340
+#define OFF_ClientGameContext_unloadLevel 0x140826BF0
+
+#endif

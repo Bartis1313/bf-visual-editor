@@ -6,7 +6,7 @@
 
 namespace editor::emitters
 {
-    static char searchBuf[64] = {};
+    static char (&searchBuf)[64] = searchFilter;
     static bool searchChanged = false;
 
     static bool computeSearchVisible(EmitterTreeNode& node, const char* search)
@@ -260,7 +260,17 @@ namespace editor::emitters
             ImGui::SliderFloat("Max Distance (m)", &overlayMaxDistance, 5.0f, 500.0f, "%.0f");
         }
 
+        focusTab = false;
+
         searchChanged = ImGui::InputText("Search", searchBuf, sizeof(searchBuf));
+
+        static std::string lastSearch;
+        if (lastSearch != searchBuf)
+        {
+            lastSearch = searchBuf;
+            searchChanged = true;
+        }
+
         if (searchChanged && searchBuf[0])
             computeSearchVisible(getTree(), searchBuf);
         ImGui::Separator();

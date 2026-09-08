@@ -41,23 +41,23 @@ namespace fb
     public:
         typedef void* Test;
 
-        Test* m_Head; //0x0000 
-        Test* m_Tail; //0x0008 
+        Test* m_Head; //0x0000
+        Test* m_Tail; //0x0008
 
     };//Size=0x0010
 
     struct MemberInfoFlags
     {
-        unsigned short m_FlagBits; //0x0000 
+        unsigned short m_FlagBits; //0x0000
 
     };//Size=0x0002
 
     class ModuleInfo
     {
     public:
-        char* m_ModuleName; //0x0000 
-        ModuleInfo* m_NextModule; //0x0008 
-        TestList* m_TestList; //0x0010 
+        char* m_ModuleName; //0x0000
+        ModuleInfo* m_NextModule; //0x0008
+        TestList* m_TestList; //0x0010
 
     };//Size=0x0018
 
@@ -86,13 +86,13 @@ namespace fb
     public:
         struct TypeInfoData : MemberInfoData
         {
-            unsigned short m_TotalSize; //0x000A 
+            unsigned short m_TotalSize; //0x000A
 #if defined(_WIN64)
             char _0x000C[4];
 #endif
-            ModuleInfo* m_Module; //0x0010 
+            ModuleInfo* m_Module; //0x0010
             unsigned char m_Alignment; //0x0018
-            unsigned char m_FieldCount; //0x0019  
+            unsigned char m_FieldCount; //0x0019
 #if defined(_WIN64)
             char _0x001B[6];
 #else
@@ -125,9 +125,9 @@ namespace fb
         virtual TypeInfo* GetDeclaringType();
         virtual unsigned short GetFieldIndex();
 
-        TypeInfo* m_DeclaringType; //0x0010 
-        unsigned short m_FieldIndex; //0x0018 
-        unsigned short m_AttributeMask; //0x001A 
+        TypeInfo* m_DeclaringType; //0x0010
+        unsigned short m_FieldIndex; //0x0018
+        unsigned short m_AttributeMask; //0x001A
 #if defined(_WIN64)
         char _0x001C[4];
 #endif
@@ -140,23 +140,23 @@ namespace fb
     public:
         struct ClassInfoData : TypeInfo::TypeInfoData
         {
-            ClassInfo* m_SuperClass; //0x0020 
-            void* m_CreateFun; //0x0028 
-            FieldInfo::FieldInfoData* m_Fields; //0x0030     
+            ClassInfo* m_SuperClass; //0x0020
+            void* m_CreateFun; //0x0028
+            FieldInfo::FieldInfoData* m_Fields; //0x0030
 
         };//Size=0x0038
 
-        ClassInfo* m_Super; //0x0018 
-        DataContainer* m_DefaultInstance; //0x0020 
-        unsigned short m_ClassId; //0x0028 
-        unsigned short m_LastSubClassId; //0x002A 
+        ClassInfo* m_Super; //0x0018
+        DataContainer* m_DefaultInstance; //0x0020
+        unsigned short m_ClassId; //0x0028
+        unsigned short m_LastSubClassId; //0x002A
 #if defined(_WIN64)
         char _0x002C[4];
 #endif
-        ClassInfo* m_FirstDerivedClass; //0x0030 
-        ClassInfo* m_NextSiblingClass; //0x0038 
-        FieldInfo** m_FieldInfos; //0x0040 
-        unsigned int m_TotalFieldCount; //0x0048 
+        ClassInfo* m_FirstDerivedClass; //0x0030
+        ClassInfo* m_NextSiblingClass; //0x0038
+        FieldInfo** m_FieldInfos; //0x0040
+        unsigned int m_TotalFieldCount; //0x0048
 #if defined(_WIN64)
         char _0x004C[4];
 #endif
@@ -184,7 +184,7 @@ namespace fb
     public:
         struct EnumFieldInfoData : TypeInfo::TypeInfoData
         {
-            FieldInfo::FieldInfoData* m_Fields; //0x0020     
+            FieldInfo::FieldInfoData* m_Fields; //0x0020
 
         };//Size=0x0028
 
@@ -201,7 +201,7 @@ namespace fb
         {
 
             void* m_DefaultValue;
-            FieldInfo::FieldInfoData* m_Fields; //0x0020     
+            FieldInfo::FieldInfoData* m_Fields; //0x0020
 
         };//Size=0x0028
 
@@ -210,6 +210,8 @@ namespace fb
         ValueTypeInfoData* GetValueInfoData();
 
     };//Size=0x0020
+
+    ClassInfo* classOf(void* obj);
 
     class ITypedObject
     {

@@ -10,20 +10,21 @@
 #include <cstring>
 
 #include "general.h"
+#include "offsets.h"
 #include "typeinfo.h"
 #include "eastl.h"
 #include "vfunc.h"
 #include "typeinfo.h"
 
-namespace fb 
+namespace fb
 {
 #include "../SDK_bf4/enums.h"
 
 // guess since in bf4 it went as uint32, in bf3 it was enum
-enum ShaderGBufferLayout 
-{ 
+enum ShaderGBufferLayout
+{
     ShaderGBufferLayout_Default,
-    ShaderGBufferLayout_Test 
+    ShaderGBufferLayout_Test
 };
 
 }
@@ -44,7 +45,7 @@ namespace fb
     {
     public:
         unsigned __int16 m_refCnt; //0x0008
-        unsigned __int16 m_flags;  //0x000A
+        unsigned __int16 m_flags; //0x000A
         char _pad[4]; //0x000C
 
         fb::Guid* getInstanceGuid()
@@ -270,6 +271,518 @@ namespace fb
     };//Size=0x0150
 #pragma pack(pop)
 
+}
+
+namespace fb
+{
+    struct EntityIterableLink
+    {
+        EntityIterableLink* next; //0x0000
+        EntityIterableLink* prev; //0x0008
+    };//Size=0x0010
+
+    // sub_1407DAFC0 links { next, &prev->next } with no back-pointer: entity = node - offset.
+    constexpr intptr_t kLensFlareLinkOffset = 0x30;
+    constexpr intptr_t kStaticModelLinkOffset = 0x40;
+
+    // List heads live in ClassInfo at 16 * (realm + base); sub_1407CD5D0 uses base 6,
+    // sub_1407DAFC0 uses 6 or 8. realm = *(int*)(gameWorld + 40), 0 or 1.
+    constexpr uint32_t kIterableBases[] = { 6u, 8u };
+    constexpr uint32_t kIterableRealms[] = { 0u, 1u };
+    constexpr size_t kGameWorldRealm = 40;
+
+    inline void** iterableListHead(uintptr_t classInfo, uint32_t realm, uint32_t base)
+    {
+        return reinterpret_cast<void**>(classInfo + 16ull * (realm + base));
+    }
+}
+
+#define _DxTexture_
+namespace fb
+{
+    class DxTexture
+    {
+    public:
+        static __inline unsigned int ClassId() { return 138; }
+        static __inline uintptr_t ClassInfoPtr() { return 0x0000000142C6DEE0; }
+        static __inline void* VTable() { return reinterpret_cast<void*>(OFF_vt_DxTexture); }
+
+        void* m_vtable; //0x0000
+        unsigned __int32 m_refCount; //0x0008
+        char _0x000C[4];
+        void* m_arena; //0x0010
+        char _0x0018[12];
+        unsigned __int32 m_memoryType; //0x0024 4 = system memory, pixels in m_data
+        unsigned __int32 m_flags; //0x0028
+        char _0x002C[4];
+        unsigned __int32 m_width; //0x0030
+        unsigned __int32 m_height; //0x0034
+        unsigned __int32 m_depth; //0x0038
+        unsigned __int32 m_sliceCount; //0x003C
+        unsigned __int32 m_mipmapCount; //0x0040
+        unsigned __int32 m_type; //0x0044 0 2D, 1 cube, 2 3D, 3 array, 5 1D
+        unsigned __int32 m_format; //0x0048 TextureFormat
+        bool m_srgb; //0x004C
+        char _0x004D[7];
+        unsigned __int32 m_bindFlags; //0x0054
+        unsigned __int32 m_subResourceCount; //0x0058
+        char _0x005C[4];
+        void* m_subResourceData; //0x0060
+        void* m_streamingHeader; //0x0068
+        DxTexture* m_reuse; //0x0070
+        char _0x0078[8];
+        unsigned __int16 m_handle; //0x0080 streaming handle, 0xFFFF = none
+        char _0x0082[2];
+        unsigned __int32 m_bindFlags2; //0x0084
+        unsigned __int32 m_resFormat; //0x0088 DXGI_FORMAT of m_resource
+        unsigned __int32 m_shaderFormat; //0x008C DXGI_FORMAT of the views
+        void* m_streamingInfo; //0x0090 128 bytes, own allocation
+        ID3D11Resource* m_resource; //0x0098
+        void* m_data; //0x00A0
+        ID3D11ShaderResourceView* m_shaderViews[2]; //0x00A8 [0] linear, [1] sRGB
+        bool m_ownsResource; //0x00B8
+        char _0x00B9[7];
+    };//Size=0x00C0
+}
+
+namespace fb
+{
+    // sub_140B8B140 (unloadOnDemand): entry = mgr + ((handle + 1) << 6).
+    struct TextureStreamingEntry
+    {
+        DxTexture* m_texture; //0x0000
+        void* m_streamData; //0x0008
+        char _0x0010[10];
+        unsigned __int16 m_mipRefCount[15]; //0x001A one per compartment
+        unsigned __int8 m_mipCount; //0x0038
+        char _0x0039[2];
+        unsigned __int8 m_loadedMips; //0x003B
+        unsigned __int16 m_residentMip; //0x003C
+        unsigned __int8 m_state; //0x003E 2 = loaded
+        unsigned __int8 m_flags; //0x003F
+    };//Size=0x0040
+
+    class TextureStreamingManager
+    {
+    public:
+        char _0x0000[0x10];
+        char m_lock[0x30]; //0x0010 sub_140670B20 / sub_1406724D0
+        TextureStreamingEntry m_entries[0x2B00];//0x0040 index = handle & 0x7FFF
+        char _0xAC040[0x24];
+        unsigned __int32 m_onDemandBudgetCap; //0xAC064 bytes
+        char _0xAC068[0x20];
+        unsigned __int32 m_onDemandBudgetUsed; //0xAC088 bytes
+
+        static TextureStreamingManager* Singleton()
+        {
+            return *reinterpret_cast<TextureStreamingManager**>(OFF_g_textureStreamingManager);
+        }
+
+        TextureStreamingEntry* entry(unsigned __int16 handle)
+        {
+            return (handle & 0x7FFF) == handle ? &m_entries[handle] : nullptr;
+        }
+
+        // 0 not loaded, 1 loading, 2 loaded, 3 not on-demand
+        int getOnDemandStatus(unsigned __int16 handle)
+        {
+            using fn_t = int(__fastcall*)(TextureStreamingManager*, unsigned __int16);
+            return reinterpret_cast<fn_t>(OFF_TextureStreamingManager_getOnDemandStatus)(this, handle);
+        }
+        bool loadOnDemand(unsigned __int16 handle, bool highPriority)
+        {
+            using fn_t = bool(__fastcall*)(TextureStreamingManager*, unsigned __int16, unsigned __int8);
+            return reinterpret_cast<fn_t>(OFF_TextureStreamingManager_loadOnDemand)(this, handle, highPriority ? 1 : 0);
+        }
+        bool unloadOnDemand(unsigned __int16 handle, bool defer)
+        {
+            using fn_t = bool(__fastcall*)(TextureStreamingManager*, unsigned __int16, unsigned __int8);
+            return reinterpret_cast<fn_t>(OFF_TextureStreamingManager_unloadOnDemand)(this, handle, defer ? 1 : 0);
+        }
+    };
+}
+
+namespace fb
+{
+    // Hash node of g_meshVariationManager (qword_1427382C8).
+    struct MeshVariationNode
+    {
+        unsigned __int64 m_key; //0x0000 variationHash | (meshNameHash << 32)
+        void* m_set; //0x0008 MeshVariationSet*
+        char _0x0010[8];
+        MeshVariationNode* m_next; //0x0018
+    };//Size=0x0020
+
+    class MeshVariationManager
+    {
+    public:
+        char _0x0000[0x30];
+        void* m_arena; //0x0030 passed to SurfaceShaderInstance::create by sub_140BA4600
+        char _0x0038[8];
+        MeshVariationNode** m_buckets; //0x0040 m_bucketCount + 1 entries, last is a sentinel
+        unsigned __int32 m_bucketCount; //0x0048
+        unsigned __int32 m_elementCount; //0x004C
+
+        static MeshVariationManager* Singleton()
+        {
+            return *reinterpret_cast<MeshVariationManager**>(OFF_g_meshVariationManager);
+        }
+    };
+
+    class SurfaceShaderInstance
+    {
+    public:
+        static constexpr uintptr_t kCreate = OFF_SurfaceShaderInstance_create;
+
+        void* m_shader; //0x0000 ISurfaceShader*, refcounted
+        void* m_block; //0x0008 ShaderParameterBlock*
+        unsigned __int16 m_blockSize; //0x0010
+        char _0x0012[0x3E];
+    };//Size=0x0050
+
+    class SurfaceShader
+    {
+    public:
+        struct ParamDesc // layout unverified: first dword is not the handle
+        {
+            char _0x0000[0x14];
+        };//Size=0x0014
+
+        void* m_vtable; //0x0000 0x141DCEA68
+        unsigned __int32 m_refCount; //0x0008
+        char _0x000C[4];
+        unsigned __int32 m_nameHash; //0x0010 djb2 of the lowercased graph name
+        bool m_resolved; //0x0014
+        char _0x0015[0x2B];
+        unsigned __int16 m_vectorCount; //0x0040
+        unsigned __int16 m_textureCount; //0x0042
+        char _0x0044[4];
+        ParamDesc* m_vectorDescs; //0x0048
+        ParamDesc* m_textureDescs; //0x0050
+        void* m_programs; //0x0058 ShaderProgramRef[m_programCount]
+        unsigned __int32 m_programCount; //0x0060
+        char _0x0064[0xC];
+    };//Size=0x0070
+
+    // ShaderDb (DX11 class, vtable 0x141DCEDF0, loader sub_140BC9BB0). Pixel permutations:
+    // count +0x204, array +0x228 stride 0x48; sub_140BB8210 creates the D3D objects.
+    class PixelShaderPermutation
+    {
+    public:
+        char _0x0000[0x28];
+        ID3D11PixelShader* m_shader; //0x0028 SmartRef, engine releases on unload
+        char _0x0030[8];
+        const unsigned char* m_data; //0x0038 DXBC
+        unsigned __int32 m_dataSize; //0x0040
+        char _0x0044[4];
+    };//Size=0x0048
+
+    // ShaderDb load sub_140BB8210: CreateVertexShader(permutation.data +0x40, dataSize +0x48), stride 0x50.
+    class VertexShaderPermutation
+    {
+    public:
+        char _0x0000[0x28];
+        ID3D11VertexShader* m_shader; //0x0028
+        char _0x0030[0x10];
+        const unsigned char* m_data; //0x0040 DXBC
+        unsigned __int32 m_dataSize; //0x0048
+        char _0x004C[4];
+    };//Size=0x0050
+
+    class ShaderProgramEntry
+    {
+    public:
+        char _0x0000[8];
+        unsigned __int8 m_flags; //0x0008 >>4 = stream count
+        unsigned __int8 m_pass; //0x0009
+        unsigned __int8 m_subPass; //0x000A
+        char _0x000B[5];
+        void* m_desc; //0x0010
+        VertexShaderPermutation* m_vertex; //0x0018
+        PixelShaderPermutation* m_pixel; //0x0020 null for depth-only passes
+        void* m_geometry; //0x0028
+        void* m_hull; //0x0030
+        void* m_domain; //0x0038
+        char _0x0040[0x10];
+    };//Size=0x0050
+
+    struct ShaderProgramRef
+    {
+        void* m_key; //0x0000 first qword of the entry
+        ShaderProgramEntry* m_entry; //0x0008
+    };//Size=0x0010
+
+    // Written by sub_140C26490 (setParameter): m_entries[i].m_handle, value at
+    // m_values + m_entries[i].m_offset.
+    class ShaderParameterBlock
+    {
+    public:
+        struct Entry
+        {
+            unsigned __int32 m_handle; //0x0000
+            unsigned __int16 m_offset; //0x0004 from m_values
+            unsigned __int16 m_arraySize; //0x0006 1
+        };//Size=0x0008
+
+        unsigned __int16 m_sizeFlags; //0x0000 size = & 0x1FFF
+        unsigned __int8 m_vectorCount; //0x0002
+        unsigned __int8 m_textureCount; //0x0003
+        unsigned __int8 m_boolCount; //0x0004
+        char _0x0005[11];
+        Entry m_entries[1]; //0x0010 also where values start
+
+        unsigned __int16 size() const { return m_sizeFlags & 0x1FFF; }
+        char* values() { return reinterpret_cast<char*>(this) + 0x10; }
+    };
+
+}
+
+#define _ShaderDatabase_
+namespace fb
+{
+    // qword_14273A618. vtable[4](this, allocator, name) is what sub_140CCCDA0 uses to fetch
+    // a lens flare shader; the object is cached by name and refcounted through vtable[0]/[1].
+    class ShaderDatabase
+    {
+    public:
+        static __inline unsigned int ClassId() { return 142; }
+        static __inline uintptr_t ClassInfoPtr() { return 0x0000000142C6DC20; }
+
+        void* m_vtable; //0x0000
+        char _0x0008[504];
+
+        static ShaderDatabase* Singleton()
+        {
+            return *reinterpret_cast<ShaderDatabase**>(OFF_g_shaderDatabase);
+        }
+        static void* Allocator()
+        {
+            return reinterpret_cast<void*>(OFF_g_shaderSystemAllocator);
+        }
+        static constexpr size_t kFindSlot = 4;
+    };
+}
+
+#define _MeshSet_
+namespace fb
+{
+    // Mesh set resource header (FB2014): box first, lods at 0x20, nameHash 0x60 (djb2-lower of
+    // the asset name), meshType 0x64, flags 0x68, lodCount u16 0x6C, subsetCount u16 0x6E.
+    struct MeshSetLayout
+    {
+        Vec3 m_boundingMin; //0x0000
+        Vec3 m_boundingMax; //0x0010
+        void* m_lods[6]; //0x0020
+        const char* m_name; //0x0050
+        const char* m_shortName; //0x0058
+        unsigned __int32 m_nameHash; //0x0060
+        unsigned __int32 m_meshType; //0x0064
+        unsigned __int32 m_flags; //0x0068
+        unsigned __int16 m_lodCount; //0x006C
+        unsigned __int16 m_subsetCount; //0x006E
+    };//Size=0x0070
+
+    struct MeshData
+    {
+        void* m_arena; //0x0000
+        void* m_vertexBuffer; //0x0008 DxBuffer
+        void* m_indexBuffer; //0x0010 DxBuffer, null without indices
+        const unsigned char* m_vertexData; //0x0018
+        const unsigned char* m_indexData; //0x0020 m_vertexData + MeshLayout::m_vertexDataSize
+        char _0x0028[8];
+    };//Size=0x0030
+
+    struct MeshSubset
+    {
+        void* m_geometryDecls; //0x0000
+        const char* m_materialName; //0x0008
+        unsigned __int32 m_materialIndex; //0x0010
+        unsigned __int32 m_primitiveCount; //0x0014
+        unsigned __int32 m_startIndex; //0x0018
+        unsigned __int32 m_vertexOffset; //0x001C bytes into the LOD vertex block
+        unsigned __int32 m_vertexCount; //0x0020
+        unsigned __int32 _0x0024; //0x0024 804 / 776 on the sample: not a size
+        char _0x0028[8];
+        unsigned __int32 m_declElements[16]; //0x0030
+        unsigned __int8 m_streamStrides[8]; //0x0070
+        unsigned __int8 m_elementCount; //0x0078
+        unsigned __int8 m_streamCount; //0x0079
+        char _0x007A[2];
+        float m_texCoordsPerMeter[6]; //0x007C
+        char _0x0094[0x2C]; //0x0094 zeros, then -1 words (bones)
+    };//Size=0x00C0
+
+    struct MeshLayout
+    {
+        unsigned __int32 m_type; //0x0000
+        unsigned __int32 m_maxStreamInstanceCount; //0x0004
+        unsigned __int32 m_subsetCount; //0x0008
+        char _0x000C[8]; //0x000C MeshSubset*
+        char _0x0014[0x30];
+        unsigned __int32 m_flags; //0x0044
+        unsigned __int32 m_indexBufferFormat; //0x0048
+        unsigned __int32 m_indexDataSize; //0x004C
+        unsigned __int32 m_vertexDataSize; //0x0050
+        char _0x0054[0x3C];
+        MeshData* m_data; //0x0090
+
+        MeshSubset* subsets() const
+        {
+            MeshSubset* p = nullptr;
+            std::memcpy(&p, _0x000C, sizeof(p));
+            return p;
+        }
+    };
+
+    // ctor sub_140B925B0 (vtable off_141DC48D0), init sub_140B979E0 stores the layout at +0x20,
+    // the inline vertex/index block at +0x28, one MeshData per LOD from +0x50.
+    class MeshSet
+    {
+    public:
+        void* m_vtable; //0x0000
+        unsigned __int32 m_refCount; //0x0008
+        char _0x000C[4];
+        void* m_arena; //0x0010
+        char _0x0018[8];
+        MeshSetLayout* m_layout; //0x0020
+        const void* m_vertexIndexData; //0x0028
+        char _0x0030[0x20];
+        MeshData m_meshData[6]; //0x0050
+        char _0x0170[0x50];
+    };//Size=0x01C0
+    static_assert(sizeof(MeshSubset) == 0xC0, "MeshSubset");
+    static_assert(offsetof(MeshSubset, m_primitiveCount) == 0x14, "MeshSubset ranges");
+    static_assert(offsetof(MeshSubset, m_declElements) == 0x30, "MeshSubset decl");
+    static_assert(offsetof(MeshLayout, m_data) == 0x90, "MeshLayout data");
+    static_assert(offsetof(MeshSet, m_meshData) == 0x50 && sizeof(MeshSet) == 0x1C0, "MeshSet");
+
+    // sub_140B9ECA0 registers every loaded MeshSet by name hash in *(qword_1427384A8 + 0x10);
+    // sub_140691EC0(registry, hash) finds it (locked).
+    class MeshSetRegistry
+    {
+    public:
+        static void* Instance()
+        {
+            void* const owner = *reinterpret_cast<void**>(OFF_g_meshSetRegistryOwner);
+            return owner ? *reinterpret_cast<void**>(static_cast<char*>(owner) + 0x10) : nullptr;
+        }
+        static constexpr uintptr_t kFind = OFF_MeshSetRegistry_find; // MeshSet* (__fastcall*)(void* registry, int hash)
+    };
+}
+
+#define _LensFlareEntity_
+namespace fb
+{
+    class LensFlareEntity
+    {
+    public:
+        static __inline unsigned int ClassId() { return 896; }
+        static __inline uintptr_t ClassInfoPtr() { return 0x0000000142C77330; }
+
+        void* m_vtable; //0x0000
+        char _0x0008[0x10];
+        unsigned __int32 m_flags; //0x0018
+        char _0x001C[4];
+        void* m_world; //0x0020
+        LensFlareEntityData* m_data; //0x0028
+        EntityIterableLink m_link; //0x0030
+        LinearTransform m_transform; //0x0040
+        Vec3 m_direction; //0x0080 { 1, 0, 0 } at ctor
+        Array<void*> m_elementShaders; //0x0090 one refcounted shader per element
+        char _0x0098[0x10];
+        void* m_flareSystem; //0x00A8
+        bool m_enabled; //0x00B0
+        bool m_halfRes; //0x00B1
+        bool m_directionEnable; //0x00B2
+        char _0x00B3[13];
+    };//Size=0x00C0
+}
+
+#define _ClientStaticModelEntity_
+namespace fb
+{
+    // link +0x40 and data +0x30 confirmed in game; position from a working ESP.
+    class ClientStaticModelEntity
+    {
+    public:
+        static __inline unsigned int ClassId() { return 686; }
+        static __inline uintptr_t ClassInfoPtr() { return 0x0000000142C2FF20; }
+
+        void* m_vtable; //0x0000
+        char _0x0008[0x28];
+        StaticModelEntityData* m_data; //0x0030
+        char _0x0038[8];
+        EntityIterableLink m_link; //0x0040
+        char _0x0050[0x1F0];
+        Vec3 m_position; //0x0240
+    };//Size=0x0250
+}
+
+#define _ClientStaticModelGroupEntity_
+namespace fb
+{
+    class StaticModelGroupMeshInstance
+    {
+    public:
+        static constexpr uintptr_t kRigidVTable = OFF_vt_RigidMeshEntity;
+        static constexpr uintptr_t kCompositeVTable = OFF_vt_CompositeMeshEntity;
+        static constexpr size_t kRigidSize = 0x80;
+        static constexpr size_t kCompositeSize = 0x90;
+
+        void* m_vtable; //0x0000
+        void* m_meshSet; //0x0008
+        void* m_variation; //0x0010 MeshVariationSet*, refcounted
+        void* m_next; //0x0018
+        LinearTransform m_transform; //0x0020
+        char _0x0060[0x20];
+    };//Size=0x0080 rigid, 0x0090 composite
+
+    // Per-member runtime record, ctor sub_1408E9230 (base sub_14099A090).
+    class StaticModelGroupMember
+    {
+    public:
+        void* m_vtable; //0x0000
+        char _0x0008[0x10];
+        StaticModelGroupMemberData* m_data; //0x0018
+        void* m_physics; //0x0020
+        char _0x0028[0x98];
+        void* m_meshSet; //0x00C0
+        StaticModelGroupMeshInstance* m_instances; //0x00C8 m_data->m_InstanceCount, stride by vtable
+
+        void localTransform(unsigned int instance, LinearTransform* out)
+        {
+            using fn_t = void (*)(StaticModelGroupMember*, unsigned int, LinearTransform*);
+            reinterpret_cast<fn_t>(OFF_StaticModelGroupMember_getInstanceTransform)(this, instance, out);
+        }
+    };//Size=0x00D0
+
+    // ctor sub_1408E90D0 (0x108); sub_1407CE570 links +0x40 into the ClassInfo list.
+    // m_members is filled by sub_1408F2B60 from the init slot, one record per MemberData.
+    class ClientStaticModelGroupEntity
+    {
+    public:
+        static __inline unsigned int ClassId() { return 682; }
+        static __inline uintptr_t ClassInfoPtr() { return 0x0000000142C301A0; }
+
+        void* m_vtable; //0x0000
+        char _0x0008[0x28];
+        StaticModelGroupEntityData* m_data; //0x0030
+        char _0x0038[8];
+        EntityIterableLink m_link; //0x0040
+        char _0x0050[0x88];
+        StaticModelGroupMember* m_membersBegin; //0x00D8
+        StaticModelGroupMember* m_membersEnd; //0x00E0
+        StaticModelGroupMember* m_membersCap; //0x00E8
+        char _0x00F0[0x18];
+    };//Size=0x0108
+    constexpr intptr_t kStaticModelGroupLinkOffset = 0x40;
+
+    static_assert(sizeof(StaticModelGroupMeshInstance) == 0x80, "StaticModelGroupMeshInstance");
+    static_assert(offsetof(StaticModelGroupMeshInstance, m_transform) == 0x20, "instance transform");
+    static_assert(sizeof(StaticModelGroupMember) == 0xD0, "StaticModelGroupMember");
+    static_assert(offsetof(StaticModelGroupMember, m_instances) == 0xC8, "member instances");
+    static_assert(sizeof(ClientStaticModelGroupEntity) == 0x108, "ClientStaticModelGroupEntity");
+    static_assert(offsetof(ClientStaticModelGroupEntity, m_membersBegin) == 0xD8, "group members");
 }
 
 #include "../SDK_bf4/classes.h"
@@ -790,6 +1303,15 @@ namespace fb
         char _0x00A3[13];
     };
 
+    // sub_14066B600 builds one per animatable field; sub_140665140 prefers m_override when bit 0 is set.
+    class PropertyPair
+    {
+    public:
+        void* m_override; //0x0000 tagged; bit 0 = the override is live
+        void* m_value; //0x0008 &data->field
+    };
+
+    // ctor sub_140CC7EE0; base sub_1407C2510 writes m_world and m_data.
     class LocalLightEntity : public ITypedObject
     {
     public:
@@ -802,21 +1324,29 @@ namespace fb
             return 0x0000000142C76D90;
         }
 
-        char pad[40];
-        LocalLightEntityData* m_data;
+        char _0x0008[0x18];
+        void* m_world; //0x0020
+        LocalLightEntityData* m_data; //0x0028
+        EntityIterableLink m_link; //0x0030
+        PropertyPair m_color; //0x0040
+        LinearTransform m_transform; //0x0050
+        PropertyPair m_intensity; //0x0090
+        PropertyPair m_enlightenColorScale; //0x00A0
+        PropertyPair m_radius; //0x00B0
+        PropertyPair m_particleColorScale; //0x00C0
+        char _0x00D0[0x10];
 
-        LinearTransform& transform()
-        {
-            return *reinterpret_cast<LinearTransform*>(reinterpret_cast<char*>(this) + 0x50);
-        }
-        const Vec3& position() { return transform().m_trans; }
+        LocalLightEntityData* data() { return m_data; }
+
+        LinearTransform& transform() { return m_transform; }
+        const Vec3& position() { return m_transform.m_trans; }
 
         void setDirty()
         {
             using fn_t = void(__fastcall*)(LocalLightEntity*);
-            reinterpret_cast<fn_t>(0x140CCE9E0)(this);
+            reinterpret_cast<fn_t>(OFF_LocalLightEntity_setDirty)(this);
         }
-    };
+    };//Size=0x00E0
 
     class PointLightEntity : public LocalLightEntity
     {
@@ -908,7 +1438,7 @@ namespace fb
         __m128 shA;
     };
 
-    // update at 0x140CC53B0 confirms paddings
+    // update at OFF_VisualEnvironmentManager_update confirms paddings
     class VisualEnvironment
     {
     public:
@@ -944,7 +1474,7 @@ namespace fb
         char _pad_se[80 - sizeof(CapturedScreenEffectComponentData)];
         CapturedDamageEffectComponentData damageEffect; // 2160
         char _pad_de[144 - sizeof(CapturedDamageEffectComponentData)];
-        char _pad_gap[752];  // 2304...3056 some scratchpad or whatever it is 
+        char _pad_gap[752]; // 2304...3056 some scratchpad or whatever it is
         CapturedPlanarReflectionComponentData planarReflection; // 3056
         char _pad_pr[96 - sizeof(CapturedPlanarReflectionComponentData)];
         CapturedDynamicEnvmapComponentData dynamicEnvmap; // 3152
@@ -965,7 +1495,7 @@ namespace fb
     public:
         static VisualEnvironmentManager* GetInstance()
         {
-            return *(VisualEnvironmentManager**)0x14273D6F8;
+            return *(VisualEnvironmentManager**)OFF_g_visualEnvironmentManager;
         }
 
         char pad[0x30];
@@ -992,13 +1522,13 @@ namespace fb
         void rebakeCharacterLightingSH()
         {
             using Fn = void (__fastcall*)(VisualEnvironmentManager*);
-            reinterpret_cast<Fn>(0x140CC60E0)(this);
+            reinterpret_cast<Fn>(OFF_VisualEnvironmentManager_rebakeCharacterLightingSH)(this);
         }
         // found in update, lights seem to call it as extra
         void rebakeVehicleLightingSH()
         {
             using Fn = void (__fastcall*)(VisualEnvironmentManager*);
-            reinterpret_cast<Fn>(0x140CC71D0)(this);
+            reinterpret_cast<Fn>(OFF_VisualEnvironmentManager_rebakeVehicleLightingSH)(this);
         }
 
         fb::VisualEnvironment& getEnv()
@@ -1009,7 +1539,7 @@ namespace fb
 
     inline WorldRenderSettings* getWorldRenderSettingsGlobal()
     {
-        return *(WorldRenderSettings**)0x1426724A0;
+        return *(WorldRenderSettings**)OFF_g_worldRenderSettings;
     }
 
     class Screen
@@ -1035,7 +1565,7 @@ namespace fb
 
         static DxRenderer* GetInstance()
         {
-            return *(DxRenderer**)0x142738080;
+            return *(DxRenderer**)OFF_g_dxRenderer;
         }
     };
 
@@ -1086,25 +1616,25 @@ namespace fb
             };
 
             virtual void Function0(); // 0x0000
-            virtual void Read(float SampleTime, bool VisualFrame); //0x0008 
-            virtual const char* Name(void); //0x0010 
-            virtual const char* Name(unsigned int); // 0x0018 
-            virtual unsigned int ControlCount(); // 0x0020 
+            virtual void Read(float SampleTime, bool VisualFrame); //0x0008
+            virtual const char* Name(void); //0x0010
+            virtual const char* Name(unsigned int); // 0x0018
+            virtual unsigned int ControlCount(); // 0x0020
             virtual bool IsConnected(); // 0x0028
             virtual bool IsAnalogue(unsigned int); // 0x0030
-            virtual float GetValue(unsigned int);	// 0x0038
+            virtual float GetValue(unsigned int); // 0x0038
 
             char _0x0008[144];
-            __int64 m_HWND; //0x0098 
-            __int64 m_pWindowProcedure; //0x00A0 
+            __int64 m_HWND; //0x0098
+            __int64 m_pWindowProcedure; //0x00A0
             char _0x00A8[40];
-            BYTE m_CursorMode; //0x00D0 
-            BYTE m_UIOwnsInput; //0x00D1 
-            BYTE m_ShowCursor; //0x00D2 
-            BYTE m_CursorConfined; //0x00D3 
-            BYTE m_HasOverflowed; //0x00D4 
-            BYTE m_UseRawMouseInput; //0x00D5 
-            BYTE m_WindowActive; //0x00D6 
+            BYTE m_CursorMode; //0x00D0
+            BYTE m_UIOwnsInput; //0x00D1
+            BYTE m_ShowCursor; //0x00D2
+            BYTE m_CursorConfined; //0x00D3
+            BYTE m_HasOverflowed; //0x00D4
+            BYTE m_UseRawMouseInput; //0x00D5
+            BYTE m_WindowActive; //0x00D6
             char _0x00D7[25];
             MouseState m_Current; //0x00F0
             MouseState m_Buffer; //0x0104
@@ -1114,7 +1644,6 @@ namespace fb
 
         char _0x0000[16 - 8];
         MouseDevice* m_pDevice; // 0x0010
-
 
     };//Size=0x0040
 
@@ -1141,8 +1670,8 @@ namespace fb
         class InputCache
         {
         public:
-            char pad_0x0000[4];
-            float flInputBuffer[/*223*/253];
+            char _0x0000[4];
+            float m_conceptCache[253]; //0x0004 indexed by InputConceptIdentifiers
         };
 
         virtual void Init();
@@ -1154,11 +1683,11 @@ namespace fb
         char _0x0048[8];
         // Names match BF3 sdk.h so hooks/functions.cpp compiles unchanged.
         IKeyboard* m_keyboard; //0x0050
-        IMouse* m_mouse;       //0x0058
+        IMouse* m_mouse; //0x0058
 
         static BorderInputNode* GetInstance()
         {
-            return *(BorderInputNode**)0x142671FB0;
+            return *(BorderInputNode**)OFF_g_borderInputNode;
         }
     };//Size=0x0088
 
@@ -1167,7 +1696,6 @@ namespace fb
     class WorldRenderModule;
     class GameWorld;
     class ClientLevel;
-
 
     class ClientLevel
     {
@@ -1205,10 +1733,9 @@ namespace fb
 
         static ClientGameContext* GetInstance()
         {
-            return *(ClientGameContext**)0x142670D80;
+            return *(ClientGameContext**)OFF_g_clientGameContext;
         }
     };
-
 
     class ResourceManager
     {
@@ -1225,7 +1752,7 @@ namespace fb
 
         static ResourceManager* GetInstance()
         {
-            return *(ResourceManager**)0x14261E9E0;
+            return *(ResourceManager**)OFF_g_resourceManager;
         }
     };
 
@@ -1273,13 +1800,13 @@ namespace fb
     public:
         static EffectManager* GetInstance()
         {
-            return *(EffectManager**)0x142676F60;
+            return *(EffectManager**)OFF_g_effectManager;
         }
 
         uint32_t stopEffect(uint32_t handle)
         {
             using fn_t = void (__fastcall*)(EffectManager*, uint32_t);
-            auto fn = reinterpret_cast<fn_t>(0x1409135B0);
+            auto fn = reinterpret_cast<fn_t>(OFF_EffectManager_stopEffect);
             fn(this, handle);
             return 0;
         }
@@ -1290,7 +1817,7 @@ namespace fb
                 return nullptr;
 
             using fn_t = void* (__fastcall*)(void*);
-            return reinterpret_cast<fn_t>(0x1407FA550)(entity);
+            return reinterpret_cast<fn_t>(OFF_Entity_getLevel)(entity);
         }
 
         void* getLevelForPlayEffect()
@@ -1315,10 +1842,10 @@ namespace fb
             if (!level)
                 return 0;
 
-            __m128i extra = _mm_setzero_si128();  // a6: position override
+            __m128i extra = _mm_setzero_si128(); // a6: position override
             __m128 vel = _mm_setzero_ps(); // a7: velocity vector
 
-            auto fn = reinterpret_cast<fn_t>(0x1409104D0);
+            auto fn = reinterpret_cast<fn_t>(OFF_EffectManager_playEffect);
             return fn(this, asset, tr, level, static_cast<char>(isFirstPerson ? 0x8 : 0), &extra, &vel, static_cast<char>(0));
         }
 #pragma optimize("", on)
@@ -1359,11 +1886,13 @@ namespace fb
         float m_AspectRatio;
         float m_OrthoWidth;
         float m_OrthoHeight;
-        char _0x00D0[384];
+        char _0x00D0[16];
+        uint32_t m_DirtyFlags; // 1 matrices, 2 transposes, 4 depth ratio, 8 frustum
+        char _0x00E4[364];
         float m_FovX;
         float m_DepthHeightRatio;
         float m_FovScale;
-        float m_FovScaleSquared; 
+        float m_FovScaleSquared;
         LinearTransform m_View;
         LinearTransform m_ViewTranspose;
         LinearTransform m_ViewInverse;
@@ -1375,16 +1904,36 @@ namespace fb
         LinearTransform m_ViewProjectionTranspose;
         LinearTransform m_ViewProjectionInverse;
     };//Size=0x04E0
+    static_assert(sizeof(RenderView) == 0x4E0);
+
+    // What Client::updateRenderer hands GameRenderer::createUpdateJob, one per view.
+    class GameRenderViewParams
+    {
+    public:
+        RenderView view; //0x0000
+        RenderView prevView; //0x04E0
+        RenderView secondaryStreamingView; //0x09C0
+        bool secondaryStreamingViewEnable; //0x0EA0
+        char _0x0EA1[0x2F];
+        char firstPersonTransform[0x90]; //0x0ED0 same block RenderView::setTransform takes
+        char prevFirstPersonTransform[0x90]; //0x0F60
+        bool visible; //0x0FF0
+        float worldFadeAmount; //0x0FF4
+        float blurAmount; //0x0FF8
+        float dofFocusDistance; //0x0FFC
+        char _0x1000[0x20];
+    };//Size=0x1020
+    static_assert(sizeof(GameRenderViewParams) == 0x1020);
 
     class GameRenderer
     {
     public:
         char pad[0x60];
-        RenderView* m_pRenderView;
+        RenderView* m_pRenderView; // GameRenderViewParams[viewCount], view first
 
         static GameRenderer* Singleton()
         {
-            return *(GameRenderer**)0x142672378;
+            return *(GameRenderer**)OFF_g_gameRenderer;
         }
     };
 
@@ -1393,23 +1942,157 @@ namespace fb
         return *(void**)0x142668F90;
     }
 
-    struct EntityIterableLink
+    struct DebugRenderVertex
     {
-        EntityIterableLink* next;
-        EntityIterableLink* prev;
+        float x, y, z; //0x0000
+        unsigned int color; //0x000C 0xAABBGGRR
+        float nx, ny, nz; //0x0010
+        unsigned int pad; //0x001C
+    };//Size=0x0020
+
+    class DebugRenderer
+    {
+    public:
+        enum Geometry { Triangles3d = 0, Lines3d = 1, Triangles2d = 2, Lines2d = 3 };
+
+        static DebugRenderer* Singleton()
+        {
+            using fn_t = DebugRenderer* (*)();
+            return reinterpret_cast<fn_t>(OFF_DebugRenderer_singleton)();
+        }
+        template <typename Fn> Fn slot(size_t i) { return reinterpret_cast<Fn>((*reinterpret_cast<void***>(this))[i]); }
+
+        bool getEnable() { return slot<bool (__fastcall*)(void*)>(3)(this); }
+        void setTransparent(bool v) { slot<void (__fastcall*)(void*, bool)>(9)(this, v); }
+        void setDoubleSided(bool v) { slot<void (__fastcall*)(void*, bool)>(10)(this, v); }
+        void setDepthTest(bool v) { slot<void (__fastcall*)(void*, bool)>(11)(this, v); }
+        void setDepthWrite(bool v) { slot<void (__fastcall*)(void*, bool)>(12)(this, v); }
+        DebugRenderVertex* beginVertices(int type, unsigned int count)
+        {
+            return slot<DebugRenderVertex* (__fastcall*)(void*, int, unsigned int)>(19)(this, type, count);
+        }
+        void endVertices(int type, DebugRenderVertex* end)
+        {
+            slot<void (__fastcall*)(void*, int, DebugRenderVertex*)>(20)(this, type, end);
+        }
+        // sub_140B832F0: world-space text (scale, then two bools of unknown meaning)
+        void drawText3d(const Vec3& pos, const char* text, unsigned int color, float scale)
+        {
+            slot<void (__fastcall*)(void*, const Vec3*, const char*, unsigned int, float, bool, bool)>(24)(this, &pos, text, color, scale, false, false);
+        }
+        void drawText2d(int x, int y, const char* text, unsigned int color, float scale)
+        {
+            slot<void (__fastcall*)(void*, int, int, const char*, unsigned int, float)>(25)(this, x, y, text, color, scale);
+        }
     };
+
+    class DebugRenderer2
+    {
+    public:
+        static DebugRenderer2* Singleton()
+        {
+            using fn_t = DebugRenderer2* (*)();
+            return reinterpret_cast<fn_t>(OFF_DebugRenderer2_singleton)();
+        }
+        // sub_14063E2E0: queues 32 + strlen bytes {x, y, color, scale} + text
+        void drawText(int x, int y, const char* text, unsigned int color, float scale)
+        {
+            using fn_t = void (__fastcall*)(DebugRenderer2*, int, int, const char*, unsigned int, float);
+            reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawText)(this, x, y, text, color, scale);
+        }
+        // sub_14063DEB0: two {x, y, 1, color} vertices, line list
+        void drawLine2d(const float a[2], const float b[2], unsigned int color)
+        {
+            using fn_t = void (__fastcall*)(DebugRenderer2*, const float*, const float*, unsigned int);
+            reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawLine2d)(this, a, b, color);
+        }
+        void drawLineRect2d(const float min[2], const float max[2], unsigned int color)
+        {
+            using fn_t = void (__fastcall*)(DebugRenderer2*, const float*, const float*, unsigned int);
+            reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawLineRect2d)(this, min, max, color);
+        }
+        void drawRect2d(const float min[2], const float max[2], unsigned int color)
+        {
+            using fn_t = void (__fastcall*)(DebugRenderer2*, const float*, const float*, unsigned int);
+            reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawRect2d)(this, min, max, color);
+        }
+    };
+
+    struct RayCastHit
+    {
+        Vec3 m_position; //0x0000 (16)
+        Vec3 m_normal; //0x0010 (16)
+        void* m_rigidBody; //0x0020 PhysicsEntityBase*
+        void* m_material; //0x0028 MaterialContainerPair*
+        unsigned __int32 m_part; //0x0030
+        float m_lambda; //0x0034
+        char _0x0038[0x38];
+    };//Size=0x0070
+    constexpr intptr_t kLevelHavokPhysics = 0x120;
+    constexpr intptr_t kHavokPhysicsRayCaster = 0x58;
+    // flags the Hyperhook finder passes minus terrain: skip ragdolls, characters, phantoms
+    constexpr unsigned int kRayCastWorldOnly = 0x10u | 0x20u | 0x80u;
+
+    constexpr intptr_t kGameWorldRayCaster = 0x30;
+    inline void* physicsRayCaster()
+    {
+        void* gw = getGameWorldBF4();
+        return gw ? static_cast<uint8_t*>(gw) + kGameWorldRayCaster : nullptr;
+    }
+
+    // eastl::fixed_vector<PhysicsEntityBase const*, 8, false>: VectorBase + inline storage.
+    struct PhysicsExcludeList
+    {
+        void** m_begin; //0x0000
+        void** m_end; //0x0008
+        void** m_capacity; //0x0010
+        void* m_data[8]; //0x0018
+    };
+
+    // ClientControllableEntity vtable[60] = getPhysicsEntity; the ray must exclude the local soldier
+    inline void* localSoldierPhysics()
+    {
+        ClientGameContext* ctx = ClientGameContext::GetInstance();
+        if (!ctx || !ctx->m_pPlayerManager || !ctx->m_pPlayerManager->m_pLocalPlayer)
+            return nullptr;
+        void* soldier = ctx->m_pPlayerManager->m_pLocalPlayer->m_controlledControllable;
+        if (!soldier)
+            return nullptr;
+        using fn_t = void* (__fastcall*)(void*);
+        fn_t fn = (*static_cast<fn_t**>(soldier))[60];
+        return fn(soldier);
+    }
+
+    inline bool physicsRayQuery(const Vec3& from, const Vec3& to, RayCastHit& hit, unsigned int flags,
+                                void* exclude = nullptr)
+    {
+        void* caster = physicsRayCaster();
+        if (!caster)
+            return false;
+        using fn_t = bool (__fastcall*)(void*, const char*, const void*, const void*, RayCastHit*, unsigned int, const void*);
+        fn_t fn = (*static_cast<fn_t**>(caster))[0];
+        alignas(16) float a[4] = { from.m_x, from.m_y, from.m_z, 0.0f };
+        alignas(16) float b[4] = { to.m_x, to.m_y, to.m_z, 0.0f };
+        PhysicsExcludeList ex{ };
+        ex.m_begin = ex.m_data;
+        ex.m_end = ex.m_data;
+        ex.m_capacity = ex.m_data + 8;
+        if (exclude)
+            *ex.m_end++ = exclude;
+        return fn(caster, "bfve", a, b, &hit, flags, exclude ? &ex : nullptr);
+    }
 
     template <typename T>
     class EntityList
     {
-        EntityIterableLink* m_first   = nullptr;
+        EntityIterableLink* m_first = nullptr;
         EntityIterableLink* m_current = nullptr;
-        intptr_t m_offset  = 0x40;
+        intptr_t m_offset = 0x40;
 
         static EntityIterableLink* getFirstIterableLink(void* classInfo, void* gameWorld)
         {
             using fn_t = EntityIterableLink* (__fastcall*)(void*, void*);
-            auto fn = reinterpret_cast<fn_t>(0x1407CD5D0);
+            auto fn = reinterpret_cast<fn_t>(OFF_EntityWorld_getFirstIterableLink);
             return (classInfo && gameWorld) ? fn(classInfo, gameWorld) : nullptr;
         }
 
@@ -1449,7 +2132,7 @@ namespace fb
     inline LinearTransform* getProjectionMatrix(RenderView* v) { return v ? &v->m_Projection : nullptr; }
     inline LinearTransform* getViewProjectionMatrix(RenderView* v) { return v ? &v->m_ViewProjection : nullptr; }
 
-    inline void updateRenderView(RenderView*) {  }
+    inline void updateRenderView(RenderView*) { }
 
     inline ClientPlayer* getLocalPlayer(ClientGameContext* ctx)
     {
@@ -1473,6 +2156,38 @@ namespace fb
 
     inline WorldRenderSettings* getLiveWorldRenderSettings(ClientGameContext* /*ctx*/)
     {
-        return *(WorldRenderSettings**)0x1426724A0;
+        return *(WorldRenderSettings**)OFF_g_worldRenderSettings;
     }
 }
+
+#if defined(_WIN64)
+static_assert(sizeof(fb::DxTexture) == 0xC0, "DxTexture size");
+static_assert(offsetof(fb::DxTexture, m_width) == 0x30, "DxTexture::m_width");
+static_assert(offsetof(fb::DxTexture, m_handle) == 0x80, "DxTexture::m_handle");
+static_assert(offsetof(fb::DxTexture, m_shaderFormat) == 0x8C, "DxTexture::m_shaderFormat");
+static_assert(offsetof(fb::DxTexture, m_resource) == 0x98, "DxTexture::m_resource");
+static_assert(offsetof(fb::DxTexture, m_shaderViews) == 0xA8, "DxTexture::m_shaderViews");
+static_assert(sizeof(fb::TextureStreamingEntry) == 0x40, "TextureStreamingEntry size");
+static_assert(offsetof(fb::TextureStreamingManager, m_entries) == 0x40, "TextureStreamingManager::m_entries");
+static_assert(offsetof(fb::TextureStreamingManager, m_onDemandBudgetCap) == 0xAC064, "budget cap");
+static_assert(offsetof(fb::TextureStreamingManager, m_onDemandBudgetUsed) == 0xAC088, "budget used");
+static_assert(offsetof(fb::MeshVariationManager, m_buckets) == 0x40, "MeshVariationManager::m_buckets");
+static_assert(offsetof(fb::ShaderParameterBlock, m_entries) == 0x10, "ShaderParameterBlock::m_entries");
+static_assert(sizeof(fb::LensFlareEntity) == 0xC0, "LensFlareEntity size");
+static_assert(offsetof(fb::LensFlareEntity, m_enabled) == 0xB0, "LensFlareEntity::m_enabled");
+static_assert(offsetof(fb::LensFlareEntity, m_data) == 0x28, "LensFlareEntity::m_data");
+static_assert(offsetof(fb::LensFlareEntity, m_transform) == 0x40, "LensFlareEntity::m_transform");
+static_assert(offsetof(fb::LensFlareEntity, m_elementShaders) == 0x90, "LensFlareEntity::m_elementShaders");
+
+static_assert(offsetof(fb::ClientStaticModelEntity, m_data) == 0x30, "ClientStaticModelEntity::m_data");
+static_assert(offsetof(fb::ClientStaticModelEntity, m_position) == 0x240, "ClientStaticModelEntity::m_position");
+#endif
+
+#if defined(_WIN64)
+static_assert(offsetof(fb::LocalLightEntity, m_data) == 0x28, "LocalLightEntity::m_data");
+static_assert(offsetof(fb::LocalLightEntity, m_color) == 0x40, "LocalLightEntity::m_color");
+static_assert(offsetof(fb::LocalLightEntity, m_transform) == 0x50, "LocalLightEntity::m_transform");
+static_assert(offsetof(fb::LocalLightEntity, m_intensity) == 0x90, "LocalLightEntity::m_intensity");
+static_assert(offsetof(fb::LocalLightEntity, m_radius) == 0xB0, "LocalLightEntity::m_radius");
+static_assert(sizeof(fb::LocalLightEntity) == 0xE0, "LocalLightEntity size");
+#endif

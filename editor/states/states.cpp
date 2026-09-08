@@ -112,26 +112,26 @@ namespace editor::states
             hash.name = itr->second.name;
         hash.componentMask = 0U;
 
-        if (state->outdoorLight)      hash.componentMask |= Comp_OutdoorLight;
-        if (state->enlighten)         hash.componentMask |= Comp_Enlighten;
-        if (state->tonemap)           hash.componentMask |= Comp_Tonemap;
-        if (state->colorCorrection)   hash.componentMask |= Comp_ColorCorrection;
-        if (state->sky)               hash.componentMask |= Comp_Sky;
-        if (state->fog)               hash.componentMask |= Comp_Fog;
-        if (state->wind)              hash.componentMask |= Comp_Wind;
-        if (state->sunFlare)          hash.componentMask |= Comp_Sunflare;
-        if (state->dynamicAO)         hash.componentMask |= Comp_DynamicAO;
-        if (state->dof)               hash.componentMask |= Comp_Dof;
-        if (state->vignette)          hash.componentMask |= Comp_Vignette;
-        if (state->filmGrain)         hash.componentMask |= Comp_FilmGrain;
-        if (state->lensScope)         hash.componentMask |= Comp_LensScope;
-        if (state->cameraParams)      hash.componentMask |= Comp_CameraParams;
-        if (state->screenEffect)      hash.componentMask |= Comp_ScreenEffect;
-        if (state->damageEffect)      hash.componentMask |= Comp_DamageEffect;
-        if (state->planarReflection)  hash.componentMask |= Comp_PlanarReflection;
-        if (state->dynamicEnvmap)     hash.componentMask |= Comp_DynamicEnvmap;
+        if (state->outdoorLight) hash.componentMask |= Comp_OutdoorLight;
+        if (state->enlighten) hash.componentMask |= Comp_Enlighten;
+        if (state->tonemap) hash.componentMask |= Comp_Tonemap;
+        if (state->colorCorrection) hash.componentMask |= Comp_ColorCorrection;
+        if (state->sky) hash.componentMask |= Comp_Sky;
+        if (state->fog) hash.componentMask |= Comp_Fog;
+        if (state->wind) hash.componentMask |= Comp_Wind;
+        if (state->sunFlare) hash.componentMask |= Comp_Sunflare;
+        if (state->dynamicAO) hash.componentMask |= Comp_DynamicAO;
+        if (state->dof) hash.componentMask |= Comp_Dof;
+        if (state->vignette) hash.componentMask |= Comp_Vignette;
+        if (state->filmGrain) hash.componentMask |= Comp_FilmGrain;
+        if (state->lensScope) hash.componentMask |= Comp_LensScope;
+        if (state->cameraParams) hash.componentMask |= Comp_CameraParams;
+        if (state->screenEffect) hash.componentMask |= Comp_ScreenEffect;
+        if (state->damageEffect) hash.componentMask |= Comp_DamageEffect;
+        if (state->planarReflection) hash.componentMask |= Comp_PlanarReflection;
+        if (state->dynamicEnvmap) hash.componentMask |= Comp_DynamicEnvmap;
         if (state->characterLighting) hash.componentMask |= Comp_CharacterLighting;
-        if (state->motionBlur)        hash.componentMask |= Comp_MotionBlur;
+        if (state->motionBlur) hash.componentMask |= Comp_MotionBlur;
 
         return hash;
     }
@@ -427,24 +427,16 @@ namespace editor::states
             {
                 if (!obj) continue;
 
-                fb::TypeInfo* typeInfo = obj->GetType();
-                if (!typeInfo || typeInfo->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                    continue;
-
-                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(typeInfo);
-                if (!classInfo->isSubclassOf((fb::ClassInfo*)fb::ObjectBlueprint::ClassInfoPtr()))
+                fb::ClassInfo* classInfo = fb::classOf(obj);
+                if (!classInfo || !classInfo->isSubclassOf((fb::ClassInfo*)fb::ObjectBlueprint::ClassInfoPtr()))
                     continue;
 
                 fb::ObjectBlueprint* objBp = reinterpret_cast<fb::ObjectBlueprint*>(obj);
                 if (!objBp->m_Object)
                     continue;
 
-                fb::TypeInfo* objTypeInfo = objBp->m_Object->GetType();
-                if (!objTypeInfo || objTypeInfo->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                    continue;
-
-                fb::ClassInfo* objClassInfo = static_cast<fb::ClassInfo*>(objTypeInfo);
-                if (objClassInfo->m_ClassId != fb::VisualEnvironmentEntityData::ClassId())
+                fb::ClassInfo* objClassInfo = fb::classOf(objBp->m_Object);
+                if (!objClassInfo || objClassInfo->m_ClassId != fb::VisualEnvironmentEntityData::ClassId())
                     continue;
 
                 fb::VisualEnvironmentEntityData* veData = static_cast<fb::VisualEnvironmentEntityData*>(objBp->m_Object);
@@ -467,9 +459,6 @@ namespace editor::states
         fb::VisualEnvironmentEntity* ent;
         while ((ent = ents.nextOfKind()) != nullptr)
         {
-            // VEEntity has no direct m_data pointer pre-cached the same way
-            // LightEntity does — pass nullptr and let onEntityCreated fall
-            // back to entity->m_referenceObjectData->m_Blueprint for naming.
             onEntityCreated(ent, nullptr);
             ++dispatched;
         }

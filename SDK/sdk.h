@@ -4,6 +4,7 @@
 #include <d3d11.h>
 #include <cstdint>
 #include "general.h"
+#include "offsets.h"
 #include "typeinfo.h"
 #include <array>
 #include "eastl.h"
@@ -27,6 +28,9 @@
 #define _Entity_
 #define _SpatialEntity_
 #define _LocalLightEntity_
+#define _LensFlareEntity_
+#define _ClientStaticModelGroupEntity_
+#define _ShaderDatabase_
 #define _SpotLightEntity_
 #define _PointLightEntity_
 #define _GameEntity_
@@ -34,13 +38,11 @@
 #define _VisualEnvironmentEntity_
 #define _EmitterComponentData_
 #define _ProcessorData_
+#define _DxTexture_
+#define _MeshSet_
 
 namespace fb
 {
-
-
-
-
 	class DataContainer : public ITypedObject
 	{
 	public:
@@ -52,7 +54,7 @@ namespace fb
 			if ((m_flags & 0x100) == 0)
 				return nullptr;
 
-			// lea     eax, [ecx-10h]
+			// lea eax, [ecx-10h]
 			fb::Guid* guid = reinterpret_cast<fb::Guid*>(this) - 1;
 
 			if (guid == nullptr)
@@ -112,9 +114,6 @@ namespace fb
 		}
 
 	};//Size=0x000C
-
-
-
 
 	class CapturedOutdoorLightComponentData
 	{
@@ -180,7 +179,6 @@ namespace fb
 		bool m_Enable; //0x00D1
 		char _0x00D2[14];
 	};//Size=0x00E0
-
 
 	class CapturedTonemapComponentData
 	{
@@ -336,7 +334,6 @@ namespace fb
 		char _0x006C[4];
 	};//Size=0x0070
 
-
 	class CapturedSunFlareComponentData
 	{
 	public:
@@ -423,7 +420,6 @@ namespace fb
 		bool m_Enable; //0x008C
 		char _0x008D[3];
 	};//Size=0x0090
-
 
 	class CapturedDofComponentData
 	{
@@ -535,7 +531,6 @@ namespace fb
 		char _0x006C[4];
 	};//Size=0x0070
 
-
 	class CapturedScreenEffectComponentData
 	{
 	public:
@@ -642,7 +637,6 @@ namespace fb
 		char _0x0091[15];
 	};//Size=0x00A0
 
-
 	class CapturedCharacterLightingComponentData
 	{
 	public:
@@ -744,6 +738,43 @@ namespace fb
 		}
 	}; //Size: 0x9E0
 
+	struct VisualEnvironmentResources
+	{
+		void* colorGradingTexture; //0x0000 ITexture*
+		void* filmGrainTexture; //0x0004
+		void* skyGradientTexture; //0x0008
+		void* panoramicSkyTexture; //0x000C
+		void* panoramicSkyAlphaTexture; //0x0010
+		void* cloudLayer0Texture; //0x0014
+		void* cloudLayer1Texture; //0x0018
+		void* cloudLayerMaskTexture; //0x001C
+		void* cloudShadowTexture; //0x0020
+		void* staticEnvmapTexture; //0x0024
+		void* customEnvmapTexture; //0x0028
+		void* screenEffectShader; //0x002C SmartRef<ISurfaceShader>
+		void* damageEffectShader; //0x0030
+	};//Size=0x0034
+
+	struct TextureHeader
+	{
+		unsigned int version; //0x0000
+		unsigned int type; //0x0004
+		unsigned int format; //0x0008
+		unsigned int flags; //0x000C
+		unsigned __int16 width; //0x0010
+		unsigned __int16 height; //0x0012
+		unsigned __int16 depth; //0x0014
+		unsigned __int16 sliceCount; //0x0016
+		unsigned __int16 unused0; //0x0018
+		unsigned __int8 mipmapCount; //0x001A
+		unsigned __int8 mipmapBaseIndex;//0x001B
+		Guid streamingChunkId; //0x001C
+		unsigned int mipmapSizes[15]; //0x002C
+		unsigned int mipmapChainSize; //0x0068
+		unsigned int resourceNameHash; //0x006C
+		char textureGroup[16]; //0x0070
+	};//Size=0x0080
+
 	struct VisualEnvironmentState
 	{
 		float visibility;
@@ -773,87 +804,96 @@ namespace fb
 		CapturedDynamicEnvmapComponentData* dynamicEnvmap; //0x0880
 		CapturedCharacterLightingComponentData* characterLighting; //0x08C0
 		CapturedMotionBlurComponentData* motionBlur; //0x0900
-		CapturedShaderParamsComponentData* shaderparams[16]; //0x0660
-		// debug
-	};
+		CapturedShaderParamsComponentData* shaderparams[16]; //0x0070
+		unsigned int shaderParamsCount; //0x00B0
+		VisualEnvironmentResources resources; //0x00B4
+		char _0x00E8[8];
+	};//Size=0x00F0
 
 	class DxRenderSettings
 	{
 	public:
 		char unknown0[32]; //0x0000
-		__int32 Width; //0x0020 
-		__int32 Height; //0x0024 
+		__int32 Width; //0x0020
+		__int32 Height; //0x0024
 		char unknown40[48]; //0x0028
-		__int32 ResX; //0x0058 
-		__int32 RexY; //0x005C 
+		__int32 ResX; //0x0058
+		__int32 RexY; //0x005C
 		char unknown96[120]; //0x0060
-		ID3D11Device* m_device; //0x00D8 
-		ID3D11DeviceContext* m_deviceContext; //0x00DC 
+		ID3D11Device* m_device; //0x00D8
+		ID3D11DeviceContext* m_deviceContext; //0x00DC
 		char unknown224[20]; //0x00E0
-		IDXGISwapChain* m_swapChain; //0x00F4 
+		IDXGISwapChain* m_swapChain; //0x00F4
 		char unknown248[4]; //0x00F8
 	};
 
 	class RenderScreenInfo
 	{
 	public:
-		UINT m_nWidth;					// 0x0
-		UINT m_nHeight;					// 0x4
-		UINT m_nWindowWidth;			// 0x8
-		UINT m_nWindowHeight;			// 0xC
-		FLOAT fRefreshRate;				// 0x10
+		UINT m_nWidth; // 0x0
+		UINT m_nHeight; // 0x4
+		UINT m_nWindowWidth; // 0x8
+		UINT m_nWindowHeight; // 0xC
+		FLOAT fRefreshRate; // 0x10
 	};
 
 	class DxRenderer
 	{
 	public:
 		DxRenderSettings* m_settings;
-		BYTE Pad_004[0x4];				// 0x00
-		UINT m_nFrameCounter;			// 0x08
-		BOOL m_bFrameInProgress;		// 0x0C
-		HWND m_hWnd;					// 0x10
-		BYTE Pad_014[0x4];				// 0x14
-		BYTE m_bFullscreenWanted;		// 0x18
-		BYTE m_bFullscreenActive;		// 0x19
-		BYTE m_bMinimized;				// 0x1A
-		BYTE m_bMinimizing;				// 0x1B
-		BYTE m_bResizing;				// 0x1C
-		BYTE m_bOccluded;				// 0x1D
-		BYTE m_bVSync;					// 0x1E
-		char pad[0x1];						// 0x1F
-		RenderScreenInfo m_screenInfo;	// 0x20
-		char pad1[0xA4];						// 0x34
-		ID3D11Device* pDevice;			// 0xD8
-		ID3D11DeviceContext* pContext;  // 0xDC
-		char pad3[0x14];					// 0xE0
-		IDXGISwapChain* pSwapChain;		// 0xF4
+		BYTE Pad_004[0x4]; // 0x00
+		UINT m_nFrameCounter; // 0x08
+		BOOL m_bFrameInProgress; // 0x0C
+		HWND m_hWnd; // 0x10
+		BYTE Pad_014[0x4]; // 0x14
+		BYTE m_bFullscreenWanted; // 0x18
+		BYTE m_bFullscreenActive; // 0x19
+		BYTE m_bMinimized; // 0x1A
+		BYTE m_bMinimizing; // 0x1B
+		BYTE m_bResizing; // 0x1C
+		BYTE m_bOccluded; // 0x1D
+		BYTE m_bVSync; // 0x1E
+		char pad[0x1]; // 0x1F
+		RenderScreenInfo m_screenInfo; // 0x20
+		char pad1[0xA4]; // 0x34
+		ID3D11Device* pDevice; // 0xD8
+		ID3D11DeviceContext* pContext; // 0xDC
+		char pad3[0x14]; // 0xE0
+		IDXGISwapChain* pSwapChain; // 0xF4
 
 	public:
 		static DxRenderer* GetInstance()
 		{
-			return *(DxRenderer**)0x023577D4;
+			return *(DxRenderer**)OFF_g_dxRenderer;
 		}
 	};
 
 	class IMouse
 	{
 	public:
-		virtual void init();	// V: 0x0
-		virtual void release();	// V: 0x4
-		virtual void preFrameUpdate(float);	// V: 0x8
-		virtual void update(float);	// V: 0xC
-		virtual void updateBetweenFrames(float);	// V: 0x10
-		virtual bool isDown(void*, bool);	// V: 0x14
-		virtual bool wentDown(void*);	// V: 0x18
-		virtual bool wentUp(void*);	// V: 0x1C
-		virtual float getLevel(void*, bool);	// V: 0x20
-		virtual float getLevel(void*);	// V: 0x24
-		virtual bool getBufferedAction(void*);	// V: 0x28
-		virtual void enableCursorMode(bool, int);	// V: 0x2C
-		virtual void setCursorPosition(int, int);	// V: 0x30
-		virtual void setCursorRect(bool, unsigned int, unsigned int, unsigned int, unsigned int);	// V: 0x34
-		virtual void setMouseSensitivity(float);	// V: 0x38
-		virtual void setUIOwnsInput(bool);	// V: 0x3C
+		virtual void init(); // V: 0x0
+		virtual void release(); // V: 0x4
+		virtual void preFrameUpdate(float); // V: 0x8
+		virtual void update(float); // V: 0xC
+		virtual void updateBetweenFrames(float); // V: 0x10
+		virtual bool isDown(void*, bool); // V: 0x14
+		virtual bool wentDown(void*); // V: 0x18
+		virtual bool wentUp(void*); // V: 0x1C
+		virtual float getLevel(void*, bool); // V: 0x20
+		virtual float getLevel(void*); // V: 0x24
+		virtual bool getBufferedAction(void*); // V: 0x28
+		virtual void enableCursorMode(bool, int); // V: 0x2C
+		virtual void setCursorPosition(int, int); // V: 0x30
+		virtual void setCursorRect(bool, unsigned int, unsigned int, unsigned int, unsigned int); // V: 0x34
+		virtual void setMouseSensitivity(float); // V: 0x38
+		virtual void setUIOwnsInput(bool); // V: 0x3C
+	};
+
+	class InputCache
+	{
+	public:
+		char _0x0000[4];
+		float m_conceptCache[253]; //0x0004 indexed by InputConceptIdentifiers
 	};
 
 	class BorderInputNode
@@ -863,45 +903,45 @@ namespace fb
 		virtual void exit();
 		virtual void clear();
 		virtual void suppressButtons(); // V: 0x10
-		virtual float getLevel(bool);        // V: 0x14
+		virtual float getLevel(bool); // V: 0x14
 		virtual float getLevel2(bool); // V: 0x18
-		virtual bool isDown(bool);   // V: 0x1C
-		virtual bool isDown2();    // V: 0x20
-		virtual bool wentDown();       // V: 0x24
-		virtual bool wentDown2();        // V: 0x28
+		virtual bool isDown(bool); // V: 0x1C
+		virtual bool isDown2(); // V: 0x20
+		virtual bool wentDown(); // V: 0x24
+		virtual bool wentDown2(); // V: 0x28
 		virtual bool wentUp(); // V: 0x2C
-		virtual bool wentUp2();  // V: 0x30
-		virtual bool isMouseActive();   // V: 0x34
-		virtual void* getPad();      // V: 0x38
-		virtual class MotionController* getMotionController();    // V: 0x3C
+		virtual bool wentUp2(); // V: 0x30
+		virtual bool isMouseActive(); // V: 0x34
+		virtual void* getPad(); // V: 0x38
+		virtual class MotionController* getMotionController(); // V: 0x3C
 		virtual class IMouse* getMouse(); // V: 0x40
-		virtual class IKeyboard* getKeyboard();   // V: 0x44
-		virtual void setUIInputTyping(bool);    // V: 0x48
-		virtual void setUIInputClicking(bool, int);     // V: 0x4C
-		virtual void setUICursorPosition(int, int);     // V: 0x50
-		virtual void setUICursorRect(bool, unsigned int, unsigned int, unsigned int, unsigned int);     // V: 0x54
-		virtual void updateBetweenFrames(float);        // V: 0x58
+		virtual class IKeyboard* getKeyboard(); // V: 0x44
+		virtual void setUIInputTyping(bool); // V: 0x48
+		virtual void setUIInputClicking(bool, int); // V: 0x4C
+		virtual void setUICursorPosition(int, int); // V: 0x50
+		virtual void setUICursorRect(bool, unsigned int, unsigned int, unsigned int, unsigned int); // V: 0x54
+		virtual void updateBetweenFrames(float); // V: 0x58
 		virtual /*class fb::InputActionData **/void* getTriggeredInputAction(); // V: 0x5C
-		virtual bool getTriggeredInputAction(/*class fb::InputActionData &*/void*);     // V: 0x60
-		virtual void update(float);     // V: 0x64
+		virtual bool getTriggeredInputAction(/*class fb::InputActionData &*/void*); // V: 0x60
+		virtual void update(float); // V: 0x64
 		virtual int preFrameUpdate(float fDeltaTime);
-		//virtual void postFrameUpdate(float);	
-		virtual void postFrameUpdate(float);	// V: 0x6C
+		//virtual void postFrameUpdate(float);
+		virtual void postFrameUpdate(float); // V: 0x6C
 
 		static BorderInputNode* GetInstance()
 		{
-			DWORD BORDERINPUTNODE = 0x02384EB8;
+			DWORD BORDERINPUTNODE = OFF_g_borderInputNode;
 			return *(BorderInputNode**)BORDERINPUTNODE;
 		}
 
 		char unknown0[4];
 		class InputCache* m_inputCache;
 		//new
-		bool m_forceReadCache;                     // 0x8
+		bool m_forceReadCache; // 0x8
 		char pad[0x3];
-		class Pad* m_pad;								 // 0xC
-		MotionController* m_motionController;      // 0x10
-		class IKeyboard* m_keyboard;                     // 0x14 enableTypingMode!
+		class Pad* m_pad; // 0xC
+		MotionController* m_motionController; // 0x10
+		class IKeyboard* m_keyboard; // 0x14 enableTypingMode!
 		IMouse* m_mouse;
 		bool m_disableInput;
 	};
@@ -924,21 +964,17 @@ namespace fb
 	{
 	public:
 		char pad[8];
-		class PlayerManager* m_playerManager;					// 0x08
-		class GameTime* m_gameTime;								// 0x0C
-		class ClientLevel* m_level;								// 0x10
-		class MaterialGridManager* m_materialGridManager;		// 0x14
-		DWORD m_animationManager;								// 0x18 ant::AnimationManager
-		DWORD m_modelAnimationManager;							// 0x1C ModelAnimationManager
-		DWORD m_blueprintBundleManager;							// 0x20 BlueprintBundleManager
-		DWORD m_dlcManager;										// 0x24 DLCManager
-		DWORD m_demoControl;									// 0x28 DemoControl
-		INT m_realm;											// 0x2C
+		class PlayerManager* m_playerManager; // 0x08
+		class GameTime* m_gameTime; // 0x0C
+		class ClientLevel* m_level; // 0x10
+		class MaterialGridManager* m_materialGridManager; // 0x14
+		DWORD m_animationManager; // 0x18 ant::AnimationManager
+		DWORD m_modelAnimationManager; // 0x1C ModelAnimationManager
+		DWORD m_blueprintBundleManager; // 0x20 BlueprintBundleManager
+		DWORD m_dlcManager; // 0x24 DLCManager
+		DWORD m_demoControl; // 0x28 DemoControl
+		INT m_realm; // 0x2C
 	}; // 0x30
-
-
-
-
 
 	class WorldRenderSettings/*Base*/
 	{
@@ -1217,30 +1253,30 @@ namespace fb
 		{
 		public:
 			DWORD index;
-			/*WorldDrawViewInfo*   */void* viewInfo;
+			/*WorldDrawViewInfo* */void* viewInfo;
 		};
-		virtual int addRef();	// V: 0x0
-		virtual int release();	// V: 0x4
-		virtual void createUpdateJob(); // (const struct fb::WorldRenderUpdateParams &, class EA::Jobs::JobInstanceHandle &, class EA::Jobs::JobInstanceHandle &);	// V: 0x8
-		virtual void draw();	// V: 0xC
-		virtual void setSettings(class WorldRenderSettings*);	// V: 0x10
-		virtual const class WorldRenderSettings* getSettings();	// V: 0x14
-		virtual void addModule();// (struct fb::IWorldRenderModule *);	// V: 0x18
-		virtual void removeModule(); // (struct fb::IWorldRenderModule *);	// V: 0x1C
-		virtual void addPrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *);	// V: 0x20
-		virtual void removePrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *);	// V: 0x24
-		virtual class ITexture* getHDRRenderTargetColorTexture(unsigned int);	// V: 0x28
-		virtual class ITexture* getGeometryBufferTextures();	// V: 0x2C
-		virtual unsigned int getGeometryBufferTextureCount();	// V: 0x30
-		virtual class PostProcessSystem* getPostProcessSystem();	// V: 0x34
-		virtual DWORD getHudRenderTargetView();	// V: 0x38
-		virtual class fb::ITexture* getHudRenderTargetTexture();	// V: 0x3C
-		virtual DWORD getWorldOcclusionQueryModule();	// V: 0x40
+		virtual int addRef(); // V: 0x0
+		virtual int release(); // V: 0x4
+		virtual void createUpdateJob(); // (const struct fb::WorldRenderUpdateParams &, class EA::Jobs::JobInstanceHandle &, class EA::Jobs::JobInstanceHandle &); // V: 0x8
+		virtual void draw(); // V: 0xC
+		virtual void setSettings(class WorldRenderSettings*); // V: 0x10
+		virtual const class WorldRenderSettings* getSettings(); // V: 0x14
+		virtual void addModule();// (struct fb::IWorldRenderModule *); // V: 0x18
+		virtual void removeModule(); // (struct fb::IWorldRenderModule *); // V: 0x1C
+		virtual void addPrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *); // V: 0x20
+		virtual void removePrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *); // V: 0x24
+		virtual class ITexture* getHDRRenderTargetColorTexture(unsigned int); // V: 0x28
+		virtual class ITexture* getGeometryBufferTextures(); // V: 0x2C
+		virtual unsigned int getGeometryBufferTextureCount(); // V: 0x30
+		virtual class PostProcessSystem* getPostProcessSystem(); // V: 0x34
+		virtual DWORD getHudRenderTargetView(); // V: 0x38
+		virtual class fb::ITexture* getHudRenderTargetTexture(); // V: 0x3C
+		virtual DWORD getWorldOcclusionQueryModule(); // V: 0x40
 		char _0x0004[32];
-		DWORD m_viewWidth; //0x0024 
-		DWORD m_viewHeight; //0x0028 
+		DWORD m_viewWidth; //0x0024
+		DWORD m_viewHeight; //0x0028
 		char _0x002C[0x895C];
-		WorldRenderSettings* m_worldRenderSettings; //0x8988 
+		WorldRenderSettings* m_worldRenderSettings; //0x8988
 	};
 
 	class WorldRenderModule
@@ -1359,10 +1395,10 @@ namespace fb
 	public:
 		static ClientGameContext* GetInstance()
 		{
-			return *(ClientGameContext**)(0x02380B58);
+			return *(ClientGameContext**)(OFF_g_clientGameContext);
 		}
 
-		class ClientPlayerManager* m_clientPlayerManager;		// 0x30
+		class ClientPlayerManager* m_clientPlayerManager; // 0x30
 	};
 
 	class ClientPlayerManager
@@ -1376,14 +1412,13 @@ namespace fb
 	{
 	public:
 		char pad[0x3D8];
-		void* m_controlledControllable;		// 0x3D8
+		void* m_controlledControllable; // 0x3D8
 
 		bool isAlive()
 		{
 			return m_controlledControllable != nullptr;
 		}
 	};
-
 
 	class ClientRoundOverEntity
 	{
@@ -1399,7 +1434,7 @@ namespace fb
 	public:
 		static VisualEnvironmentManager* GetInstance()
 		{
-			return *(VisualEnvironmentManager**)(0x023B6844);
+			return *(VisualEnvironmentManager**)(OFF_g_visualEnvironmentManager);
 		}
 
 		char pad[0x20];
@@ -1467,14 +1502,12 @@ namespace fb
 	};//Size=0x0010
 
 	template <class T>
-	class SpatialEntityWithBusAndData : public SpatialEntity				// 0x00
+	class SpatialEntityWithBusAndData : public SpatialEntity // 0x00
 	{
 	public:
-		EntityBus* m_entityBus;				// 0x10
-		T* m_data;							// 0x14
+		EntityBus* m_entityBus; // 0x10
+		T* m_data; // 0x14
 	}; // 0x18
-
-
 
 	class LocalLightEntity : public SpatialEntityWithBusAndData<LocalLightEntityData>
 	{
@@ -1498,7 +1531,7 @@ namespace fb
 		void setDirty()
 		{
 			typedef __int16(__thiscall* tSetDirty)(void* _this);
-			tSetDirty oSetDirty = (tSetDirty)0x17A8260;
+			tSetDirty oSetDirty = (tSetDirty)OFF_LocalLightEntity_setDirty;
 
 			oSetDirty(this);
 		}
@@ -1512,11 +1545,11 @@ namespace fb
 			RCTDetailed = 0,
 			RCTCollision
 		};
-		LPVOID vftable;						// 0x00
-		EntityCreator* m_previousCreator;	// 0x04
-		EntityCreator* m_nextCreator;		// 0x08
-		Realm m_realm;						// 0x0C
-		INT m_linked;						// 0x10
+		LPVOID vftable; // 0x00
+		EntityCreator* m_previousCreator; // 0x04
+		EntityCreator* m_nextCreator; // 0x08
+		Realm m_realm; // 0x0C
+		INT m_linked; // 0x10
 	}; // 0x14
 
 	class EntityCollectionSegment;
@@ -1545,31 +1578,100 @@ namespace fb
 		class EntityIterator
 		{
 		public:
-			eastl::vector<EntityCollection>* m_collections;    //offset = 0x0, length = 0x4
-			EntityCollectionSegment* m_currentSegment;    //offset = 0x4, length = 0x4
-			unsigned int m_collectionIndexIt;    //offset = 0x8, length = 0x4
-			unsigned int m_collectionIndexEnd;    //offset = 0xC, length = 0x4
-			unsigned int m_entityIndexIt;    //offset = 0x10, length = 0x4
-			unsigned int m_entityIndexEnd;    //offset = 0x14, length = 0x4
-			bool m_onlyIncludeIterable;    //offset = 0x18, length = 0x1
+			eastl::vector<EntityCollection>* m_collections; //offset = 0x0, length = 0x4
+			EntityCollectionSegment* m_currentSegment; //offset = 0x4, length = 0x4
+			unsigned int m_collectionIndexIt; //offset = 0x8, length = 0x4
+			unsigned int m_collectionIndexEnd; //offset = 0xC, length = 0x4
+			unsigned int m_entityIndexIt; //offset = 0x10, length = 0x4
+			unsigned int m_entityIndexEnd; //offset = 0x14, length = 0x4
+			bool m_onlyIncludeIterable; //offset = 0x18, length = 0x1
 			char pad_19[3];
 		};
 
 		void kindOfQuery(class ClassInfo* classInfo, EntityIterator* result, bool onlyIncludeIterable = true)
 		{
 			typedef void(__thiscall* kindOfQuery_t)(void*, ClassInfo*, EntityIterator*, bool);
-			kindOfQuery_t m_kindOfQuery = (kindOfQuery_t)0x00549B00;
+			kindOfQuery_t m_kindOfQuery = (kindOfQuery_t)OFF_EntityWorld_kindOfQuery;
 
 			m_kindOfQuery(this, classInfo, result, onlyIncludeIterable);
 		}
 	};
+
+	struct RayCastHit
+	{
+		Vec3 m_position; //0x0000 (16)
+		Vec3 m_normal; //0x0010 (16)
+		void* m_rigidBody; //0x0020 PhysicsEntityBase* (GroupPhysicsEntity for world geometry)
+		void* m_material; //0x0024 MaterialContainerPair*
+		unsigned __int32 m_part; //0x0028
+		unsigned __int32 m_bone; //0x002C
+		float m_lambda; //0x0030
+		char _0x0034[0x0C];
+	};//Size=0x0040
+
+	// fixed_vector
+	struct PhysicsExcludeList
+	{
+		void** m_begin; //0x0000
+		void** m_end; //0x0004
+		void** m_capacity; //0x0008
+		void* m_allocator; //0x000C
+		void* m_data[8]; //0x0010
+	};//Size=0x0030
+
+	constexpr intptr_t kGameWorldRayCaster = 0x840;
+	// flags the soldier ground probe uses (sub_60D870, OnGroundState::update); start the ray outside the capsule
+	constexpr unsigned int kRayCastWorldOnly = 0x14u;
+	constexpr intptr_t kClientLevelPhysicsManager = 0xBC;
+	constexpr intptr_t kHavokPhysicsRayCaster = 0x40;
+
+	inline void* clientGameWorld()
+	{
+		ClientGameContext* ctx = ClientGameContext::GetInstance();
+		if (ctx && ctx->m_level && ctx->m_level->m_gameWorld)
+			return ctx->m_level->m_gameWorld;
+		return *reinterpret_cast<void**>(OFF_g_entityWorld);
+	}
+
+	inline void* physicsRayCaster()
+	{
+		ClientGameContext* ctx = ClientGameContext::GetInstance();
+		if (ctx && ctx->m_level)
+		{
+			void* manager = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx->m_level) + kClientLevelPhysicsManager);
+			void* caster = manager ? *reinterpret_cast<void**>(static_cast<uint8_t*>(manager) + kHavokPhysicsRayCaster) : nullptr;
+			if (caster)
+				return caster;
+		}
+		void* gw = clientGameWorld();
+		return gw ? static_cast<uint8_t*>(gw) + kGameWorldRayCaster : nullptr;
+	}
+
+	inline bool physicsRayQuery(const Vec3& from, const Vec3& to, RayCastHit& hit, unsigned int flags,
+	                            void* exclude = nullptr)
+	{
+		void* caster = physicsRayCaster();
+		if (!caster)
+			return false;
+		using fn_t = bool (__thiscall*)(void*, const char*, const void*, const void*, RayCastHit*, unsigned int, const void*);
+		fn_t fn = (*static_cast<fn_t**>(caster))[0];
+		alignas(16) float a[4] = { from.m_x, from.m_y, from.m_z, 0.0f };
+		alignas(16) float b[4] = { to.m_x, to.m_y, to.m_z, 0.0f };
+		PhysicsExcludeList ex{ };
+		ex.m_begin = ex.m_data;
+		ex.m_end = ex.m_data;
+		ex.m_capacity = ex.m_data + 8;
+		if (exclude)
+			*ex.m_end++ = exclude;
+		return fn(caster, "bfve", a, b, &hit, flags, exclude ? &ex : nullptr);
+	}
 
 	template<typename T> struct EntityList : public EntityWorld::EntityIterator
 	{
 		EntityList() {}
 		EntityList(fb::ClassInfo* classInfo, bool onlyIncludeIterable = true)
 		{
-			EntityWorld* manager = (EntityWorld*)fb::ClientGameContext::GetInstance()->m_level->m_gameWorld;
+			EntityWorld* manager = static_cast<EntityWorld*>(clientGameWorld()); // dword_236B60C, see physicsRayCaster
 			if (!manager)
 				return;
 
@@ -1640,10 +1742,41 @@ namespace fb
 
 	struct DomainInfo
 	{
-		eastl::string name;
-		eastl::string root;
-		char pad[0x22];
-	};
+		eastl::string name; // 0x00
+		eastl::string root; // 0x10
+		uint32_t flags; // 0x20 bitfield
+		char imports[16]; // 0x24 vector<DomainImportInfo>
+		char emergencyMapping[16]; // 0x34 vector<TypeRemapInfo>
+	}; // 0x44
+	static_assert(sizeof(DomainInfo) == 0x44, "DomainInfo");
+
+	class InternalDatabaseDomain;
+
+	class InternalDatabasePartition
+	{
+	public:
+		void* vtable; // 0x00
+		const char* m_name; // 0x04 partition path
+		InternalDatabaseDomain* m_domain; // 0x08
+		Guid m_partitionGuid; // 0x0C
+		char m_instanceFastLookup[0x20]; // 0x1C hash_map<Guid const*, DataContainer*>
+		eastl::vector<fb::DataContainer*> m_instances; // 0x3C
+		DataContainer* m_primaryInstance; // 0x4C
+		void* m_ownedMemoryBlock; // 0x50
+	}; // 0xB4
+	static_assert(offsetof(InternalDatabasePartition, m_instances) == 0x3C, "InternalDatabasePartition");
+
+	class InternalDatabaseDomain
+	{
+	public:
+		void* vtable; // 0x00
+		void* m_arena; // 0x04
+		char pad_0008[0x3C]; // 0x08 lazy allocator, lazy partition list, flags, manager
+		char m_guidMap[0x20]; // 0x44 hash_map<Guid const*, InternalDatabasePartition*>
+		char m_nameMap[0x20]; // 0x64 hash_map<char const*, InternalDatabasePartition*>
+		eastl::vector<InternalDatabasePartition*> m_partitions; // 0x84
+	}; // 0x128
+	static_assert(offsetof(InternalDatabaseDomain, m_partitions) == 0x84, "InternalDatabaseDomain");
 
 	class ResourceManager
 	{
@@ -1651,20 +1784,41 @@ namespace fb
 		class Compartment
 		{
 		public:
-			char pad_0000[84];
-			char* m_domain;
-			DomainInfo m_domainInfo;
-			char pad_0058[144 - 68];
-			eastl::vector<fb::ITypedObject*> m_objects;
-		};
+			class StringMap
+			{
+			public:
+				void* vtable; //0x0000
+				void* m_arena; //0x0004
+				void* m_root; //0x0008
+				uint32_t m_stringCount; //0x000C
+				uint32_t m_caseSensitivity; //0x0010
+				uint32_t m_locked; //0x0014
+			};//Size=0x0018
+
+			void* m_realHeap; // 0x00
+			char pad_0004[0x2C]; // 0x04 lock
+			StringMap m_handles; // 0x30 StringMap<ResourceHandle*>, lower-case paths
+			char pad_0048[0x08]; // 0x48 thisTag
+			InternalDatabaseDomain* m_domain; // 0x50
+			DomainInfo m_domainInfo; // 0x54
+			char m_domainName[64]; // 0x98 "Compartment:%s(%d)"
+			eastl::vector<void*> m_pendingPostloads; // 0xD8 IResourceObject*
+			eastl::vector<fb::ITypedObject*> m_objects; // 0xE8 m_dataContainersToUnregister: the primary instance of every loaded partition
+			char pad_00F8[0x40]; // 0xF8 availableChunks, queuedReads, batchObjects, affectedObjects
+			eastl::vector<fb::DataContainer*> m_dataContainers; // 0x138 emptied at the end of every fixup
+		}; // 0x2A0
+		static_assert(offsetof(Compartment, m_handles) == 0x30, "Compartment");
+		static_assert(offsetof(Compartment, m_objects) == 0xE8, "Compartment");
+		static_assert(offsetof(Compartment, m_dataContainers) == 0x138, "Compartment");
 
 	public:
-		volatile uint32_t m_bundleLoadInProgress;
-		std::array<ResourceManager::Compartment*, 204> m_compartments;
+		volatile uint32_t m_bundleLoadInProgress; // 0x00
+		std::array<ResourceManager::Compartment*, 205> m_compartments; // 0x04 allocCompartment bound 0xCD
+		Compartment* m_currentlyLoadingCompartment; // 0x338
 
 		static ResourceManager* GetInstance()
 		{
-			return *(ResourceManager**)(0x230D220);
+			return *(ResourceManager**)(OFF_g_resourceManager);
 		}
 	};
 
@@ -1681,15 +1835,6 @@ namespace fb
 		}
 		char _0x00A0[16];
 	};//Size=0x00B0
-
-	class InternalDatabasePartition
-	{
-	public:
-		char* m_name;
-		char pad[0x38];
-		eastl::vector<fb::DataContainer*> m_instances;
-		DataContainer* m_primaryInstance;
-	};
 
 	class Message : public ITypedObject
 	{
@@ -1713,12 +1858,514 @@ namespace fb
 
 	class DataContext
 	{
-		/*const class fb::DataBus **/void* bus;                     // this+0x0
-		const class fb::DataContainer* const data;                     // this+0x4
-		const class fb::DataContainer* const exposed;                     // this+0x8
+		/*const class fb::DataBus **/void* bus; // this+0x0
+		const class fb::DataContainer* const data; // this+0x4
+		const class fb::DataContainer* const exposed; // this+0x8
 
 	}; // fb::DataContext
 
+	// ctor sub_17B2720, shaders sub_17B0600
+	class LensFlareEntity : public EntityWithBusAndData<LensFlareEntityData>
+	{
+	public:
+		static __inline unsigned int ClassId()
+		{
+			return 404;
+		}
+		static __inline uintptr_t ClassInfoPtr()
+		{
+			return 0x02404D68;
+		}
+
+		char _0x0014[12];
+		LinearTransform m_transform; //0x0020
+		eastl::vector<void*> m_surfaceShaders; //0x0060 SmartRef<ISurfaceShader const> per element
+		bool m_enabled; //0x0070
+		bool m_halfRes; //0x0071
+		bool m_directionEnable; //0x0072
+		char _0x0073[13];
+		Vec3 m_direction; //0x0080
+	};//Size=0x0090
+
+	class StaticModelGroupMeshInstance
+	{
+	public:
+		static constexpr uintptr_t kRigidVTable = OFF_vt_RigidMeshEntity;
+		static constexpr uintptr_t kCompositeVTable = OFF_vt_CompositeMeshEntity;
+
+		void* m_vtable; //0x0000
+		char _0x0004[12];
+		LinearTransform m_transform; //0x0010
+	};
+
+	// Physics part -> its mesh instance; sub_6053C0 writes m_instance, sub_605270 reads
+	// m_transformIndex.
+	struct StaticModelGroupPartEntry
+	{
+		StaticModelGroupMeshInstance* m_instance; //0x0000
+		uint16_t m_transformIndex; //0x0004
+		uint16_t _0x0006;
+	};//Size=0x0008
+
+	// sub_11D4850
+	class StaticModelGroupPhysics
+	{
+	public:
+		char _0x0000[0x1C];
+		uint32_t m_flags; //0x001C bit 30: every part maps to entry 0
+		char _0x0020[0x64];
+		StaticModelGroupPartEntry* m_partTable; //0x0084 GroupPhysicsEntity::m_parts begin
+		StaticModelGroupPartEntry* m_partTableEnd; //0x0088
+	};
+
+	// fb::ClientStaticModelGroupMember ctor sub_10B6250
+	class ClientStaticModelGroupMember
+	{
+	public:
+		static constexpr uintptr_t kVTable = OFF_vt_ClientStaticModelGroupMember;
+
+		void* m_vtable; //0x0000
+		char _0x0004[8];
+		StaticModelGroupMemberData* m_data; //0x000C
+		StaticModelGroupPhysics* m_physics; //0x0010
+		char _0x0014[0x1C];
+		StaticModelGroupMeshInstance** m_entitiesWithoutPhysics;//0x0030 only when m_InstanceTransforms is set
+		void* m_meshSet; //0x0034
+	};//Size=0x0038
+
+	class ClientStaticModelGroupEntity : public SpatialEntityWithBusAndData<StaticModelGroupEntityData>
+	{
+	public:
+		static __inline unsigned int ClassId() { return 654; }
+		static __inline uintptr_t ClassInfoPtr() { return 0x023EB5DC; }
+
+		char _0x0018[0x54];
+		StaticModelGroupEntityData* m_groupData; //0x006C
+		StaticModelGroupPhysics* m_physics; //0x0070
+		ClientStaticModelGroupMember* m_membersBegin; //0x0074
+		ClientStaticModelGroupMember* m_membersEnd; //0x0078
+		ClientStaticModelGroupMember* m_membersCap; //0x007C
+		char _0x0080[8];
+	};//Size=0x0088
+
+	struct DebugRenderVertex
+	{
+		float x, y, z; //0x0000
+		unsigned int color; //0x000C 0xAABBGGRR
+		float nx, ny, nz; //0x0010
+		unsigned int pad; //0x001C
+	};//Size=0x0020
+
+	class DebugRenderer2
+	{
+	public:
+		enum Geometry { Triangles3d = 0, Lines3d = 1, Triangles2d = 2, Lines2d = 3 };
+
+		static DebugRenderer2* Singleton()
+		{
+			using fn_t = DebugRenderer2* (*)();
+			return reinterpret_cast<fn_t>(OFF_DebugRenderer2_singleton)();
+		}
+		void setTransparent(bool v) { reinterpret_cast<void (__thiscall*)(void*, bool)>(OFF_DebugRenderer2_setTransparent)(this, v); }
+		void setDoubleSided(bool v) { reinterpret_cast<void (__thiscall*)(void*, bool)>(OFF_DebugRenderer2_setDoubleSided)(this, v); }
+		void setDepthTest(bool v) { reinterpret_cast<void (__thiscall*)(void*, bool)>(OFF_DebugRenderer2_setDepthTest)(this, v); }
+		void setDepthWrite(bool v) { reinterpret_cast<void (__thiscall*)(void*, bool)>(OFF_DebugRenderer2_setDepthWrite)(this, v); }
+		DebugRenderVertex* beginVertices(int type, unsigned int count)
+		{
+			using fn_t = DebugRenderVertex* (__thiscall*)(void*, int, unsigned int);
+			return reinterpret_cast<fn_t>(OFF_DebugRenderer2_beginVertices)(this, type, count);
+		}
+		void endVertices(int type, DebugRenderVertex* end)
+		{
+			using fn_t = void (__thiscall*)(void*, int, DebugRenderVertex*);
+			reinterpret_cast<fn_t>(OFF_DebugRenderer2_endVertices)(this, type, end);
+		}
+		// drawText(int x, int y, const char*, Color32, float scale): queues a Text2d command.
+		void drawText(int x, int y, const char* text, unsigned int color, float scale)
+		{
+			using fn_t = void (__thiscall*)(void*, int, int, const char*, unsigned int, float);
+			reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawText)(this, x, y, text, color, scale);
+		}
+		void drawText2d(int x, int y, const char* text, unsigned int color, float scale) { drawText(x, y, text, color, scale); }
+		void drawLine2d(const float a[2], const float b[2], unsigned int color)
+		{
+			using fn_t = void (__thiscall*)(void*, const float*, const float*, unsigned int);
+			reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawLine2d)(this, a, b, color);
+		}
+		void drawLineRect2d(const float min[2], const float max[2], unsigned int color)
+		{
+			using fn_t = void (__thiscall*)(void*, const float*, const float*, unsigned int);
+			reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawLineRect2d)(this, min, max, color);
+		}
+		void drawRect2d(const float min[2], const float max[2], unsigned int color)
+		{
+			using fn_t = void (__thiscall*)(void*, const float*, const float*, unsigned int);
+			reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawRect2d)(this, min, max, color);
+		}
+	};
+	// BF4 splits 3D and 2D into two classes; the shared render backend uses both names.
+	using DebugRenderer = DebugRenderer2;
+
+	// dword_2356C90. vtable[4](this, arena, name) fetches a shader by name (sub_17B0600); the
+	// arena is *(*(entity->m_entityBus + 4) + 0x34) (sub_545DC0).
+	class ShaderDatabase
+	{
+	public:
+		static ShaderDatabase* Singleton()
+		{
+			return *reinterpret_cast<ShaderDatabase**>(OFF_g_shaderSystem);
+		}
+		static constexpr size_t kFindSlot = 4;
+	};
+
+	class DxTexture;
+	// DxTexture::create(arena, desc) OFF_DxTexture_create: +0x40 set = rebuild the texture at +0x44 in place.
+	struct DxTextureCreateDesc
+	{
+		char _0x0000[0x40];
+		bool m_rebuildInPlace; //0x0040
+		char _0x0041[3];
+		DxTexture* m_target; //0x0044
+	};
+
+	class DxTexture
+	{
+	public:
+		static __inline void* VTable() { return reinterpret_cast<void*>(OFF_vt_DxTexture); }
+
+		void* m_vtable; //0x0000
+		unsigned __int32 m_refCount; //0x0004
+		void* m_arena; //0x0008
+		const char* m_name; //0x000C not written by the ctor - do not trust
+		unsigned __int32 m_memoryType; //0x0010
+		unsigned __int32 m_flags; //0x0014
+		unsigned __int32 m_type; //0x0018
+		unsigned __int32 m_format; //0x001C
+		unsigned __int32 m_width; //0x0020
+		unsigned __int32 m_height; //0x0024
+		unsigned __int32 m_depth; //0x0028
+		unsigned __int32 m_mipmapCount; //0x002C
+		unsigned __int32 m_sliceCount; //0x0030
+		bool m_srgb; //0x0034
+		char _0x0035[3];
+		unsigned __int32 m_bindFlags; //0x0038
+		unsigned __int32 m_subResourceCount; //0x003C
+		void* m_subResourceData; //0x0040
+		void* m_streamingHeader; //0x0044
+		void* m_subResourceCopy; //0x0048
+		char _0x004C[8];
+		unsigned __int16 m_handle; //0x0054 streaming handle, 0xFFFF = none
+		char _0x0056[2];
+		unsigned __int32 m_bindFlags2; //0x0058
+		unsigned __int32 m_resFormat; //0x005C DXGI_FORMAT of m_resource
+		unsigned __int32 m_shaderFormat; //0x0060 DXGI_FORMAT of the views
+		void* m_streamingInfo; //0x0064 128 bytes, own allocation
+		ID3D11Resource* m_resource; //0x0068
+		void* m_data; //0x006C
+		ID3D11ShaderResourceView* m_shaderViews[2]; //0x0070 [0] linear, [1] sRGB
+		bool m_ownsResource; //0x0078
+		char _0x0079[3];
+	};//Size=0x007C
+
+	struct TextureStreamingEntry
+	{
+		DxTexture* m_texture; //0x0000
+		unsigned __int32 m_dataHandle; //0x0004
+		unsigned __int32 m_preAllocatedHandle; //0x0008
+		unsigned __int16 m_compartmentCount; //0x000C
+		unsigned __int16 m_mipRefCount[15]; //0x000E
+		unsigned __int8 m_mipCount; //0x002C sourceMipmapCount
+		unsigned __int8 m_origMinMip; //0x002D
+		unsigned __int8 m_minMip; //0x002E
+		unsigned __int8 m_activeMipmapCount; //0x002F
+		unsigned __int8 m_activeMipmapIndex; //0x0030
+		unsigned __int8 m_wantedMipmapCount; //0x0031
+		unsigned __int8 m_state; //0x0032 pool; 2 = on-demand
+		bool m_loading; //0x0033
+		bool m_forceLoaded; //0x0034
+		char _0x0035[3];
+		float m_diffMipmapCount; //0x0038
+		float m_wantedMinMipClamp; //0x003C
+		float m_activeMinMipClamp; //0x0040
+	};//Size=0x0044
+
+	// dword_23577EC, 672128 bytes (ctor sub_6D0300). m_textures is a fixed_vector<TextureInfo,
+	// 8192> at 0x30 (begin/end/cap/alloc, buffer at 0x40).
+	class TextureStreamingManager
+	{
+	public:
+		void* m_arena; //0x0000
+		char m_lock[0x2C]; //0x0004 sub_46FF80 / sub_46FF90
+		TextureStreamingEntry* m_begin; //0x0030
+		TextureStreamingEntry* m_end; //0x0034
+		TextureStreamingEntry* m_capacity; //0x0038
+		char _0x003C[4];
+		TextureStreamingEntry m_entries[0x2000];//0x0040
+		char _0x88040[0x1C0AC];
+		unsigned __int32 m_onDemandBudgetUsed; //0xA40EC m_reservedPoolSize[2]
+
+		static TextureStreamingManager* Singleton()
+		{
+			return *reinterpret_cast<TextureStreamingManager**>(OFF_g_textureStreamingManager);
+		}
+
+		TextureStreamingEntry* entry(unsigned __int16 handle)
+		{
+			return (handle & 0x7FFF) == handle ? &m_begin[handle] : nullptr;
+		}
+
+		// 0 not loaded, 1 loading, 2 loaded, 3 not on-demand
+		int getOnDemandStatus(unsigned __int16 handle)
+		{
+			using fn_t = int(__thiscall*)(TextureStreamingManager*, unsigned __int16);
+			return reinterpret_cast<fn_t>(OFF_TextureStreamingManager_getOnDemandStatus)(this, handle);
+		}
+		bool loadOnDemand(unsigned __int16 handle, bool)
+		{
+			using fn_t = bool(__thiscall*)(TextureStreamingManager*, unsigned __int16);
+			return reinterpret_cast<fn_t>(OFF_TextureStreamingManager_loadOnDemand)(this, handle);
+		}
+		bool unloadOnDemand(unsigned __int16 handle, bool)
+		{
+			using fn_t = bool(__thiscall*)(TextureStreamingManager*, unsigned __int16);
+			return reinterpret_cast<fn_t>(OFF_TextureStreamingManager_unloadOnDemand)(this, handle);
+		}
+	};
+
+	// fb::RelocPtr<T>: pointer in the low dword, 8 bytes in the record.
+	struct RelocPtr
+	{
+		void* m_ptr; //0x0000
+		unsigned __int32 _0x0004;
+		template <typename T> T* as() const { return static_cast<T*>(m_ptr); }
+	};//Size=0x0008
+
+	struct MeshSetLayout
+	{
+		unsigned __int32 m_meshType; //0x0000
+		unsigned __int32 m_flags; //0x0004
+		unsigned __int32 m_lodCount; //0x0008
+		unsigned __int32 m_subsetCount; //0x000C
+		Vec3 m_boundingMin; //0x0010
+		Vec3 m_boundingMax; //0x0020
+		RelocPtr m_lods[5]; //0x0030 MeshLayout*
+		RelocPtr m_name; //0x0058
+		RelocPtr m_shortName; //0x0060
+		unsigned __int32 m_nameHash; //0x0068
+		char _0x006C[4];
+	};//Size=0x0070
+
+	class MeshSet
+	{
+	public:
+		void* m_vtable; //0x0000
+		unsigned __int32 m_refCount; //0x0004
+		void* m_arena; //0x0008
+		unsigned __int16 m_handle; //0x000C
+		char _0x000E[2];
+		MeshSetLayout* m_layout; //0x0010
+		void* m_rsxData; //0x0014
+		unsigned __int32 m_cellBlockSize; //0x0018
+		unsigned __int8 m_minAvailableLodIndex; //0x001C
+		char _0x001D[3];
+		float m_lodScale; //0x0020
+		float m_cullScale; //0x0024
+		void* m_geomDeclArray; //0x0028
+		char _0x002C[4];
+		char m_meshData[5][0x20]; //0x0030 MeshData[5]
+		bool m_postLoaded; //0x00D0
+		char _0x00D1[0x2F];
+	};//Size=0x0100
+
+	struct MeshData
+	{
+		void* m_arena; //0x0000
+		void* m_vertexBuffer; //0x0004 DxRenderBuffer*
+		void* m_indexBuffer; //0x0008 DxRenderBuffer*
+		const void* m_vertexData; //0x000C
+		const void* m_indexData; //0x0010
+		char _0x0014[0x0C];
+	};//Size=0x0020
+
+#define _DxRenderBuffer_
+	class DxRenderBuffer
+	{
+	public:
+		void* m_vtable; //0x0000
+		unsigned __int32 m_refCount; //0x0004
+		ID3D11Buffer* m_buffer; //0x0008
+		char m_desc[0xF4]; //0x000C RenderBufferCreateDesc
+	};//Size=0x0100
+
+	struct MeshSubset
+	{
+		RelocPtr m_geometryDecls; //0x0000
+		RelocPtr m_materialName; //0x0008
+		unsigned __int32 m_materialIndex; //0x0010
+		unsigned __int32 m_primitiveCount; //0x0014
+		unsigned __int32 m_startIndex; //0x0018
+		unsigned __int32 m_vertexOffset; //0x001C
+		unsigned __int32 m_vertexCount; //0x0020
+		unsigned __int8 m_vertexStride; //0x0024
+		unsigned __int8 m_primitiveType; //0x0025
+		unsigned __int8 m_bonesPerVertex; //0x0026
+		unsigned __int8 m_boneCount; //0x0027
+		RelocPtr m_boneIndices; //0x0028
+		unsigned __int8 m_elements[16][4]; //0x0030 usage, format, offset, stream
+		unsigned __int8 m_streams[4][2]; //0x0070 stride, classification
+		unsigned __int8 m_elementCount; //0x0078
+		unsigned __int8 m_streamCount; //0x0079
+		char _0x007A[2];
+		float m_texCoordRatios[6]; //0x007C
+	};//Size=0x0094
+
+	struct MeshLayout
+	{
+		unsigned __int32 m_type; //0x0000
+		unsigned __int32 m_subsetCount; //0x0004
+		RelocPtr m_subsets; //0x0008 MeshSubset*
+		char m_categorySubsetIndices[0x30]; //0x0010 RelocArray<u8>[4]
+		unsigned __int32 m_flags; //0x0040
+		unsigned __int32 m_indexBufferFormat; //0x0044 0 = 16-bit, 1 = 32-bit
+		unsigned __int32 m_indexDataSize; //0x0048
+		unsigned __int32 m_vertexDataSize; //0x004C
+		unsigned __int32 m_edgePartitionBufferSize; //0x0050
+		char m_dataChunkId[16]; //0x0054
+		unsigned __int32 m_auxVertexIndexDataOffset; //0x0064
+		RelocPtr m_embeddedEdgeData; //0x0068
+		RelocPtr m_shaderDebugName; //0x0070
+		RelocPtr m_name; //0x0078
+		RelocPtr m_shortName; //0x0080
+		unsigned __int32 m_nameHash; //0x0088
+		RelocPtr m_data; //0x008C MeshData*
+		char _0x0094[0x14];
+		RelocPtr m_subsetPartIndices; //0x00A8
+	};//Size=0x00B0
+
+	// eastl::hash_node of MeshVariationManager::m_variations (sub_17398C0 = getMeshVariation).
+	struct MeshVariationNode
+	{
+		unsigned __int64 m_key; //0x0000 variationHash | (MeshAsset::m_NameHash << 32)
+		void* m_set; //0x0008 MeshVariationSet*
+		int m_refCount; //0x000C
+		MeshVariationNode* m_next; //0x0010
+	};//Size=0x0018
+
+	// dword_23B3E88, 176 bytes (ctor sub_1739850). Lock sub_46FF80(this) at +0.
+	class MeshVariationManager
+	{
+	public:
+		char m_lock[0x20]; //0x0000
+		void* m_heap; //0x0020
+		char _0x0024[4];
+		MeshVariationNode** m_buckets; //0x0028 m_bucketCount + 1 entries, last is a sentinel
+		unsigned __int32 m_bucketCount; //0x002C
+		unsigned __int32 m_elementCount; //0x0030
+
+		static MeshVariationManager* Singleton()
+		{
+			return *reinterpret_cast<MeshVariationManager**>(OFF_g_meshVariationManager);
+		}
+	};
+
+	class MeshVariationSet
+	{
+	public:
+		void* m_vtable; //0x0000
+		unsigned __int32 m_refCount; //0x0004
+		void* m_materials; //0x0008
+		unsigned __int32 m_materialCount; //0x000C
+	};//Size=0x0010
+
+	class SurfaceShaderInstance
+	{
+	public:
+		void* m_shader; //0x0000 SurfaceShader*, refcounted
+		void* m_block; //0x0004 ShaderParameterBlock*
+		unsigned __int16 m_blockHeader; //0x0008
+		char _0x000A[2];
+	};//Size=0x000C
+
+	class PixelShaderPermutation
+	{
+	public:
+		Guid m_guid; //0x0000
+		void* m_constantFunctionBlock; //0x0010
+		void* m_textureFunctionBlock; //0x0014
+		void* m_constants; //0x0018 DxShaderConstants*
+		ID3D11PixelShader* m_shader; //0x001C
+		unsigned __int32 m_metrics; //0x0020
+		const unsigned char* m_data; //0x0024 DXBC
+		unsigned __int32 m_dataSize; //0x0028
+	};//Size=0x002C
+
+	class DxShaderSolution
+	{
+	public:
+		unsigned __int64 m_stateHash; //0x0000
+		unsigned __int8 m_flags; //0x0008
+		unsigned __int8 m_surfaceType; //0x0009
+		unsigned __int8 m_blendMode; //0x000A
+		unsigned __int8 _0x000B;
+		const void* m_state; //0x000C ShaderSolutionState*
+		unsigned __int32 _0x0010[2];
+		void* m_vertexPermutation; //0x0018
+		unsigned __int32 _0x001C;
+		PixelShaderPermutation* m_pixelPermutation; //0x0020
+		unsigned __int32 _0x0024;
+		void* m_geometryPermutation; //0x0028
+		unsigned __int32 _0x002C[5];
+	};//Size=0x0040
+
+	// eastl::pair<unsigned __int64, ShaderSolution const*>, 0x10.
+	struct ShaderSolutionPair
+	{
+		unsigned __int64 m_key; //0x0000
+		DxShaderSolution* m_solution; //0x0008
+		unsigned __int32 _0x000C;
+	};//Size=0x0010
+
+	class SurfaceShader
+	{
+	public:
+		void* m_vtable; //0x0000
+		unsigned __int32 m_refCount; //0x0004
+		unsigned __int32 m_nameHash; //0x0008
+		bool m_initialized; //0x000C
+		char _0x000D[3];
+		unsigned __int32 m_shaderType; //0x0010
+		unsigned __int8 m_flags; //0x0014
+		unsigned __int8 m_boolParameterCount; //0x0015
+		unsigned __int8 m_boolParameterDefaultMask; //0x0016
+		unsigned __int8 m_boolParameterRequiredMask; //0x0017
+		unsigned __int32 m_boolParameterIds[8]; //0x0018
+		char m_streamableTextureSet[0x0C]; //0x0038
+		ShaderSolutionPair* m_solutionPairs; //0x0044
+		unsigned __int32 m_solutionPairCount; //0x0048
+		unsigned __int32 _0x004C; //0x004C retail: no debug name, object is 0x50 (sub_6A46B0 allocs 80)
+	};//Size=0x0050
+
+	class ShaderParameterBlock
+	{
+	public:
+		struct Entry
+		{
+			unsigned __int32 m_handle; //0x0000
+			unsigned __int16 m_offset; //0x0004 from m_entries
+			unsigned __int16 m_arraySize; //0x0006
+		};//Size=0x0008
+
+		unsigned __int16 m_header; //0x0000
+		unsigned __int16 m_size; //0x0002
+		unsigned __int8 m_vectorCount; //0x0004
+		unsigned __int8 m_textureCount; //0x0005
+		unsigned __int8 m_boolCount; //0x0006
+		char _0x0007[9];
+		Entry m_entries[1]; //0x0010
+
+		unsigned __int16 size() const { return m_size; }
+		char* values() { return reinterpret_cast<char*>(this) + 0x10; }
+	};
 
 	class PointLightEntity : public LocalLightEntity
 	{
@@ -1736,87 +2383,87 @@ namespace fb
 	class IGameRenderer
 	{
 	public:
-		virtual VOID Function0();												// V: 0x0
-		virtual VOID Function1();												// V: 0x4
-		virtual VOID init();													// V: 0x8
-		virtual VOID postLoadInit();											// V: 0xC
-		virtual VOID createUpdateJob(FLOAT, FLOAT, LPVOID, LPVOID, LPVOID);		// V: 0x10
+		virtual VOID Function0(); // V: 0x0
+		virtual VOID Function1(); // V: 0x4
+		virtual VOID init(); // V: 0x8
+		virtual VOID postLoadInit(); // V: 0xC
+		virtual VOID createUpdateJob(FLOAT, FLOAT, LPVOID, LPVOID, LPVOID); // V: 0x10
 		// valid Draw Job
-		virtual VOID joinUpdateJob();											// V: 0x14
-		virtual VOID setJobEnable(BOOL);										// V: 0x18
-		virtual BOOL getJobEnable();											// V: 0x1C
-		virtual VOID onUnloadLevel();											// V: 0x20
-		virtual INT getAffinity();												// V: 0x24
-		virtual void* getResolution();									// V: 0x28
-		virtual VOID addModule(INT, LPVOID);									// V: 0x2C
-		virtual VOID removeModule(INT);											// V: 0x30
-		//  valid Draw Job
-		virtual const class GameRenderSettings* getSettings();					// V: 0x34
+		virtual VOID joinUpdateJob(); // V: 0x14
+		virtual VOID setJobEnable(BOOL); // V: 0x18
+		virtual BOOL getJobEnable(); // V: 0x1C
+		virtual VOID onUnloadLevel(); // V: 0x20
+		virtual INT getAffinity(); // V: 0x24
+		virtual void* getResolution(); // V: 0x28
+		virtual VOID addModule(INT, LPVOID); // V: 0x2C
+		virtual VOID removeModule(INT); // V: 0x30
+		// valid Draw Job
+		virtual const class GameRenderSettings* getSettings(); // V: 0x34
 		//this
-		virtual class ScreenRenderer* getScreenRenderer();						// V: 0x38
-		virtual VOID updatePerfOverlay(BOOL, FLOAT);							// V: 0x3C
+		virtual class ScreenRenderer* getScreenRenderer(); // V: 0x38
+		virtual VOID updatePerfOverlay(BOOL, FLOAT); // V: 0x3C
 		// valid Draw Job
-		virtual VOID resetPerfOverlay();										// V: 0x40
-		virtual BOOL isFadeInAllowed();											// V: 0x44
-		virtual VOID setVsyncEnable(BOOL);										// V: 0x48
+		virtual VOID resetPerfOverlay(); // V: 0x40
+		virtual BOOL isFadeInAllowed(); // V: 0x44
+		virtual VOID setVsyncEnable(BOOL); // V: 0x48
 		// valid Draw Job
-		virtual BOOL getVsyncEnable();											// V: 0x4C
-		virtual VOID setPresentEnable(BOOL);									// V: 0x50
-		virtual VOID getAdapterInformation(LPVOID, UINT&, UINT&);				// V: 0x54
-		virtual const void*& getTempDeprecatedView();						// V: 0x58
+		virtual BOOL getVsyncEnable(); // V: 0x4C
+		virtual VOID setPresentEnable(BOOL); // V: 0x50
+		virtual VOID getAdapterInformation(LPVOID, UINT&, UINT&); // V: 0x54
+		virtual const void*& getTempDeprecatedView(); // V: 0x58
 
-		INT m_refCount;															// 0x04
+		INT m_refCount; // 0x04
 	}; // 0x08
 
 	class RenderViewDesc
 	{
 	public:
 		//D3DXMATRIX transform;
-		LinearTransform transform;				// 0x00
-		INT type;								// 0x40
-		char pad[0x4];								// 0x44
-		FLOAT fovY;								// 0x48
-		FLOAT defaultFovY;						// 0x4C
-		FLOAT nearPlane;						// 0x50
-		FLOAT farPlane;							// 0x54
-		FLOAT aspect;							// 0x58
-		FLOAT orthoWidth;						// 0x5C
-		FLOAT orthoHeight;						// 0x60
-		FLOAT stereoSeparation;					// 0x64
-		FLOAT stereoConvergence;				// 0x68
-		Vec2 viewportOffset;					// 0x6C
-		Vec2 viewportScale;						// 0x74
+		LinearTransform transform; // 0x00
+		INT type; // 0x40
+		char pad[0x4]; // 0x44
+		FLOAT fovY; // 0x48
+		FLOAT defaultFovY; // 0x4C
+		FLOAT nearPlane; // 0x50
+		FLOAT farPlane; // 0x54
+		FLOAT aspect; // 0x58
+		FLOAT orthoWidth; // 0x5C
+		FLOAT orthoHeight; // 0x60
+		FLOAT stereoSeparation; // 0x64
+		FLOAT stereoConvergence; // 0x68
+		Vec2 viewportOffset; // 0x6C
+		Vec2 viewportScale; // 0x74
 	};
 
 	class RenderView
 	{
 	public:
-		RenderViewDesc m_desc;							// 0x00
-		char pad[0x4];										// 0x7C
-		INT m_dirtyFlags;								// 0x80
-		char pad2[0x16C];										// 0x84
-		FLOAT m_fovX;									// 0x1F0
-		FLOAT m_depthToWidthRatio;						// 0x1F4
-		FLOAT m_fovScale;								// 0x1F8
-		FLOAT m_fovScaleSqr;							// 0x1FC
-		LinearTransform m_viewMatrix;					// 0x200
-		LinearTransform m_viewMatrixTranspose;			// 0x240
-		LinearTransform m_viewMatrixInverse;			// 0x280
-		//D3DXMATRIX m_viewMatrixInverse;				// 0x280
-		LinearTransform m_projectionMatrix;				// 0x2C0
-		LinearTransform m_viewMatrixAtOrigin;			// 0x300
-		LinearTransform m_projectionMatrixTranspose;	// 0x340
-		LinearTransform m_projectionMatrixInverse;		// 0x380
-		LinearTransform m_viewProjectionMatrix;			// 0x3C0
+		RenderViewDesc m_desc; // 0x00
+		char pad[0x4]; // 0x7C
+		INT m_dirtyFlags; // 0x80
+		char pad2[0x16C]; // 0x84
+		FLOAT m_fovX; // 0x1F0
+		FLOAT m_depthToWidthRatio; // 0x1F4
+		FLOAT m_fovScale; // 0x1F8
+		FLOAT m_fovScaleSqr; // 0x1FC
+		LinearTransform m_viewMatrix; // 0x200
+		LinearTransform m_viewMatrixTranspose; // 0x240
+		LinearTransform m_viewMatrixInverse; // 0x280
+		//D3DXMATRIX m_viewMatrixInverse; // 0x280
+		LinearTransform m_projectionMatrix; // 0x2C0
+		LinearTransform m_viewMatrixAtOrigin; // 0x300
+		LinearTransform m_projectionMatrixTranspose; // 0x340
+		LinearTransform m_projectionMatrixInverse; // 0x380
+		LinearTransform m_viewProjectionMatrix; // 0x3C0
 		LinearTransform m_viewProjectionMatrixTranspose;// 0x400
-		LinearTransform m_viewProjectionMatrixInverse;	// 0x440
+		LinearTransform m_viewProjectionMatrixInverse; // 0x440
 
 		BOOL Update()
 		{
 			DxRenderer* dxRenderer = DxRenderer::GetInstance();
 			if (dxRenderer == NULL)
 				return FALSE;
-			DWORD UPDATEMATRICES = 0x006C3A90;
+			DWORD UPDATEMATRICES = OFF_RenderView_updateMatrices;
 			FLOAT screenX = static_cast<FLOAT>(dxRenderer->m_screenInfo.m_nWindowWidth);
 			FLOAT screenY = static_cast<FLOAT>(dxRenderer->m_screenInfo.m_nWindowHeight);
 			this->m_desc.aspect = screenX / screenY;
@@ -1829,23 +2476,23 @@ namespace fb
 	class GameRenderViewParams
 	{
 	public:
-		RenderView view;						// 0x00
-		RenderView prevView;					// 0x480
-		RenderView secondaryStreamingView;		// 0x900
-		INT secondaryStreamingViewEnable;		// 0xD80
-		char paad[0xC];								// 0xD84
-		LinearTransform firstPersonTransform;		// 0xD90
+		RenderView view; // 0x00
+		RenderView prevView; // 0x480
+		RenderView secondaryStreamingView; // 0x900
+		INT secondaryStreamingViewEnable; // 0xD80
+		char paad[0xC]; // 0xD84
+		LinearTransform firstPersonTransform; // 0xD90
 	};
 
 	class GameRenderer : public IGameRenderer
 	{
 	public:
-		char pad[0x48];							// 0x08
-		GameRenderViewParams m_viewParams;	// 0x50
+		char pad[0x48]; // 0x08
+		GameRenderViewParams m_viewParams; // 0x50
 	public:
 		static GameRenderer* Singleton()
 		{
-			DWORD GAMERENDERER = 0x02384D78;
+			DWORD GAMERENDERER = OFF_g_gameRenderer;
 			return *(GameRenderer**)(GAMERENDERER);
 		}
 	};
@@ -1877,8 +2524,6 @@ namespace fb
 		}
 	};//Size=0x0020
 
-
-
 	class VisualEnvironmentEntity : public ClientGameEntity
 	{
 	public:
@@ -1895,10 +2540,6 @@ namespace fb
 		fb::VisualEnvironmentState m_state;
 	};//Size=0x0130
 
-
-
-
-
 	class EmitterComponentData : public DataContainer
 	{
 	public:
@@ -1911,7 +2552,6 @@ namespace fb
 			return 0x02407480;
 		}
 	};//Size=0x0008
-
 
 	class ProcessorData : public EmitterComponentData
 	{
@@ -1932,7 +2572,6 @@ namespace fb
 		bool m_Enable; //0x002C
 		char _0x002D[3];
 	};//Size=0x0030
-
 
 	class SpawnColorRandomData : public ProcessorData
 	{
@@ -1977,14 +2616,14 @@ namespace fb
 	class IKeyboard
 	{
 	public:
-		virtual void init();	// V: 0x0
-		virtual void release();	// V: 0x4
-		virtual void preFrameUpdate(float);	// V: 0x8
-		virtual void update(float);	// V: 0xC
-		virtual bool isDown(int);	// V: 0x10
-		virtual bool wentDown(int);	// V: 0x14
-		virtual bool wentUp(int);	// V: 0x18
-		virtual void enableTypingMode(bool);	// V: 0x1C
+		virtual void init(); // V: 0x0
+		virtual void release(); // V: 0x4
+		virtual void preFrameUpdate(float); // V: 0x8
+		virtual void update(float); // V: 0xC
+		virtual bool isDown(int); // V: 0x10
+		virtual bool wentDown(int); // V: 0x14
+		virtual bool wentUp(int); // V: 0x18
+		virtual void enableTypingMode(bool); // V: 0x1C
 	};
 
 	struct EffectParams
@@ -2018,13 +2657,13 @@ namespace fb
 	public:
 		static EffectManager* GetInstance()
 		{
-			return *(EffectManager**)0x2380E10;
+			return *(EffectManager**)OFF_g_effectManager;
 		}
 
 		uint32_t stopEffect(uint32_t handle)
 		{
 			typedef uint32_t(__thiscall* tStopEffect)(void* _this, uint32_t handleId);
-			tStopEffect stopEffect = (tStopEffect)0x00F7F390;
+			tStopEffect stopEffect = (tStopEffect)OFF_EffectManager_stopEffect;
 
 			return stopEffect(this, handle);
 		}
@@ -2039,12 +2678,11 @@ namespace fb
 				fb::EffectParams* a5,
 				bool isFirstPerson,
 				char unkFlagZero);
-			tplayEffect playEffect = (tplayEffect)0x00F82D60;
+			tplayEffect playEffect = (tplayEffect)OFF_EffectManager_playEffect;
 
 			return playEffect(this, asset, tr, fb::ClientGameContext::GetInstance()->m_level, params, isFirstPerson, 0);
 		}
 	};
-
 
 	struct EnlightenMaterial
 	{
@@ -2058,11 +2696,11 @@ namespace fb
 	{
 		return gr ? &gr->m_viewParams.view : nullptr;
 	}
-	inline LinearTransform* getViewMatrix(RenderView* v)            { return v ? &v->m_viewMatrix : nullptr; }
-	inline LinearTransform* getViewMatrixInverse(RenderView* v)     { return v ? &v->m_viewMatrixInverse : nullptr; }
-	inline LinearTransform* getProjectionMatrix(RenderView* v)      { return v ? &v->m_projectionMatrix : nullptr; }
-	inline LinearTransform* getViewProjectionMatrix(RenderView* v)  { return v ? &v->m_viewProjectionMatrix : nullptr; }
-	inline void updateRenderView(RenderView* v)                     { if (v) v->Update(); }
+	inline LinearTransform* getViewMatrix(RenderView* v) { return v ? &v->m_viewMatrix : nullptr; }
+	inline LinearTransform* getViewMatrixInverse(RenderView* v) { return v ? &v->m_viewMatrixInverse : nullptr; }
+	inline LinearTransform* getProjectionMatrix(RenderView* v) { return v ? &v->m_projectionMatrix : nullptr; }
+	inline LinearTransform* getViewProjectionMatrix(RenderView* v) { return v ? &v->m_viewProjectionMatrix : nullptr; }
+	inline void updateRenderView(RenderView* v) { if (v) v->Update(); }
 
 	inline ClientPlayer* getLocalPlayer(ClientGameContext* ctx)
 	{
@@ -2085,3 +2723,41 @@ namespace fb
 }
 
 #include "../SDK_bf3/classes.h"
+
+#if !defined(_WIN64)
+static_assert(sizeof(fb::StaticModelGroupMemberData) == 0x38, "StaticModelGroupMemberData retail size");
+static_assert(offsetof(fb::StaticModelGroupMemberData, m_PhysicsPartRange) == 0x20, "StaticModelGroupMemberData::m_PhysicsPartRange");
+static_assert(sizeof(fb::MeshSetLayout) == 0x70 && offsetof(fb::MeshSetLayout, m_nameHash) == 0x68, "MeshSetLayout");
+static_assert(sizeof(fb::MeshSet) == 0x100 && sizeof(fb::MeshData) == 0x20, "MeshSet");
+static_assert(sizeof(fb::MeshSubset) == 0x94 && offsetof(fb::MeshSubset, m_elements) == 0x30, "MeshSubset");
+static_assert(sizeof(fb::MeshLayout) == 0xB0 && offsetof(fb::MeshLayout, m_data) == 0x8C, "MeshLayout");
+static_assert(sizeof(fb::RayCastHit) == 0x40, "RayCastHit");
+static_assert(sizeof(fb::PixelShaderPermutation) == 0x2C && offsetof(fb::PixelShaderPermutation, m_shader) == 0x1C && offsetof(fb::PixelShaderPermutation, m_data) == 0x24, "PixelShaderPermutation");
+static_assert(sizeof(fb::DxShaderSolution) == 0x40 && offsetof(fb::DxShaderSolution, m_pixelPermutation) == 0x20, "DxShaderSolution");
+static_assert(sizeof(fb::SurfaceShader) == 0x50 && offsetof(fb::SurfaceShader, m_solutionPairs) == 0x44, "SurfaceShader");
+static_assert(offsetof(fb::StaticModelGroupPhysics, m_partTableEnd) == 0x88, "StaticModelGroupPhysics");
+static_assert(offsetof(fb::StaticModelGroupMeshInstance, m_transform) == 0x10, "StaticModelGroupMeshInstance::m_transform");
+static_assert(offsetof(fb::StaticModelGroupPhysics, m_partTable) == 0x84, "StaticModelGroupPhysics::m_partTable");
+static_assert(sizeof(fb::ClientStaticModelGroupMember) == 0x38, "ClientStaticModelGroupMember size");
+static_assert(sizeof(fb::ClientStaticModelGroupEntity) == 0x88, "ClientStaticModelGroupEntity size");
+static_assert(offsetof(fb::ClientStaticModelGroupEntity, m_membersBegin) == 0x74, "ClientStaticModelGroupEntity::m_membersBegin");
+static_assert(sizeof(fb::DxTexture) == 0x7C, "DxTexture size");
+static_assert(offsetof(fb::DxTexture, m_width) == 0x20, "DxTexture::m_width");
+static_assert(offsetof(fb::DxTexture, m_handle) == 0x54, "DxTexture::m_handle");
+static_assert(offsetof(fb::DxTexture, m_resource) == 0x68, "DxTexture::m_resource");
+static_assert(offsetof(fb::DxTexture, m_shaderViews) == 0x70, "DxTexture::m_shaderViews");
+static_assert(sizeof(fb::TextureStreamingEntry) == 0x44, "TextureStreamingEntry size");
+static_assert(offsetof(fb::TextureStreamingManager, m_begin) == 0x30, "TextureStreamingManager::m_begin");
+static_assert(offsetof(fb::TextureStreamingManager, m_entries) == 0x40, "TextureStreamingManager::m_entries");
+static_assert(offsetof(fb::TextureStreamingManager, m_onDemandBudgetUsed) == 0xA40EC, "reservedPoolSize[2]");
+static_assert(offsetof(fb::MeshVariationManager, m_buckets) == 0x28, "MeshVariationManager::m_buckets");
+static_assert(sizeof(fb::MeshVariationNode) == 0x18, "MeshVariationNode size");
+static_assert(offsetof(fb::ShaderParameterBlock, m_entries) == 0x10, "ShaderParameterBlock::m_entries");
+static_assert(sizeof(fb::LensFlareEntity) == 0x90, "LensFlareEntity size");
+static_assert(offsetof(fb::LensFlareEntity, m_surfaceShaders) == 0x60, "LensFlareEntity::m_surfaceShaders");
+#endif
+#if !defined(_WIN64)
+static_assert(sizeof(fb::VisualEnvironmentState) == 0xF0, "VisualEnvironmentState size");
+static_assert(offsetof(fb::VisualEnvironmentState, resources) == 0xB4, "VisualEnvironmentState::resources");
+static_assert(sizeof(fb::TextureHeader) == 0x80, "TextureHeader size");
+#endif

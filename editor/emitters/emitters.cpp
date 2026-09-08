@@ -1,12 +1,14 @@
 #include "emitters.h"
 #include "../editor_context.h"
 #include "../../utils/log.h"
+
 #include "../render/render.h"
 #include <sstream>
 #include <imgui.h>
 #include <cstdio>
 #include <cstring>
 #include <cfloat>
+#include <cmath>
 #include <unordered_set>
 #include <mutex>
 #include <vector>
@@ -23,6 +25,7 @@ namespace editor::emitters
     static std::unordered_set<void*> g_emitterEntities;
     static std::unordered_map<void*, fb::EmitterEntityData*> g_emitterData;
     static std::unordered_map<void*, std::string> g_emitterNames;
+    void pruneDeadEmitters();
 
     std::unordered_map<fb::EmitterTemplateData*, EmitterEditData>& getMap() { return emitterMap; }
     EmitterTreeNode& getTree() { return emitterTree; }
@@ -117,11 +120,10 @@ namespace editor::emitters
         std::string summary{ };
         for (fb::ProcessorData* proc = emitterData->m_RootProcessor; proc; proc = proc->m_NextProcessor)
         {
-            fb::TypeInfo* type = proc->GetType();
-            if (!type || type->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+            fb::ClassInfo* procClassInfo = fb::classOf(proc);
+            if (!procClassInfo)
                 continue;
 
-            fb::ClassInfo* procClassInfo = static_cast<fb::ClassInfo*>(type);
             if (procClassInfo->m_ClassId == fb::UpdateColorData::ClassId())
             {
                 editData.colorProcessor = static_cast<fb::UpdateColorData*>(proc);
@@ -167,11 +169,9 @@ namespace editor::emitters
             if (!comp)
                 continue;
 
-            fb::TypeInfo* ti = comp->GetType();
-            if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+            fb::ClassInfo* ci = fb::classOf(comp);
+            if (!ci)
                 continue;
-
-            fb::ClassInfo* ci = static_cast<fb::ClassInfo*>(ti);
 
             if (ci->isSubclassOf((fb::ClassInfo*)fb::EmitterEntityData::ClassInfoPtr()))
             {
@@ -190,10 +190,10 @@ namespace editor::emitters
         if (!asset)
             return;
 
-        fb::TypeInfo* ti = asset->GetType();
-        if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+        fb::ClassInfo* ci = fb::classOf(asset);
+        if (!ci)
             return;
-        const uint32_t classId = static_cast<fb::ClassInfo*>(ti)->m_ClassId;
+        const uint32_t classId = ci->m_ClassId;
 
         const bool alreadyPlaced = g_placedDocs.count(asset) != 0;
         std::string leafName = asset->tryGetDebugName();
@@ -213,10 +213,10 @@ namespace editor::emitters
             auto* doc = reinterpret_cast<fb::ScalableEmitterDocument*>(asset);
             struct Q { fb::EmitterTemplateData* td; const char* tag; };
             const Q qs[] = {
-                { doc->m_TemplateDataUltra,  "Ultra"  },
-                { doc->m_TemplateDataHigh,   "High"   },
+                { doc->m_TemplateDataUltra, "Ultra" },
+                { doc->m_TemplateDataHigh, "High" },
                 { doc->m_TemplateDataMedium, "Medium" },
-                { doc->m_TemplateDataLow,    "Low"    },
+                { doc->m_TemplateDataLow, "Low" },
             };
             for (const auto& q : qs)
             {
@@ -242,10 +242,8 @@ namespace editor::emitters
             {
                 for (fb::ProcessorData* proc = td->m_RootProcessor; proc; proc = proc->m_NextProcessor)
                 {
-                    fb::TypeInfo* pti = proc->GetType();
-                    if (!pti || pti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                        continue;
-                    if (static_cast<fb::ClassInfo*>(pti)->m_ClassId != fb::EmitterData::ClassId())
+                    fb::ClassInfo* pci = fb::classOf(proc);
+                    if (!pci || pci->m_ClassId != fb::EmitterData::ClassId())
                         continue;
                     for (fb::EmitterDocument* child : static_cast<fb::EmitterData*>(proc)->m_EmitterAssets)
                         if (child)
@@ -254,7 +252,7 @@ namespace editor::emitters
             }
         }
     }
-#endif // BFVE_GAME_BF4
+#endif
 
     void scan()
     {
@@ -273,15 +271,7 @@ namespace editor::emitters
             return;
         }
 
-        [[maybe_unused]] size_t bpSeen = 0;
-        [[maybe_unused]] size_t bpSkipNullObject = 0;
-        [[maybe_unused]] size_t bpSkipNoInnerType = 0;
-        [[maybe_unused]] size_t bpSkipNotEffectEntity = 0;
-
 #if defined(BFVE_GAME_BF4)
-        std::unordered_map<std::string, size_t> classHistogram;
-        size_t totalCompartments = 0;
-        size_t totalObjects = 0;
         std::vector<fb::EmitterAsset*> pendingDocs;
 #endif
 
@@ -290,26 +280,15 @@ namespace editor::emitters
             if (!comp)
                 continue;
 
-#if defined(BFVE_GAME_BF4)
-            ++totalCompartments;
-#endif
-
             for (const auto& obj : comp->m_objects)
             {
                 if (!obj) continue;
 
-                fb::TypeInfo* typeInfo = obj->GetType();
-                if (!typeInfo || typeInfo->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+                fb::ClassInfo* classInfo = fb::classOf(obj);
+                if (!classInfo)
                     continue;
 
-                fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(typeInfo);
                 const uint32_t classId = classInfo->m_ClassId;
-#if defined(BFVE_GAME_BF4)
-                ++totalObjects;
-                const char* clsName = (classInfo->m_InfoData && classInfo->m_InfoData->m_Name)
-                    ? classInfo->m_InfoData->m_Name : "?";
-                ++classHistogram[clsName];
-#endif
 
 #if defined(BFVE_GAME_BF3)
                 if (classId == fb::EmitterTemplateData::ClassId())
@@ -321,26 +300,13 @@ namespace editor::emitters
 #else
                 if (classInfo->isSubclassOf((fb::ClassInfo*)fb::EffectBlueprint::ClassInfoPtr()))
                 {
-                    bpSeen++;
                     fb::EffectBlueprint* bp = reinterpret_cast<fb::EffectBlueprint*>(obj);
                     if (!bp->m_Object)
-                    {
-                        bpSkipNullObject++;
                         continue;
-                    }
 
-                    fb::TypeInfo* innerType = bp->m_Object->GetType();
-                    if (!innerType || innerType->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-                    {
-                        bpSkipNoInnerType++;
+                    fb::ClassInfo* innerCi = fb::classOf(bp->m_Object);
+                    if (!innerCi || !innerCi->isSubclassOf((fb::ClassInfo*)fb::EffectEntityData::ClassInfoPtr()))
                         continue;
-                    }
-                    fb::ClassInfo* innerCi = static_cast<fb::ClassInfo*>(innerType);
-                    if (!innerCi->isSubclassOf((fb::ClassInfo*)fb::EffectEntityData::ClassInfoPtr()))
-                    {
-                        bpSkipNotEffectEntity++;
-                        continue;
-                    }
 
                     fb::EffectEntityData* effect = reinterpret_cast<fb::EffectEntityData*>(bp->m_Object);
                     int emCounter = 0;
@@ -372,43 +338,7 @@ namespace editor::emitters
         applyPendingEdits();
 
         scanned = true;
-#if defined(BFVE_GAME_BF4)
-        logger::info("Found {} emitters (compartments={} objects={} EffectBlueprints seen={} skip-null={} skip-notype={} skip-notEffect={})",
-            emitterMap.size(), totalCompartments, totalObjects,
-            bpSeen, bpSkipNullObject, bpSkipNoInnerType, bpSkipNotEffectEntity);
-
-        std::vector<std::pair<std::string, size_t>> sorted(classHistogram.begin(), classHistogram.end());
-        std::sort(sorted.begin(), sorted.end(),
-            [](const auto& a, const auto& b) { return a.second > b.second; });
-        const size_t topN = std::min<size_t>(30, sorted.size());
-        for (size_t i = 0; i < topN; ++i)
-            logger::info("  [scan-class] {}: {}", sorted[i].first, sorted[i].second);
-
-        size_t repeatedNames = 0;
-        for (const auto& [name, docs] : nameToDocs)
-        {
-            if (docs.size() < 2)
-                continue;
-
-            ++repeatedNames;
-            bool allSameName = true;
-            const std::string firstDocName = docs.front() ? docs.front()->tryGetDebugName() : std::string{ };
-            for (fb::EmitterAsset* d : docs)
-            {
-                if (!d || d->tryGetDebugName() != firstDocName)
-                    allSameName = false;
-            }
-
-            logger::info("  [repeat] '{}' x{} - docName='{}' sameAssetName={}",
-                name, docs.size(), firstDocName, allSameName ? "yes" : "no");
-            for (fb::EmitterAsset* d : docs)
-                logger::info("      doc={} name='{}'",
-                    static_cast<void*>(d), d ? d->tryGetDebugName() : std::string{});
-        }
-        logger::info("Repeated names: {}", repeatedNames);
-#else
         logger::info("Found {} emitters", emitterMap.size());
-#endif
     }
 
 #if defined(BFVE_GAME_BF4)
@@ -438,11 +368,11 @@ namespace editor::emitters
             };
 
         auto* asset = data->m_Emitter;
-        fb::TypeInfo* ti = asset->GetType();
-        if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+        fb::ClassInfo* ci = fb::classOf(asset);
+        if (!ci)
             return;
 
-        const uint32_t classId = static_cast<fb::ClassInfo*>(ti)->m_ClassId;
+        const uint32_t classId = ci->m_ClassId;
 
         if (classId == fb::ScalableEmitterDocument::ClassId())
         {
@@ -473,8 +403,8 @@ namespace editor::emitters
             return {};
 
         auto* asset = data->m_Emitter;
-        fb::TypeInfo* ti = asset->GetType();
-        if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
+        fb::ClassInfo* ci = fb::classOf(asset);
+        if (!ci)
             return {};
 
         std::string foundName;
@@ -486,7 +416,7 @@ namespace editor::emitters
                     foundName = it->second.name;
             };
 
-        const uint32_t classId = static_cast<fb::ClassInfo*>(ti)->m_ClassId;
+        const uint32_t classId = ci->m_ClassId;
         if (classId == fb::ScalableEmitterDocument::ClassId())
         {
             auto* doc = reinterpret_cast<fb::ScalableEmitterDocument*>(asset);
@@ -694,21 +624,14 @@ void EmitterColorSnapshot::captureFrom(fb::UpdateColorData* colorProc)
     color = colorProc->m_Color;
     hasPolynomial = false;
 
-    if (colorProc->m_Pre)
+    fb::ClassInfo* preClass = fb::classOf(colorProc->m_Pre);
+    if (preClass && preClass->m_ClassId == fb::PolynomialColorInterpData::ClassId())
     {
-        fb::TypeInfo* type = colorProc->m_Pre->GetType();
-        if (type && type->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
-        {
-            fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(type);
-            if (classInfo->m_ClassId == fb::PolynomialColorInterpData::ClassId())
-            {
-                hasPolynomial = true;
-                fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
-                color0 = poly->m_Color0;
-                color1 = poly->m_Color1;
-                coefficients = poly->m_Coefficients;
-            }
-        }
+        hasPolynomial = true;
+        fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
+        color0 = poly->m_Color0;
+        color1 = poly->m_Color1;
+        coefficients = poly->m_Coefficients;
     }
 }
 
@@ -719,20 +642,16 @@ void EmitterColorSnapshot::restoreTo(fb::UpdateColorData* colorProc) const
 
     colorProc->m_Color = color;
 
-    if (hasPolynomial && colorProc->m_Pre)
+    if (!hasPolynomial)
+        return;
+
+    fb::ClassInfo* preClass = fb::classOf(colorProc->m_Pre);
+    if (preClass && preClass->m_ClassId == fb::PolynomialColorInterpData::ClassId())
     {
-        fb::TypeInfo* type = colorProc->m_Pre->GetType();
-        if (type && type->GetTypeCode() == fb::BasicTypesEnum::kTypeCode_Class)
-        {
-            fb::ClassInfo* classInfo = static_cast<fb::ClassInfo*>(type);
-            if (classInfo->m_ClassId == fb::PolynomialColorInterpData::ClassId())
-            {
-                fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
-                poly->m_Color0 = color0;
-                poly->m_Color1 = color1;
-                poly->m_Coefficients = coefficients;
-            }
-        }
+        fb::PolynomialColorInterpData* poly = static_cast<fb::PolynomialColorInterpData*>(colorProc->m_Pre);
+        poly->m_Color0 = color0;
+        poly->m_Color1 = color1;
+        poly->m_Coefficients = coefficients;
     }
 }
 
@@ -761,21 +680,18 @@ void EmitterSpawnColorSnapshot::restoreTo(fb::SpawnColorRandomData* proc) const
 #if defined(BFVE_GAME_BF4)
 namespace
 {
-    // typeinfo dump
-    constexpr size_t kProcValueStart = 0x20;
-    constexpr size_t kEvalValueStart = 0x18;
+    constexpr size_t kProcValueStart = offsetof(fb::ProcessorData, m_EvaluatorInput);
+    constexpr size_t kEvalValueStart = sizeof(fb::EvaluatorData);
 
     uint32_t classIdOf(fb::DataContainer* o)
     {
-        fb::TypeInfo* ti = o ? o->GetType() : nullptr;
-        if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class) return 0;
-        return static_cast<fb::ClassInfo*>(ti)->m_ClassId;
+        fb::ClassInfo* ci = fb::classOf(o);
+        return ci ? ci->m_ClassId : 0;
     }
     size_t totalSizeOf(fb::DataContainer* o)
     {
-        fb::TypeInfo* ti = o ? o->GetType() : nullptr;
-        auto* tid = ti ? ti->GetTypeInfoData() : nullptr;
-        return tid ? tid->m_TotalSize : 0;
+        fb::ClassInfo* ci = fb::classOf(o);
+        return ci ? ci->GetTypeInfoData()->m_TotalSize : 0;
     }
 
     bool procHasPointers(uint32_t cid)
@@ -926,73 +842,54 @@ void EmitterProcSnapshot::restoreTo(fb::EmitterTemplateData* d) const
 
 static bool entityIsSubclassOf(void* e, fb::ClassInfo* base)
 {
-    fb::TypeInfo* ti = reinterpret_cast<fb::ITypedObject*>(e)->GetType();
-    if (!ti || ti->GetTypeCode() != fb::BasicTypesEnum::kTypeCode_Class)
-        return false;
-    return static_cast<fb::ClassInfo*>(ti)->isSubclassOf(base);
+    fb::ClassInfo* ci = fb::classOf(e);
+    return ci && ci->isSubclassOf(base);
 }
 
 static fb::EmitterEntityData* emitterData(void* emitterEntity)
 {
 #if defined(BFVE_GAME_BF4)
-    return *reinterpret_cast<fb::EmitterEntityData**>(reinterpret_cast<char*>(emitterEntity) + 0x80);
+    return static_cast<fb::EmitterEntityData*>(static_cast<fb::EffectEntity*>(emitterEntity)->m_data);
 #else
-    return *reinterpret_cast<fb::EmitterEntityData**>(reinterpret_cast<char*>(emitterEntity) + 0x74);
+    return static_cast<fb::EmitterEntity*>(emitterEntity)->m_emitterEntityData;
 #endif
 }
 
 #if defined(BFVE_GAME_BF4)
 static bool readEmitterPos(void* e, fb::Vec3& out)
 {
-    /*movaps  xmm0, xmmword ptr[rcx + 40h]
-        .text:0000000140A73464                 movaps  xmmword ptr[rdx], xmm0
-        .text : 0000000140A73467                 movaps  xmm1, xmmword ptr[rcx + 50h]
-        .text : 0000000140A7346B                 movaps  xmmword ptr[rdx + 10h], xmm1
-        .text : 0000000140A7346F                 movaps  xmm0, xmmword ptr[rcx + 60h]
-        .text : 0000000140A73473                 movaps  xmmword ptr[rdx + 20h], xmm0
-        .text : 0000000140A73477                 movaps  xmm1, xmmword ptr[rcx + 70h]
-        .text : 0000000140A7347B                 movaps  xmmword ptr[rdx + 30h], xmm1*/
-    __try
-    {
-        if (!e || *reinterpret_cast<std::uintptr_t*>(e) != 0x141CF2EC0)
-            return false;
-        void* cur = e;
-
-        // EffectEntity : public SpatialEntity
-        void* parent = *reinterpret_cast<void**>(reinterpret_cast<char*>(cur) + 0x90);
-        const auto pv = reinterpret_cast<std::uintptr_t>(parent);
-        const std::uintptr_t pvt = *reinterpret_cast<std::uintptr_t*>(parent);
-        if (pvt < 0x140000000 || pvt >= 0x143000000)
-            return false;
-
-        cur = parent;
-
-        out = *reinterpret_cast<fb::Vec3*>(reinterpret_cast<char*>(cur) + 0x70);
-        return true;
-    }
-    __except (1)
-    {
+    auto* ent = static_cast<fb::EffectEntity*>(e);
+    if (!ent || *reinterpret_cast<std::uintptr_t*>(ent) != OFF_vt_ClientEmitterEntity)
         return false;
-    }
+    fb::EffectEntity* parent = ent->m_parent;
+    if (!fb::isValidPtr(parent))
+        return false;
+    const std::uintptr_t pvt = *reinterpret_cast<std::uintptr_t*>(parent);
+    if (pvt < 0x140000000 || pvt >= 0x143000000)
+        return false;
+    out = parent->m_transform.m_trans;
+    return true;
 }
 
 static int bf4GatherChildren(void* e, void** out, int maxN)
 {
-    __try
+    if (!fb::isValidPtr(e))
+        return 0;
+
+    int n = 0;
+    for (fb::EffectEntity* c = static_cast<fb::EffectEntity*>(e)->m_firstChild;
+         c && n < maxN;
+         c = c->m_nextSibling)
     {
-        int n = 0;
-        for (void* c = *reinterpret_cast<void**>(reinterpret_cast<char*>(e) + 0xA0);
-             c && n < maxN;
-             c = *reinterpret_cast<void**>(reinterpret_cast<char*>(c) + 0x98))
-        {
-            out[n++] = c;
-        }
-        return n;
+        if (!fb::isValidPtr(c) || (reinterpret_cast<std::uintptr_t>(c) & 7) != 0)
+            break;
+
+        out[n++] = c;
     }
-    __except (1) { return -1; }
+    return n;
 }
 
-static bool drawEmitterMarkerBf4(void* emitter, fb::EmitterEntityData* data, ImDrawList* dl, ImFont* font, float fontSize)
+static bool drawEmitterMarkerBf4(void* emitter, fb::EmitterEntityData* data)
 {
     fb::Vec3 pos{ };
     if (!readEmitterPos(emitter, pos))
@@ -1009,7 +906,7 @@ static bool drawEmitterMarkerBf4(void* emitter, fb::EmitterEntityData* data, ImD
     const ImColor col = render::Colors::Orange;
 
     float r = 700.0f / depth;
-    if (r < 3.0f)  r = 3.0f;
+    if (r < 3.0f) r = 3.0f;
     if (r > 24.0f) r = 24.0f;
     render::circle(sp, r, col);
 
@@ -1021,10 +918,8 @@ static bool drawEmitterMarkerBf4(void* emitter, fb::EmitterEntityData* data, ImD
     else
         std::snprintf(buf, sizeof(buf), "emitter  %.0fm", depth);
 
-    const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
-    const ImVec2 tpos{ sp.x - ts.x * 0.5f, sp.y + r + 3.0f };
-    dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
-    dl->AddText(font, fontSize, tpos, col, buf);
+    const ImVec2 tpos{ sp.x - render::textWidth(buf, 1.2f) * 0.5f, sp.y + r + 3.0f };
+    render::label(tpos, buf, col, 1.2f);
     return true;
 }
 
@@ -1032,10 +927,6 @@ void editor::emitters::renderOverlay()
 {
     if (!showOverlay)
         return;
-
-    ImDrawList* dl = ImGui::GetBackgroundDrawList();
-    ImFont* font = ImGui::GetFont();
-    const float fontSize = ImGui::GetFontSize() * 1.2f;
 
     fb::ClassInfo* const emitterClass = reinterpret_cast<fb::ClassInfo*>(fb::EmitterEntity::ClassInfoPtr());
 
@@ -1053,7 +944,7 @@ void editor::emitters::renderOverlay()
                 continue;
             if (!drawn.insert(emitter).second)
                 continue;
-            drawEmitterMarkerBf4(emitter, emitterData(emitter), dl, font, fontSize);
+            drawEmitterMarkerBf4(emitter, emitterData(emitter));
         }
     }
 
@@ -1067,7 +958,7 @@ void editor::emitters::renderOverlay()
         if (auto it = g_emitterData.find(emitter); it != g_emitterData.end())
             data = it->second;
 
-        if (!drawEmitterMarkerBf4(emitter, data, dl, font, fontSize))
+        if (!drawEmitterMarkerBf4(emitter, data))
             dead.push_back(emitter);
     }
 
@@ -1078,43 +969,94 @@ void editor::emitters::renderOverlay()
         g_emitterNames.erase(d);
     }
 }
-#else // BFVE_GAME_BF3
+
+size_t editor::emitters::trackedEmitterCount() { return g_emitterEntities.size(); }
+
+bool editor::emitters::nearestEmitter(const fb::Vec3& pos, float maxDist, std::string& name, float* distance)
+{
+    float best = maxDist * maxDist;
+    void* bestEmitter = nullptr;
+    for (void* emitter : g_emitterEntities)
+    {
+        fb::Vec3 p{ };
+        if (!readEmitterPos(emitter, p))
+            continue;
+        const float dx = p.m_x - pos.m_x, dy = p.m_y - pos.m_y, dz = p.m_z - pos.m_z;
+        const float d = dx * dx + dy * dy + dz * dz;
+        if (d < best)
+        {
+            best = d;
+            bestEmitter = emitter;
+        }
+    }
+    if (!bestEmitter)
+        return false;
+    if (distance)
+        *distance = std::sqrt(best);
+    fb::EmitterEntityData* data = nullptr;
+    if (auto it = g_emitterData.find(bestEmitter); it != g_emitterData.end())
+        data = it->second;
+    name = resolveEmitterName(data ? data : emitterData(bestEmitter));
+    if (name.empty())
+        name = "(emitter without a template name)";
+    return true;
+}
+#else
 
 using getWorldTransform_t = void(__thiscall*)(void* thisptr, fb::LinearTransform* out);
-static const getWorldTransform_t getWorldTransform = reinterpret_cast<getWorldTransform_t>(0x0054B770);
+static const getWorldTransform_t getWorldTransform = reinterpret_cast<getWorldTransform_t>(OFF_EffectEntity_getWorldTransform);
 
-static bool readEmitterWorldPos(void* e, fb::Vec3& out)
+static void readEmitterWorldPos(void* e, fb::Vec3& out)
 {
-    __try
-    {
-        alignas(16) fb::LinearTransform xf{ };
-        getWorldTransform(e, &xf);
-        out = xf.m_trans;
-        return true;
-    }
-    __except (1)
-    {
-        return false;
-    }
+    alignas(16) fb::LinearTransform xf{ };
+    getWorldTransform(e, &xf);
+    out = xf.m_trans;
 }
 
-// didnt bother to understand this layour, ghetto and works
-static int sehGatherChildren(void* e, void** out, int maxN)
+static int gatherChildren(void* e, void** out, int maxN)
 {
-    __try
-    {
-        int n = 0;
-        for (void* c = *reinterpret_cast<void**>(reinterpret_cast<char*>(e) + 0x60);
-             c && n < maxN;
-             c = *reinterpret_cast<void**>(reinterpret_cast<char*>(c) + 0x5C))
-        {
-            out[n++] = c;
-        }
-		//printf("Child count for %p: %d\n", e, n);
+    if (!fb::isValidPtr(e))
+        return 0;
 
-        return n;
+    int n = 0;
+    for (fb::EffectEntity* c = static_cast<fb::EffectEntity*>(e)->m_firstChild;
+         c && n < maxN;
+         c = c->m_nextSibling)
+    {
+        if (!fb::isValidPtr(c) || (reinterpret_cast<std::uintptr_t>(c) & 3) != 0)
+            break;
+
+        out[n++] = c;
     }
-    __except (1) { return -1; }
+    return n;
+}
+
+void editor::emitters::pruneDeadEmitters()
+{
+    fb::ClassInfo* const emitterClass = reinterpret_cast<fb::ClassInfo*>(fb::ClientEmitterEntity::ClassInfoPtr());
+    std::unordered_set<void*> live;
+    fb::EntityList<void> fx{ reinterpret_cast<fb::ClassInfo*>(fb::EffectEntity::ClassInfoPtr()) };
+    void* e;
+    while ((e = fx.nextOfKind()) != nullptr)
+    {
+        if (entityIsSubclassOf(e, emitterClass))
+            live.insert(e);
+        void* kids[20];
+        const int n = gatherChildren(e, kids, static_cast<int>(std::size(kids)));
+        for (int i = 0; i < n; ++i)
+            if (entityIsSubclassOf(kids[i], emitterClass))
+                live.insert(kids[i]);
+    }
+    for (auto it = g_emitterEntities.begin(); it != g_emitterEntities.end();)
+    {
+        if (live.count(*it))
+        {
+            ++it;
+            continue;
+        }
+        g_emitterData.erase(*it);
+        it = g_emitterEntities.erase(it);
+    }
 }
 
 static std::string resolveEmitterName(fb::EmitterEntityData* data)
@@ -1125,24 +1067,23 @@ static std::string resolveEmitterName(fb::EmitterEntityData* data)
     return data->m_Emitter->tryGetDebugName();
 }
 
-static bool drawEmitterMarker(void* emitter, fb::EmitterEntityData* data, ImDrawList* dl, ImFont* font, float fontSize)
+static void drawEmitterMarker(void* emitter, fb::EmitterEntityData* data)
 {
     fb::Vec3 pos{ };
-    if (!readEmitterWorldPos(emitter, pos))
-        return false;
+    readEmitterWorldPos(emitter, pos);
 
     ImVec2 sp{ };
     float depth = 0.0f;
     if (!render::worldToScreen(pos, sp, depth))
-        return true;
+        return;
 
     if (depth > editor::emitters::overlayMaxDistance)
-        return true;
+        return;
 
     const ImColor col = render::Colors::Orange;
 
     float r = 700.0f / depth;
-    if (r < 3.0f)  r = 3.0f;
+    if (r < 3.0f) r = 3.0f;
     if (r > 24.0f) r = 24.0f;
     render::circle(sp, r, col);
 
@@ -1154,11 +1095,8 @@ static bool drawEmitterMarker(void* emitter, fb::EmitterEntityData* data, ImDraw
     else
         std::snprintf(buf, sizeof(buf), "emitter  %.0fm", depth);
 
-    const ImVec2 ts = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, buf);
-    const ImVec2 tpos{ sp.x - ts.x * 0.5f, sp.y + r + 3.0f };
-    dl->AddText(font, fontSize, ImVec2{ tpos.x + 1.0f, tpos.y + 1.0f }, IM_COL32(0, 0, 0, 200), buf);
-    dl->AddText(font, fontSize, tpos, col, buf);
-    return true;
+    const ImVec2 tpos{ sp.x - render::textWidth(buf, 1.2f) * 0.5f, sp.y + r + 3.0f };
+    render::label(tpos, buf, col, 1.2f);
 }
 
 void editor::emitters::onEmitterEntityCreated(fb::EmitterEntityData* data, void* entity)
@@ -1171,16 +1109,46 @@ void editor::emitters::onEmitterEntityCreated(fb::EmitterEntityData* data, void*
         g_emitterData[entity] = data;
 }
 
+void editor::emitters::lightOwners(std::unordered_map<void*, std::string>& out)
+{
+    fb::ClassInfo* const emitterClass = reinterpret_cast<fb::ClassInfo*>(fb::ClientEmitterEntity::ClassInfoPtr());
+    const auto add = [&](void* emitter, fb::EmitterEntityData* data)
+    {
+        void* light = static_cast<fb::ClientEmitterEntity*>(emitter)->m_pointLight;
+        if (light && !out.count(light))
+            out[light] = resolveEmitterName(data ? data : emitterData(emitter));
+    };
+
+    pruneDeadEmitters();
+    fb::EntityList<void> fx{ reinterpret_cast<fb::ClassInfo*>(fb::EffectEntity::ClassInfoPtr()) };
+    void* e;
+    while ((e = fx.nextOfKind()) != nullptr)
+    {
+        if (entityIsSubclassOf(e, emitterClass))
+            add(e, nullptr);
+        void* kids[20];
+        const int n = gatherChildren(e, kids, static_cast<int>(std::size(kids)));
+        for (int i = 0; i < n; ++i)
+            if (entityIsSubclassOf(kids[i], emitterClass))
+                add(kids[i], nullptr);
+    }
+    for (void* emitter : g_emitterEntities)
+    {
+        fb::EmitterEntityData* data = nullptr;
+        if (auto it = g_emitterData.find(emitter); it != g_emitterData.end())
+            data = it->second;
+        add(emitter, data);
+    }
+}
+
 void editor::emitters::renderOverlay()
 {
     if (!showOverlay)
         return;
 
-    ImDrawList* dl = ImGui::GetBackgroundDrawList();
-    ImFont* font = ImGui::GetFont();
-    const float fontSize = ImGui::GetFontSize() * 1.2f;
-
     fb::ClassInfo* const emitterClass = reinterpret_cast<fb::ClassInfo*>(fb::ClientEmitterEntity::ClassInfoPtr());
+
+    pruneDeadEmitters();
 
     std::unordered_set<void*> drawn;
     fb::EntityList<void> fx{ reinterpret_cast<fb::ClassInfo*>(fb::EffectEntity::ClassInfoPtr()) };
@@ -1188,7 +1156,7 @@ void editor::emitters::renderOverlay()
     while ((e = fx.nextOfKind()) != nullptr)
     {
         void* kids[20];
-        const int n = sehGatherChildren(e, kids, sizeof(kids));
+        const int n = gatherChildren(e, kids, static_cast<int>(std::size(kids)));
         for (int i = 0; i < n; ++i)
         {
             void* emitter = kids[i];
@@ -1196,11 +1164,10 @@ void editor::emitters::renderOverlay()
                 continue;
             if (!drawn.insert(emitter).second)
                 continue;
-            drawEmitterMarker(emitter, emitterData(emitter), dl, font, fontSize);
+            drawEmitterMarker(emitter, emitterData(emitter));
         }
     }
 
-    std::vector<void*> dead;
     for (void* emitter : g_emitterEntities)
     {
         if (drawn.count(emitter))
@@ -1210,15 +1177,41 @@ void editor::emitters::renderOverlay()
         if (auto it = g_emitterData.find(emitter); it != g_emitterData.end())
             data = it->second;
 
-        if (!drawEmitterMarker(emitter, data, dl, font, fontSize))
-            dead.push_back(emitter);
+        drawEmitterMarker(emitter, data);
     }
+}
 
-    for (void* d : dead)
+size_t editor::emitters::trackedEmitterCount() { return g_emitterEntities.size(); }
+
+bool editor::emitters::nearestEmitter(const fb::Vec3& pos, float maxDist, std::string& name, float* distance)
+{
+    pruneDeadEmitters();
+
+    float best = maxDist * maxDist;
+    void* bestEmitter = nullptr;
+    for (void* emitter : g_emitterEntities)
     {
-        g_emitterEntities.erase(d);
-        g_emitterData.erase(d);
+        fb::Vec3 p{ };
+        readEmitterWorldPos(emitter, p);
+        const float dx = p.m_x - pos.m_x, dy = p.m_y - pos.m_y, dz = p.m_z - pos.m_z;
+        const float d = dx * dx + dy * dy + dz * dz;
+        if (d < best)
+        {
+            best = d;
+            bestEmitter = emitter;
+        }
     }
+    if (!bestEmitter)
+        return false;
+    if (distance)
+        *distance = std::sqrt(best);
+    fb::EmitterEntityData* data = nullptr;
+    if (auto it = g_emitterData.find(bestEmitter); it != g_emitterData.end())
+        data = it->second;
+    name = resolveEmitterName(data ? data : emitterData(bestEmitter));
+    if (name.empty())
+        name = "(emitter without a template name)";
+    return true;
 }
 
 #endif

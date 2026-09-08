@@ -6,9 +6,9 @@
 namespace fb
 {
     ////////////////////////////////////////
-// ClassId:   00226
+// ClassId: 00226
 // RuntimeId: 00487
-// TypeInfo:  0x023C6FA0
+// TypeInfo: 0x023C6FA0
 #ifndef _EntityBusPeer_
 #define _EntityBusPeer_
     class EntityBusPeer
@@ -27,9 +27,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00399
+    // ClassId: 00399
     // RuntimeId: 00485
-    // TypeInfo:  0x023C6F50
+    // TypeInfo: 0x023C6F50
 #ifndef _Entity_
 #define _Entity_
     class Entity : public EntityBusPeer
@@ -48,9 +48,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00802
+    // ClassId: 00802
     // RuntimeId: 00005
-    // TypeInfo:  0x023C23D0
+    // TypeInfo: 0x023C23D0
 #ifndef _DataContainer_
 #define _DataContainer_
 #pragma pack(push, 4)
@@ -75,9 +75,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00805
+    // ClassId: 00805
     // RuntimeId: 06491
-    // TypeInfo:  0x02407480
+    // TypeInfo: 0x02407480
 #ifndef _EmitterComponentData_
 #define _EmitterComponentData_
 #pragma pack(push, 4)
@@ -101,9 +101,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00806
+    // ClassId: 00806
     // RuntimeId: 06495
-    // TypeInfo:  0x024074D8
+    // TypeInfo: 0x024074D8
 #ifndef _EvaluatorData_
 #define _EvaluatorData_
 #pragma pack(push, 4)
@@ -128,9 +128,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00810
+    // ClassId: 00810
     // RuntimeId: 06523
-    // TypeInfo:  0x02407708
+    // TypeInfo: 0x02407708
 #ifndef _SphereEvaluatorData_
 #define _SphereEvaluatorData_
 #pragma pack(push, 16)
@@ -159,9 +159,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00811
+    // ClassId: 00811
     // RuntimeId: 06521
-    // TypeInfo:  0x024076DC
+    // TypeInfo: 0x024076DC
 #ifndef _BoxEvaluatorData_
 #define _BoxEvaluatorData_
 #pragma pack(push, 16)
@@ -188,9 +188,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00812
+    // ClassId: 00812
     // RuntimeId: 06519
-    // TypeInfo:  0x024076B0
+    // TypeInfo: 0x024076B0
 #ifndef _RandomXYZEvaluatorData_
 #define _RandomXYZEvaluatorData_
 #pragma pack(push, 4)
@@ -220,9 +220,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00813
+    // ClassId: 00813
     // RuntimeId: 06517
-    // TypeInfo:  0x02407684
+    // TypeInfo: 0x02407684
 #ifndef _RandomEvaluatorData_
 #define _RandomEvaluatorData_
 #pragma pack(push, 4)
@@ -248,9 +248,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00814
+    // ClassId: 00814
     // RuntimeId: 06515
-    // TypeInfo:  0x02407658
+    // TypeInfo: 0x02407658
 #ifndef _RotateVectorData_
 #define _RotateVectorData_
 #pragma pack(push, 4)
@@ -278,9 +278,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00815
+    // ClassId: 00815
     // RuntimeId: 06513
-    // TypeInfo:  0x0240762C
+    // TypeInfo: 0x0240762C
 #ifndef _SampleTextureData_
 #define _SampleTextureData_
 #pragma pack(push, 16)
@@ -312,9 +312,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00816
+    // ClassId: 00816
     // RuntimeId: 06511
-    // TypeInfo:  0x02407600
+    // TypeInfo: 0x02407600
 #ifndef _PolynomialOperatorData_
 #define _PolynomialOperatorData_
 #pragma pack(push, 16)
@@ -345,9 +345,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00817
+    // ClassId: 00817
     // RuntimeId: 06505
-    // TypeInfo:  0x024075B4
+    // TypeInfo: 0x024075B4
 #ifndef _PolynomialData_
 #define _PolynomialData_
 #pragma pack(push, 16)
@@ -377,9 +377,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00803
+    // ClassId: 00803
     // RuntimeId: 06503
-    // TypeInfo:  0x02407588
+    // TypeInfo: 0x02407588
 #ifndef _EmitterSystemSettings_
 #define _EmitterSystemSettings_
 #pragma pack(push, 4)
@@ -449,9 +449,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01534
+    // ClassId: 01534
     // RuntimeId: 00104
-    // TypeInfo:  0x023C2D44
+    // TypeInfo: 0x023C2D44
 #ifndef _GameDataContainer_
 #define _GameDataContainer_
 #pragma pack(push, 4)
@@ -475,9 +475,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02019
+    // ClassId: 02019
     // RuntimeId: 00086
-    // TypeInfo:  0x023C2C44
+    // TypeInfo: 0x023C2C44
 #ifndef _Asset_
 #define _Asset_
 #pragma pack(push, 4)
@@ -502,9 +502,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00804
+    // ClassId: 00804
     // RuntimeId: 06497
-    // TypeInfo:  0x02407504
+    // TypeInfo: 0x02407504
 #ifndef _EmitterTemplateData_
 #define _EmitterTemplateData_
 #pragma pack(push, 16)
@@ -571,9 +571,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00807
+    // ClassId: 00807
     // RuntimeId: 06529
-    // TypeInfo:  0x0240778C
+    // TypeInfo: 0x0240778C
 #ifndef _PolynomialColorInterpData_
 #define _PolynomialColorInterpData_
 #pragma pack(push, 16)
@@ -601,9 +601,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00818
+    // ClassId: 00818
     // RuntimeId: 06493
-    // TypeInfo:  0x024074AC
+    // TypeInfo: 0x024074AC
 #ifndef _ProcessorData_
 #define _ProcessorData_
 #pragma pack(push, 16)
@@ -634,9 +634,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00808
+    // ClassId: 00808
     // RuntimeId: 06527
-    // TypeInfo:  0x02407760
+    // TypeInfo: 0x02407760
 #ifndef _ConstantEvaluatorData_
 #define _ConstantEvaluatorData_
 #pragma pack(push, 4)
@@ -661,9 +661,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02020
+    // ClassId: 02020
     // RuntimeId: 06479
-    // TypeInfo:  0x02407404
+    // TypeInfo: 0x02407404
 #ifndef _EmitterSystemAsset_
 #define _EmitterSystemAsset_
 #pragma pack(push, 4)
@@ -690,9 +690,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01540
+    // ClassId: 01540
     // RuntimeId: 00200
-    // TypeInfo:  0x023C4F88
+    // TypeInfo: 0x023C4F88
 #ifndef _GameObjectData_
 #define _GameObjectData_
 #pragma pack(push, 4)
@@ -719,9 +719,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02021
+    // ClassId: 02021
     // RuntimeId: 06475
-    // TypeInfo:  0x024073AC
+    // TypeInfo: 0x024073AC
 #ifndef _EmitterAsset_
 #define _EmitterAsset_
 #pragma pack(push, 4)
@@ -745,9 +745,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00819
+    // ClassId: 00819
     // RuntimeId: 06471
-    // TypeInfo:  0x02407370
+    // TypeInfo: 0x02407370
 #ifndef _UpdateLinearVelocityData_
 #define _UpdateLinearVelocityData_
 #pragma pack(push, 16)
@@ -771,9 +771,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00820
+    // ClassId: 00820
     // RuntimeId: 06469
-    // TypeInfo:  0x02407344
+    // TypeInfo: 0x02407344
 #ifndef _UpdateOrientationData_
 #define _UpdateOrientationData_
 #pragma pack(push, 16)
@@ -797,9 +797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00821
+    // ClassId: 00821
     // RuntimeId: 06467
-    // TypeInfo:  0x02407318
+    // TypeInfo: 0x02407318
 #ifndef _UpdateClipScaleData_
 #define _UpdateClipScaleData_
 #pragma pack(push, 16)
@@ -825,9 +825,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00822
+    // ClassId: 00822
     // RuntimeId: 06465
-    // TypeInfo:  0x024072EC
+    // TypeInfo: 0x024072EC
 #ifndef _UpdateCameraProximityData_
 #define _UpdateCameraProximityData_
 #pragma pack(push, 16)
@@ -854,9 +854,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00823
+    // ClassId: 00823
     // RuntimeId: 06463
-    // TypeInfo:  0x024072C0
+    // TypeInfo: 0x024072C0
 #ifndef _UpdateAlphaLevelScaleData_
 #define _UpdateAlphaLevelScaleData_
 #pragma pack(push, 16)
@@ -882,9 +882,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00824
+    // ClassId: 00824
     // RuntimeId: 06461
-    // TypeInfo:  0x02407294
+    // TypeInfo: 0x02407294
 #ifndef _UpdateAlphaLevelMaxData_
 #define _UpdateAlphaLevelMaxData_
 #pragma pack(push, 16)
@@ -910,9 +910,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00825
+    // ClassId: 00825
     // RuntimeId: 06459
-    // TypeInfo:  0x02407268
+    // TypeInfo: 0x02407268
 #ifndef _UpdateAlphaLevelMinData_
 #define _UpdateAlphaLevelMinData_
 #pragma pack(push, 16)
@@ -938,9 +938,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00826
+    // ClassId: 00826
     // RuntimeId: 06457
-    // TypeInfo:  0x0240723C
+    // TypeInfo: 0x0240723C
 #ifndef _UpdateTransparencyData_
 #define _UpdateTransparencyData_
 #pragma pack(push, 16)
@@ -966,9 +966,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00827
+    // ClassId: 00827
     // RuntimeId: 06455
-    // TypeInfo:  0x02407210
+    // TypeInfo: 0x02407210
 #ifndef _UpdateColorData_
 #define _UpdateColorData_
 #pragma pack(push, 16)
@@ -993,9 +993,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00828
+    // ClassId: 00828
     // RuntimeId: 06453
-    // TypeInfo:  0x024071E4
+    // TypeInfo: 0x024071E4
 #ifndef _UpdateSizeZData_
 #define _UpdateSizeZData_
 #pragma pack(push, 16)
@@ -1019,9 +1019,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00829
+    // ClassId: 00829
     // RuntimeId: 06451
-    // TypeInfo:  0x024071B8
+    // TypeInfo: 0x024071B8
 #ifndef _UpdateSizeYData_
 #define _UpdateSizeYData_
 #pragma pack(push, 16)
@@ -1045,9 +1045,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00830
+    // ClassId: 00830
     // RuntimeId: 06449
-    // TypeInfo:  0x0240718C
+    // TypeInfo: 0x0240718C
 #ifndef _UpdateSizeXData_
 #define _UpdateSizeXData_
 #pragma pack(push, 16)
@@ -1071,9 +1071,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00831
+    // ClassId: 00831
     // RuntimeId: 06447
-    // TypeInfo:  0x02407160
+    // TypeInfo: 0x02407160
 #ifndef _UpdateSizeData_
 #define _UpdateSizeData_
 #pragma pack(push, 16)
@@ -1099,9 +1099,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00832
+    // ClassId: 00832
     // RuntimeId: 06445
-    // TypeInfo:  0x02407134
+    // TypeInfo: 0x02407134
 #ifndef _UpdateRotationData_
 #define _UpdateRotationData_
 #pragma pack(push, 16)
@@ -1125,9 +1125,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00833
+    // ClassId: 00833
     // RuntimeId: 06443
-    // TypeInfo:  0x02407108
+    // TypeInfo: 0x02407108
 #ifndef _UpdateTextureCoordsData_
 #define _UpdateTextureCoordsData_
 #pragma pack(push, 16)
@@ -1154,9 +1154,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00834
+    // ClassId: 00834
     // RuntimeId: 06439
-    // TypeInfo:  0x024070CC
+    // TypeInfo: 0x024070CC
 #ifndef _EmitterData_
 #define _EmitterData_
 #pragma pack(push, 16)
@@ -1182,9 +1182,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00835
+    // ClassId: 00835
     // RuntimeId: 06437
-    // TypeInfo:  0x024070A0
+    // TypeInfo: 0x024070A0
 #ifndef _TurbulanceData_
 #define _TurbulanceData_
 #pragma pack(push, 16)
@@ -1210,9 +1210,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00836
+    // ClassId: 00836
     // RuntimeId: 06435
-    // TypeInfo:  0x02407074
+    // TypeInfo: 0x02407074
 #ifndef _AirResistanceData_
 #define _AirResistanceData_
 #pragma pack(push, 16)
@@ -1238,9 +1238,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00837
+    // ClassId: 00837
     // RuntimeId: 06433
-    // TypeInfo:  0x02407048
+    // TypeInfo: 0x02407048
 #ifndef _LocalForceData_
 #define _LocalForceData_
 #pragma pack(push, 16)
@@ -1265,9 +1265,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00838
+    // ClassId: 00838
     // RuntimeId: 06431
-    // TypeInfo:  0x0240701C
+    // TypeInfo: 0x0240701C
 #ifndef _GravityData_
 #define _GravityData_
 #pragma pack(push, 16)
@@ -1293,9 +1293,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00839
+    // ClassId: 00839
     // RuntimeId: 06429
-    // TypeInfo:  0x02406FF0
+    // TypeInfo: 0x02406FF0
 #ifndef _UpdateAgeData_
 #define _UpdateAgeData_
 #pragma pack(push, 16)
@@ -1321,9 +1321,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00840
+    // ClassId: 00840
     // RuntimeId: 06427
-    // TypeInfo:  0x02406FC4
+    // TypeInfo: 0x02406FC4
 #ifndef _SpawnRotationSpeedData_
 #define _SpawnRotationSpeedData_
 #pragma pack(push, 16)
@@ -1349,9 +1349,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00841
+    // ClassId: 00841
     // RuntimeId: 06425
-    // TypeInfo:  0x02406F98
+    // TypeInfo: 0x02406F98
 #ifndef _SpawnOrientationData_
 #define _SpawnOrientationData_
 #pragma pack(push, 16)
@@ -1375,9 +1375,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00842
+    // ClassId: 00842
     // RuntimeId: 06423
-    // TypeInfo:  0x02406F6C
+    // TypeInfo: 0x02406F6C
 #ifndef _SpawnRotationData_
 #define _SpawnRotationData_
 #pragma pack(push, 16)
@@ -1403,9 +1403,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00843
+    // ClassId: 00843
     // RuntimeId: 06421
-    // TypeInfo:  0x02406F40
+    // TypeInfo: 0x02406F40
 #ifndef _SpawnAnimationFrameData_
 #define _SpawnAnimationFrameData_
 #pragma pack(push, 16)
@@ -1431,9 +1431,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00844
+    // ClassId: 00844
     // RuntimeId: 06419
-    // TypeInfo:  0x02406F14
+    // TypeInfo: 0x02406F14
 #ifndef _SpawnAnimationData_
 #define _SpawnAnimationData_
 #pragma pack(push, 16)
@@ -1459,9 +1459,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00845
+    // ClassId: 00845
     // RuntimeId: 06417
-    // TypeInfo:  0x02406EE8
+    // TypeInfo: 0x02406EE8
 #ifndef _SpawnPositionData_
 #define _SpawnPositionData_
 #pragma pack(push, 16)
@@ -1485,9 +1485,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00846
+    // ClassId: 00846
     // RuntimeId: 06415
-    // TypeInfo:  0x02406EBC
+    // TypeInfo: 0x02406EBC
 #ifndef _SpawnSizeData_
 #define _SpawnSizeData_
 #pragma pack(push, 16)
@@ -1513,9 +1513,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00847
+    // ClassId: 00847
     // RuntimeId: 06413
-    // TypeInfo:  0x02406E90
+    // TypeInfo: 0x02406E90
 #ifndef _SpawnSpeedData_
 #define _SpawnSpeedData_
 #pragma pack(push, 16)
@@ -1541,9 +1541,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00848
+    // ClassId: 00848
     // RuntimeId: 06411
-    // TypeInfo:  0x02406E64
+    // TypeInfo: 0x02406E64
 #ifndef _SpawnDirectionData_
 #define _SpawnDirectionData_
 #pragma pack(push, 16)
@@ -1570,9 +1570,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00849
+    // ClassId: 00849
     // RuntimeId: 06409
-    // TypeInfo:  0x02406E38
+    // TypeInfo: 0x02406E38
 #ifndef _SpawnRateData_
 #define _SpawnRateData_
 #pragma pack(push, 16)
@@ -1601,9 +1601,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00850
+    // ClassId: 00850
     // RuntimeId: 06407
-    // TypeInfo:  0x02406E0C
+    // TypeInfo: 0x02406E0C
 #ifndef _BaseEmitterData_
 #define _BaseEmitterData_
 #pragma pack(push, 16)
@@ -1629,9 +1629,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00851
+    // ClassId: 00851
     // RuntimeId: 06405
-    // TypeInfo:  0x0240627C
+    // TypeInfo: 0x0240627C
 #ifndef _WorldRenderSettings_
 #define _WorldRenderSettings_
 #pragma pack(push, 16)
@@ -1911,9 +1911,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00852
+    // ClassId: 00852
     // RuntimeId: 06399
-    // TypeInfo:  0x02406230
+    // TypeInfo: 0x02406230
 #ifndef _VisualEnvironmentSettings_
 #define _VisualEnvironmentSettings_
 #pragma pack(push, 4)
@@ -1941,9 +1941,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00853
+    // ClassId: 00853
     // RuntimeId: 06397
-    // TypeInfo:  0x02406204
+    // TypeInfo: 0x02406204
 #ifndef _SunFlareEffectState_
 #define _SunFlareEffectState_
 #pragma pack(push, 16)
@@ -2013,9 +2013,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00854
+    // ClassId: 00854
     // RuntimeId: 06395
-    // TypeInfo:  0x024061D8
+    // TypeInfo: 0x024061D8
 #ifndef _SkyEffectState_
 #define _SkyEffectState_
 #pragma pack(push, 16)
@@ -2061,9 +2061,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00855
+    // ClassId: 00855
     // RuntimeId: 06391
-    // TypeInfo:  0x0240619C
+    // TypeInfo: 0x0240619C
 #ifndef _FogEffectState_
 #define _FogEffectState_
 #pragma pack(push, 16)
@@ -2105,9 +2105,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00856
+    // ClassId: 00856
     // RuntimeId: 06389
-    // TypeInfo:  0x02406170
+    // TypeInfo: 0x02406170
 #ifndef _OutdoorLightEffectState_
 #define _OutdoorLightEffectState_
 #pragma pack(push, 16)
@@ -2147,9 +2147,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01577
+    // ClassId: 01577
     // RuntimeId: 00214
-    // TypeInfo:  0x023C5084
+    // TypeInfo: 0x023C5084
 #ifndef _ComponentData_
 #define _ComponentData_
 #pragma pack(push, 16)
@@ -2178,9 +2178,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01579
+    // ClassId: 01579
     // RuntimeId: 06385
-    // TypeInfo:  0x02406118
+    // TypeInfo: 0x02406118
 #ifndef _CharacterLightingComponentData_
 #define _CharacterLightingComponentData_
 #pragma pack(push, 16)
@@ -2215,9 +2215,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01580
+    // ClassId: 01580
     // RuntimeId: 06381
-    // TypeInfo:  0x024060DC
+    // TypeInfo: 0x024060DC
 #ifndef _DamageEffectComponentData_
 #define _DamageEffectComponentData_
 #pragma pack(push, 16)
@@ -2257,9 +2257,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01581
+    // ClassId: 01581
     // RuntimeId: 06379
-    // TypeInfo:  0x024060B0
+    // TypeInfo: 0x024060B0
 #ifndef _ScreenEffectComponentData_
 #define _ScreenEffectComponentData_
 #pragma pack(push, 16)
@@ -2292,9 +2292,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01582
+    // ClassId: 01582
     // RuntimeId: 06375
-    // TypeInfo:  0x02406074
+    // TypeInfo: 0x02406074
 #ifndef _CameraParamsComponentData_
 #define _CameraParamsComponentData_
 #pragma pack(push, 16)
@@ -2322,9 +2322,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01583
+    // ClassId: 01583
     // RuntimeId: 06373
-    // TypeInfo:  0x02406048
+    // TypeInfo: 0x02406048
 #ifndef _ShaderParamsComponentData_
 #define _ShaderParamsComponentData_
 #pragma pack(push, 16)
@@ -2351,9 +2351,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01584
+    // ClassId: 01584
     // RuntimeId: 06371
-    // TypeInfo:  0x0240601C
+    // TypeInfo: 0x0240601C
 #ifndef _EnlightenComponentData_
 #define _EnlightenComponentData_
 #pragma pack(push, 16)
@@ -2393,9 +2393,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01585
+    // ClassId: 01585
     // RuntimeId: 06369
-    // TypeInfo:  0x02405FF0
+    // TypeInfo: 0x02405FF0
 #ifndef _DynamicAOComponentData_
 #define _DynamicAOComponentData_
 #pragma pack(push, 16)
@@ -2432,9 +2432,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01586
+    // ClassId: 01586
     // RuntimeId: 06367
-    // TypeInfo:  0x02405FC4
+    // TypeInfo: 0x02405FC4
 #ifndef _SunFlareComponentData_
 #define _SunFlareComponentData_
 #pragma pack(push, 16)
@@ -2506,9 +2506,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01587
+    // ClassId: 01587
     // RuntimeId: 06365
-    // TypeInfo:  0x02405F98
+    // TypeInfo: 0x02405F98
 #ifndef _WindComponentData_
 #define _WindComponentData_
 #pragma pack(push, 16)
@@ -2536,9 +2536,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01588
+    // ClassId: 01588
     // RuntimeId: 06363
-    // TypeInfo:  0x02405F6C
+    // TypeInfo: 0x02405F6C
 #ifndef _DynamicEnvmapComponentData_
 #define _DynamicEnvmapComponentData_
 #pragma pack(push, 16)
@@ -2567,9 +2567,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01589
+    // ClassId: 01589
     // RuntimeId: 06361
-    // TypeInfo:  0x02405F40
+    // TypeInfo: 0x02405F40
 #ifndef _PlanarReflectionComponentData_
 #define _PlanarReflectionComponentData_
 #pragma pack(push, 16)
@@ -2601,9 +2601,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01590
+    // ClassId: 01590
     // RuntimeId: 06359
-    // TypeInfo:  0x02405F14
+    // TypeInfo: 0x02405F14
 #ifndef _SkyComponentData_
 #define _SkyComponentData_
 #pragma pack(push, 16)
@@ -2671,9 +2671,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01591
+    // ClassId: 01591
     // RuntimeId: 06357
-    // TypeInfo:  0x02405EE8
+    // TypeInfo: 0x02405EE8
 #ifndef _FogComponentData_
 #define _FogComponentData_
 #pragma pack(push, 16)
@@ -2718,9 +2718,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01592
+    // ClassId: 01592
     // RuntimeId: 06355
-    // TypeInfo:  0x02405EBC
+    // TypeInfo: 0x02405EBC
 #ifndef _OutdoorLightComponentData_
 #define _OutdoorLightComponentData_
 #pragma pack(push, 16)
@@ -2767,9 +2767,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00857
+    // ClassId: 00857
     // RuntimeId: 06353
-    // TypeInfo:  0x02405E90
+    // TypeInfo: 0x02405E90
 #ifndef _OcclusionSettings_
 #define _OcclusionSettings_
 #pragma pack(push, 4)
@@ -2797,9 +2797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01695
+    // ClassId: 01695
     // RuntimeId: 00206
-    // TypeInfo:  0x023C4FD4
+    // TypeInfo: 0x023C4FD4
 #ifndef _EntityData_
 #define _EntityData_
 #pragma pack(push, 4)
@@ -2823,9 +2823,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01856
+    // ClassId: 01856
     // RuntimeId: 00208
-    // TypeInfo:  0x023C5000
+    // TypeInfo: 0x023C5000
 #ifndef _SpatialEntityData_
 #define _SpatialEntityData_
 #pragma pack(push, 16)
@@ -2851,9 +2851,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01859
+    // ClassId: 01859
     // RuntimeId: 06347
-    // TypeInfo:  0x02405E0C
+    // TypeInfo: 0x02405E0C
 #ifndef _CompositeMeshEntityData_
 #define _CompositeMeshEntityData_
 #pragma pack(push, 16)
@@ -2879,9 +2879,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01860
+    // ClassId: 01860
     // RuntimeId: 06345
-    // TypeInfo:  0x02405DE0
+    // TypeInfo: 0x02405DE0
 #ifndef _RigidMeshEntityData_
 #define _RigidMeshEntityData_
 #pragma pack(push, 16)
@@ -2907,9 +2907,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01861
+    // ClassId: 01861
     // RuntimeId: 06343
-    // TypeInfo:  0x02405DB4
+    // TypeInfo: 0x02405DB4
 #ifndef _LightProbeVolumeData_
 #define _LightProbeVolumeData_
 #pragma pack(push, 16)
@@ -2939,9 +2939,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01862
+    // ClassId: 01862
     // RuntimeId: 06337
-    // TypeInfo:  0x02405D30
+    // TypeInfo: 0x02405D30
 #ifndef _LocalLightEntityData_
 #define _LocalLightEntityData_
 #pragma pack(push, 16)
@@ -2976,9 +2976,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01864
+    // ClassId: 01864
     // RuntimeId: 06339
-    // TypeInfo:  0x02405D5C
+    // TypeInfo: 0x02405D5C
 #ifndef _PointLightEntityData_
 #define _PointLightEntityData_
 #pragma pack(push, 16)
@@ -3008,9 +3008,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01863
+    // ClassId: 01863
     // RuntimeId: 06341
-    // TypeInfo:  0x02405D88
+    // TypeInfo: 0x02405D88
 #ifndef _SpotLightEntityData_
 #define _SpotLightEntityData_
 #pragma pack(push, 16)
@@ -3045,9 +3045,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01865
+    // ClassId: 01865
     // RuntimeId: 06333
-    // TypeInfo:  0x02405CF4
+    // TypeInfo: 0x02405CF4
 #ifndef _LensFlareEntityData_
 #define _LensFlareEntityData_
 #pragma pack(push, 16)
@@ -3077,9 +3077,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01866
+    // ClassId: 01866
     // RuntimeId: 06329
-    // TypeInfo:  0x02405CB8
+    // TypeInfo: 0x02405CB8
 #ifndef _GroundHeightEntityData_
 #define _GroundHeightEntityData_
 #pragma pack(push, 16)
@@ -3104,9 +3104,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01696
+    // ClassId: 01696
     // RuntimeId: 06321
-    // TypeInfo:  0x02405C24
+    // TypeInfo: 0x02405C24
 #ifndef _EnlightenEntityData_
 #define _EnlightenEntityData_
 #pragma pack(push, 4)
@@ -3134,9 +3134,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01698
+    // ClassId: 01698
     // RuntimeId: 06323
-    // TypeInfo:  0x02405C50
+    // TypeInfo: 0x02405C50
 #ifndef _DynamicEnlightenEntityData_
 #define _DynamicEnlightenEntityData_
 #pragma pack(push, 4)
@@ -3161,9 +3161,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01697
+    // ClassId: 01697
     // RuntimeId: 06325
-    // TypeInfo:  0x02405C7C
+    // TypeInfo: 0x02405C7C
 #ifndef _StaticEnlightenEntityData_
 #define _StaticEnlightenEntityData_
 #pragma pack(push, 4)
@@ -3189,9 +3189,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01699
+    // ClassId: 01699
     // RuntimeId: 06319
-    // TypeInfo:  0x02405BF8
+    // TypeInfo: 0x02405BF8
 #ifndef _RadiosityEntityData_
 #define _RadiosityEntityData_
 #pragma pack(push, 4)
@@ -3215,9 +3215,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01867
+    // ClassId: 01867
     // RuntimeId: 06313
-    // TypeInfo:  0x02405B74
+    // TypeInfo: 0x02405B74
 #ifndef _RenderVolumeEntityData_
 #define _RenderVolumeEntityData_
 #pragma pack(push, 16)
@@ -3246,9 +3246,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01869
+    // ClassId: 01869
     // RuntimeId: 06315
-    // TypeInfo:  0x02405BA0
+    // TypeInfo: 0x02405BA0
 #ifndef _DecalVolumeEntityData_
 #define _DecalVolumeEntityData_
 #pragma pack(push, 16)
@@ -3272,9 +3272,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01868
+    // ClassId: 01868
     // RuntimeId: 06317
-    // TypeInfo:  0x02405BCC
+    // TypeInfo: 0x02405BCC
 #ifndef _MaskVolumeEntityData_
 #define _MaskVolumeEntityData_
 #pragma pack(push, 16)
@@ -3298,9 +3298,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01700
+    // ClassId: 01700
     // RuntimeId: 06311
-    // TypeInfo:  0x02405B48
+    // TypeInfo: 0x02405B48
 #ifndef _EnvmapEntityData_
 #define _EnvmapEntityData_
 #pragma pack(push, 4)
@@ -3324,9 +3324,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01870
+    // ClassId: 01870
     // RuntimeId: 06307
-    // TypeInfo:  0x02405B0C
+    // TypeInfo: 0x02405B0C
 #ifndef _OccluderVolumeEntityData_
 #define _OccluderVolumeEntityData_
 #pragma pack(push, 16)
@@ -3352,9 +3352,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00858
+    // ClassId: 00858
     // RuntimeId: 06305
-    // TypeInfo:  0x02405AE0
+    // TypeInfo: 0x02405AE0
 #ifndef _EnlightenState_
 #define _EnlightenState_
 #pragma pack(push, 16)
@@ -3392,9 +3392,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02023
+    // ClassId: 02023
     // RuntimeId: 06303
-    // TypeInfo:  0x02405AB4
+    // TypeInfo: 0x02405AB4
 #ifndef _EnlightenRuntimeConfig_
 #define _EnlightenRuntimeConfig_
 #pragma pack(push, 4)
@@ -3419,9 +3419,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02444
+    // ClassId: 02444
     // RuntimeId: 00066
-    // TypeInfo:  0x023C2760
+    // TypeInfo: 0x023C2760
 #ifndef _SystemSettings_
 #define _SystemSettings_
 #pragma pack(push, 4)
@@ -3446,9 +3446,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00859
+    // ClassId: 00859
     // RuntimeId: 06299
-    // TypeInfo:  0x02405A5C
+    // TypeInfo: 0x02405A5C
 #ifndef _DestructionVolumeData_
 #define _DestructionVolumeData_
 #pragma pack(push, 16)
@@ -3478,9 +3478,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02024
+    // ClassId: 02024
     // RuntimeId: 06297
-    // TypeInfo:  0x02405A30
+    // TypeInfo: 0x02405A30
 #ifndef _DestructionVolumeAsset_
 #define _DestructionVolumeAsset_
 #pragma pack(push, 4)
@@ -3507,9 +3507,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00860
+    // ClassId: 00860
     // RuntimeId: 06291
-    // TypeInfo:  0x024059E4
+    // TypeInfo: 0x024059E4
 #ifndef _CreateDestructionVolumeParams_
 #define _CreateDestructionVolumeParams_
 #pragma pack(push, 4)
@@ -3534,9 +3534,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00400
+    // ClassId: 00400
     // RuntimeId: 06289
-    // TypeInfo:  0x02404F20
+    // TypeInfo: 0x02404F20
 #ifndef _StaticEnlightenEntity_
 #define _StaticEnlightenEntity_
     class StaticEnlightenEntity : public Entity
@@ -3555,9 +3555,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00611
+    // ClassId: 00611
     // RuntimeId: 00134
-    // TypeInfo:  0x023C4A70
+    // TypeInfo: 0x023C4A70
 #ifndef _SpatialEntity_
 #define _SpatialEntity_
     class SpatialEntity : public Entity
@@ -3576,9 +3576,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00613
+    // ClassId: 00613
     // RuntimeId: 06285
-    // TypeInfo:  0x02404E80
+    // TypeInfo: 0x02404E80
 #ifndef _LocalLightEntity_
 #define _LocalLightEntity_
     class LocalLightEntity : public SpatialEntity
@@ -3597,9 +3597,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00615
+    // ClassId: 00615
     // RuntimeId: 06286
-    // TypeInfo:  0x02404EA8
+    // TypeInfo: 0x02404EA8
 #ifndef _PointLightEntity_
 #define _PointLightEntity_
     class PointLightEntity : public LocalLightEntity
@@ -3617,9 +3617,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00614
+    // ClassId: 00614
     // RuntimeId: 06287
-    // TypeInfo:  0x02404ED0
+    // TypeInfo: 0x02404ED0
 #ifndef _SpotLightEntity_
 #define _SpotLightEntity_
     class SpotLightEntity : public LocalLightEntity
@@ -3638,9 +3638,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00616
+    // ClassId: 00616
     // RuntimeId: 06284
-    // TypeInfo:  0x02404E58
+    // TypeInfo: 0x02404E58
 #ifndef _OccluderVolumeEntity_
 #define _OccluderVolumeEntity_
     class OccluderVolumeEntity : public SpatialEntity
@@ -3659,9 +3659,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00617
+    // ClassId: 00617
     // RuntimeId: 06283
-    // TypeInfo:  0x02404E30
+    // TypeInfo: 0x02404E30
 #ifndef _OccluderMeshEntity_
 #define _OccluderMeshEntity_
     class OccluderMeshEntity : public SpatialEntity
@@ -3680,9 +3680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00618
+    // ClassId: 00618
     // RuntimeId: 06282
-    // TypeInfo:  0x02404E08
+    // TypeInfo: 0x02404E08
 #ifndef _MeshProxyEntity_
 #define _MeshProxyEntity_
     class MeshProxyEntity : public SpatialEntity
@@ -3701,9 +3701,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00401
+    // ClassId: 00401
     // RuntimeId: 06279
-    // TypeInfo:  0x02404D90
+    // TypeInfo: 0x02404D90
 #ifndef _RenderVolumeEntity_
 #define _RenderVolumeEntity_
     class RenderVolumeEntity : public Entity
@@ -3722,9 +3722,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00403
+    // ClassId: 00403
     // RuntimeId: 06280
-    // TypeInfo:  0x02404DB8
+    // TypeInfo: 0x02404DB8
 #ifndef _DecalVolumeEntity_
 #define _DecalVolumeEntity_
     class DecalVolumeEntity : public RenderVolumeEntity
@@ -3742,9 +3742,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00402
+    // ClassId: 00402
     // RuntimeId: 06281
-    // TypeInfo:  0x02404DE0
+    // TypeInfo: 0x02404DE0
 #ifndef _MaskVolumeEntity_
 #define _MaskVolumeEntity_
     class MaskVolumeEntity : public RenderVolumeEntity
@@ -3762,9 +3762,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00404
+    // ClassId: 00404
     // RuntimeId: 06278
-    // TypeInfo:  0x02404D68
+    // TypeInfo: 0x02404D68
 #ifndef _LensFlareEntity_
 #define _LensFlareEntity_
     class LensFlareEntity : public Entity
@@ -3783,9 +3783,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00405
+    // ClassId: 00405
     // RuntimeId: 06277
-    // TypeInfo:  0x02404D40
+    // TypeInfo: 0x02404D40
 #ifndef _GroundHeightEntity_
 #define _GroundHeightEntity_
     class GroundHeightEntity : public Entity
@@ -3804,9 +3804,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00406
+    // ClassId: 00406
     // RuntimeId: 06276
-    // TypeInfo:  0x02404D18
+    // TypeInfo: 0x02404D18
 #ifndef _EnvmapEntity_
 #define _EnvmapEntity_
     class EnvmapEntity : public Entity
@@ -3825,9 +3825,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00407
+    // ClassId: 00407
     // RuntimeId: 06275
-    // TypeInfo:  0x02404CF0
+    // TypeInfo: 0x02404CF0
 #ifndef _DynamicEnlightenEntity_
 #define _DynamicEnlightenEntity_
     class DynamicEnlightenEntity : public Entity
@@ -3846,9 +3846,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00619
+    // ClassId: 00619
     // RuntimeId: 06274
-    // TypeInfo:  0x02404CC8
+    // TypeInfo: 0x02404CC8
 #ifndef _CompositeMeshEntity_
 #define _CompositeMeshEntity_
     class CompositeMeshEntity : public SpatialEntity
@@ -3867,9 +3867,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00001
+    // ClassId: 00001
     // RuntimeId: 06273
-    // TypeInfo:  0x02404CA0
+    // TypeInfo: 0x02404CA0
 #ifndef _EnlightenSystem_
 #define _EnlightenSystem_
     class EnlightenSystem
@@ -3888,9 +3888,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00002
+    // ClassId: 00002
     // RuntimeId: 06272
-    // TypeInfo:  0x02404C78
+    // TypeInfo: 0x02404C78
 #ifndef _EnlightenProbeSet_
 #define _EnlightenProbeSet_
     class EnlightenProbeSet
@@ -3909,9 +3909,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00003
+    // ClassId: 00003
     // RuntimeId: 06271
-    // TypeInfo:  0x02404C50
+    // TypeInfo: 0x02404C50
 #ifndef _StaticEnlightenDatabase_
 #define _StaticEnlightenDatabase_
     class StaticEnlightenDatabase
@@ -3930,9 +3930,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00004
+    // ClassId: 00004
     // RuntimeId: 06270
-    // TypeInfo:  0x02404C28
+    // TypeInfo: 0x02404C28
 #ifndef _EnlightenShaderDatabase_
 #define _EnlightenShaderDatabase_
     class EnlightenShaderDatabase
@@ -3951,9 +3951,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00005
+    // ClassId: 00005
     // RuntimeId: 06269
-    // TypeInfo:  0x02404C00
+    // TypeInfo: 0x02404C00
 #ifndef _EnlightenDatabase_
 #define _EnlightenDatabase_
     class EnlightenDatabase
@@ -3972,9 +3972,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00006
+    // ClassId: 00006
     // RuntimeId: 06268
-    // TypeInfo:  0x0240498C
+    // TypeInfo: 0x0240498C
 #ifndef _OccluderMesh_
 #define _OccluderMesh_
     class OccluderMesh
@@ -3993,9 +3993,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02025
+    // ClassId: 02025
     // RuntimeId: 06267
-    // TypeInfo:  0x02404944
+    // TypeInfo: 0x02404944
 #ifndef _PathfindingObjectCategoryAsset_
 #define _PathfindingObjectCategoryAsset_
 #pragma pack(push, 4)
@@ -4019,9 +4019,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00007
+    // ClassId: 00007
     // RuntimeId: 06264
-    // TypeInfo:  0x024048C4
+    // TypeInfo: 0x024048C4
 #ifndef _ISwfMovie_
 #define _ISwfMovie_
     class ISwfMovie
@@ -4040,9 +4040,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00008
+    // ClassId: 00008
     // RuntimeId: 06265
-    // TypeInfo:  0x024048EC
+    // TypeInfo: 0x024048EC
 #ifndef _SwfMovie_
 #define _SwfMovie_
     class SwfMovie : public ISwfMovie
@@ -4061,9 +4061,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01701
+    // ClassId: 01701
     // RuntimeId: 06240
-    // TypeInfo:  0x024044C8
+    // TypeInfo: 0x024044C8
 #ifndef _UIGraphEntityData_
 #define _UIGraphEntityData_
 #pragma pack(push, 4)
@@ -4093,9 +4093,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00876
+    // ClassId: 00876
     // RuntimeId: 06174
-    // TypeInfo:  0x02403FE0
+    // TypeInfo: 0x02403FE0
 #ifndef _UINodeData_
 #define _UINodeData_
 #pragma pack(push, 4)
@@ -4124,9 +4124,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00878
+    // ClassId: 00878
     // RuntimeId: 06234
-    // TypeInfo:  0x02404460
+    // TypeInfo: 0x02404460
 #ifndef _JumpNode_
 #define _JumpNode_
 #pragma pack(push, 4)
@@ -4153,9 +4153,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00895
+    // ClassId: 00895
     // RuntimeId: 06192
-    // TypeInfo:  0x02404118
+    // TypeInfo: 0x02404118
 #ifndef _StateNode_
 #define _StateNode_
 #pragma pack(push, 4)
@@ -4187,9 +4187,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00879
+    // ClassId: 00879
     // RuntimeId: 06230
-    // TypeInfo:  0x02404408
+    // TypeInfo: 0x02404408
 #ifndef _GlobalNode_
 #define _GlobalNode_
 #pragma pack(push, 4)
@@ -4214,9 +4214,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00880
+    // ClassId: 00880
     // RuntimeId: 06226
-    // TypeInfo:  0x024043CC
+    // TypeInfo: 0x024043CC
 #ifndef _InstanceOutputNode_
 #define _InstanceOutputNode_
 #pragma pack(push, 4)
@@ -4244,9 +4244,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00881
+    // ClassId: 00881
     // RuntimeId: 06224
-    // TypeInfo:  0x024043A0
+    // TypeInfo: 0x024043A0
 #ifndef _InstanceInputNode_
 #define _InstanceInputNode_
 #pragma pack(push, 4)
@@ -4271,9 +4271,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00882
+    // ClassId: 00882
     // RuntimeId: 06222
-    // TypeInfo:  0x02404374
+    // TypeInfo: 0x02404374
 #ifndef _InstanceNode_
 #define _InstanceNode_
 #pragma pack(push, 4)
@@ -4300,9 +4300,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00883
+    // ClassId: 00883
     // RuntimeId: 06220
-    // TypeInfo:  0x02404348
+    // TypeInfo: 0x02404348
 #ifndef _ActionNode_
 #define _ActionNode_
 #pragma pack(push, 4)
@@ -4334,9 +4334,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00884
+    // ClassId: 00884
     // RuntimeId: 06218
-    // TypeInfo:  0x0240431C
+    // TypeInfo: 0x0240431C
 #ifndef _OperandLogicNode_
 #define _OperandLogicNode_
 #pragma pack(push, 8)
@@ -4368,9 +4368,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00885
+    // ClassId: 00885
     // RuntimeId: 06216
-    // TypeInfo:  0x024042F0
+    // TypeInfo: 0x024042F0
 #ifndef _ComparisonLogicNode_
 #define _ComparisonLogicNode_
 #pragma pack(push, 4)
@@ -4399,9 +4399,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00886
+    // ClassId: 00886
     // RuntimeId: 06214
-    // TypeInfo:  0x024042C4
+    // TypeInfo: 0x024042C4
 #ifndef _BinaryLogicNode_
 #define _BinaryLogicNode_
 #pragma pack(push, 4)
@@ -4429,9 +4429,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00887
+    // ClassId: 00887
     // RuntimeId: 06212
-    // TypeInfo:  0x02404298
+    // TypeInfo: 0x02404298
 #ifndef _RefreshNode_
 #define _RefreshNode_
 #pragma pack(push, 4)
@@ -4458,9 +4458,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00888
+    // ClassId: 00888
     // RuntimeId: 06210
-    // TypeInfo:  0x0240426C
+    // TypeInfo: 0x0240426C
 #ifndef _DataStepNode_
 #define _DataStepNode_
 #pragma pack(push, 4)
@@ -4489,9 +4489,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00889
+    // ClassId: 00889
     // RuntimeId: 06208
-    // TypeInfo:  0x02404240
+    // TypeInfo: 0x02404240
 #ifndef _DataIncrementNode_
 #define _DataIncrementNode_
 #pragma pack(push, 4)
@@ -4521,9 +4521,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00890
+    // ClassId: 00890
     // RuntimeId: 06206
-    // TypeInfo:  0x02404214
+    // TypeInfo: 0x02404214
 #ifndef _DataToggleNode_
 #define _DataToggleNode_
 #pragma pack(push, 4)
@@ -4550,9 +4550,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00891
+    // ClassId: 00891
     // RuntimeId: 06204
-    // TypeInfo:  0x024041E8
+    // TypeInfo: 0x024041E8
 #ifndef _DataSetNode_
 #define _DataSetNode_
 #pragma pack(push, 4)
@@ -4583,9 +4583,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00892
+    // ClassId: 00892
     // RuntimeId: 06202
-    // TypeInfo:  0x024041BC
+    // TypeInfo: 0x024041BC
 #ifndef _DataGetNode_
 #define _DataGetNode_
 #pragma pack(push, 4)
@@ -4612,9 +4612,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00893
+    // ClassId: 00893
     // RuntimeId: 06200
-    // TypeInfo:  0x02404190
+    // TypeInfo: 0x02404190
 #ifndef _QueryGetNode_
 #define _QueryGetNode_
 #pragma pack(push, 4)
@@ -4641,9 +4641,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00894
+    // ClassId: 00894
     // RuntimeId: 06198
-    // TypeInfo:  0x02404164
+    // TypeInfo: 0x02404164
 #ifndef _WidgetNode_
 #define _WidgetNode_
 #pragma pack(push, 4)
@@ -4679,9 +4679,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00896
+    // ClassId: 00896
     // RuntimeId: 06232
-    // TypeInfo:  0x02404434
+    // TypeInfo: 0x02404434
 #ifndef _DialogNode_
 #define _DialogNode_
 #pragma pack(push, 4)
@@ -4708,9 +4708,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02036
+    // ClassId: 02036
     // RuntimeId: 06128
-    // TypeInfo:  0x02403D04
+    // TypeInfo: 0x02403D04
 #ifndef _UIAsset_
 #define _UIAsset_
 #pragma pack(push, 4)
@@ -4734,9 +4734,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02026
+    // ClassId: 02026
     // RuntimeId: 06176
-    // TypeInfo:  0x0240400C
+    // TypeInfo: 0x0240400C
 #ifndef _UIGraphAsset_
 #define _UIGraphAsset_
 #pragma pack(push, 4)
@@ -4772,9 +4772,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00861
+    // ClassId: 00861
     // RuntimeId: 06180
-    // TypeInfo:  0x02404048
+    // TypeInfo: 0x02404048
 #ifndef _UIDataBinding_
 #define _UIDataBinding_
 #pragma pack(push, 4)
@@ -4798,9 +4798,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00862
+    // ClassId: 00862
     // RuntimeId: 06184
-    // TypeInfo:  0x02404084
+    // TypeInfo: 0x02404084
 #ifndef _UIDynamicDataBinding_
 #define _UIDynamicDataBinding_
 #pragma pack(push, 4)
@@ -4827,9 +4827,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02027
+    // ClassId: 02027
     // RuntimeId: 06186
-    // TypeInfo:  0x024040B0
+    // TypeInfo: 0x024040B0
 #ifndef _UIScreenAsset_
 #define _UIScreenAsset_
 #pragma pack(push, 4)
@@ -4853,9 +4853,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00877
+    // ClassId: 00877
     // RuntimeId: 06236
-    // TypeInfo:  0x0240448C
+    // TypeInfo: 0x0240448C
 #ifndef _SplitterNode_
 #define _SplitterNode_
 #pragma pack(push, 4)
@@ -4881,9 +4881,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00897
+    // ClassId: 00897
     // RuntimeId: 06172
-    // TypeInfo:  0x02403FB4
+    // TypeInfo: 0x02403FB4
 #ifndef _UINodeConnection_
 #define _UINodeConnection_
 #pragma pack(push, 4)
@@ -4912,9 +4912,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00898
+    // ClassId: 00898
     // RuntimeId: 06168
-    // TypeInfo:  0x02403F5C
+    // TypeInfo: 0x02403F5C
 #ifndef _UINodePort_
 #define _UINodePort_
 #pragma pack(push, 4)
@@ -4943,9 +4943,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00899
+    // ClassId: 00899
     // RuntimeId: 06170
-    // TypeInfo:  0x02403F88
+    // TypeInfo: 0x02403F88
 #ifndef _UIInputEventNodePort_
 #define _UIInputEventNodePort_
 #pragma pack(push, 4)
@@ -4970,9 +4970,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02028
+    // ClassId: 02028
     // RuntimeId: 06166
-    // TypeInfo:  0x02403F30
+    // TypeInfo: 0x02403F30
 #ifndef _UIInterruptFlow_
 #define _UIInterruptFlow_
 #pragma pack(push, 4)
@@ -4997,9 +4997,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02029
+    // ClassId: 02029
     // RuntimeId: 06162
-    // TypeInfo:  0x02403EF4
+    // TypeInfo: 0x02403EF4
 #ifndef _UIAudioEventAsset_
 #define _UIAudioEventAsset_
 #pragma pack(push, 4)
@@ -5024,9 +5024,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02030
+    // ClassId: 02030
     // RuntimeId: 06152
-    // TypeInfo:  0x02403E88
+    // TypeInfo: 0x02403E88
 #ifndef _UIEventAsset_
 #define _UIEventAsset_
 #pragma pack(push, 4)
@@ -5052,9 +5052,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02031
+    // ClassId: 02031
     // RuntimeId: 06150
-    // TypeInfo:  0x02403E5C
+    // TypeInfo: 0x02403E5C
 #ifndef _UIActionData_
 #define _UIActionData_
 #pragma pack(push, 4)
@@ -5079,9 +5079,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00900
+    // ClassId: 00900
     // RuntimeId: 06146
-    // TypeInfo:  0x02403E20
+    // TypeInfo: 0x02403E20
 #ifndef _UIGraphPipelineSettings_
 #define _UIGraphPipelineSettings_
 #pragma pack(push, 4)
@@ -5107,9 +5107,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02032
+    // ClassId: 02032
     // RuntimeId: 06140
-    // TypeInfo:  0x02403DD4
+    // TypeInfo: 0x02403DD4
 #ifndef _UIFontMappingCollection_
 #define _UIFontMappingCollection_
 #pragma pack(push, 4)
@@ -5135,9 +5135,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02033
+    // ClassId: 02033
     // RuntimeId: 06136
-    // TypeInfo:  0x02403D98
+    // TypeInfo: 0x02403D98
 #ifndef _UIFontCollection_
 #define _UIFontCollection_
 #pragma pack(push, 4)
@@ -5165,9 +5165,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02034
+    // ClassId: 02034
     // RuntimeId: 06134
-    // TypeInfo:  0x02403D6C
+    // TypeInfo: 0x02403D6C
 #ifndef _UIFontAsset_
 #define _UIFontAsset_
 #pragma pack(push, 4)
@@ -5198,9 +5198,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02035
+    // ClassId: 02035
     // RuntimeId: 06132
-    // TypeInfo:  0x02403D40
+    // TypeInfo: 0x02403D40
 #ifndef _UIBundlesAsset_
 #define _UIBundlesAsset_
 #pragma pack(push, 4)
@@ -5225,9 +5225,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02037
+    // ClassId: 02037
     // RuntimeId: 06190
-    // TypeInfo:  0x024040EC
+    // TypeInfo: 0x024040EC
 #ifndef _UIWidgetAsset_
 #define _UIWidgetAsset_
 #pragma pack(push, 4)
@@ -5252,9 +5252,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02038
+    // ClassId: 02038
     // RuntimeId: 06126
-    // TypeInfo:  0x02403CD8
+    // TypeInfo: 0x02403CD8
 #ifndef _LocalizationAsset_
 #define _LocalizationAsset_
 #pragma pack(push, 4)
@@ -5279,9 +5279,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02039
+    // ClassId: 02039
     // RuntimeId: 06124
-    // TypeInfo:  0x02403CAC
+    // TypeInfo: 0x02403CAC
 #ifndef _UITextDatabase_
 #define _UITextDatabase_
 #pragma pack(push, 4)
@@ -5312,9 +5312,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02040
+    // ClassId: 02040
     // RuntimeId: 06108
-    // TypeInfo:  0x02403C10
+    // TypeInfo: 0x02403C10
 #ifndef _UIStateAsset_
 #define _UIStateAsset_
 #pragma pack(push, 4)
@@ -5343,9 +5343,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02041
+    // ClassId: 02041
     // RuntimeId: 06104
-    // TypeInfo:  0x02403BD4
+    // TypeInfo: 0x02403BD4
 #ifndef _UIComponentData_
 #define _UIComponentData_
 #pragma pack(push, 4)
@@ -5373,9 +5373,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00009
+    // ClassId: 00009
     // RuntimeId: 06100
-    // TypeInfo:  0x02402F24
+    // TypeInfo: 0x02402F24
 #ifndef _AnimatedPointCloud_
 #define _AnimatedPointCloud_
     class AnimatedPointCloud
@@ -5394,9 +5394,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00010
+    // ClassId: 00010
     // RuntimeId: 06099
-    // TypeInfo:  0x02402EE0
+    // TypeInfo: 0x02402EE0
 #ifndef _MeshSet_
 #define _MeshSet_
     class MeshSet
@@ -5415,9 +5415,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02148
+    // ClassId: 02148
     // RuntimeId: 06091
-    // TypeInfo:  0x02402D98
+    // TypeInfo: 0x02402D98
 #ifndef _DebugConstantData_
 #define _DebugConstantData_
 #pragma pack(push, 4)
@@ -5447,9 +5447,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02149
+    // ClassId: 02149
     // RuntimeId: 06089
-    // TypeInfo:  0x02402D6C
+    // TypeInfo: 0x02402D6C
 #ifndef _AISettingsData_
 #define _AISettingsData_
 #pragma pack(push, 4)
@@ -5482,9 +5482,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01044
+    // ClassId: 01044
     // RuntimeId: 04619
-    // TypeInfo:  0x023F55CC
+    // TypeInfo: 0x023F55CC
 #ifndef _GameAIDifficultyData_
 #define _GameAIDifficultyData_
 #pragma pack(push, 4)
@@ -5508,9 +5508,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02196
+    // ClassId: 02196
     // RuntimeId: 05075
-    // TypeInfo:  0x023FA188
+    // TypeInfo: 0x023FA188
 #ifndef _GameSensingTemplateData_
 #define _GameSensingTemplateData_
 #pragma pack(push, 4)
@@ -5534,9 +5534,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01557
+    // ClassId: 01557
     // RuntimeId: 00398
-    // TypeInfo:  0x023C667C
+    // TypeInfo: 0x023C667C
 #ifndef _BaseShapeData_
 #define _BaseShapeData_
 #pragma pack(push, 4)
@@ -5560,9 +5560,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01702
+    // ClassId: 01702
     // RuntimeId: 06079
-    // TypeInfo:  0x02402CAC
+    // TypeInfo: 0x02402CAC
 #ifndef _SensingManagerEntityData_
 #define _SensingManagerEntityData_
 #pragma pack(push, 4)
@@ -5587,9 +5587,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01593
+    // ClassId: 01593
     // RuntimeId: 06075
-    // TypeInfo:  0x02402C70
+    // TypeInfo: 0x02402C70
 #ifndef _SensingComponentData_
 #define _SensingComponentData_
 #pragma pack(push, 16)
@@ -5619,9 +5619,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02151
+    // ClassId: 02151
     // RuntimeId: 06073
-    // TypeInfo:  0x02402C44
+    // TypeInfo: 0x02402C44
 #ifndef _SensingSettings_
 #define _SensingSettings_
 #pragma pack(push, 8)
@@ -5675,9 +5675,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02152
+    // ClassId: 02152
     // RuntimeId: 06067
-    // TypeInfo:  0x02402BF8
+    // TypeInfo: 0x02402BF8
 #ifndef _OrderSettings_
 #define _OrderSettings_
 #pragma pack(push, 4)
@@ -5702,9 +5702,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00906
+    // ClassId: 00906
     // RuntimeId: 06009
-    // TypeInfo:  0x02402830
+    // TypeInfo: 0x02402830
 #ifndef _UrgencyUserData_
 #define _UrgencyUserData_
 #pragma pack(push, 4)
@@ -5731,9 +5731,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01703
+    // ClassId: 01703
     // RuntimeId: 06061
-    // TypeInfo:  0x02402B90
+    // TypeInfo: 0x02402B90
 #ifndef _OrderEntityData_
 #define _OrderEntityData_
 #pragma pack(push, 4)
@@ -5764,9 +5764,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01871
+    // ClassId: 01871
     // RuntimeId: 06059
-    // TypeInfo:  0x02402B64
+    // TypeInfo: 0x02402B64
 #ifndef _LookAtEntityData_
 #define _LookAtEntityData_
 #pragma pack(push, 16)
@@ -5794,9 +5794,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02160
+    // ClassId: 02160
     // RuntimeId: 05883
-    // TypeInfo:  0x024013DC
+    // TypeInfo: 0x024013DC
 #ifndef _GameAIWeaponData_
 #define _GameAIWeaponData_
 #pragma pack(push, 4)
@@ -5820,9 +5820,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00901
+    // ClassId: 00901
     // RuntimeId: 06043
-    // TypeInfo:  0x02402AAC
+    // TypeInfo: 0x02402AAC
 #ifndef _MobilityData_
 #define _MobilityData_
 #pragma pack(push, 4)
@@ -5849,9 +5849,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00902
+    // ClassId: 00902
     // RuntimeId: 06041
-    // TypeInfo:  0x02402A80
+    // TypeInfo: 0x02402A80
 #ifndef _ArmamentData_
 #define _ArmamentData_
 #pragma pack(push, 4)
@@ -5879,9 +5879,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00903
+    // ClassId: 00903
     // RuntimeId: 06039
-    // TypeInfo:  0x02402A54
+    // TypeInfo: 0x02402A54
 #ifndef _TurretData_
 #define _TurretData_
 #pragma pack(push, 4)
@@ -5910,9 +5910,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00904
+    // ClassId: 00904
     // RuntimeId: 06037
-    // TypeInfo:  0x02402A28
+    // TypeInfo: 0x02402A28
 #ifndef _AIAimingConstraintsData_
 #define _AIAimingConstraintsData_
 #pragma pack(push, 4)
@@ -5940,9 +5940,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02162
+    // ClassId: 02162
     // RuntimeId: 05881
-    // TypeInfo:  0x024013B0
+    // TypeInfo: 0x024013B0
 #ifndef _GameAIEntryData_
 #define _GameAIEntryData_
 #pragma pack(push, 4)
@@ -5966,9 +5966,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02153
+    // ClassId: 02153
     // RuntimeId: 06033
-    // TypeInfo:  0x024029D0
+    // TypeInfo: 0x024029D0
 #ifndef _SoundEnvironmentConstantData_
 #define _SoundEnvironmentConstantData_
 #pragma pack(push, 4)
@@ -5995,9 +5995,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01872
+    // ClassId: 01872
     // RuntimeId: 06031
-    // TypeInfo:  0x024029A4
+    // TypeInfo: 0x024029A4
 #ifndef _CoverEntityData_
 #define _CoverEntityData_
 #pragma pack(push, 16)
@@ -6028,9 +6028,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02154
+    // ClassId: 02154
     // RuntimeId: 06025
-    // TypeInfo:  0x02402958
+    // TypeInfo: 0x02402958
 #ifndef _CoverConstantData_
 #define _CoverConstantData_
 #pragma pack(push, 4)
@@ -6086,9 +6086,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01594
+    // ClassId: 01594
     // RuntimeId: 06021
-    // TypeInfo:  0x0240291C
+    // TypeInfo: 0x0240291C
 #ifndef _TargetEvaluatorComponentData_
 #define _TargetEvaluatorComponentData_
 #pragma pack(push, 16)
@@ -6114,9 +6114,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02155
+    // ClassId: 02155
     // RuntimeId: 06019
-    // TypeInfo:  0x024028F0
+    // TypeInfo: 0x024028F0
 #ifndef _PositionEvaluationConstantData_
 #define _PositionEvaluationConstantData_
 #pragma pack(push, 4)
@@ -6142,9 +6142,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02156
+    // ClassId: 02156
     // RuntimeId: 06017
-    // TypeInfo:  0x024028C4
+    // TypeInfo: 0x024028C4
 #ifndef _DecisionConstantData_
 #define _DecisionConstantData_
 #pragma pack(push, 4)
@@ -6172,9 +6172,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02157
+    // ClassId: 02157
     // RuntimeId: 06015
-    // TypeInfo:  0x02402898
+    // TypeInfo: 0x02402898
 #ifndef _TimingConstantData_
 #define _TimingConstantData_
 #pragma pack(push, 4)
@@ -6201,9 +6201,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00905
+    // ClassId: 00905
     // RuntimeId: 06011
-    // TypeInfo:  0x0240285C
+    // TypeInfo: 0x0240285C
 #ifndef _BotPriorityConfigData_
 #define _BotPriorityConfigData_
 #pragma pack(push, 16)
@@ -6235,9 +6235,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00907
+    // ClassId: 00907
     // RuntimeId: 06065
-    // TypeInfo:  0x02402BCC
+    // TypeInfo: 0x02402BCC
 #ifndef _OrderReadiness_
 #define _OrderReadiness_
 #pragma pack(push, 4)
@@ -6263,9 +6263,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00909
+    // ClassId: 00909
     // RuntimeId: 06007
-    // TypeInfo:  0x02402804
+    // TypeInfo: 0x02402804
 #ifndef _UrgencySetData_
 #define _UrgencySetData_
 #pragma pack(push, 4)
@@ -6291,9 +6291,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02194
+    // ClassId: 02194
     // RuntimeId: 05077
-    // TypeInfo:  0x023FA1B4
+    // TypeInfo: 0x023FA1B4
 #ifndef _GameBehaviourTemplateData_
 #define _GameBehaviourTemplateData_
 #pragma pack(push, 4)
@@ -6317,9 +6317,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02158
+    // ClassId: 02158
     // RuntimeId: 05995
-    // TypeInfo:  0x0240276C
+    // TypeInfo: 0x0240276C
 #ifndef _AIVehicleTypes_
 #define _AIVehicleTypes_
 #pragma pack(push, 4)
@@ -6346,9 +6346,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00908
+    // ClassId: 00908
     // RuntimeId: 05993
-    // TypeInfo:  0x02402740
+    // TypeInfo: 0x02402740
 #ifndef _BehaviourData_
 #define _BehaviourData_
 #pragma pack(push, 4)
@@ -6373,9 +6373,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00910
+    // ClassId: 00910
     // RuntimeId: 05991
-    // TypeInfo:  0x02402714
+    // TypeInfo: 0x02402714
 #ifndef _AIVehicleBehaviourData_
 #define _AIVehicleBehaviourData_
 #pragma pack(push, 4)
@@ -6404,9 +6404,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02168
+    // ClassId: 02168
     // RuntimeId: 05640
-    // TypeInfo:  0x023FF6F8
+    // TypeInfo: 0x023FF6F8
 #ifndef _GameAISystem_
 #define _GameAISystem_
 #pragma pack(push, 4)
@@ -6430,9 +6430,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00408
+    // ClassId: 00408
     // RuntimeId: 05981
-    // TypeInfo:  0x02401CB8
+    // TypeInfo: 0x02401CB8
 #ifndef _ServerSensingManagerEntity_
 #define _ServerSensingManagerEntity_
     class ServerSensingManagerEntity : public Entity
@@ -6451,9 +6451,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00227
+    // ClassId: 00227
     // RuntimeId: 03761
-    // TypeInfo:  0x023EBF2C
+    // TypeInfo: 0x023EBF2C
 #ifndef _Component_
 #define _Component_
     class Component : public EntityBusPeer
@@ -6472,9 +6472,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00409
+    // ClassId: 00409
     // RuntimeId: 05979
-    // TypeInfo:  0x02401C68
+    // TypeInfo: 0x02401C68
 #ifndef _ServerOrderEntity_
 #define _ServerOrderEntity_
     class ServerOrderEntity : public Entity
@@ -6493,9 +6493,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00421
+    // ClassId: 00421
     // RuntimeId: 05978
-    // TypeInfo:  0x02401C40
+    // TypeInfo: 0x02401C40
 #ifndef _ClientLookAtEntity_
 #define _ClientLookAtEntity_
     class ClientLookAtEntity : public Entity
@@ -6514,9 +6514,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00620
+    // ClassId: 00620
     // RuntimeId: 05977
-    // TypeInfo:  0x02401C18
+    // TypeInfo: 0x02401C18
 #ifndef _ServerCoverEntity_
 #define _ServerCoverEntity_
     class ServerCoverEntity : public SpatialEntity
@@ -6535,9 +6535,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00328
+    // ClassId: 00328
     // RuntimeId: 03205
-    // TypeInfo:  0x023E44B4
+    // TypeInfo: 0x023E44B4
 #ifndef _ServerComponent_
 #define _ServerComponent_
     class ServerComponent : public Component
@@ -6555,9 +6555,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00011
+    // ClassId: 00011
     // RuntimeId: 05974
-    // TypeInfo:  0x02401BA0
+    // TypeInfo: 0x02401BA0
 #ifndef _Navigation_
 #define _Navigation_
     class Navigation
@@ -6576,9 +6576,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00012
+    // ClassId: 00012
     // RuntimeId: 05975
-    // TypeInfo:  0x02401BC8
+    // TypeInfo: 0x02401BC8
 #ifndef _NoNavigation_
 #define _NoNavigation_
     class NoNavigation : public Navigation
@@ -6597,9 +6597,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02159
+    // ClassId: 02159
     // RuntimeId: 05969
-    // TypeInfo:  0x02401924
+    // TypeInfo: 0x02401924
 #ifndef _BlueprintBundleMetadataContainer_
 #define _BlueprintBundleMetadataContainer_
 #pragma pack(push, 4)
@@ -6624,9 +6624,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00911
+    // ClassId: 00911
     // RuntimeId: 05967
-    // TypeInfo:  0x024018F8
+    // TypeInfo: 0x024018F8
 #ifndef _BlueprintContainerItem_
 #define _BlueprintContainerItem_
 #pragma pack(push, 4)
@@ -6651,9 +6651,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00912
+    // ClassId: 00912
     // RuntimeId: 05961
-    // TypeInfo:  0x02401890
+    // TypeInfo: 0x02401890
 #ifndef _BlueprintBundleMetadata_
 #define _BlueprintBundleMetadata_
 #pragma pack(push, 4)
@@ -6680,9 +6680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00913
+    // ClassId: 00913
     // RuntimeId: 05965
-    // TypeInfo:  0x024018CC
+    // TypeInfo: 0x024018CC
 #ifndef _ExampleVehicleBlueprintBundleMetadata_
 #define _ExampleVehicleBlueprintBundleMetadata_
 #pragma pack(push, 4)
@@ -6707,9 +6707,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01884
+    // ClassId: 01884
     // RuntimeId: 00212
-    // TypeInfo:  0x023C5058
+    // TypeInfo: 0x023C5058
 #ifndef _GameEntityData_
 #define _GameEntityData_
 #pragma pack(push, 16)
@@ -6737,9 +6737,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01886
+    // ClassId: 01886
     // RuntimeId: 05957
-    // TypeInfo:  0x02401838
+    // TypeInfo: 0x02401838
 #ifndef _BlueprintBundleLoaderEntityData_
 #define _BlueprintBundleLoaderEntityData_
 #pragma pack(push, 16)
@@ -6763,9 +6763,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01887
+    // ClassId: 01887
     // RuntimeId: 05955
-    // TypeInfo:  0x0240180C
+    // TypeInfo: 0x0240180C
 #ifndef _BlueprintBundleSelectorEntityData_
 #define _BlueprintBundleSelectorEntityData_
 #pragma pack(push, 16)
@@ -6791,9 +6791,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01952
+    // ClassId: 01952
     // RuntimeId: 04656
-    // TypeInfo:  0x023F584C
+    // TypeInfo: 0x023F584C
 #ifndef _GamePhysicsEntityData_
 #define _GamePhysicsEntityData_
 #pragma pack(push, 16)
@@ -6819,9 +6819,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02384
+    // ClassId: 02384
     // RuntimeId: 00436
-    // TypeInfo:  0x023C69A4
+    // TypeInfo: 0x023C69A4
 #ifndef _TreeBase_
 #define _TreeBase_
 #pragma pack(push, 4)
@@ -6845,9 +6845,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02385
+    // ClassId: 02385
     // RuntimeId: 05943
-    // TypeInfo:  0x02401728
+    // TypeInfo: 0x02401728
 #ifndef _AwardableTreeBase_
 #define _AwardableTreeBase_
 #pragma pack(push, 4)
@@ -6875,9 +6875,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01467
+    // ClassId: 01467
     // RuntimeId: 00434
-    // TypeInfo:  0x023C6978
+    // TypeInfo: 0x023C6978
 #ifndef _TreeNodeBase_
 #define _TreeNodeBase_
 #pragma pack(push, 4)
@@ -6902,9 +6902,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01468
+    // ClassId: 01468
     // RuntimeId: 05929
-    // TypeInfo:  0x02401610
+    // TypeInfo: 0x02401610
 #ifndef _AbstractAwardData_
 #define _AbstractAwardData_
 #pragma pack(push, 4)
@@ -6928,9 +6928,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00914
+    // ClassId: 00914
     // RuntimeId: 05937
-    // TypeInfo:  0x024016A4
+    // TypeInfo: 0x024016A4
 #ifndef _AwardStarNameData_
 #define _AwardStarNameData_
 #pragma pack(push, 4)
@@ -6955,9 +6955,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01469
+    // ClassId: 01469
     // RuntimeId: 05933
-    // TypeInfo:  0x02401668
+    // TypeInfo: 0x02401668
 #ifndef _AwardData_
 #define _AwardData_
 #pragma pack(push, 4)
@@ -7005,9 +7005,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01472
+    // ClassId: 01472
     // RuntimeId: 05931
-    // TypeInfo:  0x0240163C
+    // TypeInfo: 0x0240163C
 #ifndef _AwardHeaderData_
 #define _AwardHeaderData_
 #pragma pack(push, 4)
@@ -7033,9 +7033,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01471
+    // ClassId: 01471
     // RuntimeId: 05939
-    // TypeInfo:  0x024016D0
+    // TypeInfo: 0x024016D0
 #ifndef _AwardStarData_
 #define _AwardStarData_
 #pragma pack(push, 4)
@@ -7060,9 +7060,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01004
+    // ClassId: 01004
     // RuntimeId: 05114
-    // TypeInfo:  0x023FA450
+    // TypeInfo: 0x023FA450
 #ifndef _CriteriaData_
 #define _CriteriaData_
 #pragma pack(push, 4)
@@ -7100,9 +7100,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00915
+    // ClassId: 00915
     // RuntimeId: 05921
-    // TypeInfo:  0x02401598
+    // TypeInfo: 0x02401598
 #ifndef _CriteriaStarCategoryData_
 #define _CriteriaStarCategoryData_
 #pragma pack(push, 4)
@@ -7127,9 +7127,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01813
+    // ClassId: 01813
     // RuntimeId: 00368
-    // TypeInfo:  0x023C5C54
+    // TypeInfo: 0x023C5C54
 #ifndef _CustomSequenceTrackData_
 #define _CustomSequenceTrackData_
 #pragma pack(push, 4)
@@ -7160,9 +7160,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00916
+    // ClassId: 00916
     // RuntimeId: 05907
-    // TypeInfo:  0x024014F0
+    // TypeInfo: 0x024014F0
 #ifndef _AntTrackItemData_
 #define _AntTrackItemData_
 #pragma pack(push, 4)
@@ -7192,9 +7192,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01888
+    // ClassId: 01888
     // RuntimeId: 05905
-    // TypeInfo:  0x024014C4
+    // TypeInfo: 0x024014C4
 #ifndef _AntEventEntityData_
 #define _AntEventEntityData_
 #pragma pack(push, 16)
@@ -7224,9 +7224,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00917
+    // ClassId: 00917
     // RuntimeId: 05897
-    // TypeInfo:  0x02401468
+    // TypeInfo: 0x02401468
 #ifndef _AntEnumeration_
 #define _AntEnumeration_
 #pragma pack(push, 4)
@@ -7252,9 +7252,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02161
+    // ClassId: 02161
     // RuntimeId: 06055
-    // TypeInfo:  0x02402B28
+    // TypeInfo: 0x02402B28
 #ifndef _AIWeaponData_
 #define _AIWeaponData_
 #pragma pack(push, 4)
@@ -7321,9 +7321,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02163
+    // ClassId: 02163
     // RuntimeId: 06035
-    // TypeInfo:  0x024029FC
+    // TypeInfo: 0x024029FC
 #ifndef _AIEntryData_
 #define _AIEntryData_
 #pragma pack(push, 4)
@@ -7356,9 +7356,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01717
+    // ClassId: 01717
     // RuntimeId: 05879
-    // TypeInfo:  0x02401384
+    // TypeInfo: 0x02401384
 #ifndef _CoverPrepareFireEntityData_
 #define _CoverPrepareFireEntityData_
 #pragma pack(push, 4)
@@ -7382,9 +7382,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01596
+    // ClassId: 01596
     // RuntimeId: 05877
-    // TypeInfo:  0x02401358
+    // TypeInfo: 0x02401358
 #ifndef _AILocoComponentData_
 #define _AILocoComponentData_
 #pragma pack(push, 16)
@@ -7413,9 +7413,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00984
+    // ClassId: 00984
     // RuntimeId: 05326
-    // TypeInfo:  0x023FCF70
+    // TypeInfo: 0x023FCF70
 #ifndef _WaypointData_
 #define _WaypointData_
 #pragma pack(push, 4)
@@ -7443,9 +7443,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00985
+    // ClassId: 00985
     // RuntimeId: 05867
-    // TypeInfo:  0x0240127C
+    // TypeInfo: 0x0240127C
 #ifndef _AbstractLocoWaypointData_
 #define _AbstractLocoWaypointData_
 #pragma pack(push, 4)
@@ -7470,9 +7470,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00988
+    // ClassId: 00988
     // RuntimeId: 05871
-    // TypeInfo:  0x024012D4
+    // TypeInfo: 0x024012D4
 #ifndef _CoverWaypointData_
 #define _CoverWaypointData_
 #pragma pack(push, 16)
@@ -7497,9 +7497,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00989
+    // ClassId: 00989
     // RuntimeId: 05869
-    // TypeInfo:  0x024012A8
+    // TypeInfo: 0x024012A8
 #ifndef _ScenarioWaypointData_
 #define _ScenarioWaypointData_
 #pragma pack(push, 16)
@@ -7526,9 +7526,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00986
+    // ClassId: 00986
     // RuntimeId: 05875
-    // TypeInfo:  0x0240132C
+    // TypeInfo: 0x0240132C
 #ifndef _StandardMoveWaypointData_
 #define _StandardMoveWaypointData_
 #pragma pack(push, 16)
@@ -7553,9 +7553,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00066
+    // ClassId: 00066
     // RuntimeId: 05831
-    // TypeInfo:  0x02401144
+    // TypeInfo: 0x02401144
 #ifndef _RawFileData_
 #define _RawFileData_
     class RawFileData
@@ -7574,9 +7574,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01504
+    // ClassId: 01504
     // RuntimeId: 00258
-    // TypeInfo:  0x023C53DC
+    // TypeInfo: 0x023C53DC
 #ifndef _MaterialRelationPropertyData_
 #define _MaterialRelationPropertyData_
 #pragma pack(push, 4)
@@ -7600,9 +7600,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01505
+    // ClassId: 01505
     // RuntimeId: 00262
-    // TypeInfo:  0x023C5434
+    // TypeInfo: 0x023C5434
 #ifndef _PhysicsPropertyRelationPropertyData_
 #define _PhysicsPropertyRelationPropertyData_
 #pragma pack(push, 4)
@@ -7626,9 +7626,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01507
+    // ClassId: 01507
     // RuntimeId: 05826
-    // TypeInfo:  0x024004E0
+    // TypeInfo: 0x024004E0
 #ifndef _MaterialRelationDamageData_
 #define _MaterialRelationDamageData_
 #pragma pack(push, 4)
@@ -7660,9 +7660,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01508
+    // ClassId: 01508
     // RuntimeId: 05824
-    // TypeInfo:  0x024004B4
+    // TypeInfo: 0x024004B4
 #ifndef _MaterialRelationTerrainDestructionData_
 #define _MaterialRelationTerrainDestructionData_
 #pragma pack(push, 4)
@@ -7688,9 +7688,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01511
+    // ClassId: 01511
     // RuntimeId: 00260
-    // TypeInfo:  0x023C5408
+    // TypeInfo: 0x023C5408
 #ifndef _PhysicsMaterialRelationPropertyData_
 #define _PhysicsMaterialRelationPropertyData_
 #pragma pack(push, 4)
@@ -7714,9 +7714,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01514
+    // ClassId: 01514
     // RuntimeId: 05820
-    // TypeInfo:  0x0240045C
+    // TypeInfo: 0x0240045C
 #ifndef _MaterialRelationEffectData_
 #define _MaterialRelationEffectData_
 #pragma pack(push, 4)
@@ -7745,9 +7745,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01509
+    // ClassId: 01509
     // RuntimeId: 05818
-    // TypeInfo:  0x02400430
+    // TypeInfo: 0x02400430
 #ifndef _MaterialPropertyImpulseData_
 #define _MaterialPropertyImpulseData_
 #pragma pack(push, 4)
@@ -7772,9 +7772,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01510
+    // ClassId: 01510
     // RuntimeId: 05816
-    // TypeInfo:  0x02400404
+    // TypeInfo: 0x02400404
 #ifndef _MaterialPropertyHealthData_
 #define _MaterialPropertyHealthData_
 #pragma pack(push, 4)
@@ -7799,9 +7799,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01515
+    // ClassId: 01515
     // RuntimeId: 05814
-    // TypeInfo:  0x024003D8
+    // TypeInfo: 0x024003D8
 #ifndef _MaterialPropertyTerrainData_
 #define _MaterialPropertyTerrainData_
 #pragma pack(push, 16)
@@ -7830,9 +7830,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01516
+    // ClassId: 01516
     // RuntimeId: 05812
-    // TypeInfo:  0x024003AC
+    // TypeInfo: 0x024003AC
 #ifndef _MaterialRelationDecalData_
 #define _MaterialRelationDecalData_
 #pragma pack(push, 4)
@@ -7857,9 +7857,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01517
+    // ClassId: 01517
     // RuntimeId: 05810
-    // TypeInfo:  0x02400380
+    // TypeInfo: 0x02400380
 #ifndef _MaterialPropertyEffectData_
 #define _MaterialPropertyEffectData_
 #pragma pack(push, 4)
@@ -7884,9 +7884,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01518
+    // ClassId: 01518
     // RuntimeId: 05808
-    // TypeInfo:  0x02400354
+    // TypeInfo: 0x02400354
 #ifndef _MaterialPropertySoundData_
 #define _MaterialPropertySoundData_
 #pragma pack(push, 4)
@@ -7916,9 +7916,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00918
+    // ClassId: 00918
     // RuntimeId: 05806
-    // TypeInfo:  0x02400328
+    // TypeInfo: 0x02400328
 #ifndef _MaterialSoldierSoundSettings_
 #define _MaterialSoldierSoundSettings_
 #pragma pack(push, 4)
@@ -7945,9 +7945,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01718
+    // ClassId: 01718
     // RuntimeId: 05804
-    // TypeInfo:  0x024002FC
+    // TypeInfo: 0x024002FC
 #ifndef _StreamingGateEntityData_
 #define _StreamingGateEntityData_
 #pragma pack(push, 4)
@@ -7972,9 +7972,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01719
+    // ClassId: 01719
     // RuntimeId: 05802
-    // TypeInfo:  0x024002D0
+    // TypeInfo: 0x024002D0
 #ifndef _WeaponStateEntityData_
 #define _WeaponStateEntityData_
 #pragma pack(push, 4)
@@ -8000,9 +8000,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01720
+    // ClassId: 01720
     // RuntimeId: 05800
-    // TypeInfo:  0x024002A4
+    // TypeInfo: 0x024002A4
 #ifndef _SpectatorReplayEntityData_
 #define _SpectatorReplayEntityData_
 #pragma pack(push, 4)
@@ -8026,9 +8026,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01721
+    // ClassId: 01721
     // RuntimeId: 05798
-    // TypeInfo:  0x02400278
+    // TypeInfo: 0x02400278
 #ifndef _PlayerLookAtEntityData_
 #define _PlayerLookAtEntityData_
 #pragma pack(push, 16)
@@ -8054,9 +8054,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01889
+    // ClassId: 01889
     // RuntimeId: 05796
-    // TypeInfo:  0x0240024C
+    // TypeInfo: 0x0240024C
 #ifndef _AntInteractionData_
 #define _AntInteractionData_
 #pragma pack(push, 16)
@@ -8082,9 +8082,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01722
+    // ClassId: 01722
     // RuntimeId: 05788
-    // TypeInfo:  0x024001B8
+    // TypeInfo: 0x024001B8
 #ifndef _CustomizeBaseEntityData_
 #define _CustomizeBaseEntityData_
 #pragma pack(push, 4)
@@ -8109,9 +8109,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01724
+    // ClassId: 01724
     // RuntimeId: 05790
-    // TypeInfo:  0x024001E4
+    // TypeInfo: 0x024001E4
 #ifndef _CustomizeCharacterEntityData_
 #define _CustomizeCharacterEntityData_
 #pragma pack(push, 4)
@@ -8136,9 +8136,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01723
+    // ClassId: 01723
     // RuntimeId: 05792
-    // TypeInfo:  0x02400210
+    // TypeInfo: 0x02400210
 #ifndef _CustomizeSoldierEntityData_
 #define _CustomizeSoldierEntityData_
 #pragma pack(push, 4)
@@ -8163,9 +8163,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01725
+    // ClassId: 01725
     // RuntimeId: 05786
-    // TypeInfo:  0x0240018C
+    // TypeInfo: 0x0240018C
 #ifndef _PlayerFilterEntityData_
 #define _PlayerFilterEntityData_
 #pragma pack(push, 4)
@@ -8193,9 +8193,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01726
+    // ClassId: 01726
     // RuntimeId: 05784
-    // TypeInfo:  0x02400160
+    // TypeInfo: 0x02400160
 #ifndef _AreaProximityEntityData_
 #define _AreaProximityEntityData_
 #pragma pack(push, 4)
@@ -8224,9 +8224,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01890
+    // ClassId: 01890
     // RuntimeId: 05782
-    // TypeInfo:  0x02400134
+    // TypeInfo: 0x02400134
 #ifndef _ArmDisarmAwardEntityData_
 #define _ArmDisarmAwardEntityData_
 #pragma pack(push, 16)
@@ -8250,9 +8250,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01891
+    // ClassId: 01891
     // RuntimeId: 05780
-    // TypeInfo:  0x02400108
+    // TypeInfo: 0x02400108
 #ifndef _StatEventTriggerEntityData_
 #define _StatEventTriggerEntityData_
 #pragma pack(push, 16)
@@ -8281,9 +8281,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01892
+    // ClassId: 01892
     // RuntimeId: 05778
-    // TypeInfo:  0x024000DC
+    // TypeInfo: 0x024000DC
 #ifndef _ArtilleryStrikeEntityData_
 #define _ArtilleryStrikeEntityData_
 #pragma pack(push, 16)
@@ -8322,9 +8322,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01727
+    // ClassId: 01727
     // RuntimeId: 05776
-    // TypeInfo:  0x024000B0
+    // TypeInfo: 0x024000B0
 #ifndef _RoundOverEntityData_
 #define _RoundOverEntityData_
 #pragma pack(push, 4)
@@ -8349,9 +8349,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01893
+    // ClassId: 01893
     // RuntimeId: 05774
-    // TypeInfo:  0x02400084
+    // TypeInfo: 0x02400084
 #ifndef _PreRoundEntityData_
 #define _PreRoundEntityData_
 #pragma pack(push, 16)
@@ -8379,9 +8379,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01894
+    // ClassId: 01894
     // RuntimeId: 05772
-    // TypeInfo:  0x02400058
+    // TypeInfo: 0x02400058
 #ifndef _AutoSquadEntityData_
 #define _AutoSquadEntityData_
 #pragma pack(push, 16)
@@ -8407,9 +8407,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01895
+    // ClassId: 01895
     // RuntimeId: 05770
-    // TypeInfo:  0x0240002C
+    // TypeInfo: 0x0240002C
 #ifndef _AutoTeamEntityData_
 #define _AutoTeamEntityData_
 #pragma pack(push, 16)
@@ -8440,9 +8440,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01896
+    // ClassId: 01896
     // RuntimeId: 05766
-    // TypeInfo:  0x023FFFF0
+    // TypeInfo: 0x023FFFF0
 #ifndef _InputRestrictionEntityData_
 #define _InputRestrictionEntityData_
 #pragma pack(push, 16)
@@ -8516,9 +8516,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01897
+    // ClassId: 01897
     // RuntimeId: 05764
-    // TypeInfo:  0x023FFFC4
+    // TypeInfo: 0x023FFFC4
 #ifndef _EventIfSwitchEntityData_
 #define _EventIfSwitchEntityData_
 #pragma pack(push, 16)
@@ -8545,9 +8545,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01898
+    // ClassId: 01898
     // RuntimeId: 05762
-    // TypeInfo:  0x023FFF98
+    // TypeInfo: 0x023FFF98
 #ifndef _TeamFilterEntityData_
 #define _TeamFilterEntityData_
 #pragma pack(push, 16)
@@ -8576,9 +8576,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01728
+    // ClassId: 01728
     // RuntimeId: 05760
-    // TypeInfo:  0x023FFF6C
+    // TypeInfo: 0x023FFF6C
 #ifndef _PlatformSplitterEntityData_
 #define _PlatformSplitterEntityData_
 #pragma pack(push, 4)
@@ -8605,9 +8605,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01729
+    // ClassId: 01729
     // RuntimeId: 05758
-    // TypeInfo:  0x023FFF40
+    // TypeInfo: 0x023FFF40
 #ifndef _EventSplitterEntityData_
 #define _EventSplitterEntityData_
 #pragma pack(push, 4)
@@ -8634,9 +8634,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01899
+    // ClassId: 01899
     // RuntimeId: 05756
-    // TypeInfo:  0x023FFF14
+    // TypeInfo: 0x023FFF14
 #ifndef _EventMemoryEntityData_
 #define _EventMemoryEntityData_
 #pragma pack(push, 16)
@@ -8662,9 +8662,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01900
+    // ClassId: 01900
     // RuntimeId: 05754
-    // TypeInfo:  0x023FFEE8
+    // TypeInfo: 0x023FFEE8
 #ifndef _StateEventGateEntityData_
 #define _StateEventGateEntityData_
 #pragma pack(push, 16)
@@ -8690,9 +8690,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01901
+    // ClassId: 01901
     // RuntimeId: 05750
-    // TypeInfo:  0x023FFEAC
+    // TypeInfo: 0x023FFEAC
 #ifndef _SpeedEventGateEntityData_
 #define _SpeedEventGateEntityData_
 #pragma pack(push, 16)
@@ -8719,9 +8719,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01730
+    // ClassId: 01730
     // RuntimeId: 05748
-    // TypeInfo:  0x023FFE80
+    // TypeInfo: 0x023FFE80
 #ifndef _EventCompareGateEntityData_
 #define _EventCompareGateEntityData_
 #pragma pack(push, 4)
@@ -8748,9 +8748,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01902
+    // ClassId: 01902
     // RuntimeId: 05744
-    // TypeInfo:  0x023FFE44
+    // TypeInfo: 0x023FFE44
 #ifndef _HudEntityData_
 #define _HudEntityData_
 #pragma pack(push, 16)
@@ -8774,9 +8774,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01731
+    // ClassId: 01731
     // RuntimeId: 05740
-    // TypeInfo:  0x023FFE08
+    // TypeInfo: 0x023FFE08
 #ifndef _SaveGameLoadedEntityData_
 #define _SaveGameLoadedEntityData_
 #pragma pack(push, 4)
@@ -8800,9 +8800,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01732
+    // ClassId: 01732
     // RuntimeId: 05738
-    // TypeInfo:  0x023FFDDC
+    // TypeInfo: 0x023FFDDC
 #ifndef _SaveEntityData_
 #define _SaveEntityData_
 #pragma pack(push, 4)
@@ -8832,9 +8832,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01733
+    // ClassId: 01733
     // RuntimeId: 05736
-    // TypeInfo:  0x023FFDB0
+    // TypeInfo: 0x023FFDB0
 #ifndef _StartEntityData_
 #define _StartEntityData_
 #pragma pack(push, 4)
@@ -8862,9 +8862,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01903
+    // ClassId: 01903
     // RuntimeId: 05734
-    // TypeInfo:  0x023FFD84
+    // TypeInfo: 0x023FFD84
 #ifndef _MapMarkerEntityData_
 #define _MapMarkerEntityData_
 #pragma pack(push, 16)
@@ -8918,9 +8918,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01734
+    // ClassId: 01734
     // RuntimeId: 05728
-    // TypeInfo:  0x023FFD38
+    // TypeInfo: 0x023FFD38
 #ifndef _MessageEntityData_
 #define _MessageEntityData_
 #pragma pack(push, 4)
@@ -8951,9 +8951,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01904
+    // ClassId: 01904
     // RuntimeId: 05722
-    // TypeInfo:  0x023FFCEC
+    // TypeInfo: 0x023FFCEC
 #ifndef _TacticalObjectiveEntityData_
 #define _TacticalObjectiveEntityData_
 #pragma pack(push, 16)
@@ -8983,9 +8983,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01905
+    // ClassId: 01905
     // RuntimeId: 05720
-    // TypeInfo:  0x023FFCC0
+    // TypeInfo: 0x023FFCC0
 #ifndef _LevelControlEntityData_
 #define _LevelControlEntityData_
 #pragma pack(push, 16)
@@ -9012,9 +9012,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01906
+    // ClassId: 01906
     // RuntimeId: 05718
-    // TypeInfo:  0x023FFC94
+    // TypeInfo: 0x023FFC94
 #ifndef _ObjectiveEntityData_
 #define _ObjectiveEntityData_
 #pragma pack(push, 16)
@@ -9052,9 +9052,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00919
+    // ClassId: 00919
     // RuntimeId: 05714
-    // TypeInfo:  0x023FFC58
+    // TypeInfo: 0x023FFC58
 #ifndef _MissionObjectiveHudData_
 #define _MissionObjectiveHudData_
 #pragma pack(push, 16)
@@ -9086,9 +9086,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01907
+    // ClassId: 01907
     // RuntimeId: 05710
-    // TypeInfo:  0x023FFC1C
+    // TypeInfo: 0x023FFC1C
 #ifndef _MovieEntityData_
 #define _MovieEntityData_
 #pragma pack(push, 16)
@@ -9116,9 +9116,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01735
+    // ClassId: 01735
     // RuntimeId: 05708
-    // TypeInfo:  0x023FFBF0
+    // TypeInfo: 0x023FFBF0
 #ifndef _PlayVideoEntityData_
 #define _PlayVideoEntityData_
 #pragma pack(push, 4)
@@ -9146,9 +9146,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01736
+    // ClassId: 01736
     // RuntimeId: 05706
-    // TypeInfo:  0x023FFBC4
+    // TypeInfo: 0x023FFBC4
 #ifndef _FadeEntityData_
 #define _FadeEntityData_
 #pragma pack(push, 4)
@@ -9181,9 +9181,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01908
+    // ClassId: 01908
     // RuntimeId: 05704
-    // TypeInfo:  0x023FFB98
+    // TypeInfo: 0x023FFB98
 #ifndef _AmmoCrateEntityData_
 #define _AmmoCrateEntityData_
 #pragma pack(push, 16)
@@ -9213,9 +9213,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01947
+    // ClassId: 01947
     // RuntimeId: 04672
-    // TypeInfo:  0x023F5978
+    // TypeInfo: 0x023F5978
 #ifndef _InteractionEntityData_
 #define _InteractionEntityData_
 #pragma pack(push, 16)
@@ -9246,9 +9246,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01909
+    // ClassId: 01909
     // RuntimeId: 05694
-    // TypeInfo:  0x023FFB10
+    // TypeInfo: 0x023FFB10
 #ifndef _KillAllEntityData_
 #define _KillAllEntityData_
 #pragma pack(push, 16)
@@ -9274,9 +9274,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01737
+    // ClassId: 01737
     // RuntimeId: 05692
-    // TypeInfo:  0x023FFAE4
+    // TypeInfo: 0x023FFAE4
 #ifndef _WaypointTriggerEntityData_
 #define _WaypointTriggerEntityData_
 #pragma pack(push, 4)
@@ -9301,9 +9301,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01910
+    // ClassId: 01910
     // RuntimeId: 05690
-    // TypeInfo:  0x023FFAB8
+    // TypeInfo: 0x023FFAB8
 #ifndef _CombatAreaTriggerEntityData_
 #define _CombatAreaTriggerEntityData_
 #pragma pack(push, 16)
@@ -9337,9 +9337,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01911
+    // ClassId: 01911
     // RuntimeId: 05688
-    // TypeInfo:  0x023FFA8C
+    // TypeInfo: 0x023FFA8C
 #ifndef _SurroundingGeometryEntityData_
 #define _SurroundingGeometryEntityData_
 #pragma pack(push, 16)
@@ -9367,9 +9367,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01912
+    // ClassId: 01912
     // RuntimeId: 05686
-    // TypeInfo:  0x023FFA60
+    // TypeInfo: 0x023FFA60
 #ifndef _UIMinimapVolumeEntityData_
 #define _UIMinimapVolumeEntityData_
 #pragma pack(push, 16)
@@ -9396,9 +9396,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01541
+    // ClassId: 01541
     // RuntimeId: 05684
-    // TypeInfo:  0x023FFA34
+    // TypeInfo: 0x023FFA34
 #ifndef _UICombatAreaEntityData_
 #define _UICombatAreaEntityData_
 #pragma pack(push, 4)
@@ -9423,9 +9423,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00921
+    // ClassId: 00921
     // RuntimeId: 05682
-    // TypeInfo:  0x023FFA08
+    // TypeInfo: 0x023FFA08
 #ifndef _AllowedVehiclesData_
 #define _AllowedVehiclesData_
 #pragma pack(push, 4)
@@ -9449,9 +9449,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01913
+    // ClassId: 01913
     // RuntimeId: 05680
-    // TypeInfo:  0x023FF9DC
+    // TypeInfo: 0x023FF9DC
 #ifndef _DeathAreaTriggerEntityData_
 #define _DeathAreaTriggerEntityData_
 #pragma pack(push, 16)
@@ -9478,9 +9478,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01914
+    // ClassId: 01914
     // RuntimeId: 05678
-    // TypeInfo:  0x023FF9B0
+    // TypeInfo: 0x023FF9B0
 #ifndef _CapturePointEntityData_
 #define _CapturePointEntityData_
 #pragma pack(push, 16)
@@ -9538,9 +9538,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01915
+    // ClassId: 01915
     // RuntimeId: 05672
-    // TypeInfo:  0x023FF964
+    // TypeInfo: 0x023FF964
 #ifndef _FlagCounterEntityData_
 #define _FlagCounterEntityData_
 #pragma pack(push, 16)
@@ -9570,9 +9570,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01916
+    // ClassId: 01916
     // RuntimeId: 05670
-    // TypeInfo:  0x023FF938
+    // TypeInfo: 0x023FF938
 #ifndef _TicketCounterEntityData_
 #define _TicketCounterEntityData_
 #pragma pack(push, 16)
@@ -9609,9 +9609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01917
+    // ClassId: 01917
     // RuntimeId: 05664
-    // TypeInfo:  0x023FF8EC
+    // TypeInfo: 0x023FF8EC
 #ifndef _HumanPlayerEntityData_
 #define _HumanPlayerEntityData_
 #pragma pack(push, 16)
@@ -9639,9 +9639,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01918
+    // ClassId: 01918
     // RuntimeId: 05662
-    // TypeInfo:  0x023FF8C0
+    // TypeInfo: 0x023FF8C0
 #ifndef _TeamEntityData_
 #define _TeamEntityData_
 #pragma pack(push, 16)
@@ -9668,9 +9668,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02164
+    // ClassId: 02164
     // RuntimeId: 05658
-    // TypeInfo:  0x023FF868
+    // TypeInfo: 0x023FF868
 #ifndef _TeamAsset_
 #define _TeamAsset_
 #pragma pack(push, 4)
@@ -9694,9 +9694,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02165
+    // ClassId: 02165
     // RuntimeId: 05660
-    // TypeInfo:  0x023FF894
+    // TypeInfo: 0x023FF894
 #ifndef _TeamData_
 #define _TeamData_
 #pragma pack(push, 4)
@@ -9724,9 +9724,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02166
+    // ClassId: 02166
     // RuntimeId: 05656
-    // TypeInfo:  0x023FF83C
+    // TypeInfo: 0x023FF83C
 #ifndef _PlayFromHereAsset_
 #define _PlayFromHereAsset_
 #pragma pack(push, 4)
@@ -9753,9 +9753,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00922
+    // ClassId: 00922
     // RuntimeId: 05654
-    // TypeInfo:  0x023FF810
+    // TypeInfo: 0x023FF810
 #ifndef _EntityTransformData_
 #define _EntityTransformData_
 #pragma pack(push, 4)
@@ -9780,9 +9780,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00923
+    // ClassId: 00923
     // RuntimeId: 05652
-    // TypeInfo:  0x023FF7E4
+    // TypeInfo: 0x023FF7E4
 #ifndef _LevelSaveData_
 #define _LevelSaveData_
 #pragma pack(push, 4)
@@ -9808,9 +9808,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00924
+    // ClassId: 00924
     // RuntimeId: 05650
-    // TypeInfo:  0x023FF7B8
+    // TypeInfo: 0x023FF7B8
 #ifndef _AnimatedSkeletonDatabase_
 #define _AnimatedSkeletonDatabase_
 #pragma pack(push, 4)
@@ -9836,9 +9836,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02416
+    // ClassId: 02416
     // RuntimeId: 00102
-    // TypeInfo:  0x023C2D18
+    // TypeInfo: 0x023C2D18
 #ifndef _DataBusData_
 #define _DataBusData_
 #pragma pack(push, 4)
@@ -9864,9 +9864,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00925
+    // ClassId: 00925
     // RuntimeId: 05644
-    // TypeInfo:  0x023FF750
+    // TypeInfo: 0x023FF750
 #ifndef _CameraTransition_
 #define _CameraTransition_
 #pragma pack(push, 4)
@@ -9890,9 +9890,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02167
+    // ClassId: 02167
     // RuntimeId: 05642
-    // TypeInfo:  0x023FF724
+    // TypeInfo: 0x023FF724
 #ifndef _CameraModeAsset_
 #define _CameraModeAsset_
 #pragma pack(push, 4)
@@ -9916,9 +9916,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02169
+    // ClassId: 02169
     // RuntimeId: 05983
-    // TypeInfo:  0x024026B8
+    // TypeInfo: 0x024026B8
 #ifndef _AISystemAsset_
 #define _AISystemAsset_
 #pragma pack(push, 4)
@@ -9945,9 +9945,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02171
+    // ClassId: 02171
     // RuntimeId: 05636
-    // TypeInfo:  0x023FF6BC
+    // TypeInfo: 0x023FF6BC
 #ifndef _PathfindingSandboxAsset_
 #define _PathfindingSandboxAsset_
 #pragma pack(push, 4)
@@ -9972,9 +9972,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01738
+    // ClassId: 01738
     // RuntimeId: 05634
-    // TypeInfo:  0x023FF690
+    // TypeInfo: 0x023FF690
 #ifndef _PathfindingSystemEntityData_
 #define _PathfindingSystemEntityData_
 #pragma pack(push, 4)
@@ -9999,9 +9999,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00926
+    // ClassId: 00926
     // RuntimeId: 05632
-    // TypeInfo:  0x023FF664
+    // TypeInfo: 0x023FF664
 #ifndef _FaceAnimationWaveMappings_
 #define _FaceAnimationWaveMappings_
 #pragma pack(push, 4)
@@ -10028,9 +10028,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02172
+    // ClassId: 02172
     // RuntimeId: 05628
-    // TypeInfo:  0x023FF628
+    // TypeInfo: 0x023FF628
 #ifndef _BigWorldSettingsAsset_
 #define _BigWorldSettingsAsset_
 #pragma pack(push, 4)
@@ -10055,9 +10055,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00927
+    // ClassId: 00927
     // RuntimeId: 05626
-    // TypeInfo:  0x023FF5FC
+    // TypeInfo: 0x023FF5FC
 #ifndef _BigWorldSetting_
 #define _BigWorldSetting_
 #pragma pack(push, 4)
@@ -10086,9 +10086,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02173
+    // ClassId: 02173
     // RuntimeId: 05624
-    // TypeInfo:  0x023FF5D0
+    // TypeInfo: 0x023FF5D0
 #ifndef _LevelReportingAsset_
 #define _LevelReportingAsset_
 #pragma pack(push, 4)
@@ -10113,9 +10113,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02174
+    // ClassId: 02174
     // RuntimeId: 05622
-    // TypeInfo:  0x023FF5A4
+    // TypeInfo: 0x023FF5A4
 #ifndef _LevelDescriptionAsset_
 #define _LevelDescriptionAsset_
 #pragma pack(push, 4)
@@ -10143,9 +10143,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00928
+    // ClassId: 00928
     // RuntimeId: 05614
-    // TypeInfo:  0x023FF52C
+    // TypeInfo: 0x023FF52C
 #ifndef _LevelDescriptionComponent_
 #define _LevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -10169,9 +10169,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00929
+    // ClassId: 00929
     // RuntimeId: 05618
-    // TypeInfo:  0x023FF568
+    // TypeInfo: 0x023FF568
 #ifndef _MemoryLevelDescriptionComponent_
 #define _MemoryLevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -10201,9 +10201,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00938
+    // ClassId: 00938
     // RuntimeId: 05594
-    // TypeInfo:  0x023FDF18
+    // TypeInfo: 0x023FDF18
 #ifndef _WeaponSwayData_
 #define _WeaponSwayData_
 #pragma pack(push, 4)
@@ -10227,9 +10227,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00939
+    // ClassId: 00939
     // RuntimeId: 05596
-    // TypeInfo:  0x023FDF44
+    // TypeInfo: 0x023FDF44
 #ifndef _GunSwayData_
 #define _GunSwayData_
 #pragma pack(push, 4)
@@ -10272,9 +10272,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02175
+    // ClassId: 02175
     // RuntimeId: 05592
-    // TypeInfo:  0x023FDEEC
+    // TypeInfo: 0x023FDEEC
 #ifndef _GunSwayModifierData_
 #define _GunSwayModifierData_
 #pragma pack(push, 4)
@@ -10308,9 +10308,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00940
+    // ClassId: 00940
     // RuntimeId: 05574
-    // TypeInfo:  0x023FDE40
+    // TypeInfo: 0x023FDE40
 #ifndef _CameraRecoilData_
 #define _CameraRecoilData_
 #pragma pack(push, 4)
@@ -10337,9 +10337,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01739
+    // ClassId: 01739
     // RuntimeId: 05566
-    // TypeInfo:  0x023FDDE4
+    // TypeInfo: 0x023FDDE4
 #ifndef _WeaponLagEntityData_
 #define _WeaponLagEntityData_
 #pragma pack(push, 4)
@@ -10364,9 +10364,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01953
+    // ClassId: 01953
     // RuntimeId: 05336
-    // TypeInfo:  0x023FD014
+    // TypeInfo: 0x023FD014
 #ifndef _ProjectileEntityData_
 #define _ProjectileEntityData_
 #pragma pack(push, 16)
@@ -10404,9 +10404,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00963
+    // ClassId: 00963
     // RuntimeId: 05416
-    // TypeInfo:  0x023FD438
+    // TypeInfo: 0x023FD438
 #ifndef _ToolData_
 #define _ToolData_
 #pragma pack(push, 4)
@@ -10432,9 +10432,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00941
+    // ClassId: 00941
     // RuntimeId: 05544
-    // TypeInfo:  0x023FDCD0
+    // TypeInfo: 0x023FDCD0
 #ifndef _WeaponOverrideData_
 #define _WeaponOverrideData_
 #pragma pack(push, 4)
@@ -10460,9 +10460,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00942
+    // ClassId: 00942
     // RuntimeId: 05538
-    // TypeInfo:  0x023FDC84
+    // TypeInfo: 0x023FDC84
 #ifndef _BoneFakePhysicsData_
 #define _BoneFakePhysicsData_
 #pragma pack(push, 4)
@@ -10489,9 +10489,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01919
+    // ClassId: 01919
     // RuntimeId: 05494
-    // TypeInfo:  0x023FD948
+    // TypeInfo: 0x023FD948
 #ifndef _WeaponEntityData_
 #define _WeaponEntityData_
 #pragma pack(push, 16)
@@ -10521,9 +10521,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00943
+    // ClassId: 00943
     // RuntimeId: 05496
-    // TypeInfo:  0x023FD974
+    // TypeInfo: 0x023FD974
 #ifndef _WeaponModifierBase_
 #define _WeaponModifierBase_
 #pragma pack(push, 4)
@@ -10547,9 +10547,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00945
+    // ClassId: 00945
     // RuntimeId: 05526
-    // TypeInfo:  0x023FDBD0
+    // TypeInfo: 0x023FDBD0
 #ifndef _WeaponClassModifier_
 #define _WeaponClassModifier_
 #pragma pack(push, 4)
@@ -10574,9 +10574,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00946
+    // ClassId: 00946
     // RuntimeId: 05524
-    // TypeInfo:  0x023FDBA4
+    // TypeInfo: 0x023FDBA4
 #ifndef _WeaponAnimatedFireTypeModifier_
 #define _WeaponAnimatedFireTypeModifier_
 #pragma pack(push, 4)
@@ -10601,9 +10601,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00947
+    // ClassId: 00947
     // RuntimeId: 05522
-    // TypeInfo:  0x023FDB78
+    // TypeInfo: 0x023FDB78
 #ifndef _WeaponZoomModifier_
 #define _WeaponZoomModifier_
 #pragma pack(push, 4)
@@ -10628,9 +10628,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00948
+    // ClassId: 00948
     // RuntimeId: 05520
-    // TypeInfo:  0x023FDB4C
+    // TypeInfo: 0x023FDB4C
 #ifndef _WeaponMagazineModifier_
 #define _WeaponMagazineModifier_
 #pragma pack(push, 4)
@@ -10656,9 +10656,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00949
+    // ClassId: 00949
     // RuntimeId: 05518
-    // TypeInfo:  0x023FDB20
+    // TypeInfo: 0x023FDB20
 #ifndef _WeaponAnimTypeModifier_
 #define _WeaponAnimTypeModifier_
 #pragma pack(push, 4)
@@ -10683,9 +10683,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00950
+    // ClassId: 00950
     // RuntimeId: 05514
-    // TypeInfo:  0x023FDAE4
+    // TypeInfo: 0x023FDAE4
 #ifndef _WeaponAnimationConfigurationModifier_
 #define _WeaponAnimationConfigurationModifier_
 #pragma pack(push, 4)
@@ -10712,9 +10712,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00951
+    // ClassId: 00951
     // RuntimeId: 05512
-    // TypeInfo:  0x023FDAB8
+    // TypeInfo: 0x023FDAB8
 #ifndef _WeaponAimingSimulationModifier_
 #define _WeaponAimingSimulationModifier_
 #pragma pack(push, 4)
@@ -10739,9 +10739,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00952
+    // ClassId: 00952
     // RuntimeId: 05510
-    // TypeInfo:  0x023FDA8C
+    // TypeInfo: 0x023FDA8C
 #ifndef _WeaponShotModifier_
 #define _WeaponShotModifier_
 #pragma pack(push, 16)
@@ -10769,9 +10769,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00953
+    // ClassId: 00953
     // RuntimeId: 05508
-    // TypeInfo:  0x023FDA60
+    // TypeInfo: 0x023FDA60
 #ifndef _WeaponProjectileModifier_
 #define _WeaponProjectileModifier_
 #pragma pack(push, 4)
@@ -10796,9 +10796,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00954
+    // ClassId: 00954
     // RuntimeId: 05506
-    // TypeInfo:  0x023FDA34
+    // TypeInfo: 0x023FDA34
 #ifndef _WeaponSoundModifier_
 #define _WeaponSoundModifier_
 #pragma pack(push, 4)
@@ -10823,9 +10823,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00955
+    // ClassId: 00955
     // RuntimeId: 05504
-    // TypeInfo:  0x023FDA08
+    // TypeInfo: 0x023FDA08
 #ifndef _WeaponFiringEffectsModifier_
 #define _WeaponFiringEffectsModifier_
 #pragma pack(push, 4)
@@ -10851,9 +10851,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00956
+    // ClassId: 00956
     // RuntimeId: 05502
-    // TypeInfo:  0x023FD9DC
+    // TypeInfo: 0x023FD9DC
 #ifndef _WeaponFiringDataModifier_
 #define _WeaponFiringDataModifier_
 #pragma pack(push, 4)
@@ -10878,9 +10878,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00957
+    // ClassId: 00957
     // RuntimeId: 05498
-    // TypeInfo:  0x023FD9A0
+    // TypeInfo: 0x023FD9A0
 #ifndef _WeaponMiscModifier_
 #define _WeaponMiscModifier_
 #pragma pack(push, 4)
@@ -10910,9 +10910,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00944
+    // ClassId: 00944
     // RuntimeId: 05528
-    // TypeInfo:  0x023FDBFC
+    // TypeInfo: 0x023FDBFC
 #ifndef _WeaponDeployTimeModifier_
 #define _WeaponDeployTimeModifier_
 #pragma pack(push, 4)
@@ -10940,9 +10940,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01920
+    // ClassId: 01920
     // RuntimeId: 05536
-    // TypeInfo:  0x023FDC58
+    // TypeInfo: 0x023FDC58
 #ifndef _SoldierWeaponData_
 #define _SoldierWeaponData_
 #pragma pack(push, 16)
@@ -10999,9 +10999,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00958
+    // ClassId: 00958
     // RuntimeId: 05474
-    // TypeInfo:  0x023FD88C
+    // TypeInfo: 0x023FD88C
 #ifndef _FirstPersonCameraData_
 #define _FirstPersonCameraData_
 #pragma pack(push, 16)
@@ -11053,9 +11053,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00959
+    // ClassId: 00959
     // RuntimeId: 05472
-    // TypeInfo:  0x023FD860
+    // TypeInfo: 0x023FD860
 #ifndef _WeaponLagSpringEffectData_
 #define _WeaponLagSpringEffectData_
 #pragma pack(push, 16)
@@ -11088,9 +11088,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00960
+    // ClassId: 00960
     // RuntimeId: 05464
-    // TypeInfo:  0x023FD804
+    // TypeInfo: 0x023FD804
 #ifndef _WeaponSpeedData_
 #define _WeaponSpeedData_
 #pragma pack(push, 4)
@@ -11118,9 +11118,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00961
+    // ClassId: 00961
     // RuntimeId: 05462
-    // TypeInfo:  0x023FD7D8
+    // TypeInfo: 0x023FD7D8
 #ifndef _WeaponOffsetData_
 #define _WeaponOffsetData_
 #pragma pack(push, 4)
@@ -11150,9 +11150,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01535
+    // ClassId: 01535
     // RuntimeId: 05460
-    // TypeInfo:  0x023FD7AC
+    // TypeInfo: 0x023FD7AC
 #ifndef _SoldierAimingSimulationData_
 #define _SoldierAimingSimulationData_
 #pragma pack(push, 4)
@@ -11190,9 +11190,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02176
+    // ClassId: 02176
     // RuntimeId: 05454
-    // TypeInfo:  0x023FD760
+    // TypeInfo: 0x023FD760
 #ifndef _AimerModifierData_
 #define _AimerModifierData_
 #pragma pack(push, 4)
@@ -11219,9 +11219,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01536
+    // ClassId: 01536
     // RuntimeId: 05452
-    // TypeInfo:  0x023FD734
+    // TypeInfo: 0x023FD734
 #ifndef _SoldierAimAssistData_
 #define _SoldierAimAssistData_
 #pragma pack(push, 16)
@@ -11275,9 +11275,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00962
+    // ClassId: 00962
     // RuntimeId: 05450
-    // TypeInfo:  0x023FD708
+    // TypeInfo: 0x023FD708
 #ifndef _ZoomLevelData_
 #define _ZoomLevelData_
 #pragma pack(push, 4)
@@ -11325,9 +11325,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00964
+    // ClassId: 00964
     // RuntimeId: 05418
-    // TypeInfo:  0x023FD464
+    // TypeInfo: 0x023FD464
 #ifndef _WeaponData_
 #define _WeaponData_
 #pragma pack(push, 4)
@@ -11353,9 +11353,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00966
+    // ClassId: 00966
     // RuntimeId: 05442
-    // TypeInfo:  0x023FD674
+    // TypeInfo: 0x023FD674
 #ifndef _LockingWeaponData_
 #define _LockingWeaponData_
 #pragma pack(push, 4)
@@ -11386,9 +11386,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00967
+    // ClassId: 00967
     // RuntimeId: 05446
-    // TypeInfo:  0x023FD6CC
+    // TypeInfo: 0x023FD6CC
 #ifndef _LaserPainterData_
 #define _LaserPainterData_
 #pragma pack(push, 4)
@@ -11413,9 +11413,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00969
+    // ClassId: 00969
     // RuntimeId: 05440
-    // TypeInfo:  0x023FD648
+    // TypeInfo: 0x023FD648
 #ifndef _ArtilleryStrikeWeaponData_
 #define _ArtilleryStrikeWeaponData_
 #pragma pack(push, 4)
@@ -11461,9 +11461,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00970
+    // ClassId: 00970
     // RuntimeId: 05438
-    // TypeInfo:  0x023FD61C
+    // TypeInfo: 0x023FD61C
 #ifndef _MortarStrikeWeaponData_
 #define _MortarStrikeWeaponData_
 #pragma pack(push, 4)
@@ -11491,9 +11491,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00971
+    // ClassId: 00971
     // RuntimeId: 05436
-    // TypeInfo:  0x023FD5F0
+    // TypeInfo: 0x023FD5F0
 #ifndef _MeleeWeaponData_
 #define _MeleeWeaponData_
 #pragma pack(push, 4)
@@ -11520,9 +11520,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00972
+    // ClassId: 00972
     // RuntimeId: 05434
-    // TypeInfo:  0x023FD5C4
+    // TypeInfo: 0x023FD5C4
 #ifndef _FlashlightWeaponData_
 #define _FlashlightWeaponData_
 #pragma pack(push, 4)
@@ -11549,9 +11549,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00973
+    // ClassId: 00973
     // RuntimeId: 05432
-    // TypeInfo:  0x023FD598
+    // TypeInfo: 0x023FD598
 #ifndef _DefibrillatorWeaponData_
 #define _DefibrillatorWeaponData_
 #pragma pack(push, 4)
@@ -11577,9 +11577,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00974
+    // ClassId: 00974
     // RuntimeId: 05428
-    // TypeInfo:  0x023FD540
+    // TypeInfo: 0x023FD540
 #ifndef _PowerToolWeaponData_
 #define _PowerToolWeaponData_
 #pragma pack(push, 4)
@@ -11609,9 +11609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00975
+    // ClassId: 00975
     // RuntimeId: 05430
-    // TypeInfo:  0x023FD56C
+    // TypeInfo: 0x023FD56C
 #ifndef _RepairToolWeaponData_
 #define _RepairToolWeaponData_
 #pragma pack(push, 4)
@@ -11636,9 +11636,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00976
+    // ClassId: 00976
     // RuntimeId: 05426
-    // TypeInfo:  0x023FD514
+    // TypeInfo: 0x023FD514
 #ifndef _MedicBagHealingSphereWeaponData_
 #define _MedicBagHealingSphereWeaponData_
 #pragma pack(push, 4)
@@ -11665,9 +11665,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00977
+    // ClassId: 00977
     // RuntimeId: 05424
-    // TypeInfo:  0x023FD4E8
+    // TypeInfo: 0x023FD4E8
 #ifndef _MedicBagWeaponData_
 #define _MedicBagWeaponData_
 #pragma pack(push, 4)
@@ -11694,9 +11694,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00978
+    // ClassId: 00978
     // RuntimeId: 05422
-    // TypeInfo:  0x023FD4BC
+    // TypeInfo: 0x023FD4BC
 #ifndef _MedkitWeaponData_
 #define _MedkitWeaponData_
 #pragma pack(push, 4)
@@ -11720,9 +11720,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00979
+    // ClassId: 00979
     // RuntimeId: 05420
-    // TypeInfo:  0x023FD490
+    // TypeInfo: 0x023FD490
 #ifndef _DetonatedWeaponData_
 #define _DetonatedWeaponData_
 #pragma pack(push, 4)
@@ -11748,9 +11748,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00965
+    // ClassId: 00965
     // RuntimeId: 05550
-    // TypeInfo:  0x023FDD1C
+    // TypeInfo: 0x023FDD1C
 #ifndef _SupplySphereWeaponData_
 #define _SupplySphereWeaponData_
 #pragma pack(push, 4)
@@ -11775,9 +11775,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00968
+    // ClassId: 00968
     // RuntimeId: 05444
-    // TypeInfo:  0x023FD6A0
+    // TypeInfo: 0x023FD6A0
 #ifndef _LaserDesignatorData_
 #define _LaserDesignatorData_
 #pragma pack(push, 4)
@@ -11805,9 +11805,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02408
+    // ClassId: 02408
     // RuntimeId: 00216
-    // TypeInfo:  0x023C50B0
+    // TypeInfo: 0x023C50B0
 #ifndef _GameDataContainerAsset_
 #define _GameDataContainerAsset_
 #pragma pack(push, 4)
@@ -11832,9 +11832,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01537
+    // ClassId: 01537
     // RuntimeId: 05410
-    // TypeInfo:  0x023FD3D0
+    // TypeInfo: 0x023FD3D0
 #ifndef _WeaponFiringData_
 #define _WeaponFiringData_
 #pragma pack(push, 4)
@@ -11875,9 +11875,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00982
+    // ClassId: 00982
     // RuntimeId: 05406
-    // TypeInfo:  0x023FD394
+    // TypeInfo: 0x023FD394
 #ifndef _WeaponSuppressionData_
 #define _WeaponSuppressionData_
 #pragma pack(push, 4)
@@ -11905,9 +11905,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01538
+    // ClassId: 01538
     // RuntimeId: 05402
-    // TypeInfo:  0x023FD358
+    // TypeInfo: 0x023FD358
 #ifndef _FiringFunctionData_
 #define _FiringFunctionData_
 #pragma pack(push, 16)
@@ -11947,9 +11947,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01954
+    // ClassId: 01954
     // RuntimeId: 05374
-    // TypeInfo:  0x023FD25C
+    // TypeInfo: 0x023FD25C
 #ifndef _VehicleProjectileEntityData_
 #define _VehicleProjectileEntityData_
 #pragma pack(push, 16)
@@ -11982,9 +11982,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01955
+    // ClassId: 01955
     // RuntimeId: 05338
-    // TypeInfo:  0x023FD040
+    // TypeInfo: 0x023FD040
 #ifndef _MeshProjectileEntityData_
 #define _MeshProjectileEntityData_
 #pragma pack(push, 16)
@@ -12015,9 +12015,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01956
+    // ClassId: 01956
     // RuntimeId: 05364
-    // TypeInfo:  0x023FD1B8
+    // TypeInfo: 0x023FD1B8
 #ifndef _ExplosionPackEntityData_
 #define _ExplosionPackEntityData_
 #pragma pack(push, 16)
@@ -12054,9 +12054,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01957
+    // ClassId: 01957
     // RuntimeId: 05552
-    // TypeInfo:  0x023FDD48
+    // TypeInfo: 0x023FDD48
 #ifndef _SupplySphereEntityData_
 #define _SupplySphereEntityData_
 #pragma pack(push, 16)
@@ -12082,9 +12082,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01960
+    // ClassId: 01960
     // RuntimeId: 05360
-    // TypeInfo:  0x023FD17C
+    // TypeInfo: 0x023FD17C
 #ifndef _MissileEntityData_
 #define _MissileEntityData_
 #pragma pack(push, 16)
@@ -12133,9 +12133,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00983
+    // ClassId: 00983
     // RuntimeId: 05352
-    // TypeInfo:  0x023FD120
+    // TypeInfo: 0x023FD120
 #ifndef _LockingControllerData_
 #define _LockingControllerData_
 #pragma pack(push, 4)
@@ -12177,9 +12177,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01961
+    // ClassId: 01961
     // RuntimeId: 05344
-    // TypeInfo:  0x023FD0A8
+    // TypeInfo: 0x023FD0A8
 #ifndef _GrenadeEntityData_
 #define _GrenadeEntityData_
 #pragma pack(push, 16)
@@ -12207,9 +12207,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01962
+    // ClassId: 01962
     // RuntimeId: 05346
-    // TypeInfo:  0x023FD0D4
+    // TypeInfo: 0x023FD0D4
 #ifndef _FlareEntityData_
 #define _FlareEntityData_
 #pragma pack(push, 16)
@@ -12235,9 +12235,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01963
+    // ClassId: 01963
     // RuntimeId: 05340
-    // TypeInfo:  0x023FD06C
+    // TypeInfo: 0x023FD06C
 #ifndef _BulletEntityData_
 #define _BulletEntityData_
 #pragma pack(push, 16)
@@ -12282,9 +12282,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01958
+    // ClassId: 01958
     // RuntimeId: 05372
-    // TypeInfo:  0x023FD230
+    // TypeInfo: 0x023FD230
 #ifndef _MedicBagEntityData_
 #define _MedicBagEntityData_
 #pragma pack(push, 16)
@@ -12309,9 +12309,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01959
+    // ClassId: 01959
     // RuntimeId: 05370
-    // TypeInfo:  0x023FD204
+    // TypeInfo: 0x023FD204
 #ifndef _MedicBagHealingSphereEntityData_
 #define _MedicBagHealingSphereEntityData_
 #pragma pack(push, 16)
@@ -12337,9 +12337,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00990
+    // ClassId: 00990
     // RuntimeId: 05330
-    // TypeInfo:  0x023FCFC8
+    // TypeInfo: 0x023FCFC8
 #ifndef _VehicleWaypointData_
 #define _VehicleWaypointData_
 #pragma pack(push, 4)
@@ -12371,9 +12371,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01558
+    // ClassId: 01558
     // RuntimeId: 00406
-    // TypeInfo:  0x023C672C
+    // TypeInfo: 0x023C672C
 #ifndef _VectorShapeData_
 #define _VectorShapeData_
 #pragma pack(push, 4)
@@ -12403,9 +12403,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00987
+    // ClassId: 00987
     // RuntimeId: 05873
-    // TypeInfo:  0x02401300
+    // TypeInfo: 0x02401300
 #ifndef _VaultWaypointData_
 #define _VaultWaypointData_
 #pragma pack(push, 16)
@@ -12430,9 +12430,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01740
+    // ClassId: 01740
     // RuntimeId: 05320
-    // TypeInfo:  0x023FCF24
+    // TypeInfo: 0x023FCF24
 #ifndef _CannedScenarioEntityData_
 #define _CannedScenarioEntityData_
 #pragma pack(push, 4)
@@ -12460,9 +12460,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01741
+    // ClassId: 01741
     // RuntimeId: 05318
-    // TypeInfo:  0x023FCEF8
+    // TypeInfo: 0x023FCEF8
 #ifndef _WarpAnimationEntityData_
 #define _WarpAnimationEntityData_
 #pragma pack(push, 16)
@@ -12495,9 +12495,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01597
+    // ClassId: 01597
     // RuntimeId: 05316
-    // TypeInfo:  0x023FCECC
+    // TypeInfo: 0x023FCECC
 #ifndef _WarpAnimationComponentData_
 #define _WarpAnimationComponentData_
 #pragma pack(push, 16)
@@ -12530,9 +12530,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01598
+    // ClassId: 01598
     // RuntimeId: 05310
-    // TypeInfo:  0x023FCE80
+    // TypeInfo: 0x023FCE80
 #ifndef _WarningSystemComponentData_
 #define _WarningSystemComponentData_
 #pragma pack(push, 16)
@@ -12563,9 +12563,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01999
+    // ClassId: 01999
     // RuntimeId: 00152
-    // TypeInfo:  0x023C4C64
+    // TypeInfo: 0x023C4C64
 #ifndef _EffectEntityData_
 #define _EffectEntityData_
 #pragma pack(push, 16)
@@ -12598,9 +12598,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02006
+    // ClassId: 02006
     // RuntimeId: 00188
-    // TypeInfo:  0x023C4ED4
+    // TypeInfo: 0x023C4ED4
 #ifndef _ReferenceObjectData_
 #define _ReferenceObjectData_
 #pragma pack(push, 16)
@@ -12632,9 +12632,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01742
+    // ClassId: 01742
     // RuntimeId: 05302
-    // TypeInfo:  0x023FCDEC
+    // TypeInfo: 0x023FCDEC
 #ifndef _LogicVisualEnvironmentEntityData_
 #define _LogicVisualEnvironmentEntityData_
 #pragma pack(push, 4)
@@ -12660,9 +12660,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02417
+    // ClassId: 02417
     // RuntimeId: 00168
-    // TypeInfo:  0x023C4D38
+    // TypeInfo: 0x023C4D38
 #ifndef _EntityBusData_
 #define _EntityBusData_
 #pragma pack(push, 4)
@@ -12692,9 +12692,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01921
+    // ClassId: 01921
     // RuntimeId: 05298
-    // TypeInfo:  0x023FCD94
+    // TypeInfo: 0x023FCD94
 #ifndef _VisualEnvironmentEntityData_
 #define _VisualEnvironmentEntityData_
 #pragma pack(push, 16)
@@ -12721,9 +12721,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01599
+    // ClassId: 01599
     // RuntimeId: 05296
-    // TypeInfo:  0x023FCD68
+    // TypeInfo: 0x023FCD68
 #ifndef _LensFlareComponentData_
 #define _LensFlareComponentData_
 #pragma pack(push, 16)
@@ -12749,9 +12749,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01600
+    // ClassId: 01600
     // RuntimeId: 05294
-    // TypeInfo:  0x023FCD3C
+    // TypeInfo: 0x023FCD3C
 #ifndef _LightComponentData_
 #define _LightComponentData_
 #pragma pack(push, 16)
@@ -12777,9 +12777,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02177
+    // ClassId: 02177
     // RuntimeId: 05292
-    // TypeInfo:  0x023FCD10
+    // TypeInfo: 0x023FCD10
 #ifndef _VersionData_
 #define _VersionData_
 #pragma pack(push, 4)
@@ -12808,9 +12808,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01601
+    // ClassId: 01601
     // RuntimeId: 05290
-    // TypeInfo:  0x023FB11C
+    // TypeInfo: 0x023FB11C
 #ifndef _VehicleEntryListenerComponentData_
 #define _VehicleEntryListenerComponentData_
 #pragma pack(push, 16)
@@ -12839,9 +12839,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01971
+    // ClassId: 01971
     // RuntimeId: 04660
-    // TypeInfo:  0x023F58A4
+    // TypeInfo: 0x023F58A4
 #ifndef _ControllableEntityData_
 #define _ControllableEntityData_
 #pragma pack(push, 16)
@@ -12874,9 +12874,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01922
+    // ClassId: 01922
     // RuntimeId: 05279
-    // TypeInfo:  0x023FB074
+    // TypeInfo: 0x023FB074
 #ifndef _AnimatedDriverEntityData_
 #define _AnimatedDriverEntityData_
 #pragma pack(push, 16)
@@ -12912,9 +12912,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00991
+    // ClassId: 00991
     // RuntimeId: 05275
-    // TypeInfo:  0x023FB038
+    // TypeInfo: 0x023FB038
 #ifndef _VehicleSoundData_
 #define _VehicleSoundData_
 #pragma pack(push, 4)
@@ -12939,9 +12939,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02179
+    // ClassId: 02179
     // RuntimeId: 05237
-    // TypeInfo:  0x023FADF0
+    // TypeInfo: 0x023FADF0
 #ifndef _UnlockAssetBase_
 #define _UnlockAssetBase_
 #pragma pack(push, 4)
@@ -12974,9 +12974,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00992
+    // ClassId: 00992
     // RuntimeId: 05251
-    // TypeInfo:  0x023FAEEC
+    // TypeInfo: 0x023FAEEC
 #ifndef _UnlockValuePair_
 #define _UnlockValuePair_
 #pragma pack(push, 4)
@@ -13001,9 +13001,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00994
+    // ClassId: 00994
     // RuntimeId: 05255
-    // TypeInfo:  0x023FAF44
+    // TypeInfo: 0x023FAF44
 #ifndef _IntUnlockValuePair_
 #define _IntUnlockValuePair_
 #pragma pack(push, 4)
@@ -13029,9 +13029,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00995
+    // ClassId: 00995
     // RuntimeId: 05253
-    // TypeInfo:  0x023FAF18
+    // TypeInfo: 0x023FAF18
 #ifndef _FloatUnlockValuePair_
 #define _FloatUnlockValuePair_
 #pragma pack(push, 4)
@@ -13057,9 +13057,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00993
+    // ClassId: 00993
     // RuntimeId: 05257
-    // TypeInfo:  0x023FAF70
+    // TypeInfo: 0x023FAF70
 #ifndef _BoolUnlockValuePair_
 #define _BoolUnlockValuePair_
 #pragma pack(push, 4)
@@ -13086,9 +13086,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02181
+    // ClassId: 02181
     // RuntimeId: 05247
-    // TypeInfo:  0x023FAEB0
+    // TypeInfo: 0x023FAEB0
 #ifndef _SoldierWeaponUnlockAsset_
 #define _SoldierWeaponUnlockAsset_
 #pragma pack(push, 4)
@@ -13115,9 +13115,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02186
+    // ClassId: 02186
     // RuntimeId: 05233
-    // TypeInfo:  0x023FADB4
+    // TypeInfo: 0x023FADB4
 #ifndef _UnlockUserDataBase_
 #define _UnlockUserDataBase_
 #pragma pack(push, 4)
@@ -13141,9 +13141,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02182
+    // ClassId: 02182
     // RuntimeId: 05241
-    // TypeInfo:  0x023FAE48
+    // TypeInfo: 0x023FAE48
 #ifndef _UnlockAsset_
 #define _UnlockAsset_
 #pragma pack(push, 4)
@@ -13168,9 +13168,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02178
+    // ClassId: 02178
     // RuntimeId: 05239
-    // TypeInfo:  0x023FAE1C
+    // TypeInfo: 0x023FAE1C
 #ifndef _BlueprintAndVariationPair_
 #define _BlueprintAndVariationPair_
 #pragma pack(push, 4)
@@ -13196,9 +13196,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02180
+    // ClassId: 02180
     // RuntimeId: 05259
-    // TypeInfo:  0x023FAF9C
+    // TypeInfo: 0x023FAF9C
 #ifndef _ValueUnlockAsset_
 #define _ValueUnlockAsset_
 #pragma pack(push, 4)
@@ -13223,9 +13223,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02187
+    // ClassId: 02187
     // RuntimeId: 05245
-    // TypeInfo:  0x023FAE84
+    // TypeInfo: 0x023FAE84
 #ifndef _SoldierWeaponMultiUnlock_
 #define _SoldierWeaponMultiUnlock_
 #pragma pack(push, 4)
@@ -13251,9 +13251,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02446
+    // ClassId: 02446
     // RuntimeId: 05231
-    // TypeInfo:  0x023FAD88
+    // TypeInfo: 0x023FAD88
 #ifndef _UISettings_
 #define _UISettings_
 #pragma pack(push, 4)
@@ -13285,9 +13285,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02042
+    // ClassId: 02042
     // RuntimeId: 05227
-    // TypeInfo:  0x023FAD3C
+    // TypeInfo: 0x023FAD3C
 #ifndef _UIWidgetMovieCompData_
 #define _UIWidgetMovieCompData_
 #pragma pack(push, 4)
@@ -13311,9 +13311,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01924
+    // ClassId: 01924
     // RuntimeId: 05189
-    // TypeInfo:  0x023FAA30
+    // TypeInfo: 0x023FAA30
 #ifndef _TriggerEntityData_
 #define _TriggerEntityData_
 #pragma pack(push, 16)
@@ -13340,9 +13340,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01743
+    // ClassId: 01743
     // RuntimeId: 05223
-    // TypeInfo:  0x023FACE4
+    // TypeInfo: 0x023FACE4
 #ifndef _PlayerInputTriggerEntityData_
 #define _PlayerInputTriggerEntityData_
 #pragma pack(push, 4)
@@ -13374,9 +13374,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01744
+    // ClassId: 01744
     // RuntimeId: 05221
-    // TypeInfo:  0x023FACB8
+    // TypeInfo: 0x023FACB8
 #ifndef _CameraEnterAreaTriggerEntityData_
 #define _CameraEnterAreaTriggerEntityData_
 #pragma pack(push, 4)
@@ -13405,9 +13405,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01745
+    // ClassId: 01745
     // RuntimeId: 05219
-    // TypeInfo:  0x023FAC8C
+    // TypeInfo: 0x023FAC8C
 #ifndef _ObjectEnterAreaTriggerEntityData_
 #define _ObjectEnterAreaTriggerEntityData_
 #pragma pack(push, 4)
@@ -13435,9 +13435,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01923
+    // ClassId: 01923
     // RuntimeId: 05217
-    // TypeInfo:  0x023FAC60
+    // TypeInfo: 0x023FAC60
 #ifndef _PlayerTakeOverTriggerEntityData_
 #define _PlayerTakeOverTriggerEntityData_
 #pragma pack(push, 16)
@@ -13464,9 +13464,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01926
+    // ClassId: 01926
     // RuntimeId: 05215
-    // TypeInfo:  0x023FAC34
+    // TypeInfo: 0x023FAC34
 #ifndef _DamageAreaTriggerEntityData_
 #define _DamageAreaTriggerEntityData_
 #pragma pack(push, 16)
@@ -13499,9 +13499,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01927
+    // ClassId: 01927
     // RuntimeId: 05213
-    // TypeInfo:  0x023FAC08
+    // TypeInfo: 0x023FAC08
 #ifndef _ClearAreaTriggerEntityData_
 #define _ClearAreaTriggerEntityData_
 #pragma pack(push, 16)
@@ -13535,9 +13535,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01928
+    // ClassId: 01928
     // RuntimeId: 05211
-    // TypeInfo:  0x023FABDC
+    // TypeInfo: 0x023FABDC
 #ifndef _VehicleStateTriggerEntityData_
 #define _VehicleStateTriggerEntityData_
 #pragma pack(push, 16)
@@ -13577,9 +13577,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01929
+    // ClassId: 01929
     // RuntimeId: 05209
-    // TypeInfo:  0x023FABB0
+    // TypeInfo: 0x023FABB0
 #ifndef _CharacterStateTriggerEntityData_
 #define _CharacterStateTriggerEntityData_
 #pragma pack(push, 16)
@@ -13622,9 +13622,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01933
+    // ClassId: 01933
     // RuntimeId: 05191
-    // TypeInfo:  0x023FAA5C
+    // TypeInfo: 0x023FAA5C
 #ifndef _TriggerEventEntityData_
 #define _TriggerEventEntityData_
 #pragma pack(push, 16)
@@ -13648,9 +13648,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01935
+    // ClassId: 01935
     // RuntimeId: 05203
-    // TypeInfo:  0x023FAB48
+    // TypeInfo: 0x023FAB48
 #ifndef _LookAtTriggerEntityData_
 #define _LookAtTriggerEntityData_
 #pragma pack(push, 16)
@@ -13682,9 +13682,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01936
+    // ClassId: 01936
     // RuntimeId: 05201
-    // TypeInfo:  0x023FAB1C
+    // TypeInfo: 0x023FAB1C
 #ifndef _MultipleTriggerEntityData_
 #define _MultipleTriggerEntityData_
 #pragma pack(push, 16)
@@ -13710,9 +13710,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01930
+    // ClassId: 01930
     // RuntimeId: 05199
-    // TypeInfo:  0x023FAAF0
+    // TypeInfo: 0x023FAAF0
 #ifndef _CombatActionTriggerEntityData_
 #define _CombatActionTriggerEntityData_
 #pragma pack(push, 16)
@@ -13738,9 +13738,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01931
+    // ClassId: 01931
     // RuntimeId: 05195
-    // TypeInfo:  0x023FAA98
+    // TypeInfo: 0x023FAA98
 #ifndef _AreaTriggerEntityData_
 #define _AreaTriggerEntityData_
 #pragma pack(push, 16)
@@ -13775,9 +13775,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01932
+    // ClassId: 01932
     // RuntimeId: 05197
-    // TypeInfo:  0x023FAAC4
+    // TypeInfo: 0x023FAAC4
 #ifndef _GeometryTriggerEntityData_
 #define _GeometryTriggerEntityData_
 #pragma pack(push, 16)
@@ -13801,9 +13801,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01934
+    // ClassId: 01934
     // RuntimeId: 05205
-    // TypeInfo:  0x023FAB74
+    // TypeInfo: 0x023FAB74
 #ifndef _DelayTriggerEntityData_
 #define _DelayTriggerEntityData_
 #pragma pack(push, 16)
@@ -13829,9 +13829,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01925
+    // ClassId: 01925
     // RuntimeId: 05225
-    // TypeInfo:  0x023FAD10
+    // TypeInfo: 0x023FAD10
 #ifndef _UnderFireTriggerEntityData_
 #define _UnderFireTriggerEntityData_
 #pragma pack(push, 16)
@@ -13863,9 +13863,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01746
+    // ClassId: 01746
     // RuntimeId: 05187
-    // TypeInfo:  0x023FAA04
+    // TypeInfo: 0x023FAA04
 #ifndef _ClientPlayerInputPlaybackEntityData_
 #define _ClientPlayerInputPlaybackEntityData_
 #pragma pack(push, 4)
@@ -13891,9 +13891,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01747
+    // ClassId: 01747
     // RuntimeId: 05185
-    // TypeInfo:  0x023FA9D8
+    // TypeInfo: 0x023FA9D8
 #ifndef _ClientPlayerInputRecorderEntityData_
 #define _ClientPlayerInputRecorderEntityData_
 #pragma pack(push, 4)
@@ -13919,9 +13919,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01748
+    // ClassId: 01748
     // RuntimeId: 05183
-    // TypeInfo:  0x023FA9AC
+    // TypeInfo: 0x023FA9AC
 #ifndef _LoggingEntityData_
 #define _LoggingEntityData_
 #pragma pack(push, 16)
@@ -13955,9 +13955,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01938
+    // ClassId: 01938
     // RuntimeId: 05181
-    // TypeInfo:  0x023FA980
+    // TypeInfo: 0x023FA980
 #ifndef _DestructionCommandEntityData_
 #define _DestructionCommandEntityData_
 #pragma pack(push, 16)
@@ -13984,9 +13984,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01939
+    // ClassId: 01939
     // RuntimeId: 05179
-    // TypeInfo:  0x023FA954
+    // TypeInfo: 0x023FA954
 #ifndef _TestPointEntityData_
 #define _TestPointEntityData_
 #pragma pack(push, 16)
@@ -14012,9 +14012,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01940
+    // ClassId: 01940
     // RuntimeId: 05177
-    // TypeInfo:  0x023FA928
+    // TypeInfo: 0x023FA928
 #ifndef _SoldierTestEntityData_
 #define _SoldierTestEntityData_
 #pragma pack(push, 16)
@@ -14067,9 +14067,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00997
+    // ClassId: 00997
     // RuntimeId: 05151
-    // TypeInfo:  0x023FA740
+    // TypeInfo: 0x023FA740
 #ifndef _MovementActionData_
 #define _MovementActionData_
 #pragma pack(push, 4)
@@ -14093,9 +14093,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02189
+    // ClassId: 02189
     // RuntimeId: 05173
-    // TypeInfo:  0x023FA8D0
+    // TypeInfo: 0x023FA8D0
 #ifndef _RecordedInputData_
 #define _RecordedInputData_
 #pragma pack(push, 4)
@@ -14120,9 +14120,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00996
+    // ClassId: 00996
     // RuntimeId: 05171
-    // TypeInfo:  0x023FA8A4
+    // TypeInfo: 0x023FA8A4
 #ifndef _InputRecorderData_
 #define _InputRecorderData_
 #pragma pack(push, 4)
@@ -14151,9 +14151,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00999
+    // ClassId: 00999
     // RuntimeId: 05163
-    // TypeInfo:  0x023FA810
+    // TypeInfo: 0x023FA810
 #ifndef _SimpleMovementActionBaseData_
 #define _SimpleMovementActionBaseData_
 #pragma pack(push, 4)
@@ -14179,9 +14179,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01001
+    // ClassId: 01001
     // RuntimeId: 05165
-    // TypeInfo:  0x023FA83C
+    // TypeInfo: 0x023FA83C
 #ifndef _CameraActionData_
 #define _CameraActionData_
 #pragma pack(push, 4)
@@ -14206,9 +14206,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01000
+    // ClassId: 01000
     // RuntimeId: 05167
-    // TypeInfo:  0x023FA868
+    // TypeInfo: 0x023FA868
 #ifndef _SimpleMovementActionData_
 #define _SimpleMovementActionData_
 #pragma pack(push, 4)
@@ -14238,9 +14238,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01002
+    // ClassId: 01002
     // RuntimeId: 05157
-    // TypeInfo:  0x023FA7C4
+    // TypeInfo: 0x023FA7C4
 #ifndef _MovementActionRandomizerData_
 #define _MovementActionRandomizerData_
 #pragma pack(push, 4)
@@ -14267,9 +14267,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01003
+    // ClassId: 01003
     // RuntimeId: 05155
-    // TypeInfo:  0x023FA798
+    // TypeInfo: 0x023FA798
 #ifndef _MovementActionGroupData_
 #define _MovementActionGroupData_
 #pragma pack(push, 4)
@@ -14297,9 +14297,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02190
+    // ClassId: 02190
     // RuntimeId: 05153
-    // TypeInfo:  0x023FA76C
+    // TypeInfo: 0x023FA76C
 #ifndef _MovementActionRoot_
 #define _MovementActionRoot_
 #pragma pack(push, 4)
@@ -14324,9 +14324,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00998
+    // ClassId: 00998
     // RuntimeId: 05175
-    // TypeInfo:  0x023FA8FC
+    // TypeInfo: 0x023FA8FC
 #ifndef _SoldierMovementSequenceData_
 #define _SoldierMovementSequenceData_
 #pragma pack(push, 4)
@@ -14355,9 +14355,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01749
+    // ClassId: 01749
     // RuntimeId: 05149
-    // TypeInfo:  0x023FA714
+    // TypeInfo: 0x023FA714
 #ifndef _PropertyDebugEntityData_
 #define _PropertyDebugEntityData_
 #pragma pack(push, 16)
@@ -14398,9 +14398,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01750
+    // ClassId: 01750
     // RuntimeId: 05147
-    // TypeInfo:  0x023FA6E8
+    // TypeInfo: 0x023FA6E8
 #ifndef _PrintDebugTextEntityData_
 #define _PrintDebugTextEntityData_
 #pragma pack(push, 16)
@@ -14430,9 +14430,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01751
+    // ClassId: 01751
     // RuntimeId: 05145
-    // TypeInfo:  0x023FA6BC
+    // TypeInfo: 0x023FA6BC
 #ifndef _TestCaseEntityData_
 #define _TestCaseEntityData_
 #pragma pack(push, 4)
@@ -14462,9 +14462,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01941
+    // ClassId: 01941
     // RuntimeId: 05143
-    // TypeInfo:  0x023FA690
+    // TypeInfo: 0x023FA690
 #ifndef _DebugMenuItemEntityData_
 #define _DebugMenuItemEntityData_
 #pragma pack(push, 16)
@@ -14491,9 +14491,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01942
+    // ClassId: 01942
     // RuntimeId: 05139
-    // TypeInfo:  0x023FA654
+    // TypeInfo: 0x023FA654
 #ifndef _DebugMenuSubMenuEntityData_
 #define _DebugMenuSubMenuEntityData_
 #pragma pack(push, 16)
@@ -14519,9 +14519,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01752
+    // ClassId: 01752
     // RuntimeId: 05137
-    // TypeInfo:  0x023FA628
+    // TypeInfo: 0x023FA628
 #ifndef _ConsoleCommandTriggerEntityData_
 #define _ConsoleCommandTriggerEntityData_
 #pragma pack(push, 4)
@@ -14547,9 +14547,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01753
+    // ClassId: 01753
     // RuntimeId: 05135
-    // TypeInfo:  0x023FA5FC
+    // TypeInfo: 0x023FA5FC
 #ifndef _ConsoleCommandEntityData_
 #define _ConsoleCommandEntityData_
 #pragma pack(push, 4)
@@ -14575,9 +14575,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01873
+    // ClassId: 01873
     // RuntimeId: 05133
-    // TypeInfo:  0x023FA5D0
+    // TypeInfo: 0x023FA5D0
 #ifndef _DebugTextEntityData_
 #define _DebugTextEntityData_
 #pragma pack(push, 16)
@@ -14609,9 +14609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01964
+    // ClassId: 01964
     // RuntimeId: 05131
-    // TypeInfo:  0x023FA5A4
+    // TypeInfo: 0x023FA5A4
 #ifndef _WaterEntityData_
 #define _WaterEntityData_
 #pragma pack(push, 16)
@@ -14637,9 +14637,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01965
+    // ClassId: 01965
     // RuntimeId: 05129
-    // TypeInfo:  0x023FA578
+    // TypeInfo: 0x023FA578
 #ifndef _TerrainEntityData_
 #define _TerrainEntityData_
 #pragma pack(push, 16)
@@ -14667,9 +14667,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01810
+    // ClassId: 01810
     // RuntimeId: 00370
-    // TypeInfo:  0x023C5C80
+    // TypeInfo: 0x023C5C80
 #ifndef _SequenceEntityData_
 #define _SequenceEntityData_
 #pragma pack(push, 4)
@@ -14706,9 +14706,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01754
+    // ClassId: 01754
     // RuntimeId: 05122
-    // TypeInfo:  0x023FA500
+    // TypeInfo: 0x023FA500
 #ifndef _SyncAnimationsEntityData_
 #define _SyncAnimationsEntityData_
 #pragma pack(push, 4)
@@ -14736,9 +14736,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01098
+    // ClassId: 01098
     // RuntimeId: 04354
-    // TypeInfo:  0x023F29DC
+    // TypeInfo: 0x023F29DC
 #ifndef _SubViewData_
 #define _SubViewData_
 #pragma pack(push, 4)
@@ -14762,9 +14762,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02387
+    // ClassId: 02387
     // RuntimeId: 05116
-    // TypeInfo:  0x023FA47C
+    // TypeInfo: 0x023FA47C
 #ifndef _StatCategoriesBaseTree_
 #define _StatCategoriesBaseTree_
 #pragma pack(push, 4)
@@ -14793,9 +14793,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02388
+    // ClassId: 02388
     // RuntimeId: 05118
-    // TypeInfo:  0x023FA4A8
+    // TypeInfo: 0x023FA4A8
 #ifndef _StatCategoriesTree_
 #define _StatCategoriesTree_
 #pragma pack(push, 4)
@@ -14820,9 +14820,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01005
+    // ClassId: 01005
     // RuntimeId: 05923
-    // TypeInfo:  0x024015C4
+    // TypeInfo: 0x024015C4
 #ifndef _CriteriaStarData_
 #define _CriteriaStarData_
 #pragma pack(push, 4)
@@ -14847,9 +14847,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02191
+    // ClassId: 02191
     // RuntimeId: 05110
-    // TypeInfo:  0x023FA414
+    // TypeInfo: 0x023FA414
 #ifndef _CriteriaGateList_
 #define _CriteriaGateList_
 #pragma pack(push, 4)
@@ -14874,9 +14874,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02192
+    // ClassId: 02192
     // RuntimeId: 05108
-    // TypeInfo:  0x023FA3E8
+    // TypeInfo: 0x023FA3E8
 #ifndef _StatCategoryTreeCollection_
 #define _StatCategoryTreeCollection_
 #pragma pack(push, 4)
@@ -14901,9 +14901,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01473
+    // ClassId: 01473
     // RuntimeId: 05104
-    // TypeInfo:  0x023FA390
+    // TypeInfo: 0x023FA390
 #ifndef _StatsCategoryBaseData_
 #define _StatsCategoryBaseData_
 #pragma pack(push, 4)
@@ -14929,9 +14929,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01474
+    // ClassId: 01474
     // RuntimeId: 05106
-    // TypeInfo:  0x023FA3BC
+    // TypeInfo: 0x023FA3BC
 #ifndef _StatsCategoryData_
 #define _StatsCategoryData_
 #pragma pack(push, 4)
@@ -14957,9 +14957,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01966
+    // ClassId: 01966
     // RuntimeId: 05096
-    // TypeInfo:  0x023FA2E0
+    // TypeInfo: 0x023FA2E0
 #ifndef _StaticModelEntityData_
 #define _StaticModelEntityData_
 #pragma pack(push, 16)
@@ -14993,9 +14993,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01968
+    // ClassId: 01968
     // RuntimeId: 05100
-    // TypeInfo:  0x023FA338
+    // TypeInfo: 0x023FA338
 #ifndef _FenceModelEntityData_
 #define _FenceModelEntityData_
 #pragma pack(push, 16)
@@ -15022,9 +15022,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01969
+    // ClassId: 01969
     // RuntimeId: 05098
-    // TypeInfo:  0x023FA30C
+    // TypeInfo: 0x023FA30C
 #ifndef _LadderEntityData_
 #define _LadderEntityData_
 #pragma pack(push, 16)
@@ -15048,9 +15048,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01967
+    // ClassId: 01967
     // RuntimeId: 05102
-    // TypeInfo:  0x023FA364
+    // TypeInfo: 0x023FA364
 #ifndef _InteractableStaticModelEntityData_
 #define _InteractableStaticModelEntityData_
 #pragma pack(push, 16)
@@ -15074,9 +15074,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02008
+    // ClassId: 02008
     // RuntimeId: 05067
-    // TypeInfo:  0x023FA0D8
+    // TypeInfo: 0x023FA0D8
 #ifndef _SpawnReferenceObjectData_
 #define _SpawnReferenceObjectData_
 #pragma pack(push, 16)
@@ -15136,9 +15136,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02010
+    // ClassId: 02010
     // RuntimeId: 05084
-    // TypeInfo:  0x023FA248
+    // TypeInfo: 0x023FA248
 #ifndef _CharacterSpawnReferenceObjectData_
 #define _CharacterSpawnReferenceObjectData_
 #pragma pack(push, 16)
@@ -15173,9 +15173,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01874
+    // ClassId: 01874
     // RuntimeId: 05082
-    // TypeInfo:  0x023FA21C
+    // TypeInfo: 0x023FA21C
 #ifndef _AlternateSpawnEntityData_
 #define _AlternateSpawnEntityData_
 #pragma pack(push, 16)
@@ -15203,9 +15203,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02193
+    // ClassId: 02193
     // RuntimeId: 05079
-    // TypeInfo:  0x023FA1E0
+    // TypeInfo: 0x023FA1E0
 #ifndef _SoldierSpawnTemplateData_
 #define _SoldierSpawnTemplateData_
 #pragma pack(push, 4)
@@ -15234,9 +15234,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02195
+    // ClassId: 02195
     // RuntimeId: 06003
-    // TypeInfo:  0x024027C8
+    // TypeInfo: 0x024027C8
 #ifndef _BehaviourTemplateData_
 #define _BehaviourTemplateData_
 #pragma pack(push, 4)
@@ -15336,9 +15336,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02197
+    // ClassId: 02197
     // RuntimeId: 06085
-    // TypeInfo:  0x02402D14
+    // TypeInfo: 0x02402D14
 #ifndef _SensingTemplateData_
 #define _SensingTemplateData_
 #pragma pack(push, 8)
@@ -15376,9 +15376,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01006
+    // ClassId: 01006
     // RuntimeId: 05073
-    // TypeInfo:  0x023FA15C
+    // TypeInfo: 0x023FA15C
 #ifndef _AnimationSpawnTemplate_
 #define _AnimationSpawnTemplate_
 #pragma pack(push, 4)
@@ -15403,9 +15403,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02198
+    // ClassId: 02198
     // RuntimeId: 05071
-    // TypeInfo:  0x023FA130
+    // TypeInfo: 0x023FA130
 #ifndef _SoldierSpawnAppearanceTemplateData_
 #define _SoldierSpawnAppearanceTemplateData_
 #pragma pack(push, 4)
@@ -15430,9 +15430,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02199
+    // ClassId: 02199
     // RuntimeId: 05069
-    // TypeInfo:  0x023FA104
+    // TypeInfo: 0x023FA104
 #ifndef _SoldierSpawnKitTemplateData_
 #define _SoldierSpawnKitTemplateData_
 #pragma pack(push, 4)
@@ -15458,9 +15458,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02009
+    // ClassId: 02009
     // RuntimeId: 05086
-    // TypeInfo:  0x023FA274
+    // TypeInfo: 0x023FA274
 #ifndef _VehicleSpawnReferenceObjectData_
 #define _VehicleSpawnReferenceObjectData_
 #pragma pack(push, 16)
@@ -15502,9 +15502,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01602
+    // ClassId: 01602
     // RuntimeId: 05047
-    // TypeInfo:  0x023F8B98
+    // TypeInfo: 0x023F8B98
 #ifndef _MovieComponentData_
 #define _MovieComponentData_
 #pragma pack(push, 16)
@@ -15532,9 +15532,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01603
+    // ClassId: 01603
     // RuntimeId: 05045
-    // TypeInfo:  0x023F8B6C
+    // TypeInfo: 0x023F8B6C
 #ifndef _AnimatedPointCloudComponentData_
 #define _AnimatedPointCloudComponentData_
 #pragma pack(push, 16)
@@ -15562,9 +15562,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01604
+    // ClassId: 01604
     // RuntimeId: 05043
-    // TypeInfo:  0x023F8B40
+    // TypeInfo: 0x023F8B40
 #ifndef _LadderComponentData_
 #define _LadderComponentData_
 #pragma pack(push, 16)
@@ -15588,9 +15588,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01605
+    // ClassId: 01605
     // RuntimeId: 05040
-    // TypeInfo:  0x023F8B04
+    // TypeInfo: 0x023F8B04
 #ifndef _DestructionVolumeComponentData_
 #define _DestructionVolumeComponentData_
 #pragma pack(push, 16)
@@ -15616,9 +15616,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01007
+    // ClassId: 01007
     // RuntimeId: 05038
-    // TypeInfo:  0x023F8AD8
+    // TypeInfo: 0x023F8AD8
 #ifndef _AlternateCameraViewData_
 #define _AlternateCameraViewData_
 #pragma pack(push, 16)
@@ -15662,9 +15662,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01606
+    // ClassId: 01606
     // RuntimeId: 05035
-    // TypeInfo:  0x023F8A9C
+    // TypeInfo: 0x023F8A9C
 #ifndef _UnlockComponentData_
 #define _UnlockComponentData_
 #pragma pack(push, 16)
@@ -15693,9 +15693,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01607
+    // ClassId: 01607
     // RuntimeId: 05033
-    // TypeInfo:  0x023F8A70
+    // TypeInfo: 0x023F8A70
 #ifndef _EffectComponentData_
 #define _EffectComponentData_
 #pragma pack(push, 16)
@@ -15726,9 +15726,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01636
+    // ClassId: 01636
     // RuntimeId: 04884
-    // TypeInfo:  0x023F80D4
+    // TypeInfo: 0x023F80D4
 #ifndef _PartComponentData_
 #define _PartComponentData_
 #pragma pack(push, 16)
@@ -15760,9 +15760,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01637
+    // ClassId: 01637
     // RuntimeId: 05029
-    // TypeInfo:  0x023F8A18
+    // TypeInfo: 0x023F8A18
 #ifndef _ChassisComponentData_
 #define _ChassisComponentData_
 #pragma pack(push, 16)
@@ -15796,9 +15796,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01008
+    // ClassId: 01008
     // RuntimeId: 05027
-    // TypeInfo:  0x023F89EC
+    // TypeInfo: 0x023F89EC
 #ifndef _LandingGearLogicData_
 #define _LandingGearLogicData_
 #pragma pack(push, 4)
@@ -15824,9 +15824,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01009
+    // ClassId: 01009
     // RuntimeId: 05023
-    // TypeInfo:  0x023F89B0
+    // TypeInfo: 0x023F89B0
 #ifndef _VehicleWaterEffectData_
 #define _VehicleWaterEffectData_
 #pragma pack(push, 16)
@@ -15854,9 +15854,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01608
+    // ClassId: 01608
     // RuntimeId: 05021
-    // TypeInfo:  0x023F8984
+    // TypeInfo: 0x023F8984
 #ifndef _VehicleExitPointComponentData_
 #define _VehicleExitPointComponentData_
 #pragma pack(push, 16)
@@ -15887,9 +15887,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01609
+    // ClassId: 01609
     // RuntimeId: 05019
-    // TypeInfo:  0x023F8958
+    // TypeInfo: 0x023F8958
 #ifndef _WeaponInputRouterComponentData_
 #define _WeaponInputRouterComponentData_
 #pragma pack(push, 16)
@@ -15916,9 +15916,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01610
+    // ClassId: 01610
     // RuntimeId: 05017
-    // TypeInfo:  0x023F892C
+    // TypeInfo: 0x023F892C
 #ifndef _CameraComponentData_
 #define _CameraComponentData_
 #pragma pack(push, 16)
@@ -15961,9 +15961,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01010
+    // ClassId: 01010
     // RuntimeId: 05013
-    // TypeInfo:  0x023F88F0
+    // TypeInfo: 0x023F88F0
 #ifndef _CameraComponentSoundData_
 #define _CameraComponentSoundData_
 #pragma pack(push, 4)
@@ -15989,9 +15989,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01611
+    // ClassId: 01611
     // RuntimeId: 05011
-    // TypeInfo:  0x023F88C4
+    // TypeInfo: 0x023F88C4
 #ifndef _CharacterCustomizationComponentData_
 #define _CharacterCustomizationComponentData_
 #pragma pack(push, 16)
@@ -16018,9 +16018,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01612
+    // ClassId: 01612
     // RuntimeId: 05007
-    // TypeInfo:  0x023F8888
+    // TypeInfo: 0x023F8888
 #ifndef _ShaderParameterComponentData_
 #define _ShaderParameterComponentData_
 #pragma pack(push, 16)
@@ -16046,9 +16046,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01613
+    // ClassId: 01613
     // RuntimeId: 05003
-    // TypeInfo:  0x023F884C
+    // TypeInfo: 0x023F884C
 #ifndef _SoldierCameraComponentData_
 #define _SoldierCameraComponentData_
 #pragma pack(push, 16)
@@ -16081,9 +16081,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01614
+    // ClassId: 01614
     // RuntimeId: 04999
-    // TypeInfo:  0x023F8810
+    // TypeInfo: 0x023F8810
 #ifndef _SoldierBodyComponentData_
 #define _SoldierBodyComponentData_
 #pragma pack(push, 16)
@@ -16113,9 +16113,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01615
+    // ClassId: 01615
     // RuntimeId: 04997
-    // TypeInfo:  0x023F87E4
+    // TypeInfo: 0x023F87E4
 #ifndef _SoldierWeaponsComponentData_
 #define _SoldierWeaponsComponentData_
 #pragma pack(push, 16)
@@ -16154,9 +16154,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01616
+    // ClassId: 01616
     // RuntimeId: 04991
-    // TypeInfo:  0x023F8798
+    // TypeInfo: 0x023F8798
 #ifndef _IKComponentData_
 #define _IKComponentData_
 #pragma pack(push, 16)
@@ -16183,9 +16183,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01617
+    // ClassId: 01617
     // RuntimeId: 04987
-    // TypeInfo:  0x023F875C
+    // TypeInfo: 0x023F875C
 #ifndef _AnimationTurretRotationComponentData_
 #define _AnimationTurretRotationComponentData_
 #pragma pack(push, 16)
@@ -16214,9 +16214,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01618
+    // ClassId: 01618
     // RuntimeId: 04981
-    // TypeInfo:  0x023F8710
+    // TypeInfo: 0x023F8710
 #ifndef _SoldierGripComponentData_
 #define _SoldierGripComponentData_
 #pragma pack(push, 16)
@@ -16240,9 +16240,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01407
+    // ClassId: 01407
     // RuntimeId: 00733
-    // TypeInfo:  0x023C9B1C
+    // TypeInfo: 0x023C9B1C
 #ifndef _MovingBodyData_
 #define _MovingBodyData_
 #pragma pack(push, 4)
@@ -16268,9 +16268,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01410
+    // ClassId: 01410
     // RuntimeId: 00737
-    // TypeInfo:  0x023C9B74
+    // TypeInfo: 0x023C9B74
 #ifndef _RotationBodyData_
 #define _RotationBodyData_
 #pragma pack(push, 4)
@@ -16307,9 +16307,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01639
+    // ClassId: 01639
     // RuntimeId: 04973
-    // TypeInfo:  0x023F8660
+    // TypeInfo: 0x023F8660
 #ifndef _ChildComponentData_
 #define _ChildComponentData_
 #pragma pack(push, 16)
@@ -16343,9 +16343,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01640
+    // ClassId: 01640
     // RuntimeId: 04975
-    // TypeInfo:  0x023F868C
+    // TypeInfo: 0x023F868C
 #ifndef _ChildBarrelComponentData_
 #define _ChildBarrelComponentData_
 #pragma pack(push, 16)
@@ -16369,9 +16369,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01011
+    // ClassId: 01011
     // RuntimeId: 04971
-    // TypeInfo:  0x023F8634
+    // TypeInfo: 0x023F8634
 #ifndef _AlignmentData_
 #define _AlignmentData_
 #pragma pack(push, 4)
@@ -16398,9 +16398,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01619
+    // ClassId: 01619
     // RuntimeId: 04969
-    // TypeInfo:  0x023F8608
+    // TypeInfo: 0x023F8608
 #ifndef _RotorComponentData_
 #define _RotorComponentData_
 #pragma pack(push, 16)
@@ -16436,9 +16436,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01620
+    // ClassId: 01620
     // RuntimeId: 04963
-    // TypeInfo:  0x023F85A0
+    // TypeInfo: 0x023F85A0
 #ifndef _MeshComponentData_
 #define _MeshComponentData_
 #pragma pack(push, 16)
@@ -16466,9 +16466,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01621
+    // ClassId: 01621
     // RuntimeId: 04965
-    // TypeInfo:  0x023F85CC
+    // TypeInfo: 0x023F85CC
 #ifndef _TrackComponentData_
 #define _TrackComponentData_
 #pragma pack(push, 16)
@@ -16494,9 +16494,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01641
+    // ClassId: 01641
     // RuntimeId: 04961
-    // TypeInfo:  0x023F8574
+    // TypeInfo: 0x023F8574
 #ifndef _FlapComponentData_
 #define _FlapComponentData_
 #pragma pack(push, 16)
@@ -16523,9 +16523,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01642
+    // ClassId: 01642
     // RuntimeId: 04957
-    // TypeInfo:  0x023F8538
+    // TypeInfo: 0x023F8538
 #ifndef _WingComponentData_
 #define _WingComponentData_
 #pragma pack(push, 16)
@@ -16551,9 +16551,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01643
+    // ClassId: 01643
     // RuntimeId: 04953
-    // TypeInfo:  0x023F84E0
+    // TypeInfo: 0x023F84E0
 #ifndef _WheelComponentData_
 #define _WheelComponentData_
 #pragma pack(push, 16)
@@ -16581,9 +16581,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01644
+    // ClassId: 01644
     // RuntimeId: 04955
-    // TypeInfo:  0x023F850C
+    // TypeInfo: 0x023F850C
 #ifndef _TrackWheelComponentData_
 #define _TrackWheelComponentData_
 #pragma pack(push, 16)
@@ -16609,9 +16609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01622
+    // ClassId: 01622
     // RuntimeId: 04951
-    // TypeInfo:  0x023F84B4
+    // TypeInfo: 0x023F84B4
 #ifndef _RadioComponentData_
 #define _RadioComponentData_
 #pragma pack(push, 16)
@@ -16637,9 +16637,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01623
+    // ClassId: 01623
     // RuntimeId: 04949
-    // TypeInfo:  0x023F8488
+    // TypeInfo: 0x023F8488
 #ifndef _EngineComponentData_
 #define _EngineComponentData_
 #pragma pack(push, 16)
@@ -16669,9 +16669,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01624
+    // ClassId: 01624
     // RuntimeId: 04947
-    // TypeInfo:  0x023F845C
+    // TypeInfo: 0x023F845C
 #ifndef _VehicleParachuteComponentData_
 #define _VehicleParachuteComponentData_
 #pragma pack(push, 16)
@@ -16701,9 +16701,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01645
+    // ClassId: 01645
     // RuntimeId: 04943
-    // TypeInfo:  0x023F8420
+    // TypeInfo: 0x023F8420
 #ifndef _WeaponComponentData_
 #define _WeaponComponentData_
 #pragma pack(push, 16)
@@ -16744,9 +16744,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01625
+    // ClassId: 01625
     // RuntimeId: 04939
-    // TypeInfo:  0x023F83E4
+    // TypeInfo: 0x023F83E4
 #ifndef _RagdollComponentData_
 #define _RagdollComponentData_
 #pragma pack(push, 16)
@@ -16777,9 +16777,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01626
+    // ClassId: 01626
     // RuntimeId: 04935
-    // TypeInfo:  0x023F83A8
+    // TypeInfo: 0x023F83A8
 #ifndef _BoneCollisionComponentData_
 #define _BoneCollisionComponentData_
 #pragma pack(push, 16)
@@ -16805,9 +16805,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01012
+    // ClassId: 01012
     // RuntimeId: 04933
-    // TypeInfo:  0x023F837C
+    // TypeInfo: 0x023F837C
 #ifndef _SkeletonCollisionData_
 #define _SkeletonCollisionData_
 #pragma pack(push, 4)
@@ -16833,9 +16833,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01627
+    // ClassId: 01627
     // RuntimeId: 04925
-    // TypeInfo:  0x023F8320
+    // TypeInfo: 0x023F8320
 #ifndef _PhantomComponentData_
 #define _PhantomComponentData_
 #pragma pack(push, 16)
@@ -16864,9 +16864,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01628
+    // ClassId: 01628
     // RuntimeId: 04923
-    // TypeInfo:  0x023F82F4
+    // TypeInfo: 0x023F82F4
 #ifndef _FlagComponentData_
 #define _FlagComponentData_
 #pragma pack(push, 16)
@@ -16894,9 +16894,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01629
+    // ClassId: 01629
     // RuntimeId: 04921
-    // TypeInfo:  0x023F82C8
+    // TypeInfo: 0x023F82C8
 #ifndef _AntAnimatableComponentData_
 #define _AntAnimatableComponentData_
 #pragma pack(push, 16)
@@ -16928,9 +16928,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01631
+    // ClassId: 01631
     // RuntimeId: 04911
-    // TypeInfo:  0x023F825C
+    // TypeInfo: 0x023F825C
 #ifndef _StanceFilterComponentData_
 #define _StanceFilterComponentData_
 #pragma pack(push, 16)
@@ -16960,9 +16960,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01632
+    // ClassId: 01632
     // RuntimeId: 04896
-    // TypeInfo:  0x023F816C
+    // TypeInfo: 0x023F816C
 #ifndef _EntryComponentData_
 #define _EntryComponentData_
 #pragma pack(push, 16)
@@ -17015,9 +17015,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01634
+    // ClassId: 01634
     // RuntimeId: 04903
-    // TypeInfo:  0x023F81E4
+    // TypeInfo: 0x023F81E4
 #ifndef _PlayerEntryComponentData_
 #define _PlayerEntryComponentData_
 #pragma pack(push, 16)
@@ -17046,9 +17046,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01635
+    // ClassId: 01635
     // RuntimeId: 04899
-    // TypeInfo:  0x023F81A8
+    // TypeInfo: 0x023F81A8
 #ifndef _SoldierEntryComponentData_
 #define _SoldierEntryComponentData_
 #pragma pack(push, 16)
@@ -17076,9 +17076,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01633
+    // ClassId: 01633
     // RuntimeId: 04905
-    // TypeInfo:  0x023F8210
+    // TypeInfo: 0x023F8210
 #ifndef _RemoteEntryComponentData_
 #define _RemoteEntryComponentData_
 #pragma pack(push, 16)
@@ -17102,9 +17102,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01013
+    // ClassId: 01013
     // RuntimeId: 04894
-    // TypeInfo:  0x023F8140
+    // TypeInfo: 0x023F8140
 #ifndef _EntryComponentSoundData_
 #define _EntryComponentSoundData_
 #pragma pack(push, 4)
@@ -17130,9 +17130,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01638
+    // ClassId: 01638
     // RuntimeId: 05031
-    // TypeInfo:  0x023F8A44
+    // TypeInfo: 0x023F8A44
 #ifndef _VehicleComponentData_
 #define _VehicleComponentData_
 #pragma pack(push, 16)
@@ -17156,9 +17156,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01014
+    // ClassId: 01014
     // RuntimeId: 04882
-    // TypeInfo:  0x023F80A8
+    // TypeInfo: 0x023F80A8
 #ifndef _PartLinkData_
 #define _PartLinkData_
 #pragma pack(push, 4)
@@ -17184,9 +17184,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01412
+    // ClassId: 01412
     // RuntimeId: 00729
-    // TypeInfo:  0x023C9AC4
+    // TypeInfo: 0x023C9AC4
 #ifndef _LoosePartPhysicsData_
 #define _LoosePartPhysicsData_
 #pragma pack(push, 4)
@@ -17211,9 +17211,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01015
+    // ClassId: 01015
     // RuntimeId: 04876
-    // TypeInfo:  0x023F8040
+    // TypeInfo: 0x023F8040
 #ifndef _HealthStateData_
 #define _HealthStateData_
 #pragma pack(push, 4)
@@ -17247,9 +17247,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01016
+    // ClassId: 01016
     // RuntimeId: 04874
-    // TypeInfo:  0x023F8014
+    // TypeInfo: 0x023F8014
 #ifndef _BangerSpawnImpulseParams_
 #define _BangerSpawnImpulseParams_
 #pragma pack(push, 4)
@@ -17282,9 +17282,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02447
+    // ClassId: 02447
     // RuntimeId: 04872
-    // TypeInfo:  0x023F7FE8
+    // TypeInfo: 0x023F7FE8
 #ifndef _EffectManagerSettings_
 #define _EffectManagerSettings_
 #pragma pack(push, 4)
@@ -17311,9 +17311,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02448
+    // ClassId: 02448
     // RuntimeId: 04870
-    // TypeInfo:  0x023F7FBC
+    // TypeInfo: 0x023F7FBC
 #ifndef _SoundSettings_
 #define _SoundSettings_
 #pragma pack(push, 4)
@@ -17346,9 +17346,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02449
+    // ClassId: 02449
     // RuntimeId: 04868
-    // TypeInfo:  0x023F7F90
+    // TypeInfo: 0x023F7F90
 #ifndef _ClientSettings_
 #define _ClientSettings_
 #pragma pack(push, 4)
@@ -17442,9 +17442,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02200
+    // ClassId: 02200
     // RuntimeId: 04866
-    // TypeInfo:  0x023F7F64
+    // TypeInfo: 0x023F7F64
 #ifndef _ChatSettings_
 #define _ChatSettings_
 #pragma pack(push, 4)
@@ -17470,9 +17470,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01973
+    // ClassId: 01973
     // RuntimeId: 04860
-    // TypeInfo:  0x023F7F18
+    // TypeInfo: 0x023F7F18
 #ifndef _CharacterEntityData_
 #define _CharacterEntityData_
 #pragma pack(push, 16)
@@ -17500,9 +17500,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01647
+    // ClassId: 01647
     // RuntimeId: 04856
-    // TypeInfo:  0x023F7EDC
+    // TypeInfo: 0x023F7EDC
 #ifndef _CharacterHealthComponentData_
 #define _CharacterHealthComponentData_
 #pragma pack(push, 16)
@@ -17531,9 +17531,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01648
+    // ClassId: 01648
     // RuntimeId: 04854
-    // TypeInfo:  0x023F7EB0
+    // TypeInfo: 0x023F7EB0
 #ifndef _AntDrivenComponentData_
 #define _AntDrivenComponentData_
 #pragma pack(push, 16)
@@ -17559,9 +17559,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01649
+    // ClassId: 01649
     // RuntimeId: 04850
-    // TypeInfo:  0x023F7E74
+    // TypeInfo: 0x023F7E74
 #ifndef _CharacterPhysicsComponentData_
 #define _CharacterPhysicsComponentData_
 #pragma pack(push, 16)
@@ -17588,9 +17588,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01650
+    // ClassId: 01650
     // RuntimeId: 04848
-    // TypeInfo:  0x023F7E48
+    // TypeInfo: 0x023F7E48
 #ifndef _CharacterWeaponComponentData_
 #define _CharacterWeaponComponentData_
 #pragma pack(push, 16)
@@ -17618,9 +17618,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01651
+    // ClassId: 01651
     // RuntimeId: 04844
-    // TypeInfo:  0x023F7E0C
+    // TypeInfo: 0x023F7E0C
 #ifndef _CharacterCameraComponentData_
 #define _CharacterCameraComponentData_
 #pragma pack(push, 16)
@@ -17647,9 +17647,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01875
+    // ClassId: 01875
     // RuntimeId: 04832
-    // TypeInfo:  0x023F7D20
+    // TypeInfo: 0x023F7D20
 #ifndef _CameraEntityBaseData_
 #define _CameraEntityBaseData_
 #pragma pack(push, 16)
@@ -17677,9 +17677,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01877
+    // ClassId: 01877
     // RuntimeId: 04838
-    // TypeInfo:  0x023F7DA4
+    // TypeInfo: 0x023F7DA4
 #ifndef _TargetCameraEntityData_
 #define _TargetCameraEntityData_
 #pragma pack(push, 16)
@@ -17705,9 +17705,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01878
+    // ClassId: 01878
     // RuntimeId: 04834
-    // TypeInfo:  0x023F7D4C
+    // TypeInfo: 0x023F7D4C
 #ifndef _CameraEntityData_
 #define _CameraEntityData_
 #pragma pack(push, 16)
@@ -17733,9 +17733,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01879
+    // ClassId: 01879
     // RuntimeId: 04836
-    // TypeInfo:  0x023F7D78
+    // TypeInfo: 0x023F7D78
 #ifndef _LookAtCameraEntityData_
 #define _LookAtCameraEntityData_
 #pragma pack(push, 16)
@@ -17759,9 +17759,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01876
+    // ClassId: 01876
     // RuntimeId: 04842
-    // TypeInfo:  0x023F7DE0
+    // TypeInfo: 0x023F7DE0
 #ifndef _PlayerCameraEntityData_
 #define _PlayerCameraEntityData_
 #pragma pack(push, 16)
@@ -17794,9 +17794,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01542
+    // ClassId: 01542
     // RuntimeId: 04814
-    // TypeInfo:  0x023F7BCC
+    // TypeInfo: 0x023F7BCC
 #ifndef _CameraData_
 #define _CameraData_
 #pragma pack(push, 16)
@@ -17833,9 +17833,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01543
+    // ClassId: 01543
     // RuntimeId: 04826
-    // TypeInfo:  0x023F7CB8
+    // TypeInfo: 0x023F7CB8
 #ifndef _AnimatedCameraData_
 #define _AnimatedCameraData_
 #pragma pack(push, 16)
@@ -17863,9 +17863,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01544
+    // ClassId: 01544
     // RuntimeId: 04818
-    // TypeInfo:  0x023F7C08
+    // TypeInfo: 0x023F7C08
 #ifndef _TargetCameraData_
 #define _TargetCameraData_
 #pragma pack(push, 16)
@@ -17892,9 +17892,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01547
+    // ClassId: 01547
     // RuntimeId: 04822
-    // TypeInfo:  0x023F7C60
+    // TypeInfo: 0x023F7C60
 #ifndef _ChaseCameraData_
 #define _ChaseCameraData_
 #pragma pack(push, 16)
@@ -17943,9 +17943,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01548
+    // ClassId: 01548
     // RuntimeId: 04820
-    // TypeInfo:  0x023F7C34
+    // TypeInfo: 0x023F7C34
 #ifndef _FPSCameraData_
 #define _FPSCameraData_
 #pragma pack(push, 16)
@@ -17973,9 +17973,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01545
+    // ClassId: 01545
     // RuntimeId: 04830
-    // TypeInfo:  0x023F7CF4
+    // TypeInfo: 0x023F7CF4
 #ifndef _VehicleCameraData_
 #define _VehicleCameraData_
 #pragma pack(push, 16)
@@ -18010,9 +18010,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01546
+    // ClassId: 01546
     // RuntimeId: 04824
-    // TypeInfo:  0x023F7C8C
+    // TypeInfo: 0x023F7C8C
 #ifndef _StaticCameraData_
 #define _StaticCameraData_
 #pragma pack(push, 16)
@@ -18057,9 +18057,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02418
+    // ClassId: 02418
     // RuntimeId: 00172
-    // TypeInfo:  0x023C4D90
+    // TypeInfo: 0x023C4D90
 #ifndef _Blueprint_
 #define _Blueprint_
 #pragma pack(push, 4)
@@ -18083,9 +18083,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02426
+    // ClassId: 02426
     // RuntimeId: 00176
-    // TypeInfo:  0x023C4DE8
+    // TypeInfo: 0x023C4DE8
 #ifndef _ObjectBlueprint_
 #define _ObjectBlueprint_
 #pragma pack(push, 4)
@@ -18110,9 +18110,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02431
+    // ClassId: 02431
     // RuntimeId: 04792
-    // TypeInfo:  0x023F7A3C
+    // TypeInfo: 0x023F7A3C
 #ifndef _CharacterBlueprint_
 #define _CharacterBlueprint_
 #pragma pack(push, 4)
@@ -18136,9 +18136,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02435
+    // ClassId: 02435
     // RuntimeId: 04790
-    // TypeInfo:  0x023F7A10
+    // TypeInfo: 0x023F7A10
 #ifndef _VehicleBlueprint_
 #define _VehicleBlueprint_
 #pragma pack(push, 4)
@@ -18162,9 +18162,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02428
+    // ClassId: 02428
     // RuntimeId: 04798
-    // TypeInfo:  0x023F7AC0
+    // TypeInfo: 0x023F7AC0
 #ifndef _ProjectileBlueprint_
 #define _ProjectileBlueprint_
 #pragma pack(push, 4)
@@ -18188,9 +18188,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02429
+    // ClassId: 02429
     // RuntimeId: 04796
-    // TypeInfo:  0x023F7A94
+    // TypeInfo: 0x023F7A94
 #ifndef _SoldierWeaponBlueprint_
 #define _SoldierWeaponBlueprint_
 #pragma pack(push, 4)
@@ -18214,9 +18214,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02433
+    // ClassId: 02433
     // RuntimeId: 04794
-    // TypeInfo:  0x023F7A68
+    // TypeInfo: 0x023F7A68
 #ifndef _SoldierBlueprint_
 #define _SoldierBlueprint_
 #pragma pack(push, 4)
@@ -18240,9 +18240,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02432
+    // ClassId: 02432
     // RuntimeId: 04804
-    // TypeInfo:  0x023F7B44
+    // TypeInfo: 0x023F7B44
 #ifndef _CharacterAsset_
 #define _CharacterAsset_
 #pragma pack(push, 4)
@@ -18266,9 +18266,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02436
+    // ClassId: 02436
     // RuntimeId: 04800
-    // TypeInfo:  0x023F7AEC
+    // TypeInfo: 0x023F7AEC
 #ifndef _VehicleAsset_
 #define _VehicleAsset_
 #pragma pack(push, 4)
@@ -18292,9 +18292,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01017
+    // ClassId: 01017
     // RuntimeId: 04786
-    // TypeInfo:  0x023F6114
+    // TypeInfo: 0x023F6114
 #ifndef _InputActionMappingData_
 #define _InputActionMappingData_
 #pragma pack(push, 4)
@@ -18318,9 +18318,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01018
+    // ClassId: 01018
     // RuntimeId: 04788
-    // TypeInfo:  0x023F6140
+    // TypeInfo: 0x023F6140
 #ifndef _EntryInputActionMappingData_
 #define _EntryInputActionMappingData_
 #pragma pack(push, 4)
@@ -18346,9 +18346,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01019
+    // ClassId: 01019
     // RuntimeId: 04784
-    // TypeInfo:  0x023F60E8
+    // TypeInfo: 0x023F60E8
 #ifndef _InputActionMappingsData_
 #define _InputActionMappingsData_
 #pragma pack(push, 4)
@@ -18373,9 +18373,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01027
+    // ClassId: 01027
     // RuntimeId: 04744
-    // TypeInfo:  0x023F5DE8
+    // TypeInfo: 0x023F5DE8
 #ifndef _InputActionData_
 #define _InputActionData_
 #pragma pack(push, 4)
@@ -18402,9 +18402,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01028
+    // ClassId: 01028
     // RuntimeId: 04780
-    // TypeInfo:  0x023F6090
+    // TypeInfo: 0x023F6090
 #ifndef _KeyboardInputActionData_
 #define _KeyboardInputActionData_
 #pragma pack(push, 4)
@@ -18429,9 +18429,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01029
+    // ClassId: 01029
     // RuntimeId: 04774
-    // TypeInfo:  0x023F600C
+    // TypeInfo: 0x023F600C
 #ifndef _AxesInputActionData_
 #define _AxesInputActionData_
 #pragma pack(push, 4)
@@ -18458,9 +18458,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01032
+    // ClassId: 01032
     // RuntimeId: 04776
-    // TypeInfo:  0x023F6038
+    // TypeInfo: 0x023F6038
 #ifndef _PadInputActionData_
 #define _PadInputActionData_
 #pragma pack(push, 4)
@@ -18489,9 +18489,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01030
+    // ClassId: 01030
     // RuntimeId: 04782
-    // TypeInfo:  0x023F60BC
+    // TypeInfo: 0x023F60BC
 #ifndef _MouseInputActionData_
 #define _MouseInputActionData_
 #pragma pack(push, 4)
@@ -18520,9 +18520,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01755
+    // ClassId: 01755
     // RuntimeId: 04772
-    // TypeInfo:  0x023F5FE0
+    // TypeInfo: 0x023F5FE0
 #ifndef _InputModifierEntityData_
 #define _InputModifierEntityData_
 #pragma pack(push, 4)
@@ -18551,9 +18551,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01020
+    // ClassId: 01020
     // RuntimeId: 04770
-    // TypeInfo:  0x023F5FB4
+    // TypeInfo: 0x023F5FB4
 #ifndef _InputCurveData_
 #define _InputCurveData_
 #pragma pack(push, 4)
@@ -18581,9 +18581,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02201
+    // ClassId: 02201
     // RuntimeId: 04768
-    // TypeInfo:  0x023F5F88
+    // TypeInfo: 0x023F5F88
 #ifndef _InputConfigurationAsset_
 #define _InputConfigurationAsset_
 #pragma pack(push, 4)
@@ -18631,9 +18631,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01021
+    // ClassId: 01021
     // RuntimeId: 04758
-    // TypeInfo:  0x023F5EE4
+    // TypeInfo: 0x023F5EE4
 #ifndef _EditableAction_
 #define _EditableAction_
 #pragma pack(push, 4)
@@ -18658,9 +18658,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01023
+    // ClassId: 01023
     // RuntimeId: 04760
-    // TypeInfo:  0x023F5F10
+    // TypeInfo: 0x023F5F10
 #ifndef _OneOptionButtonEditableAction_
 #define _OneOptionButtonEditableAction_
 #pragma pack(push, 4)
@@ -18685,9 +18685,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01022
+    // ClassId: 01022
     // RuntimeId: 04762
-    // TypeInfo:  0x023F5F3C
+    // TypeInfo: 0x023F5F3C
 #ifndef _OneOptionAxisEditableAction_
 #define _OneOptionAxisEditableAction_
 #pragma pack(push, 4)
@@ -18714,9 +18714,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02202
+    // ClassId: 02202
     // RuntimeId: 04754
-    // TypeInfo:  0x023F5EA8
+    // TypeInfo: 0x023F5EA8
 #ifndef _EntryInputActionMapsData_
 #define _EntryInputActionMapsData_
 #pragma pack(push, 4)
@@ -18743,9 +18743,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01024
+    // ClassId: 01024
     // RuntimeId: 04748
-    // TypeInfo:  0x023F5E40
+    // TypeInfo: 0x023F5E40
 #ifndef _InputActionMapData_
 #define _InputActionMapData_
 #pragma pack(push, 4)
@@ -18773,9 +18773,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01025
+    // ClassId: 01025
     // RuntimeId: 04750
-    // TypeInfo:  0x023F5E6C
+    // TypeInfo: 0x023F5E6C
 #ifndef _EntryInputActionMapData_
 #define _EntryInputActionMapData_
 #pragma pack(push, 4)
@@ -18799,9 +18799,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01026
+    // ClassId: 01026
     // RuntimeId: 04746
-    // TypeInfo:  0x023F5E14
+    // TypeInfo: 0x023F5E14
 #ifndef _InputActionsData_
 #define _InputActionsData_
 #pragma pack(push, 4)
@@ -18831,9 +18831,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01031
+    // ClassId: 01031
     // RuntimeId: 04778
-    // TypeInfo:  0x023F6064
+    // TypeInfo: 0x023F6064
 #ifndef _MotionControllerInputActionData_
 #define _MotionControllerInputActionData_
 #pragma pack(push, 4)
@@ -18858,9 +18858,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02203
+    // ClassId: 02203
     // RuntimeId: 04738
-    // TypeInfo:  0x023F5D9C
+    // TypeInfo: 0x023F5D9C
 #ifndef _UICombatAreaAsset_
 #define _UICombatAreaAsset_
 #pragma pack(push, 4)
@@ -18885,9 +18885,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01033
+    // ClassId: 01033
     // RuntimeId: 04734
-    // TypeInfo:  0x023F5D60
+    // TypeInfo: 0x023F5D60
 #ifndef _UIPartData_
 #define _UIPartData_
 #pragma pack(push, 4)
@@ -18911,9 +18911,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01041
+    // ClassId: 01041
     // RuntimeId: 04730
-    // TypeInfo:  0x023F5D24
+    // TypeInfo: 0x023F5D24
 #ifndef _UIPartPropertyList_
 #define _UIPartPropertyList_
 #pragma pack(push, 4)
@@ -18938,9 +18938,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01652
+    // ClassId: 01652
     // RuntimeId: 04720
-    // TypeInfo:  0x023F5CB8
+    // TypeInfo: 0x023F5CB8
 #ifndef _HitReactionComponentData_
 #define _HitReactionComponentData_
 #pragma pack(push, 16)
@@ -18967,9 +18967,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01970
+    // ClassId: 01970
     // RuntimeId: 04714
-    // TypeInfo:  0x023F5C6C
+    // TypeInfo: 0x023F5C6C
 #ifndef _StaticModelGroupEntityData_
 #define _StaticModelGroupEntityData_
 #pragma pack(push, 16)
@@ -18998,9 +18998,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01943
+    // ClassId: 01943
     // RuntimeId: 04710
-    // TypeInfo:  0x023F5C30
+    // TypeInfo: 0x023F5C30
 #ifndef _GameSplineEntityData_
 #define _GameSplineEntityData_
 #pragma pack(push, 16)
@@ -19028,9 +19028,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01569
+    // ClassId: 01569
     // RuntimeId: 00408
-    // TypeInfo:  0x023C6758
+    // TypeInfo: 0x023C6758
 #ifndef _CustomSplineData_
 #define _CustomSplineData_
 #pragma pack(push, 4)
@@ -19054,9 +19054,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02205
+    // ClassId: 02205
     // RuntimeId: 04704
-    // TypeInfo:  0x023F5BC8
+    // TypeInfo: 0x023F5BC8
 #ifndef _GameAnimationConfig_
 #define _GameAnimationConfig_
 #pragma pack(push, 4)
@@ -19084,9 +19084,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02450
+    // ClassId: 02450
     // RuntimeId: 04702
-    // TypeInfo:  0x023F5B9C
+    // TypeInfo: 0x023F5B9C
 #ifndef _GameAnimationSettings_
 #define _GameAnimationSettings_
 #pragma pack(push, 4)
@@ -19128,9 +19128,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01042
+    // ClassId: 01042
     // RuntimeId: 04700
-    // TypeInfo:  0x023F5B70
+    // TypeInfo: 0x023F5B70
 #ifndef _DemoSettings_
 #define _DemoSettings_
 #pragma pack(push, 4)
@@ -19171,9 +19171,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02451
+    // ClassId: 02451
     // RuntimeId: 04698
-    // TypeInfo:  0x023F5B44
+    // TypeInfo: 0x023F5B44
 #ifndef _WindowSettings_
 #define _WindowSettings_
 #pragma pack(push, 4)
@@ -19211,9 +19211,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02452
+    // ClassId: 02452
     // RuntimeId: 04696
-    // TypeInfo:  0x023F5B18
+    // TypeInfo: 0x023F5B18
 #ifndef _PerformanceTrackerSettings_
 #define _PerformanceTrackerSettings_
 #pragma pack(push, 4)
@@ -19242,9 +19242,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02453
+    // ClassId: 02453
     // RuntimeId: 04694
-    // TypeInfo:  0x023F5AEC
+    // TypeInfo: 0x023F5AEC
 #ifndef _GameTimeSettings_
 #define _GameTimeSettings_
 #pragma pack(push, 4)
@@ -19285,9 +19285,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02454
+    // ClassId: 02454
     // RuntimeId: 04692
-    // TypeInfo:  0x023F5AC0
+    // TypeInfo: 0x023F5AC0
 #ifndef _SyncedGameSettings_
 #define _SyncedGameSettings_
 #pragma pack(push, 4)
@@ -19319,9 +19319,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02455
+    // ClassId: 02455
     // RuntimeId: 04690
-    // TypeInfo:  0x023F5A94
+    // TypeInfo: 0x023F5A94
 #ifndef _GameSettings_
 #define _GameSettings_
 #pragma pack(push, 4)
@@ -19387,9 +19387,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01880
+    // ClassId: 01880
     // RuntimeId: 04682
-    // TypeInfo:  0x023F5A38
+    // TypeInfo: 0x023F5A38
 #ifndef _StreamGridEntityData_
 #define _StreamGridEntityData_
 #pragma pack(push, 16)
@@ -19419,9 +19419,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01944
+    // ClassId: 01944
     // RuntimeId: 04678
-    // TypeInfo:  0x023F59FC
+    // TypeInfo: 0x023F59FC
 #ifndef _DecalEntityData_
 #define _DecalEntityData_
 #pragma pack(push, 16)
@@ -19451,9 +19451,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01945
+    // ClassId: 01945
     // RuntimeId: 04676
-    // TypeInfo:  0x023F59D0
+    // TypeInfo: 0x023F59D0
 #ifndef _ClientEffectMaskVolumeEntityData_
 #define _ClientEffectMaskVolumeEntityData_
 #pragma pack(push, 16)
@@ -19482,9 +19482,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01946
+    // ClassId: 01946
     // RuntimeId: 04674
-    // TypeInfo:  0x023F59A4
+    // TypeInfo: 0x023F59A4
 #ifndef _DestructionMaskVolumeEntityData_
 #define _DestructionMaskVolumeEntityData_
 #pragma pack(push, 16)
@@ -19514,9 +19514,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01948
+    // ClassId: 01948
     // RuntimeId: 05702
-    // TypeInfo:  0x023FFB6C
+    // TypeInfo: 0x023FFB6C
 #ifndef _GameInteractionEntityData_
 #define _GameInteractionEntityData_
 #pragma pack(push, 16)
@@ -19556,9 +19556,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01949
+    // ClassId: 01949
     // RuntimeId: 04670
-    // TypeInfo:  0x023F594C
+    // TypeInfo: 0x023F594C
 #ifndef _PredestructionEntityData_
 #define _PredestructionEntityData_
 #pragma pack(push, 16)
@@ -19584,9 +19584,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01950
+    // ClassId: 01950
     // RuntimeId: 04668
-    // TypeInfo:  0x023F5920
+    // TypeInfo: 0x023F5920
 #ifndef _ExplosionEntityData_
 #define _ExplosionEntityData_
 #pragma pack(push, 16)
@@ -19635,9 +19635,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01972
+    // ClassId: 01972
     // RuntimeId: 05281
-    // TypeInfo:  0x023FB0A0
+    // TypeInfo: 0x023FB0A0
 #ifndef _VehicleEntityData_
 #define _VehicleEntityData_
 #pragma pack(push, 16)
@@ -19733,9 +19733,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01975
+    // ClassId: 01975
     // RuntimeId: 04658
-    // TypeInfo:  0x023F5878
+    // TypeInfo: 0x023F5878
 #ifndef _DynamicGamePhysicsEntityData_
 #define _DynamicGamePhysicsEntityData_
 #pragma pack(push, 16)
@@ -19759,9 +19759,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01976
+    // ClassId: 01976
     // RuntimeId: 05947
-    // TypeInfo:  0x02401780
+    // TypeInfo: 0x02401780
 #ifndef _BangerEntityData_
 #define _BangerEntityData_
 #pragma pack(push, 16)
@@ -19792,9 +19792,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01653
+    // ClassId: 01653
     // RuntimeId: 04654
-    // TypeInfo:  0x023F5820
+    // TypeInfo: 0x023F5820
 #ifndef _FaceposerComponentData_
 #define _FaceposerComponentData_
 #pragma pack(push, 16)
@@ -19826,9 +19826,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01756
+    // ClassId: 01756
     // RuntimeId: 04649
-    // TypeInfo:  0x023F57D4
+    // TypeInfo: 0x023F57D4
 #ifndef _EventSyncEntityData_
 #define _EventSyncEntityData_
 #pragma pack(push, 4)
@@ -19852,9 +19852,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02206
+    // ClassId: 02206
     // RuntimeId: 04647
-    // TypeInfo:  0x023F57A8
+    // TypeInfo: 0x023F57A8
 #ifndef _EntitlementQuery_
 #define _EntitlementQuery_
 #pragma pack(push, 4)
@@ -19884,9 +19884,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01977
+    // ClassId: 01977
     // RuntimeId: 04641
-    // TypeInfo:  0x023F575C
+    // TypeInfo: 0x023F575C
 #ifndef _DynamicModelEntityData_
 #define _DynamicModelEntityData_
 #pragma pack(push, 16)
@@ -19914,9 +19914,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01757
+    // ClassId: 01757
     // RuntimeId: 04639
-    // TypeInfo:  0x023F5730
+    // TypeInfo: 0x023F5730
 #ifndef _DynamicAvoidanceEntityData_
 #define _DynamicAvoidanceEntityData_
 #pragma pack(push, 4)
@@ -19948,9 +19948,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01654
+    // ClassId: 01654
     // RuntimeId: 04631
-    // TypeInfo:  0x023F56B8
+    // TypeInfo: 0x023F56B8
 #ifndef _DriverComponentData_
 #define _DriverComponentData_
 #pragma pack(push, 16)
@@ -19977,9 +19977,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01655
+    // ClassId: 01655
     // RuntimeId: 04633
-    // TypeInfo:  0x023F56E4
+    // TypeInfo: 0x023F56E4
 #ifndef _DriverStaticObjectComponentData_
 #define _DriverStaticObjectComponentData_
 #pragma pack(push, 16)
@@ -20009,9 +20009,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02207
+    // ClassId: 02207
     // RuntimeId: 04629
-    // TypeInfo:  0x023F568C
+    // TypeInfo: 0x023F568C
 #ifndef _DriverSettings_
 #define _DriverSettings_
 #pragma pack(push, 4)
@@ -20075,9 +20075,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01758
+    // ClassId: 01758
     // RuntimeId: 04627
-    // TypeInfo:  0x023F5660
+    // TypeInfo: 0x023F5660
 #ifndef _DifficultyIndexEntityData_
 #define _DifficultyIndexEntityData_
 #pragma pack(push, 4)
@@ -20102,9 +20102,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02208
+    // ClassId: 02208
     // RuntimeId: 04625
-    // TypeInfo:  0x023F5634
+    // TypeInfo: 0x023F5634
 #ifndef _DifficultyDatas_
 #define _DifficultyDatas_
 #pragma pack(push, 4)
@@ -20129,9 +20129,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01043
+    // ClassId: 01043
     // RuntimeId: 04623
-    // TypeInfo:  0x023F5608
+    // TypeInfo: 0x023F5608
 #ifndef _DifficultyData_
 #define _DifficultyData_
 #pragma pack(push, 16)
@@ -20179,9 +20179,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01045
+    // ClassId: 01045
     // RuntimeId: 06087
-    // TypeInfo:  0x02402D40
+    // TypeInfo: 0x02402D40
 #ifndef _AIDifficultyData_
 #define _AIDifficultyData_
 #pragma pack(push, 4)
@@ -20212,9 +20212,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02402
+    // ClassId: 02402
     // RuntimeId: 04611
-    // TypeInfo:  0x023F5570
+    // TypeInfo: 0x023F5570
 #ifndef _SubtitleDataTree_
 #define _SubtitleDataTree_
 #pragma pack(push, 4)
@@ -20239,9 +20239,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01488
+    // ClassId: 01488
     // RuntimeId: 04609
-    // TypeInfo:  0x023F5544
+    // TypeInfo: 0x023F5544
 #ifndef _SubtitleMainDataNode_
 #define _SubtitleMainDataNode_
 #pragma pack(push, 4)
@@ -20267,9 +20267,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01489
+    // ClassId: 01489
     // RuntimeId: 04607
-    // TypeInfo:  0x023F5518
+    // TypeInfo: 0x023F5518
 #ifndef _SubtitleDataNode_
 #define _SubtitleDataNode_
 #pragma pack(push, 4)
@@ -20297,9 +20297,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01046
+    // ClassId: 01046
     // RuntimeId: 04605
-    // TypeInfo:  0x023F54EC
+    // TypeInfo: 0x023F54EC
 #ifndef _StreamGroupData_
 #define _StreamGroupData_
 #pragma pack(push, 4)
@@ -20324,9 +20324,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02209
+    // ClassId: 02209
     // RuntimeId: 04603
-    // TypeInfo:  0x023F54C0
+    // TypeInfo: 0x023F54C0
 #ifndef _SpawnPointManagerData_
 #define _SpawnPointManagerData_
 #pragma pack(push, 4)
@@ -20352,9 +20352,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02212
+    // ClassId: 02212
     // RuntimeId: 04577
-    // TypeInfo:  0x023F5338
+    // TypeInfo: 0x023F5338
 #ifndef _VehicleCustomizationAsset_
 #define _VehicleCustomizationAsset_
 #pragma pack(push, 4)
@@ -20379,9 +20379,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02214
+    // ClassId: 02214
     // RuntimeId: 04575
-    // TypeInfo:  0x023F530C
+    // TypeInfo: 0x023F530C
 #ifndef _SoldierWeaponCustomizationAsset_
 #define _SoldierWeaponCustomizationAsset_
 #pragma pack(push, 4)
@@ -20406,9 +20406,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02216
+    // ClassId: 02216
     // RuntimeId: 04571
-    // TypeInfo:  0x023F52B4
+    // TypeInfo: 0x023F52B4
 #ifndef _CharacterCustomizationAsset_
 #define _CharacterCustomizationAsset_
 #pragma pack(push, 4)
@@ -20437,9 +20437,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02210
+    // ClassId: 02210
     // RuntimeId: 04583
-    // TypeInfo:  0x023F5394
+    // TypeInfo: 0x023F5394
 #ifndef _CustomizeCharacterData_
 #define _CustomizeCharacterData_
 #pragma pack(push, 4)
@@ -20470,9 +20470,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02211
+    // ClassId: 02211
     // RuntimeId: 04585
-    // TypeInfo:  0x023F53C0
+    // TypeInfo: 0x023F53C0
 #ifndef _CustomizeSoldierData_
 #define _CustomizeSoldierData_
 #pragma pack(push, 4)
@@ -20502,9 +20502,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02213
+    // ClassId: 02213
     // RuntimeId: 04593
-    // TypeInfo:  0x023F5454
+    // TypeInfo: 0x023F5454
 #ifndef _VeniceVehicleCustomizationAsset_
 #define _VeniceVehicleCustomizationAsset_
 #pragma pack(push, 4)
@@ -20530,9 +20530,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02215
+    // ClassId: 02215
     // RuntimeId: 04589
-    // TypeInfo:  0x023F5418
+    // TypeInfo: 0x023F5418
 #ifndef _VeniceSoldierWeaponCustomizationAsset_
 #define _VeniceSoldierWeaponCustomizationAsset_
 #pragma pack(push, 4)
@@ -20556,9 +20556,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02217
+    // ClassId: 02217
     // RuntimeId: 04573
-    // TypeInfo:  0x023F52E0
+    // TypeInfo: 0x023F52E0
 #ifndef _SoldierCustomizationAsset_
 #define _SoldierCustomizationAsset_
 #pragma pack(push, 4)
@@ -20583,9 +20583,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02218
+    // ClassId: 02218
     // RuntimeId: 04587
-    // TypeInfo:  0x023F53EC
+    // TypeInfo: 0x023F53EC
 #ifndef _VeniceSoldierCustomizationAsset_
 #define _VeniceSoldierCustomizationAsset_
 #pragma pack(push, 4)
@@ -20609,9 +20609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01047
+    // ClassId: 01047
     // RuntimeId: 04569
-    // TypeInfo:  0x023F5288
+    // TypeInfo: 0x023F5288
 #ifndef _CustomizationUnlockParts_
 #define _CustomizationUnlockParts_
 #pragma pack(push, 4)
@@ -20637,9 +20637,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01048
+    // ClassId: 01048
     // RuntimeId: 04567
-    // TypeInfo:  0x023F525C
+    // TypeInfo: 0x023F525C
 #ifndef _CustomizationTable_
 #define _CustomizationTable_
 #pragma pack(push, 4)
@@ -20664,9 +20664,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02219
+    // ClassId: 02219
     // RuntimeId: 04565
-    // TypeInfo:  0x023F5230
+    // TypeInfo: 0x023F5230
 #ifndef _VehicleVisualCustomizationAsset_
 #define _VehicleVisualCustomizationAsset_
 #pragma pack(push, 4)
@@ -20692,9 +20692,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01049
+    // ClassId: 01049
     // RuntimeId: 04563
-    // TypeInfo:  0x023F5204
+    // TypeInfo: 0x023F5204
 #ifndef _TextUnlockPartData_
 #define _TextUnlockPartData_
 #pragma pack(push, 4)
@@ -20720,9 +20720,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01050
+    // ClassId: 01050
     // RuntimeId: 04557
-    // TypeInfo:  0x023F5180
+    // TypeInfo: 0x023F5180
 #ifndef _ShaderCustomizationUnlockPartCollection_
 #define _ShaderCustomizationUnlockPartCollection_
 #pragma pack(push, 4)
@@ -20749,9 +20749,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01052
+    // ClassId: 01052
     // RuntimeId: 04559
-    // TypeInfo:  0x023F51AC
+    // TypeInfo: 0x023F51AC
 #ifndef _ShaderColorUnlockPartCollection_
 #define _ShaderColorUnlockPartCollection_
 #pragma pack(push, 4)
@@ -20777,9 +20777,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01051
+    // ClassId: 01051
     // RuntimeId: 04561
-    // TypeInfo:  0x023F51D8
+    // TypeInfo: 0x023F51D8
 #ifndef _ShaderTextureUnlockPartCollection_
 #define _ShaderTextureUnlockPartCollection_
 #pragma pack(push, 4)
@@ -20805,9 +20805,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02220
+    // ClassId: 02220
     // RuntimeId: 04553
-    // TypeInfo:  0x023F5144
+    // TypeInfo: 0x023F5144
 #ifndef _CharacterSocketListAsset_
 #define _CharacterSocketListAsset_
 #pragma pack(push, 4)
@@ -20834,9 +20834,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01053
+    // ClassId: 01053
     // RuntimeId: 04551
-    // TypeInfo:  0x023F5118
+    // TypeInfo: 0x023F5118
 #ifndef _SocketData_
 #define _SocketData_
 #pragma pack(push, 16)
@@ -20876,9 +20876,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02221
+    // ClassId: 02221
     // RuntimeId: 04547
-    // TypeInfo:  0x023F50DC
+    // TypeInfo: 0x023F50DC
 #ifndef _GearBagSpec_
 #define _GearBagSpec_
 #pragma pack(push, 4)
@@ -20908,9 +20908,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01054
+    // ClassId: 01054
     // RuntimeId: 04531
-    // TypeInfo:  0x023F4F98
+    // TypeInfo: 0x023F4F98
 #ifndef _SocketObjectDataBase_
 #define _SocketObjectDataBase_
 #pragma pack(push, 4)
@@ -20934,9 +20934,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01055
+    // ClassId: 01055
     // RuntimeId: 04535
-    // TypeInfo:  0x023F4FF0
+    // TypeInfo: 0x023F4FF0
 #ifndef _WeaponSocketObjectData_
 #define _WeaponSocketObjectData_
 #pragma pack(push, 4)
@@ -20964,9 +20964,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01058
+    // ClassId: 01058
     // RuntimeId: 04533
-    // TypeInfo:  0x023F4FC4
+    // TypeInfo: 0x023F4FC4
 #ifndef _SocketObjectData_
 #define _SocketObjectData_
 #pragma pack(push, 4)
@@ -21000,9 +21000,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01060
+    // ClassId: 01060
     // RuntimeId: 04537
-    // TypeInfo:  0x023F501C
+    // TypeInfo: 0x023F501C
 #ifndef _SkinnedSocketObjectData_
 #define _SkinnedSocketObjectData_
 #pragma pack(push, 4)
@@ -21027,9 +21027,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01056
+    // ClassId: 01056
     // RuntimeId: 04545
-    // TypeInfo:  0x023F50B0
+    // TypeInfo: 0x023F50B0
 #ifndef _WeaponSkinnedSocketObjectData_
 #define _WeaponSkinnedSocketObjectData_
 #pragma pack(push, 4)
@@ -21053,9 +21053,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01059
+    // ClassId: 01059
     // RuntimeId: 04541
-    // TypeInfo:  0x023F5058
+    // TypeInfo: 0x023F5058
 #ifndef _RegularSocketObjectData_
 #define _RegularSocketObjectData_
 #pragma pack(push, 16)
@@ -21083,9 +21083,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01057
+    // ClassId: 01057
     // RuntimeId: 04543
-    // TypeInfo:  0x023F5084
+    // TypeInfo: 0x023F5084
 #ifndef _WeaponRegularSocketObjectData_
 #define _WeaponRegularSocketObjectData_
 #pragma pack(push, 16)
@@ -21113,9 +21113,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01061
+    // ClassId: 01061
     // RuntimeId: 04529
-    // TypeInfo:  0x023F4F6C
+    // TypeInfo: 0x023F4F6C
 #ifndef _CustomizedMaterialData_
 #define _CustomizedMaterialData_
 #pragma pack(push, 4)
@@ -21143,9 +21143,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01062
+    // ClassId: 01062
     // RuntimeId: 04527
-    // TypeInfo:  0x023F4F40
+    // TypeInfo: 0x023F4F40
 #ifndef _UnlockableTextureSliceCollection_
 #define _UnlockableTextureSliceCollection_
 #pragma pack(push, 4)
@@ -21171,9 +21171,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01063
+    // ClassId: 01063
     // RuntimeId: 04525
-    // TypeInfo:  0x023F4F14
+    // TypeInfo: 0x023F4F14
 #ifndef _UnlockableTextureCollection_
 #define _UnlockableTextureCollection_
 #pragma pack(push, 4)
@@ -21198,9 +21198,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01064
+    // ClassId: 01064
     // RuntimeId: 04523
-    // TypeInfo:  0x023F4EE8
+    // TypeInfo: 0x023F4EE8
 #ifndef _UnlockableColorCollection_
 #define _UnlockableColorCollection_
 #pragma pack(push, 4)
@@ -21226,9 +21226,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01065
+    // ClassId: 01065
     // RuntimeId: 04521
-    // TypeInfo:  0x023F4EBC
+    // TypeInfo: 0x023F4EBC
 #ifndef _UnlockableShaderParameterValueCollection_
 #define _UnlockableShaderParameterValueCollection_
 #pragma pack(push, 4)
@@ -21253,9 +21253,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01066
+    // ClassId: 01066
     // RuntimeId: 04519
-    // TypeInfo:  0x023F4E90
+    // TypeInfo: 0x023F4E90
 #ifndef _TextureSliceUnlockPartData_
 #define _TextureSliceUnlockPartData_
 #pragma pack(push, 4)
@@ -21280,9 +21280,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01067
+    // ClassId: 01067
     // RuntimeId: 04517
-    // TypeInfo:  0x023F4E64
+    // TypeInfo: 0x023F4E64
 #ifndef _TextureAssetUnlockPartData_
 #define _TextureAssetUnlockPartData_
 #pragma pack(push, 4)
@@ -21307,9 +21307,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01068
+    // ClassId: 01068
     // RuntimeId: 04515
-    // TypeInfo:  0x023F4E38
+    // TypeInfo: 0x023F4E38
 #ifndef _TextureUnlockPartData_
 #define _TextureUnlockPartData_
 #pragma pack(push, 4)
@@ -21334,9 +21334,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02222
+    // ClassId: 02222
     // RuntimeId: 04513
-    // TypeInfo:  0x023F4E0C
+    // TypeInfo: 0x023F4E0C
 #ifndef _TextureReference_
 #define _TextureReference_
 #pragma pack(push, 4)
@@ -21361,9 +21361,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01069
+    // ClassId: 01069
     // RuntimeId: 04511
-    // TypeInfo:  0x023F4DE0
+    // TypeInfo: 0x023F4DE0
 #ifndef _ColorUnlockPartData_
 #define _ColorUnlockPartData_
 #pragma pack(push, 4)
@@ -21388,9 +21388,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02223
+    // ClassId: 02223
     // RuntimeId: 04509
-    // TypeInfo:  0x023F4DB4
+    // TypeInfo: 0x023F4DB4
 #ifndef _ColorReference_
 #define _ColorReference_
 #pragma pack(push, 16)
@@ -21416,9 +21416,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02224
+    // ClassId: 02224
     // RuntimeId: 04507
-    // TypeInfo:  0x023F3450
+    // TypeInfo: 0x023F3450
 #ifndef _SoldierWeaponSwitchingData_
 #define _SoldierWeaponSwitchingData_
 #pragma pack(push, 4)
@@ -21445,9 +21445,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01974
+    // ClassId: 01974
     // RuntimeId: 04492
-    // TypeInfo:  0x023F33A4
+    // TypeInfo: 0x023F33A4
 #ifndef _SoldierEntityData_
 #define _SoldierEntityData_
 #pragma pack(push, 16)
@@ -21508,9 +21508,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01070
+    // ClassId: 01070
     // RuntimeId: 04490
-    // TypeInfo:  0x023F3378
+    // TypeInfo: 0x023F3378
 #ifndef _SoldierHealthModuleData_
 #define _SoldierHealthModuleData_
 #pragma pack(push, 4)
@@ -21534,9 +21534,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01072
+    // ClassId: 01072
     // RuntimeId: 04488
-    // TypeInfo:  0x023F334C
+    // TypeInfo: 0x023F334C
 #ifndef _BreathControlData_
 #define _BreathControlData_
 #pragma pack(push, 4)
@@ -21564,9 +21564,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01073
+    // ClassId: 01073
     // RuntimeId: 04486
-    // TypeInfo:  0x023F3320
+    // TypeInfo: 0x023F3320
 #ifndef _CollisionData_
 #define _CollisionData_
 #pragma pack(push, 4)
@@ -21592,9 +21592,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01074
+    // ClassId: 01074
     // RuntimeId: 04482
-    // TypeInfo:  0x023F32E4
+    // TypeInfo: 0x023F32E4
 #ifndef _SoldierWeaponOverrideData_
 #define _SoldierWeaponOverrideData_
 #pragma pack(push, 4)
@@ -21619,9 +21619,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01075
+    // ClassId: 01075
     // RuntimeId: 04480
-    // TypeInfo:  0x023F32B8
+    // TypeInfo: 0x023F32B8
 #ifndef _SoldierSprintSettingsData_
 #define _SoldierSprintSettingsData_
 #pragma pack(push, 4)
@@ -21653,9 +21653,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01076
+    // ClassId: 01076
     // RuntimeId: 04474
-    // TypeInfo:  0x023F326C
+    // TypeInfo: 0x023F326C
 #ifndef _SoldierHeadCollisionData_
 #define _SoldierHeadCollisionData_
 #pragma pack(push, 4)
@@ -21681,9 +21681,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01077
+    // ClassId: 01077
     // RuntimeId: 04468
-    // TypeInfo:  0x023F3220
+    // TypeInfo: 0x023F3220
 #ifndef _SoldierAutoAimData_
 #define _SoldierAutoAimData_
 #pragma pack(push, 4)
@@ -21708,9 +21708,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01078
+    // ClassId: 01078
     // RuntimeId: 04462
-    // TypeInfo:  0x023F31D4
+    // TypeInfo: 0x023F31D4
 #ifndef _SoldierSoundData_
 #define _SoldierSoundData_
 #pragma pack(push, 4)
@@ -21745,9 +21745,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01079
+    // ClassId: 01079
     // RuntimeId: 04460
-    // TypeInfo:  0x023F31A8
+    // TypeInfo: 0x023F31A8
 #ifndef _SoldierAimingConstraintsData_
 #define _SoldierAimingConstraintsData_
 #pragma pack(push, 4)
@@ -21772,9 +21772,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01759
+    // ClassId: 01759
     // RuntimeId: 04458
-    // TypeInfo:  0x023F317C
+    // TypeInfo: 0x023F317C
 #ifndef _SlowMotionEntityData_
 #define _SlowMotionEntityData_
 #pragma pack(push, 4)
@@ -21802,9 +21802,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02456
+    // ClassId: 02456
     // RuntimeId: 04456
-    // TypeInfo:  0x023F3150
+    // TypeInfo: 0x023F3150
 #ifndef _ServerSettings_
 #define _ServerSettings_
 #pragma pack(push, 4)
@@ -21903,9 +21903,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01080
+    // ClassId: 01080
     // RuntimeId: 04454
-    // TypeInfo:  0x023F3124
+    // TypeInfo: 0x023F3124
 #ifndef _SpawnEntitySelector_
 #define _SpawnEntitySelector_
 #pragma pack(push, 4)
@@ -21929,9 +21929,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01760
+    // ClassId: 01760
     // RuntimeId: 04452
-    // TypeInfo:  0x023F30F8
+    // TypeInfo: 0x023F30F8
 #ifndef _AnimatedPointCloudEntityData_
 #define _AnimatedPointCloudEntityData_
 #pragma pack(push, 4)
@@ -21960,9 +21960,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01761
+    // ClassId: 01761
     // RuntimeId: 04450
-    // TypeInfo:  0x023F30CC
+    // TypeInfo: 0x023F30CC
 #ifndef _ModelAnimationEntityData_
 #define _ModelAnimationEntityData_
 #pragma pack(push, 16)
@@ -22012,9 +22012,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01762
+    // ClassId: 01762
     // RuntimeId: 04444
-    // TypeInfo:  0x023F3080
+    // TypeInfo: 0x023F3080
 #ifndef _CharacterAnimationSpaceEntityData_
 #define _CharacterAnimationSpaceEntityData_
 #pragma pack(push, 4)
@@ -22042,9 +22042,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01763
+    // ClassId: 01763
     // RuntimeId: 04442
-    // TypeInfo:  0x023F3054
+    // TypeInfo: 0x023F3054
 #ifndef _AnimationEnumerationChoiceEntityData_
 #define _AnimationEnumerationChoiceEntityData_
 #pragma pack(push, 4)
@@ -22070,9 +22070,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01764
+    // ClassId: 01764
     // RuntimeId: 04440
-    // TypeInfo:  0x023F3028
+    // TypeInfo: 0x023F3028
 #ifndef _AnimationEnumerationEntityData_
 #define _AnimationEnumerationEntityData_
 #pragma pack(push, 4)
@@ -22098,9 +22098,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01765
+    // ClassId: 01765
     // RuntimeId: 04438
-    // TypeInfo:  0x023F2FFC
+    // TypeInfo: 0x023F2FFC
 #ifndef _AnimationSignalEntityData_
 #define _AnimationSignalEntityData_
 #pragma pack(push, 4)
@@ -22133,9 +22133,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01766
+    // ClassId: 01766
     // RuntimeId: 04436
-    // TypeInfo:  0x023F2FD0
+    // TypeInfo: 0x023F2FD0
 #ifndef _CharacterAnimationEntityData_
 #define _CharacterAnimationEntityData_
 #pragma pack(push, 16)
@@ -22167,9 +22167,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01767
+    // ClassId: 01767
     // RuntimeId: 04434
-    // TypeInfo:  0x023F2FA4
+    // TypeInfo: 0x023F2FA4
 #ifndef _AnimatedTransformEntityData_
 #define _AnimatedTransformEntityData_
 #pragma pack(push, 4)
@@ -22197,9 +22197,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01082
+    // ClassId: 01082
     // RuntimeId: 04412
-    // TypeInfo:  0x023F2DC0
+    // TypeInfo: 0x023F2DC0
 #ifndef _ScoringHandlerData_
 #define _ScoringHandlerData_
 #pragma pack(push, 4)
@@ -22223,9 +22223,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01084
+    // ClassId: 01084
     // RuntimeId: 04430
-    // TypeInfo:  0x023F2F4C
+    // TypeInfo: 0x023F2F4C
 #ifndef _SuppressionScoringHandlerData_
 #define _SuppressionScoringHandlerData_
 #pragma pack(push, 4)
@@ -22251,9 +22251,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01085
+    // ClassId: 01085
     // RuntimeId: 04428
-    // TypeInfo:  0x023F2F20
+    // TypeInfo: 0x023F2F20
 #ifndef _SpottingScoringHandlerData_
 #define _SpottingScoringHandlerData_
 #pragma pack(push, 4)
@@ -22277,9 +22277,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01086
+    // ClassId: 01086
     // RuntimeId: 04426
-    // TypeInfo:  0x023F2EF4
+    // TypeInfo: 0x023F2EF4
 #ifndef _OrderBonusScoringHandlerData_
 #define _OrderBonusScoringHandlerData_
 #pragma pack(push, 4)
@@ -22303,9 +22303,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01087
+    // ClassId: 01087
     // RuntimeId: 04424
-    // TypeInfo:  0x023F2EC8
+    // TypeInfo: 0x023F2EC8
 #ifndef _LockingScoringHandlerData_
 #define _LockingScoringHandlerData_
 #pragma pack(push, 4)
@@ -22330,9 +22330,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01088
+    // ClassId: 01088
     // RuntimeId: 04422
-    // TypeInfo:  0x023F2E9C
+    // TypeInfo: 0x023F2E9C
 #ifndef _KillFromVehicleScoringHandlerData_
 #define _KillFromVehicleScoringHandlerData_
 #pragma pack(push, 4)
@@ -22356,9 +22356,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01089
+    // ClassId: 01089
     // RuntimeId: 04420
-    // TypeInfo:  0x023F2E70
+    // TypeInfo: 0x023F2E70
 #ifndef _DestroyAllInSquadScoringHandlerData_
 #define _DestroyAllInSquadScoringHandlerData_
 #pragma pack(push, 4)
@@ -22382,9 +22382,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01090
+    // ClassId: 01090
     // RuntimeId: 04418
-    // TypeInfo:  0x023F2E44
+    // TypeInfo: 0x023F2E44
 #ifndef _DamageScoringHandlerData_
 #define _DamageScoringHandlerData_
 #pragma pack(push, 4)
@@ -22418,9 +22418,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01091
+    // ClassId: 01091
     // RuntimeId: 04416
-    // TypeInfo:  0x023F2E18
+    // TypeInfo: 0x023F2E18
 #ifndef _CapturePointScoringHandlerData_
 #define _CapturePointScoringHandlerData_
 #pragma pack(push, 4)
@@ -22445,9 +22445,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01092
+    // ClassId: 01092
     // RuntimeId: 04414
-    // TypeInfo:  0x023F2DEC
+    // TypeInfo: 0x023F2DEC
 #ifndef _AvengerScoringHandlerData_
 #define _AvengerScoringHandlerData_
 #pragma pack(push, 4)
@@ -22472,9 +22472,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01083
+    // ClassId: 01083
     // RuntimeId: 04432
-    // TypeInfo:  0x023F2F78
+    // TypeInfo: 0x023F2F78
 #ifndef _CTFScoringHandlerData_
 #define _CTFScoringHandlerData_
 #pragma pack(push, 4)
@@ -22503,9 +22503,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01093
+    // ClassId: 01093
     // RuntimeId: 04410
-    // TypeInfo:  0x023F2D94
+    // TypeInfo: 0x023F2D94
 #ifndef _ScoringTypeData_
 #define _ScoringTypeData_
 #pragma pack(push, 4)
@@ -22540,9 +22540,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02225
+    // ClassId: 02225
     // RuntimeId: 04408
-    // TypeInfo:  0x023F2D68
+    // TypeInfo: 0x023F2D68
 #ifndef _ScoringData_
 #define _ScoringData_
 #pragma pack(push, 4)
@@ -22569,9 +22569,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01094
+    // ClassId: 01094
     // RuntimeId: 04404
-    // TypeInfo:  0x023F2D2C
+    // TypeInfo: 0x023F2D2C
 #ifndef _ScoringBucketData_
 #define _ScoringBucketData_
 #pragma pack(push, 4)
@@ -22605,9 +22605,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02226
+    // ClassId: 02226
     // RuntimeId: 04392
-    // TypeInfo:  0x023F2C78
+    // TypeInfo: 0x023F2C78
 #ifndef _RawFileAsset_
 #define _RawFileAsset_
 #pragma pack(push, 4)
@@ -22631,9 +22631,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02228
+    // ClassId: 02228
     // RuntimeId: 04394
-    // TypeInfo:  0x023F2CA4
+    // TypeInfo: 0x023F2CA4
 #ifndef _RawFileResourceAsset_
 #define _RawFileResourceAsset_
 #pragma pack(push, 4)
@@ -22657,9 +22657,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02227
+    // ClassId: 02227
     // RuntimeId: 04396
-    // TypeInfo:  0x023F2CD0
+    // TypeInfo: 0x023F2CD0
 #ifndef _RawFileDataAsset_
 #define _RawFileDataAsset_
 #pragma pack(push, 4)
@@ -22685,9 +22685,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01095
+    // ClassId: 01095
     // RuntimeId: 04390
-    // TypeInfo:  0x023F2C4C
+    // TypeInfo: 0x023F2C4C
 #ifndef _CreateRawFileParams_
 #define _CreateRawFileParams_
 #pragma pack(push, 4)
@@ -22715,9 +22715,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01096
+    // ClassId: 01096
     // RuntimeId: 04388
-    // TypeInfo:  0x023F2C20
+    // TypeInfo: 0x023F2C20
 #ifndef _RawFileImportActionParams_
 #define _RawFileImportActionParams_
 #pragma pack(push, 4)
@@ -22742,9 +22742,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02229
+    // ClassId: 02229
     // RuntimeId: 04386
-    // TypeInfo:  0x023F2BF4
+    // TypeInfo: 0x023F2BF4
 #ifndef _RankParamsAsset_
 #define _RankParamsAsset_
 #pragma pack(push, 4)
@@ -22769,9 +22769,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01097
+    // ClassId: 01097
     // RuntimeId: 04384
-    // TypeInfo:  0x023F2BC8
+    // TypeInfo: 0x023F2BC8
 #ifndef _RankLevelData_
 #define _RankLevelData_
 #pragma pack(push, 4)
@@ -22802,9 +22802,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02230
+    // ClassId: 02230
     // RuntimeId: 04368
-    // TypeInfo:  0x023F2A84
+    // TypeInfo: 0x023F2A84
 #ifndef _ProfileOptionData_
 #define _ProfileOptionData_
 #pragma pack(push, 4)
@@ -22830,9 +22830,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02232
+    // ClassId: 02232
     // RuntimeId: 04380
-    // TypeInfo:  0x023F2B70
+    // TypeInfo: 0x023F2B70
 #ifndef _ProfileOptionDataString_
 #define _ProfileOptionDataString_
 #pragma pack(push, 4)
@@ -22858,9 +22858,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02233
+    // ClassId: 02233
     // RuntimeId: 04378
-    // TypeInfo:  0x023F2B44
+    // TypeInfo: 0x023F2B44
 #ifndef _ProfileOptionDataBool_
 #define _ProfileOptionDataBool_
 #pragma pack(push, 4)
@@ -22886,9 +22886,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02234
+    // ClassId: 02234
     // RuntimeId: 04376
-    // TypeInfo:  0x023F2B18
+    // TypeInfo: 0x023F2B18
 #ifndef _ProfileOptionDataEnum_
 #define _ProfileOptionDataEnum_
 #pragma pack(push, 4)
@@ -22913,9 +22913,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02235
+    // ClassId: 02235
     // RuntimeId: 04372
-    // TypeInfo:  0x023F2ADC
+    // TypeInfo: 0x023F2ADC
 #ifndef _ProfileOptionDataFloat_
 #define _ProfileOptionDataFloat_
 #pragma pack(push, 4)
@@ -22943,9 +22943,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02236
+    // ClassId: 02236
     // RuntimeId: 04370
-    // TypeInfo:  0x023F2AB0
+    // TypeInfo: 0x023F2AB0
 #ifndef _ProfileOptionDataInt_
 #define _ProfileOptionDataInt_
 #pragma pack(push, 4)
@@ -22973,9 +22973,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02231
+    // ClassId: 02231
     // RuntimeId: 04382
-    // TypeInfo:  0x023F2B9C
+    // TypeInfo: 0x023F2B9C
 #ifndef _ProfileOptionDataBinary_
 #define _ProfileOptionDataBinary_
 #pragma pack(push, 4)
@@ -23000,9 +23000,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02237
+    // ClassId: 02237
     // RuntimeId: 04366
-    // TypeInfo:  0x023F2A58
+    // TypeInfo: 0x023F2A58
 #ifndef _ProfileOptionsAsset_
 #define _ProfileOptionsAsset_
 #pragma pack(push, 4)
@@ -23032,9 +23032,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01099
+    // ClassId: 01099
     // RuntimeId: 05120
-    // TypeInfo:  0x023FA4D4
+    // TypeInfo: 0x023FA4D4
 #ifndef _SpectatorSubViewData_
 #define _SpectatorSubViewData_
 #pragma pack(push, 4)
@@ -23058,9 +23058,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01102
+    // ClassId: 01102
     // RuntimeId: 04352
-    // TypeInfo:  0x023F29B0
+    // TypeInfo: 0x023F29B0
 #ifndef _PlayerViewData_
 #define _PlayerViewData_
 #pragma pack(push, 4)
@@ -23085,9 +23085,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02238
+    // ClassId: 02238
     // RuntimeId: 04350
-    // TypeInfo:  0x023F2984
+    // TypeInfo: 0x023F2984
 #ifndef _PlayerData_
 #define _PlayerData_
 #pragma pack(push, 4)
@@ -23114,9 +23114,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02239
+    // ClassId: 02239
     // RuntimeId: 04348
-    // TypeInfo:  0x023F2958
+    // TypeInfo: 0x023F2958
 #ifndef _PickupEntityAsset_
 #define _PickupEntityAsset_
 #pragma pack(push, 4)
@@ -23141,9 +23141,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01978
+    // ClassId: 01978
     // RuntimeId: 04332
-    // TypeInfo:  0x023F284C
+    // TypeInfo: 0x023F284C
 #ifndef _PickupEntityData_
 #define _PickupEntityData_
 #pragma pack(push, 16)
@@ -23191,9 +23191,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01980
+    // ClassId: 01980
     // RuntimeId: 04342
-    // TypeInfo:  0x023F28F0
+    // TypeInfo: 0x023F28F0
 #ifndef _KitPickupEntityData_
 #define _KitPickupEntityData_
 #pragma pack(push, 16)
@@ -23220,9 +23220,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01981
+    // ClassId: 01981
     // RuntimeId: 04340
-    // TypeInfo:  0x023F28C4
+    // TypeInfo: 0x023F28C4
 #ifndef _WeaponUnlockPickupEntityData_
 #define _WeaponUnlockPickupEntityData_
 #pragma pack(push, 16)
@@ -23250,9 +23250,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01982
+    // ClassId: 01982
     // RuntimeId: 04336
-    // TypeInfo:  0x023F2888
+    // TypeInfo: 0x023F2888
 #ifndef _WeaponPickupEntityData_
 #define _WeaponPickupEntityData_
 #pragma pack(push, 16)
@@ -23279,9 +23279,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01979
+    // ClassId: 01979
     // RuntimeId: 04346
-    // TypeInfo:  0x023F292C
+    // TypeInfo: 0x023F292C
 #ifndef _DynamicWeaponPickupEntityData_
 #define _DynamicWeaponPickupEntityData_
 #pragma pack(push, 16)
@@ -23308,9 +23308,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01768
+    // ClassId: 01768
     // RuntimeId: 04328
-    // TypeInfo:  0x023F2810
+    // TypeInfo: 0x023F2810
 #ifndef _PhysicsDrivenAnimationEntityData_
 #define _PhysicsDrivenAnimationEntityData_
 #pragma pack(push, 4)
@@ -23337,9 +23337,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01103
+    // ClassId: 01103
     // RuntimeId: 04324
-    // TypeInfo:  0x023F27D4
+    // TypeInfo: 0x023F27D4
 #ifndef _PersistenceStatGroup_
 #define _PersistenceStatGroup_
 #pragma pack(push, 4)
@@ -23364,9 +23364,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01104
+    // ClassId: 01104
     // RuntimeId: 04322
-    // TypeInfo:  0x023F27A8
+    // TypeInfo: 0x023F27A8
 #ifndef _PersistenceStatTable_
 #define _PersistenceStatTable_
 #pragma pack(push, 4)
@@ -23392,9 +23392,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02240
+    // ClassId: 02240
     // RuntimeId: 04320
-    // TypeInfo:  0x023F277C
+    // TypeInfo: 0x023F277C
 #ifndef _AbstractPersistenceData_
 #define _AbstractPersistenceData_
 #pragma pack(push, 4)
@@ -23418,9 +23418,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01105
+    // ClassId: 01105
     // RuntimeId: 04318
-    // TypeInfo:  0x023F2750
+    // TypeInfo: 0x023F2750
 #ifndef _AbstractLeaderboardData_
 #define _AbstractLeaderboardData_
 #pragma pack(push, 4)
@@ -23445,9 +23445,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02242
+    // ClassId: 02242
     // RuntimeId: 04316
-    // TypeInfo:  0x023F2724
+    // TypeInfo: 0x023F2724
 #ifndef _PersistenceGameData_
 #define _PersistenceGameData_
 #pragma pack(push, 4)
@@ -23472,9 +23472,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02243
+    // ClassId: 02243
     // RuntimeId: 04314
-    // TypeInfo:  0x023F26F8
+    // TypeInfo: 0x023F26F8
 #ifndef _RichPresenceData_
 #define _RichPresenceData_
 #pragma pack(push, 4)
@@ -23503,9 +23503,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01106
+    // ClassId: 01106
     // RuntimeId: 04306
-    // TypeInfo:  0x023F269C
+    // TypeInfo: 0x023F269C
 #ifndef _RichPresenceContext_
 #define _RichPresenceContext_
 #pragma pack(push, 4)
@@ -23534,9 +23534,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01107
+    // ClassId: 01107
     // RuntimeId: 04302
-    // TypeInfo:  0x023F2644
+    // TypeInfo: 0x023F2644
 #ifndef _RichPresenceContextValue_
 #define _RichPresenceContextValue_
 #pragma pack(push, 4)
@@ -23563,9 +23563,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01108
+    // ClassId: 01108
     // RuntimeId: 04304
-    // TypeInfo:  0x023F2670
+    // TypeInfo: 0x023F2670
 #ifndef _RichPresenceContextValueWithKey_
 #define _RichPresenceContextValueWithKey_
 #pragma pack(push, 4)
@@ -23590,9 +23590,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01109
+    // ClassId: 01109
     // RuntimeId: 04300
-    // TypeInfo:  0x023F2618
+    // TypeInfo: 0x023F2618
 #ifndef _RichPresencePresenceString_
 #define _RichPresencePresenceString_
 #pragma pack(push, 4)
@@ -23620,9 +23620,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02241
+    // ClassId: 02241
     // RuntimeId: 04298
-    // TypeInfo:  0x023F25EC
+    // TypeInfo: 0x023F25EC
 #ifndef _PersistenceData_
 #define _PersistenceData_
 #pragma pack(push, 4)
@@ -23660,9 +23660,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02244
+    // ClassId: 02244
     // RuntimeId: 04292
-    // TypeInfo:  0x023F25A0
+    // TypeInfo: 0x023F25A0
 #ifndef _PersistenceRetentionPolicy_
 #define _PersistenceRetentionPolicy_
 #pragma pack(push, 4)
@@ -23689,9 +23689,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01110
+    // ClassId: 01110
     // RuntimeId: 04282
-    // TypeInfo:  0x023F24E0
+    // TypeInfo: 0x023F24E0
 #ifndef _AbstractPersistentStatRef_
 #define _AbstractPersistentStatRef_
 #pragma pack(push, 4)
@@ -23715,9 +23715,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01112
+    // ClassId: 01112
     // RuntimeId: 04286
-    // TypeInfo:  0x023F2538
+    // TypeInfo: 0x023F2538
 #ifndef _PersistentValueTemplateStatRef_
 #define _PersistentValueTemplateStatRef_
 #pragma pack(push, 4)
@@ -23742,9 +23742,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01113
+    // ClassId: 01113
     // RuntimeId: 04284
-    // TypeInfo:  0x023F250C
+    // TypeInfo: 0x023F250C
 #ifndef _PersistentCriteriaStatRef_
 #define _PersistentCriteriaStatRef_
 #pragma pack(push, 4)
@@ -23772,9 +23772,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01111
+    // ClassId: 01111
     // RuntimeId: 04288
-    // TypeInfo:  0x023F2564
+    // TypeInfo: 0x023F2564
 #ifndef _PersistentAwardDataStatRef_
 #define _PersistentAwardDataStatRef_
 #pragma pack(push, 4)
@@ -23799,9 +23799,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01114
+    // ClassId: 01114
     // RuntimeId: 04280
-    // TypeInfo:  0x023F24B4
+    // TypeInfo: 0x023F24B4
 #ifndef _PersistentValueTemplate_
 #define _PersistentValueTemplate_
 #pragma pack(push, 4)
@@ -23827,9 +23827,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01115
+    // ClassId: 01115
     // RuntimeId: 04264
-    // TypeInfo:  0x023F2418
+    // TypeInfo: 0x023F2418
 #ifndef _PathfindingDebugSettings_
 #define _PathfindingDebugSettings_
 #pragma pack(push, 4)
@@ -23869,9 +23869,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01567
+    // ClassId: 01567
     // RuntimeId: 00410
-    // TypeInfo:  0x023C6784
+    // TypeInfo: 0x023C6784
 #ifndef _VolumeVectorShapeData_
 #define _VolumeVectorShapeData_
 #pragma pack(push, 4)
@@ -23896,9 +23896,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01571
+    // ClassId: 01571
     // RuntimeId: 00404
-    // TypeInfo:  0x023C6700
+    // TypeInfo: 0x023C6700
 #ifndef _OBBData_
 #define _OBBData_
 #pragma pack(push, 16)
@@ -23925,9 +23925,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02245
+    // ClassId: 02245
     // RuntimeId: 04254
-    // TypeInfo:  0x023F2374
+    // TypeInfo: 0x023F2374
 #ifndef _PathfindingTypeAsset_
 #define _PathfindingTypeAsset_
 #pragma pack(push, 4)
@@ -23952,9 +23952,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02246
+    // ClassId: 02246
     // RuntimeId: 04248
-    // TypeInfo:  0x023F2328
+    // TypeInfo: 0x023F2328
 #ifndef _PathfindingBuildSettingsAsset_
 #define _PathfindingBuildSettingsAsset_
 #pragma pack(push, 4)
@@ -23991,9 +23991,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02457
+    // ClassId: 02457
     // RuntimeId: 04246
-    // TypeInfo:  0x023F22FC
+    // TypeInfo: 0x023F22FC
 #ifndef _OnlineSettings_
 #define _OnlineSettings_
 #pragma pack(push, 4)
@@ -24033,9 +24033,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02247
+    // ClassId: 02247
     // RuntimeId: 04242
-    // TypeInfo:  0x023F22C0
+    // TypeInfo: 0x023F22C0
 #ifndef _OnlineProviderAsset_
 #define _OnlineProviderAsset_
 #pragma pack(push, 4)
@@ -24060,9 +24060,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02248
+    // ClassId: 02248
     // RuntimeId: 04228
-    // TypeInfo:  0x023F2234
+    // TypeInfo: 0x023F2234
 #ifndef _OnlineConfiguration_
 #define _OnlineConfiguration_
 #pragma pack(push, 4)
@@ -24090,9 +24090,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01116
+    // ClassId: 01116
     // RuntimeId: 04226
-    // TypeInfo:  0x023F2208
+    // TypeInfo: 0x023F2208
 #ifndef _NetworkSettings_
 #define _NetworkSettings_
 #pragma pack(push, 4)
@@ -24135,9 +24135,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01985
+    // ClassId: 01985
     // RuntimeId: 04224
-    // TypeInfo:  0x023F21DC
+    // TypeInfo: 0x023F21DC
 #ifndef _CharacterInVehicleScenarioEntityData_
 #define _CharacterInVehicleScenarioEntityData_
 #pragma pack(push, 16)
@@ -24168,9 +24168,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01656
+    // ClassId: 01656
     // RuntimeId: 04222
-    // TypeInfo:  0x023F21B0
+    // TypeInfo: 0x023F21B0
 #ifndef _MovementComponentData_
 #define _MovementComponentData_
 #pragma pack(push, 16)
@@ -24196,9 +24196,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01881
+    // ClassId: 01881
     // RuntimeId: 04218
-    // TypeInfo:  0x023F2174
+    // TypeInfo: 0x023F2174
 #ifndef _MultipleActorScenarioEntityData_
 #define _MultipleActorScenarioEntityData_
 #pragma pack(push, 16)
@@ -24264,9 +24264,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01769
+    // ClassId: 01769
     // RuntimeId: 04216
-    // TypeInfo:  0x023F2148
+    // TypeInfo: 0x023F2148
 #ifndef _TransformSnapToGroundEntityData_
 #define _TransformSnapToGroundEntityData_
 #pragma pack(push, 16)
@@ -24298,9 +24298,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00067
+    // ClassId: 00067
     // RuntimeId: 04213
-    // TypeInfo:  0x023F0700
+    // TypeInfo: 0x023F0700
 #ifndef _Tool_
 #define _Tool_
     class Tool
@@ -24319,9 +24319,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00068
+    // ClassId: 00068
     // RuntimeId: 04214
-    // TypeInfo:  0x023F0728
+    // TypeInfo: 0x023F0728
 #ifndef _Weapon_
 #define _Weapon_
     class Weapon : public Tool
@@ -24340,9 +24340,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01081
+    // ClassId: 01081
     // RuntimeId: 04197
-    // TypeInfo:  0x023F0440
+    // TypeInfo: 0x023F0440
 #ifndef _ExampleSequentialVehicleBlueprintSelector_
 #define _ExampleSequentialVehicleBlueprintSelector_
 #pragma pack(push, 4)
@@ -24367,9 +24367,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00101
+    // ClassId: 00101
     // RuntimeId: 04186
-    // TypeInfo:  0x023F03A8
+    // TypeInfo: 0x023F03A8
 #ifndef _SubView_
 #define _SubView_
     class SubView
@@ -24388,9 +24388,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00111
+    // ClassId: 00111
     // RuntimeId: 03771
-    // TypeInfo:  0x023EC1B8
+    // TypeInfo: 0x023EC1B8
 #ifndef _TargetCameraCallback_
 #define _TargetCameraCallback_
     class TargetCameraCallback
@@ -24409,9 +24409,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00110
+    // ClassId: 00110
     // RuntimeId: 04184
-    // TypeInfo:  0x023F0358
+    // TypeInfo: 0x023F0358
 #ifndef _ISpatialStreamingGrid_
 #define _ISpatialStreamingGrid_
     class ISpatialStreamingGrid
@@ -24430,9 +24430,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00422
+    // ClassId: 00422
     // RuntimeId: 04183
-    // TypeInfo:  0x023F0330
+    // TypeInfo: 0x023F0330
 #ifndef _CameraEnterAreaTriggerEntity_
 #define _CameraEnterAreaTriggerEntity_
     class CameraEnterAreaTriggerEntity : public Entity
@@ -24451,9 +24451,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00423
+    // ClassId: 00423
     // RuntimeId: 04182
-    // TypeInfo:  0x023F0308
+    // TypeInfo: 0x023F0308
 #ifndef _WeaponStateEntity_
 #define _WeaponStateEntity_
     class WeaponStateEntity : public Entity
@@ -24472,9 +24472,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00426
+    // ClassId: 00426
     // RuntimeId: 04181
-    // TypeInfo:  0x023F02E0
+    // TypeInfo: 0x023F02E0
 #ifndef _PlatformSplitterEntity_
 #define _PlatformSplitterEntity_
     class PlatformSplitterEntity : public Entity
@@ -24493,9 +24493,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00427
+    // ClassId: 00427
     // RuntimeId: 04180
-    // TypeInfo:  0x023F02B8
+    // TypeInfo: 0x023F02B8
 #ifndef _TransformSnapToGroundEntity_
 #define _TransformSnapToGroundEntity_
     class TransformSnapToGroundEntity : public Entity
@@ -24514,9 +24514,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00428
+    // ClassId: 00428
     // RuntimeId: 04179
-    // TypeInfo:  0x023F0290
+    // TypeInfo: 0x023F0290
 #ifndef _EventSplitterEntity_
 #define _EventSplitterEntity_
     class EventSplitterEntity : public Entity
@@ -24535,9 +24535,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00429
+    // ClassId: 00429
     // RuntimeId: 04178
-    // TypeInfo:  0x023F0268
+    // TypeInfo: 0x023F0268
 #ifndef _EventCompareGateEntity_
 #define _EventCompareGateEntity_
     class EventCompareGateEntity : public Entity
@@ -24556,9 +24556,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00430
+    // ClassId: 00430
     // RuntimeId: 04177
-    // TypeInfo:  0x023F0240
+    // TypeInfo: 0x023F0240
 #ifndef _AreaProximityEntity_
 #define _AreaProximityEntity_
     class AreaProximityEntity : public Entity
@@ -24577,9 +24577,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00783
+    // ClassId: 00783
     // RuntimeId: 00486
-    // TypeInfo:  0x023C6F78
+    // TypeInfo: 0x023C6F78
 #ifndef _EntityEvent_
 #define _EntityEvent_
     class EntityEvent
@@ -24598,9 +24598,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00785
+    // ClassId: 00785
     // RuntimeId: 04175
-    // TypeInfo:  0x023F01F0
+    // TypeInfo: 0x023F01F0
 #ifndef _TransformParameterEvent_
 #define _TransformParameterEvent_
     class TransformParameterEvent : public EntityEvent
@@ -24619,9 +24619,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00786
+    // ClassId: 00786
     // RuntimeId: 04174
-    // TypeInfo:  0x023F01C8
+    // TypeInfo: 0x023F01C8
 #ifndef _PlayerEvent_
 #define _PlayerEvent_
     class PlayerEvent : public EntityEvent
@@ -24639,9 +24639,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00792
+    // ClassId: 00792
     // RuntimeId: 04173
-    // TypeInfo:  0x023F01A0
+    // TypeInfo: 0x023F01A0
 #ifndef _MoveParameterEvent_
 #define _MoveParameterEvent_
     class MoveParameterEvent : public EntityEvent
@@ -24660,9 +24660,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00793
+    // ClassId: 00793
     // RuntimeId: 04172
-    // TypeInfo:  0x023F0178
+    // TypeInfo: 0x023F0178
 #ifndef _IntParameterEvent_
 #define _IntParameterEvent_
     class IntParameterEvent : public EntityEvent
@@ -24681,9 +24681,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00794
+    // ClassId: 00794
     // RuntimeId: 04171
-    // TypeInfo:  0x023F0150
+    // TypeInfo: 0x023F0150
 #ifndef _FloatParameterEvent_
 #define _FloatParameterEvent_
     class FloatParameterEvent : public EntityEvent
@@ -24702,9 +24702,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00795
+    // ClassId: 00795
     // RuntimeId: 04170
-    // TypeInfo:  0x023F0128
+    // TypeInfo: 0x023F0128
 #ifndef _ComponentParameterEvent_
 #define _ComponentParameterEvent_
     class ComponentParameterEvent : public EntityEvent
@@ -24723,9 +24723,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00796
+    // ClassId: 00796
     // RuntimeId: 04169
-    // TypeInfo:  0x023F0100
+    // TypeInfo: 0x023F0100
 #ifndef _CollisionEvent_
 #define _CollisionEvent_
     class CollisionEvent : public EntityEvent
@@ -24744,9 +24744,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00431
+    // ClassId: 00431
     // RuntimeId: 04168
-    // TypeInfo:  0x023EFE00
+    // TypeInfo: 0x023EFE00
 #ifndef _PhysicsDrivenAnimationEntity_
 #define _PhysicsDrivenAnimationEntity_
     class PhysicsDrivenAnimationEntity : public Entity
@@ -24765,9 +24765,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00434
+    // ClassId: 00434
     // RuntimeId: 04167
-    // TypeInfo:  0x023EFDD8
+    // TypeInfo: 0x023EFDD8
 #ifndef _SlowMotionEntity_
 #define _SlowMotionEntity_
     class SlowMotionEntity : public Entity
@@ -24786,9 +24786,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00435
+    // ClassId: 00435
     // RuntimeId: 04166
-    // TypeInfo:  0x023EFDB0
+    // TypeInfo: 0x023EFDB0
 #ifndef _DifficultyIndexEntity_
 #define _DifficultyIndexEntity_
     class DifficultyIndexEntity : public Entity
@@ -24807,9 +24807,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00112
+    // ClassId: 00112
     // RuntimeId: 04185
-    // TypeInfo:  0x023F0380
+    // TypeInfo: 0x023F0380
 #ifndef _GameView_
 #define _GameView_
     class GameView : public TargetCameraCallback
@@ -24828,9 +24828,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00121
+    // ClassId: 00121
     // RuntimeId: 03769
-    // TypeInfo:  0x023EC168
+    // TypeInfo: 0x023EC168
 #ifndef _Camera_
 #define _Camera_
     class Camera
@@ -24849,9 +24849,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00122
+    // ClassId: 00122
     // RuntimeId: 03770
-    // TypeInfo:  0x023EC190
+    // TypeInfo: 0x023EC190
 #ifndef _TargetCamera_
 #define _TargetCamera_
     class TargetCamera : public Camera
@@ -24870,9 +24870,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00436
+    // ClassId: 00436
     // RuntimeId: 03768
-    // TypeInfo:  0x023EC140
+    // TypeInfo: 0x023EC140
 #ifndef _SyncAnimationsEntity_
 #define _SyncAnimationsEntity_
     class SyncAnimationsEntity : public Entity
@@ -24891,9 +24891,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00439
+    // ClassId: 00439
     // RuntimeId: 03767
-    // TypeInfo:  0x023EC118
+    // TypeInfo: 0x023EC118
 #ifndef _ModelAnimationEntity_
 #define _ModelAnimationEntity_
     class ModelAnimationEntity : public Entity
@@ -24912,9 +24912,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00442
+    // ClassId: 00442
     // RuntimeId: 03766
-    // TypeInfo:  0x023EC0F0
+    // TypeInfo: 0x023EC0F0
 #ifndef _CharacterAnimationEntity_
 #define _CharacterAnimationEntity_
     class CharacterAnimationEntity : public Entity
@@ -24933,9 +24933,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00445
+    // ClassId: 00445
     // RuntimeId: 03765
-    // TypeInfo:  0x023EC0C8
+    // TypeInfo: 0x023EC0C8
 #ifndef _LoggingEntity_
 #define _LoggingEntity_
     class LoggingEntity : public Entity
@@ -24954,9 +24954,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00446
+    // ClassId: 00446
     // RuntimeId: 03764
-    // TypeInfo:  0x023EC0A0
+    // TypeInfo: 0x023EC0A0
 #ifndef _ConsoleCommandTriggerEntity_
 #define _ConsoleCommandTriggerEntity_
     class ConsoleCommandTriggerEntity : public Entity
@@ -24975,9 +24975,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00447
+    // ClassId: 00447
     // RuntimeId: 03763
-    // TypeInfo:  0x023EC078
+    // TypeInfo: 0x023EC078
 #ifndef _ConsoleCommandEntity_
 #define _ConsoleCommandEntity_
     class ConsoleCommandEntity : public Entity
@@ -24996,9 +24996,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00621
+    // ClassId: 00621
     // RuntimeId: 03762
-    // TypeInfo:  0x023EBF54
+    // TypeInfo: 0x023EBF54
 #ifndef _GameEntity_
 #define _GameEntity_
     class GameEntity : public SpatialEntity
@@ -25017,9 +25017,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00330
+    // ClassId: 00330
     // RuntimeId: 05976
-    // TypeInfo:  0x02401BF0
+    // TypeInfo: 0x02401BF0
 #ifndef _ServerTargetEvaluatorComponent_
 #define _ServerTargetEvaluatorComponent_
     class ServerTargetEvaluatorComponent : public ServerComponent
@@ -25038,9 +25038,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02250
+    // ClassId: 02250
     // RuntimeId: 03760
-    // TypeInfo:  0x023EBEC8
+    // TypeInfo: 0x023EBEC8
 #ifndef _MovieTextureAsset_
 #define _MovieTextureAsset_
 #pragma pack(push, 4)
@@ -25073,9 +25073,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00228
+    // ClassId: 00228
     // RuntimeId: 03609
-    // TypeInfo:  0x023E97A0
+    // TypeInfo: 0x023E97A0
 #ifndef _ClientComponent_
 #define _ClientComponent_
     class ClientComponent : public Component
@@ -25093,9 +25093,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00239
+    // ClassId: 00239
     // RuntimeId: 03730
-    // TypeInfo:  0x023EB71C
+    // TypeInfo: 0x023EB71C
 #ifndef _ClientPartComponent_
 #define _ClientPartComponent_
     class ClientPartComponent : public ClientComponent
@@ -25114,9 +25114,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00229
+    // ClassId: 00229
     // RuntimeId: 03756
-    // TypeInfo:  0x023EBE20
+    // TypeInfo: 0x023EBE20
 #ifndef _ClientWeaponInputRouterComponent_
 #define _ClientWeaponInputRouterComponent_
     class ClientWeaponInputRouterComponent : public ClientComponent
@@ -25135,9 +25135,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00243
+    // ClassId: 00243
     // RuntimeId: 03755
-    // TypeInfo:  0x023EBDF8
+    // TypeInfo: 0x023EBDF8
 #ifndef _ClientWeaponComponent_
 #define _ClientWeaponComponent_
     class ClientWeaponComponent : public ClientPartComponent
@@ -25156,9 +25156,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00230
+    // ClassId: 00230
     // RuntimeId: 03754
-    // TypeInfo:  0x023EBDD0
+    // TypeInfo: 0x023EBDD0
 #ifndef _ClientVehicleParachuteComponent_
 #define _ClientVehicleParachuteComponent_
     class ClientVehicleParachuteComponent : public ClientComponent
@@ -25177,9 +25177,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00241
+    // ClassId: 00241
     // RuntimeId: 03757
-    // TypeInfo:  0x023EBE48
+    // TypeInfo: 0x023EBE48
 #ifndef _ClientWheelComponent_
 #define _ClientWheelComponent_
     class ClientWheelComponent : public ClientPartComponent
@@ -25198,9 +25198,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00234
+    // ClassId: 00234
     // RuntimeId: 03748
-    // TypeInfo:  0x023EBCE0
+    // TypeInfo: 0x023EBCE0
 #ifndef _ClientMeshComponent_
 #define _ClientMeshComponent_
     class ClientMeshComponent : public ClientComponent
@@ -25219,9 +25219,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00231
+    // ClassId: 00231
     // RuntimeId: 03751
-    // TypeInfo:  0x023EBD58
+    // TypeInfo: 0x023EBD58
 #ifndef _ClientStanceFilterComponent_
 #define _ClientStanceFilterComponent_
     class ClientStanceFilterComponent : public ClientComponent
@@ -25240,9 +25240,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00232
+    // ClassId: 00232
     // RuntimeId: 03750
-    // TypeInfo:  0x023EBD30
+    // TypeInfo: 0x023EBD30
 #ifndef _ClientSoldierGripComponent_
 #define _ClientSoldierGripComponent_
     class ClientSoldierGripComponent : public ClientComponent
@@ -25261,9 +25261,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00233
+    // ClassId: 00233
     // RuntimeId: 03749
-    // TypeInfo:  0x023EBD08
+    // TypeInfo: 0x023EBD08
 #ifndef _ClientRotorComponent_
 #define _ClientRotorComponent_
     class ClientRotorComponent : public ClientComponent
@@ -25282,9 +25282,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00235
+    // ClassId: 00235
     // RuntimeId: 03752
-    // TypeInfo:  0x023EBD80
+    // TypeInfo: 0x023EBD80
 #ifndef _ClientTrackComponent_
 #define _ClientTrackComponent_
     class ClientTrackComponent : public ClientMeshComponent
@@ -25303,9 +25303,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00236
+    // ClassId: 00236
     // RuntimeId: 03747
-    // TypeInfo:  0x023EBCB8
+    // TypeInfo: 0x023EBCB8
 #ifndef _ClientIKComponent_
 #define _ClientIKComponent_
     class ClientIKComponent : public ClientComponent
@@ -25324,9 +25324,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00244
+    // ClassId: 00244
     // RuntimeId: 03746
-    // TypeInfo:  0x023EBC90
+    // TypeInfo: 0x023EBC90
 #ifndef _ClientFlapComponent_
 #define _ClientFlapComponent_
     class ClientFlapComponent : public ClientPartComponent
@@ -25345,9 +25345,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00237
+    // ClassId: 00237
     // RuntimeId: 03745
-    // TypeInfo:  0x023EBC68
+    // TypeInfo: 0x023EBC68
 #ifndef _ClientEngineComponent_
 #define _ClientEngineComponent_
     class ClientEngineComponent : public ClientComponent
@@ -25366,9 +25366,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00622
+    // ClassId: 00622
     // RuntimeId: 03611
-    // TypeInfo:  0x023E97F0
+    // TypeInfo: 0x023E97F0
 #ifndef _ClientGameEntity_
 #define _ClientGameEntity_
     class ClientGameEntity : public GameEntity
@@ -25386,9 +25386,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00448
+    // ClassId: 00448
     // RuntimeId: 03743
-    // TypeInfo:  0x023EBA90
+    // TypeInfo: 0x023EBA90
 #ifndef _ClientWeaponLagEntity_
 #define _ClientWeaponLagEntity_
     class ClientWeaponLagEntity : public Entity
@@ -25407,9 +25407,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00449
+    // ClassId: 00449
     // RuntimeId: 03742
-    // TypeInfo:  0x023EBA68
+    // TypeInfo: 0x023EBA68
 #ifndef _ClientWarpAnimationEntity_
 #define _ClientWarpAnimationEntity_
     class ClientWarpAnimationEntity : public Entity
@@ -25428,9 +25428,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00432
+    // ClassId: 00432
     // RuntimeId: 03741
-    // TypeInfo:  0x023EBA40
+    // TypeInfo: 0x023EBA40
 #ifndef _ClientPhysicsDrivenAnimationEntity_
 #define _ClientPhysicsDrivenAnimationEntity_
     class ClientPhysicsDrivenAnimationEntity : public PhysicsDrivenAnimationEntity
@@ -25449,9 +25449,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00450
+    // ClassId: 00450
     // RuntimeId: 03740
-    // TypeInfo:  0x023EBA18
+    // TypeInfo: 0x023EBA18
 #ifndef _ClientCannedScenarioEntity_
 #define _ClientCannedScenarioEntity_
     class ClientCannedScenarioEntity : public Entity
@@ -25470,9 +25470,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00637
+    // ClassId: 00637
     // RuntimeId: 03612
-    // TypeInfo:  0x023E9818
+    // TypeInfo: 0x023E9818
 #ifndef _ClientPhysicsEntity_
 #define _ClientPhysicsEntity_
     class ClientPhysicsEntity : public ClientGameEntity
@@ -25491,9 +25491,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00638
+    // ClassId: 00638
     // RuntimeId: 03734
-    // TypeInfo:  0x023EB928
+    // TypeInfo: 0x023EB928
 #ifndef _ClientProjectileEntity_
 #define _ClientProjectileEntity_
     class ClientProjectileEntity : public ClientPhysicsEntity
@@ -25512,9 +25512,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00639
+    // ClassId: 00639
     // RuntimeId: 03738
-    // TypeInfo:  0x023EB9C8
+    // TypeInfo: 0x023EB9C8
 #ifndef _ClientProxyProjectileEntity_
 #define _ClientProxyProjectileEntity_
     class ClientProxyProjectileEntity : public ClientProjectileEntity
@@ -25533,9 +25533,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00641
+    // ClassId: 00641
     // RuntimeId: 03736
-    // TypeInfo:  0x023EB978
+    // TypeInfo: 0x023EB978
 #ifndef _ClientProxyGrenadeEntity_
 #define _ClientProxyGrenadeEntity_
     class ClientProxyGrenadeEntity : public ClientProxyProjectileEntity
@@ -25554,9 +25554,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00642
+    // ClassId: 00642
     // RuntimeId: 03735
-    // TypeInfo:  0x023EB950
+    // TypeInfo: 0x023EB950
 #ifndef _ClientProxyExplosionPackEntity_
 #define _ClientProxyExplosionPackEntity_
     class ClientProxyExplosionPackEntity : public ClientProxyProjectileEntity
@@ -25574,9 +25574,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00643
+    // ClassId: 00643
     // RuntimeId: 03651
-    // TypeInfo:  0x023EA23C
+    // TypeInfo: 0x023EA23C
 #ifndef _ClientGhostProjectileEntity_
 #define _ClientGhostProjectileEntity_
     class ClientGhostProjectileEntity : public ClientProjectileEntity
@@ -25595,9 +25595,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00644
+    // ClassId: 00644
     // RuntimeId: 03733
-    // TypeInfo:  0x023EB900
+    // TypeInfo: 0x023EB900
 #ifndef _ClientMissileEntity_
 #define _ClientMissileEntity_
     class ClientMissileEntity : public ClientGhostProjectileEntity
@@ -25616,9 +25616,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00647
+    // ClassId: 00647
     // RuntimeId: 03649
-    // TypeInfo:  0x023EA1EC
+    // TypeInfo: 0x023EA1EC
 #ifndef _ClientExplosionPackEntity_
 #define _ClientExplosionPackEntity_
     class ClientExplosionPackEntity : public ClientGhostProjectileEntity
@@ -25637,9 +25637,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00238
+    // ClassId: 00238
     // RuntimeId: 03731
-    // TypeInfo:  0x023EB744
+    // TypeInfo: 0x023EB744
 #ifndef _DestructionVolumeComponent_
 #define _DestructionVolumeComponent_
     class DestructionVolumeComponent : public ClientComponent
@@ -25658,9 +25658,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00240
+    // ClassId: 00240
     // RuntimeId: 03758
-    // TypeInfo:  0x023EBE70
+    // TypeInfo: 0x023EBE70
 #ifndef _ClientWingComponent_
 #define _ClientWingComponent_
     class ClientWingComponent : public ClientPartComponent
@@ -25679,9 +25679,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00249
+    // ClassId: 00249
     // RuntimeId: 03729
-    // TypeInfo:  0x023EB6F4
+    // TypeInfo: 0x023EB6F4
 #ifndef _ClientMovieComponent_
 #define _ClientMovieComponent_
     class ClientMovieComponent : public ClientComponent
@@ -25700,9 +25700,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00250
+    // ClassId: 00250
     // RuntimeId: 03728
-    // TypeInfo:  0x023EB6CC
+    // TypeInfo: 0x023EB6CC
 #ifndef _ClientLightComponent_
 #define _ClientLightComponent_
     class ClientLightComponent : public ClientComponent
@@ -25721,9 +25721,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00251
+    // ClassId: 00251
     // RuntimeId: 03727
-    // TypeInfo:  0x023EB6A4
+    // TypeInfo: 0x023EB6A4
 #ifndef _ClientLensFlareComponent_
 #define _ClientLensFlareComponent_
     class ClientLensFlareComponent : public ClientComponent
@@ -25742,9 +25742,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00252
+    // ClassId: 00252
     // RuntimeId: 03726
-    // TypeInfo:  0x023EB67C
+    // TypeInfo: 0x023EB67C
 #ifndef _ClientEffectComponent_
 #define _ClientEffectComponent_
     class ClientEffectComponent : public ClientComponent
@@ -25763,9 +25763,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00253
+    // ClassId: 00253
     // RuntimeId: 03725
-    // TypeInfo:  0x023EB654
+    // TypeInfo: 0x023EB654
 #ifndef _ClientAnimatedPointCloudComponent_
 #define _ClientAnimatedPointCloudComponent_
     class ClientAnimatedPointCloudComponent : public ClientComponent
@@ -25784,9 +25784,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00652
+    // ClassId: 00652
     // RuntimeId: 03724
-    // TypeInfo:  0x023EB62C
+    // TypeInfo: 0x023EB62C
 #ifndef _ClientWaterEntity_
 #define _ClientWaterEntity_
     class ClientWaterEntity : public ClientPhysicsEntity
@@ -25805,9 +25805,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00653
+    // ClassId: 00653
     // RuntimeId: 03723
-    // TypeInfo:  0x023EB604
+    // TypeInfo: 0x023EB604
 #ifndef _ClientTerrainEntity_
 #define _ClientTerrainEntity_
     class ClientTerrainEntity : public ClientPhysicsEntity
@@ -25826,9 +25826,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00654
+    // ClassId: 00654
     // RuntimeId: 03722
-    // TypeInfo:  0x023EB5DC
+    // TypeInfo: 0x023EB5DC
 #ifndef _ClientStaticModelGroupEntity_
 #define _ClientStaticModelGroupEntity_
     class ClientStaticModelGroupEntity : public ClientPhysicsEntity
@@ -25847,9 +25847,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00655
+    // ClassId: 00655
     // RuntimeId: 03721
-    // TypeInfo:  0x023EB5B4
+    // TypeInfo: 0x023EB5B4
 #ifndef _ClientStaticModelEntity_
 #define _ClientStaticModelEntity_
     class ClientStaticModelEntity : public ClientPhysicsEntity
@@ -25868,9 +25868,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00656
+    // ClassId: 00656
     // RuntimeId: 03720
-    // TypeInfo:  0x023EB58C
+    // TypeInfo: 0x023EB58C
 #ifndef _ClientLadderEntity_
 #define _ClientLadderEntity_
     class ClientLadderEntity : public ClientStaticModelEntity
@@ -25888,9 +25888,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00657
+    // ClassId: 00657
     // RuntimeId: 03719
-    // TypeInfo:  0x023EB564
+    // TypeInfo: 0x023EB564
 #ifndef _ClientDynamicModelEntity_
 #define _ClientDynamicModelEntity_
     class ClientDynamicModelEntity : public ClientPhysicsEntity
@@ -25909,9 +25909,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00623
+    // ClassId: 00623
     // RuntimeId: 03718
-    // TypeInfo:  0x023EB53C
+    // TypeInfo: 0x023EB53C
 #ifndef _ClientDecalEntity_
 #define _ClientDecalEntity_
     class ClientDecalEntity : public ClientGameEntity
@@ -25930,9 +25930,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00451
+    // ClassId: 00451
     // RuntimeId: 03717
-    // TypeInfo:  0x023EB514
+    // TypeInfo: 0x023EB514
 #ifndef _ClientChunkStreamerEntity_
 #define _ClientChunkStreamerEntity_
     class ClientChunkStreamerEntity : public Entity
@@ -25951,9 +25951,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00452
+    // ClassId: 00452
     // RuntimeId: 03710
-    // TypeInfo:  0x023EB258
+    // TypeInfo: 0x023EB258
 #ifndef _ClientCameraEntityBase_
 #define _ClientCameraEntityBase_
     class ClientCameraEntityBase : public Entity
@@ -25972,9 +25972,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00454
+    // ClassId: 00454
     // RuntimeId: 03714
-    // TypeInfo:  0x023EB2F8
+    // TypeInfo: 0x023EB2F8
 #ifndef _ClientTargetCameraEntity_
 #define _ClientTargetCameraEntity_
     class ClientTargetCameraEntity : public ClientCameraEntityBase
@@ -25993,9 +25993,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00455
+    // ClassId: 00455
     // RuntimeId: 03711
-    // TypeInfo:  0x023EB280
+    // TypeInfo: 0x023EB280
 #ifndef _ClientCameraEntity_
 #define _ClientCameraEntity_
     class ClientCameraEntity : public ClientCameraEntityBase
@@ -26013,9 +26013,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00456
+    // ClassId: 00456
     // RuntimeId: 03712
-    // TypeInfo:  0x023EB2A8
+    // TypeInfo: 0x023EB2A8
 #ifndef _ClientLookAtCameraEntity_
 #define _ClientLookAtCameraEntity_
     class ClientLookAtCameraEntity : public ClientCameraEntity
@@ -26033,9 +26033,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00453
+    // ClassId: 00453
     // RuntimeId: 03716
-    // TypeInfo:  0x023EB348
+    // TypeInfo: 0x023EB348
 #ifndef _ClientPlayerCameraEntity_
 #define _ClientPlayerCameraEntity_
     class ClientPlayerCameraEntity : public ClientCameraEntityBase
@@ -26054,9 +26054,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00437
+    // ClassId: 00437
     // RuntimeId: 03709
-    // TypeInfo:  0x023EB230
+    // TypeInfo: 0x023EB230
 #ifndef _ClientSyncAnimationsEntity_
 #define _ClientSyncAnimationsEntity_
     class ClientSyncAnimationsEntity : public SyncAnimationsEntity
@@ -26075,9 +26075,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00457
+    // ClassId: 00457
     // RuntimeId: 03708
-    // TypeInfo:  0x023EB208
+    // TypeInfo: 0x023EB208
 #ifndef _ClientMultipleActorScenarioEntity_
 #define _ClientMultipleActorScenarioEntity_
     class ClientMultipleActorScenarioEntity : public Entity
@@ -26096,9 +26096,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00440
+    // ClassId: 00440
     // RuntimeId: 03707
-    // TypeInfo:  0x023EB1E0
+    // TypeInfo: 0x023EB1E0
 #ifndef _ClientModelAnimationEntity_
 #define _ClientModelAnimationEntity_
     class ClientModelAnimationEntity : public ModelAnimationEntity
@@ -26117,9 +26117,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00254
+    // ClassId: 00254
     // RuntimeId: 03706
-    // TypeInfo:  0x023EB1B8
+    // TypeInfo: 0x023EB1B8
 #ifndef _ClientHitReactionComponent_
 #define _ClientHitReactionComponent_
     class ClientHitReactionComponent : public ClientComponent
@@ -26138,9 +26138,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00458
+    // ClassId: 00458
     // RuntimeId: 03705
-    // TypeInfo:  0x023EB190
+    // TypeInfo: 0x023EB190
 #ifndef _ClientCharacterInVehicleScenarioEntity_
 #define _ClientCharacterInVehicleScenarioEntity_
     class ClientCharacterInVehicleScenarioEntity : public Entity
@@ -26159,9 +26159,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00459
+    // ClassId: 00459
     // RuntimeId: 03704
-    // TypeInfo:  0x023EB168
+    // TypeInfo: 0x023EB168
 #ifndef _ClientCharacterAnimationSpaceEntity_
 #define _ClientCharacterAnimationSpaceEntity_
     class ClientCharacterAnimationSpaceEntity : public Entity
@@ -26180,9 +26180,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00443
+    // ClassId: 00443
     // RuntimeId: 03703
-    // TypeInfo:  0x023EB140
+    // TypeInfo: 0x023EB140
 #ifndef _ClientCharacterAnimationEntity_
 #define _ClientCharacterAnimationEntity_
     class ClientCharacterAnimationEntity : public CharacterAnimationEntity
@@ -26201,9 +26201,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00460
+    // ClassId: 00460
     // RuntimeId: 03702
-    // TypeInfo:  0x023EB118
+    // TypeInfo: 0x023EB118
 #ifndef _ClientAntEventEntity_
 #define _ClientAntEventEntity_
     class ClientAntEventEntity : public Entity
@@ -26222,9 +26222,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00461
+    // ClassId: 00461
     // RuntimeId: 03701
-    // TypeInfo:  0x023EB0F0
+    // TypeInfo: 0x023EB0F0
 #ifndef _ClientAnimationSignalEntity_
 #define _ClientAnimationSignalEntity_
     class ClientAnimationSignalEntity : public Entity
@@ -26243,9 +26243,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00462
+    // ClassId: 00462
     // RuntimeId: 03700
-    // TypeInfo:  0x023EB0C8
+    // TypeInfo: 0x023EB0C8
 #ifndef _ClientAnimationEnumerationChoiceEntity_
 #define _ClientAnimationEnumerationChoiceEntity_
     class ClientAnimationEnumerationChoiceEntity : public Entity
@@ -26264,9 +26264,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00463
+    // ClassId: 00463
     // RuntimeId: 03699
-    // TypeInfo:  0x023EB0A0
+    // TypeInfo: 0x023EB0A0
 #ifndef _ClientAnimationEnumerationEntity_
 #define _ClientAnimationEnumerationEntity_
     class ClientAnimationEnumerationEntity : public Entity
@@ -26285,9 +26285,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00464
+    // ClassId: 00464
     // RuntimeId: 03698
-    // TypeInfo:  0x023EB078
+    // TypeInfo: 0x023EB078
 #ifndef _ClientAnimatedTransformEntity_
 #define _ClientAnimatedTransformEntity_
     class ClientAnimatedTransformEntity : public Entity
@@ -26306,9 +26306,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00465
+    // ClassId: 00465
     // RuntimeId: 03697
-    // TypeInfo:  0x023EB050
+    // TypeInfo: 0x023EB050
 #ifndef _ClientAnimatedPointCloudEntity_
 #define _ClientAnimatedPointCloudEntity_
     class ClientAnimatedPointCloudEntity : public Entity
@@ -26327,9 +26327,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00624
+    // ClassId: 00624
     // RuntimeId: 03696
-    // TypeInfo:  0x023EB028
+    // TypeInfo: 0x023EB028
 #ifndef _ClientTestPointEntity_
 #define _ClientTestPointEntity_
     class ClientTestPointEntity : public ClientGameEntity
@@ -26347,9 +26347,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00245
+    // ClassId: 00245
     // RuntimeId: 03695
-    // TypeInfo:  0x023EADB4
+    // TypeInfo: 0x023EADB4
 #ifndef _ClientChildComponent_
 #define _ClientChildComponent_
     class ClientChildComponent : public ClientPartComponent
@@ -26368,9 +26368,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00246
+    // ClassId: 00246
     // RuntimeId: 03694
-    // TypeInfo:  0x023EAD8C
+    // TypeInfo: 0x023EAD8C
 #ifndef _ClientChildBarrelComponent_
 #define _ClientChildBarrelComponent_
     class ClientChildBarrelComponent : public ClientChildComponent
@@ -26388,9 +26388,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00247
+    // ClassId: 00247
     // RuntimeId: 03693
-    // TypeInfo:  0x023EAD64
+    // TypeInfo: 0x023EAD64
 #ifndef _ClientChassisComponent_
 #define _ClientChassisComponent_
     class ClientChassisComponent : public ClientPartComponent
@@ -26409,9 +26409,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00255
+    // ClassId: 00255
     // RuntimeId: 03692
-    // TypeInfo:  0x023EAD3C
+    // TypeInfo: 0x023EAD3C
 #ifndef _ClientCameraComponent_
 #define _ClientCameraComponent_
     class ClientCameraComponent : public ClientComponent
@@ -26430,9 +26430,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00116
+    // ClassId: 00116
     // RuntimeId: 03691
-    // TypeInfo:  0x023EAD14
+    // TypeInfo: 0x023EAD14
 #ifndef _ClientComponentTargetCameraCallback_
 #define _ClientComponentTargetCameraCallback_
     class ClientComponentTargetCameraCallback : public TargetCameraCallback
@@ -26451,9 +26451,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00256
+    // ClassId: 00256
     // RuntimeId: 03690
-    // TypeInfo:  0x023EACEC
+    // TypeInfo: 0x023EACEC
 #ifndef _ClientAnimationTurretRotationComponent_
 #define _ClientAnimationTurretRotationComponent_
     class ClientAnimationTurretRotationComponent : public ClientComponent
@@ -26472,9 +26472,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00658
+    // ClassId: 00658
     // RuntimeId: 03683
-    // TypeInfo:  0x023EAABC
+    // TypeInfo: 0x023EAABC
 #ifndef _ClientControllableEntity_
 #define _ClientControllableEntity_
     class ClientControllableEntity : public ClientPhysicsEntity
@@ -26493,9 +26493,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00625
+    // ClassId: 00625
     // RuntimeId: 03688
-    // TypeInfo:  0x023EAC9C
+    // TypeInfo: 0x023EAC9C
 #ifndef _ClientAnimatedDriverEntity_
 #define _ClientAnimatedDriverEntity_
     class ClientAnimatedDriverEntity : public ClientGameEntity
@@ -26514,9 +26514,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00257
+    // ClassId: 00257
     // RuntimeId: 03687
-    // TypeInfo:  0x023EAC74
+    // TypeInfo: 0x023EAC74
 #ifndef _ClientWarpAnimationComponent_
 #define _ClientWarpAnimationComponent_
     class ClientWarpAnimationComponent : public ClientComponent
@@ -26535,9 +26535,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00258
+    // ClassId: 00258
     // RuntimeId: 03686
-    // TypeInfo:  0x023EAC4C
+    // TypeInfo: 0x023EAC4C
 #ifndef _ClientVehicleEntryListenerComponent_
 #define _ClientVehicleEntryListenerComponent_
     class ClientVehicleEntryListenerComponent : public ClientComponent
@@ -26556,9 +26556,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00259
+    // ClassId: 00259
     // RuntimeId: 03685
-    // TypeInfo:  0x023EAB0C
+    // TypeInfo: 0x023EAB0C
 #ifndef _ClientEntryComponent_
 #define _ClientEntryComponent_
     class ClientEntryComponent : public ClientComponent
@@ -26577,9 +26577,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00263
+    // ClassId: 00263
     // RuntimeId: 03684
-    // TypeInfo:  0x023EAAE4
+    // TypeInfo: 0x023EAAE4
 #ifndef _ClientAILocoComponent_
 #define _ClientAILocoComponent_
     class ClientAILocoComponent : public ClientComponent
@@ -26598,9 +26598,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00660
+    // ClassId: 00660
     // RuntimeId: 03672
-    // TypeInfo:  0x023EA904
+    // TypeInfo: 0x023EA904
 #ifndef _ClientCharacterEntity_
 #define _ClientCharacterEntity_
     class ClientCharacterEntity : public ClientControllableEntity
@@ -26619,9 +26619,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00626
+    // ClassId: 00626
     // RuntimeId: 03682
-    // TypeInfo:  0x023EAA94
+    // TypeInfo: 0x023EAA94
 #ifndef _ClientTeamEntity_
 #define _ClientTeamEntity_
     class ClientTeamEntity : public ClientGameEntity
@@ -26639,9 +26639,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00264
+    // ClassId: 00264
     // RuntimeId: 03681
-    // TypeInfo:  0x023EAA6C
+    // TypeInfo: 0x023EAA6C
 #ifndef _ClientLadderComponent_
 #define _ClientLadderComponent_
     class ClientLadderComponent : public ClientComponent
@@ -26659,9 +26659,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00627
+    // ClassId: 00627
     // RuntimeId: 03680
-    // TypeInfo:  0x023EAA44
+    // TypeInfo: 0x023EAA44
 #ifndef _ClientExplosionEntity_
 #define _ClientExplosionEntity_
     class ClientExplosionEntity : public ClientGameEntity
@@ -26680,9 +26680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00466
+    // ClassId: 00466
     // RuntimeId: 03679
-    // TypeInfo:  0x023EAA1C
+    // TypeInfo: 0x023EAA1C
 #ifndef _ClientDynamicAvoidanceEntity_
 #define _ClientDynamicAvoidanceEntity_
     class ClientDynamicAvoidanceEntity : public Entity
@@ -26701,9 +26701,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00265
+    // ClassId: 00265
     // RuntimeId: 03678
-    // TypeInfo:  0x023EA9F4
+    // TypeInfo: 0x023EA9F4
 #ifndef _ClientCharacterWeaponComponent_
 #define _ClientCharacterWeaponComponent_
     class ClientCharacterWeaponComponent : public ClientComponent
@@ -26722,9 +26722,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00266
+    // ClassId: 00266
     // RuntimeId: 03677
-    // TypeInfo:  0x023EA9CC
+    // TypeInfo: 0x023EA9CC
 #ifndef _ClientCharacterPhysicsComponent_
 #define _ClientCharacterPhysicsComponent_
     class ClientCharacterPhysicsComponent : public ClientComponent
@@ -26743,9 +26743,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00267
+    // ClassId: 00267
     // RuntimeId: 03676
-    // TypeInfo:  0x023EA9A4
+    // TypeInfo: 0x023EA9A4
 #ifndef _ClientCharacterHealthComponent_
 #define _ClientCharacterHealthComponent_
     class ClientCharacterHealthComponent : public ClientComponent
@@ -26764,9 +26764,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00268
+    // ClassId: 00268
     // RuntimeId: 03675
-    // TypeInfo:  0x023EA97C
+    // TypeInfo: 0x023EA97C
 #ifndef _ClientCharacterCameraComponent_
 #define _ClientCharacterCameraComponent_
     class ClientCharacterCameraComponent : public ClientComponent
@@ -26784,9 +26784,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00117
+    // ClassId: 00117
     // RuntimeId: 03674
-    // TypeInfo:  0x023EA954
+    // TypeInfo: 0x023EA954
 #ifndef _ClientCharacterCameraCallback_
 #define _ClientCharacterCameraCallback_
     class ClientCharacterCameraCallback : public TargetCameraCallback
@@ -26805,9 +26805,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00269
+    // ClassId: 00269
     // RuntimeId: 03673
-    // TypeInfo:  0x023EA92C
+    // TypeInfo: 0x023EA92C
 #ifndef _ClientAntDrivenComponent_
 #define _ClientAntDrivenComponent_
     class ClientAntDrivenComponent : public ClientComponent
@@ -26826,9 +26826,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00661
+    // ClassId: 00661
     // RuntimeId: 03744
-    // TypeInfo:  0x023EBAB8
+    // TypeInfo: 0x023EBAB8
 #ifndef _ClientSoldierEntity_
 #define _ClientSoldierEntity_
     class ClientSoldierEntity : public ClientCharacterEntity
@@ -26847,9 +26847,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00270
+    // ClassId: 00270
     // RuntimeId: 03671
-    // TypeInfo:  0x023EA754
+    // TypeInfo: 0x023EA754
 #ifndef _ClientSoldierWeaponsComponent_
 #define _ClientSoldierWeaponsComponent_
     class ClientSoldierWeaponsComponent : public ClientComponent
@@ -26868,9 +26868,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00271
+    // ClassId: 00271
     // RuntimeId: 03670
-    // TypeInfo:  0x023EA72C
+    // TypeInfo: 0x023EA72C
 #ifndef _ClientSoldierCameraComponent_
 #define _ClientSoldierCameraComponent_
     class ClientSoldierCameraComponent : public ClientComponent
@@ -26889,9 +26889,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00118
+    // ClassId: 00118
     // RuntimeId: 03669
-    // TypeInfo:  0x023EA704
+    // TypeInfo: 0x023EA704
 #ifndef _ClientSoldierCameraCallback_
 #define _ClientSoldierCameraCallback_
     class ClientSoldierCameraCallback : public TargetCameraCallback
@@ -26910,9 +26910,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00273
+    // ClassId: 00273
     // RuntimeId: 03668
-    // TypeInfo:  0x023EA6DC
+    // TypeInfo: 0x023EA6DC
 #ifndef _ClientSoldierBodyComponent_
 #define _ClientSoldierBodyComponent_
     class ClientSoldierBodyComponent : public ClientComponent
@@ -26931,9 +26931,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00274
+    // ClassId: 00274
     // RuntimeId: 03667
-    // TypeInfo:  0x023EA6B4
+    // TypeInfo: 0x023EA6B4
 #ifndef _ClientShaderParameterComponent_
 #define _ClientShaderParameterComponent_
     class ClientShaderParameterComponent : public ClientComponent
@@ -26952,9 +26952,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00275
+    // ClassId: 00275
     // RuntimeId: 03666
-    // TypeInfo:  0x023EA68C
+    // TypeInfo: 0x023EA68C
 #ifndef _ClientRagdollComponent_
 #define _ClientRagdollComponent_
     class ClientRagdollComponent : public ClientComponent
@@ -26973,9 +26973,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00276
+    // ClassId: 00276
     // RuntimeId: 03665
-    // TypeInfo:  0x023EA664
+    // TypeInfo: 0x023EA664
 #ifndef _ClientPhantomComponent_
 #define _ClientPhantomComponent_
     class ClientPhantomComponent : public ClientComponent
@@ -26994,9 +26994,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00277
+    // ClassId: 00277
     // RuntimeId: 03664
-    // TypeInfo:  0x023EA63C
+    // TypeInfo: 0x023EA63C
 #ifndef _ClientMovementComponent_
 #define _ClientMovementComponent_
     class ClientMovementComponent : public ClientComponent
@@ -27015,9 +27015,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00278
+    // ClassId: 00278
     // RuntimeId: 03663
-    // TypeInfo:  0x023EA614
+    // TypeInfo: 0x023EA614
 #ifndef _ClientFaceposerComponent_
 #define _ClientFaceposerComponent_
     class ClientFaceposerComponent : public ClientComponent
@@ -27036,9 +27036,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00279
+    // ClassId: 00279
     // RuntimeId: 03662
-    // TypeInfo:  0x023EA5EC
+    // TypeInfo: 0x023EA5EC
 #ifndef _ClientCharacterCustomizationComponent_
 #define _ClientCharacterCustomizationComponent_
     class ClientCharacterCustomizationComponent : public ClientComponent
@@ -27057,9 +27057,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00280
+    // ClassId: 00280
     // RuntimeId: 03661
-    // TypeInfo:  0x023EA5C4
+    // TypeInfo: 0x023EA5C4
 #ifndef _ClientBoneCollisionComponent_
 #define _ClientBoneCollisionComponent_
     class ClientBoneCollisionComponent : public ClientComponent
@@ -27078,9 +27078,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00281
+    // ClassId: 00281
     // RuntimeId: 03660
-    // TypeInfo:  0x023EA59C
+    // TypeInfo: 0x023EA59C
 #ifndef _ClientAntAnimatableComponent_
 #define _ClientAntAnimatableComponent_
     class ClientAntAnimatableComponent : public ClientComponent
@@ -27099,9 +27099,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00069
+    // ClassId: 00069
     // RuntimeId: 03659
-    // TypeInfo:  0x023EA424
+    // TypeInfo: 0x023EA424
 #ifndef _ClientWeapon_
 #define _ClientWeapon_
     class ClientWeapon : public Weapon
@@ -27120,9 +27120,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00629
+    // ClassId: 00629
     // RuntimeId: 03658
-    // TypeInfo:  0x023EA3FC
+    // TypeInfo: 0x023EA3FC
 #ifndef _ClientSoldierWeapon_
 #define _ClientSoldierWeapon_
     class ClientSoldierWeapon : public ClientGameEntity
@@ -27141,9 +27141,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00467
+    // ClassId: 00467
     // RuntimeId: 03657
-    // TypeInfo:  0x023EA39C
+    // TypeInfo: 0x023EA39C
 #ifndef _ClientUIGraphEntity_
 #define _ClientUIGraphEntity_
     class ClientUIGraphEntity : public Entity
@@ -27162,9 +27162,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00662
+    // ClassId: 00662
     // RuntimeId: 03656
-    // TypeInfo:  0x023EA358
+    // TypeInfo: 0x023EA358
 #ifndef _ClientBangerEntity_
 #define _ClientBangerEntity_
     class ClientBangerEntity : public ClientPhysicsEntity
@@ -27183,9 +27183,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00102
+    // ClassId: 00102
     // RuntimeId: 03655
-    // TypeInfo:  0x023EA330
+    // TypeInfo: 0x023EA330
 #ifndef _ClientSubView_
 #define _ClientSubView_
     class ClientSubView : public SubView
@@ -27204,9 +27204,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00103
+    // ClassId: 00103
     // RuntimeId: 03654
-    // TypeInfo:  0x023EA308
+    // TypeInfo: 0x023EA308
 #ifndef _ClientSpectatorSubView_
 #define _ClientSpectatorSubView_
     class ClientSpectatorSubView : public ClientSubView
@@ -27225,9 +27225,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00650
+    // ClassId: 00650
     // RuntimeId: 03653
-    // TypeInfo:  0x023EA28C
+    // TypeInfo: 0x023EA28C
 #ifndef _ClientMedicBagEntity_
 #define _ClientMedicBagEntity_
     class ClientMedicBagEntity : public ClientExplosionPackEntity
@@ -27245,9 +27245,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00645
+    // ClassId: 00645
     // RuntimeId: 03652
-    // TypeInfo:  0x023EA264
+    // TypeInfo: 0x023EA264
 #ifndef _ClientGrenadeEntity_
 #define _ClientGrenadeEntity_
     class ClientGrenadeEntity : public ClientGhostProjectileEntity
@@ -27266,9 +27266,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00649
+    // ClassId: 00649
     // RuntimeId: 03732
-    // TypeInfo:  0x023EB8D8
+    // TypeInfo: 0x023EB8D8
 #ifndef _ClientMedicBagHealingSphereEntity_
 #define _ClientMedicBagHealingSphereEntity_
     class ClientMedicBagHealingSphereEntity : public ClientExplosionPackEntity
@@ -27286,9 +27286,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00646
+    // ClassId: 00646
     // RuntimeId: 03650
-    // TypeInfo:  0x023EA214
+    // TypeInfo: 0x023EA214
 #ifndef _ClientFlareEntity_
 #define _ClientFlareEntity_
     class ClientFlareEntity : public ClientGrenadeEntity
@@ -27306,9 +27306,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00648
+    // ClassId: 00648
     // RuntimeId: 03739
-    // TypeInfo:  0x023EB9F0
+    // TypeInfo: 0x023EB9F0
 #ifndef _ClientSupplySphereEntity_
 #define _ClientSupplySphereEntity_
     class ClientSupplySphereEntity : public ClientExplosionPackEntity
@@ -27326,9 +27326,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00651
+    // ClassId: 00651
     // RuntimeId: 03648
-    // TypeInfo:  0x023EA1C4
+    // TypeInfo: 0x023EA1C4
 #ifndef _ClientBulletEntity_
 #define _ClientBulletEntity_
     class ClientBulletEntity : public ClientProjectileEntity
@@ -27347,9 +27347,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00468
+    // ClassId: 00468
     // RuntimeId: 03647
-    // TypeInfo:  0x023EA19C
+    // TypeInfo: 0x023EA19C
 #ifndef _ClientMovieEntity_
 #define _ClientMovieEntity_
     class ClientMovieEntity : public Entity
@@ -27368,9 +27368,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00630
+    // ClassId: 00630
     // RuntimeId: 03646
-    // TypeInfo:  0x023EA174
+    // TypeInfo: 0x023EA174
 #ifndef _ClientGameSplineEntity_
 #define _ClientGameSplineEntity_
     class ClientGameSplineEntity : public ClientGameEntity
@@ -27389,9 +27389,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00282
+    // ClassId: 00282
     // RuntimeId: 03645
-    // TypeInfo:  0x023EA14C
+    // TypeInfo: 0x023EA14C
 #ifndef _ClientFlagComponent_
 #define _ClientFlagComponent_
     class ClientFlagComponent : public ClientComponent
@@ -27410,9 +27410,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00283
+    // ClassId: 00283
     // RuntimeId: 03644
-    // TypeInfo:  0x023EA124
+    // TypeInfo: 0x023EA124
 #ifndef _ClientWarningSystemComponent_
 #define _ClientWarningSystemComponent_
     class ClientWarningSystemComponent : public ClientComponent
@@ -27431,9 +27431,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00284
+    // ClassId: 00284
     // RuntimeId: 03643
-    // TypeInfo:  0x023EA0FC
+    // TypeInfo: 0x023EA0FC
 #ifndef _ClientUnlockComponent_
 #define _ClientUnlockComponent_
     class ClientUnlockComponent : public ClientComponent
@@ -27452,9 +27452,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00260
+    // ClassId: 00260
     // RuntimeId: 03642
-    // TypeInfo:  0x023EA0D4
+    // TypeInfo: 0x023EA0D4
 #ifndef _ClientSoldierEntryComponent_
 #define _ClientSoldierEntryComponent_
     class ClientSoldierEntryComponent : public ClientEntryComponent
@@ -27473,9 +27473,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00261
+    // ClassId: 00261
     // RuntimeId: 03641
-    // TypeInfo:  0x023EA0AC
+    // TypeInfo: 0x023EA0AC
 #ifndef _ClientRemoteEntryComponent_
 #define _ClientRemoteEntryComponent_
     class ClientRemoteEntryComponent : public ClientEntryComponent
@@ -27494,9 +27494,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00285
+    // ClassId: 00285
     // RuntimeId: 03640
-    // TypeInfo:  0x023EA084
+    // TypeInfo: 0x023EA084
 #ifndef _ClientRadioComponent_
 #define _ClientRadioComponent_
     class ClientRadioComponent : public ClientComponent
@@ -27515,9 +27515,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00262
+    // ClassId: 00262
     // RuntimeId: 03639
-    // TypeInfo:  0x023EA05C
+    // TypeInfo: 0x023EA05C
 #ifndef _ClientPlayerEntryComponent_
 #define _ClientPlayerEntryComponent_
     class ClientPlayerEntryComponent : public ClientEntryComponent
@@ -27536,9 +27536,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00469
+    // ClassId: 00469
     // RuntimeId: 03638
-    // TypeInfo:  0x023E9E90
+    // TypeInfo: 0x023E9E90
 #ifndef _ClientWaypointTriggerEntity_
 #define _ClientWaypointTriggerEntity_
     class ClientWaypointTriggerEntity : public Entity
@@ -27557,9 +27557,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00470
+    // ClassId: 00470
     // RuntimeId: 03637
-    // TypeInfo:  0x023E9E68
+    // TypeInfo: 0x023E9E68
 #ifndef _ClientPlayerInputTriggerEntity_
 #define _ClientPlayerInputTriggerEntity_
     class ClientPlayerInputTriggerEntity : public Entity
@@ -27578,9 +27578,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00631
+    // ClassId: 00631
     // RuntimeId: 03636
-    // TypeInfo:  0x023E9E40
+    // TypeInfo: 0x023E9E40
 #ifndef _ClientCombatAreaTriggerEntity_
 #define _ClientCombatAreaTriggerEntity_
     class ClientCombatAreaTriggerEntity : public ClientGameEntity
@@ -27599,9 +27599,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00632
+    // ClassId: 00632
     // RuntimeId: 03635
-    // TypeInfo:  0x023E9E18
+    // TypeInfo: 0x023E9E18
 #ifndef _ClientClearAreaTriggerEntity_
 #define _ClientClearAreaTriggerEntity_
     class ClientClearAreaTriggerEntity : public ClientGameEntity
@@ -27619,9 +27619,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00756
+    // ClassId: 00756
     // RuntimeId: 03633
-    // TypeInfo:  0x023E9DC8
+    // TypeInfo: 0x023E9DC8
 #ifndef _ClientSpawnEntity_
 #define _ClientSpawnEntity_
     class ClientSpawnEntity : public SpatialEntity
@@ -27640,9 +27640,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00757
+    // ClassId: 00757
     // RuntimeId: 03634
-    // TypeInfo:  0x023E9DF0
+    // TypeInfo: 0x023E9DF0
 #ifndef _ClientVehicleSpawnEntity_
 #define _ClientVehicleSpawnEntity_
     class ClientVehicleSpawnEntity : public ClientSpawnEntity
@@ -27660,9 +27660,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00758
+    // ClassId: 00758
     // RuntimeId: 03632
-    // TypeInfo:  0x023E9DA0
+    // TypeInfo: 0x023E9DA0
 #ifndef _ClientCharacterSpawnEntity_
 #define _ClientCharacterSpawnEntity_
     class ClientCharacterSpawnEntity : public ClientSpawnEntity
@@ -27680,9 +27680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00424
+    // ClassId: 00424
     // RuntimeId: 03631
-    // TypeInfo:  0x023E9D78
+    // TypeInfo: 0x023E9D78
 #ifndef _ClientWeaponStateEntity_
 #define _ClientWeaponStateEntity_
     class ClientWeaponStateEntity : public WeaponStateEntity
@@ -27701,9 +27701,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00633
+    // ClassId: 00633
     // RuntimeId: 03630
-    // TypeInfo:  0x023E9D50
+    // TypeInfo: 0x023E9D50
 #ifndef _ClientTeamFilterEntity_
 #define _ClientTeamFilterEntity_
     class ClientTeamFilterEntity : public ClientGameEntity
@@ -27721,9 +27721,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00556
+    // ClassId: 00556
     // RuntimeId: 00533
-    // TypeInfo:  0x023C7B1C
+    // TypeInfo: 0x023C7B1C
 #ifndef _SequenceEntity_
 #define _SequenceEntity_
     class SequenceEntity : public Entity
@@ -27742,9 +27742,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00471
+    // ClassId: 00471
     // RuntimeId: 03628
-    // TypeInfo:  0x023E9D00
+    // TypeInfo: 0x023E9D00
 #ifndef _ClientStreamingGateEntity_
 #define _ClientStreamingGateEntity_
     class ClientStreamingGateEntity : public Entity
@@ -27763,9 +27763,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00472
+    // ClassId: 00472
     // RuntimeId: 03627
-    // TypeInfo:  0x023E9CD8
+    // TypeInfo: 0x023E9CD8
 #ifndef _ClientSpectatorReplayEntity_
 #define _ClientSpectatorReplayEntity_
     class ClientSpectatorReplayEntity : public Entity
@@ -27784,9 +27784,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00473
+    // ClassId: 00473
     // RuntimeId: 03626
-    // TypeInfo:  0x023E9CB0
+    // TypeInfo: 0x023E9CB0
 #ifndef _ClientPlayerLookAtEntity_
 #define _ClientPlayerLookAtEntity_
     class ClientPlayerLookAtEntity : public Entity
@@ -27805,9 +27805,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00474
+    // ClassId: 00474
     // RuntimeId: 03625
-    // TypeInfo:  0x023E9C88
+    // TypeInfo: 0x023E9C88
 #ifndef _ClientPlayerFilterEntity_
 #define _ClientPlayerFilterEntity_
     class ClientPlayerFilterEntity : public Entity
@@ -27826,9 +27826,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00634
+    // ClassId: 00634
     // RuntimeId: 03624
-    // TypeInfo:  0x023E9C60
+    // TypeInfo: 0x023E9C60
 #ifndef _ClientObjectiveEntity_
 #define _ClientObjectiveEntity_
     class ClientObjectiveEntity : public ClientGameEntity
@@ -27847,9 +27847,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00475
+    // ClassId: 00475
     // RuntimeId: 03623
-    // TypeInfo:  0x023E9C38
+    // TypeInfo: 0x023E9C38
 #ifndef _ClientMessageEntity_
 #define _ClientMessageEntity_
     class ClientMessageEntity : public Entity
@@ -27868,9 +27868,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00635
+    // ClassId: 00635
     // RuntimeId: 03622
-    // TypeInfo:  0x023E9C10
+    // TypeInfo: 0x023E9C10
 #ifndef _ClientMapMarkerEntity_
 #define _ClientMapMarkerEntity_
     class ClientMapMarkerEntity : public ClientGameEntity
@@ -27889,9 +27889,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00636
+    // ClassId: 00636
     // RuntimeId: 03621
-    // TypeInfo:  0x023E9BE8
+    // TypeInfo: 0x023E9BE8
 #ifndef _ClientEventMemoryEntity_
 #define _ClientEventMemoryEntity_
     class ClientEventMemoryEntity : public ClientGameEntity
@@ -27910,9 +27910,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00476
+    // ClassId: 00476
     // RuntimeId: 03620
-    // TypeInfo:  0x023E9BC0
+    // TypeInfo: 0x023E9BC0
 #ifndef _ClientAntInteractionEntity_
 #define _ClientAntInteractionEntity_
     class ClientAntInteractionEntity : public Entity
@@ -27931,9 +27931,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00477
+    // ClassId: 00477
     // RuntimeId: 03619
-    // TypeInfo:  0x023E9B98
+    // TypeInfo: 0x023E9B98
 #ifndef _ClientFadeEntity_
 #define _ClientFadeEntity_
     class ClientFadeEntity : public Entity
@@ -27952,9 +27952,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00787
+    // ClassId: 00787
     // RuntimeId: 03618
-    // TypeInfo:  0x023E9B70
+    // TypeInfo: 0x023E9B70
 #ifndef _ClientPlayerEvent_
 #define _ClientPlayerEvent_
     class ClientPlayerEvent : public PlayerEvent
@@ -27973,9 +27973,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00788
+    // ClassId: 00788
     // RuntimeId: 03617
-    // TypeInfo:  0x023E9B48
+    // TypeInfo: 0x023E9B48
 #ifndef _ClientDoublePlayerEvent_
 #define _ClientDoublePlayerEvent_
     class ClientDoublePlayerEvent : public ClientPlayerEvent
@@ -27994,9 +27994,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00478
+    // ClassId: 00478
     // RuntimeId: 03616
-    // TypeInfo:  0x023E98B8
+    // TypeInfo: 0x023E98B8
 #ifndef _ClientSyncedTransformEntity_
 #define _ClientSyncedTransformEntity_
     class ClientSyncedTransformEntity : public Entity
@@ -28015,9 +28015,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00479
+    // ClassId: 00479
     // RuntimeId: 03615
-    // TypeInfo:  0x023E9890
+    // TypeInfo: 0x023E9890
 #ifndef _ClientSyncedBoolEntity_
 #define _ClientSyncedBoolEntity_
     class ClientSyncedBoolEntity : public Entity
@@ -28036,9 +28036,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00603
+    // ClassId: 00603
     // RuntimeId: 00140
-    // TypeInfo:  0x023C4B60
+    // TypeInfo: 0x023C4B60
 #ifndef _SubLevelEntity_
 #define _SubLevelEntity_
     class SubLevelEntity : public Entity
@@ -28057,9 +28057,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00663
+    // ClassId: 00663
     // RuntimeId: 03613
-    // TypeInfo:  0x023E9840
+    // TypeInfo: 0x023E9840
 #ifndef _ClientPhysicsEntityWithPoseProvider_
 #define _ClientPhysicsEntityWithPoseProvider_
     class ClientPhysicsEntityWithPoseProvider : public ClientPhysicsEntity
@@ -28078,9 +28078,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00659
+    // ClassId: 00659
     // RuntimeId: 03689
-    // TypeInfo:  0x023EACC4
+    // TypeInfo: 0x023EACC4
 #ifndef _ClientVehicleEntity_
 #define _ClientVehicleEntity_
     class ClientVehicleEntity : public ClientControllableEntity
@@ -28099,9 +28099,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00640
+    // ClassId: 00640
     // RuntimeId: 03737
-    // TypeInfo:  0x023EB9A0
+    // TypeInfo: 0x023EB9A0
 #ifndef _ClientProxyMissileEntity_
 #define _ClientProxyMissileEntity_
     class ClientProxyMissileEntity : public ClientProxyProjectileEntity
@@ -28119,9 +28119,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00480
+    // ClassId: 00480
     // RuntimeId: 03610
-    // TypeInfo:  0x023E97C8
+    // TypeInfo: 0x023E97C8
 #ifndef _ClientEventSyncEntity_
 #define _ClientEventSyncEntity_
     class ClientEventSyncEntity : public Entity
@@ -28140,9 +28140,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00242
+    // ClassId: 00242
     // RuntimeId: 03753
-    // TypeInfo:  0x023EBDA8
+    // TypeInfo: 0x023EBDA8
 #ifndef _ClientTrackWheelComponent_
 #define _ClientTrackWheelComponent_
     class ClientTrackWheelComponent : public ClientWheelComponent
@@ -28161,9 +28161,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00481
+    // ClassId: 00481
     // RuntimeId: 03608
-    // TypeInfo:  0x023E9778
+    // TypeInfo: 0x023E9778
 #ifndef _ClientBlueprintEntity_
 #define _ClientBlueprintEntity_
     class ClientBlueprintEntity : public Entity
@@ -28182,9 +28182,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01117
+    // ClassId: 01117
     // RuntimeId: 03607
-    // TypeInfo:  0x023E95F0
+    // TypeInfo: 0x023E95F0
 #ifndef _GameRenderSettings_
 #define _GameRenderSettings_
 #pragma pack(push, 4)
@@ -28294,9 +28294,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01770
+    // ClassId: 01770
     // RuntimeId: 03597
-    // TypeInfo:  0x023E9564
+    // TypeInfo: 0x023E9564
 #ifndef _SoundStateEntityData_
 #define _SoundStateEntityData_
 #pragma pack(push, 4)
@@ -28321,9 +28321,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01771
+    // ClassId: 01771
     // RuntimeId: 03595
-    // TypeInfo:  0x023E9538
+    // TypeInfo: 0x023E9538
 #ifndef _SoundAreaEntityData_
 #define _SoundAreaEntityData_
 #pragma pack(push, 4)
@@ -28352,9 +28352,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01772
+    // ClassId: 01772
     // RuntimeId: 03593
-    // TypeInfo:  0x023E950C
+    // TypeInfo: 0x023E950C
 #ifndef _VoiceOverEventEntityData_
 #define _VoiceOverEventEntityData_
 #pragma pack(push, 4)
@@ -28385,9 +28385,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00665
+    // ClassId: 00665
     // RuntimeId: 03591
-    // TypeInfo:  0x023E94E4
+    // TypeInfo: 0x023E94E4
 #ifndef _VisualEnvironmentEntity_
 #define _VisualEnvironmentEntity_
     class VisualEnvironmentEntity : public ClientGameEntity
@@ -28406,9 +28406,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00778
+    // ClassId: 00778
     // RuntimeId: 00484
-    // TypeInfo:  0x023C6F28
+    // TypeInfo: 0x023C6F28
 #ifndef _EffectEntity_
 #define _EffectEntity_
     class EffectEntity : public SpatialEntity
@@ -28422,14 +28422,17 @@ namespace fb
         {
             return 0x023C6F28;
         }
-        char _0x0010[96];
+        char _0x0010[0x4C];
+        EffectEntity* m_nextSibling; //0x005C
+        EffectEntity* m_firstChild; //0x0060
+        char _0x0064[12];
     };//Size=0x0070
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00286
+    // ClassId: 00286
     // RuntimeId: 03589
-    // TypeInfo:  0x023E9494
+    // TypeInfo: 0x023E9494
 #ifndef _DebugComponent_
 #define _DebugComponent_
     class DebugComponent : public ClientComponent
@@ -28448,9 +28451,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00287
+    // ClassId: 00287
     // RuntimeId: 03588
-    // TypeInfo:  0x023E946C
+    // TypeInfo: 0x023E946C
 #ifndef _DamageEffectComponent_
 #define _DamageEffectComponent_
     class DamageEffectComponent : public ClientComponent
@@ -28469,9 +28472,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00288
+    // ClassId: 00288
     // RuntimeId: 03587
-    // TypeInfo:  0x023E9444
+    // TypeInfo: 0x023E9444
 #ifndef _MotionBlurComponent_
 #define _MotionBlurComponent_
     class MotionBlurComponent : public ClientComponent
@@ -28490,9 +28493,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00289
+    // ClassId: 00289
     // RuntimeId: 03586
-    // TypeInfo:  0x023E941C
+    // TypeInfo: 0x023E941C
 #ifndef _CharacterLightingComponent_
 #define _CharacterLightingComponent_
     class CharacterLightingComponent : public ClientComponent
@@ -28511,9 +28514,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00290
+    // ClassId: 00290
     // RuntimeId: 03585
-    // TypeInfo:  0x023E93F4
+    // TypeInfo: 0x023E93F4
 #ifndef _ScreenEffectComponent_
 #define _ScreenEffectComponent_
     class ScreenEffectComponent : public ClientComponent
@@ -28532,9 +28535,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00291
+    // ClassId: 00291
     // RuntimeId: 03584
-    // TypeInfo:  0x023E93CC
+    // TypeInfo: 0x023E93CC
 #ifndef _CameraParamsComponent_
 #define _CameraParamsComponent_
     class CameraParamsComponent : public ClientComponent
@@ -28553,9 +28556,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00292
+    // ClassId: 00292
     // RuntimeId: 03583
-    // TypeInfo:  0x023E93A4
+    // TypeInfo: 0x023E93A4
 #ifndef _ShaderParamsComponent_
 #define _ShaderParamsComponent_
     class ShaderParamsComponent : public ClientComponent
@@ -28574,9 +28577,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00293
+    // ClassId: 00293
     // RuntimeId: 03582
-    // TypeInfo:  0x023E937C
+    // TypeInfo: 0x023E937C
 #ifndef _LensScopeComponent_
 #define _LensScopeComponent_
     class LensScopeComponent : public ClientComponent
@@ -28595,9 +28598,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00294
+    // ClassId: 00294
     // RuntimeId: 03581
-    // TypeInfo:  0x023E9354
+    // TypeInfo: 0x023E9354
 #ifndef _FilmGrainComponent_
 #define _FilmGrainComponent_
     class FilmGrainComponent : public ClientComponent
@@ -28616,9 +28619,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00295
+    // ClassId: 00295
     // RuntimeId: 03580
-    // TypeInfo:  0x023E932C
+    // TypeInfo: 0x023E932C
 #ifndef _VignetteComponent_
 #define _VignetteComponent_
     class VignetteComponent : public ClientComponent
@@ -28637,9 +28640,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00296
+    // ClassId: 00296
     // RuntimeId: 03579
-    // TypeInfo:  0x023E9304
+    // TypeInfo: 0x023E9304
 #ifndef _DofComponent_
 #define _DofComponent_
     class DofComponent : public ClientComponent
@@ -28658,9 +28661,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00297
+    // ClassId: 00297
     // RuntimeId: 03578
-    // TypeInfo:  0x023E92DC
+    // TypeInfo: 0x023E92DC
 #ifndef _DynamicAOComponent_
 #define _DynamicAOComponent_
     class DynamicAOComponent : public ClientComponent
@@ -28679,9 +28682,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00298
+    // ClassId: 00298
     // RuntimeId: 03577
-    // TypeInfo:  0x023E92B4
+    // TypeInfo: 0x023E92B4
 #ifndef _SunFlareComponent_
 #define _SunFlareComponent_
     class SunFlareComponent : public ClientComponent
@@ -28700,9 +28703,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00299
+    // ClassId: 00299
     // RuntimeId: 03576
-    // TypeInfo:  0x023E928C
+    // TypeInfo: 0x023E928C
 #ifndef _DynamicEnvmapComponent_
 #define _DynamicEnvmapComponent_
     class DynamicEnvmapComponent : public ClientComponent
@@ -28721,9 +28724,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00300
+    // ClassId: 00300
     // RuntimeId: 03575
-    // TypeInfo:  0x023E9264
+    // TypeInfo: 0x023E9264
 #ifndef _PlanarReflectionComponent_
 #define _PlanarReflectionComponent_
     class PlanarReflectionComponent : public ClientComponent
@@ -28742,9 +28745,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00301
+    // ClassId: 00301
     // RuntimeId: 03574
-    // TypeInfo:  0x023E923C
+    // TypeInfo: 0x023E923C
 #ifndef _WindComponent_
 #define _WindComponent_
     class WindComponent : public ClientComponent
@@ -28763,9 +28766,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00302
+    // ClassId: 00302
     // RuntimeId: 03573
-    // TypeInfo:  0x023E9214
+    // TypeInfo: 0x023E9214
 #ifndef _FogComponent_
 #define _FogComponent_
     class FogComponent : public ClientComponent
@@ -28784,9 +28787,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00303
+    // ClassId: 00303
     // RuntimeId: 03572
-    // TypeInfo:  0x023E91EC
+    // TypeInfo: 0x023E91EC
 #ifndef _SkyComponent_
 #define _SkyComponent_
     class SkyComponent : public ClientComponent
@@ -28805,9 +28808,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00304
+    // ClassId: 00304
     // RuntimeId: 03571
-    // TypeInfo:  0x023E91C4
+    // TypeInfo: 0x023E91C4
 #ifndef _ColorCorrectionComponent_
 #define _ColorCorrectionComponent_
     class ColorCorrectionComponent : public ClientComponent
@@ -28826,9 +28829,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00305
+    // ClassId: 00305
     // RuntimeId: 03570
-    // TypeInfo:  0x023E919C
+    // TypeInfo: 0x023E919C
 #ifndef _TonemapComponent_
 #define _TonemapComponent_
     class TonemapComponent : public ClientComponent
@@ -28847,9 +28850,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00306
+    // ClassId: 00306
     // RuntimeId: 03569
-    // TypeInfo:  0x023E9174
+    // TypeInfo: 0x023E9174
 #ifndef _EnlightenComponent_
 #define _EnlightenComponent_
     class EnlightenComponent : public ClientComponent
@@ -28868,9 +28871,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00307
+    // ClassId: 00307
     // RuntimeId: 03568
-    // TypeInfo:  0x023E914C
+    // TypeInfo: 0x023E914C
 #ifndef _OutdoorLightComponent_
 #define _OutdoorLightComponent_
     class OutdoorLightComponent : public ClientComponent
@@ -28889,9 +28892,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00482
+    // ClassId: 00482
     // RuntimeId: 03567
-    // TypeInfo:  0x023E9124
+    // TypeInfo: 0x023E9124
 #ifndef _LogicVisualEnvironmentEntity_
 #define _LogicVisualEnvironmentEntity_
     class LogicVisualEnvironmentEntity : public Entity
@@ -28910,9 +28913,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00483
+    // ClassId: 00483
     // RuntimeId: 03566
-    // TypeInfo:  0x023E8D30
+    // TypeInfo: 0x023E8D30
 #ifndef _ClientPlaceHolderEntity_
 #define _ClientPlaceHolderEntity_
     class ClientPlaceHolderEntity : public Entity
@@ -28931,9 +28934,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00484
+    // ClassId: 00484
     // RuntimeId: 03565
-    // TypeInfo:  0x023E8D08
+    // TypeInfo: 0x023E8D08
 #ifndef _ClientBlueprintBundleStateLogicEntity_
 #define _ClientBlueprintBundleStateLogicEntity_
     class ClientBlueprintBundleStateLogicEntity : public Entity
@@ -28952,9 +28955,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00485
+    // ClassId: 00485
     // RuntimeId: 03564
-    // TypeInfo:  0x023E8CE0
+    // TypeInfo: 0x023E8CE0
 #ifndef _ClientBlueprintBundleSelectorEntity_
 #define _ClientBlueprintBundleSelectorEntity_
     class ClientBlueprintBundleSelectorEntity : public Entity
@@ -28973,9 +28976,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00486
+    // ClassId: 00486
     // RuntimeId: 03563
-    // TypeInfo:  0x023E8CB8
+    // TypeInfo: 0x023E8CB8
 #ifndef _ClientBlueprintBundleLoaderEntity_
 #define _ClientBlueprintBundleLoaderEntity_
     class ClientBlueprintBundleLoaderEntity : public Entity
@@ -28994,9 +28997,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00487
+    // ClassId: 00487
     // RuntimeId: 03562
-    // TypeInfo:  0x023E8C90
+    // TypeInfo: 0x023E8C90
 #ifndef _VoiceOverEventEntity_
 #define _VoiceOverEventEntity_
     class VoiceOverEventEntity : public Entity
@@ -29015,9 +29018,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00488
+    // ClassId: 00488
     // RuntimeId: 03561
-    // TypeInfo:  0x023E8C68
+    // TypeInfo: 0x023E8C68
 #ifndef _SoundStateEntity_
 #define _SoundStateEntity_
     class SoundStateEntity : public Entity
@@ -29036,9 +29039,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00489
+    // ClassId: 00489
     // RuntimeId: 03560
-    // TypeInfo:  0x023E8C40
+    // TypeInfo: 0x023E8C40
 #ifndef _SoundArea_
 #define _SoundArea_
     class SoundArea : public Entity
@@ -29057,9 +29060,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01773
+    // ClassId: 01773
     // RuntimeId: 03559
-    // TypeInfo:  0x023E8B50
+    // TypeInfo: 0x023E8B50
 #ifndef _FollowWaypointsEntityData_
 #define _FollowWaypointsEntityData_
 #pragma pack(push, 4)
@@ -29087,9 +29090,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01657
+    // ClassId: 01657
     // RuntimeId: 03557
-    // TypeInfo:  0x023E8B24
+    // TypeInfo: 0x023E8B24
 #ifndef _PathFollowingComponentData_
 #define _PathFollowingComponentData_
 #pragma pack(push, 16)
@@ -29117,9 +29120,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00490
+    // ClassId: 00490
     // RuntimeId: 03555
-    // TypeInfo:  0x023E8AFC
+    // TypeInfo: 0x023E8AFC
 #ifndef _ServerNavPowerSystemEntity_
 #define _ServerNavPowerSystemEntity_
     class ServerNavPowerSystemEntity : public Entity
@@ -29138,9 +29141,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00491
+    // ClassId: 00491
     // RuntimeId: 03554
-    // TypeInfo:  0x023E8AD4
+    // TypeInfo: 0x023E8AD4
 #ifndef _ServerWaypointTriggerEntity_
 #define _ServerWaypointTriggerEntity_
     class ServerWaypointTriggerEntity : public Entity
@@ -29159,9 +29162,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00332
+    // ClassId: 00332
     // RuntimeId: 03553
-    // TypeInfo:  0x023E8AAC
+    // TypeInfo: 0x023E8AAC
 #ifndef _ServerPathFollowingComponent_
 #define _ServerPathFollowingComponent_
     class ServerPathFollowingComponent : public ServerComponent
@@ -29180,9 +29183,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00492
+    // ClassId: 00492
     // RuntimeId: 03552
-    // TypeInfo:  0x023E8A84
+    // TypeInfo: 0x023E8A84
 #ifndef _ServerFollowWaypointsEntity_
 #define _ServerFollowWaypointsEntity_
     class ServerFollowWaypointsEntity : public Entity
@@ -29201,9 +29204,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02150
+    // ClassId: 02150
     // RuntimeId: 03551
-    // TypeInfo:  0x023E8988
+    // TypeInfo: 0x023E8988
 #ifndef _BFAISettingsData_
 #define _BFAISettingsData_
 #pragma pack(push, 4)
@@ -29232,9 +29235,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01774
+    // ClassId: 01774
     // RuntimeId: 03549
-    // TypeInfo:  0x023E895C
+    // TypeInfo: 0x023E895C
 #ifndef _ShootAtFromCoverData_
 #define _ShootAtFromCoverData_
 #pragma pack(push, 4)
@@ -29264,9 +29267,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02251
+    // ClassId: 02251
     // RuntimeId: 03547
-    // TypeInfo:  0x023E8930
+    // TypeInfo: 0x023E8930
 #ifndef _SearchAndDestroyConstantData_
 #define _SearchAndDestroyConstantData_
 #pragma pack(push, 4)
@@ -29293,9 +29296,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01704
+    // ClassId: 01704
     // RuntimeId: 03511
-    // TypeInfo:  0x023E8688
+    // TypeInfo: 0x023E8688
 #ifndef _BFOrderEntityData_
 #define _BFOrderEntityData_
 #pragma pack(push, 4)
@@ -29321,9 +29324,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01882
+    // ClassId: 01882
     // RuntimeId: 03539
-    // TypeInfo:  0x023E88B8
+    // TypeInfo: 0x023E88B8
 #ifndef _PointTargetData_
 #define _PointTargetData_
 #pragma pack(push, 16)
@@ -29347,9 +29350,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01706
+    // ClassId: 01706
     // RuntimeId: 03537
-    // TypeInfo:  0x023E888C
+    // TypeInfo: 0x023E888C
 #ifndef _SearchAndDestroyOrderEntityData_
 #define _SearchAndDestroyOrderEntityData_
 #pragma pack(push, 4)
@@ -29378,9 +29381,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01707
+    // ClassId: 01707
     // RuntimeId: 03533
-    // TypeInfo:  0x023E8850
+    // TypeInfo: 0x023E8850
 #ifndef _RandomWalkOrderEntityData_
 #define _RandomWalkOrderEntityData_
 #pragma pack(push, 4)
@@ -29406,9 +29409,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01708
+    // ClassId: 01708
     // RuntimeId: 03531
-    // TypeInfo:  0x023E8824
+    // TypeInfo: 0x023E8824
 #ifndef _CancelOrderEntityData_
 #define _CancelOrderEntityData_
 #pragma pack(push, 4)
@@ -29432,9 +29435,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01709
+    // ClassId: 01709
     // RuntimeId: 03529
-    // TypeInfo:  0x023E87F8
+    // TypeInfo: 0x023E87F8
 #ifndef _ChangeReadinessOrderEntityData_
 #define _ChangeReadinessOrderEntityData_
 #pragma pack(push, 4)
@@ -29462,9 +29465,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01710
+    // ClassId: 01710
     // RuntimeId: 03527
-    // TypeInfo:  0x023E87CC
+    // TypeInfo: 0x023E87CC
 #ifndef _HoldGroundOrderEntityData_
 #define _HoldGroundOrderEntityData_
 #pragma pack(push, 4)
@@ -29488,9 +29491,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01711
+    // ClassId: 01711
     // RuntimeId: 03521
-    // TypeInfo:  0x023E8748
+    // TypeInfo: 0x023E8748
 #ifndef _FollowPlayerOrderEntityData_
 #define _FollowPlayerOrderEntityData_
 #pragma pack(push, 4)
@@ -29517,9 +29520,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01713
+    // ClassId: 01713
     // RuntimeId: 03523
-    // TypeInfo:  0x023E8774
+    // TypeInfo: 0x023E8774
 #ifndef _FollowClosestHumanOrderEntityData_
 #define _FollowClosestHumanOrderEntityData_
 #pragma pack(push, 4)
@@ -29543,9 +29546,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01712
+    // ClassId: 01712
     // RuntimeId: 03525
-    // TypeInfo:  0x023E87A0
+    // TypeInfo: 0x023E87A0
 #ifndef _FollowAISoldierOrderEntityData_
 #define _FollowAISoldierOrderEntityData_
 #pragma pack(push, 4)
@@ -29569,9 +29572,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01714
+    // ClassId: 01714
     // RuntimeId: 03519
-    // TypeInfo:  0x023E871C
+    // TypeInfo: 0x023E871C
 #ifndef _AimAtOrderEntityData_
 #define _AimAtOrderEntityData_
 #pragma pack(push, 4)
@@ -29595,9 +29598,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01715
+    // ClassId: 01715
     // RuntimeId: 03517
-    // TypeInfo:  0x023E86F0
+    // TypeInfo: 0x023E86F0
 #ifndef _PatrolOrderEntityData_
 #define _PatrolOrderEntityData_
 #pragma pack(push, 4)
@@ -29627,9 +29630,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01716
+    // ClassId: 01716
     // RuntimeId: 03513
-    // TypeInfo:  0x023E86B4
+    // TypeInfo: 0x023E86B4
 #ifndef _InterludeOrderEntityData_
 #define _InterludeOrderEntityData_
 #pragma pack(push, 4)
@@ -29656,9 +29659,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01705
+    // ClassId: 01705
     // RuntimeId: 03545
-    // TypeInfo:  0x023E8904
+    // TypeInfo: 0x023E8904
 #ifndef _ShootOrderEntityData_
 #define _ShootOrderEntityData_
 #pragma pack(push, 4)
@@ -29689,9 +29692,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01539
+    // ClassId: 01539
     // RuntimeId: 03509
-    // TypeInfo:  0x023E865C
+    // TypeInfo: 0x023E865C
 #ifndef _FormationData_
 #define _FormationData_
 #pragma pack(push, 4)
@@ -29717,9 +29720,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02252
+    // ClassId: 02252
     // RuntimeId: 03507
-    // TypeInfo:  0x023E8630
+    // TypeInfo: 0x023E8630
 #ifndef _FormationHolder_
 #define _FormationHolder_
 #pragma pack(push, 4)
@@ -29744,9 +29747,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02253
+    // ClassId: 02253
     // RuntimeId: 03505
-    // TypeInfo:  0x023E8604
+    // TypeInfo: 0x023E8604
 #ifndef _FollowConstantData_
 #define _FollowConstantData_
 #pragma pack(push, 4)
@@ -29778,9 +29781,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01595
+    // ClassId: 01595
     // RuntimeId: 03503
-    // TypeInfo:  0x023E85D8
+    // TypeInfo: 0x023E85D8
 #ifndef _BFTargetEvaluatorComponentData_
 #define _BFTargetEvaluatorComponentData_
 #pragma pack(push, 16)
@@ -29806,9 +29809,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02254
+    // ClassId: 02254
     // RuntimeId: 03501
-    // TypeInfo:  0x023E85AC
+    // TypeInfo: 0x023E85AC
 #ifndef _TargetEvaluationConstantData_
 #define _TargetEvaluationConstantData_
 #pragma pack(push, 4)
@@ -29836,9 +29839,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02255
+    // ClassId: 02255
     // RuntimeId: 03499
-    // TypeInfo:  0x023E8580
+    // TypeInfo: 0x023E8580
 #ifndef _TurretControlConstantData_
 #define _TurretControlConstantData_
 #pragma pack(push, 4)
@@ -29866,9 +29869,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02256
+    // ClassId: 02256
     // RuntimeId: 03497
-    // TypeInfo:  0x023E8554
+    // TypeInfo: 0x023E8554
 #ifndef _MovementConstantData_
 #define _MovementConstantData_
 #pragma pack(push, 4)
@@ -29893,9 +29896,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02257
+    // ClassId: 02257
     // RuntimeId: 03495
-    // TypeInfo:  0x023E8528
+    // TypeInfo: 0x023E8528
 #ifndef _CombatConstantData_
 #define _CombatConstantData_
 #pragma pack(push, 4)
@@ -29946,9 +29949,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02170
+    // ClassId: 02170
     // RuntimeId: 03493
-    // TypeInfo:  0x023E84FC
+    // TypeInfo: 0x023E84FC
 #ifndef _BFAISystem_
 #define _BFAISystem_
 #pragma pack(push, 4)
@@ -29972,9 +29975,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00493
+    // ClassId: 00493
     // RuntimeId: 03491
-    // TypeInfo:  0x023E84D4
+    // TypeInfo: 0x023E84D4
 #ifndef _ServerShootAtFromCoverEntity_
 #define _ServerShootAtFromCoverEntity_
     class ServerShootAtFromCoverEntity : public Entity
@@ -29993,9 +29996,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00410
+    // ClassId: 00410
     // RuntimeId: 03490
-    // TypeInfo:  0x023E84AC
+    // TypeInfo: 0x023E84AC
 #ifndef _ServerShootOrderEntity_
 #define _ServerShootOrderEntity_
     class ServerShootOrderEntity : public ServerOrderEntity
@@ -30014,9 +30017,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00411
+    // ClassId: 00411
     // RuntimeId: 03489
-    // TypeInfo:  0x023E8484
+    // TypeInfo: 0x023E8484
 #ifndef _ServerSearchAndDestroyOrderEntity_
 #define _ServerSearchAndDestroyOrderEntity_
     class ServerSearchAndDestroyOrderEntity : public ServerOrderEntity
@@ -30035,9 +30038,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00412
+    // ClassId: 00412
     // RuntimeId: 03488
-    // TypeInfo:  0x023E845C
+    // TypeInfo: 0x023E845C
 #ifndef _ServerPatrolOrderEntity_
 #define _ServerPatrolOrderEntity_
     class ServerPatrolOrderEntity : public ServerOrderEntity
@@ -30056,9 +30059,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00413
+    // ClassId: 00413
     // RuntimeId: 03487
-    // TypeInfo:  0x023E8434
+    // TypeInfo: 0x023E8434
 #ifndef _ServerInterludeOrderEntity_
 #define _ServerInterludeOrderEntity_
     class ServerInterludeOrderEntity : public ServerOrderEntity
@@ -30076,9 +30079,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00414
+    // ClassId: 00414
     // RuntimeId: 03486
-    // TypeInfo:  0x023E840C
+    // TypeInfo: 0x023E840C
 #ifndef _ServerHoldGroundOrderEntity_
 #define _ServerHoldGroundOrderEntity_
     class ServerHoldGroundOrderEntity : public ServerOrderEntity
@@ -30097,9 +30100,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00415
+    // ClassId: 00415
     // RuntimeId: 03485
-    // TypeInfo:  0x023E83E4
+    // TypeInfo: 0x023E83E4
 #ifndef _ServerFollowPlayerOrderEntity_
 #define _ServerFollowPlayerOrderEntity_
     class ServerFollowPlayerOrderEntity : public ServerOrderEntity
@@ -30118,9 +30121,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00416
+    // ClassId: 00416
     // RuntimeId: 03484
-    // TypeInfo:  0x023E83BC
+    // TypeInfo: 0x023E83BC
 #ifndef _ServerFollowClosestHumanOrderEntity_
 #define _ServerFollowClosestHumanOrderEntity_
     class ServerFollowClosestHumanOrderEntity : public ServerFollowPlayerOrderEntity
@@ -30138,9 +30141,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00417
+    // ClassId: 00417
     // RuntimeId: 03483
-    // TypeInfo:  0x023E8394
+    // TypeInfo: 0x023E8394
 #ifndef _ServerFollowAISoldierOrderEntity_
 #define _ServerFollowAISoldierOrderEntity_
     class ServerFollowAISoldierOrderEntity : public ServerFollowPlayerOrderEntity
@@ -30158,9 +30161,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00418
+    // ClassId: 00418
     // RuntimeId: 03482
-    // TypeInfo:  0x023E836C
+    // TypeInfo: 0x023E836C
 #ifndef _ServerChangeReadinessOrderEntity_
 #define _ServerChangeReadinessOrderEntity_
     class ServerChangeReadinessOrderEntity : public ServerOrderEntity
@@ -30178,9 +30181,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00419
+    // ClassId: 00419
     // RuntimeId: 03481
-    // TypeInfo:  0x023E8344
+    // TypeInfo: 0x023E8344
 #ifndef _ServerCancelOrderEntity_
 #define _ServerCancelOrderEntity_
     class ServerCancelOrderEntity : public ServerOrderEntity
@@ -30198,9 +30201,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00420
+    // ClassId: 00420
     // RuntimeId: 03480
-    // TypeInfo:  0x023E831C
+    // TypeInfo: 0x023E831C
 #ifndef _ServerAimAtOrderEntity_
 #define _ServerAimAtOrderEntity_
     class ServerAimAtOrderEntity : public ServerOrderEntity
@@ -30218,9 +30221,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00331
+    // ClassId: 00331
     // RuntimeId: 03454
-    // TypeInfo:  0x023E75F0
+    // TypeInfo: 0x023E75F0
 #ifndef _BFServerTargetEvaluatorComponent_
 #define _BFServerTargetEvaluatorComponent_
     class BFServerTargetEvaluatorComponent : public ServerTargetEvaluatorComponent
@@ -30239,9 +30242,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01630
+    // ClassId: 01630
     // RuntimeId: 03429
-    // TypeInfo:  0x023E6EA8
+    // TypeInfo: 0x023E6EA8
 #ifndef _AnimatedDestructionComponentData_
 #define _AnimatedDestructionComponentData_
 #pragma pack(push, 16)
@@ -30265,9 +30268,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01658
+    // ClassId: 01658
     // RuntimeId: 03425
-    // TypeInfo:  0x023E6E5C
+    // TypeInfo: 0x023E6E5C
 #ifndef _BreakableRuinComponentData_
 #define _BreakableRuinComponentData_
 #pragma pack(push, 16)
@@ -30293,9 +30296,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01983
+    // ClassId: 01983
     // RuntimeId: 03423
-    // TypeInfo:  0x023E6E30
+    // TypeInfo: 0x023E6E30
 #ifndef _BreakableModelEntityData_
 #define _BreakableModelEntityData_
 #pragma pack(push, 16)
@@ -30325,9 +30328,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01691
+    // ClassId: 01691
     // RuntimeId: 00549
-    // TypeInfo:  0x023C8F04
+    // TypeInfo: 0x023C8F04
 #ifndef _DestructionEdgeModelComponentData_
 #define _DestructionEdgeModelComponentData_
 #pragma pack(push, 16)
@@ -30351,9 +30354,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01689
+    // ClassId: 01689
     // RuntimeId: 00551
-    // TypeInfo:  0x023C8F30
+    // TypeInfo: 0x023C8F30
 #ifndef _DestructionControllerComponentData_
 #define _DestructionControllerComponentData_
 #pragma pack(push, 16)
@@ -30380,9 +30383,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01693
+    // ClassId: 01693
     // RuntimeId: 00545
-    // TypeInfo:  0x023C8EC8
+    // TypeInfo: 0x023C8EC8
 #ifndef _DestructionPartComponentData_
 #define _DestructionPartComponentData_
 #pragma pack(push, 16)
@@ -30412,9 +30415,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01986
+    // ClassId: 01986
     // RuntimeId: 03411
-    // TypeInfo:  0x023E6D60
+    // TypeInfo: 0x023E6D60
 #ifndef _DestroyLevelCommandEntityData_
 #define _DestroyLevelCommandEntityData_
 #pragma pack(push, 16)
@@ -30441,9 +30444,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00680
+    // ClassId: 00680
     // RuntimeId: 03208
-    // TypeInfo:  0x023E452C
+    // TypeInfo: 0x023E452C
 #ifndef _ServerGameEntity_
 #define _ServerGameEntity_
     class ServerGameEntity : public GameEntity
@@ -30461,9 +30464,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00333
+    // ClassId: 00333
     // RuntimeId: 03408
-    // TypeInfo:  0x023E6D10
+    // TypeInfo: 0x023E6D10
 #ifndef _ServerBreakablePartComponent_
 #define _ServerBreakablePartComponent_
     class ServerBreakablePartComponent : public ServerComponent
@@ -30482,9 +30485,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00334
+    // ClassId: 00334
     // RuntimeId: 03407
-    // TypeInfo:  0x023E6CE8
+    // TypeInfo: 0x023E6CE8
 #ifndef _ServerBreakableControllerComponent_
 #define _ServerBreakableControllerComponent_
     class ServerBreakableControllerComponent : public ServerComponent
@@ -30503,9 +30506,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00308
+    // ClassId: 00308
     // RuntimeId: 03406
-    // TypeInfo:  0x023E6CC0
+    // TypeInfo: 0x023E6CC0
 #ifndef _EdgeModelComponent_
 #define _EdgeModelComponent_
     class EdgeModelComponent : public ClientComponent
@@ -30524,9 +30527,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00309
+    // ClassId: 00309
     // RuntimeId: 03405
-    // TypeInfo:  0x023E6C98
+    // TypeInfo: 0x023E6C98
 #ifndef _ClientBreakablePartComponent_
 #define _ClientBreakablePartComponent_
     class ClientBreakablePartComponent : public ClientComponent
@@ -30545,9 +30548,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00310
+    // ClassId: 00310
     // RuntimeId: 03404
-    // TypeInfo:  0x023E6C70
+    // TypeInfo: 0x023E6C70
 #ifndef _ClientBreakableControllerComponent_
 #define _ClientBreakableControllerComponent_
     class ClientBreakableControllerComponent : public ClientComponent
@@ -30566,9 +30569,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00664
+    // ClassId: 00664
     // RuntimeId: 03403
-    // TypeInfo:  0x023E6C48
+    // TypeInfo: 0x023E6C48
 #ifndef _ClientBreakableModelEntity_
 #define _ClientBreakableModelEntity_
     class ClientBreakableModelEntity : public ClientPhysicsEntityWithPoseProvider
@@ -30587,9 +30590,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02258
+    // ClassId: 02258
     // RuntimeId: 03402
-    // TypeInfo:  0x023E68F8
+    // TypeInfo: 0x023E68F8
 #ifndef _WaterAsset_
 #define _WaterAsset_
 #pragma pack(push, 4)
@@ -30613,9 +30616,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01118
+    // ClassId: 01118
     // RuntimeId: 03400
-    // TypeInfo:  0x023E68CC
+    // TypeInfo: 0x023E68CC
 #ifndef _TerrainStreamingSettings_
 #define _TerrainStreamingSettings_
 #pragma pack(push, 4)
@@ -30655,9 +30658,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01560
+    // ClassId: 01560
     // RuntimeId: 03380
-    // TypeInfo:  0x023E674C
+    // TypeInfo: 0x023E674C
 #ifndef _VisualVectorShapeData_
 #define _VisualVectorShapeData_
 #pragma pack(push, 4)
@@ -30685,9 +30688,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02259
+    // ClassId: 02259
     // RuntimeId: 03396
-    // TypeInfo:  0x023E6874
+    // TypeInfo: 0x023E6874
 #ifndef _TerrainQuadDecalAtlasTileTemplateData_
 #define _TerrainQuadDecalAtlasTileTemplateData_
 #pragma pack(push, 4)
@@ -30712,9 +30715,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01562
+    // ClassId: 01562
     // RuntimeId: 03392
-    // TypeInfo:  0x023E6838
+    // TypeInfo: 0x023E6838
 #ifndef _TerrainFillDecalData_
 #define _TerrainFillDecalData_
 #pragma pack(push, 4)
@@ -30740,9 +30743,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01563
+    // ClassId: 01563
     // RuntimeId: 03390
-    // TypeInfo:  0x023E680C
+    // TypeInfo: 0x023E680C
 #ifndef _LakeData_
 #define _LakeData_
 #pragma pack(push, 4)
@@ -30766,9 +30769,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01564
+    // ClassId: 01564
     // RuntimeId: 03384
-    // TypeInfo:  0x023E6788
+    // TypeInfo: 0x023E6788
 #ifndef _RibbonData_
 #define _RibbonData_
 #pragma pack(push, 4)
@@ -30793,9 +30796,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01566
+    // ClassId: 01566
     // RuntimeId: 03386
-    // TypeInfo:  0x023E67B4
+    // TypeInfo: 0x023E67B4
 #ifndef _RoadData_
 #define _RoadData_
 #pragma pack(push, 4)
@@ -30824,9 +30827,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01565
+    // ClassId: 01565
     // RuntimeId: 03388
-    // TypeInfo:  0x023E67E0
+    // TypeInfo: 0x023E67E0
 #ifndef _RiverData_
 #define _RiverData_
 #pragma pack(push, 4)
@@ -30850,9 +30853,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01561
+    // ClassId: 01561
     // RuntimeId: 03398
-    // TypeInfo:  0x023E68A0
+    // TypeInfo: 0x023E68A0
 #ifndef _TerrainQuadDecalData_
 #define _TerrainQuadDecalData_
 #pragma pack(push, 16)
@@ -30882,9 +30885,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01119
+    // ClassId: 01119
     // RuntimeId: 03378
-    // TypeInfo:  0x023E6720
+    // TypeInfo: 0x023E6720
 #ifndef _TerrainSettings_
 #define _TerrainSettings_
 #pragma pack(push, 4)
@@ -30915,9 +30918,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02260
+    // ClassId: 02260
     // RuntimeId: 03376
-    // TypeInfo:  0x023E66F4
+    // TypeInfo: 0x023E66F4
 #ifndef _TerrainDecalsData_
 #define _TerrainDecalsData_
 #pragma pack(push, 4)
@@ -30941,9 +30944,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02261
+    // ClassId: 02261
     // RuntimeId: 03374
-    // TypeInfo:  0x023E66C8
+    // TypeInfo: 0x023E66C8
 #ifndef _TerrainStreamingTreeAsset_
 #define _TerrainStreamingTreeAsset_
 #pragma pack(push, 4)
@@ -30967,9 +30970,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01120
+    // ClassId: 01120
     // RuntimeId: 03362
-    // TypeInfo:  0x023E65C0
+    // TypeInfo: 0x023E65C0
 #ifndef _RasterTreeAsset_
 #define _RasterTreeAsset_
 #pragma pack(push, 4)
@@ -30993,9 +30996,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01122
+    // ClassId: 01122
     // RuntimeId: 03370
-    // TypeInfo:  0x023E6670
+    // TypeInfo: 0x023E6670
 #ifndef _TerrainMaterialTreeAsset_
 #define _TerrainMaterialTreeAsset_
 #pragma pack(push, 4)
@@ -31019,9 +31022,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01123
+    // ClassId: 01123
     // RuntimeId: 03368
-    // TypeInfo:  0x023E6644
+    // TypeInfo: 0x023E6644
 #ifndef _TerrainColorTreeAsset_
 #define _TerrainColorTreeAsset_
 #pragma pack(push, 4)
@@ -31045,9 +31048,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01124
+    // ClassId: 01124
     // RuntimeId: 03366
-    // TypeInfo:  0x023E6618
+    // TypeInfo: 0x023E6618
 #ifndef _TerrainMaskTreeAsset_
 #define _TerrainMaskTreeAsset_
 #pragma pack(push, 4)
@@ -31071,9 +31074,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01125
+    // ClassId: 01125
     // RuntimeId: 03364
-    // TypeInfo:  0x023E65EC
+    // TypeInfo: 0x023E65EC
 #ifndef _HeightfieldTreeAsset_
 #define _HeightfieldTreeAsset_
 #pragma pack(push, 4)
@@ -31099,9 +31102,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01121
+    // ClassId: 01121
     // RuntimeId: 03372
-    // TypeInfo:  0x023E669C
+    // TypeInfo: 0x023E669C
 #ifndef _DestructionDepthTreeAsset_
 #define _DestructionDepthTreeAsset_
 #pragma pack(push, 4)
@@ -31125,9 +31128,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01126
+    // ClassId: 01126
     // RuntimeId: 03360
-    // TypeInfo:  0x023E6594
+    // TypeInfo: 0x023E6594
 #ifndef _RasterCoverageData_
 #define _RasterCoverageData_
 #pragma pack(push, 4)
@@ -31151,9 +31154,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02262
+    // ClassId: 02262
     // RuntimeId: 03346
-    // TypeInfo:  0x023E6460
+    // TypeInfo: 0x023E6460
 #ifndef _RasterQuadtreeData_
 #define _RasterQuadtreeData_
 #pragma pack(push, 4)
@@ -31177,9 +31180,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02264
+    // ClassId: 02264
     // RuntimeId: 03356
-    // TypeInfo:  0x023E653C
+    // TypeInfo: 0x023E653C
 #ifndef _PhysicsMaterialsRasterData_
 #define _PhysicsMaterialsRasterData_
 #pragma pack(push, 4)
@@ -31203,9 +31206,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02265
+    // ClassId: 02265
     // RuntimeId: 03354
-    // TypeInfo:  0x023E6510
+    // TypeInfo: 0x023E6510
 #ifndef _ByteRasterData_
 #define _ByteRasterData_
 #pragma pack(push, 4)
@@ -31229,9 +31232,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02266
+    // ClassId: 02266
     // RuntimeId: 03352
-    // TypeInfo:  0x023E64E4
+    // TypeInfo: 0x023E64E4
 #ifndef _RGBRasterData_
 #define _RGBRasterData_
 #pragma pack(push, 4)
@@ -31255,9 +31258,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02267
+    // ClassId: 02267
     // RuntimeId: 03350
-    // TypeInfo:  0x023E64B8
+    // TypeInfo: 0x023E64B8
 #ifndef _HeightfieldRasterData_
 #define _HeightfieldRasterData_
 #pragma pack(push, 4)
@@ -31281,9 +31284,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02268
+    // ClassId: 02268
     // RuntimeId: 03348
-    // TypeInfo:  0x023E648C
+    // TypeInfo: 0x023E648C
 #ifndef _VirtualRasterQuadtreeData_
 #define _VirtualRasterQuadtreeData_
 #pragma pack(push, 4)
@@ -31307,9 +31310,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02263
+    // ClassId: 02263
     // RuntimeId: 03358
-    // TypeInfo:  0x023E6568
+    // TypeInfo: 0x023E6568
 #ifndef _DestructionDepthRasterData_
 #define _DestructionDepthRasterData_
 #pragma pack(push, 4)
@@ -31333,9 +31336,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01127
+    // ClassId: 01127
     // RuntimeId: 03342
-    // TypeInfo:  0x023E6424
+    // TypeInfo: 0x023E6424
 #ifndef _RasterQuadtreeNodeData_
 #define _RasterQuadtreeNodeData_
 #pragma pack(push, 4)
@@ -31359,9 +31362,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02269
+    // ClassId: 02269
     // RuntimeId: 03336
-    // TypeInfo:  0x023E63D8
+    // TypeInfo: 0x023E63D8
 #ifndef _TerrainData_
 #define _TerrainData_
 #pragma pack(push, 4)
@@ -31385,9 +31388,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02270
+    // ClassId: 02270
     // RuntimeId: 03334
-    // TypeInfo:  0x023E63AC
+    // TypeInfo: 0x023E63AC
 #ifndef _TerrainMaterialMapAsset_
 #define _TerrainMaterialMapAsset_
 #pragma pack(push, 4)
@@ -31411,9 +31414,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02271
+    // ClassId: 02271
     // RuntimeId: 03316
-    // TypeInfo:  0x023E6300
+    // TypeInfo: 0x023E6300
 #ifndef _WaterData_
 #define _WaterData_
 #pragma pack(push, 4)
@@ -31437,9 +31440,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01128
+    // ClassId: 01128
     // RuntimeId: 03314
-    // TypeInfo:  0x023E62D4
+    // TypeInfo: 0x023E62D4
 #ifndef _TerrainSubLayerData_
 #define _TerrainSubLayerData_
 #pragma pack(push, 4)
@@ -31463,9 +31466,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01129
+    // ClassId: 01129
     // RuntimeId: 03308
-    // TypeInfo:  0x023E626C
+    // TypeInfo: 0x023E626C
 #ifndef _TerrainLayerData_
 #define _TerrainLayerData_
 #pragma pack(push, 4)
@@ -31489,9 +31492,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01130
+    // ClassId: 01130
     // RuntimeId: 03310
-    // TypeInfo:  0x023E6298
+    // TypeInfo: 0x023E6298
 #ifndef _SingleTerrainLayerData_
 #define _SingleTerrainLayerData_
 #pragma pack(push, 4)
@@ -31515,9 +31518,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01131
+    // ClassId: 01131
     // RuntimeId: 03300
-    // TypeInfo:  0x023E6210
+    // TypeInfo: 0x023E6210
 #ifndef _TerrainUndergrowthType_
 #define _TerrainUndergrowthType_
 #pragma pack(push, 4)
@@ -31541,9 +31544,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01132
+    // ClassId: 01132
     // RuntimeId: 03298
-    // TypeInfo:  0x023E61E4
+    // TypeInfo: 0x023E61E4
 #ifndef _TerrainMeshScatteringType_
 #define _TerrainMeshScatteringType_
 #pragma pack(push, 4)
@@ -31567,9 +31570,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01133
+    // ClassId: 01133
     // RuntimeId: 03284
-    // TypeInfo:  0x023E6158
+    // TypeInfo: 0x023E6158
 #ifndef _TerrainHeightfieldData_
 #define _TerrainHeightfieldData_
 #pragma pack(push, 4)
@@ -31593,9 +31596,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00494
+    // ClassId: 00494
     // RuntimeId: 03282
-    // TypeInfo:  0x023E6130
+    // TypeInfo: 0x023E6130
 #ifndef _VectorShapeEntity_
 #define _VectorShapeEntity_
     class VectorShapeEntity : public Entity
@@ -31614,9 +31617,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00123
+    // ClassId: 00123
     // RuntimeId: 03281
-    // TypeInfo:  0x023E6108
+    // TypeInfo: 0x023E6108
 #ifndef _TerrainStreamingTree_
 #define _TerrainStreamingTree_
     class TerrainStreamingTree
@@ -31635,9 +31638,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00124
+    // ClassId: 00124
     // RuntimeId: 03279
-    // TypeInfo:  0x023E568C
+    // TypeInfo: 0x023E568C
 #ifndef _ITerrain_
 #define _ITerrain_
     class ITerrain
@@ -31656,9 +31659,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00125
+    // ClassId: 00125
     // RuntimeId: 03280
-    // TypeInfo:  0x023E56B4
+    // TypeInfo: 0x023E56B4
 #ifndef _Terrain_
 #define _Terrain_
     class Terrain : public ITerrain
@@ -31677,9 +31680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01659
+    // ClassId: 01659
     // RuntimeId: 03278
-    // TypeInfo:  0x023E5568
+    // TypeInfo: 0x023E5568
 #ifndef _HealthComponentData_
 #define _HealthComponentData_
 #pragma pack(push, 16)
@@ -31706,9 +31709,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00683
+    // ClassId: 00683
     // RuntimeId: 03209
-    // TypeInfo:  0x023E4554
+    // TypeInfo: 0x023E4554
 #ifndef _ServerPhysicsEntity_
 #define _ServerPhysicsEntity_
     class ServerPhysicsEntity : public ServerGameEntity
@@ -31727,9 +31730,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00686
+    // ClassId: 00686
     // RuntimeId: 03267
-    // TypeInfo:  0x023E5498
+    // TypeInfo: 0x023E5498
 #ifndef _ServerTerrainEntity_
 #define _ServerTerrainEntity_
     class ServerTerrainEntity : public ServerPhysicsEntity
@@ -31748,9 +31751,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00687
+    // ClassId: 00687
     // RuntimeId: 03266
-    // TypeInfo:  0x023E5470
+    // TypeInfo: 0x023E5470
 #ifndef _ServerStaticModelGroupEntity_
 #define _ServerStaticModelGroupEntity_
     class ServerStaticModelGroupEntity : public ServerPhysicsEntity
@@ -31769,9 +31772,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00688
+    // ClassId: 00688
     // RuntimeId: 03265
-    // TypeInfo:  0x023E5448
+    // TypeInfo: 0x023E5448
 #ifndef _ServerStaticModelEntity_
 #define _ServerStaticModelEntity_
     class ServerStaticModelEntity : public ServerPhysicsEntity
@@ -31790,9 +31793,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00689
+    // ClassId: 00689
     // RuntimeId: 03264
-    // TypeInfo:  0x023E5420
+    // TypeInfo: 0x023E5420
 #ifndef _ServerLadderEntity_
 #define _ServerLadderEntity_
     class ServerLadderEntity : public ServerStaticModelEntity
@@ -31810,9 +31813,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00690
+    // ClassId: 00690
     // RuntimeId: 03263
-    // TypeInfo:  0x023E53F8
+    // TypeInfo: 0x023E53F8
 #ifndef _ServerInteractableStaticModelEntity_
 #define _ServerInteractableStaticModelEntity_
     class ServerInteractableStaticModelEntity : public ServerStaticModelEntity
@@ -31830,9 +31833,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00691
+    // ClassId: 00691
     // RuntimeId: 03224
-    // TypeInfo:  0x023E4934
+    // TypeInfo: 0x023E4934
 #ifndef _ServerControllableEntity_
 #define _ServerControllableEntity_
     class ServerControllableEntity : public ServerPhysicsEntity
@@ -31851,9 +31854,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00367
+    // ClassId: 00367
     // RuntimeId: 03171
-    // TypeInfo:  0x023E3AE8
+    // TypeInfo: 0x023E3AE8
 #ifndef _ServerPartComponent_
 #define _ServerPartComponent_
     class ServerPartComponent : public ServerComponent
@@ -31872,9 +31875,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00369
+    // ClassId: 00369
     // RuntimeId: 03260
-    // TypeInfo:  0x023E52A8
+    // TypeInfo: 0x023E52A8
 #ifndef _ServerWheelComponent_
 #define _ServerWheelComponent_
     class ServerWheelComponent : public ServerPartComponent
@@ -31893,9 +31896,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00335
+    // ClassId: 00335
     // RuntimeId: 03259
-    // TypeInfo:  0x023E5280
+    // TypeInfo: 0x023E5280
 #ifndef _ServerWeaponInputRouterComponent_
 #define _ServerWeaponInputRouterComponent_
     class ServerWeaponInputRouterComponent : public ServerComponent
@@ -31914,9 +31917,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00371
+    // ClassId: 00371
     // RuntimeId: 03258
-    // TypeInfo:  0x023E5258
+    // TypeInfo: 0x023E5258
 #ifndef _ServerWeaponComponent_
 #define _ServerWeaponComponent_
     class ServerWeaponComponent : public ServerPartComponent
@@ -31935,9 +31938,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00336
+    // ClassId: 00336
     // RuntimeId: 03257
-    // TypeInfo:  0x023E5230
+    // TypeInfo: 0x023E5230
 #ifndef _ServerVehicleParachuteComponent_
 #define _ServerVehicleParachuteComponent_
     class ServerVehicleParachuteComponent : public ServerComponent
@@ -31956,9 +31959,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00370
+    // ClassId: 00370
     // RuntimeId: 03256
-    // TypeInfo:  0x023E5208
+    // TypeInfo: 0x023E5208
 #ifndef _ServerTrackWheelComponent_
 #define _ServerTrackWheelComponent_
     class ServerTrackWheelComponent : public ServerWheelComponent
@@ -31977,9 +31980,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00340
+    // ClassId: 00340
     // RuntimeId: 03251
-    // TypeInfo:  0x023E5140
+    // TypeInfo: 0x023E5140
 #ifndef _ServerMeshComponent_
 #define _ServerMeshComponent_
     class ServerMeshComponent : public ServerComponent
@@ -31997,9 +32000,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00337
+    // ClassId: 00337
     // RuntimeId: 03254
-    // TypeInfo:  0x023E51B8
+    // TypeInfo: 0x023E51B8
 #ifndef _ServerStanceFilterComponent_
 #define _ServerStanceFilterComponent_
     class ServerStanceFilterComponent : public ServerComponent
@@ -32018,9 +32021,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00338
+    // ClassId: 00338
     // RuntimeId: 03253
-    // TypeInfo:  0x023E5190
+    // TypeInfo: 0x023E5190
 #ifndef _ServerSoldierGripComponent_
 #define _ServerSoldierGripComponent_
     class ServerSoldierGripComponent : public ServerComponent
@@ -32039,9 +32042,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00339
+    // ClassId: 00339
     // RuntimeId: 03252
-    // TypeInfo:  0x023E5168
+    // TypeInfo: 0x023E5168
 #ifndef _ServerRotorComponent_
 #define _ServerRotorComponent_
     class ServerRotorComponent : public ServerComponent
@@ -32060,9 +32063,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00341
+    // ClassId: 00341
     // RuntimeId: 03255
-    // TypeInfo:  0x023E51E0
+    // TypeInfo: 0x023E51E0
 #ifndef _ServerTrackComponent_
 #define _ServerTrackComponent_
     class ServerTrackComponent : public ServerMeshComponent
@@ -32081,9 +32084,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00372
+    // ClassId: 00372
     // RuntimeId: 03250
-    // TypeInfo:  0x023E5118
+    // TypeInfo: 0x023E5118
 #ifndef _ServerFlapComponent_
 #define _ServerFlapComponent_
     class ServerFlapComponent : public ServerPartComponent
@@ -32101,9 +32104,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00342
+    // ClassId: 00342
     // RuntimeId: 03249
-    // TypeInfo:  0x023E50F0
+    // TypeInfo: 0x023E50F0
 #ifndef _ServerEngineComponent_
 #define _ServerEngineComponent_
     class ServerEngineComponent : public ServerComponent
@@ -32122,9 +32125,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00373
+    // ClassId: 00373
     // RuntimeId: 03248
-    // TypeInfo:  0x023E50C8
+    // TypeInfo: 0x023E50C8
 #ifndef _ServerChildComponent_
 #define _ServerChildComponent_
     class ServerChildComponent : public ServerPartComponent
@@ -32143,9 +32146,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00374
+    // ClassId: 00374
     // RuntimeId: 03247
-    // TypeInfo:  0x023E50A0
+    // TypeInfo: 0x023E50A0
 #ifndef _ServerChildBarrelComponent_
 #define _ServerChildBarrelComponent_
     class ServerChildBarrelComponent : public ServerChildComponent
@@ -32163,9 +32166,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00375
+    // ClassId: 00375
     // RuntimeId: 03246
-    // TypeInfo:  0x023E5078
+    // TypeInfo: 0x023E5078
 #ifndef _ServerChassisComponent_
 #define _ServerChassisComponent_
     class ServerChassisComponent : public ServerPartComponent
@@ -32184,9 +32187,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00343
+    // ClassId: 00343
     // RuntimeId: 03245
-    // TypeInfo:  0x023E5050
+    // TypeInfo: 0x023E5050
 #ifndef _ServerCameraComponent_
 #define _ServerCameraComponent_
     class ServerCameraComponent : public ServerComponent
@@ -32205,9 +32208,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00344
+    // ClassId: 00344
     // RuntimeId: 03244
-    // TypeInfo:  0x023E5028
+    // TypeInfo: 0x023E5028
 #ifndef _ServerAnimationTurretRotationComponent_
 #define _ServerAnimationTurretRotationComponent_
     class ServerAnimationTurretRotationComponent : public ServerComponent
@@ -32226,9 +32229,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00693
+    // ClassId: 00693
     // RuntimeId: 03138
-    // TypeInfo:  0x023E3208
+    // TypeInfo: 0x023E3208
 #ifndef _ServerCharacterEntity_
 #define _ServerCharacterEntity_
     class ServerCharacterEntity : public ServerControllableEntity
@@ -32247,9 +32250,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00345
+    // ClassId: 00345
     // RuntimeId: 03242
-    // TypeInfo:  0x023E4DC4
+    // TypeInfo: 0x023E4DC4
 #ifndef _ServerWarpAnimationComponent_
 #define _ServerWarpAnimationComponent_
     class ServerWarpAnimationComponent : public ServerComponent
@@ -32268,9 +32271,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00346
+    // ClassId: 00346
     // RuntimeId: 03241
-    // TypeInfo:  0x023E4D9C
+    // TypeInfo: 0x023E4D9C
 #ifndef _ServerVehicleEntryListenerComponent_
 #define _ServerVehicleEntryListenerComponent_
     class ServerVehicleEntryListenerComponent : public ServerComponent
@@ -32289,9 +32292,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00347
+    // ClassId: 00347
     // RuntimeId: 03240
-    // TypeInfo:  0x023E4D74
+    // TypeInfo: 0x023E4D74
 #ifndef _ServerSoldierWeaponsComponent_
 #define _ServerSoldierWeaponsComponent_
     class ServerSoldierWeaponsComponent : public ServerComponent
@@ -32310,9 +32313,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00348
+    // ClassId: 00348
     // RuntimeId: 03239
-    // TypeInfo:  0x023E4D4C
+    // TypeInfo: 0x023E4D4C
 #ifndef _ServerSoldierCameraComponent_
 #define _ServerSoldierCameraComponent_
     class ServerSoldierCameraComponent : public ServerComponent
@@ -32331,9 +32334,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00349
+    // ClassId: 00349
     // RuntimeId: 03238
-    // TypeInfo:  0x023E4D24
+    // TypeInfo: 0x023E4D24
 #ifndef _ServerSoldierBodyComponent_
 #define _ServerSoldierBodyComponent_
     class ServerSoldierBodyComponent : public ServerComponent
@@ -32352,9 +32355,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00350
+    // ClassId: 00350
     // RuntimeId: 03237
-    // TypeInfo:  0x023E4CFC
+    // TypeInfo: 0x023E4CFC
 #ifndef _ServerRagdollComponent_
 #define _ServerRagdollComponent_
     class ServerRagdollComponent : public ServerComponent
@@ -32373,9 +32376,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00351
+    // ClassId: 00351
     // RuntimeId: 03236
-    // TypeInfo:  0x023E4CD4
+    // TypeInfo: 0x023E4CD4
 #ifndef _ServerMovementComponent_
 #define _ServerMovementComponent_
     class ServerMovementComponent : public ServerComponent
@@ -32394,9 +32397,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00352
+    // ClassId: 00352
     // RuntimeId: 03235
-    // TypeInfo:  0x023E4CAC
+    // TypeInfo: 0x023E4CAC
 #ifndef _ServerCharacterCustomizationComponent_
 #define _ServerCharacterCustomizationComponent_
     class ServerCharacterCustomizationComponent : public ServerComponent
@@ -32415,9 +32418,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00353
+    // ClassId: 00353
     // RuntimeId: 03234
-    // TypeInfo:  0x023E4C84
+    // TypeInfo: 0x023E4C84
 #ifndef _ServerBoneCollisionComponent_
 #define _ServerBoneCollisionComponent_
     class ServerBoneCollisionComponent : public ServerComponent
@@ -32436,9 +32439,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00354
+    // ClassId: 00354
     // RuntimeId: 03233
-    // TypeInfo:  0x023E4C5C
+    // TypeInfo: 0x023E4C5C
 #ifndef _ServerAntAnimatableComponent_
 #define _ServerAntAnimatableComponent_
     class ServerAntAnimatableComponent : public ServerComponent
@@ -32457,9 +32460,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00495
+    // ClassId: 00495
     // RuntimeId: 03232
-    // TypeInfo:  0x023E4C34
+    // TypeInfo: 0x023E4C34
 #ifndef _ServerWarpAnimationEntity_
 #define _ServerWarpAnimationEntity_
     class ServerWarpAnimationEntity : public Entity
@@ -32478,9 +32481,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00433
+    // ClassId: 00433
     // RuntimeId: 03231
-    // TypeInfo:  0x023E4C0C
+    // TypeInfo: 0x023E4C0C
 #ifndef _ServerPhysicsDrivenAnimationEntity_
 #define _ServerPhysicsDrivenAnimationEntity_
     class ServerPhysicsDrivenAnimationEntity : public PhysicsDrivenAnimationEntity
@@ -32499,9 +32502,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00496
+    // ClassId: 00496
     // RuntimeId: 03230
-    // TypeInfo:  0x023E4BE4
+    // TypeInfo: 0x023E4BE4
 #ifndef _ServerCannedScenarioEntity_
 #define _ServerCannedScenarioEntity_
     class ServerCannedScenarioEntity : public Entity
@@ -32520,9 +32523,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00681
+    // ClassId: 00681
     // RuntimeId: 03229
-    // TypeInfo:  0x023E4BBC
+    // TypeInfo: 0x023E4BBC
 #ifndef _ServerPredestructionEntity_
 #define _ServerPredestructionEntity_
     class ServerPredestructionEntity : public ServerGameEntity
@@ -32540,9 +32543,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00355
+    // ClassId: 00355
     // RuntimeId: 03228
-    // TypeInfo:  0x023E4B94
+    // TypeInfo: 0x023E4B94
 #ifndef _ServerLadderComponent_
 #define _ServerLadderComponent_
     class ServerLadderComponent : public ServerComponent
@@ -32560,9 +32563,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00682
+    // ClassId: 00682
     // RuntimeId: 03227
-    // TypeInfo:  0x023E49AC
+    // TypeInfo: 0x023E49AC
 #ifndef _ServerGameSplineEntity_
 #define _ServerGameSplineEntity_
     class ServerGameSplineEntity : public ServerGameEntity
@@ -32581,9 +32584,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00356
+    // ClassId: 00356
     // RuntimeId: 03226
-    // TypeInfo:  0x023E4984
+    // TypeInfo: 0x023E4984
 #ifndef _ServerFlagComponent_
 #define _ServerFlagComponent_
     class ServerFlagComponent : public ServerComponent
@@ -32602,9 +32605,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00497
+    // ClassId: 00497
     // RuntimeId: 03225
-    // TypeInfo:  0x023E495C
+    // TypeInfo: 0x023E495C
 #ifndef _ServerCoverPrepareFireEntity_
 #define _ServerCoverPrepareFireEntity_
     class ServerCoverPrepareFireEntity : public Entity
@@ -32623,9 +32626,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00692
+    // ClassId: 00692
     // RuntimeId: 03262
-    // TypeInfo:  0x023E52F8
+    // TypeInfo: 0x023E52F8
 #ifndef _ServerVehicleEntity_
 #define _ServerVehicleEntity_
     class ServerVehicleEntity : public ServerControllableEntity
@@ -32644,9 +32647,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00357
+    // ClassId: 00357
     // RuntimeId: 03223
-    // TypeInfo:  0x023E490C
+    // TypeInfo: 0x023E490C
 #ifndef _ServerWarningSystemComponent_
 #define _ServerWarningSystemComponent_
     class ServerWarningSystemComponent : public ServerComponent
@@ -32664,9 +32667,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00358
+    // ClassId: 00358
     // RuntimeId: 03222
-    // TypeInfo:  0x023E48E4
+    // TypeInfo: 0x023E48E4
 #ifndef _ServerUnlockComponent_
 #define _ServerUnlockComponent_
     class ServerUnlockComponent : public ServerComponent
@@ -32685,9 +32688,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00360
+    // ClassId: 00360
     // RuntimeId: 03217
-    // TypeInfo:  0x023E481C
+    // TypeInfo: 0x023E481C
 #ifndef _ServerEntryComponent_
 #define _ServerEntryComponent_
     class ServerEntryComponent : public ServerComponent
@@ -32706,9 +32709,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00362
+    // ClassId: 00362
     // RuntimeId: 03220
-    // TypeInfo:  0x023E4894
+    // TypeInfo: 0x023E4894
 #ifndef _ServerRemoteEntryComponent_
 #define _ServerRemoteEntryComponent_
     class ServerRemoteEntryComponent : public ServerEntryComponent
@@ -32727,9 +32730,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00359
+    // ClassId: 00359
     // RuntimeId: 03219
-    // TypeInfo:  0x023E486C
+    // TypeInfo: 0x023E486C
 #ifndef _ServerRadioComponent_
 #define _ServerRadioComponent_
     class ServerRadioComponent : public ServerComponent
@@ -32748,9 +32751,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00363
+    // ClassId: 00363
     // RuntimeId: 03218
-    // TypeInfo:  0x023E4844
+    // TypeInfo: 0x023E4844
 #ifndef _ServerPlayerEntryComponent_
 #define _ServerPlayerEntryComponent_
     class ServerPlayerEntryComponent : public ServerEntryComponent
@@ -32768,9 +32771,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00361
+    // ClassId: 00361
     // RuntimeId: 03221
-    // TypeInfo:  0x023E48BC
+    // TypeInfo: 0x023E48BC
 #ifndef _ServerSoldierEntryComponent_
 #define _ServerSoldierEntryComponent_
     class ServerSoldierEntryComponent : public ServerEntryComponent
@@ -32788,9 +32791,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00364
+    // ClassId: 00364
     // RuntimeId: 03216
-    // TypeInfo:  0x023E47F4
+    // TypeInfo: 0x023E47F4
 #ifndef _ServerDriverStaticObjectComponent_
 #define _ServerDriverStaticObjectComponent_
     class ServerDriverStaticObjectComponent : public ServerComponent
@@ -32809,9 +32812,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00365
+    // ClassId: 00365
     // RuntimeId: 03215
-    // TypeInfo:  0x023E47CC
+    // TypeInfo: 0x023E47CC
 #ifndef _ServerDriverComponent_
 #define _ServerDriverComponent_
     class ServerDriverComponent : public ServerComponent
@@ -32830,9 +32833,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00366
+    // ClassId: 00366
     // RuntimeId: 03214
-    // TypeInfo:  0x023E47A4
+    // TypeInfo: 0x023E47A4
 #ifndef _ServerAILocoComponent_
 #define _ServerAILocoComponent_
     class ServerAILocoComponent : public ServerComponent
@@ -32851,9 +32854,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00498
+    // ClassId: 00498
     // RuntimeId: 03213
-    // TypeInfo:  0x023E45F4
+    // TypeInfo: 0x023E45F4
 #ifndef _ServerSyncedTransformEntity_
 #define _ServerSyncedTransformEntity_
     class ServerSyncedTransformEntity : public Entity
@@ -32872,9 +32875,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00499
+    // ClassId: 00499
     // RuntimeId: 03212
-    // TypeInfo:  0x023E45CC
+    // TypeInfo: 0x023E45CC
 #ifndef _ServerSyncedBoolEntity_
 #define _ServerSyncedBoolEntity_
     class ServerSyncedBoolEntity : public Entity
@@ -32893,9 +32896,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00605
+    // ClassId: 00605
     // RuntimeId: 03211
-    // TypeInfo:  0x023E45A4
+    // TypeInfo: 0x023E45A4
 #ifndef _ServerSubLevelEntity_
 #define _ServerSubLevelEntity_
     class ServerSubLevelEntity : public SubLevelEntity
@@ -32914,9 +32917,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00500
+    // ClassId: 00500
     // RuntimeId: 03210
-    // TypeInfo:  0x023E457C
+    // TypeInfo: 0x023E457C
 #ifndef _ServerStreamGridEntity_
 #define _ServerStreamGridEntity_
     class ServerStreamGridEntity : public Entity
@@ -32935,9 +32938,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00684
+    // ClassId: 00684
     // RuntimeId: 03409
-    // TypeInfo:  0x023E6D38
+    // TypeInfo: 0x023E6D38
 #ifndef _ServerBreakableModelEntity_
 #define _ServerBreakableModelEntity_
     class ServerBreakableModelEntity : public ServerPhysicsEntity
@@ -32956,9 +32959,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00685
+    // ClassId: 00685
     // RuntimeId: 03268
-    // TypeInfo:  0x023E54C0
+    // TypeInfo: 0x023E54C0
 #ifndef _ServerWaterEntity_
 #define _ServerWaterEntity_
     class ServerWaterEntity : public ServerPhysicsEntity
@@ -32977,9 +32980,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00501
+    // ClassId: 00501
     // RuntimeId: 03207
-    // TypeInfo:  0x023E4504
+    // TypeInfo: 0x023E4504
 #ifndef _ServerEventSyncEntity_
 #define _ServerEventSyncEntity_
     class ServerEventSyncEntity : public Entity
@@ -32998,9 +33001,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00502
+    // ClassId: 00502
     // RuntimeId: 03206
-    // TypeInfo:  0x023E44DC
+    // TypeInfo: 0x023E44DC
 #ifndef _ServerPlaceHolderEntity_
 #define _ServerPlaceHolderEntity_
     class ServerPlaceHolderEntity : public Entity
@@ -33019,9 +33022,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00329
+    // ClassId: 00329
     // RuntimeId: 05980
-    // TypeInfo:  0x02401C90
+    // TypeInfo: 0x02401C90
 #ifndef _ServerSensingComponent_
 #define _ServerSensingComponent_
     class ServerSensingComponent : public ServerComponent
@@ -33040,9 +33043,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00503
+    // ClassId: 00503
     // RuntimeId: 03204
-    // TypeInfo:  0x023E448C
+    // TypeInfo: 0x023E448C
 #ifndef _ServerBlueprintEntity_
 #define _ServerBlueprintEntity_
     class ServerBlueprintEntity : public Entity
@@ -33061,9 +33064,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00504
+    // ClassId: 00504
     // RuntimeId: 03203
-    // TypeInfo:  0x023E4464
+    // TypeInfo: 0x023E4464
 #ifndef _ServerBlueprintBundleStateLogicEntity_
 #define _ServerBlueprintBundleStateLogicEntity_
     class ServerBlueprintBundleStateLogicEntity : public Entity
@@ -33082,9 +33085,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00505
+    // ClassId: 00505
     // RuntimeId: 03202
-    // TypeInfo:  0x023E443C
+    // TypeInfo: 0x023E443C
 #ifndef _ServerBlueprintBundleSelectorEntity_
 #define _ServerBlueprintBundleSelectorEntity_
     class ServerBlueprintBundleSelectorEntity : public Entity
@@ -33103,9 +33106,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00506
+    // ClassId: 00506
     // RuntimeId: 03201
-    // TypeInfo:  0x023E4414
+    // TypeInfo: 0x023E4414
 #ifndef _ServerBlueprintBundleLoaderEntity_
 #define _ServerBlueprintBundleLoaderEntity_
     class ServerBlueprintBundleLoaderEntity : public Entity
@@ -33124,9 +33127,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00759
+    // ClassId: 00759
     // RuntimeId: 03149
-    // TypeInfo:  0x023E36D0
+    // TypeInfo: 0x023E36D0
 #ifndef _ServerSpawnEntity_
 #define _ServerSpawnEntity_
     class ServerSpawnEntity : public SpatialEntity
@@ -33145,9 +33148,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00425
+    // ClassId: 00425
     // RuntimeId: 03199
-    // TypeInfo:  0x023E4258
+    // TypeInfo: 0x023E4258
 #ifndef _ServerWeaponStateEntity_
 #define _ServerWeaponStateEntity_
     class ServerWeaponStateEntity : public WeaponStateEntity
@@ -33166,9 +33169,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00507
+    // ClassId: 00507
     // RuntimeId: 03198
-    // TypeInfo:  0x023E4230
+    // TypeInfo: 0x023E4230
 #ifndef _ServerTestCaseEntity_
 #define _ServerTestCaseEntity_
     class ServerTestCaseEntity : public Entity
@@ -33187,9 +33190,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00708
+    // ClassId: 00708
     // RuntimeId: 03197
-    // TypeInfo:  0x023E4208
+    // TypeInfo: 0x023E4208
 #ifndef _ServerTeamFilterEntity_
 #define _ServerTeamFilterEntity_
     class ServerTeamFilterEntity : public ServerGameEntity
@@ -33207,9 +33210,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00709
+    // ClassId: 00709
     // RuntimeId: 03196
-    // TypeInfo:  0x023E41E0
+    // TypeInfo: 0x023E41E0
 #ifndef _ServerTeamEntity_
 #define _ServerTeamEntity_
     class ServerTeamEntity : public ServerGameEntity
@@ -33227,9 +33230,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00710
+    // ClassId: 00710
     // RuntimeId: 03195
-    // TypeInfo:  0x023E41B8
+    // TypeInfo: 0x023E41B8
 #ifndef _ServerTacticalObjectiveEntity_
 #define _ServerTacticalObjectiveEntity_
     class ServerTacticalObjectiveEntity : public ServerGameEntity
@@ -33248,9 +33251,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00558
+    // ClassId: 00558
     // RuntimeId: 03194
-    // TypeInfo:  0x023E4190
+    // TypeInfo: 0x023E4190
 #ifndef _ServerSyncedSequenceEntity_
 #define _ServerSyncedSequenceEntity_
     class ServerSyncedSequenceEntity : public SequenceEntity
@@ -33269,9 +33272,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00711
+    // ClassId: 00711
     // RuntimeId: 03193
-    // TypeInfo:  0x023E4168
+    // TypeInfo: 0x023E4168
 #ifndef _ServerStateEventGateEntity_
 #define _ServerStateEventGateEntity_
     class ServerStateEventGateEntity : public ServerGameEntity
@@ -33289,9 +33292,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00508
+    // ClassId: 00508
     // RuntimeId: 03192
-    // TypeInfo:  0x023E4140
+    // TypeInfo: 0x023E4140
 #ifndef _ServerStartEntity_
 #define _ServerStartEntity_
     class ServerStartEntity : public Entity
@@ -33310,9 +33313,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00712
+    // ClassId: 00712
     // RuntimeId: 03191
-    // TypeInfo:  0x023E4118
+    // TypeInfo: 0x023E4118
 #ifndef _ServerSpeedEventGateEntity_
 #define _ServerSpeedEventGateEntity_
     class ServerSpeedEventGateEntity : public ServerGameEntity
@@ -33331,9 +33334,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00509
+    // ClassId: 00509
     // RuntimeId: 03190
-    // TypeInfo:  0x023E40F0
+    // TypeInfo: 0x023E40F0
 #ifndef _ServerSaveGameLoadedEntity_
 #define _ServerSaveGameLoadedEntity_
     class ServerSaveGameLoadedEntity : public Entity
@@ -33352,9 +33355,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00510
+    // ClassId: 00510
     // RuntimeId: 03189
-    // TypeInfo:  0x023E40C8
+    // TypeInfo: 0x023E40C8
 #ifndef _ServerSaveEntity_
 #define _ServerSaveEntity_
     class ServerSaveEntity : public Entity
@@ -33373,9 +33376,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00511
+    // ClassId: 00511
     // RuntimeId: 03188
-    // TypeInfo:  0x023E40A0
+    // TypeInfo: 0x023E40A0
 #ifndef _ServerPlayerFilterEntity_
 #define _ServerPlayerFilterEntity_
     class ServerPlayerFilterEntity : public Entity
@@ -33394,9 +33397,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00713
+    // ClassId: 00713
     // RuntimeId: 03187
-    // TypeInfo:  0x023E4078
+    // TypeInfo: 0x023E4078
 #ifndef _ServerObjectiveEntity_
 #define _ServerObjectiveEntity_
     class ServerObjectiveEntity : public ServerGameEntity
@@ -33415,9 +33418,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00714
+    // ClassId: 00714
     // RuntimeId: 03186
-    // TypeInfo:  0x023E4050
+    // TypeInfo: 0x023E4050
 #ifndef _ServerMapMarkerEntity_
 #define _ServerMapMarkerEntity_
     class ServerMapMarkerEntity : public ServerGameEntity
@@ -33436,9 +33439,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00715
+    // ClassId: 00715
     // RuntimeId: 03185
-    // TypeInfo:  0x023E4028
+    // TypeInfo: 0x023E4028
 #ifndef _ServerLevelControlEntity_
 #define _ServerLevelControlEntity_
     class ServerLevelControlEntity : public ServerGameEntity
@@ -33456,9 +33459,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00716
+    // ClassId: 00716
     // RuntimeId: 03184
-    // TypeInfo:  0x023E4000
+    // TypeInfo: 0x023E4000
 #ifndef _ServerInputRestrictionEntity_
 #define _ServerInputRestrictionEntity_
     class ServerInputRestrictionEntity : public ServerGameEntity
@@ -33477,9 +33480,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00717
+    // ClassId: 00717
     // RuntimeId: 03183
-    // TypeInfo:  0x023E3FD8
+    // TypeInfo: 0x023E3FD8
 #ifndef _ServerHumanPlayerEntity_
 #define _ServerHumanPlayerEntity_
     class ServerHumanPlayerEntity : public ServerGameEntity
@@ -33498,9 +33501,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00718
+    // ClassId: 00718
     // RuntimeId: 03182
-    // TypeInfo:  0x023E3FB0
+    // TypeInfo: 0x023E3FB0
 #ifndef _ServerHudEntity_
 #define _ServerHudEntity_
     class ServerHudEntity : public ServerGameEntity
@@ -33518,9 +33521,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00719
+    // ClassId: 00719
     // RuntimeId: 03181
-    // TypeInfo:  0x023E3F88
+    // TypeInfo: 0x023E3F88
 #ifndef _ServerEventMemoryEntity_
 #define _ServerEventMemoryEntity_
     class ServerEventMemoryEntity : public ServerGameEntity
@@ -33539,9 +33542,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00720
+    // ClassId: 00720
     // RuntimeId: 03180
-    // TypeInfo:  0x023E3F60
+    // TypeInfo: 0x023E3F60
 #ifndef _ServerEventIfSwitchEntity_
 #define _ServerEventIfSwitchEntity_
     class ServerEventIfSwitchEntity : public ServerGameEntity
@@ -33560,9 +33563,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00512
+    // ClassId: 00512
     // RuntimeId: 03179
-    // TypeInfo:  0x023E3F38
+    // TypeInfo: 0x023E3F38
 #ifndef _ServerCustomizeSoldierEntity_
 #define _ServerCustomizeSoldierEntity_
     class ServerCustomizeSoldierEntity : public Entity
@@ -33581,9 +33584,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00513
+    // ClassId: 00513
     // RuntimeId: 03178
-    // TypeInfo:  0x023E3F10
+    // TypeInfo: 0x023E3F10
 #ifndef _ServerCustomizeCharacterEntity_
 #define _ServerCustomizeCharacterEntity_
     class ServerCustomizeCharacterEntity : public Entity
@@ -33602,9 +33605,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00789
+    // ClassId: 00789
     // RuntimeId: 03177
-    // TypeInfo:  0x023E3EE8
+    // TypeInfo: 0x023E3EE8
 #ifndef _ServerPlayerEvent_
 #define _ServerPlayerEvent_
     class ServerPlayerEvent : public PlayerEvent
@@ -33623,9 +33626,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00790
+    // ClassId: 00790
     // RuntimeId: 03176
-    // TypeInfo:  0x023E3EC0
+    // TypeInfo: 0x023E3EC0
 #ifndef _ServerDoublePlayerEvent_
 #define _ServerDoublePlayerEvent_
     class ServerDoublePlayerEvent : public ServerPlayerEvent
@@ -33644,9 +33647,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00791
+    // ClassId: 00791
     // RuntimeId: 03175
-    // TypeInfo:  0x023E3E98
+    // TypeInfo: 0x023E3E98
 #ifndef _ServerDamageGiverEvent_
 #define _ServerDamageGiverEvent_
     class ServerDamageGiverEvent : public ServerPlayerEvent
@@ -33665,9 +33668,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00083
+    // ClassId: 00083
     // RuntimeId: 03174
-    // TypeInfo:  0x023E3E70
+    // TypeInfo: 0x023E3E70
 #ifndef _ServerWeapon_
 #define _ServerWeapon_
     class ServerWeapon : public Weapon
@@ -33686,9 +33689,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00721
+    // ClassId: 00721
     // RuntimeId: 03173
-    // TypeInfo:  0x023E3E48
+    // TypeInfo: 0x023E3E48
 #ifndef _ServerSoldierWeapon_
 #define _ServerSoldierWeapon_
     class ServerSoldierWeapon : public ServerGameEntity
@@ -33707,9 +33710,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00695
+    // ClassId: 00695
     // RuntimeId: 03172
-    // TypeInfo:  0x023E3B10
+    // TypeInfo: 0x023E3B10
 #ifndef _ServerBangerEntity_
 #define _ServerBangerEntity_
     class ServerBangerEntity : public ServerPhysicsEntity
@@ -33728,9 +33731,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00368
+    // ClassId: 00368
     // RuntimeId: 03261
-    // TypeInfo:  0x023E52D0
+    // TypeInfo: 0x023E52D0
 #ifndef _ServerWingComponent_
 #define _ServerWingComponent_
     class ServerWingComponent : public ServerPartComponent
@@ -33749,9 +33752,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00377
+    // ClassId: 00377
     // RuntimeId: 03170
-    // TypeInfo:  0x023E3AC0
+    // TypeInfo: 0x023E3AC0
 #ifndef _ServerHealthComponent_
 #define _ServerHealthComponent_
     class ServerHealthComponent : public ServerComponent
@@ -33770,9 +33773,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00106
+    // ClassId: 00106
     // RuntimeId: 03169
-    // TypeInfo:  0x023E3A98
+    // TypeInfo: 0x023E3A98
 #ifndef _ServerSubView_
 #define _ServerSubView_
     class ServerSubView : public SubView
@@ -33791,9 +33794,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00107
+    // ClassId: 00107
     // RuntimeId: 03168
-    // TypeInfo:  0x023E3A70
+    // TypeInfo: 0x023E3A70
 #ifndef _ServerSpectatorSubView_
 #define _ServerSpectatorSubView_
     class ServerSpectatorSubView : public ServerSubView
@@ -33812,9 +33815,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00113
+    // ClassId: 00113
     // RuntimeId: 03167
-    // TypeInfo:  0x023E3A48
+    // TypeInfo: 0x023E3A48
 #ifndef _ServerGameView_
 #define _ServerGameView_
     class ServerGameView : public GameView
@@ -33833,9 +33836,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00722
+    // ClassId: 00722
     // RuntimeId: 03164
-    // TypeInfo:  0x023E3928
+    // TypeInfo: 0x023E3928
 #ifndef _ServerTriggerEntity_
 #define _ServerTriggerEntity_
     class ServerTriggerEntity : public ServerGameEntity
@@ -33854,9 +33857,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00724
+    // ClassId: 00724
     // RuntimeId: 03165
-    // TypeInfo:  0x023E3950
+    // TypeInfo: 0x023E3950
 #ifndef _ServerUnderFireTriggerEntity_
 #define _ServerUnderFireTriggerEntity_
     class ServerUnderFireTriggerEntity : public ServerTriggerEntity
@@ -33875,9 +33878,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00723
+    // ClassId: 00723
     // RuntimeId: 03166
-    // TypeInfo:  0x023E3978
+    // TypeInfo: 0x023E3978
 #ifndef _ServerVehicleStateTriggerEntity_
 #define _ServerVehicleStateTriggerEntity_
     class ServerVehicleStateTriggerEntity : public ServerTriggerEntity
@@ -33896,9 +33899,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00732
+    // ClassId: 00732
     // RuntimeId: 03163
-    // TypeInfo:  0x023E3900
+    // TypeInfo: 0x023E3900
 #ifndef _ServerPlayerTakeOverTriggerEntity_
 #define _ServerPlayerTakeOverTriggerEntity_
     class ServerPlayerTakeOverTriggerEntity : public ServerGameEntity
@@ -33917,9 +33920,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00514
+    // ClassId: 00514
     // RuntimeId: 03162
-    // TypeInfo:  0x023E38D8
+    // TypeInfo: 0x023E38D8
 #ifndef _ServerPlayerInputTriggerEntity_
 #define _ServerPlayerInputTriggerEntity_
     class ServerPlayerInputTriggerEntity : public Entity
@@ -33938,9 +33941,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00725
+    // ClassId: 00725
     // RuntimeId: 03161
-    // TypeInfo:  0x023E38B0
+    // TypeInfo: 0x023E38B0
 #ifndef _ServerMultipleTriggerEntity_
 #define _ServerMultipleTriggerEntity_
     class ServerMultipleTriggerEntity : public ServerTriggerEntity
@@ -33959,9 +33962,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00726
+    // ClassId: 00726
     // RuntimeId: 03160
-    // TypeInfo:  0x023E3888
+    // TypeInfo: 0x023E3888
 #ifndef _ServerLookAtTriggerEntity_
 #define _ServerLookAtTriggerEntity_
     class ServerLookAtTriggerEntity : public ServerTriggerEntity
@@ -33980,9 +33983,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00733
+    // ClassId: 00733
     // RuntimeId: 03159
-    // TypeInfo:  0x023E3860
+    // TypeInfo: 0x023E3860
 #ifndef _ServerKillAllEntity_
 #define _ServerKillAllEntity_
     class ServerKillAllEntity : public ServerGameEntity
@@ -34000,9 +34003,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00727
+    // ClassId: 00727
     // RuntimeId: 03158
-    // TypeInfo:  0x023E3838
+    // TypeInfo: 0x023E3838
 #ifndef _ServerDelayTriggerEntity_
 #define _ServerDelayTriggerEntity_
     class ServerDelayTriggerEntity : public ServerTriggerEntity
@@ -34020,9 +34023,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00734
+    // ClassId: 00734
     // RuntimeId: 03157
-    // TypeInfo:  0x023E3810
+    // TypeInfo: 0x023E3810
 #ifndef _ServerDeathAreaTriggerEntity_
 #define _ServerDeathAreaTriggerEntity_
     class ServerDeathAreaTriggerEntity : public ServerGameEntity
@@ -34041,9 +34044,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00735
+    // ClassId: 00735
     // RuntimeId: 03156
-    // TypeInfo:  0x023E37E8
+    // TypeInfo: 0x023E37E8
 #ifndef _ServerDamageAreaTriggerEntity_
 #define _ServerDamageAreaTriggerEntity_
     class ServerDamageAreaTriggerEntity : public ServerGameEntity
@@ -34062,9 +34065,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00736
+    // ClassId: 00736
     // RuntimeId: 03155
-    // TypeInfo:  0x023E37C0
+    // TypeInfo: 0x023E37C0
 #ifndef _ServerCombatAreaTriggerEntity_
 #define _ServerCombatAreaTriggerEntity_
     class ServerCombatAreaTriggerEntity : public ServerGameEntity
@@ -34083,9 +34086,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00728
+    // ClassId: 00728
     // RuntimeId: 03154
-    // TypeInfo:  0x023E3798
+    // TypeInfo: 0x023E3798
 #ifndef _ServerCombatActionTriggerEntity_
 #define _ServerCombatActionTriggerEntity_
     class ServerCombatActionTriggerEntity : public ServerTriggerEntity
@@ -34104,9 +34107,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00737
+    // ClassId: 00737
     // RuntimeId: 03153
-    // TypeInfo:  0x023E3770
+    // TypeInfo: 0x023E3770
 #ifndef _ServerClearAreaTriggerEntity_
 #define _ServerClearAreaTriggerEntity_
     class ServerClearAreaTriggerEntity : public ServerGameEntity
@@ -34124,9 +34127,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00729
+    // ClassId: 00729
     // RuntimeId: 03152
-    // TypeInfo:  0x023E3748
+    // TypeInfo: 0x023E3748
 #ifndef _ServerCharacterStateTriggerEntity_
 #define _ServerCharacterStateTriggerEntity_
     class ServerCharacterStateTriggerEntity : public ServerTriggerEntity
@@ -34145,9 +34148,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00730
+    // ClassId: 00730
     // RuntimeId: 03151
-    // TypeInfo:  0x023E3720
+    // TypeInfo: 0x023E3720
 #ifndef _ServerAreaTriggerEntity_
 #define _ServerAreaTriggerEntity_
     class ServerAreaTriggerEntity : public ServerTriggerEntity
@@ -34166,9 +34169,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00761
+    // ClassId: 00761
     // RuntimeId: 03150
-    // TypeInfo:  0x023E36F8
+    // TypeInfo: 0x023E36F8
 #ifndef _ServerVehicleSpawnEntity_
 #define _ServerVehicleSpawnEntity_
     class ServerVehicleSpawnEntity : public ServerSpawnEntity
@@ -34187,9 +34190,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00760
+    // ClassId: 00760
     // RuntimeId: 03200
-    // TypeInfo:  0x023E4280
+    // TypeInfo: 0x023E4280
 #ifndef _ServerCharacterSpawnEntity_
 #define _ServerCharacterSpawnEntity_
     class ServerCharacterSpawnEntity : public ServerSpawnEntity
@@ -34208,9 +34211,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00738
+    // ClassId: 00738
     // RuntimeId: 03148
-    // TypeInfo:  0x023E34B0
+    // TypeInfo: 0x023E34B0
 #ifndef _ServerExplosionEntity_
 #define _ServerExplosionEntity_
     class ServerExplosionEntity : public ServerGameEntity
@@ -34229,9 +34232,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00515
+    // ClassId: 00515
     // RuntimeId: 03147
-    // TypeInfo:  0x023E3488
+    // TypeInfo: 0x023E3488
 #ifndef _ServerDynamicAvoidanceEntity_
 #define _ServerDynamicAvoidanceEntity_
     class ServerDynamicAvoidanceEntity : public Entity
@@ -34250,9 +34253,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00740
+    // ClassId: 00740
     // RuntimeId: 03146
-    // TypeInfo:  0x023E3460
+    // TypeInfo: 0x023E3460
 #ifndef _ServerArtilleryStrikeEntity_
 #define _ServerArtilleryStrikeEntity_
     class ServerArtilleryStrikeEntity : public ServerGameEntity
@@ -34271,9 +34274,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00696
+    // ClassId: 00696
     // RuntimeId: 03144
-    // TypeInfo:  0x023E3410
+    // TypeInfo: 0x023E3410
 #ifndef _ServerProjectileEntity_
 #define _ServerProjectileEntity_
     class ServerProjectileEntity : public ServerPhysicsEntity
@@ -34292,9 +34295,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00697
+    // ClassId: 00697
     // RuntimeId: 03145
-    // TypeInfo:  0x023E3438
+    // TypeInfo: 0x023E3438
 #ifndef _ServerVehicleProjectileEntity_
 #define _ServerVehicleProjectileEntity_
     class ServerVehicleProjectileEntity : public ServerProjectileEntity
@@ -34313,9 +34316,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00698
+    // ClassId: 00698
     // RuntimeId: 03141
-    // TypeInfo:  0x023E3398
+    // TypeInfo: 0x023E3398
 #ifndef _ServerGhostProjectileEntity_
 #define _ServerGhostProjectileEntity_
     class ServerGhostProjectileEntity : public ServerProjectileEntity
@@ -34334,9 +34337,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00700
+    // ClassId: 00700
     // RuntimeId: 03142
-    // TypeInfo:  0x023E33C0
+    // TypeInfo: 0x023E33C0
 #ifndef _ServerGrenadeEntity_
 #define _ServerGrenadeEntity_
     class ServerGrenadeEntity : public ServerGhostProjectileEntity
@@ -34355,9 +34358,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00699
+    // ClassId: 00699
     // RuntimeId: 03143
-    // TypeInfo:  0x023E33E8
+    // TypeInfo: 0x023E33E8
 #ifndef _ServerMissileEntity_
 #define _ServerMissileEntity_
     class ServerMissileEntity : public ServerGhostProjectileEntity
@@ -34376,9 +34379,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00702
+    // ClassId: 00702
     // RuntimeId: 03140
-    // TypeInfo:  0x023E3370
+    // TypeInfo: 0x023E3370
 #ifndef _ServerExplosionPackEntity_
 #define _ServerExplosionPackEntity_
     class ServerExplosionPackEntity : public ServerGhostProjectileEntity
@@ -34397,9 +34400,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00706
+    // ClassId: 00706
     // RuntimeId: 03139
-    // TypeInfo:  0x023E3348
+    // TypeInfo: 0x023E3348
 #ifndef _ServerBulletEntity_
 #define _ServerBulletEntity_
     class ServerBulletEntity : public ServerProjectileEntity
@@ -34418,9 +34421,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00694
+    // ClassId: 00694
     // RuntimeId: 03243
-    // TypeInfo:  0x023E4DEC
+    // TypeInfo: 0x023E4DEC
 #ifndef _ServerSoldierEntity_
 #define _ServerSoldierEntity_
     class ServerSoldierEntity : public ServerCharacterEntity
@@ -34439,9 +34442,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00378
+    // ClassId: 00378
     // RuntimeId: 03137
-    // TypeInfo:  0x023E31E0
+    // TypeInfo: 0x023E31E0
 #ifndef _ServerCharacterPhysicsComponent_
 #define _ServerCharacterPhysicsComponent_
     class ServerCharacterPhysicsComponent : public ServerComponent
@@ -34460,9 +34463,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00379
+    // ClassId: 00379
     // RuntimeId: 03136
-    // TypeInfo:  0x023E31B8
+    // TypeInfo: 0x023E31B8
 #ifndef _ServerCharacterHealthComponent_
 #define _ServerCharacterHealthComponent_
     class ServerCharacterHealthComponent : public ServerComponent
@@ -34481,9 +34484,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00380
+    // ClassId: 00380
     // RuntimeId: 03135
-    // TypeInfo:  0x023E3190
+    // TypeInfo: 0x023E3190
 #ifndef _ServerAntDrivenComponent_
 #define _ServerAntDrivenComponent_
     class ServerAntDrivenComponent : public ServerComponent
@@ -34502,9 +34505,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00438
+    // ClassId: 00438
     // RuntimeId: 03134
-    // TypeInfo:  0x023E3168
+    // TypeInfo: 0x023E3168
 #ifndef _ServerSyncAnimationsEntity_
 #define _ServerSyncAnimationsEntity_
     class ServerSyncAnimationsEntity : public SyncAnimationsEntity
@@ -34523,9 +34526,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00516
+    // ClassId: 00516
     // RuntimeId: 03133
-    // TypeInfo:  0x023E3140
+    // TypeInfo: 0x023E3140
 #ifndef _ServerMultipleActorScenarioEntity_
 #define _ServerMultipleActorScenarioEntity_
     class ServerMultipleActorScenarioEntity : public Entity
@@ -34544,9 +34547,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00441
+    // ClassId: 00441
     // RuntimeId: 03132
-    // TypeInfo:  0x023E3118
+    // TypeInfo: 0x023E3118
 #ifndef _ServerModelAnimationEntity_
 #define _ServerModelAnimationEntity_
     class ServerModelAnimationEntity : public ModelAnimationEntity
@@ -34564,9 +34567,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00381
+    // ClassId: 00381
     // RuntimeId: 03131
-    // TypeInfo:  0x023E30F0
+    // TypeInfo: 0x023E30F0
 #ifndef _ServerHitReactionComponent_
 #define _ServerHitReactionComponent_
     class ServerHitReactionComponent : public ServerComponent
@@ -34585,9 +34588,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00517
+    // ClassId: 00517
     // RuntimeId: 03130
-    // TypeInfo:  0x023E30C8
+    // TypeInfo: 0x023E30C8
 #ifndef _ServerCharacterInVehicleScenarioEntity_
 #define _ServerCharacterInVehicleScenarioEntity_
     class ServerCharacterInVehicleScenarioEntity : public Entity
@@ -34606,9 +34609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00444
+    // ClassId: 00444
     // RuntimeId: 03129
-    // TypeInfo:  0x023E30A0
+    // TypeInfo: 0x023E30A0
 #ifndef _ServerCharacterAnimationEntity_
 #define _ServerCharacterAnimationEntity_
     class ServerCharacterAnimationEntity : public CharacterAnimationEntity
@@ -34627,9 +34630,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00518
+    // ClassId: 00518
     // RuntimeId: 03128
-    // TypeInfo:  0x023E3078
+    // TypeInfo: 0x023E3078
 #ifndef _ServerAnimationEnumerationChoiceEntity_
 #define _ServerAnimationEnumerationChoiceEntity_
     class ServerAnimationEnumerationChoiceEntity : public Entity
@@ -34648,9 +34651,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00519
+    // ClassId: 00519
     // RuntimeId: 03127
-    // TypeInfo:  0x023E3050
+    // TypeInfo: 0x023E3050
 #ifndef _ServerAnimationEnumerationEntity_
 #define _ServerAnimationEnumerationEntity_
     class ServerAnimationEnumerationEntity : public Entity
@@ -34669,9 +34672,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00520
+    // ClassId: 00520
     // RuntimeId: 03126
-    // TypeInfo:  0x023E3028
+    // TypeInfo: 0x023E3028
 #ifndef _ServerAnimatedTransformEntity_
 #define _ServerAnimatedTransformEntity_
     class ServerAnimatedTransformEntity : public Entity
@@ -34690,9 +34693,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01134
+    // ClassId: 01134
     // RuntimeId: 03125
-    // TypeInfo:  0x023E2E90
+    // TypeInfo: 0x023E2E90
 #ifndef _VisualTerrainSettings_
 #define _VisualTerrainSettings_
 #pragma pack(push, 4)
@@ -34869,9 +34872,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01775
+    // ClassId: 01775
     // RuntimeId: 03121
-    // TypeInfo:  0x023E2E54
+    // TypeInfo: 0x023E2E54
 #ifndef _VisualTerrainEntityData_
 #define _VisualTerrainEntityData_
 #pragma pack(push, 4)
@@ -34897,9 +34900,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00126
+    // ClassId: 00126
     // RuntimeId: 03117
-    // TypeInfo:  0x023E2D38
+    // TypeInfo: 0x023E2D38
 #ifndef _IVisualTerrain_
 #define _IVisualTerrain_
     class IVisualTerrain : public ITerrain
@@ -34917,9 +34920,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00128
+    // ClassId: 00128
     // RuntimeId: 03118
-    // TypeInfo:  0x023E2D60
+    // TypeInfo: 0x023E2D60
 #ifndef _MeshScatteringTree_
 #define _MeshScatteringTree_
     class MeshScatteringTree
@@ -34938,9 +34941,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00127
+    // ClassId: 00127
     // RuntimeId: 03119
-    // TypeInfo:  0x023E2E2C
+    // TypeInfo: 0x023E2E2C
 #ifndef _VisualTerrain_
 #define _VisualTerrain_
     class VisualTerrain : public IVisualTerrain
@@ -34959,9 +34962,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00521
+    // ClassId: 00521
     // RuntimeId: 03116
-    // TypeInfo:  0x023E2D10
+    // TypeInfo: 0x023E2D10
 #ifndef _VisualTerrainEntity_
 #define _VisualTerrainEntity_
     class VisualTerrainEntity : public Entity
@@ -34980,9 +34983,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00129
+    // ClassId: 00129
     // RuntimeId: 03115
-    // TypeInfo:  0x023E2C94
+    // TypeInfo: 0x023E2C94
 #ifndef _TerrainTextureTree_
 #define _TerrainTextureTree_
     class TerrainTextureTree
@@ -35001,9 +35004,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00130
+    // ClassId: 00130
     // RuntimeId: 03114
-    // TypeInfo:  0x023E2C6C
+    // TypeInfo: 0x023E2C6C
 #ifndef _TerrainDecals_
 #define _TerrainDecals_
     class TerrainDecals
@@ -35022,9 +35025,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01135
+    // ClassId: 01135
     // RuntimeId: 03113
-    // TypeInfo:  0x023E2C08
+    // TypeInfo: 0x023E2C08
 #ifndef _VegetationSystemSettings_
 #define _VegetationSystemSettings_
 #pragma pack(push, 4)
@@ -35072,9 +35075,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01987
+    // ClassId: 01987
     // RuntimeId: 03109
-    // TypeInfo:  0x023E2BB0
+    // TypeInfo: 0x023E2BB0
 #ifndef _VegetationBaseEntityData_
 #define _VegetationBaseEntityData_
 #pragma pack(push, 16)
@@ -35105,9 +35108,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01988
+    // ClassId: 01988
     // RuntimeId: 03111
-    // TypeInfo:  0x023E2BDC
+    // TypeInfo: 0x023E2BDC
 #ifndef _VegetationTreeEntityData_
 #define _VegetationTreeEntityData_
 #pragma pack(push, 16)
@@ -35166,9 +35169,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01989
+    // ClassId: 01989
     // RuntimeId: 03107
-    // TypeInfo:  0x023E2B84
+    // TypeInfo: 0x023E2B84
 #ifndef _DebrisClusterData_
 #define _DebrisClusterData_
 #pragma pack(push, 16)
@@ -35217,9 +35220,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01136
+    // ClassId: 01136
     // RuntimeId: 03103
-    // TypeInfo:  0x023E2B48
+    // TypeInfo: 0x023E2B48
 #ifndef _DebrisSystemSettings_
 #define _DebrisSystemSettings_
 #pragma pack(push, 4)
@@ -35259,9 +35262,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02272
+    // ClassId: 02272
     // RuntimeId: 03101
-    // TypeInfo:  0x023E2B1C
+    // TypeInfo: 0x023E2B1C
 #ifndef _DebrisSystemAsset_
 #define _DebrisSystemAsset_
 #pragma pack(push, 4)
@@ -35287,9 +35290,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00762
+    // ClassId: 00762
     // RuntimeId: 03095
-    // TypeInfo:  0x023E2930
+    // TypeInfo: 0x023E2930
 #ifndef _VegetationTreeEntity_
 #define _VegetationTreeEntity_
     class VegetationTreeEntity : public SpatialEntity
@@ -35308,9 +35311,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00763
+    // ClassId: 00763
     // RuntimeId: 03094
-    // TypeInfo:  0x023E2908
+    // TypeInfo: 0x023E2908
 #ifndef _ServerVegetationTreeEntity_
 #define _ServerVegetationTreeEntity_
     class ServerVegetationTreeEntity : public VegetationTreeEntity
@@ -35329,9 +35332,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00764
+    // ClassId: 00764
     // RuntimeId: 03093
-    // TypeInfo:  0x023E28E0
+    // TypeInfo: 0x023E28E0
 #ifndef _ClientVegetationTreeEntity_
 #define _ClientVegetationTreeEntity_
     class ClientVegetationTreeEntity : public VegetationTreeEntity
@@ -35350,9 +35353,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00522
+    // ClassId: 00522
     // RuntimeId: 03089
-    // TypeInfo:  0x023E2840
+    // TypeInfo: 0x023E2840
 #ifndef _DebrisCluster_
 #define _DebrisCluster_
     class DebrisCluster : public Entity
@@ -35371,9 +35374,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00797
+    // ClassId: 00797
     // RuntimeId: 03091
-    // TypeInfo:  0x023E2890
+    // TypeInfo: 0x023E2890
 #ifndef _DebrisSpawnEvent_
 #define _DebrisSpawnEvent_
     class DebrisSpawnEvent : public EntityEvent
@@ -35392,9 +35395,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00765
+    // ClassId: 00765
     // RuntimeId: 03090
-    // TypeInfo:  0x023E2868
+    // TypeInfo: 0x023E2868
 #ifndef _DebrisClusterContainerEntity_
 #define _DebrisClusterContainerEntity_
     class DebrisClusterContainerEntity : public SpatialEntity
@@ -35412,9 +35415,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00523
+    // ClassId: 00523
     // RuntimeId: 03092
-    // TypeInfo:  0x023E28B8
+    // TypeInfo: 0x023E28B8
 #ifndef _ServerDebrisCluster_
 #define _ServerDebrisCluster_
     class ServerDebrisCluster : public DebrisCluster
@@ -35433,9 +35436,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00524
+    // ClassId: 00524
     // RuntimeId: 03088
-    // TypeInfo:  0x023E2818
+    // TypeInfo: 0x023E2818
 #ifndef _ClientDebrisCluster_
 #define _ClientDebrisCluster_
     class ClientDebrisCluster : public DebrisCluster
@@ -35454,9 +35457,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00863
+    // ClassId: 00863
     // RuntimeId: 03087
-    // TypeInfo:  0x023E267C
+    // TypeInfo: 0x023E267C
 #ifndef _UIImageDataBinding_
 #define _UIImageDataBinding_
 #pragma pack(push, 4)
@@ -35485,9 +35488,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00864
+    // ClassId: 00864
     // RuntimeId: 03085
-    // TypeInfo:  0x023E2650
+    // TypeInfo: 0x023E2650
 #ifndef _UIPageHeaderBinding_
 #define _UIPageHeaderBinding_
 #pragma pack(push, 4)
@@ -35518,9 +35521,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00865
+    // ClassId: 00865
     // RuntimeId: 03081
-    // TypeInfo:  0x023E2614
+    // TypeInfo: 0x023E2614
 #ifndef _UINumberDataBinding_
 #define _UINumberDataBinding_
 #pragma pack(push, 4)
@@ -35548,9 +35551,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00866
+    // ClassId: 00866
     // RuntimeId: 03079
-    // TypeInfo:  0x023E25E8
+    // TypeInfo: 0x023E25E8
 #ifndef _UICompassDataBinding_
 #define _UICompassDataBinding_
 #pragma pack(push, 4)
@@ -35579,9 +35582,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00867
+    // ClassId: 00867
     // RuntimeId: 03077
-    // TypeInfo:  0x023E25BC
+    // TypeInfo: 0x023E25BC
 #ifndef _UIBarDataBinding_
 #define _UIBarDataBinding_
 #pragma pack(push, 4)
@@ -35610,9 +35613,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00868
+    // ClassId: 00868
     // RuntimeId: 03075
-    // TypeInfo:  0x023E2590
+    // TypeInfo: 0x023E2590
 #ifndef _UITextDataBinding_
 #define _UITextDataBinding_
 #pragma pack(push, 4)
@@ -35642,9 +35645,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00869
+    // ClassId: 00869
     // RuntimeId: 03073
-    // TypeInfo:  0x023E2564
+    // TypeInfo: 0x023E2564
 #ifndef _UICrosshairDataBinding_
 #define _UICrosshairDataBinding_
 #pragma pack(push, 4)
@@ -35672,9 +35675,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00870
+    // ClassId: 00870
     // RuntimeId: 03071
-    // TypeInfo:  0x023E2538
+    // TypeInfo: 0x023E2538
 #ifndef _UIWidgetPathBinding_
 #define _UIWidgetPathBinding_
 #pragma pack(push, 4)
@@ -35700,9 +35703,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00871
+    // ClassId: 00871
     // RuntimeId: 03069
-    // TypeInfo:  0x023E250C
+    // TypeInfo: 0x023E250C
 #ifndef _UIHUDMessageBinding_
 #define _UIHUDMessageBinding_
 #pragma pack(push, 4)
@@ -35729,9 +35732,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00872
+    // ClassId: 00872
     // RuntimeId: 03067
-    // TypeInfo:  0x023E24E0
+    // TypeInfo: 0x023E24E0
 #ifndef _UIButtonDataBinding_
 #define _UIButtonDataBinding_
 #pragma pack(push, 4)
@@ -35762,9 +35765,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00873
+    // ClassId: 00873
     // RuntimeId: 03061
-    // TypeInfo:  0x023E2494
+    // TypeInfo: 0x023E2494
 #ifndef _UINestedListDataBinding_
 #define _UINestedListDataBinding_
 #pragma pack(push, 4)
@@ -35808,9 +35811,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00874
+    // ClassId: 00874
     // RuntimeId: 03057
-    // TypeInfo:  0x023E2458
+    // TypeInfo: 0x023E2458
 #ifndef _UIListDataBinding_
 #define _UIListDataBinding_
 #pragma pack(push, 4)
@@ -35857,9 +35860,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00875
+    // ClassId: 00875
     // RuntimeId: 03043
-    // TypeInfo:  0x023E23CC
+    // TypeInfo: 0x023E23CC
 #ifndef _NFSUIListDataBinding_
 #define _NFSUIListDataBinding_
 #pragma pack(push, 4)
@@ -35885,9 +35888,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02273
+    // ClassId: 02273
     // RuntimeId: 03039
-    // TypeInfo:  0x023E2390
+    // TypeInfo: 0x023E2390
 #ifndef _UICreditsAsset_
 #define _UICreditsAsset_
 #pragma pack(push, 4)
@@ -35912,9 +35915,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01137
+    // ClassId: 01137
     // RuntimeId: 02975
-    // TypeInfo:  0x023E1F44
+    // TypeInfo: 0x023E1F44
 #ifndef _UIItemDescription_
 #define _UIItemDescription_
 #pragma pack(push, 4)
@@ -35941,9 +35944,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01139
+    // ClassId: 01139
     // RuntimeId: 03029
-    // TypeInfo:  0x023E2308
+    // TypeInfo: 0x023E2308
 #ifndef _PS3StoreImageSD_
 #define _PS3StoreImageSD_
 #pragma pack(push, 4)
@@ -35969,9 +35972,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02274
+    // ClassId: 02274
     // RuntimeId: 03023
-    // TypeInfo:  0x023E22BC
+    // TypeInfo: 0x023E22BC
 #ifndef _UIMinimapIconTextureAtlasAsset_
 #define _UIMinimapIconTextureAtlasAsset_
 #pragma pack(push, 4)
@@ -35997,9 +36000,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02275
+    // ClassId: 02275
     // RuntimeId: 03013
-    // TypeInfo:  0x023E2250
+    // TypeInfo: 0x023E2250
 #ifndef _UIDistanceFieldAsset_
 #define _UIDistanceFieldAsset_
 #pragma pack(push, 4)
@@ -36024,9 +36027,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02276
+    // ClassId: 02276
     // RuntimeId: 03011
-    // TypeInfo:  0x023E2224
+    // TypeInfo: 0x023E2224
 #ifndef _UIItemDescriptionAsset_
 #define _UIItemDescriptionAsset_
 #pragma pack(push, 4)
@@ -36052,9 +36055,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01140
+    // ClassId: 01140
     // RuntimeId: 03009
-    // TypeInfo:  0x023E21F8
+    // TypeInfo: 0x023E21F8
 #ifndef _UILicenseDescription_
 #define _UILicenseDescription_
 #pragma pack(push, 4)
@@ -36080,9 +36083,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01141
+    // ClassId: 01141
     // RuntimeId: 03007
-    // TypeInfo:  0x023E21CC
+    // TypeInfo: 0x023E21CC
 #ifndef _UIGenericItemDescription_
 #define _UIGenericItemDescription_
 #pragma pack(push, 4)
@@ -36108,9 +36111,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01142
+    // ClassId: 01142
     // RuntimeId: 03005
-    // TypeInfo:  0x023E21A0
+    // TypeInfo: 0x023E21A0
 #ifndef _UILevelLocationDescription_
 #define _UILevelLocationDescription_
 #pragma pack(push, 4)
@@ -36137,9 +36140,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01143
+    // ClassId: 01143
     // RuntimeId: 03001
-    // TypeInfo:  0x023E2164
+    // TypeInfo: 0x023E2164
 #ifndef _UILevelDescription_
 #define _UILevelDescription_
 #pragma pack(push, 4)
@@ -36166,9 +36169,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01144
+    // ClassId: 01144
     // RuntimeId: 02999
-    // TypeInfo:  0x023E2138
+    // TypeInfo: 0x023E2138
 #ifndef _UIVehicleUnlockDescription_
 #define _UIVehicleUnlockDescription_
 #pragma pack(push, 4)
@@ -36201,9 +36204,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01145
+    // ClassId: 01145
     // RuntimeId: 02997
-    // TypeInfo:  0x023E210C
+    // TypeInfo: 0x023E210C
 #ifndef _UIWeaponAccessoryDescription_
 #define _UIWeaponAccessoryDescription_
 #pragma pack(push, 4)
@@ -36237,9 +36240,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01146
+    // ClassId: 01146
     // RuntimeId: 02995
-    // TypeInfo:  0x023E20E0
+    // TypeInfo: 0x023E20E0
 #ifndef _UIVehicleWeaponDescription_
 #define _UIVehicleWeaponDescription_
 #pragma pack(push, 4)
@@ -36264,9 +36267,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01147
+    // ClassId: 01147
     // RuntimeId: 02993
-    // TypeInfo:  0x023E20B4
+    // TypeInfo: 0x023E20B4
 #ifndef _UIVehicleDescription_
 #define _UIVehicleDescription_
 #pragma pack(push, 4)
@@ -36293,9 +36296,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01148
+    // ClassId: 01148
     // RuntimeId: 02991
-    // TypeInfo:  0x023E2088
+    // TypeInfo: 0x023E2088
 #ifndef _UIKitItemDescription_
 #define _UIKitItemDescription_
 #pragma pack(push, 4)
@@ -36330,9 +36333,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01149
+    // ClassId: 01149
     // RuntimeId: 02989
-    // TypeInfo:  0x023E205C
+    // TypeInfo: 0x023E205C
 #ifndef _UIWeaponDescription_
 #define _UIWeaponDescription_
 #pragma pack(push, 4)
@@ -36370,9 +36373,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01150
+    // ClassId: 01150
     // RuntimeId: 02987
-    // TypeInfo:  0x023E2030
+    // TypeInfo: 0x023E2030
 #ifndef _UIModDescription_
 #define _UIModDescription_
 #pragma pack(push, 4)
@@ -36400,9 +36403,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01151
+    // ClassId: 01151
     // RuntimeId: 02985
-    // TypeInfo:  0x023E2004
+    // TypeInfo: 0x023E2004
 #ifndef _UIGameModeDescription_
 #define _UIGameModeDescription_
 #pragma pack(push, 4)
@@ -36433,9 +36436,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01152
+    // ClassId: 01152
     // RuntimeId: 02981
-    // TypeInfo:  0x023E1FC8
+    // TypeInfo: 0x023E1FC8
 #ifndef _UIRankDescription_
 #define _UIRankDescription_
 #pragma pack(push, 4)
@@ -36461,9 +36464,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01153
+    // ClassId: 01153
     // RuntimeId: 02979
-    // TypeInfo:  0x023E1F9C
+    // TypeInfo: 0x023E1F9C
 #ifndef _UIDogTagDescription_
 #define _UIDogTagDescription_
 #pragma pack(push, 4)
@@ -36489,9 +36492,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01154
+    // ClassId: 01154
     // RuntimeId: 02977
-    // TypeInfo:  0x023E1F70
+    // TypeInfo: 0x023E1F70
 #ifndef _UIAwardDescription_
 #define _UIAwardDescription_
 #pragma pack(push, 4)
@@ -36517,9 +36520,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01138
+    // ClassId: 01138
     // RuntimeId: 03031
-    // TypeInfo:  0x023E2334
+    // TypeInfo: 0x023E2334
 #ifndef _PS3StoreImageHD1080_
 #define _PS3StoreImageHD1080_
 #pragma pack(push, 4)
@@ -36545,9 +36548,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02277
+    // ClassId: 02277
     // RuntimeId: 02973
-    // TypeInfo:  0x023E1F18
+    // TypeInfo: 0x023E1F18
 #ifndef _UIAnimatedTextureAsset_
 #define _UIAnimatedTextureAsset_
 #pragma pack(push, 4)
@@ -36574,9 +36577,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01776
+    // ClassId: 01776
     // RuntimeId: 02962
-    // TypeInfo:  0x023E1E7C
+    // TypeInfo: 0x023E1E7C
 #ifndef _UIMessageTriggerData_
 #define _UIMessageTriggerData_
 #pragma pack(push, 4)
@@ -36601,9 +36604,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02278
+    // ClassId: 02278
     // RuntimeId: 02958
-    // TypeInfo:  0x023E1E40
+    // TypeInfo: 0x023E1E40
 #ifndef _StaticConfigAsset_
 #define _StaticConfigAsset_
 #pragma pack(push, 4)
@@ -36627,9 +36630,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02279
+    // ClassId: 02279
     // RuntimeId: 02956
-    // TypeInfo:  0x023E1E14
+    // TypeInfo: 0x023E1E14
 #ifndef _HudConfigAsset_
 #define _HudConfigAsset_
 #pragma pack(push, 4)
@@ -36653,9 +36656,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02280
+    // ClassId: 02280
     // RuntimeId: 02954
-    // TypeInfo:  0x023E1DE8
+    // TypeInfo: 0x023E1DE8
 #ifndef _MenuConfigAsset_
 #define _MenuConfigAsset_
 #pragma pack(push, 4)
@@ -36679,9 +36682,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01660
+    // ClassId: 01660
     // RuntimeId: 02952
-    // TypeInfo:  0x023E1DBC
+    // TypeInfo: 0x023E1DBC
 #ifndef _SoldierSuppressionComponentData_
 #define _SoldierSuppressionComponentData_
 #pragma pack(push, 16)
@@ -36715,9 +36718,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01155
+    // ClassId: 01155
     // RuntimeId: 02948
-    // TypeInfo:  0x023E1D80
+    // TypeInfo: 0x023E1D80
 #ifndef _SuppressionSettings_
 #define _SuppressionSettings_
 #pragma pack(push, 4)
@@ -36741,9 +36744,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02392
+    // ClassId: 02392
     // RuntimeId: 02894
-    // TypeInfo:  0x023E1914
+    // TypeInfo: 0x023E1914
 #ifndef _StatCategoriesGuidTree_
 #define _StatCategoriesGuidTree_
 #pragma pack(push, 4)
@@ -36767,9 +36770,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01478
+    // ClassId: 01478
     // RuntimeId: 02892
-    // TypeInfo:  0x023E18E8
+    // TypeInfo: 0x023E18E8
 #ifndef _StatsCategoryGuidData_
 #define _StatsCategoryGuidData_
 #pragma pack(push, 4)
@@ -36794,9 +36797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02389
+    // ClassId: 02389
     // RuntimeId: 02942
-    // TypeInfo:  0x023E1CFC
+    // TypeInfo: 0x023E1CFC
 #ifndef _StatCategoriesVehicleStateTypeTree_
 #define _StatCategoriesVehicleStateTypeTree_
 #pragma pack(push, 4)
@@ -36820,9 +36823,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01475
+    // ClassId: 01475
     // RuntimeId: 02940
-    // TypeInfo:  0x023E1CD0
+    // TypeInfo: 0x023E1CD0
 #ifndef _StatsCategoryVehicleStateTypeData_
 #define _StatsCategoryVehicleStateTypeData_
 #pragma pack(push, 4)
@@ -36847,9 +36850,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02390
+    // ClassId: 02390
     // RuntimeId: 02936
-    // TypeInfo:  0x023E1C94
+    // TypeInfo: 0x023E1C94
 #ifndef _StatCategoriesScoreboardPositionTree_
 #define _StatCategoriesScoreboardPositionTree_
 #pragma pack(push, 4)
@@ -36873,9 +36876,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01476
+    // ClassId: 01476
     // RuntimeId: 02934
-    // TypeInfo:  0x023E1C68
+    // TypeInfo: 0x023E1C68
 #ifndef _StatsCategoryScoreboardPositionData_
 #define _StatsCategoryScoreboardPositionData_
 #pragma pack(push, 4)
@@ -36900,9 +36903,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02391
+    // ClassId: 02391
     // RuntimeId: 02930
-    // TypeInfo:  0x023E1C2C
+    // TypeInfo: 0x023E1C2C
 #ifndef _StatCategoriesPlayerRoleTree_
 #define _StatCategoriesPlayerRoleTree_
 #pragma pack(push, 4)
@@ -36926,9 +36929,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01477
+    // ClassId: 01477
     // RuntimeId: 02928
-    // TypeInfo:  0x023E1C00
+    // TypeInfo: 0x023E1C00
 #ifndef _StatsCategoryPlayerRoleData_
 #define _StatsCategoryPlayerRoleData_
 #pragma pack(push, 4)
@@ -36953,9 +36956,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02394
+    // ClassId: 02394
     // RuntimeId: 02926
-    // TypeInfo:  0x023E1BD4
+    // TypeInfo: 0x023E1BD4
 #ifndef _StatCategoriesKitTree_
 #define _StatCategoriesKitTree_
 #pragma pack(push, 4)
@@ -36979,9 +36982,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01480
+    // ClassId: 01480
     // RuntimeId: 02924
-    // TypeInfo:  0x023E1BA8
+    // TypeInfo: 0x023E1BA8
 #ifndef _StatsCategoryKitData_
 #define _StatsCategoryKitData_
 #pragma pack(push, 4)
@@ -37005,9 +37008,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02395
+    // ClassId: 02395
     // RuntimeId: 02922
-    // TypeInfo:  0x023E1B7C
+    // TypeInfo: 0x023E1B7C
 #ifndef _StatCategoriesWeaponAccessoryTree_
 #define _StatCategoriesWeaponAccessoryTree_
 #pragma pack(push, 4)
@@ -37031,9 +37034,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01481
+    // ClassId: 01481
     // RuntimeId: 02920
-    // TypeInfo:  0x023E1B50
+    // TypeInfo: 0x023E1B50
 #ifndef _StatsCategoryWeaponAccessoryData_
 #define _StatsCategoryWeaponAccessoryData_
 #pragma pack(push, 4)
@@ -37057,9 +37060,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02396
+    // ClassId: 02396
     // RuntimeId: 02918
-    // TypeInfo:  0x023E1B24
+    // TypeInfo: 0x023E1B24
 #ifndef _StatCategoriesAwardTree_
 #define _StatCategoriesAwardTree_
 #pragma pack(push, 4)
@@ -37083,9 +37086,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01482
+    // ClassId: 01482
     // RuntimeId: 02916
-    // TypeInfo:  0x023E1AF8
+    // TypeInfo: 0x023E1AF8
 #ifndef _StatsCategoryAwardData_
 #define _StatsCategoryAwardData_
 #pragma pack(push, 4)
@@ -37109,9 +37112,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02397
+    // ClassId: 02397
     // RuntimeId: 02914
-    // TypeInfo:  0x023E1ACC
+    // TypeInfo: 0x023E1ACC
 #ifndef _StatCategoriesDifficultyTree_
 #define _StatCategoriesDifficultyTree_
 #pragma pack(push, 4)
@@ -37135,9 +37138,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01483
+    // ClassId: 01483
     // RuntimeId: 02912
-    // TypeInfo:  0x023E1AA0
+    // TypeInfo: 0x023E1AA0
 #ifndef _StatsCategoryDifficultyData_
 #define _StatsCategoryDifficultyData_
 #pragma pack(push, 4)
@@ -37161,9 +37164,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02398
+    // ClassId: 02398
     // RuntimeId: 02910
-    // TypeInfo:  0x023E1A74
+    // TypeInfo: 0x023E1A74
 #ifndef _StatCategoriesLevelTree_
 #define _StatCategoriesLevelTree_
 #pragma pack(push, 4)
@@ -37187,9 +37190,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01484
+    // ClassId: 01484
     // RuntimeId: 02908
-    // TypeInfo:  0x023E1A48
+    // TypeInfo: 0x023E1A48
 #ifndef _StatsCategoryLevelData_
 #define _StatsCategoryLevelData_
 #pragma pack(push, 4)
@@ -37213,9 +37216,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02399
+    // ClassId: 02399
     // RuntimeId: 02906
-    // TypeInfo:  0x023E1A1C
+    // TypeInfo: 0x023E1A1C
 #ifndef _StatCategoriesVehicleTree_
 #define _StatCategoriesVehicleTree_
 #pragma pack(push, 4)
@@ -37239,9 +37242,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01485
+    // ClassId: 01485
     // RuntimeId: 02904
-    // TypeInfo:  0x023E19F0
+    // TypeInfo: 0x023E19F0
 #ifndef _StatsCategoryVehicleData_
 #define _StatsCategoryVehicleData_
 #pragma pack(push, 4)
@@ -37266,9 +37269,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02400
+    // ClassId: 02400
     // RuntimeId: 02902
-    // TypeInfo:  0x023E19C4
+    // TypeInfo: 0x023E19C4
 #ifndef _StatCategoriesVehicleWeaponTree_
 #define _StatCategoriesVehicleWeaponTree_
 #pragma pack(push, 4)
@@ -37292,9 +37295,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01486
+    // ClassId: 01486
     // RuntimeId: 02900
-    // TypeInfo:  0x023E1998
+    // TypeInfo: 0x023E1998
 #ifndef _StatsCategoryVehicleWeaponData_
 #define _StatsCategoryVehicleWeaponData_
 #pragma pack(push, 4)
@@ -37318,9 +37321,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02401
+    // ClassId: 02401
     // RuntimeId: 02898
-    // TypeInfo:  0x023E196C
+    // TypeInfo: 0x023E196C
 #ifndef _StatCategoriesWeaponTree_
 #define _StatCategoriesWeaponTree_
 #pragma pack(push, 4)
@@ -37344,9 +37347,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01487
+    // ClassId: 01487
     // RuntimeId: 02896
-    // TypeInfo:  0x023E1940
+    // TypeInfo: 0x023E1940
 #ifndef _StatsCategoryWeaponData_
 #define _StatsCategoryWeaponData_
 #pragma pack(push, 4)
@@ -37373,9 +37376,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02393
+    // ClassId: 02393
     // RuntimeId: 02946
-    // TypeInfo:  0x023E1D54
+    // TypeInfo: 0x023E1D54
 #ifndef _StatCategoriesScoringBucketTree_
 #define _StatCategoriesScoringBucketTree_
 #pragma pack(push, 4)
@@ -37399,9 +37402,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01479
+    // ClassId: 01479
     // RuntimeId: 02944
-    // TypeInfo:  0x023E1D28
+    // TypeInfo: 0x023E1D28
 #ifndef _StatsCategoryScoringBucketData_
 #define _StatsCategoryScoringBucketData_
 #pragma pack(push, 4)
@@ -37425,9 +37428,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01661
+    // ClassId: 01661
     // RuntimeId: 02890
-    // TypeInfo:  0x023E18BC
+    // TypeInfo: 0x023E18BC
 #ifndef _SpottingTargetComponentData_
 #define _SpottingTargetComponentData_
 #pragma pack(push, 16)
@@ -37458,9 +37461,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01662
+    // ClassId: 01662
     // RuntimeId: 02884
-    // TypeInfo:  0x023E1870
+    // TypeInfo: 0x023E1870
 #ifndef _SpottingComponentData_
 #define _SpottingComponentData_
 #pragma pack(push, 16)
@@ -37500,9 +37503,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02281
+    // ClassId: 02281
     // RuntimeId: 02872
-    // TypeInfo:  0x023E17F4
+    // TypeInfo: 0x023E17F4
 #ifndef _PointSystemParamsAsset_
 #define _PointSystemParamsAsset_
 #pragma pack(push, 4)
@@ -37531,9 +37534,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02282
+    // ClassId: 02282
     // RuntimeId: 02870
-    // TypeInfo:  0x023E17C8
+    // TypeInfo: 0x023E17C8
 #ifndef _PlayerTypeProfile_
 #define _PlayerTypeProfile_
 #pragma pack(push, 4)
@@ -37566,9 +37569,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02283
+    // ClassId: 02283
     // RuntimeId: 02868
-    // TypeInfo:  0x023E179C
+    // TypeInfo: 0x023E179C
 #ifndef _StatSpamSettings_
 #define _StatSpamSettings_
 #pragma pack(push, 4)
@@ -37593,9 +37596,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02284
+    // ClassId: 02284
     // RuntimeId: 02864
-    // TypeInfo:  0x023E1760
+    // TypeInfo: 0x023E1760
 #ifndef _StaticUnlockList_
 #define _StaticUnlockList_
 #pragma pack(push, 4)
@@ -37620,9 +37623,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02458
+    // ClassId: 02458
     // RuntimeId: 02856
-    // TypeInfo:  0x023E1704
+    // TypeInfo: 0x023E1704
 #ifndef _PersistenceSettings_
 #define _PersistenceSettings_
 #pragma pack(push, 4)
@@ -37652,9 +37655,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02285
+    // ClassId: 02285
     // RuntimeId: 02854
-    // TypeInfo:  0x023E16D8
+    // TypeInfo: 0x023E16D8
 #ifndef _PersistenceConfiguration_
 #define _PersistenceConfiguration_
 #pragma pack(push, 4)
@@ -37684,9 +37687,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02286
+    // ClassId: 02286
     // RuntimeId: 02852
-    // TypeInfo:  0x023E16AC
+    // TypeInfo: 0x023E16AC
 #ifndef _OnlineServicesAsset_
 #define _OnlineServicesAsset_
 #pragma pack(push, 4)
@@ -37711,9 +37714,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02287
+    // ClassId: 02287
     // RuntimeId: 02814
-    // TypeInfo:  0x023E1368
+    // TypeInfo: 0x023E1368
 #ifndef _PresenceServiceData_
 #define _PresenceServiceData_
 #pragma pack(push, 4)
@@ -37737,9 +37740,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02289
+    // ClassId: 02289
     // RuntimeId: 02848
-    // TypeInfo:  0x023E1654
+    // TypeInfo: 0x023E1654
 #ifndef _PresenceCalendarServiceData_
 #define _PresenceCalendarServiceData_
 #pragma pack(push, 4)
@@ -37763,9 +37766,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02290
+    // ClassId: 02290
     // RuntimeId: 02846
-    // TypeInfo:  0x023E1628
+    // TypeInfo: 0x023E1628
 #ifndef _PresenceNewsTickerServiceData_
 #define _PresenceNewsTickerServiceData_
 #pragma pack(push, 4)
@@ -37789,9 +37792,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02291
+    // ClassId: 02291
     // RuntimeId: 02844
-    // TypeInfo:  0x023E15FC
+    // TypeInfo: 0x023E15FC
 #ifndef _PresenceGameConfigurationServiceData_
 #define _PresenceGameConfigurationServiceData_
 #pragma pack(push, 4)
@@ -37816,9 +37819,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02292
+    // ClassId: 02292
     // RuntimeId: 02842
-    // TypeInfo:  0x023E15D0
+    // TypeInfo: 0x023E15D0
 #ifndef _PresenceCommerceServiceData_
 #define _PresenceCommerceServiceData_
 #pragma pack(push, 4)
@@ -37842,9 +37845,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02293
+    // ClassId: 02293
     // RuntimeId: 02840
-    // TypeInfo:  0x023E15A4
+    // TypeInfo: 0x023E15A4
 #ifndef _PresenceUserIdServiceData_
 #define _PresenceUserIdServiceData_
 #pragma pack(push, 4)
@@ -37868,9 +37871,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02294
+    // ClassId: 02294
     // RuntimeId: 02838
-    // TypeInfo:  0x023E1578
+    // TypeInfo: 0x023E1578
 #ifndef _PresenceRspServiceData_
 #define _PresenceRspServiceData_
 #pragma pack(push, 4)
@@ -37894,9 +37897,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02295
+    // ClassId: 02295
     // RuntimeId: 02836
-    // TypeInfo:  0x023E154C
+    // TypeInfo: 0x023E154C
 #ifndef _PresenceWebFeedServiceData_
 #define _PresenceWebFeedServiceData_
 #pragma pack(push, 4)
@@ -37920,9 +37923,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02296
+    // ClassId: 02296
     // RuntimeId: 02834
-    // TypeInfo:  0x023E1520
+    // TypeInfo: 0x023E1520
 #ifndef _PresenceMatchFeedServiceData_
 #define _PresenceMatchFeedServiceData_
 #pragma pack(push, 4)
@@ -37946,9 +37949,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02297
+    // ClassId: 02297
     // RuntimeId: 02832
-    // TypeInfo:  0x023E14F4
+    // TypeInfo: 0x023E14F4
 #ifndef _PresenceStatisticsServiceData_
 #define _PresenceStatisticsServiceData_
 #pragma pack(push, 4)
@@ -37972,9 +37975,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02298
+    // ClassId: 02298
     // RuntimeId: 02830
-    // TypeInfo:  0x023E14C8
+    // TypeInfo: 0x023E14C8
 #ifndef _PresenceServerBrowserServiceData_
 #define _PresenceServerBrowserServiceData_
 #pragma pack(push, 4)
@@ -38000,9 +38003,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02299
+    // ClassId: 02299
     // RuntimeId: 02828
-    // TypeInfo:  0x023E149C
+    // TypeInfo: 0x023E149C
 #ifndef _PresencePlaygroupServiceData_
 #define _PresencePlaygroupServiceData_
 #pragma pack(push, 4)
@@ -38026,9 +38029,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02300
+    // ClassId: 02300
     // RuntimeId: 02826
-    // TypeInfo:  0x023E1470
+    // TypeInfo: 0x023E1470
 #ifndef _PresenceLeaderboardServiceData_
 #define _PresenceLeaderboardServiceData_
 #pragma pack(push, 4)
@@ -38052,9 +38055,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02301
+    // ClassId: 02301
     // RuntimeId: 02824
-    // TypeInfo:  0x023E1444
+    // TypeInfo: 0x023E1444
 #ifndef _PresenceFriendsServiceData_
 #define _PresenceFriendsServiceData_
 #pragma pack(push, 4)
@@ -38078,9 +38081,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02302
+    // ClassId: 02302
     // RuntimeId: 02822
-    // TypeInfo:  0x023E1418
+    // TypeInfo: 0x023E1418
 #ifndef _PresenceEntitlementServiceData_
 #define _PresenceEntitlementServiceData_
 #pragma pack(push, 4)
@@ -38104,9 +38107,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02303
+    // ClassId: 02303
     // RuntimeId: 02820
-    // TypeInfo:  0x023E13EC
+    // TypeInfo: 0x023E13EC
 #ifndef _PresenceCommServiceData_
 #define _PresenceCommServiceData_
 #pragma pack(push, 4)
@@ -38130,9 +38133,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02304
+    // ClassId: 02304
     // RuntimeId: 02818
-    // TypeInfo:  0x023E13C0
+    // TypeInfo: 0x023E13C0
 #ifndef _PresenceBlobServiceData_
 #define _PresenceBlobServiceData_
 #pragma pack(push, 4)
@@ -38156,9 +38159,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02305
+    // ClassId: 02305
     // RuntimeId: 02816
-    // TypeInfo:  0x023E1394
+    // TypeInfo: 0x023E1394
 #ifndef _PresenceAchievementServiceData_
 #define _PresenceAchievementServiceData_
 #pragma pack(push, 4)
@@ -38182,9 +38185,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02288
+    // ClassId: 02288
     // RuntimeId: 02850
-    // TypeInfo:  0x023E1680
+    // TypeInfo: 0x023E1680
 #ifndef _PresenceXPromoServiceData_
 #define _PresenceXPromoServiceData_
 #pragma pack(push, 4)
@@ -38208,9 +38211,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02306
+    // ClassId: 02306
     // RuntimeId: 02794
-    // TypeInfo:  0x023E123C
+    // TypeInfo: 0x023E123C
 #ifndef _ServerBackendData_
 #define _ServerBackendData_
 #pragma pack(push, 4)
@@ -38235,9 +38238,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02308
+    // ClassId: 02308
     // RuntimeId: 02802
-    // TypeInfo:  0x023E12D0
+    // TypeInfo: 0x023E12D0
 #ifndef _PeerServerBackendData_
 #define _PeerServerBackendData_
 #pragma pack(push, 4)
@@ -38262,9 +38265,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02309
+    // ClassId: 02309
     // RuntimeId: 02798
-    // TypeInfo:  0x023E1294
+    // TypeInfo: 0x023E1294
 #ifndef _LanServerBackendData_
 #define _LanServerBackendData_
 #pragma pack(push, 4)
@@ -38288,9 +38291,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02310
+    // ClassId: 02310
     // RuntimeId: 02796
-    // TypeInfo:  0x023E1268
+    // TypeInfo: 0x023E1268
 #ifndef _LocalServerBackendData_
 #define _LocalServerBackendData_
 #pragma pack(push, 4)
@@ -38314,9 +38317,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02307
+    // ClassId: 02307
     // RuntimeId: 02806
-    // TypeInfo:  0x023E130C
+    // TypeInfo: 0x023E130C
 #ifndef _BlazeServerBackendData_
 #define _BlazeServerBackendData_
 #pragma pack(push, 4)
@@ -38342,9 +38345,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02311
+    // ClassId: 02311
     // RuntimeId: 02766
-    // TypeInfo:  0x023E107C
+    // TypeInfo: 0x023E107C
 #ifndef _PresenceBackendData_
 #define _PresenceBackendData_
 #pragma pack(push, 4)
@@ -38369,9 +38372,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02313
+    // ClassId: 02313
     // RuntimeId: 02786
-    // TypeInfo:  0x023E11C4
+    // TypeInfo: 0x023E11C4
 #ifndef _WebPresenceBackendData_
 #define _WebPresenceBackendData_
 #pragma pack(push, 4)
@@ -38395,9 +38398,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02314
+    // ClassId: 02314
     // RuntimeId: 02784
-    // TypeInfo:  0x023E1198
+    // TypeInfo: 0x023E1198
 #ifndef _Ps3PresenceBackendData_
 #define _Ps3PresenceBackendData_
 #pragma pack(push, 4)
@@ -38425,9 +38428,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01156
+    // ClassId: 01156
     // RuntimeId: 02780
-    // TypeInfo:  0x023E115C
+    // TypeInfo: 0x023E115C
 #ifndef _Ps3ParentalLockAgeSettingsOverrides_
 #define _Ps3ParentalLockAgeSettingsOverrides_
 #pragma pack(push, 4)
@@ -38452,9 +38455,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02315
+    // ClassId: 02315
     // RuntimeId: 02772
-    // TypeInfo:  0x023E1100
+    // TypeInfo: 0x023E1100
 #ifndef _LanPresenceBackendData_
 #define _LanPresenceBackendData_
 #pragma pack(push, 4)
@@ -38478,9 +38481,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02316
+    // ClassId: 02316
     // RuntimeId: 02770
-    // TypeInfo:  0x023E10D4
+    // TypeInfo: 0x023E10D4
 #ifndef _DirtySockPresenceBackendData_
 #define _DirtySockPresenceBackendData_
 #pragma pack(push, 4)
@@ -38504,9 +38507,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02317
+    // ClassId: 02317
     // RuntimeId: 02768
-    // TypeInfo:  0x023E10A8
+    // TypeInfo: 0x023E10A8
 #ifndef _BlazePresenceBackendData_
 #define _BlazePresenceBackendData_
 #pragma pack(push, 4)
@@ -38533,9 +38536,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02312
+    // ClassId: 02312
     // RuntimeId: 02788
-    // TypeInfo:  0x023E11F0
+    // TypeInfo: 0x023E11F0
 #ifndef _XenonPresenceBackendData_
 #define _XenonPresenceBackendData_
 #pragma pack(push, 4)
@@ -38560,9 +38563,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01157
+    // ClassId: 01157
     // RuntimeId: 02764
-    // TypeInfo:  0x023E1050
+    // TypeInfo: 0x023E1050
 #ifndef _MatchmakingSession_
 #define _MatchmakingSession_
 #pragma pack(push, 4)
@@ -38592,9 +38595,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01158
+    // ClassId: 01158
     // RuntimeId: 02760
-    // TypeInfo:  0x023E0FF8
+    // TypeInfo: 0x023E0FF8
 #ifndef _MatchmakingModifier_
 #define _MatchmakingModifier_
 #pragma pack(push, 4)
@@ -38618,9 +38621,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01159
+    // ClassId: 01159
     // RuntimeId: 02762
-    // TypeInfo:  0x023E1024
+    // TypeInfo: 0x023E1024
 #ifndef _MatchmakingPlayerCapacityModifier_
 #define _MatchmakingPlayerCapacityModifier_
 #pragma pack(push, 4)
@@ -38645,9 +38648,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02318
+    // ClassId: 02318
     // RuntimeId: 02722
-    // TypeInfo:  0x023E0EAC
+    // TypeInfo: 0x023E0EAC
 #ifndef _ManualDataAsset_
 #define _ManualDataAsset_
 #pragma pack(push, 4)
@@ -38672,9 +38675,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01990
+    // ClassId: 01990
     // RuntimeId: 02718
-    // TypeInfo:  0x023E0E70
+    // TypeInfo: 0x023E0E70
 #ifndef _UIEndOfRoundEntityData_
 #define _UIEndOfRoundEntityData_
 #pragma pack(push, 16)
@@ -38701,9 +38704,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01991
+    // ClassId: 01991
     // RuntimeId: 02716
-    // TypeInfo:  0x023E0E44
+    // TypeInfo: 0x023E0E44
 #ifndef _InspectEntityData_
 #define _InspectEntityData_
 #pragma pack(push, 16)
@@ -38739,9 +38742,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02319
+    // ClassId: 02319
     // RuntimeId: 02710
-    // TypeInfo:  0x023E0DF8
+    // TypeInfo: 0x023E0DF8
 #ifndef _LicenseConfiguration_
 #define _LicenseConfiguration_
 #pragma pack(push, 4)
@@ -38766,9 +38769,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00930
+    // ClassId: 00930
     // RuntimeId: 02706
-    // TypeInfo:  0x023E0DBC
+    // TypeInfo: 0x023E0DBC
 #ifndef _VeniceMatchmakingLevelDescriptionComponent_
 #define _VeniceMatchmakingLevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -38794,9 +38797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00931
+    // ClassId: 00931
     // RuntimeId: 02704
-    // TypeInfo:  0x023E0D90
+    // TypeInfo: 0x023E0D90
 #ifndef _VeniceRichPresenceLevelDescriptionComponent_
 #define _VeniceRichPresenceLevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -38822,9 +38825,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00932
+    // ClassId: 00932
     // RuntimeId: 02702
-    // TypeInfo:  0x023E0D64
+    // TypeInfo: 0x023E0D64
 #ifndef _VeniceGameplayLevelDescriptionComponent_
 #define _VeniceGameplayLevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -38850,9 +38853,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00933
+    // ClassId: 00933
     // RuntimeId: 02700
-    // TypeInfo:  0x023E0D38
+    // TypeInfo: 0x023E0D38
 #ifndef _ConsumablesLevelDescriptionComponent_
 #define _ConsumablesLevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -38877,9 +38880,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00934
+    // ClassId: 00934
     // RuntimeId: 02696
-    // TypeInfo:  0x023E0CFC
+    // TypeInfo: 0x023E0CFC
 #ifndef _UICoopLevelDescription_
 #define _UICoopLevelDescription_
 #pragma pack(push, 4)
@@ -38906,9 +38909,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00935
+    // ClassId: 00935
     // RuntimeId: 02694
-    // TypeInfo:  0x023E0CD0
+    // TypeInfo: 0x023E0CD0
 #ifndef _UILevelDescriptionComponent_
 #define _UILevelDescriptionComponent_
 #pragma pack(push, 16)
@@ -38947,9 +38950,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00936
+    // ClassId: 00936
     // RuntimeId: 02688
-    // TypeInfo:  0x023E0C84
+    // TypeInfo: 0x023E0C84
 #ifndef _GeographicalLevelDescriptionComponent_
 #define _GeographicalLevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -38974,9 +38977,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01160
+    // ClassId: 01160
     // RuntimeId: 02686
-    // TypeInfo:  0x023E0C58
+    // TypeInfo: 0x023E0C58
 #ifndef _GeographicalData_
 #define _GeographicalData_
 #pragma pack(push, 4)
@@ -39003,9 +39006,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02320
+    // ClassId: 02320
     // RuntimeId: 02680
-    // TypeInfo:  0x023E0C0C
+    // TypeInfo: 0x023E0C0C
 #ifndef _GameTipAsset_
 #define _GameTipAsset_
 #pragma pack(push, 4)
@@ -39030,9 +39033,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02459
+    // ClassId: 02459
     // RuntimeId: 02676
-    // TypeInfo:  0x023E0BD0
+    // TypeInfo: 0x023E0BD0
 #ifndef _GameModeSettings_
 #define _GameModeSettings_
 #pragma pack(push, 4)
@@ -39057,9 +39060,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02321
+    // ClassId: 02321
     // RuntimeId: 02674
-    // TypeInfo:  0x023E0BA4
+    // TypeInfo: 0x023E0BA4
 #ifndef _GameModeConfiguration_
 #define _GameModeConfiguration_
 #pragma pack(push, 4)
@@ -39084,9 +39087,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01777
+    // ClassId: 01777
     // RuntimeId: 02666
-    // TypeInfo:  0x023E0B48
+    // TypeInfo: 0x023E0B48
 #ifndef _FriendlyFireEntityData_
 #define _FriendlyFireEntityData_
 #pragma pack(push, 4)
@@ -39116,9 +39119,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02322
+    // ClassId: 02322
     // RuntimeId: 02664
-    // TypeInfo:  0x023E0B1C
+    // TypeInfo: 0x023E0B1C
 #ifndef _DogTagsAsset_
 #define _DogTagsAsset_
 #pragma pack(push, 4)
@@ -39145,9 +39148,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02183
+    // ClassId: 02183
     // RuntimeId: 02658
-    // TypeInfo:  0x023E0A98
+    // TypeInfo: 0x023E0A98
 #ifndef _DogTagData_
 #define _DogTagData_
 #pragma pack(push, 4)
@@ -39182,9 +39185,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02185
+    // ClassId: 02185
     // RuntimeId: 02660
-    // TypeInfo:  0x023E0AC4
+    // TypeInfo: 0x023E0AC4
 #ifndef _BasicDogTagData_
 #define _BasicDogTagData_
 #pragma pack(push, 4)
@@ -39208,9 +39211,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02184
+    // ClassId: 02184
     // RuntimeId: 02662
-    // TypeInfo:  0x023E0AF0
+    // TypeInfo: 0x023E0AF0
 #ifndef _AdvancedDogTagData_
 #define _AdvancedDogTagData_
 #pragma pack(push, 4)
@@ -39238,9 +39241,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02460
+    // ClassId: 02460
     // RuntimeId: 02654
-    // TypeInfo:  0x023E0A5C
+    // TypeInfo: 0x023E0A5C
 #ifndef _SyncedBFSettings_
 #define _SyncedBFSettings_
 #pragma pack(push, 4)
@@ -39277,9 +39280,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01161
+    // ClassId: 01161
     // RuntimeId: 02652
-    // TypeInfo:  0x023E0A30
+    // TypeInfo: 0x023E0A30
 #ifndef _BFServerConfiguration_
 #define _BFServerConfiguration_
 #pragma pack(push, 4)
@@ -39304,9 +39307,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02461
+    // ClassId: 02461
     // RuntimeId: 02646
-    // TypeInfo:  0x023E09E4
+    // TypeInfo: 0x023E09E4
 #ifndef _BFServerSettings_
 #define _BFServerSettings_
 #pragma pack(push, 4)
@@ -39373,9 +39376,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01646
+    // ClassId: 01646
     // RuntimeId: 02644
-    // TypeInfo:  0x023E09B8
+    // TypeInfo: 0x023E09B8
 #ifndef _AdvertisementComponentData_
 #define _AdvertisementComponentData_
 #pragma pack(push, 16)
@@ -39402,9 +39405,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00937
+    // ClassId: 00937
     // RuntimeId: 02642
-    // TypeInfo:  0x023E098C
+    // TypeInfo: 0x023E098C
 #ifndef _AdvertisementLevelDescriptionComponent_
 #define _AdvertisementLevelDescriptionComponent_
 #pragma pack(push, 4)
@@ -39430,9 +39433,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02188
+    // ClassId: 02188
     // RuntimeId: 02638
-    // TypeInfo:  0x023DE140
+    // TypeInfo: 0x023DE140
 #ifndef _VeniceUnlockUserData_
 #define _VeniceUnlockUserData_
 #pragma pack(push, 4)
@@ -39458,9 +39461,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02462
+    // ClassId: 02462
     // RuntimeId: 02636
-    // TypeInfo:  0x023DE114
+    // TypeInfo: 0x023DE114
 #ifndef _VeniceUISettings_
 #define _VeniceUISettings_
 #pragma pack(push, 4)
@@ -39487,9 +39490,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02323
+    // ClassId: 02323
     // RuntimeId: 02634
-    // TypeInfo:  0x023DE0E8
+    // TypeInfo: 0x023DE0E8
 #ifndef _VeniceUIConfiguration_
 #define _VeniceUIConfiguration_
 #pragma pack(push, 4)
@@ -39514,9 +39517,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02043
+    // ClassId: 02043
     // RuntimeId: 02632
-    // TypeInfo:  0x023DE0BC
+    // TypeInfo: 0x023DE0BC
 #ifndef _UIPremiumCompData_
 #define _UIPremiumCompData_
 #pragma pack(push, 4)
@@ -39540,9 +39543,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02044
+    // ClassId: 02044
     // RuntimeId: 02630
-    // TypeInfo:  0x023DE090
+    // TypeInfo: 0x023DE090
 #ifndef _UIGunMasterCompData_
 #define _UIGunMasterCompData_
 #pragma pack(push, 4)
@@ -39566,9 +39569,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02045
+    // ClassId: 02045
     // RuntimeId: 02628
-    // TypeInfo:  0x023DE064
+    // TypeInfo: 0x023DE064
 #ifndef _UIRenderCompData_
 #define _UIRenderCompData_
 #pragma pack(push, 16)
@@ -39602,9 +39605,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02046
+    // ClassId: 02046
     // RuntimeId: 02626
-    // TypeInfo:  0x023DE038
+    // TypeInfo: 0x023DE038
 #ifndef _UIMatchCompData_
 #define _UIMatchCompData_
 #pragma pack(push, 4)
@@ -39628,9 +39631,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02047
+    // ClassId: 02047
     // RuntimeId: 02624
-    // TypeInfo:  0x023DE00C
+    // TypeInfo: 0x023DE00C
 #ifndef _UIMatchesListCompData_
 #define _UIMatchesListCompData_
 #pragma pack(push, 4)
@@ -39654,9 +39657,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02048
+    // ClassId: 02048
     // RuntimeId: 02622
-    // TypeInfo:  0x023DDFE0
+    // TypeInfo: 0x023DDFE0
 #ifndef _UICreditsCompData_
 #define _UICreditsCompData_
 #pragma pack(push, 4)
@@ -39680,9 +39683,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02049
+    // ClassId: 02049
     // RuntimeId: 02620
-    // TypeInfo:  0x023DDFB4
+    // TypeInfo: 0x023DDFB4
 #ifndef _UIInstallHDContentCompData_
 #define _UIInstallHDContentCompData_
 #pragma pack(push, 4)
@@ -39706,9 +39709,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02050
+    // ClassId: 02050
     // RuntimeId: 02618
-    // TypeInfo:  0x023DDF88
+    // TypeInfo: 0x023DDF88
 #ifndef _UICoopEndOfRoundCompData_
 #define _UICoopEndOfRoundCompData_
 #pragma pack(push, 4)
@@ -39732,9 +39735,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02051
+    // ClassId: 02051
     // RuntimeId: 02616
-    // TypeInfo:  0x023DDF5C
+    // TypeInfo: 0x023DDF5C
 #ifndef _UIAssignmentsCompData_
 #define _UIAssignmentsCompData_
 #pragma pack(push, 4)
@@ -39758,9 +39761,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02052
+    // ClassId: 02052
     // RuntimeId: 02614
-    // TypeInfo:  0x023DDF30
+    // TypeInfo: 0x023DDF30
 #ifndef _UIManageMapsCompData_
 #define _UIManageMapsCompData_
 #pragma pack(push, 4)
@@ -39784,9 +39787,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02053
+    // ClassId: 02053
     // RuntimeId: 02612
-    // TypeInfo:  0x023DDF04
+    // TypeInfo: 0x023DDF04
 #ifndef _UIManagePlayersCompData_
 #define _UIManagePlayersCompData_
 #pragma pack(push, 4)
@@ -39810,9 +39813,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02054
+    // ClassId: 02054
     // RuntimeId: 02610
-    // TypeInfo:  0x023DDED8
+    // TypeInfo: 0x023DDED8
 #ifndef _UILocalizeCompData_
 #define _UILocalizeCompData_
 #pragma pack(push, 4)
@@ -39836,9 +39839,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02055
+    // ClassId: 02055
     // RuntimeId: 02608
-    // TypeInfo:  0x023DDEAC
+    // TypeInfo: 0x023DDEAC
 #ifndef _UIManageServerPresetsCompData_
 #define _UIManageServerPresetsCompData_
 #pragma pack(push, 4)
@@ -39862,9 +39865,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02056
+    // ClassId: 02056
     // RuntimeId: 02606
-    // TypeInfo:  0x023DDE80
+    // TypeInfo: 0x023DDE80
 #ifndef _UIOnDemandFontComponentData_
 #define _UIOnDemandFontComponentData_
 #pragma pack(push, 4)
@@ -39889,9 +39892,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02057
+    // ClassId: 02057
     // RuntimeId: 02604
-    // TypeInfo:  0x023DDE54
+    // TypeInfo: 0x023DDE54
 #ifndef _UICoopCompData_
 #define _UICoopCompData_
 #pragma pack(push, 4)
@@ -39915,9 +39918,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02058
+    // ClassId: 02058
     // RuntimeId: 02602
-    // TypeInfo:  0x023DDE28
+    // TypeInfo: 0x023DDE28
 #ifndef _UISetupServerWizardCompData_
 #define _UISetupServerWizardCompData_
 #pragma pack(push, 4)
@@ -39942,9 +39945,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02059
+    // ClassId: 02059
     // RuntimeId: 02600
-    // TypeInfo:  0x023DDDFC
+    // TypeInfo: 0x023DDDFC
 #ifndef _UITrainingCompData_
 #define _UITrainingCompData_
 #pragma pack(push, 4)
@@ -39968,9 +39971,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02060
+    // ClassId: 02060
     // RuntimeId: 02598
-    // TypeInfo:  0x023DDDD0
+    // TypeInfo: 0x023DDDD0
 #ifndef _UIStoreCompData_
 #define _UIStoreCompData_
 #pragma pack(push, 4)
@@ -39994,9 +39997,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02061
+    // ClassId: 02061
     // RuntimeId: 02596
-    // TypeInfo:  0x023DDDA4
+    // TypeInfo: 0x023DDDA4
 #ifndef _UITextureStreamingComponentData_
 #define _UITextureStreamingComponentData_
 #pragma pack(push, 4)
@@ -40020,9 +40023,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02062
+    // ClassId: 02062
     // RuntimeId: 02594
-    // TypeInfo:  0x023DDD78
+    // TypeInfo: 0x023DDD78
 #ifndef _UISpectatorCompData_
 #define _UISpectatorCompData_
 #pragma pack(push, 4)
@@ -40046,9 +40049,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02063
+    // ClassId: 02063
     // RuntimeId: 02592
-    // TypeInfo:  0x023DDD4C
+    // TypeInfo: 0x023DDD4C
 #ifndef _UIMinimapCompData_
 #define _UIMinimapCompData_
 #pragma pack(push, 4)
@@ -40072,9 +40075,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02064
+    // ClassId: 02064
     // RuntimeId: 02590
-    // TypeInfo:  0x023DDD20
+    // TypeInfo: 0x023DDD20
 #ifndef _UIKillCounterCompData_
 #define _UIKillCounterCompData_
 #pragma pack(push, 4)
@@ -40098,9 +40101,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02065
+    // ClassId: 02065
     // RuntimeId: 02588
-    // TypeInfo:  0x023DDCF4
+    // TypeInfo: 0x023DDCF4
 #ifndef _UICampaignCompData_
 #define _UICampaignCompData_
 #pragma pack(push, 4)
@@ -40124,9 +40127,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02066
+    // ClassId: 02066
     // RuntimeId: 02586
-    // TypeInfo:  0x023DDCC8
+    // TypeInfo: 0x023DDCC8
 #ifndef _UISpawnLogicCompData_
 #define _UISpawnLogicCompData_
 #pragma pack(push, 4)
@@ -40150,9 +40153,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02067
+    // ClassId: 02067
     // RuntimeId: 02584
-    // TypeInfo:  0x023DDC9C
+    // TypeInfo: 0x023DDC9C
 #ifndef _UIBattleLogCompData_
 #define _UIBattleLogCompData_
 #pragma pack(push, 4)
@@ -40176,9 +40179,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02068
+    // ClassId: 02068
     // RuntimeId: 02582
-    // TypeInfo:  0x023DDC70
+    // TypeInfo: 0x023DDC70
 #ifndef _UIPlaygroupCompData_
 #define _UIPlaygroupCompData_
 #pragma pack(push, 4)
@@ -40202,9 +40205,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02069
+    // ClassId: 02069
     // RuntimeId: 02580
-    // TypeInfo:  0x023DDC44
+    // TypeInfo: 0x023DDC44
 #ifndef _UIConnectionCompData_
 #define _UIConnectionCompData_
 #pragma pack(push, 4)
@@ -40228,9 +40231,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02070
+    // ClassId: 02070
     // RuntimeId: 02578
-    // TypeInfo:  0x023DDC18
+    // TypeInfo: 0x023DDC18
 #ifndef _UIPersistenceCompData_
 #define _UIPersistenceCompData_
 #pragma pack(push, 4)
@@ -40254,9 +40257,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02071
+    // ClassId: 02071
     // RuntimeId: 02576
-    // TypeInfo:  0x023DDBEC
+    // TypeInfo: 0x023DDBEC
 #ifndef _UIIngameMenuCompData_
 #define _UIIngameMenuCompData_
 #pragma pack(push, 4)
@@ -40280,9 +40283,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02072
+    // ClassId: 02072
     // RuntimeId: 02574
-    // TypeInfo:  0x023DDBC0
+    // TypeInfo: 0x023DDBC0
 #ifndef _UISettingsCompData_
 #define _UISettingsCompData_
 #pragma pack(push, 4)
@@ -40307,9 +40310,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02073
+    // ClassId: 02073
     // RuntimeId: 02562
-    // TypeInfo:  0x023DDB44
+    // TypeInfo: 0x023DDB44
 #ifndef _UIDynamicTextureCompData_
 #define _UIDynamicTextureCompData_
 #pragma pack(push, 4)
@@ -40333,9 +40336,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02074
+    // ClassId: 02074
     // RuntimeId: 02560
-    // TypeInfo:  0x023DDB18
+    // TypeInfo: 0x023DDB18
 #ifndef _UIMessageCompData_
 #define _UIMessageCompData_
 #pragma pack(push, 4)
@@ -40378,9 +40381,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02075
+    // ClassId: 02075
     // RuntimeId: 02556
-    // TypeInfo:  0x023DDADC
+    // TypeInfo: 0x023DDADC
 #ifndef _UIEndOfRoundCompData_
 #define _UIEndOfRoundCompData_
 #pragma pack(push, 4)
@@ -40404,9 +40407,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02076
+    // ClassId: 02076
     // RuntimeId: 02554
-    // TypeInfo:  0x023DDAB0
+    // TypeInfo: 0x023DDAB0
 #ifndef _UISoundCompData_
 #define _UISoundCompData_
 #pragma pack(push, 4)
@@ -40430,9 +40433,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02077
+    // ClassId: 02077
     // RuntimeId: 02552
-    // TypeInfo:  0x023DDA84
+    // TypeInfo: 0x023DDA84
 #ifndef _UINavigationCompData_
 #define _UINavigationCompData_
 #pragma pack(push, 4)
@@ -40456,9 +40459,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02324
+    // ClassId: 02324
     // RuntimeId: 02550
-    // TypeInfo:  0x023DDA58
+    // TypeInfo: 0x023DDA58
 #ifndef _MenuIdAsset_
 #define _MenuIdAsset_
 #pragma pack(push, 4)
@@ -40483,9 +40486,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02078
+    // ClassId: 02078
     // RuntimeId: 02548
-    // TypeInfo:  0x023DDA2C
+    // TypeInfo: 0x023DDA2C
 #ifndef _UIScreenshotCompData_
 #define _UIScreenshotCompData_
 #pragma pack(push, 4)
@@ -40514,9 +40517,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02079
+    // ClassId: 02079
     // RuntimeId: 02544
-    // TypeInfo:  0x023DD9F0
+    // TypeInfo: 0x023DD9F0
 #ifndef _UIHardcoreCompData_
 #define _UIHardcoreCompData_
 #pragma pack(push, 4)
@@ -40540,9 +40543,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02080
+    // ClassId: 02080
     // RuntimeId: 02542
-    // TypeInfo:  0x023DD9C4
+    // TypeInfo: 0x023DD9C4
 #ifndef _UIMemCardCompData_
 #define _UIMemCardCompData_
 #pragma pack(push, 4)
@@ -40566,9 +40569,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02081
+    // ClassId: 02081
     // RuntimeId: 02540
-    // TypeInfo:  0x023DD998
+    // TypeInfo: 0x023DD998
 #ifndef _UIPopupCompData_
 #define _UIPopupCompData_
 #pragma pack(push, 4)
@@ -40592,9 +40595,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02082
+    // ClassId: 02082
     // RuntimeId: 02538
-    // TypeInfo:  0x023DD96C
+    // TypeInfo: 0x023DD96C
 #ifndef _UIVoiceCompData_
 #define _UIVoiceCompData_
 #pragma pack(push, 4)
@@ -40619,9 +40622,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02083
+    // ClassId: 02083
     // RuntimeId: 02536
-    // TypeInfo:  0x023DD940
+    // TypeInfo: 0x023DD940
 #ifndef _UIFriendsCompData_
 #define _UIFriendsCompData_
 #pragma pack(push, 4)
@@ -40645,9 +40648,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02084
+    // ClassId: 02084
     // RuntimeId: 02534
-    // TypeInfo:  0x023DD914
+    // TypeInfo: 0x023DD914
 #ifndef _UIChatCompData_
 #define _UIChatCompData_
 #pragma pack(push, 4)
@@ -40672,9 +40675,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02085
+    // ClassId: 02085
     // RuntimeId: 02532
-    // TypeInfo:  0x023DD8E8
+    // TypeInfo: 0x023DD8E8
 #ifndef _UIAwardsTrackingCompData_
 #define _UIAwardsTrackingCompData_
 #pragma pack(push, 4)
@@ -40698,9 +40701,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02086
+    // ClassId: 02086
     // RuntimeId: 02530
-    // TypeInfo:  0x023DD8BC
+    // TypeInfo: 0x023DD8BC
 #ifndef _UIAwardsScreenCompData_
 #define _UIAwardsScreenCompData_
 #pragma pack(push, 4)
@@ -40726,9 +40729,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02087
+    // ClassId: 02087
     // RuntimeId: 02528
-    // TypeInfo:  0x023DD890
+    // TypeInfo: 0x023DD890
 #ifndef _UILoadLevelCompData_
 #define _UILoadLevelCompData_
 #pragma pack(push, 4)
@@ -40752,9 +40755,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02088
+    // ClassId: 02088
     // RuntimeId: 02526
-    // TypeInfo:  0x023DD864
+    // TypeInfo: 0x023DD864
 #ifndef _UIQueuedEventsCompData_
 #define _UIQueuedEventsCompData_
 #pragma pack(push, 4)
@@ -40781,9 +40784,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02089
+    // ClassId: 02089
     // RuntimeId: 02524
-    // TypeInfo:  0x023DD838
+    // TypeInfo: 0x023DD838
 #ifndef _UIDelayedCommandsCompData_
 #define _UIDelayedCommandsCompData_
 #pragma pack(push, 4)
@@ -40807,9 +40810,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02090
+    // ClassId: 02090
     // RuntimeId: 02522
-    // TypeInfo:  0x023DD80C
+    // TypeInfo: 0x023DD80C
 #ifndef _UIScoreboardCompData_
 #define _UIScoreboardCompData_
 #pragma pack(push, 4)
@@ -40834,9 +40837,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02091
+    // ClassId: 02091
     // RuntimeId: 02520
-    // TypeInfo:  0x023DD7E0
+    // TypeInfo: 0x023DD7E0
 #ifndef _UIServerBrowserCompData_
 #define _UIServerBrowserCompData_
 #pragma pack(push, 4)
@@ -40860,9 +40863,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02092
+    // ClassId: 02092
     // RuntimeId: 02518
-    // TypeInfo:  0x023DD7B4
+    // TypeInfo: 0x023DD7B4
 #ifndef _UIStatsCompData_
 #define _UIStatsCompData_
 #pragma pack(push, 4)
@@ -40886,9 +40889,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02093
+    // ClassId: 02093
     // RuntimeId: 02516
-    // TypeInfo:  0x023DD788
+    // TypeInfo: 0x023DD788
 #ifndef _UILeaderboardCompData_
 #define _UILeaderboardCompData_
 #pragma pack(push, 4)
@@ -40912,9 +40915,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02094
+    // ClassId: 02094
     // RuntimeId: 02512
-    // TypeInfo:  0x023DD74C
+    // TypeInfo: 0x023DD74C
 #ifndef _UIVehicleCompData_
 #define _UIVehicleCompData_
 #pragma pack(push, 4)
@@ -40939,9 +40942,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02095
+    // ClassId: 02095
     // RuntimeId: 02510
-    // TypeInfo:  0x023DD720
+    // TypeInfo: 0x023DD720
 #ifndef _UILifeCounterCompData_
 #define _UILifeCounterCompData_
 #pragma pack(push, 4)
@@ -40965,9 +40968,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02096
+    // ClassId: 02096
     // RuntimeId: 02508
-    // TypeInfo:  0x023DD6F4
+    // TypeInfo: 0x023DD6F4
 #ifndef _UICapturepointCompData_
 #define _UICapturepointCompData_
 #pragma pack(push, 4)
@@ -40991,9 +40994,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02097
+    // ClassId: 02097
     // RuntimeId: 02506
-    // TypeInfo:  0x023DD6C8
+    // TypeInfo: 0x023DD6C8
 #ifndef _UICameraCompData_
 #define _UICameraCompData_
 #pragma pack(push, 4)
@@ -41017,9 +41020,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02098
+    // ClassId: 02098
     // RuntimeId: 02504
-    // TypeInfo:  0x023DD69C
+    // TypeInfo: 0x023DD69C
 #ifndef _UIInventoryCompData_
 #define _UIInventoryCompData_
 #pragma pack(push, 4)
@@ -41043,9 +41046,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02099
+    // ClassId: 02099
     // RuntimeId: 02502
-    // TypeInfo:  0x023DD670
+    // TypeInfo: 0x023DD670
 #ifndef _UIUnlocksCompData_
 #define _UIUnlocksCompData_
 #pragma pack(push, 4)
@@ -41069,9 +41072,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02100
+    // ClassId: 02100
     // RuntimeId: 02500
-    // TypeInfo:  0x023DD644
+    // TypeInfo: 0x023DD644
 #ifndef _UIKillCardCompData_
 #define _UIKillCardCompData_
 #pragma pack(push, 4)
@@ -41095,9 +41098,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02101
+    // ClassId: 02101
     // RuntimeId: 02498
-    // TypeInfo:  0x023DD618
+    // TypeInfo: 0x023DD618
 #ifndef _UIManDownCompData_
 #define _UIManDownCompData_
 #pragma pack(push, 4)
@@ -41122,9 +41125,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02102
+    // ClassId: 02102
     // RuntimeId: 02496
-    // TypeInfo:  0x023DD5EC
+    // TypeInfo: 0x023DD5EC
 #ifndef _UIRightClickCompData_
 #define _UIRightClickCompData_
 #pragma pack(push, 4)
@@ -41148,9 +41151,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02103
+    // ClassId: 02103
     // RuntimeId: 02494
-    // TypeInfo:  0x023DD5C0
+    // TypeInfo: 0x023DD5C0
 #ifndef _UIDetailedServerInfoCompData_
 #define _UIDetailedServerInfoCompData_
 #pragma pack(push, 4)
@@ -41175,9 +41178,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02104
+    // ClassId: 02104
     // RuntimeId: 02490
-    // TypeInfo:  0x023DD584
+    // TypeInfo: 0x023DD584
 #ifndef _UIGameQueueCompData_
 #define _UIGameQueueCompData_
 #pragma pack(push, 4)
@@ -41201,9 +41204,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02105
+    // ClassId: 02105
     // RuntimeId: 02488
-    // TypeInfo:  0x023DD558
+    // TypeInfo: 0x023DD558
 #ifndef _UIServerListFilterBarCompData_
 #define _UIServerListFilterBarCompData_
 #pragma pack(push, 4)
@@ -41227,9 +41230,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02106
+    // ClassId: 02106
     // RuntimeId: 02486
-    // TypeInfo:  0x023DD52C
+    // TypeInfo: 0x023DD52C
 #ifndef _UIManualCompData_
 #define _UIManualCompData_
 #pragma pack(push, 4)
@@ -41253,9 +41256,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02107
+    // ClassId: 02107
     // RuntimeId: 02484
-    // TypeInfo:  0x023DD500
+    // TypeInfo: 0x023DD500
 #ifndef _UIServerListCompData_
 #define _UIServerListCompData_
 #pragma pack(push, 4)
@@ -41279,9 +41282,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02108
+    // ClassId: 02108
     // RuntimeId: 02482
-    // TypeInfo:  0x023DD4D4
+    // TypeInfo: 0x023DD4D4
 #ifndef _UIPreRoundCompData_
 #define _UIPreRoundCompData_
 #pragma pack(push, 4)
@@ -41305,9 +41308,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02109
+    // ClassId: 02109
     // RuntimeId: 02480
-    // TypeInfo:  0x023DD4A8
+    // TypeInfo: 0x023DD4A8
 #ifndef _UISquadCompData_
 #define _UISquadCompData_
 #pragma pack(push, 4)
@@ -41365,9 +41368,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02110
+    // ClassId: 02110
     // RuntimeId: 02478
-    // TypeInfo:  0x023DD47C
+    // TypeInfo: 0x023DD47C
 #ifndef _UICombatAreaCompData_
 #define _UICombatAreaCompData_
 #pragma pack(push, 4)
@@ -41392,9 +41395,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02111
+    // ClassId: 02111
     // RuntimeId: 02476
-    // TypeInfo:  0x023DD450
+    // TypeInfo: 0x023DD450
 #ifndef _UISoldierCompData_
 #define _UISoldierCompData_
 #pragma pack(push, 4)
@@ -41433,9 +41436,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02112
+    // ClassId: 02112
     // RuntimeId: 02474
-    // TypeInfo:  0x023DD424
+    // TypeInfo: 0x023DD424
 #ifndef _UIDamageIndicatorCompData_
 #define _UIDamageIndicatorCompData_
 #pragma pack(push, 4)
@@ -41460,9 +41463,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02114
+    // ClassId: 02114
     // RuntimeId: 02448
-    // TypeInfo:  0x023DD204
+    // TypeInfo: 0x023DD204
 #ifndef _UI3dIconCompData_
 #define _UI3dIconCompData_
 #pragma pack(push, 4)
@@ -41521,9 +41524,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02116
+    // ClassId: 02116
     // RuntimeId: 02470
-    // TypeInfo:  0x023DD3CC
+    // TypeInfo: 0x023DD3CC
 #ifndef _UITeamSupportTagCompData_
 #define _UITeamSupportTagCompData_
 #pragma pack(push, 4)
@@ -41547,9 +41550,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02117
+    // ClassId: 02117
     // RuntimeId: 02468
-    // TypeInfo:  0x023DD3A0
+    // TypeInfo: 0x023DD3A0
 #ifndef _UIAlerttagCompData_
 #define _UIAlerttagCompData_
 #pragma pack(push, 4)
@@ -41573,9 +41576,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02113
+    // ClassId: 02113
     // RuntimeId: 02466
-    // TypeInfo:  0x023DD374
+    // TypeInfo: 0x023DD374
 #ifndef _UIMapmarkerCompData_
 #define _UIMapmarkerCompData_
 #pragma pack(push, 4)
@@ -41600,9 +41603,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02118
+    // ClassId: 02118
     // RuntimeId: 02464
-    // TypeInfo:  0x023DD348
+    // TypeInfo: 0x023DD348
 #ifndef _UIMapmarkertagCompData_
 #define _UIMapmarkertagCompData_
 #pragma pack(push, 4)
@@ -41626,9 +41629,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02119
+    // ClassId: 02119
     // RuntimeId: 02462
-    // TypeInfo:  0x023DD31C
+    // TypeInfo: 0x023DD31C
 #ifndef _UICapturepointtagCompData_
 #define _UICapturepointtagCompData_
 #pragma pack(push, 4)
@@ -41652,9 +41655,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02120
+    // ClassId: 02120
     // RuntimeId: 02460
-    // TypeInfo:  0x023DD2F0
+    // TypeInfo: 0x023DD2F0
 #ifndef _UITrackingtagCompData_
 #define _UITrackingtagCompData_
 #pragma pack(push, 4)
@@ -41682,9 +41685,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02121
+    // ClassId: 02121
     // RuntimeId: 02454
-    // TypeInfo:  0x023DD26C
+    // TypeInfo: 0x023DD26C
 #ifndef _UINametagCompData_
 #define _UINametagCompData_
 #pragma pack(push, 16)
@@ -41717,9 +41720,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02123
+    // ClassId: 02123
     // RuntimeId: 02456
-    // TypeInfo:  0x023DD298
+    // TypeInfo: 0x023DD298
 #ifndef _UINametagSPCompData_
 #define _UINametagSPCompData_
 #pragma pack(push, 16)
@@ -41743,9 +41746,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02122
+    // ClassId: 02122
     // RuntimeId: 02458
-    // TypeInfo:  0x023DD2C4
+    // TypeInfo: 0x023DD2C4
 #ifndef _UINametagCoopCompData_
 #define _UINametagCoopCompData_
 #pragma pack(push, 16)
@@ -41769,9 +41772,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02124
+    // ClassId: 02124
     // RuntimeId: 02452
-    // TypeInfo:  0x023DD240
+    // TypeInfo: 0x023DD240
 #ifndef _UI3dLaserTagCompData_
 #define _UI3dLaserTagCompData_
 #pragma pack(push, 4)
@@ -41795,9 +41798,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02115
+    // ClassId: 02115
     // RuntimeId: 02472
-    // TypeInfo:  0x023DD3F8
+    // TypeInfo: 0x023DD3F8
 #ifndef _UIInteractionCompData_
 #define _UIInteractionCompData_
 #pragma pack(push, 4)
@@ -41825,9 +41828,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02125
+    // ClassId: 02125
     // RuntimeId: 02446
-    // TypeInfo:  0x023DD1D8
+    // TypeInfo: 0x023DD1D8
 #ifndef _UIInputCompData_
 #define _UIInputCompData_
 #pragma pack(push, 4)
@@ -41851,9 +41854,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02126
+    // ClassId: 02126
     // RuntimeId: 02444
-    // TypeInfo:  0x023DD1AC
+    // TypeInfo: 0x023DD1AC
 #ifndef _UICustomizationCompData_
 #define _UICustomizationCompData_
 #pragma pack(push, 16)
@@ -41883,9 +41886,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02127
+    // ClassId: 02127
     // RuntimeId: 02442
-    // TypeInfo:  0x023DD180
+    // TypeInfo: 0x023DD180
 #ifndef _UIGeneralCompData_
 #define _UIGeneralCompData_
 #pragma pack(push, 4)
@@ -41909,9 +41912,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02128
+    // ClassId: 02128
     // RuntimeId: 02436
-    // TypeInfo:  0x023DD134
+    // TypeInfo: 0x023DD134
 #ifndef _UIWidgetEventCompData_
 #define _UIWidgetEventCompData_
 #pragma pack(push, 4)
@@ -41935,9 +41938,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02129
+    // ClassId: 02129
     // RuntimeId: 02434
-    // TypeInfo:  0x023DD108
+    // TypeInfo: 0x023DD108
 #ifndef _UIFlagCounterCompData_
 #define _UIFlagCounterCompData_
 #pragma pack(push, 4)
@@ -41961,9 +41964,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02130
+    // ClassId: 02130
     // RuntimeId: 02432
-    // TypeInfo:  0x023DD0DC
+    // TypeInfo: 0x023DD0DC
 #ifndef _UITicketCounterCompData_
 #define _UITicketCounterCompData_
 #pragma pack(push, 4)
@@ -41987,9 +41990,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02131
+    // ClassId: 02131
     // RuntimeId: 02430
-    // TypeInfo:  0x023DD0B0
+    // TypeInfo: 0x023DD0B0
 #ifndef _UIWeaponCompData_
 #define _UIWeaponCompData_
 #pragma pack(push, 4)
@@ -42016,9 +42019,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02132
+    // ClassId: 02132
     // RuntimeId: 02428
-    // TypeInfo:  0x023DD084
+    // TypeInfo: 0x023DD084
 #ifndef _UITeamCompData_
 #define _UITeamCompData_
 #pragma pack(push, 4)
@@ -42042,9 +42045,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02133
+    // ClassId: 02133
     // RuntimeId: 02426
-    // TypeInfo:  0x023DD058
+    // TypeInfo: 0x023DD058
 #ifndef _UIKitCompData_
 #define _UIKitCompData_
 #pragma pack(push, 4)
@@ -42068,9 +42071,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02134
+    // ClassId: 02134
     // RuntimeId: 02424
-    // TypeInfo:  0x023DD02C
+    // TypeInfo: 0x023DD02C
 #ifndef _UISpawnPointCompData_
 #define _UISpawnPointCompData_
 #pragma pack(push, 4)
@@ -42094,9 +42097,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02135
+    // ClassId: 02135
     // RuntimeId: 02422
-    // TypeInfo:  0x023DD000
+    // TypeInfo: 0x023DD000
 #ifndef _UILevelCompData_
 #define _UILevelCompData_
 #pragma pack(push, 4)
@@ -42120,9 +42123,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02136
+    // ClassId: 02136
     // RuntimeId: 02420
-    // TypeInfo:  0x023DCFD4
+    // TypeInfo: 0x023DCFD4
 #ifndef _FrontEndComponentData_
 #define _FrontEndComponentData_
 #pragma pack(push, 4)
@@ -42146,9 +42149,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02137
+    // ClassId: 02137
     // RuntimeId: 02418
-    // TypeInfo:  0x023DCFA8
+    // TypeInfo: 0x023DCFA8
 #ifndef _DiscComponentData_
 #define _DiscComponentData_
 #pragma pack(push, 4)
@@ -42172,9 +42175,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02138
+    // ClassId: 02138
     // RuntimeId: 02416
-    // TypeInfo:  0x023DCF7C
+    // TypeInfo: 0x023DCF7C
 #ifndef _UserComponentData_
 #define _UserComponentData_
 #pragma pack(push, 4)
@@ -42198,9 +42201,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02139
+    // ClassId: 02139
     // RuntimeId: 02414
-    // TypeInfo:  0x023DCF50
+    // TypeInfo: 0x023DCF50
 #ifndef _UILightExposureComponentData_
 #define _UILightExposureComponentData_
 #pragma pack(push, 4)
@@ -42224,9 +42227,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02140
+    // ClassId: 02140
     // RuntimeId: 02412
-    // TypeInfo:  0x023DCF24
+    // TypeInfo: 0x023DCF24
 #ifndef _UIObjectivesCompData_
 #define _UIObjectivesCompData_
 #pragma pack(push, 4)
@@ -42250,9 +42253,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02141
+    // ClassId: 02141
     // RuntimeId: 02410
-    // TypeInfo:  0x023DCEF8
+    // TypeInfo: 0x023DCEF8
 #ifndef _HudCameraShakeData_
 #define _HudCameraShakeData_
 #pragma pack(push, 4)
@@ -42294,9 +42297,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02142
+    // ClassId: 02142
     // RuntimeId: 02408
-    // TypeInfo:  0x023DCECC
+    // TypeInfo: 0x023DCECC
 #ifndef _UIPresenceCompData_
 #define _UIPresenceCompData_
 #pragma pack(push, 4)
@@ -42320,9 +42323,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02143
+    // ClassId: 02143
     // RuntimeId: 02406
-    // TypeInfo:  0x023DCEA0
+    // TypeInfo: 0x023DCEA0
 #ifndef _UIPostProcessComponentData_
 #define _UIPostProcessComponentData_
 #pragma pack(push, 4)
@@ -42359,9 +42362,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02144
+    // ClassId: 02144
     // RuntimeId: 02404
-    // TypeInfo:  0x023DCE74
+    // TypeInfo: 0x023DCE74
 #ifndef _UIDirectAccessCompData_
 #define _UIDirectAccessCompData_
 #pragma pack(push, 4)
@@ -42385,9 +42388,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02145
+    // ClassId: 02145
     // RuntimeId: 02402
-    // TypeInfo:  0x023DCE48
+    // TypeInfo: 0x023DCE48
 #ifndef _UIScreenEventCompData_
 #define _UIScreenEventCompData_
 #pragma pack(push, 4)
@@ -42411,9 +42414,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02146
+    // ClassId: 02146
     // RuntimeId: 02400
-    // TypeInfo:  0x023DCE1C
+    // TypeInfo: 0x023DCE1C
 #ifndef _UIDataInterfaceCompData_
 #define _UIDataInterfaceCompData_
 #pragma pack(push, 4)
@@ -42437,9 +42440,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02147
+    // ClassId: 02147
     // RuntimeId: 02398
-    // TypeInfo:  0x023DCDF0
+    // TypeInfo: 0x023DCDF0
 #ifndef _UISessionDataComponentData_
 #define _UISessionDataComponentData_
 #pragma pack(push, 4)
@@ -42463,9 +42466,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01100
+    // ClassId: 01100
     // RuntimeId: 02396
-    // TypeInfo:  0x023DCDC4
+    // TypeInfo: 0x023DCDC4
 #ifndef _PlayerInteractionViewData_
 #define _PlayerInteractionViewData_
 #pragma pack(push, 4)
@@ -42489,9 +42492,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01101
+    // ClassId: 01101
     // RuntimeId: 02394
-    // TypeInfo:  0x023DCD98
+    // TypeInfo: 0x023DCD98
 #ifndef _SpawnSubViewData_
 #define _SpawnSubViewData_
 #pragma pack(push, 4)
@@ -42515,9 +42518,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01071
+    // ClassId: 01071
     // RuntimeId: 02390
-    // TypeInfo:  0x023DCD4C
+    // TypeInfo: 0x023DCD4C
 #ifndef _VeniceSoldierHealthModuleData_
 #define _VeniceSoldierHealthModuleData_
 #pragma pack(push, 4)
@@ -42560,9 +42563,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02463
+    // ClassId: 02463
     // RuntimeId: 02386
-    // TypeInfo:  0x023DCD10
+    // TypeInfo: 0x023DCD10
 #ifndef _VeniceOnlineSettings_
 #define _VeniceOnlineSettings_
 #pragma pack(push, 4)
@@ -42619,9 +42622,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02249
+    // ClassId: 02249
     // RuntimeId: 02382
-    // TypeInfo:  0x023DCCD4
+    // TypeInfo: 0x023DCCD4
 #ifndef _VeniceOnlineConfiguration_
 #define _VeniceOnlineConfiguration_
 #pragma pack(push, 4)
@@ -42649,9 +42652,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02204
+    // ClassId: 02204
     // RuntimeId: 02380
-    // TypeInfo:  0x023DCCA8
+    // TypeInfo: 0x023DCCA8
 #ifndef _VeniceUICombatAreaAsset_
 #define _VeniceUICombatAreaAsset_
 #pragma pack(push, 4)
@@ -42677,9 +42680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01162
+    // ClassId: 01162
     // RuntimeId: 02378
-    // TypeInfo:  0x023DCC7C
+    // TypeInfo: 0x023DCC7C
 #ifndef _VeniceHudConfigAsset_
 #define _VeniceHudConfigAsset_
 #pragma pack(push, 4)
@@ -42730,9 +42733,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01034
+    // ClassId: 01034
     // RuntimeId: 02374
-    // TypeInfo:  0x023DCC40
+    // TypeInfo: 0x023DCC40
 #ifndef _HudProgressbarData_
 #define _HudProgressbarData_
 #pragma pack(push, 4)
@@ -42757,9 +42760,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01035
+    // ClassId: 01035
     // RuntimeId: 02364
-    // TypeInfo:  0x023DCB80
+    // TypeInfo: 0x023DCB80
 #ifndef _HudTrackerData_
 #define _HudTrackerData_
 #pragma pack(push, 4)
@@ -42794,9 +42797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01037
+    // ClassId: 01037
     // RuntimeId: 02368
-    // TypeInfo:  0x023DCBD8
+    // TypeInfo: 0x023DCBD8
 #ifndef _GunnerSpottingTrackerData_
 #define _GunnerSpottingTrackerData_
 #pragma pack(push, 4)
@@ -42822,9 +42825,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01038
+    // ClassId: 01038
     // RuntimeId: 02366
-    // TypeInfo:  0x023DCBAC
+    // TypeInfo: 0x023DCBAC
 #ifndef _HudCapturePointTrackerData_
 #define _HudCapturePointTrackerData_
 #pragma pack(push, 4)
@@ -42848,9 +42851,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01036
+    // ClassId: 01036
     // RuntimeId: 02370
-    // TypeInfo:  0x023DCC04
+    // TypeInfo: 0x023DCC04
 #ifndef _PlayerOrderTrackerData_
 #define _PlayerOrderTrackerData_
 #pragma pack(push, 4)
@@ -42877,9 +42880,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01039
+    // ClassId: 01039
     // RuntimeId: 02362
-    // TypeInfo:  0x023DCB54
+    // TypeInfo: 0x023DCB54
 #ifndef _HudVehicleTrackerData_
 #define _HudVehicleTrackerData_
 #pragma pack(push, 4)
@@ -42923,9 +42926,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01040
+    // ClassId: 01040
     // RuntimeId: 02356
-    // TypeInfo:  0x023DCB08
+    // TypeInfo: 0x023DCB08
 #ifndef _AirRadarData_
 #define _AirRadarData_
 #pragma pack(push, 16)
@@ -42967,9 +42970,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01163
+    // ClassId: 01163
     // RuntimeId: 02352
-    // TypeInfo:  0x023DCACC
+    // TypeInfo: 0x023DCACC
 #ifndef _RadioAltitudeData_
 #define _RadioAltitudeData_
 #pragma pack(push, 4)
@@ -42996,9 +42999,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02325
+    // ClassId: 02325
     // RuntimeId: 02348
-    // TypeInfo:  0x023DCA90
+    // TypeInfo: 0x023DCA90
 #ifndef _UIColorTemplate_
 #define _UIColorTemplate_
 #pragma pack(push, 4)
@@ -43025,9 +43028,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01164
+    // ClassId: 01164
     // RuntimeId: 02346
-    // TypeInfo:  0x023DCA64
+    // TypeInfo: 0x023DCA64
 #ifndef _UIColor_
 #define _UIColor_
 #pragma pack(push, 16)
@@ -43055,9 +43058,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01165
+    // ClassId: 01165
     // RuntimeId: 02342
-    // TypeInfo:  0x023DCA28
+    // TypeInfo: 0x023DCA28
 #ifndef _UINametag_
 #define _UINametag_
 #pragma pack(push, 16)
@@ -43093,9 +43096,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00920
+    // ClassId: 00920
     // RuntimeId: 02332
-    // TypeInfo:  0x023DC9BC
+    // TypeInfo: 0x023DC9BC
 #ifndef _VeniceMissionObjectiveHudData_
 #define _VeniceMissionObjectiveHudData_
 #pragma pack(push, 16)
@@ -43119,9 +43122,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01166
+    // ClassId: 01166
     // RuntimeId: 02330
-    // TypeInfo:  0x023DC990
+    // TypeInfo: 0x023DC990
 #ifndef _VeniceMapMarkerHudData_
 #define _VeniceMapMarkerHudData_
 #pragma pack(push, 4)
@@ -43146,9 +43149,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01167
+    // ClassId: 01167
     // RuntimeId: 02328
-    // TypeInfo:  0x023DC964
+    // TypeInfo: 0x023DC964
 #ifndef _VeniceCombatAreaCamera_
 #define _VeniceCombatAreaCamera_
 #pragma pack(push, 4)
@@ -43172,9 +43175,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01778
+    // ClassId: 01778
     // RuntimeId: 02322
-    // TypeInfo:  0x023DC918
+    // TypeInfo: 0x023DC918
 #ifndef _UISetValueData_
 #define _UISetValueData_
 #pragma pack(push, 4)
@@ -43204,9 +43207,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00131
+    // ClassId: 00131
     // RuntimeId: 01648
-    // TypeInfo:  0x023D2BF4
+    // TypeInfo: 0x023D2BF4
 #ifndef _PresenceRequestParameters_
 #define _PresenceRequestParameters_
     class PresenceRequestParameters
@@ -43225,9 +43228,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00133
+    // ClassId: 00133
     // RuntimeId: 02319
-    // TypeInfo:  0x023DABBC
+    // TypeInfo: 0x023DABBC
 #ifndef _PresenceSetUserInfoAttributeRequestParameters_
 #define _PresenceSetUserInfoAttributeRequestParameters_
     class PresenceSetUserInfoAttributeRequestParameters : public PresenceRequestParameters
@@ -43246,9 +43249,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00134
+    // ClassId: 00134
     // RuntimeId: 02318
-    // TypeInfo:  0x023DAB94
+    // TypeInfo: 0x023DAB94
 #ifndef _PresenceViewInviteRequestParameters_
 #define _PresenceViewInviteRequestParameters_
     class PresenceViewInviteRequestParameters : public PresenceRequestParameters
@@ -43267,9 +43270,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00135
+    // ClassId: 00135
     // RuntimeId: 02317
-    // TypeInfo:  0x023DAB6C
+    // TypeInfo: 0x023DAB6C
 #ifndef _PresenceKickFromPlaygroupRequestParameters_
 #define _PresenceKickFromPlaygroupRequestParameters_
     class PresenceKickFromPlaygroupRequestParameters : public PresenceRequestParameters
@@ -43288,9 +43291,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00136
+    // ClassId: 00136
     // RuntimeId: 02316
-    // TypeInfo:  0x023DAB44
+    // TypeInfo: 0x023DAB44
 #ifndef _PresenceSendInviteRequestParameters_
 #define _PresenceSendInviteRequestParameters_
     class PresenceSendInviteRequestParameters : public PresenceRequestParameters
@@ -43309,9 +43312,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00137
+    // ClassId: 00137
     // RuntimeId: 02315
-    // TypeInfo:  0x023DAB1C
+    // TypeInfo: 0x023DAB1C
 #ifndef _PresenceJoinGameByOnlineNativeDataRequestParameters_
 #define _PresenceJoinGameByOnlineNativeDataRequestParameters_
     class PresenceJoinGameByOnlineNativeDataRequestParameters : public PresenceRequestParameters
@@ -43330,9 +43333,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00138
+    // ClassId: 00138
     // RuntimeId: 02314
-    // TypeInfo:  0x023DAAF4
+    // TypeInfo: 0x023DAAF4
 #ifndef _PresenceDownloadPromoItemRequestParameters_
 #define _PresenceDownloadPromoItemRequestParameters_
     class PresenceDownloadPromoItemRequestParameters : public PresenceRequestParameters
@@ -43351,9 +43354,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00139
+    // ClassId: 00139
     // RuntimeId: 02313
-    // TypeInfo:  0x023DAACC
+    // TypeInfo: 0x023DAACC
 #ifndef _PresenceSetOverlayUrlRequestParameters_
 #define _PresenceSetOverlayUrlRequestParameters_
     class PresenceSetOverlayUrlRequestParameters : public PresenceRequestParameters
@@ -43372,9 +43375,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00140
+    // ClassId: 00140
     // RuntimeId: 02312
-    // TypeInfo:  0x023DAAA4
+    // TypeInfo: 0x023DAAA4
 #ifndef _PresenceRedeemOnlinePassCodeRequestParameters_
 #define _PresenceRedeemOnlinePassCodeRequestParameters_
     class PresenceRedeemOnlinePassCodeRequestParameters : public PresenceRequestParameters
@@ -43392,9 +43395,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00141
+    // ClassId: 00141
     // RuntimeId: 02311
-    // TypeInfo:  0x023DAA7C
+    // TypeInfo: 0x023DAA7C
 #ifndef _PresencePurchaseOnlinePassRequestParameters_
 #define _PresencePurchaseOnlinePassRequestParameters_
     class PresencePurchaseOnlinePassRequestParameters : public PresenceRequestParameters
@@ -43412,9 +43415,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00142
+    // ClassId: 00142
     // RuntimeId: 02310
-    // TypeInfo:  0x023DAA54
+    // TypeInfo: 0x023DAA54
 #ifndef _PresenceCheckOnlinePassRequestParameters_
 #define _PresenceCheckOnlinePassRequestParameters_
     class PresenceCheckOnlinePassRequestParameters : public PresenceRequestParameters
@@ -43432,9 +43435,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00143
+    // ClassId: 00143
     // RuntimeId: 02309
-    // TypeInfo:  0x023DAA2C
+    // TypeInfo: 0x023DAA2C
 #ifndef _PresenceGetItemImageCommerceRequestParameters_
 #define _PresenceGetItemImageCommerceRequestParameters_
     class PresenceGetItemImageCommerceRequestParameters : public PresenceRequestParameters
@@ -43453,9 +43456,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00144
+    // ClassId: 00144
     // RuntimeId: 02308
-    // TypeInfo:  0x023DAA04
+    // TypeInfo: 0x023DAA04
 #ifndef _PresenceConsumeCommerceRequestParameters_
 #define _PresenceConsumeCommerceRequestParameters_
     class PresenceConsumeCommerceRequestParameters : public PresenceRequestParameters
@@ -43474,9 +43477,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00145
+    // ClassId: 00145
     // RuntimeId: 02307
-    // TypeInfo:  0x023DA9DC
+    // TypeInfo: 0x023DA9DC
 #ifndef _PresencePurchaseConsumableCommerceRequestParameters_
 #define _PresencePurchaseConsumableCommerceRequestParameters_
     class PresencePurchaseConsumableCommerceRequestParameters : public PresenceRequestParameters
@@ -43495,9 +43498,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00146
+    // ClassId: 00146
     // RuntimeId: 02306
-    // TypeInfo:  0x023DA9B4
+    // TypeInfo: 0x023DA9B4
 #ifndef _PresencePurchaseCommerceRequestParameters_
 #define _PresencePurchaseCommerceRequestParameters_
     class PresencePurchaseCommerceRequestParameters : public PresenceRequestParameters
@@ -43516,9 +43519,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00147
+    // ClassId: 00147
     // RuntimeId: 02305
-    // TypeInfo:  0x023DA98C
+    // TypeInfo: 0x023DA98C
 #ifndef _PresenceEnumerateContentCommerceRequestParameters_
 #define _PresenceEnumerateContentCommerceRequestParameters_
     class PresenceEnumerateContentCommerceRequestParameters : public PresenceRequestParameters
@@ -43537,9 +43540,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00148
+    // ClassId: 00148
     // RuntimeId: 02304
-    // TypeInfo:  0x023DA964
+    // TypeInfo: 0x023DA964
 #ifndef _PresenceShutDownCommerceServiceRequestParameters_
 #define _PresenceShutDownCommerceServiceRequestParameters_
     class PresenceShutDownCommerceServiceRequestParameters : public PresenceRequestParameters
@@ -43558,9 +43561,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00149
+    // ClassId: 00149
     // RuntimeId: 02303
-    // TypeInfo:  0x023DA93C
+    // TypeInfo: 0x023DA93C
 #ifndef _PresenceInitializeCommerceServiceRequestParameters_
 #define _PresenceInitializeCommerceServiceRequestParameters_
     class PresenceInitializeCommerceServiceRequestParameters : public PresenceRequestParameters
@@ -43579,9 +43582,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00150
+    // ClassId: 00150
     // RuntimeId: 02302
-    // TypeInfo:  0x023DA914
+    // TypeInfo: 0x023DA914
 #ifndef _PresenceUploadProgressionRequestParameters_
 #define _PresenceUploadProgressionRequestParameters_
     class PresenceUploadProgressionRequestParameters : public PresenceRequestParameters
@@ -43600,9 +43603,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00151
+    // ClassId: 00151
     // RuntimeId: 02301
-    // TypeInfo:  0x023DA8EC
+    // TypeInfo: 0x023DA8EC
 #ifndef _PresenceGetLeaderboardRequestParameters_
 #define _PresenceGetLeaderboardRequestParameters_
     class PresenceGetLeaderboardRequestParameters : public PresenceRequestParameters
@@ -43621,9 +43624,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00152
+    // ClassId: 00152
     // RuntimeId: 02300
-    // TypeInfo:  0x023DA8C4
+    // TypeInfo: 0x023DA8C4
 #ifndef _PresenceDownloadStatisticsRequestParameters_
 #define _PresenceDownloadStatisticsRequestParameters_
     class PresenceDownloadStatisticsRequestParameters : public PresenceRequestParameters
@@ -43642,9 +43645,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00153
+    // ClassId: 00153
     // RuntimeId: 02299
-    // TypeInfo:  0x023DA89C
+    // TypeInfo: 0x023DA89C
 #ifndef _PresenceResetStatisticsRequestParameters_
 #define _PresenceResetStatisticsRequestParameters_
     class PresenceResetStatisticsRequestParameters : public PresenceRequestParameters
@@ -43663,9 +43666,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00154
+    // ClassId: 00154
     // RuntimeId: 02298
-    // TypeInfo:  0x023DA874
+    // TypeInfo: 0x023DA874
 #ifndef _PresenceReportServerBannerRequestParameters_
 #define _PresenceReportServerBannerRequestParameters_
     class PresenceReportServerBannerRequestParameters : public PresenceRequestParameters
@@ -43684,9 +43687,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00155
+    // ClassId: 00155
     // RuntimeId: 02297
-    // TypeInfo:  0x023DA84C
+    // TypeInfo: 0x023DA84C
 #ifndef _PresenceRspRestartServerRequestParameters_
 #define _PresenceRspRestartServerRequestParameters_
     class PresenceRspRestartServerRequestParameters : public PresenceRequestParameters
@@ -43705,9 +43708,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00156
+    // ClassId: 00156
     // RuntimeId: 02296
-    // TypeInfo:  0x023DA824
+    // TypeInfo: 0x023DA824
 #ifndef _PresenceRspGetConfigRequestParameters_
 #define _PresenceRspGetConfigRequestParameters_
     class PresenceRspGetConfigRequestParameters : public PresenceRequestParameters
@@ -43726,9 +43729,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00157
+    // ClassId: 00157
     // RuntimeId: 02295
-    // TypeInfo:  0x023DA7FC
+    // TypeInfo: 0x023DA7FC
 #ifndef _PresenceRspUpdateVipUserRequestParameters_
 #define _PresenceRspUpdateVipUserRequestParameters_
     class PresenceRspUpdateVipUserRequestParameters : public PresenceRequestParameters
@@ -43747,9 +43750,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00158
+    // ClassId: 00158
     // RuntimeId: 02294
-    // TypeInfo:  0x023DA7D4
+    // TypeInfo: 0x023DA7D4
 #ifndef _PresenceRspUpdateBannedUserRequestParameters_
 #define _PresenceRspUpdateBannedUserRequestParameters_
     class PresenceRspUpdateBannedUserRequestParameters : public PresenceRequestParameters
@@ -43768,9 +43771,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00159
+    // ClassId: 00159
     // RuntimeId: 02293
-    // TypeInfo:  0x023DA7AC
+    // TypeInfo: 0x023DA7AC
 #ifndef _PresenceRspUpdateAdminUserRequestParameters_
 #define _PresenceRspUpdateAdminUserRequestParameters_
     class PresenceRspUpdateAdminUserRequestParameters : public PresenceRequestParameters
@@ -43789,9 +43792,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00160
+    // ClassId: 00160
     // RuntimeId: 02292
-    // TypeInfo:  0x023DA784
+    // TypeInfo: 0x023DA784
 #ifndef _PresenceRspUpdateMapRotationRequestParameters_
 #define _PresenceRspUpdateMapRotationRequestParameters_
     class PresenceRspUpdateMapRotationRequestParameters : public PresenceRequestParameters
@@ -43810,9 +43813,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00161
+    // ClassId: 00161
     // RuntimeId: 02291
-    // TypeInfo:  0x023DA75C
+    // TypeInfo: 0x023DA75C
 #ifndef _PresenceRspUpdatePresetRequestParameters_
 #define _PresenceRspUpdatePresetRequestParameters_
     class PresenceRspUpdatePresetRequestParameters : public PresenceRequestParameters
@@ -43831,9 +43834,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00162
+    // ClassId: 00162
     // RuntimeId: 02290
-    // TypeInfo:  0x023DA734
+    // TypeInfo: 0x023DA734
 #ifndef _PresenceRspUpdateServerSettingsRequestParameters_
 #define _PresenceRspUpdateServerSettingsRequestParameters_
     class PresenceRspUpdateServerSettingsRequestParameters : public PresenceRequestParameters
@@ -43852,9 +43855,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00163
+    // ClassId: 00163
     // RuntimeId: 02289
-    // TypeInfo:  0x023DA70C
+    // TypeInfo: 0x023DA70C
 #ifndef _PresenceRspGetServerDetailsRequestParameters_
 #define _PresenceRspGetServerDetailsRequestParameters_
     class PresenceRspGetServerDetailsRequestParameters : public PresenceRequestParameters
@@ -43873,9 +43876,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00164
+    // ClassId: 00164
     // RuntimeId: 02288
-    // TypeInfo:  0x023DA6E4
+    // TypeInfo: 0x023DA6E4
 #ifndef _PresenceRspGetServersRequestParameters_
 #define _PresenceRspGetServersRequestParameters_
     class PresenceRspGetServersRequestParameters : public PresenceRequestParameters
@@ -43894,9 +43897,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00165
+    // ClassId: 00165
     // RuntimeId: 02287
-    // TypeInfo:  0x023DA6BC
+    // TypeInfo: 0x023DA6BC
 #ifndef _PresenceGetDetailedServerInfoRequestParameters_
 #define _PresenceGetDetailedServerInfoRequestParameters_
     class PresenceGetDetailedServerInfoRequestParameters : public PresenceRequestParameters
@@ -43915,9 +43918,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00166
+    // ClassId: 00166
     // RuntimeId: 02286
-    // TypeInfo:  0x023DA694
+    // TypeInfo: 0x023DA694
 #ifndef _PresenceGetGamesByGameIDRequestParameters_
 #define _PresenceGetGamesByGameIDRequestParameters_
     class PresenceGetGamesByGameIDRequestParameters : public PresenceRequestParameters
@@ -43936,9 +43939,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00167
+    // ClassId: 00167
     // RuntimeId: 02285
-    // TypeInfo:  0x023DA66C
+    // TypeInfo: 0x023DA66C
 #ifndef _PresenceGetGamesWithFriendsRequestParameters_
 #define _PresenceGetGamesWithFriendsRequestParameters_
     class PresenceGetGamesWithFriendsRequestParameters : public PresenceRequestParameters
@@ -43957,9 +43960,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00168
+    // ClassId: 00168
     // RuntimeId: 02284
-    // TypeInfo:  0x023DA644
+    // TypeInfo: 0x023DA644
 #ifndef _PresenceGetServerBrowserSnapshotRequestParameters_
 #define _PresenceGetServerBrowserSnapshotRequestParameters_
     class PresenceGetServerBrowserSnapshotRequestParameters : public PresenceRequestParameters
@@ -43978,9 +43981,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00169
+    // ClassId: 00169
     // RuntimeId: 02283
-    // TypeInfo:  0x023DA61C
+    // TypeInfo: 0x023DA61C
 #ifndef _PresenceSetPlaygroupAttributeRequestParameters_
 #define _PresenceSetPlaygroupAttributeRequestParameters_
     class PresenceSetPlaygroupAttributeRequestParameters : public PresenceRequestParameters
@@ -43999,9 +44002,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00170
+    // ClassId: 00170
     // RuntimeId: 02282
-    // TypeInfo:  0x023DA5F4
+    // TypeInfo: 0x023DA5F4
 #ifndef _PresenceLeavePlaygroupRequestParameters_
 #define _PresenceLeavePlaygroupRequestParameters_
     class PresenceLeavePlaygroupRequestParameters : public PresenceRequestParameters
@@ -44020,9 +44023,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00171
+    // ClassId: 00171
     // RuntimeId: 02281
-    // TypeInfo:  0x023DA5CC
+    // TypeInfo: 0x023DA5CC
 #ifndef _PresenceJoinPlaygroupByInviteTokenRequestParameters_
 #define _PresenceJoinPlaygroupByInviteTokenRequestParameters_
     class PresenceJoinPlaygroupByInviteTokenRequestParameters : public PresenceRequestParameters
@@ -44041,9 +44044,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00172
+    // ClassId: 00172
     // RuntimeId: 02280
-    // TypeInfo:  0x023DA5A4
+    // TypeInfo: 0x023DA5A4
 #ifndef _PresenceJoinPlaygroupByOnlineNativeDataRequestParameters_
 #define _PresenceJoinPlaygroupByOnlineNativeDataRequestParameters_
     class PresenceJoinPlaygroupByOnlineNativeDataRequestParameters : public PresenceRequestParameters
@@ -44062,9 +44065,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00173
+    // ClassId: 00173
     // RuntimeId: 02279
-    // TypeInfo:  0x023DA57C
+    // TypeInfo: 0x023DA57C
 #ifndef _PresenceJoinPlaygroupByUsernameRequestParameters_
 #define _PresenceJoinPlaygroupByUsernameRequestParameters_
     class PresenceJoinPlaygroupByUsernameRequestParameters : public PresenceRequestParameters
@@ -44083,9 +44086,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00174
+    // ClassId: 00174
     // RuntimeId: 02278
-    // TypeInfo:  0x023DA554
+    // TypeInfo: 0x023DA554
 #ifndef _PresenceJoinPlaygroupRequestParameters_
 #define _PresenceJoinPlaygroupRequestParameters_
     class PresenceJoinPlaygroupRequestParameters : public PresenceRequestParameters
@@ -44104,9 +44107,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00175
+    // ClassId: 00175
     // RuntimeId: 02277
-    // TypeInfo:  0x023DA52C
+    // TypeInfo: 0x023DA52C
 #ifndef _PresenceCreatePlaygroupRequestParameters_
 #define _PresenceCreatePlaygroupRequestParameters_
     class PresenceCreatePlaygroupRequestParameters : public PresenceRequestParameters
@@ -44125,9 +44128,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00176
+    // ClassId: 00176
     // RuntimeId: 02276
-    // TypeInfo:  0x023DA504
+    // TypeInfo: 0x023DA504
 #ifndef _PresenceSendMessageRequestParameters_
 #define _PresenceSendMessageRequestParameters_
     class PresenceSendMessageRequestParameters : public PresenceRequestParameters
@@ -44146,9 +44149,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00177
+    // ClassId: 00177
     // RuntimeId: 02275
-    // TypeInfo:  0x023DA4DC
+    // TypeInfo: 0x023DA4DC
 #ifndef _PresenceHttpGetRequestParameters_
 #define _PresenceHttpGetRequestParameters_
     class PresenceHttpGetRequestParameters : public PresenceRequestParameters
@@ -44167,9 +44170,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00178
+    // ClassId: 00178
     // RuntimeId: 02274
-    // TypeInfo:  0x023DA4B4
+    // TypeInfo: 0x023DA4B4
 #ifndef _PresenceDownloadUpdateRequestParameters_
 #define _PresenceDownloadUpdateRequestParameters_
     class PresenceDownloadUpdateRequestParameters : public PresenceRequestParameters
@@ -44188,9 +44191,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00179
+    // ClassId: 00179
     // RuntimeId: 02273
-    // TypeInfo:  0x023DA48C
+    // TypeInfo: 0x023DA48C
 #ifndef _PresenceRemoveFriendRequestParameters_
 #define _PresenceRemoveFriendRequestParameters_
     class PresenceRemoveFriendRequestParameters : public PresenceRequestParameters
@@ -44209,9 +44212,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00180
+    // ClassId: 00180
     // RuntimeId: 02272
-    // TypeInfo:  0x023DA464
+    // TypeInfo: 0x023DA464
 #ifndef _PresenceInviteFriendRequestParameters_
 #define _PresenceInviteFriendRequestParameters_
     class PresenceInviteFriendRequestParameters : public PresenceRequestParameters
@@ -44230,9 +44233,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00181
+    // ClassId: 00181
     // RuntimeId: 02271
-    // TypeInfo:  0x023DA43C
+    // TypeInfo: 0x023DA43C
 #ifndef _PresenceGetFriendsRequestParameters_
 #define _PresenceGetFriendsRequestParameters_
     class PresenceGetFriendsRequestParameters : public PresenceRequestParameters
@@ -44251,9 +44254,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00182
+    // ClassId: 00182
     // RuntimeId: 02270
-    // TypeInfo:  0x023DA414
+    // TypeInfo: 0x023DA414
 #ifndef _PresenceGetContentInformationRequestParameters_
 #define _PresenceGetContentInformationRequestParameters_
     class PresenceGetContentInformationRequestParameters : public PresenceRequestParameters
@@ -44272,9 +44275,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00183
+    // ClassId: 00183
     // RuntimeId: 02269
-    // TypeInfo:  0x023DA3EC
+    // TypeInfo: 0x023DA3EC
 #ifndef _PresenceVerifyGrantEntitlementRequestParameters_
 #define _PresenceVerifyGrantEntitlementRequestParameters_
     class PresenceVerifyGrantEntitlementRequestParameters : public PresenceRequestParameters
@@ -44293,9 +44296,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00184
+    // ClassId: 00184
     // RuntimeId: 02268
-    // TypeInfo:  0x023DA3C4
+    // TypeInfo: 0x023DA3C4
 #ifndef _PresenceGrantEntitlementRequestParameters_
 #define _PresenceGrantEntitlementRequestParameters_
     class PresenceGrantEntitlementRequestParameters : public PresenceRequestParameters
@@ -44314,9 +44317,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00185
+    // ClassId: 00185
     // RuntimeId: 02267
-    // TypeInfo:  0x023DA39C
+    // TypeInfo: 0x023DA39C
 #ifndef _PresenceUploadUserSettingsRequestParameters_
 #define _PresenceUploadUserSettingsRequestParameters_
     class PresenceUploadUserSettingsRequestParameters : public PresenceRequestParameters
@@ -44335,9 +44338,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00186
+    // ClassId: 00186
     // RuntimeId: 02266
-    // TypeInfo:  0x023DA374
+    // TypeInfo: 0x023DA374
 #ifndef _PresenceDownloadUserSettingsRequestParameters_
 #define _PresenceDownloadUserSettingsRequestParameters_
     class PresenceDownloadUserSettingsRequestParameters : public PresenceRequestParameters
@@ -44356,9 +44359,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00187
+    // ClassId: 00187
     // RuntimeId: 02265
-    // TypeInfo:  0x023DA34C
+    // TypeInfo: 0x023DA34C
 #ifndef _PresenceUploadBlobRequestParameters_
 #define _PresenceUploadBlobRequestParameters_
     class PresenceUploadBlobRequestParameters : public PresenceRequestParameters
@@ -44377,9 +44380,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00188
+    // ClassId: 00188
     // RuntimeId: 02264
-    // TypeInfo:  0x023DA324
+    // TypeInfo: 0x023DA324
 #ifndef _PresenceDownloadBlobRequestParameters_
 #define _PresenceDownloadBlobRequestParameters_
     class PresenceDownloadBlobRequestParameters : public PresenceRequestParameters
@@ -44398,9 +44401,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00189
+    // ClassId: 00189
     // RuntimeId: 02263
-    // TypeInfo:  0x023DA2FC
+    // TypeInfo: 0x023DA2FC
 #ifndef _PresenceUnlockAchievementsRequestParameters_
 #define _PresenceUnlockAchievementsRequestParameters_
     class PresenceUnlockAchievementsRequestParameters : public PresenceRequestParameters
@@ -44419,9 +44422,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00191
+    // ClassId: 00191
     // RuntimeId: 01646
-    // TypeInfo:  0x023D2BA4
+    // TypeInfo: 0x023D2BA4
 #ifndef _PresenceBackend_
 #define _PresenceBackend_
     class PresenceBackend
@@ -44440,9 +44443,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00741
+    // ClassId: 00741
     // RuntimeId: 02261
-    // TypeInfo:  0x023D9C38
+    // TypeInfo: 0x023D9C38
 #ifndef _ServerCoopLobbyEntity_
 #define _ServerCoopLobbyEntity_
     class ServerCoopLobbyEntity : public ServerGameEntity
@@ -44461,9 +44464,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00742
+    // ClassId: 00742
     // RuntimeId: 02260
-    // TypeInfo:  0x023D9C10
+    // TypeInfo: 0x023D9C10
 #ifndef _ServerAutoTeamEntity_
 #define _ServerAutoTeamEntity_
     class ServerAutoTeamEntity : public ServerGameEntity
@@ -44482,9 +44485,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00743
+    // ClassId: 00743
     // RuntimeId: 02259
-    // TypeInfo:  0x023D9BE8
+    // TypeInfo: 0x023D9BE8
 #ifndef _ServerAutoSquadEntity_
 #define _ServerAutoSquadEntity_
     class ServerAutoSquadEntity : public ServerGameEntity
@@ -44502,9 +44505,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00744
+    // ClassId: 00744
     // RuntimeId: 02258
-    // TypeInfo:  0x023D9BC0
+    // TypeInfo: 0x023D9BC0
 #ifndef _ServerArmDisarmAwardEntity_
 #define _ServerArmDisarmAwardEntity_
     class ServerArmDisarmAwardEntity : public ServerGameEntity
@@ -44522,9 +44525,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00382
+    // ClassId: 00382
     // RuntimeId: 02257
-    // TypeInfo:  0x023D9B98
+    // TypeInfo: 0x023D9B98
 #ifndef _ServerSupportedShootingComponent_
 #define _ServerSupportedShootingComponent_
     class ServerSupportedShootingComponent : public ServerComponent
@@ -44543,9 +44546,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00383
+    // ClassId: 00383
     // RuntimeId: 02256
-    // TypeInfo:  0x023D9B70
+    // TypeInfo: 0x023D9B70
 #ifndef _ServerSupplySphereComponent_
 #define _ServerSupplySphereComponent_
     class ServerSupplySphereComponent : public ServerComponent
@@ -44564,9 +44567,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00384
+    // ClassId: 00384
     // RuntimeId: 02255
-    // TypeInfo:  0x023D9B48
+    // TypeInfo: 0x023D9B48
 #ifndef _ServerSpecialMovesComponent_
 #define _ServerSpecialMovesComponent_
     class ServerSpecialMovesComponent : public ServerComponent
@@ -44585,9 +44588,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00385
+    // ClassId: 00385
     // RuntimeId: 02254
-    // TypeInfo:  0x023D9B20
+    // TypeInfo: 0x023D9B20
 #ifndef _ServerSoldierParachuteComponent_
 #define _ServerSoldierParachuteComponent_
     class ServerSoldierParachuteComponent : public ServerComponent
@@ -44606,9 +44609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00386
+    // ClassId: 00386
     // RuntimeId: 02253
-    // TypeInfo:  0x023D9AF8
+    // TypeInfo: 0x023D9AF8
 #ifndef _ServerSimpleAnimationControlComponent_
 #define _ServerSimpleAnimationControlComponent_
     class ServerSimpleAnimationControlComponent : public ServerComponent
@@ -44627,9 +44630,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00387
+    // ClassId: 00387
     // RuntimeId: 02252
-    // TypeInfo:  0x023D9AD0
+    // TypeInfo: 0x023D9AD0
 #ifndef _ServerRadarSweepComponent_
 #define _ServerRadarSweepComponent_
     class ServerRadarSweepComponent : public ServerComponent
@@ -44648,9 +44651,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00388
+    // ClassId: 00388
     // RuntimeId: 02251
-    // TypeInfo:  0x023D9AA8
+    // TypeInfo: 0x023D9AA8
 #ifndef _ServerLocatorComponent_
 #define _ServerLocatorComponent_
     class ServerLocatorComponent : public ServerComponent
@@ -44669,9 +44672,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00389
+    // ClassId: 00389
     // RuntimeId: 02250
-    // TypeInfo:  0x023D9A80
+    // TypeInfo: 0x023D9A80
 #ifndef _ServerJammingComponent_
 #define _ServerJammingComponent_
     class ServerJammingComponent : public ServerComponent
@@ -44690,9 +44693,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00390
+    // ClassId: 00390
     // RuntimeId: 02249
-    // TypeInfo:  0x023D9A58
+    // TypeInfo: 0x023D9A58
 #ifndef _ServerEntityInteractionComponent_
 #define _ServerEntityInteractionComponent_
     class ServerEntityInteractionComponent : public ServerComponent
@@ -44711,9 +44714,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00391
+    // ClassId: 00391
     // RuntimeId: 02248
-    // TypeInfo:  0x023D9A30
+    // TypeInfo: 0x023D9A30
 #ifndef _ServerDropWeaponComponent_
 #define _ServerDropWeaponComponent_
     class ServerDropWeaponComponent : public ServerComponent
@@ -44732,9 +44735,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00392
+    // ClassId: 00392
     // RuntimeId: 02247
-    // TypeInfo:  0x023D9A08
+    // TypeInfo: 0x023D9A08
 #ifndef _ServerClimbLadderComponent_
 #define _ServerClimbLadderComponent_
     class ServerClimbLadderComponent : public ServerComponent
@@ -44753,9 +44756,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00376
+    // ClassId: 00376
     // RuntimeId: 02246
-    // TypeInfo:  0x023D99E0
+    // TypeInfo: 0x023D99E0
 #ifndef _ServerAdvertisementComponent_
 #define _ServerAdvertisementComponent_
     class ServerAdvertisementComponent : public ServerPartComponent
@@ -44773,9 +44776,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00745
+    // ClassId: 00745
     // RuntimeId: 02245
-    // TypeInfo:  0x023D97F8
+    // TypeInfo: 0x023D97F8
 #ifndef _ServerTrackPlayerEntity_
 #define _ServerTrackPlayerEntity_
     class ServerTrackPlayerEntity : public ServerGameEntity
@@ -44794,9 +44797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00746
+    // ClassId: 00746
     // RuntimeId: 02244
-    // TypeInfo:  0x023D97D0
+    // TypeInfo: 0x023D97D0
 #ifndef _ServerPickupEntity_
 #define _ServerPickupEntity_
     class ServerPickupEntity : public ServerGameEntity
@@ -44815,9 +44818,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00747
+    // ClassId: 00747
     // RuntimeId: 02243
-    // TypeInfo:  0x023D97A8
+    // TypeInfo: 0x023D97A8
 #ifndef _ServerInteractionEntity_
 #define _ServerInteractionEntity_
     class ServerInteractionEntity : public ServerGameEntity
@@ -44836,9 +44839,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00525
+    // ClassId: 00525
     // RuntimeId: 02242
-    // TypeInfo:  0x023D9780
+    // TypeInfo: 0x023D9780
 #ifndef _ServerFriendZoneEntity_
 #define _ServerFriendZoneEntity_
     class ServerFriendZoneEntity : public Entity
@@ -44857,9 +44860,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00748
+    // ClassId: 00748
     // RuntimeId: 02241
-    // TypeInfo:  0x023D9758
+    // TypeInfo: 0x023D9758
 #ifndef _ServerAmmoCrateEntity_
 #define _ServerAmmoCrateEntity_
     class ServerAmmoCrateEntity : public ServerGameEntity
@@ -44878,9 +44881,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00526
+    // ClassId: 00526
     // RuntimeId: 02240
-    // TypeInfo:  0x023D9730
+    // TypeInfo: 0x023D9730
 #ifndef _ServerTopPlayersEntity_
 #define _ServerTopPlayersEntity_
     class ServerTopPlayersEntity : public Entity
@@ -44899,9 +44902,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00749
+    // ClassId: 00749
     // RuntimeId: 02239
-    // TypeInfo:  0x023D9708
+    // TypeInfo: 0x023D9708
 #ifndef _ServerTicketCounterEntity_
 #define _ServerTicketCounterEntity_
     class ServerTicketCounterEntity : public ServerGameEntity
@@ -44920,9 +44923,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00527
+    // ClassId: 00527
     // RuntimeId: 02238
-    // TypeInfo:  0x023D96E0
+    // TypeInfo: 0x023D96E0
 #ifndef _ServerSpottingEntity_
 #define _ServerSpottingEntity_
     class ServerSpottingEntity : public Entity
@@ -44941,9 +44944,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00528
+    // ClassId: 00528
     // RuntimeId: 02237
-    // TypeInfo:  0x023D96B8
+    // TypeInfo: 0x023D96B8
 #ifndef _ServerRoundOverEntity_
 #define _ServerRoundOverEntity_
     class ServerRoundOverEntity : public Entity
@@ -44962,9 +44965,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00750
+    // ClassId: 00750
     // RuntimeId: 02236
-    // TypeInfo:  0x023D9690
+    // TypeInfo: 0x023D9690
 #ifndef _ServerPreRoundEntity_
 #define _ServerPreRoundEntity_
     class ServerPreRoundEntity : public ServerGameEntity
@@ -44983,9 +44986,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00751
+    // ClassId: 00751
     // RuntimeId: 02235
-    // TypeInfo:  0x023D9668
+    // TypeInfo: 0x023D9668
 #ifndef _ServerLifeCounterEntity_
 #define _ServerLifeCounterEntity_
     class ServerLifeCounterEntity : public ServerGameEntity
@@ -45004,9 +45007,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00752
+    // ClassId: 00752
     // RuntimeId: 02234
-    // TypeInfo:  0x023D9640
+    // TypeInfo: 0x023D9640
 #ifndef _ServerKillCounterEntity_
 #define _ServerKillCounterEntity_
     class ServerKillCounterEntity : public ServerGameEntity
@@ -45025,9 +45028,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00529
+    // ClassId: 00529
     // RuntimeId: 02233
-    // TypeInfo:  0x023D9618
+    // TypeInfo: 0x023D9618
 #ifndef _ServerGunMasterKillCounterEntity_
 #define _ServerGunMasterKillCounterEntity_
     class ServerGunMasterKillCounterEntity : public Entity
@@ -45046,9 +45049,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00530
+    // ClassId: 00530
     // RuntimeId: 02232
-    // TypeInfo:  0x023D95F0
+    // TypeInfo: 0x023D95F0
 #ifndef _ServerFriendlyFireEntity_
 #define _ServerFriendlyFireEntity_
     class ServerFriendlyFireEntity : public Entity
@@ -45067,9 +45070,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00753
+    // ClassId: 00753
     // RuntimeId: 02231
-    // TypeInfo:  0x023D95C8
+    // TypeInfo: 0x023D95C8
 #ifndef _ServerFlagCounterEntity_
 #define _ServerFlagCounterEntity_
     class ServerFlagCounterEntity : public ServerGameEntity
@@ -45088,9 +45091,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00666
+    // ClassId: 00666
     // RuntimeId: 02230
-    // TypeInfo:  0x023D93FC
+    // TypeInfo: 0x023D93FC
 #ifndef _ClientCoopLobbyEntity_
 #define _ClientCoopLobbyEntity_
     class ClientCoopLobbyEntity : public ClientGameEntity
@@ -45109,9 +45112,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00667
+    // ClassId: 00667
     // RuntimeId: 02229
-    // TypeInfo:  0x023D93D4
+    // TypeInfo: 0x023D93D4
 #ifndef _ClientTrackPlayerEntity_
 #define _ClientTrackPlayerEntity_
     class ClientTrackPlayerEntity : public ClientGameEntity
@@ -45130,9 +45133,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00668
+    // ClassId: 00668
     // RuntimeId: 02228
-    // TypeInfo:  0x023D93AC
+    // TypeInfo: 0x023D93AC
 #ifndef _ClientPickupEntity_
 #define _ClientPickupEntity_
     class ClientPickupEntity : public ClientGameEntity
@@ -45151,9 +45154,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00669
+    // ClassId: 00669
     // RuntimeId: 02227
-    // TypeInfo:  0x023D9384
+    // TypeInfo: 0x023D9384
 #ifndef _ClientMinimap2DEntity_
 #define _ClientMinimap2DEntity_
     class ClientMinimap2DEntity : public ClientGameEntity
@@ -45171,9 +45174,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00670
+    // ClassId: 00670
     // RuntimeId: 02226
-    // TypeInfo:  0x023D935C
+    // TypeInfo: 0x023D935C
 #ifndef _ClientInteractionEntity_
 #define _ClientInteractionEntity_
     class ClientInteractionEntity : public ClientGameEntity
@@ -45192,9 +45195,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00671
+    // ClassId: 00671
     // RuntimeId: 02225
-    // TypeInfo:  0x023D9334
+    // TypeInfo: 0x023D9334
 #ifndef _ClientAmmoCrateEntity_
 #define _ClientAmmoCrateEntity_
     class ClientAmmoCrateEntity : public ClientGameEntity
@@ -45213,9 +45216,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00311
+    // ClassId: 00311
     // RuntimeId: 02224
-    // TypeInfo:  0x023D930C
+    // TypeInfo: 0x023D930C
 #ifndef _ClientSupportedShootingComponent_
 #define _ClientSupportedShootingComponent_
     class ClientSupportedShootingComponent : public ClientComponent
@@ -45234,9 +45237,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00312
+    // ClassId: 00312
     // RuntimeId: 02223
-    // TypeInfo:  0x023D92E4
+    // TypeInfo: 0x023D92E4
 #ifndef _ClientSpecialMovesComponent_
 #define _ClientSpecialMovesComponent_
     class ClientSpecialMovesComponent : public ClientComponent
@@ -45255,9 +45258,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00313
+    // ClassId: 00313
     // RuntimeId: 02222
-    // TypeInfo:  0x023D92BC
+    // TypeInfo: 0x023D92BC
 #ifndef _ClientSoldierSoundComponent_
 #define _ClientSoldierSoundComponent_
     class ClientSoldierSoundComponent : public ClientComponent
@@ -45276,9 +45279,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00314
+    // ClassId: 00314
     // RuntimeId: 02221
-    // TypeInfo:  0x023D9294
+    // TypeInfo: 0x023D9294
 #ifndef _ClientSoldierParachuteComponent_
 #define _ClientSoldierParachuteComponent_
     class ClientSoldierParachuteComponent : public ClientComponent
@@ -45297,9 +45300,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00315
+    // ClassId: 00315
     // RuntimeId: 02220
-    // TypeInfo:  0x023D926C
+    // TypeInfo: 0x023D926C
 #ifndef _ClientSoldierEmoteComponent_
 #define _ClientSoldierEmoteComponent_
     class ClientSoldierEmoteComponent : public ClientComponent
@@ -45318,9 +45321,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00316
+    // ClassId: 00316
     // RuntimeId: 02219
-    // TypeInfo:  0x023D9244
+    // TypeInfo: 0x023D9244
 #ifndef _ClientSoldierDecalComponent_
 #define _ClientSoldierDecalComponent_
     class ClientSoldierDecalComponent : public ClientComponent
@@ -45339,9 +45342,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00317
+    // ClassId: 00317
     // RuntimeId: 02218
-    // TypeInfo:  0x023D921C
+    // TypeInfo: 0x023D921C
 #ifndef _ClientSimpleAnimationControlComponent_
 #define _ClientSimpleAnimationControlComponent_
     class ClientSimpleAnimationControlComponent : public ClientComponent
@@ -45360,9 +45363,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00318
+    // ClassId: 00318
     // RuntimeId: 02217
-    // TypeInfo:  0x023D91F4
+    // TypeInfo: 0x023D91F4
 #ifndef _ClientLocatorComponent_
 #define _ClientLocatorComponent_
     class ClientLocatorComponent : public ClientComponent
@@ -45381,9 +45384,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00319
+    // ClassId: 00319
     // RuntimeId: 02216
-    // TypeInfo:  0x023D91CC
+    // TypeInfo: 0x023D91CC
 #ifndef _ClientJammingComponent_
 #define _ClientJammingComponent_
     class ClientJammingComponent : public ClientComponent
@@ -45402,9 +45405,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00320
+    // ClassId: 00320
     // RuntimeId: 02215
-    // TypeInfo:  0x023D91A4
+    // TypeInfo: 0x023D91A4
 #ifndef _ClientDropWeaponComponent_
 #define _ClientDropWeaponComponent_
     class ClientDropWeaponComponent : public ClientComponent
@@ -45423,9 +45426,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00321
+    // ClassId: 00321
     // RuntimeId: 02214
-    // TypeInfo:  0x023D917C
+    // TypeInfo: 0x023D917C
 #ifndef _ClientClimbLadderComponent_
 #define _ClientClimbLadderComponent_
     class ClientClimbLadderComponent : public ClientComponent
@@ -45444,9 +45447,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00104
+    // ClassId: 00104
     // RuntimeId: 02213
-    // TypeInfo:  0x023D9154
+    // TypeInfo: 0x023D9154
 #ifndef _ClientPlayerInteractionView_
 #define _ClientPlayerInteractionView_
     class ClientPlayerInteractionView : public ClientSubView
@@ -45465,9 +45468,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00248
+    // ClassId: 00248
     // RuntimeId: 02212
-    // TypeInfo:  0x023D912C
+    // TypeInfo: 0x023D912C
 #ifndef _ClientAdvertisementComponent_
 #define _ClientAdvertisementComponent_
     class ClientAdvertisementComponent : public ClientPartComponent
@@ -45485,9 +45488,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00084
+    // ClassId: 00084
     // RuntimeId: 02211
-    // TypeInfo:  0x023D8EF0
+    // TypeInfo: 0x023D8EF0
 #ifndef _ServerVehicleDeployWeapon_
 #define _ServerVehicleDeployWeapon_
     class ServerVehicleDeployWeapon : public ServerWeapon
@@ -45506,9 +45509,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00707
+    // ClassId: 00707
     // RuntimeId: 02210
-    // TypeInfo:  0x023D8EC8
+    // TypeInfo: 0x023D8EC8
 #ifndef _ServerTargetEntity_
 #define _ServerTargetEntity_
     class ServerTargetEntity : public ServerPhysicsEntity
@@ -45526,9 +45529,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00085
+    // ClassId: 00085
     // RuntimeId: 02209
-    // TypeInfo:  0x023D8EA0
+    // TypeInfo: 0x023D8EA0
 #ifndef _ServerSupplySphereWeaponEffects_
 #define _ServerSupplySphereWeaponEffects_
     class ServerSupplySphereWeaponEffects : public ServerWeapon
@@ -45547,9 +45550,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00086
+    // ClassId: 00086
     // RuntimeId: 02207
-    // TypeInfo:  0x023D8E50
+    // TypeInfo: 0x023D8E50
 #ifndef _ServerPowerToolWeapon_
 #define _ServerPowerToolWeapon_
     class ServerPowerToolWeapon : public ServerWeapon
@@ -45567,9 +45570,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00087
+    // ClassId: 00087
     // RuntimeId: 02208
-    // TypeInfo:  0x023D8E78
+    // TypeInfo: 0x023D8E78
 #ifndef _ServerRepairToolWeapon_
 #define _ServerRepairToolWeapon_
     class ServerRepairToolWeapon : public ServerPowerToolWeapon
@@ -45588,9 +45591,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00088
+    // ClassId: 00088
     // RuntimeId: 02206
-    // TypeInfo:  0x023D8E28
+    // TypeInfo: 0x023D8E28
 #ifndef _ServerMultipleTargetPainterWeapon_
 #define _ServerMultipleTargetPainterWeapon_
     class ServerMultipleTargetPainterWeapon : public ServerWeapon
@@ -45608,9 +45611,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00089
+    // ClassId: 00089
     // RuntimeId: 02205
-    // TypeInfo:  0x023D8E00
+    // TypeInfo: 0x023D8E00
 #ifndef _ServerMortarStrikeWeapon_
 #define _ServerMortarStrikeWeapon_
     class ServerMortarStrikeWeapon : public ServerWeapon
@@ -45629,9 +45632,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00090
+    // ClassId: 00090
     // RuntimeId: 02204
-    // TypeInfo:  0x023D8DD8
+    // TypeInfo: 0x023D8DD8
 #ifndef _ServerMeleeWeapon_
 #define _ServerMeleeWeapon_
     class ServerMeleeWeapon : public ServerWeapon
@@ -45650,9 +45653,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00091
+    // ClassId: 00091
     // RuntimeId: 02203
-    // TypeInfo:  0x023D8DB0
+    // TypeInfo: 0x023D8DB0
 #ifndef _ServerMedkitWeapon_
 #define _ServerMedkitWeapon_
     class ServerMedkitWeapon : public ServerWeapon
@@ -45670,9 +45673,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00092
+    // ClassId: 00092
     // RuntimeId: 02202
-    // TypeInfo:  0x023D8D88
+    // TypeInfo: 0x023D8D88
 #ifndef _ServerMedicBagWeapon_
 #define _ServerMedicBagWeapon_
     class ServerMedicBagWeapon : public ServerWeapon
@@ -45690,9 +45693,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00093
+    // ClassId: 00093
     // RuntimeId: 02201
-    // TypeInfo:  0x023D8D60
+    // TypeInfo: 0x023D8D60
 #ifndef _ServerMedicBagHealingSphereWeapon_
 #define _ServerMedicBagHealingSphereWeapon_
     class ServerMedicBagHealingSphereWeapon : public ServerWeapon
@@ -45711,9 +45714,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00094
+    // ClassId: 00094
     // RuntimeId: 02200
-    // TypeInfo:  0x023D8D38
+    // TypeInfo: 0x023D8D38
 #ifndef _ServerLockingWeapon_
 #define _ServerLockingWeapon_
     class ServerLockingWeapon : public ServerWeapon
@@ -45732,9 +45735,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00095
+    // ClassId: 00095
     // RuntimeId: 02199
-    // TypeInfo:  0x023D8D10
+    // TypeInfo: 0x023D8D10
 #ifndef _ServerLaserPainterWeapon_
 #define _ServerLaserPainterWeapon_
     class ServerLaserPainterWeapon : public ServerLockingWeapon
@@ -45753,9 +45756,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00096
+    // ClassId: 00096
     // RuntimeId: 02198
-    // TypeInfo:  0x023D8CE8
+    // TypeInfo: 0x023D8CE8
 #ifndef _ServerLaserDesignatorWeapon_
 #define _ServerLaserDesignatorWeapon_
     class ServerLaserDesignatorWeapon : public ServerLockingWeapon
@@ -45774,9 +45777,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00097
+    // ClassId: 00097
     // RuntimeId: 02197
-    // TypeInfo:  0x023D8CC0
+    // TypeInfo: 0x023D8CC0
 #ifndef _ServerFlashlightWeapon_
 #define _ServerFlashlightWeapon_
     class ServerFlashlightWeapon : public ServerWeapon
@@ -45794,9 +45797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00098
+    // ClassId: 00098
     // RuntimeId: 02196
-    // TypeInfo:  0x023D8C98
+    // TypeInfo: 0x023D8C98
 #ifndef _ServerDetonatedWeapon_
 #define _ServerDetonatedWeapon_
     class ServerDetonatedWeapon : public ServerWeapon
@@ -45815,9 +45818,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00099
+    // ClassId: 00099
     // RuntimeId: 02195
-    // TypeInfo:  0x023D8C70
+    // TypeInfo: 0x023D8C70
 #ifndef _ServerDefibrillatorWeapon_
 #define _ServerDefibrillatorWeapon_
     class ServerDefibrillatorWeapon : public ServerWeapon
@@ -45836,9 +45839,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00100
+    // ClassId: 00100
     // RuntimeId: 02194
-    // TypeInfo:  0x023D8C48
+    // TypeInfo: 0x023D8C48
 #ifndef _ServerArtilleryStrikeWeapon_
 #define _ServerArtilleryStrikeWeapon_
     class ServerArtilleryStrikeWeapon : public ServerWeapon
@@ -45857,9 +45860,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00703
+    // ClassId: 00703
     // RuntimeId: 02193
-    // TypeInfo:  0x023D8C20
+    // TypeInfo: 0x023D8C20
 #ifndef _ServerSupplySphereEntity_
 #define _ServerSupplySphereEntity_
     class ServerSupplySphereEntity : public ServerExplosionPackEntity
@@ -45878,9 +45881,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00704
+    // ClassId: 00704
     // RuntimeId: 02192
-    // TypeInfo:  0x023D8BF8
+    // TypeInfo: 0x023D8BF8
 #ifndef _ServerMedicBagHealingSphereEntity_
 #define _ServerMedicBagHealingSphereEntity_
     class ServerMedicBagHealingSphereEntity : public ServerExplosionPackEntity
@@ -45898,9 +45901,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00705
+    // ClassId: 00705
     // RuntimeId: 02191
-    // TypeInfo:  0x023D8BD0
+    // TypeInfo: 0x023D8BD0
 #ifndef _ServerMedicBagEntity_
 #define _ServerMedicBagEntity_
     class ServerMedicBagEntity : public ServerExplosionPackEntity
@@ -45919,9 +45922,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00701
+    // ClassId: 00701
     // RuntimeId: 02190
-    // TypeInfo:  0x023D8BA8
+    // TypeInfo: 0x023D8BA8
 #ifndef _ServerFlareEntity_
 #define _ServerFlareEntity_
     class ServerFlareEntity : public ServerGrenadeEntity
@@ -45939,9 +45942,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00393
+    // ClassId: 00393
     // RuntimeId: 02189
-    // TypeInfo:  0x023D8B80
+    // TypeInfo: 0x023D8B80
 #ifndef _ServerMobileSpawnComponent_
 #define _ServerMobileSpawnComponent_
     class ServerMobileSpawnComponent : public ServerComponent
@@ -45959,9 +45962,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00108
+    // ClassId: 00108
     // RuntimeId: 02188
-    // TypeInfo:  0x023D8B58
+    // TypeInfo: 0x023D8B58
 #ifndef _ServerSpawnSubView_
 #define _ServerSpawnSubView_
     class ServerSpawnSubView : public ServerSubView
@@ -45980,9 +45983,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00754
+    // ClassId: 00754
     // RuntimeId: 02187
-    // TypeInfo:  0x023D8B30
+    // TypeInfo: 0x023D8B30
 #ifndef _ServerCapturePointEntity_
 #define _ServerCapturePointEntity_
     class ServerCapturePointEntity : public ServerGameEntity
@@ -46001,9 +46004,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00394
+    // ClassId: 00394
     // RuntimeId: 02186
-    // TypeInfo:  0x023D8B08
+    // TypeInfo: 0x023D8B08
 #ifndef _ServerSoldierSuppressionComponent_
 #define _ServerSoldierSuppressionComponent_
     class ServerSoldierSuppressionComponent : public ServerComponent
@@ -46022,9 +46025,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00531
+    // ClassId: 00531
     // RuntimeId: 02185
-    // TypeInfo:  0x023D8808
+    // TypeInfo: 0x023D8808
 #ifndef _ServerMeleeTriggerEntity_
 #define _ServerMeleeTriggerEntity_
     class ServerMeleeTriggerEntity : public Entity
@@ -46043,9 +46046,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00532
+    // ClassId: 00532
     // RuntimeId: 02184
-    // TypeInfo:  0x023D87E0
+    // TypeInfo: 0x023D87E0
 #ifndef _ServerMeleeEntity_
 #define _ServerMeleeEntity_
     class ServerMeleeEntity : public Entity
@@ -46064,9 +46067,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00395
+    // ClassId: 00395
     // RuntimeId: 02183
-    // TypeInfo:  0x023D87B8
+    // TypeInfo: 0x023D87B8
 #ifndef _ServerAIProximityReactionsComponent_
 #define _ServerAIProximityReactionsComponent_
     class ServerAIProximityReactionsComponent : public ServerComponent
@@ -46085,9 +46088,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00109
+    // ClassId: 00109
     // RuntimeId: 02182
-    // TypeInfo:  0x023D8790
+    // TypeInfo: 0x023D8790
 #ifndef _ServerPlayerInteractionView_
 #define _ServerPlayerInteractionView_
     class ServerPlayerInteractionView : public ServerSubView
@@ -46106,9 +46109,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00396
+    // ClassId: 00396
     // RuntimeId: 02181
-    // TypeInfo:  0x023D86F8
+    // TypeInfo: 0x023D86F8
 #ifndef _ServerSpottingTargetComponent_
 #define _ServerSpottingTargetComponent_
     class ServerSpottingTargetComponent : public ServerComponent
@@ -46127,9 +46130,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00397
+    // ClassId: 00397
     // RuntimeId: 02180
-    // TypeInfo:  0x023D86D0
+    // TypeInfo: 0x023D86D0
 #ifndef _ServerSpottingComponent_
 #define _ServerSpottingComponent_
     class ServerSpottingComponent : public ServerComponent
@@ -46148,9 +46151,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00739
+    // ClassId: 00739
     // RuntimeId: 02179
-    // TypeInfo:  0x023D86A8
+    // TypeInfo: 0x023D86A8
 #ifndef _VeniceServerExplosionEntity_
 #define _VeniceServerExplosionEntity_
     class VeniceServerExplosionEntity : public ServerExplosionEntity
@@ -46168,9 +46171,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00755
+    // ClassId: 00755
     // RuntimeId: 02178
-    // TypeInfo:  0x023D8680
+    // TypeInfo: 0x023D8680
 #ifndef _ServerStatEventTriggerEntity_
 #define _ServerStatEventTriggerEntity_
     class ServerStatEventTriggerEntity : public ServerGameEntity
@@ -46188,9 +46191,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00731
+    // ClassId: 00731
     // RuntimeId: 02177
-    // TypeInfo:  0x023D8658
+    // TypeInfo: 0x023D8658
 #ifndef _ServerConsumableTriggerEntity_
 #define _ServerConsumableTriggerEntity_
     class ServerConsumableTriggerEntity : public ServerTriggerEntity
@@ -46209,9 +46212,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00322
+    // ClassId: 00322
     // RuntimeId: 02176
-    // TypeInfo:  0x023D85A4
+    // TypeInfo: 0x023D85A4
 #ifndef _ClientSpottingTargetComponent_
 #define _ClientSpottingTargetComponent_
     class ClientSpottingTargetComponent : public ClientComponent
@@ -46230,9 +46233,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00323
+    // ClassId: 00323
     // RuntimeId: 02175
-    // TypeInfo:  0x023D857C
+    // TypeInfo: 0x023D857C
 #ifndef _ClientSpottingComponent_
 #define _ClientSpottingComponent_
     class ClientSpottingComponent : public ClientComponent
@@ -46251,9 +46254,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00628
+    // ClassId: 00628
     // RuntimeId: 02174
-    // TypeInfo:  0x023D8554
+    // TypeInfo: 0x023D8554
 #ifndef _VeniceClientExplosionEntity_
 #define _VeniceClientExplosionEntity_
     class VeniceClientExplosionEntity : public ClientExplosionEntity
@@ -46271,9 +46274,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00533
+    // ClassId: 00533
     // RuntimeId: 02173
-    // TypeInfo:  0x023D852C
+    // TypeInfo: 0x023D852C
 #ifndef _ClientUISetValueEntity_
 #define _ClientUISetValueEntity_
     class ClientUISetValueEntity : public Entity
@@ -46292,9 +46295,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00672
+    // ClassId: 00672
     // RuntimeId: 02172
-    // TypeInfo:  0x023D8504
+    // TypeInfo: 0x023D8504
 #ifndef _ClientUIMinimapVolumeEntity_
 #define _ClientUIMinimapVolumeEntity_
     class ClientUIMinimapVolumeEntity : public ClientGameEntity
@@ -46312,9 +46315,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00534
+    // ClassId: 00534
     // RuntimeId: 02171
-    // TypeInfo:  0x023D84DC
+    // TypeInfo: 0x023D84DC
 #ifndef _ClientUIMessageTriggerEntity_
 #define _ClientUIMessageTriggerEntity_
     class ClientUIMessageTriggerEntity : public Entity
@@ -46333,9 +46336,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00673
+    // ClassId: 00673
     // RuntimeId: 02170
-    // TypeInfo:  0x023D84B4
+    // TypeInfo: 0x023D84B4
 #ifndef _ClientUIEndOfRoundEntity_
 #define _ClientUIEndOfRoundEntity_
     class ClientUIEndOfRoundEntity : public ClientGameEntity
@@ -46354,9 +46357,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00674
+    // ClassId: 00674
     // RuntimeId: 02169
-    // TypeInfo:  0x023D848C
+    // TypeInfo: 0x023D848C
 #ifndef _ClientTicketCounterEntity_
 #define _ClientTicketCounterEntity_
     class ClientTicketCounterEntity : public ClientGameEntity
@@ -46375,9 +46378,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00535
+    // ClassId: 00535
     // RuntimeId: 02168
-    // TypeInfo:  0x023D8464
+    // TypeInfo: 0x023D8464
 #ifndef _ClientRoundOverEntity_
 #define _ClientRoundOverEntity_
     class ClientRoundOverEntity : public Entity
@@ -46396,9 +46399,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00675
+    // ClassId: 00675
     // RuntimeId: 02167
-    // TypeInfo:  0x023D843C
+    // TypeInfo: 0x023D843C
 #ifndef _ClientPreRoundEntity_
 #define _ClientPreRoundEntity_
     class ClientPreRoundEntity : public ClientGameEntity
@@ -46417,9 +46420,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00536
+    // ClassId: 00536
     // RuntimeId: 02166
-    // TypeInfo:  0x023D8414
+    // TypeInfo: 0x023D8414
 #ifndef _ClientPlayVideoEntity_
 #define _ClientPlayVideoEntity_
     class ClientPlayVideoEntity : public Entity
@@ -46438,9 +46441,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00676
+    // ClassId: 00676
     // RuntimeId: 02165
-    // TypeInfo:  0x023D83EC
+    // TypeInfo: 0x023D83EC
 #ifndef _ClientLifeCounterEntity_
 #define _ClientLifeCounterEntity_
     class ClientLifeCounterEntity : public ClientGameEntity
@@ -46459,9 +46462,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00677
+    // ClassId: 00677
     // RuntimeId: 02164
-    // TypeInfo:  0x023D83C4
+    // TypeInfo: 0x023D83C4
 #ifndef _ClientKillCounterEntity_
 #define _ClientKillCounterEntity_
     class ClientKillCounterEntity : public ClientGameEntity
@@ -46480,9 +46483,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00537
+    // ClassId: 00537
     // RuntimeId: 02163
-    // TypeInfo:  0x023D839C
+    // TypeInfo: 0x023D839C
 #ifndef _ClientGunMasterKillCounterEntity_
 #define _ClientGunMasterKillCounterEntity_
     class ClientGunMasterKillCounterEntity : public Entity
@@ -46501,9 +46504,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00538
+    // ClassId: 00538
     // RuntimeId: 02162
-    // TypeInfo:  0x023D8374
+    // TypeInfo: 0x023D8374
 #ifndef _ClientFriendZoneDebugRenderEntity_
 #define _ClientFriendZoneDebugRenderEntity_
     class ClientFriendZoneDebugRenderEntity : public Entity
@@ -46522,9 +46525,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00678
+    // ClassId: 00678
     // RuntimeId: 02161
-    // TypeInfo:  0x023D834C
+    // TypeInfo: 0x023D834C
 #ifndef _ClientFlagCounterEntity_
 #define _ClientFlagCounterEntity_
     class ClientFlagCounterEntity : public ClientGameEntity
@@ -46543,9 +46546,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00105
+    // ClassId: 00105
     // RuntimeId: 02160
-    // TypeInfo:  0x023D8164
+    // TypeInfo: 0x023D8164
 #ifndef _ClientSpawnSubView_
 #define _ClientSpawnSubView_
     class ClientSpawnSubView : public ClientSubView
@@ -46564,9 +46567,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00679
+    // ClassId: 00679
     // RuntimeId: 02159
-    // TypeInfo:  0x023D813C
+    // TypeInfo: 0x023D813C
 #ifndef _ClientCapturePointEntity_
 #define _ClientCapturePointEntity_
     class ClientCapturePointEntity : public ClientGameEntity
@@ -46585,9 +46588,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00272
+    // ClassId: 00272
     // RuntimeId: 02158
-    // TypeInfo:  0x023D8114
+    // TypeInfo: 0x023D8114
 #ifndef _VeniceClientSoldierCameraComponent_
 #define _VeniceClientSoldierCameraComponent_
     class VeniceClientSoldierCameraComponent : public ClientSoldierCameraComponent
@@ -46605,9 +46608,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00119
+    // ClassId: 00119
     // RuntimeId: 02157
-    // TypeInfo:  0x023D80EC
+    // TypeInfo: 0x023D80EC
 #ifndef _VeniceClientSoldierCameraCallback_
 #define _VeniceClientSoldierCameraCallback_
     class VeniceClientSoldierCameraCallback : public ClientSoldierCameraCallback
@@ -46626,9 +46629,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00324
+    // ClassId: 00324
     // RuntimeId: 02156
-    // TypeInfo:  0x023D80C4
+    // TypeInfo: 0x023D80C4
 #ifndef _ClientSoldierSuppressionComponent_
 #define _ClientSoldierSuppressionComponent_
     class ClientSoldierSuppressionComponent : public ClientComponent
@@ -46647,9 +46650,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00325
+    // ClassId: 00325
     // RuntimeId: 02155
-    // TypeInfo:  0x023D809C
+    // TypeInfo: 0x023D809C
 #ifndef _ClientSoldierFootplantEffectComponent_
 #define _ClientSoldierFootplantEffectComponent_
     class ClientSoldierFootplantEffectComponent : public ClientComponent
@@ -46668,9 +46671,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00539
+    // ClassId: 00539
     // RuntimeId: 02154
-    // TypeInfo:  0x023D8074
+    // TypeInfo: 0x023D8074
 #ifndef _ClientMeleeEntity_
 #define _ClientMeleeEntity_
     class ClientMeleeEntity : public Entity
@@ -46689,9 +46692,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00540
+    // ClassId: 00540
     // RuntimeId: 02153
-    // TypeInfo:  0x023D804C
+    // TypeInfo: 0x023D804C
 #ifndef _ClientAimingConstraintsEntity_
 #define _ClientAimingConstraintsEntity_
     class ClientAimingConstraintsEntity : public Entity
@@ -46710,9 +46713,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00326
+    // ClassId: 00326
     // RuntimeId: 02152
-    // TypeInfo:  0x023D8024
+    // TypeInfo: 0x023D8024
 #ifndef _ClientAIProximityReactionsComponent_
 #define _ClientAIProximityReactionsComponent_
     class ClientAIProximityReactionsComponent : public ClientComponent
@@ -46731,9 +46734,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00193
+    // ClassId: 00193
     // RuntimeId: 02151
-    // TypeInfo:  0x023D7F00
+    // TypeInfo: 0x023D7F00
 #ifndef _WebPresenceBackend_
 #define _WebPresenceBackend_
     class WebPresenceBackend : public PresenceBackend
@@ -46752,9 +46755,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00070
+    // ClassId: 00070
     // RuntimeId: 02150
-    // TypeInfo:  0x023D7EBC
+    // TypeInfo: 0x023D7EBC
 #ifndef _ClientMortarStrikeWeapon_
 #define _ClientMortarStrikeWeapon_
     class ClientMortarStrikeWeapon : public ClientWeapon
@@ -46773,9 +46776,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00071
+    // ClassId: 00071
     // RuntimeId: 02149
-    // TypeInfo:  0x023D7E94
+    // TypeInfo: 0x023D7E94
 #ifndef _ClientMeleeWeapon_
 #define _ClientMeleeWeapon_
     class ClientMeleeWeapon : public ClientWeapon
@@ -46794,9 +46797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00072
+    // ClassId: 00072
     // RuntimeId: 02148
-    // TypeInfo:  0x023D7E6C
+    // TypeInfo: 0x023D7E6C
 #ifndef _ClientMedkitWeapon_
 #define _ClientMedkitWeapon_
     class ClientMedkitWeapon : public ClientWeapon
@@ -46814,9 +46817,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00073
+    // ClassId: 00073
     // RuntimeId: 02147
-    // TypeInfo:  0x023D7E44
+    // TypeInfo: 0x023D7E44
 #ifndef _ClientLockingWeapon_
 #define _ClientLockingWeapon_
     class ClientLockingWeapon : public ClientWeapon
@@ -46835,9 +46838,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00074
+    // ClassId: 00074
     // RuntimeId: 02146
-    // TypeInfo:  0x023D7E1C
+    // TypeInfo: 0x023D7E1C
 #ifndef _ClientLaserPainterWeapon_
 #define _ClientLaserPainterWeapon_
     class ClientLaserPainterWeapon : public ClientLockingWeapon
@@ -46856,9 +46859,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00075
+    // ClassId: 00075
     // RuntimeId: 02145
-    // TypeInfo:  0x023D7DF4
+    // TypeInfo: 0x023D7DF4
 #ifndef _ClientLaserDesignatorWeapon_
 #define _ClientLaserDesignatorWeapon_
     class ClientLaserDesignatorWeapon : public ClientLockingWeapon
@@ -46877,9 +46880,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00076
+    // ClassId: 00076
     // RuntimeId: 02144
-    // TypeInfo:  0x023D7DCC
+    // TypeInfo: 0x023D7DCC
 #ifndef _ClientFlashlightWeapon_
 #define _ClientFlashlightWeapon_
     class ClientFlashlightWeapon : public ClientWeapon
@@ -46897,9 +46900,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00077
+    // ClassId: 00077
     // RuntimeId: 02143
-    // TypeInfo:  0x023D7DA4
+    // TypeInfo: 0x023D7DA4
 #ifndef _ClientDetonatedWeapon_
 #define _ClientDetonatedWeapon_
     class ClientDetonatedWeapon : public ClientWeapon
@@ -46918,9 +46921,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00078
+    // ClassId: 00078
     // RuntimeId: 02142
-    // TypeInfo:  0x023D7D7C
+    // TypeInfo: 0x023D7D7C
 #ifndef _ClientDefibrillatorWeapon_
 #define _ClientDefibrillatorWeapon_
     class ClientDefibrillatorWeapon : public ClientWeapon
@@ -46939,9 +46942,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00079
+    // ClassId: 00079
     // RuntimeId: 02141
-    // TypeInfo:  0x023D7D54
+    // TypeInfo: 0x023D7D54
 #ifndef _ClientArtilleryStrikeWeapon_
 #define _ClientArtilleryStrikeWeapon_
     class ClientArtilleryStrikeWeapon : public ClientWeapon
@@ -46960,9 +46963,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00120
+    // ClassId: 00120
     // RuntimeId: 02140
-    // TypeInfo:  0x023D7D2C
+    // TypeInfo: 0x023D7D2C
 #ifndef _ThisTargetCameraCallback2_
 #define _ThisTargetCameraCallback2_
     class ThisTargetCameraCallback2 : public TargetCameraCallback
@@ -46981,9 +46984,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00327
+    // ClassId: 00327
     // RuntimeId: 02139
-    // TypeInfo:  0x023D7D04
+    // TypeInfo: 0x023D7D04
 #ifndef _ClientMobileSpawnComponent_
 #define _ClientMobileSpawnComponent_
     class ClientMobileSpawnComponent : public ClientComponent
@@ -47001,9 +47004,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01779
+    // ClassId: 01779
     // RuntimeId: 02000
-    // TypeInfo:  0x023D64B0
+    // TypeInfo: 0x023D64B0
 #ifndef _GunMasterKillCounterEntityData_
 #define _GunMasterKillCounterEntityData_
 #pragma pack(push, 4)
@@ -47028,9 +47031,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01780
+    // ClassId: 01780
     // RuntimeId: 01994
-    // TypeInfo:  0x023D6464
+    // TypeInfo: 0x023D6464
 #ifndef _SpottingEntityData_
 #define _SpottingEntityData_
 #pragma pack(push, 4)
@@ -47058,9 +47061,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01781
+    // ClassId: 01781
     // RuntimeId: 01992
-    // TypeInfo:  0x023D6438
+    // TypeInfo: 0x023D6438
 #ifndef _TelemetryTriggerEntityData_
 #define _TelemetryTriggerEntityData_
 #pragma pack(push, 4)
@@ -47086,9 +47089,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01992
+    // ClassId: 01992
     // RuntimeId: 01990
-    // TypeInfo:  0x023D640C
+    // TypeInfo: 0x023D640C
 #ifndef _CoopLobbyEntityData_
 #define _CoopLobbyEntityData_
 #pragma pack(push, 16)
@@ -47115,9 +47118,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01782
+    // ClassId: 01782
     // RuntimeId: 01988
-    // TypeInfo:  0x023D63E0
+    // TypeInfo: 0x023D63E0
 #ifndef _TopPlayersEntityData_
 #define _TopPlayersEntityData_
 #pragma pack(push, 4)
@@ -47141,9 +47144,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01783
+    // ClassId: 01783
     // RuntimeId: 01986
-    // TypeInfo:  0x023D63B4
+    // TypeInfo: 0x023D63B4
 #ifndef _AimingConstraintEntityData_
 #define _AimingConstraintEntityData_
 #pragma pack(push, 4)
@@ -47170,9 +47173,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02326
+    // ClassId: 02326
     // RuntimeId: 01984
-    // TypeInfo:  0x023D6388
+    // TypeInfo: 0x023D6388
 #ifndef _AimingConstraintEntityCommonData_
 #define _AimingConstraintEntityCommonData_
 #pragma pack(push, 4)
@@ -47202,9 +47205,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01784
+    // ClassId: 01784
     // RuntimeId: 01980
-    // TypeInfo:  0x023D634C
+    // TypeInfo: 0x023D634C
 #ifndef _MeleeTriggerEntityData_
 #define _MeleeTriggerEntityData_
 #pragma pack(push, 16)
@@ -47233,9 +47236,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01785
+    // ClassId: 01785
     // RuntimeId: 01978
-    // TypeInfo:  0x023D6320
+    // TypeInfo: 0x023D6320
 #ifndef _MeleeEntityData_
 #define _MeleeEntityData_
 #pragma pack(push, 4)
@@ -47260,9 +47263,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02327
+    // ClassId: 02327
     // RuntimeId: 01976
-    // TypeInfo:  0x023D62F4
+    // TypeInfo: 0x023D62F4
 #ifndef _MeleeEntityCommonData_
 #define _MeleeEntityCommonData_
 #pragma pack(push, 4)
@@ -47300,9 +47303,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01993
+    // ClassId: 01993
     // RuntimeId: 01970
-    // TypeInfo:  0x023D62A8
+    // TypeInfo: 0x023D62A8
 #ifndef _TrackPlayerEntityData_
 #define _TrackPlayerEntityData_
 #pragma pack(push, 16)
@@ -47335,9 +47338,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01937
+    // ClassId: 01937
     // RuntimeId: 01968
-    // TypeInfo:  0x023D627C
+    // TypeInfo: 0x023D627C
 #ifndef _ConsumableTriggerEntityData_
 #define _ConsumableTriggerEntityData_
 #pragma pack(push, 16)
@@ -47364,9 +47367,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01951
+    // ClassId: 01951
     // RuntimeId: 01966
-    // TypeInfo:  0x023D6250
+    // TypeInfo: 0x023D6250
 #ifndef _VeniceExplosionEntityData_
 #define _VeniceExplosionEntityData_
 #pragma pack(push, 16)
@@ -47395,9 +47398,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01984
+    // ClassId: 01984
     // RuntimeId: 01964
-    // TypeInfo:  0x023D6224
+    // TypeInfo: 0x023D6224
 #ifndef _TargetEntityData_
 #define _TargetEntityData_
 #pragma pack(push, 16)
@@ -47421,9 +47424,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01994
+    // ClassId: 01994
     // RuntimeId: 01962
-    // TypeInfo:  0x023D61F8
+    // TypeInfo: 0x023D61F8
 #ifndef _DebugTestEntityData_
 #define _DebugTestEntityData_
 #pragma pack(push, 16)
@@ -47447,9 +47450,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01786
+    // ClassId: 01786
     // RuntimeId: 01960
-    // TypeInfo:  0x023D61CC
+    // TypeInfo: 0x023D61CC
 #ifndef _FriendZoneDebugRenderEntityData_
 #define _FriendZoneDebugRenderEntityData_
 #pragma pack(push, 4)
@@ -47474,9 +47477,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01787
+    // ClassId: 01787
     // RuntimeId: 01958
-    // TypeInfo:  0x023D61A0
+    // TypeInfo: 0x023D61A0
 #ifndef _FriendZoneEntityData_
 #define _FriendZoneEntityData_
 #pragma pack(push, 4)
@@ -47507,9 +47510,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01995
+    // ClassId: 01995
     // RuntimeId: 01956
-    // TypeInfo:  0x023D6174
+    // TypeInfo: 0x023D6174
 #ifndef _KillCounterEntityData_
 #define _KillCounterEntityData_
 #pragma pack(push, 16)
@@ -47540,9 +47543,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01996
+    // ClassId: 01996
     // RuntimeId: 01952
-    // TypeInfo:  0x023D6138
+    // TypeInfo: 0x023D6138
 #ifndef _LifeCounterEntityData_
 #define _LifeCounterEntityData_
 #pragma pack(push, 16)
@@ -47584,9 +47587,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01997
+    // ClassId: 01997
     // RuntimeId: 01950
-    // TypeInfo:  0x023D610C
+    // TypeInfo: 0x023D610C
 #ifndef _Minimap2DEntityData_
 #define _Minimap2DEntityData_
 #pragma pack(push, 16)
@@ -47617,9 +47620,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01663
+    // ClassId: 01663
     // RuntimeId: 01948
-    // TypeInfo:  0x023D60E0
+    // TypeInfo: 0x023D60E0
 #ifndef _SupplySphereComponentData_
 #define _SupplySphereComponentData_
 #pragma pack(push, 16)
@@ -47645,9 +47648,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01664
+    // ClassId: 01664
     // RuntimeId: 01946
-    // TypeInfo:  0x023D60B4
+    // TypeInfo: 0x023D60B4
 #ifndef _MobileSpawnComponentData_
 #define _MobileSpawnComponentData_
 #pragma pack(push, 16)
@@ -47677,9 +47680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01665
+    // ClassId: 01665
     // RuntimeId: 01944
-    // TypeInfo:  0x023D6088
+    // TypeInfo: 0x023D6088
 #ifndef _SoldierSoundComponentData_
 #define _SoldierSoundComponentData_
 #pragma pack(push, 16)
@@ -47707,9 +47710,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01666
+    // ClassId: 01666
     // RuntimeId: 01942
-    // TypeInfo:  0x023D605C
+    // TypeInfo: 0x023D605C
 #ifndef _SoldierFootplantEffectComponentData_
 #define _SoldierFootplantEffectComponentData_
 #pragma pack(push, 16)
@@ -47739,9 +47742,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01667
+    // ClassId: 01667
     // RuntimeId: 01940
-    // TypeInfo:  0x023D6030
+    // TypeInfo: 0x023D6030
 #ifndef _AIProximityReactionsComponentData_
 #define _AIProximityReactionsComponentData_
 #pragma pack(push, 16)
@@ -47771,9 +47774,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01668
+    // ClassId: 01668
     // RuntimeId: 01938
-    // TypeInfo:  0x023D6004
+    // TypeInfo: 0x023D6004
 #ifndef _WaypointComponentData_
 #define _WaypointComponentData_
 #pragma pack(push, 16)
@@ -47799,9 +47802,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01669
+    // ClassId: 01669
     // RuntimeId: 01934
-    // TypeInfo:  0x023D5FAC
+    // TypeInfo: 0x023D5FAC
 #ifndef _EntityInteractionComponentData_
 #define _EntityInteractionComponentData_
 #pragma pack(push, 16)
@@ -47836,9 +47839,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01670
+    // ClassId: 01670
     // RuntimeId: 01936
-    // TypeInfo:  0x023D5FD8
+    // TypeInfo: 0x023D5FD8
 #ifndef _SoldierEntityInteractionComponentData_
 #define _SoldierEntityInteractionComponentData_
 #pragma pack(push, 16)
@@ -47862,9 +47865,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01671
+    // ClassId: 01671
     // RuntimeId: 01930
-    // TypeInfo:  0x023D5F70
+    // TypeInfo: 0x023D5F70
 #ifndef _SoldierDecalComponentData_
 #define _SoldierDecalComponentData_
 #pragma pack(push, 16)
@@ -47894,9 +47897,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01672
+    // ClassId: 01672
     // RuntimeId: 01928
-    // TypeInfo:  0x023D5F44
+    // TypeInfo: 0x023D5F44
 #ifndef _DropWeaponComponentData_
 #define _DropWeaponComponentData_
 #pragma pack(push, 16)
@@ -47930,9 +47933,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01673
+    // ClassId: 01673
     // RuntimeId: 01926
-    // TypeInfo:  0x023D5F18
+    // TypeInfo: 0x023D5F18
 #ifndef _ClimbLadderComponentData_
 #define _ClimbLadderComponentData_
 #pragma pack(push, 16)
@@ -47961,9 +47964,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01674
+    // ClassId: 01674
     // RuntimeId: 01924
-    // TypeInfo:  0x023D5EEC
+    // TypeInfo: 0x023D5EEC
 #ifndef _SoldierEmoteComponentData_
 #define _SoldierEmoteComponentData_
 #pragma pack(push, 16)
@@ -47990,9 +47993,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01168
+    // ClassId: 01168
     // RuntimeId: 01922
-    // TypeInfo:  0x023D5EC0
+    // TypeInfo: 0x023D5EC0
 #ifndef _SoldierEmoteNetworkedMessageMapping_
 #define _SoldierEmoteNetworkedMessageMapping_
 #pragma pack(push, 4)
@@ -48018,9 +48021,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01675
+    // ClassId: 01675
     // RuntimeId: 01918
-    // TypeInfo:  0x023D5E84
+    // TypeInfo: 0x023D5E84
 #ifndef _LocatorComponentData_
 #define _LocatorComponentData_
 #pragma pack(push, 16)
@@ -48046,9 +48049,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01676
+    // ClassId: 01676
     // RuntimeId: 01916
-    // TypeInfo:  0x023D5E58
+    // TypeInfo: 0x023D5E58
 #ifndef _RadarSweepComponentData_
 #define _RadarSweepComponentData_
 #pragma pack(push, 16)
@@ -48080,9 +48083,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01677
+    // ClassId: 01677
     // RuntimeId: 01914
-    // TypeInfo:  0x023D5E2C
+    // TypeInfo: 0x023D5E2C
 #ifndef _SimpleAnimationControlComponentData_
 #define _SimpleAnimationControlComponentData_
 #pragma pack(push, 16)
@@ -48110,9 +48113,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01678
+    // ClassId: 01678
     // RuntimeId: 01912
-    // TypeInfo:  0x023D5E00
+    // TypeInfo: 0x023D5E00
 #ifndef _SoldierParachuteComponentData_
 #define _SoldierParachuteComponentData_
 #pragma pack(push, 16)
@@ -48140,9 +48143,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01679
+    // ClassId: 01679
     // RuntimeId: 01910
-    // TypeInfo:  0x023D5DD4
+    // TypeInfo: 0x023D5DD4
 #ifndef _SupportedShootingComponentData_
 #define _SupportedShootingComponentData_
 #pragma pack(push, 16)
@@ -48168,9 +48171,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02328
+    // ClassId: 02328
     // RuntimeId: 01908
-    // TypeInfo:  0x023D5DA8
+    // TypeInfo: 0x023D5DA8
 #ifndef _SupportedShootingCommonData_
 #define _SupportedShootingCommonData_
 #pragma pack(push, 4)
@@ -48199,9 +48202,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01680
+    // ClassId: 01680
     // RuntimeId: 01904
-    // TypeInfo:  0x023D5D6C
+    // TypeInfo: 0x023D5D6C
 #ifndef _SpecialMovesComponentData_
 #define _SpecialMovesComponentData_
 #pragma pack(push, 16)
@@ -48238,9 +48241,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01681
+    // ClassId: 01681
     // RuntimeId: 01894
-    // TypeInfo:  0x023D5D00
+    // TypeInfo: 0x023D5D00
 #ifndef _JammingComponentData_
 #define _JammingComponentData_
 #pragma pack(push, 16)
@@ -48267,9 +48270,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01549
+    // ClassId: 01549
     // RuntimeId: 01876
-    // TypeInfo:  0x023D5C54
+    // TypeInfo: 0x023D5C54
 #ifndef _VeniceFPSCameraData_
 #define _VeniceFPSCameraData_
 #pragma pack(push, 16)
@@ -48296,9 +48299,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01550
+    // ClassId: 01550
     // RuntimeId: 01874
-    // TypeInfo:  0x023D5C28
+    // TypeInfo: 0x023D5C28
 #ifndef _UavCameraData_
 #define _UavCameraData_
 #pragma pack(push, 16)
@@ -48336,9 +48339,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01169
+    // ClassId: 01169
     // RuntimeId: 01844
-    // TypeInfo:  0x023D5A6C
+    // TypeInfo: 0x023D5A6C
 #ifndef _ClientMetricsSettings_
 #define _ClientMetricsSettings_
 #pragma pack(push, 4)
@@ -48364,9 +48367,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01226
+    // ClassId: 01226
     // RuntimeId: 01193
-    // TypeInfo:  0x023CF48C
+    // TypeInfo: 0x023CF48C
 #ifndef _AudioGraphNodeData_
 #define _AudioGraphNodeData_
 #pragma pack(push, 4)
@@ -48390,9 +48393,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01228
+    // ClassId: 01228
     // RuntimeId: 01840
-    // TypeInfo:  0x023D5A14
+    // TypeInfo: 0x023D5A14
 #ifndef _MultiCrossfaderNodeData_
 #define _MultiCrossfaderNodeData_
 #pragma pack(push, 4)
@@ -48422,9 +48425,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01307
+    // ClassId: 01307
     // RuntimeId: 01191
-    // TypeInfo:  0x023CF460
+    // TypeInfo: 0x023CF460
 #ifndef _AudioGraphNodePortGroup_
 #define _AudioGraphNodePortGroup_
 #pragma pack(push, 4)
@@ -48448,9 +48451,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01229
+    // ClassId: 01229
     // RuntimeId: 01834
-    // TypeInfo:  0x023D59AC
+    // TypeInfo: 0x023D59AC
 #ifndef _CameraShakeNodeData_
 #define _CameraShakeNodeData_
 #pragma pack(push, 4)
@@ -48477,9 +48480,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00195
+    // ClassId: 00195
     // RuntimeId: 01645
-    // TypeInfo:  0x023D2B7C
+    // TypeInfo: 0x023D2B7C
 #ifndef _PresenceEvent_
 #define _PresenceEvent_
     class PresenceEvent
@@ -48498,9 +48501,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00197
+    // ClassId: 00197
     // RuntimeId: 01831
-    // TypeInfo:  0x023D4B8C
+    // TypeInfo: 0x023D4B8C
 #ifndef _FirstPartyNetworkStatusEvent_
 #define _FirstPartyNetworkStatusEvent_
     class FirstPartyNetworkStatusEvent : public PresenceEvent
@@ -48519,9 +48522,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00198
+    // ClassId: 00198
     // RuntimeId: 01830
-    // TypeInfo:  0x023D4B64
+    // TypeInfo: 0x023D4B64
 #ifndef _ActiveControllerUpdatedEvent_
 #define _ActiveControllerUpdatedEvent_
     class ActiveControllerUpdatedEvent : public PresenceEvent
@@ -48540,9 +48543,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00199
+    // ClassId: 00199
     // RuntimeId: 01829
-    // TypeInfo:  0x023D4B3C
+    // TypeInfo: 0x023D4B3C
 #ifndef _PlaygroupUpdatedEvent_
 #define _PlaygroupUpdatedEvent_
     class PlaygroupUpdatedEvent : public PresenceEvent
@@ -48561,9 +48564,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00200
+    // ClassId: 00200
     // RuntimeId: 01828
-    // TypeInfo:  0x023D4B14
+    // TypeInfo: 0x023D4B14
 #ifndef _MessageReceivedEvent_
 #define _MessageReceivedEvent_
     class MessageReceivedEvent : public PresenceEvent
@@ -48582,9 +48585,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00201
+    // ClassId: 00201
     // RuntimeId: 01827
-    // TypeInfo:  0x023D4AEC
+    // TypeInfo: 0x023D4AEC
 #ifndef _GameBrowserUpdateEvent_
 #define _GameBrowserUpdateEvent_
     class GameBrowserUpdateEvent : public PresenceEvent
@@ -48603,9 +48606,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00202
+    // ClassId: 00202
     // RuntimeId: 01826
-    // TypeInfo:  0x023D4AC4
+    // TypeInfo: 0x023D4AC4
 #ifndef _FriendUpdatedEvent_
 #define _FriendUpdatedEvent_
     class FriendUpdatedEvent : public PresenceEvent
@@ -48624,9 +48627,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00194
+    // ClassId: 00194
     // RuntimeId: 01825
-    // TypeInfo:  0x023D4A9C
+    // TypeInfo: 0x023D4A9C
 #ifndef _DirtySockPresenceBackend_
 #define _DirtySockPresenceBackend_
     class DirtySockPresenceBackend : public PresenceBackend
@@ -48645,9 +48648,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00541
+    // ClassId: 00541
     // RuntimeId: 01824
-    // TypeInfo:  0x023D4994
+    // TypeInfo: 0x023D4994
 #ifndef _TelemetryTriggerEntity_
 #define _TelemetryTriggerEntity_
     class TelemetryTriggerEntity : public Entity
@@ -48666,9 +48669,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00080
+    // ClassId: 00080
     // RuntimeId: 01823
-    // TypeInfo:  0x023D496C
+    // TypeInfo: 0x023D496C
 #ifndef _ClientVehicleDeployWeapon_
 #define _ClientVehicleDeployWeapon_
     class ClientVehicleDeployWeapon : public ClientWeapon
@@ -48687,9 +48690,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00081
+    // ClassId: 00081
     // RuntimeId: 01822
-    // TypeInfo:  0x023D4944
+    // TypeInfo: 0x023D4944
 #ifndef _ClientPowerToolWeapon_
 #define _ClientPowerToolWeapon_
     class ClientPowerToolWeapon : public ClientWeapon
@@ -48708,9 +48711,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00082
+    // ClassId: 00082
     // RuntimeId: 01821
-    // TypeInfo:  0x023D491C
+    // TypeInfo: 0x023D491C
 #ifndef _ClientMultipleTargetPainterWeapon_
 #define _ClientMultipleTargetPainterWeapon_
     class ClientMultipleTargetPainterWeapon : public ClientWeapon
@@ -48728,9 +48731,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00542
+    // ClassId: 00542
     // RuntimeId: 01820
-    // TypeInfo:  0x023D4884
+    // TypeInfo: 0x023D4884
 #ifndef _ServerSyncedIntEntity_
 #define _ServerSyncedIntEntity_
     class ServerSyncedIntEntity : public Entity
@@ -48749,9 +48752,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00543
+    // ClassId: 00543
     // RuntimeId: 01819
-    // TypeInfo:  0x023D485C
+    // TypeInfo: 0x023D485C
 #ifndef _ServerSyncedFloatEntity_
 #define _ServerSyncedFloatEntity_
     class ServerSyncedFloatEntity : public Entity
@@ -48770,9 +48773,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00544
+    // ClassId: 00544
     // RuntimeId: 01818
-    // TypeInfo:  0x023D4834
+    // TypeInfo: 0x023D4834
 #ifndef _KyotoServerPlayerAliveFilterEntity_
 #define _KyotoServerPlayerAliveFilterEntity_
     class KyotoServerPlayerAliveFilterEntity : public Entity
@@ -48791,9 +48794,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00545
+    // ClassId: 00545
     // RuntimeId: 01817
-    // TypeInfo:  0x023D480C
+    // TypeInfo: 0x023D480C
 #ifndef _EventQueueEntity_
 #define _EventQueueEntity_
     class EventQueueEntity : public Entity
@@ -48812,9 +48815,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00546
+    // ClassId: 00546
     // RuntimeId: 01816
-    // TypeInfo:  0x023D47E4
+    // TypeInfo: 0x023D47E4
 #ifndef _ClientSyncedIntEntity_
 #define _ClientSyncedIntEntity_
     class ClientSyncedIntEntity : public Entity
@@ -48833,9 +48836,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00547
+    // ClassId: 00547
     // RuntimeId: 01815
-    // TypeInfo:  0x023D47BC
+    // TypeInfo: 0x023D47BC
 #ifndef _ClientSyncedFloatEntity_
 #define _ClientSyncedFloatEntity_
     class ClientSyncedFloatEntity : public Entity
@@ -48854,9 +48857,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01170
+    // ClassId: 01170
     // RuntimeId: 01773
-    // TypeInfo:  0x023D3F90
+    // TypeInfo: 0x023D3F90
 #ifndef _ServerMetricsSettings_
 #define _ServerMetricsSettings_
 #pragma pack(push, 4)
@@ -48891,9 +48894,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01172
+    // ClassId: 01172
     // RuntimeId: 01713
-    // TypeInfo:  0x023D3A68
+    // TypeInfo: 0x023D3A68
 #ifndef _MetricEvent_
 #define _MetricEvent_
 #pragma pack(push, 8)
@@ -48918,9 +48921,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01174
+    // ClassId: 01174
     // RuntimeId: 01769
-    // TypeInfo:  0x023D3F38
+    // TypeInfo: 0x023D3F38
 #ifndef _ReceivedAwardSurveyEvent_
 #define _ReceivedAwardSurveyEvent_
 #pragma pack(push, 8)
@@ -48947,9 +48950,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01175
+    // ClassId: 01175
     // RuntimeId: 01767
-    // TypeInfo:  0x023D3F0C
+    // TypeInfo: 0x023D3F0C
 #ifndef _StatSurveyEvent_
 #define _StatSurveyEvent_
 #pragma pack(push, 8)
@@ -48975,9 +48978,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01176
+    // ClassId: 01176
     // RuntimeId: 01765
-    // TypeInfo:  0x023D3EE0
+    // TypeInfo: 0x023D3EE0
 #ifndef _SpawnSurveyEvent_
 #define _SpawnSurveyEvent_
 #pragma pack(push, 8)
@@ -49003,9 +49006,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01177
+    // ClassId: 01177
     // RuntimeId: 01763
-    // TypeInfo:  0x023D3EB4
+    // TypeInfo: 0x023D3EB4
 #ifndef _EnterVehicleSurveyEvent_
 #define _EnterVehicleSurveyEvent_
 #pragma pack(push, 8)
@@ -49032,9 +49035,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01178
+    // ClassId: 01178
     // RuntimeId: 01761
-    // TypeInfo:  0x023D3E88
+    // TypeInfo: 0x023D3E88
 #ifndef _DebugSurveyEvent_
 #define _DebugSurveyEvent_
 #pragma pack(push, 8)
@@ -49061,9 +49064,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01179
+    // ClassId: 01179
     // RuntimeId: 01759
-    // TypeInfo:  0x023D3E5C
+    // TypeInfo: 0x023D3E5C
 #ifndef _SurveyEvent_
 #define _SurveyEvent_
 #pragma pack(push, 8)
@@ -49096,9 +49099,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01194
+    // ClassId: 01194
     // RuntimeId: 01717
-    // TypeInfo:  0x023D3AC0
+    // TypeInfo: 0x023D3AC0
 #ifndef _MetricState_
 #define _MetricState_
 #pragma pack(push, 8)
@@ -49124,9 +49127,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01196
+    // ClassId: 01196
     // RuntimeId: 01755
-    // TypeInfo:  0x023D3E04
+    // TypeInfo: 0x023D3E04
 #ifndef _PerformanceProfileState_
 #define _PerformanceProfileState_
 #pragma pack(push, 8)
@@ -49158,9 +49161,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01180
+    // ClassId: 01180
     // RuntimeId: 01753
-    // TypeInfo:  0x023D3DD8
+    // TypeInfo: 0x023D3DD8
 #ifndef _FramerateHistogramPerformanceEvent_
 #define _FramerateHistogramPerformanceEvent_
 #pragma pack(push, 8)
@@ -49195,9 +49198,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01181
+    // ClassId: 01181
     // RuntimeId: 01751
-    // TypeInfo:  0x023D3DAC
+    // TypeInfo: 0x023D3DAC
 #ifndef _NetworkPerformanceEvent_
 #define _NetworkPerformanceEvent_
 #pragma pack(push, 8)
@@ -49227,9 +49230,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01182
+    // ClassId: 01182
     // RuntimeId: 01749
-    // TypeInfo:  0x023D3D80
+    // TypeInfo: 0x023D3D80
 #ifndef _PerformanceEvent_
 #define _PerformanceEvent_
 #pragma pack(push, 16)
@@ -49265,9 +49268,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01183
+    // ClassId: 01183
     // RuntimeId: 01747
-    // TypeInfo:  0x023D3D54
+    // TypeInfo: 0x023D3D54
 #ifndef _ServerPerformanceEvent_
 #define _ServerPerformanceEvent_
 #pragma pack(push, 8)
@@ -49297,9 +49300,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01192
+    // ClassId: 01192
     // RuntimeId: 01719
-    // TypeInfo:  0x023D3AEC
+    // TypeInfo: 0x023D3AEC
 #ifndef _MetricAggregate_
 #define _MetricAggregate_
 #pragma pack(push, 8)
@@ -49323,9 +49326,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01197
+    // ClassId: 01197
     // RuntimeId: 01743
-    // TypeInfo:  0x023D3CFC
+    // TypeInfo: 0x023D3CFC
 #ifndef _VehicleState_
 #define _VehicleState_
 #pragma pack(push, 8)
@@ -49351,9 +49354,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01198
+    // ClassId: 01198
     // RuntimeId: 01741
-    // TypeInfo:  0x023D3CD0
+    // TypeInfo: 0x023D3CD0
 #ifndef _KitState_
 #define _KitState_
 #pragma pack(push, 8)
@@ -49379,9 +49382,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01184
+    // ClassId: 01184
     // RuntimeId: 01739
-    // TypeInfo:  0x023D3CA4
+    // TypeInfo: 0x023D3CA4
 #ifndef _KitStateEvent_
 #define _KitStateEvent_
 #pragma pack(push, 8)
@@ -49407,9 +49410,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01199
+    // ClassId: 01199
     // RuntimeId: 01737
-    // TypeInfo:  0x023D3C78
+    // TypeInfo: 0x023D3C78
 #ifndef _PlayerState_
 #define _PlayerState_
 #pragma pack(push, 8)
@@ -49434,9 +49437,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01200
+    // ClassId: 01200
     // RuntimeId: 01735
-    // TypeInfo:  0x023D3C4C
+    // TypeInfo: 0x023D3C4C
 #ifndef _SpawnState_
 #define _SpawnState_
 #pragma pack(push, 8)
@@ -49462,9 +49465,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01185
+    // ClassId: 01185
     // RuntimeId: 01733
-    // TypeInfo:  0x023D3C20
+    // TypeInfo: 0x023D3C20
 #ifndef _DamageToVehicleEvent_
 #define _DamageToVehicleEvent_
 #pragma pack(push, 8)
@@ -49492,9 +49495,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01186
+    // ClassId: 01186
     // RuntimeId: 01731
-    // TypeInfo:  0x023D3BF4
+    // TypeInfo: 0x023D3BF4
 #ifndef _RoundOverEvent_
 #define _RoundOverEvent_
 #pragma pack(push, 8)
@@ -49520,9 +49523,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01187
+    // ClassId: 01187
     // RuntimeId: 01729
-    // TypeInfo:  0x023D3BC8
+    // TypeInfo: 0x023D3BC8
 #ifndef _DeathEvent_
 #define _DeathEvent_
 #pragma pack(push, 16)
@@ -49551,9 +49554,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01188
+    // ClassId: 01188
     // RuntimeId: 01727
-    // TypeInfo:  0x023D3B9C
+    // TypeInfo: 0x023D3B9C
 #ifndef _KillEvent_
 #define _KillEvent_
 #pragma pack(push, 16)
@@ -49582,9 +49585,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01189
+    // ClassId: 01189
     // RuntimeId: 01725
-    // TypeInfo:  0x023D3B70
+    // TypeInfo: 0x023D3B70
 #ifndef _SpawnEvent_
 #define _SpawnEvent_
 #pragma pack(push, 16)
@@ -49611,9 +49614,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01190
+    // ClassId: 01190
     // RuntimeId: 01723
-    // TypeInfo:  0x023D3B44
+    // TypeInfo: 0x023D3B44
 #ifndef _TickEvent_
 #define _TickEvent_
 #pragma pack(push, 16)
@@ -49640,9 +49643,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01191
+    // ClassId: 01191
     // RuntimeId: 01721
-    // TypeInfo:  0x023D3B18
+    // TypeInfo: 0x023D3B18
 #ifndef _RoundEvent_
 #define _RoundEvent_
 #pragma pack(push, 8)
@@ -49668,9 +49671,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01193
+    // ClassId: 01193
     // RuntimeId: 01745
-    // TypeInfo:  0x023D3D28
+    // TypeInfo: 0x023D3D28
 #ifndef _ScoreAggregate_
 #define _ScoreAggregate_
 #pragma pack(push, 8)
@@ -49696,9 +49699,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01195
+    // ClassId: 01195
     // RuntimeId: 01757
-    // TypeInfo:  0x023D3E30
+    // TypeInfo: 0x023D3E30
 #ifndef _ClientJuiceState_
 #define _ClientJuiceState_
 #pragma pack(push, 8)
@@ -49724,9 +49727,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01171
+    // ClassId: 01171
     // RuntimeId: 01715
-    // TypeInfo:  0x023D3A94
+    // TypeInfo: 0x023D3A94
 #ifndef _MetricReport_
 #define _MetricReport_
 #pragma pack(push, 4)
@@ -49751,9 +49754,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01173
+    // ClassId: 01173
     // RuntimeId: 01771
-    // TypeInfo:  0x023D3F64
+    // TypeInfo: 0x023D3F64
 #ifndef _SurveySuppressedEvent_
 #define _SurveySuppressedEvent_
 #pragma pack(push, 8)
@@ -49779,9 +49782,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01788
+    // ClassId: 01788
     // RuntimeId: 01711
-    // TypeInfo:  0x023D3A3C
+    // TypeInfo: 0x023D3A3C
 #ifndef _SyncedIntEntityData_
 #define _SyncedIntEntityData_
 #pragma pack(push, 4)
@@ -49806,9 +49809,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01789
+    // ClassId: 01789
     // RuntimeId: 01709
-    // TypeInfo:  0x023D3A10
+    // TypeInfo: 0x023D3A10
 #ifndef _SyncedFloatEntityData_
 #define _SyncedFloatEntityData_
 #pragma pack(push, 4)
@@ -49833,9 +49836,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01790
+    // ClassId: 01790
     // RuntimeId: 01707
-    // TypeInfo:  0x023D39E4
+    // TypeInfo: 0x023D39E4
 #ifndef _KyotoPlayerAliveFilterEntityData_
 #define _KyotoPlayerAliveFilterEntityData_
 #pragma pack(push, 4)
@@ -49859,9 +49862,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01791
+    // ClassId: 01791
     // RuntimeId: 01705
-    // TypeInfo:  0x023D39B8
+    // TypeInfo: 0x023D39B8
 #ifndef _EventQueueEntityData_
 #define _EventQueueEntityData_
 #pragma pack(push, 4)
@@ -49886,9 +49889,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00980
+    // ClassId: 00980
     // RuntimeId: 01703
-    // TypeInfo:  0x023D398C
+    // TypeInfo: 0x023D398C
 #ifndef _VehicleDeployWeaponData_
 #define _VehicleDeployWeaponData_
 #pragma pack(push, 4)
@@ -49920,9 +49923,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00981
+    // ClassId: 00981
     // RuntimeId: 01701
-    // TypeInfo:  0x023D3960
+    // TypeInfo: 0x023D3960
 #ifndef _MultipleTargetPainterWeaponData_
 #define _MultipleTargetPainterWeaponData_
 #pragma pack(push, 4)
@@ -49954,9 +49957,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00132
+    // ClassId: 00132
     // RuntimeId: 02320
-    // TypeInfo:  0x023DABE4
+    // TypeInfo: 0x023DABE4
 #ifndef _PresenceGetUserIdRequestParameters_
 #define _PresenceGetUserIdRequestParameters_
     class PresenceGetUserIdRequestParameters : public PresenceRequestParameters
@@ -49975,9 +49978,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00190
+    // ClassId: 00190
     // RuntimeId: 01647
-    // TypeInfo:  0x023D2BCC
+    // TypeInfo: 0x023D2BCC
 #ifndef _PresenceListEntitlementsRequestParameters_
 #define _PresenceListEntitlementsRequestParameters_
     class PresenceListEntitlementsRequestParameters : public PresenceRequestParameters
@@ -49996,9 +49999,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00192
+    // ClassId: 00192
     // RuntimeId: 02262
-    // TypeInfo:  0x023D9C7C
+    // TypeInfo: 0x023D9C7C
 #ifndef _BlazePresenceBackend_
 #define _BlazePresenceBackend_
     class BlazePresenceBackend : public PresenceBackend
@@ -50017,9 +50020,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00196
+    // ClassId: 00196
     // RuntimeId: 01832
-    // TypeInfo:  0x023D4BB4
+    // TypeInfo: 0x023D4BB4
 #ifndef _OnlineStatusEvent_
 #define _OnlineStatusEvent_
     class OnlineStatusEvent : public PresenceEvent
@@ -50038,9 +50041,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00203
+    // ClassId: 00203
     // RuntimeId: 01643
-    // TypeInfo:  0x023D2ABC
+    // TypeInfo: 0x023D2ABC
 #ifndef _IRenderTargetView_
 #define _IRenderTargetView_
     class IRenderTargetView
@@ -50059,9 +50062,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00204
+    // ClassId: 00204
     // RuntimeId: 01644
-    // TypeInfo:  0x023D2AE4
+    // TypeInfo: 0x023D2AE4
 #ifndef _IRenderTargetSet_
 #define _IRenderTargetSet_
     class IRenderTargetSet : public IRenderTargetView
@@ -50079,9 +50082,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00207
+    // ClassId: 00207
     // RuntimeId: 01641
-    // TypeInfo:  0x023D2A6C
+    // TypeInfo: 0x023D2A6C
 #ifndef _IRenderResource_
 #define _IRenderResource_
     class IRenderResource
@@ -50100,9 +50103,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00208
+    // ClassId: 00208
     // RuntimeId: 01642
-    // TypeInfo:  0x023D2A94
+    // TypeInfo: 0x023D2A94
 #ifndef _IRenderBuffer_
 #define _IRenderBuffer_
     class IRenderBuffer : public IRenderResource
@@ -50120,9 +50123,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00210
+    // ClassId: 00210
     // RuntimeId: 01590
-    // TypeInfo:  0x023D22F0
+    // TypeInfo: 0x023D22F0
 #ifndef _ITexture_
 #define _ITexture_
     class ITexture : public IRenderResource
@@ -50140,9 +50143,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00212
+    // ClassId: 00212
     // RuntimeId: 01639
-    // TypeInfo:  0x023D2990
+    // TypeInfo: 0x023D2990
 #ifndef _DxShaderProgramDatabase_
 #define _DxShaderProgramDatabase_
     class DxShaderProgramDatabase
@@ -50161,9 +50164,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00205
+    // ClassId: 00205
     // RuntimeId: 01638
-    // TypeInfo:  0x023D2968
+    // TypeInfo: 0x023D2968
 #ifndef _DxRenderTargetSet_
 #define _DxRenderTargetSet_
     class DxRenderTargetSet : public IRenderTargetSet
@@ -50182,9 +50185,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00206
+    // ClassId: 00206
     // RuntimeId: 01637
-    // TypeInfo:  0x023D2940
+    // TypeInfo: 0x023D2940
 #ifndef _DxRenderTargetView_
 #define _DxRenderTargetView_
     class DxRenderTargetView : public IRenderTargetView
@@ -50203,9 +50206,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00209
+    // ClassId: 00209
     // RuntimeId: 01636
-    // TypeInfo:  0x023D2918
+    // TypeInfo: 0x023D2918
 #ifndef _DxRenderBuffer_
 #define _DxRenderBuffer_
     class DxRenderBuffer : public IRenderBuffer
@@ -50224,9 +50227,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00213
+    // ClassId: 00213
     // RuntimeId: 01591
-    // TypeInfo:  0x023D2318
+    // TypeInfo: 0x023D2318
 #ifndef _IShaderDatabase_
 #define _IShaderDatabase_
     class IShaderDatabase
@@ -50245,9 +50248,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00214
+    // ClassId: 00214
     // RuntimeId: 01634
-    // TypeInfo:  0x023D2858
+    // TypeInfo: 0x023D2858
 #ifndef _ShaderDatabase_
 #define _ShaderDatabase_
     class ShaderDatabase : public IShaderDatabase
@@ -50266,9 +50269,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01201
+    // ClassId: 01201
     // RuntimeId: 01633
-    // TypeInfo:  0x023D27F4
+    // TypeInfo: 0x023D27F4
 #ifndef _TextureCompressSettings_
 #define _TextureCompressSettings_
 #pragma pack(push, 4)
@@ -50297,9 +50300,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01202
+    // ClassId: 01202
     // RuntimeId: 01593
-    // TypeInfo:  0x023D2698
+    // TypeInfo: 0x023D2698
 #ifndef _ShaderSystemSettings_
 #define _ShaderSystemSettings_
 #pragma pack(push, 16)
@@ -50464,9 +50467,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00215
+    // ClassId: 00215
     // RuntimeId: 01635
-    // TypeInfo:  0x023D2880
+    // TypeInfo: 0x023D2880
 #ifndef _DxShaderDatabase_
 #define _DxShaderDatabase_
     class DxShaderDatabase : public ShaderDatabase
@@ -50485,9 +50488,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00211
+    // ClassId: 00211
     // RuntimeId: 01640
-    // TypeInfo:  0x023D2A44
+    // TypeInfo: 0x023D2A44
 #ifndef _DxTexture_
 #define _DxTexture_
     class DxTexture : public ITexture
@@ -50506,9 +50509,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02329
+    // ClassId: 02329
     // RuntimeId: 01557
-    // TypeInfo:  0x023D2124
+    // TypeInfo: 0x023D2124
 #ifndef _SurfaceShaderBaseAsset_
 #define _SurfaceShaderBaseAsset_
 #pragma pack(push, 4)
@@ -50532,9 +50535,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01203
+    // ClassId: 01203
     // RuntimeId: 01559
-    // TypeInfo:  0x023D2150
+    // TypeInfo: 0x023D2150
 #ifndef _SurfaceShaderInstanceData_
 #define _SurfaceShaderInstanceData_
 #pragma pack(push, 4)
@@ -50559,9 +50562,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02330
+    // ClassId: 02330
     // RuntimeId: 01563
-    // TypeInfo:  0x023D218C
+    // TypeInfo: 0x023D218C
 #ifndef _ShaderGraph_
 #define _ShaderGraph_
 #pragma pack(push, 4)
@@ -50588,9 +50591,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02331
+    // ClassId: 02331
     // RuntimeId: 01545
-    // TypeInfo:  0x023D20A8
+    // TypeInfo: 0x023D20A8
 #ifndef _VertexShaderFragmentAsset_
 #define _VertexShaderFragmentAsset_
 #pragma pack(push, 4)
@@ -50617,9 +50620,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02332
+    // ClassId: 02332
     // RuntimeId: 01543
-    // TypeInfo:  0x023D207C
+    // TypeInfo: 0x023D207C
 #ifndef _ShaderDatabaseAsset_
 #define _ShaderDatabaseAsset_
 #pragma pack(push, 4)
@@ -50644,9 +50647,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01204
+    // ClassId: 01204
     // RuntimeId: 01537
-    // TypeInfo:  0x023D2020
+    // TypeInfo: 0x023D2020
 #ifndef _ViewFxData_
 #define _ViewFxData_
 #pragma pack(push, 16)
@@ -50677,9 +50680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02333
+    // ClassId: 02333
     // RuntimeId: 01525
-    // TypeInfo:  0x023D1F6C
+    // TypeInfo: 0x023D1F6C
 #ifndef _ScopeFilterData_
 #define _ScopeFilterData_
 #pragma pack(push, 4)
@@ -50703,9 +50706,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02335
+    // ClassId: 02335
     // RuntimeId: 01527
-    // TypeInfo:  0x023D1F98
+    // TypeInfo: 0x023D1F98
 #ifndef _SniperLensScopeFilterData_
 #define _SniperLensScopeFilterData_
 #pragma pack(push, 16)
@@ -50740,9 +50743,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02334
+    // ClassId: 02334
     // RuntimeId: 01529
-    // TypeInfo:  0x023D1FC4
+    // TypeInfo: 0x023D1FC4
 #ifndef _ColorTintScopeFilterData_
 #define _ColorTintScopeFilterData_
 #pragma pack(push, 16)
@@ -50768,9 +50771,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01205
+    // ClassId: 01205
     // RuntimeId: 01523
-    // TypeInfo:  0x023D1F40
+    // TypeInfo: 0x023D1F40
 #ifndef _GlobalPostProcessSettings_
 #define _GlobalPostProcessSettings_
 #pragma pack(push, 16)
@@ -50906,9 +50909,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01682
+    // ClassId: 01682
     // RuntimeId: 01517
-    // TypeInfo:  0x023D1EF4
+    // TypeInfo: 0x023D1EF4
 #ifndef _DebugComponentData_
 #define _DebugComponentData_
 #pragma pack(push, 16)
@@ -50937,9 +50940,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01683
+    // ClassId: 01683
     // RuntimeId: 01515
-    // TypeInfo:  0x023D1EC8
+    // TypeInfo: 0x023D1EC8
 #ifndef _LensScopeComponentData_
 #define _LensScopeComponentData_
 #pragma pack(push, 16)
@@ -50975,9 +50978,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01684
+    // ClassId: 01684
     // RuntimeId: 01513
-    // TypeInfo:  0x023D1E9C
+    // TypeInfo: 0x023D1E9C
 #ifndef _FilmGrainComponentData_
 #define _FilmGrainComponentData_
 #pragma pack(push, 16)
@@ -51009,9 +51012,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01685
+    // ClassId: 01685
     // RuntimeId: 01511
-    // TypeInfo:  0x023D1E70
+    // TypeInfo: 0x023D1E70
 #ifndef _VignetteComponentData_
 #define _VignetteComponentData_
 #pragma pack(push, 16)
@@ -51043,9 +51046,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01686
+    // ClassId: 01686
     // RuntimeId: 01509
-    // TypeInfo:  0x023D1E44
+    // TypeInfo: 0x023D1E44
 #ifndef _DofComponentData_
 #define _DofComponentData_
 #pragma pack(push, 16)
@@ -51082,9 +51085,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01687
+    // ClassId: 01687
     // RuntimeId: 01507
-    // TypeInfo:  0x023D1E18
+    // TypeInfo: 0x023D1E18
 #ifndef _ColorCorrectionComponentData_
 #define _ColorCorrectionComponentData_
 #pragma pack(push, 16)
@@ -51117,9 +51120,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01688
+    // ClassId: 01688
     // RuntimeId: 01505
-    // TypeInfo:  0x023D1DEC
+    // TypeInfo: 0x023D1DEC
 #ifndef _TonemapComponentData_
 #define _TonemapComponentData_
 #pragma pack(push, 16)
@@ -51154,9 +51157,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01206
+    // ClassId: 01206
     // RuntimeId: 01485
-    // TypeInfo:  0x023D1D30
+    // TypeInfo: 0x023D1D30
 #ifndef _MeshMergingSettings_
 #define _MeshMergingSettings_
 #pragma pack(push, 4)
@@ -51190,9 +51193,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01207
+    // ClassId: 01207
     // RuntimeId: 01483
-    // TypeInfo:  0x023D1D04
+    // TypeInfo: 0x023D1D04
 #ifndef _MeshStreamingSettings_
 #define _MeshStreamingSettings_
 #pragma pack(push, 4)
@@ -51257,9 +51260,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01208
+    // ClassId: 01208
     // RuntimeId: 01481
-    // TypeInfo:  0x023D1CD8
+    // TypeInfo: 0x023D1CD8
 #ifndef _MeshSettings_
 #define _MeshSettings_
 #pragma pack(push, 4)
@@ -51290,9 +51293,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02336
+    // ClassId: 02336
     // RuntimeId: 01479
-    // TypeInfo:  0x023D1CAC
+    // TypeInfo: 0x023D1CAC
 #ifndef _AnimatedPointCloudAsset_
 #define _AnimatedPointCloudAsset_
 #pragma pack(push, 4)
@@ -51316,9 +51319,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01209
+    // ClassId: 01209
     // RuntimeId: 01473
-    // TypeInfo:  0x023D1C60
+    // TypeInfo: 0x023D1C60
 #ifndef _RadiosityMaterial_
 #define _RadiosityMaterial_
 #pragma pack(push, 16)
@@ -51347,9 +51350,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02337
+    // ClassId: 02337
     // RuntimeId: 01471
-    // TypeInfo:  0x023D1C34
+    // TypeInfo: 0x023D1C34
 #ifndef _MeshVariationDatabase_
 #define _MeshVariationDatabase_
 #pragma pack(push, 4)
@@ -51375,9 +51378,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01210
+    // ClassId: 01210
     // RuntimeId: 01469
-    // TypeInfo:  0x023D1C08
+    // TypeInfo: 0x023D1C08
 #ifndef _MeshVariationDatabaseEntry_
 #define _MeshVariationDatabaseEntry_
 #pragma pack(push, 4)
@@ -51404,9 +51407,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01211
+    // ClassId: 01211
     // RuntimeId: 01465
-    // TypeInfo:  0x023D1BCC
+    // TypeInfo: 0x023D1BCC
 #ifndef _MeshMaterialVariation_
 #define _MeshMaterialVariation_
 #pragma pack(push, 4)
@@ -51431,9 +51434,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01212
+    // ClassId: 01212
     // RuntimeId: 01463
-    // TypeInfo:  0x023D1BA0
+    // TypeInfo: 0x023D1BA0
 #ifndef _MeshMaterial_
 #define _MeshMaterial_
 #pragma pack(push, 4)
@@ -51459,9 +51462,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02338
+    // ClassId: 02338
     // RuntimeId: 01455
-    // TypeInfo:  0x023D1AF0
+    // TypeInfo: 0x023D1AF0
 #ifndef _MeshAsset_
 #define _MeshAsset_
 #pragma pack(push, 4)
@@ -51495,9 +51498,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02340
+    // ClassId: 02340
     // RuntimeId: 01459
-    // TypeInfo:  0x023D1B48
+    // TypeInfo: 0x023D1B48
 #ifndef _SkinnedMeshAsset_
 #define _SkinnedMeshAsset_
 #pragma pack(push, 16)
@@ -51524,9 +51527,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02341
+    // ClassId: 02341
     // RuntimeId: 01457
-    // TypeInfo:  0x023D1B1C
+    // TypeInfo: 0x023D1B1C
 #ifndef _RigidMeshAsset_
 #define _RigidMeshAsset_
 #pragma pack(push, 4)
@@ -51550,9 +51553,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02339
+    // ClassId: 02339
     // RuntimeId: 01461
-    // TypeInfo:  0x023D1B74
+    // TypeInfo: 0x023D1B74
 #ifndef _CompositeMeshAsset_
 #define _CompositeMeshAsset_
 #pragma pack(push, 4)
@@ -51576,9 +51579,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02342
+    // ClassId: 02342
     // RuntimeId: 01451
-    // TypeInfo:  0x023D1AB4
+    // TypeInfo: 0x023D1AB4
 #ifndef _MeshLodGroup_
 #define _MeshLodGroup_
 #pragma pack(push, 4)
@@ -51609,9 +51612,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02343
+    // ClassId: 02343
     // RuntimeId: 01447
-    // TypeInfo:  0x023D1A78
+    // TypeInfo: 0x023D1A78
 #ifndef _EnlightenShaderDatabaseAsset_
 #define _EnlightenShaderDatabaseAsset_
 #pragma pack(push, 4)
@@ -51635,9 +51638,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02344
+    // ClassId: 02344
     // RuntimeId: 01445
-    // TypeInfo:  0x023D1A4C
+    // TypeInfo: 0x023D1A4C
 #ifndef _EnlightenPipelineTerrain_
 #define _EnlightenPipelineTerrain_
 #pragma pack(push, 4)
@@ -51662,9 +51665,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02345
+    // ClassId: 02345
     // RuntimeId: 01441
-    // TypeInfo:  0x023D1A10
+    // TypeInfo: 0x023D1A10
 #ifndef _EnlightenDatabaseAsset_
 #define _EnlightenDatabaseAsset_
 #pragma pack(push, 4)
@@ -51694,9 +51697,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01213
+    // ClassId: 01213
     // RuntimeId: 01435
-    // TypeInfo:  0x023D19C4
+    // TypeInfo: 0x023D19C4
 #ifndef _EnlightenBuildRadiositySceneDesc_
 #define _EnlightenBuildRadiositySceneDesc_
 #pragma pack(push, 4)
@@ -51733,9 +51736,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01214
+    // ClassId: 01214
     // RuntimeId: 01427
-    // TypeInfo:  0x023D1968
+    // TypeInfo: 0x023D1968
 #ifndef _EnlightenBuildRadiosityParams_
 #define _EnlightenBuildRadiosityParams_
 #pragma pack(push, 4)
@@ -51759,9 +51762,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01215
+    // ClassId: 01215
     // RuntimeId: 01425
-    // TypeInfo:  0x023D193C
+    // TypeInfo: 0x023D193C
 #ifndef _EnlightenDataCreatorParams_
 #define _EnlightenDataCreatorParams_
 #pragma pack(push, 4)
@@ -51786,9 +51789,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01216
+    // ClassId: 01216
     // RuntimeId: 01423
-    // TypeInfo:  0x023D1910
+    // TypeInfo: 0x023D1910
 #ifndef _EnlightenPipelineParams_
 #define _EnlightenPipelineParams_
 #pragma pack(push, 4)
@@ -51814,9 +51817,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02346
+    // ClassId: 02346
     // RuntimeId: 01421
-    // TypeInfo:  0x023D18E4
+    // TypeInfo: 0x023D18E4
 #ifndef _StaticEnlightenData_
 #define _StaticEnlightenData_
 #pragma pack(push, 4)
@@ -51843,9 +51846,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02347
+    // ClassId: 02347
     // RuntimeId: 01419
-    // TypeInfo:  0x023D18B8
+    // TypeInfo: 0x023D18B8
 #ifndef _EnlightenDataAsset_
 #define _EnlightenDataAsset_
 #pragma pack(push, 4)
@@ -51878,9 +51881,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02348
+    // ClassId: 02348
     // RuntimeId: 01417
-    // TypeInfo:  0x023D188C
+    // TypeInfo: 0x023D188C
 #ifndef _DecalTemplateData_
 #define _DecalTemplateData_
 #pragma pack(push, 4)
@@ -51918,9 +51921,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02464
+    // ClassId: 02464
     // RuntimeId: 01413
-    // TypeInfo:  0x023D1850
+    // TypeInfo: 0x023D1850
 #ifndef _DecalSettings_
 #define _DecalSettings_
 #pragma pack(push, 4)
@@ -51954,9 +51957,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02349
+    // ClassId: 02349
     // RuntimeId: 01405
-    // TypeInfo:  0x023D17F4
+    // TypeInfo: 0x023D17F4
 #ifndef _TextureAtlasAsset_
 #define _TextureAtlasAsset_
 #pragma pack(push, 4)
@@ -51980,9 +51983,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02350
+    // ClassId: 02350
     // RuntimeId: 01395
-    // TypeInfo:  0x023D1718
+    // TypeInfo: 0x023D1718
 #ifndef _TextureBaseAsset_
 #define _TextureBaseAsset_
 #pragma pack(push, 4)
@@ -52006,9 +52009,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02352
+    // ClassId: 02352
     // RuntimeId: 01401
-    // TypeInfo:  0x023D179C
+    // TypeInfo: 0x023D179C
 #ifndef _NoiseTextureAsset_
 #define _NoiseTextureAsset_
 #pragma pack(push, 4)
@@ -52032,9 +52035,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02353
+    // ClassId: 02353
     // RuntimeId: 01397
-    // TypeInfo:  0x023D1744
+    // TypeInfo: 0x023D1744
 #ifndef _TextureAsset_
 #define _TextureAsset_
 #pragma pack(push, 4)
@@ -52058,9 +52061,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02354
+    // ClassId: 02354
     // RuntimeId: 01399
-    // TypeInfo:  0x023D1770
+    // TypeInfo: 0x023D1770
 #ifndef _TextureArrayAsset_
 #define _TextureArrayAsset_
 #pragma pack(push, 4)
@@ -52084,9 +52087,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02351
+    // ClassId: 02351
     // RuntimeId: 01403
-    // TypeInfo:  0x023D17C8
+    // TypeInfo: 0x023D17C8
 #ifndef _RenderTextureAsset_
 #define _RenderTextureAsset_
 #pragma pack(push, 4)
@@ -52110,9 +52113,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02355
+    // ClassId: 02355
     // RuntimeId: 01393
-    // TypeInfo:  0x023D16EC
+    // TypeInfo: 0x023D16EC
 #ifndef _TextureGroup_
 #define _TextureGroup_
 #pragma pack(push, 4)
@@ -52136,9 +52139,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01217
+    // ClassId: 01217
     // RuntimeId: 01389
-    // TypeInfo:  0x023D0594
+    // TypeInfo: 0x023D0594
 #ifndef _StateRenderSettings_
 #define _StateRenderSettings_
 #pragma pack(push, 4)
@@ -52164,9 +52167,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01218
+    // ClassId: 01218
     // RuntimeId: 01387
-    // TypeInfo:  0x023D0568
+    // TypeInfo: 0x023D0568
 #ifndef _TextureSettings_
 #define _TextureSettings_
 #pragma pack(push, 4)
@@ -52194,9 +52197,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01219
+    // ClassId: 01219
     // RuntimeId: 01385
-    // TypeInfo:  0x023D053C
+    // TypeInfo: 0x023D053C
 #ifndef _MovieTextureSettings_
 #define _MovieTextureSettings_
 #pragma pack(push, 4)
@@ -52222,9 +52225,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01220
+    // ClassId: 01220
     // RuntimeId: 01383
-    // TypeInfo:  0x023D0510
+    // TypeInfo: 0x023D0510
 #ifndef _TextureStreamingSettings_
 #define _TextureStreamingSettings_
 #pragma pack(push, 4)
@@ -52292,9 +52295,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02465
+    // ClassId: 02465
     // RuntimeId: 01345
-    // TypeInfo:  0x023D03C4
+    // TypeInfo: 0x023D03C4
 #ifndef _DxDisplaySettings_
 #define _DxDisplaySettings_
 #pragma pack(push, 4)
@@ -52354,9 +52357,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01230
+    // ClassId: 01230
     // RuntimeId: 01343
-    // TypeInfo:  0x023CFFB0
+    // TypeInfo: 0x023CFFB0
 #ifndef _MixerValueNodeData_
 #define _MixerValueNodeData_
 #pragma pack(push, 4)
@@ -52382,9 +52385,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01231
+    // ClassId: 01231
     // RuntimeId: 01335
-    // TypeInfo:  0x023CFF54
+    // TypeInfo: 0x023CFF54
 #ifndef _MixerSendNodeData_
 #define _MixerSendNodeData_
 #pragma pack(push, 4)
@@ -52409,9 +52412,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01309
+    // ClassId: 01309
     // RuntimeId: 01333
-    // TypeInfo:  0x023CFF28
+    // TypeInfo: 0x023CFF28
 #ifndef _MixerSendEntry_
 #define _MixerSendEntry_
 #pragma pack(push, 4)
@@ -52438,9 +52441,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01232
+    // ClassId: 01232
     // RuntimeId: 01331
-    // TypeInfo:  0x023CFEFC
+    // TypeInfo: 0x023CFEFC
 #ifndef _MixerReceiveNodeData_
 #define _MixerReceiveNodeData_
 #pragma pack(push, 4)
@@ -52465,9 +52468,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01310
+    // ClassId: 01310
     // RuntimeId: 01329
-    // TypeInfo:  0x023CFED0
+    // TypeInfo: 0x023CFED0
 #ifndef _MixerReceiveEntry_
 #define _MixerReceiveEntry_
 #pragma pack(push, 4)
@@ -52494,9 +52497,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01233
+    // ClassId: 01233
     // RuntimeId: 01327
-    // TypeInfo:  0x023CFEA4
+    // TypeInfo: 0x023CFEA4
 #ifndef _MixerSetPropertyNodeData_
 #define _MixerSetPropertyNodeData_
 #pragma pack(push, 4)
@@ -52521,9 +52524,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01311
+    // ClassId: 01311
     // RuntimeId: 01325
-    // TypeInfo:  0x023CFE78
+    // TypeInfo: 0x023CFE78
 #ifndef _MixerSetPropertyEntry_
 #define _MixerSetPropertyEntry_
 #pragma pack(push, 4)
@@ -52552,9 +52555,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01234
+    // ClassId: 01234
     // RuntimeId: 01323
-    // TypeInfo:  0x023CFE4C
+    // TypeInfo: 0x023CFE4C
 #ifndef _MixerSimplePresetNodeData_
 #define _MixerSimplePresetNodeData_
 #pragma pack(push, 4)
@@ -52580,9 +52583,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01235
+    // ClassId: 01235
     // RuntimeId: 01321
-    // TypeInfo:  0x023CFE20
+    // TypeInfo: 0x023CFE20
 #ifndef _MixerOutputNodeData_
 #define _MixerOutputNodeData_
 #pragma pack(push, 4)
@@ -52607,9 +52610,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01312
+    // ClassId: 01312
     // RuntimeId: 01319
-    // TypeInfo:  0x023CFDF4
+    // TypeInfo: 0x023CFDF4
 #ifndef _MixerOutputEntry_
 #define _MixerOutputEntry_
 #pragma pack(push, 4)
@@ -52635,9 +52638,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01236
+    // ClassId: 01236
     // RuntimeId: 01317
-    // TypeInfo:  0x023CFDC8
+    // TypeInfo: 0x023CFDC8
 #ifndef _MixerInputNodeData_
 #define _MixerInputNodeData_
 #pragma pack(push, 4)
@@ -52662,9 +52665,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01313
+    // ClassId: 01313
     // RuntimeId: 01315
-    // TypeInfo:  0x023CFD9C
+    // TypeInfo: 0x023CFD9C
 #ifndef _MixerInputEntry_
 #define _MixerInputEntry_
 #pragma pack(push, 4)
@@ -52691,9 +52694,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01792
+    // ClassId: 01792
     // RuntimeId: 01313
-    // TypeInfo:  0x023CFD70
+    // TypeInfo: 0x023CFD70
 #ifndef _MixerEntityData_
 #define _MixerEntityData_
 #pragma pack(push, 4)
@@ -52720,9 +52723,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02356
+    // ClassId: 02356
     // RuntimeId: 01311
-    // TypeInfo:  0x023CFD44
+    // TypeInfo: 0x023CFD44
 #ifndef _MixerSystemAsset_
 #define _MixerSystemAsset_
 #pragma pack(push, 4)
@@ -52747,9 +52750,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02357
+    // ClassId: 02357
     // RuntimeId: 01309
-    // TypeInfo:  0x023CFD18
+    // TypeInfo: 0x023CFD18
 #ifndef _MixerAsset_
 #define _MixerAsset_
 #pragma pack(push, 4)
@@ -52776,9 +52779,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01223
+    // ClassId: 01223
     // RuntimeId: 01195
-    // TypeInfo:  0x023CF4B8
+    // TypeInfo: 0x023CF4B8
 #ifndef _AudioGraphData_
 #define _AudioGraphData_
 #pragma pack(push, 4)
@@ -52808,9 +52811,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01221
+    // ClassId: 01221
     // RuntimeId: 01303
-    // TypeInfo:  0x023CFCB0
+    // TypeInfo: 0x023CFCB0
 #ifndef _MixerPreset_
 #define _MixerPreset_
 #pragma pack(push, 4)
@@ -52837,9 +52840,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01222
+    // ClassId: 01222
     // RuntimeId: 01293
-    // TypeInfo:  0x023CFC44
+    // TypeInfo: 0x023CFC44
 #ifndef _MixGroup_
 #define _MixGroup_
 #pragma pack(push, 4)
@@ -52866,9 +52869,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01237
+    // ClassId: 01237
     // RuntimeId: 01289
-    // TypeInfo:  0x023CFC08
+    // TypeInfo: 0x023CFC08
 #ifndef _ValueSelectorNodeData_
 #define _ValueSelectorNodeData_
 #pragma pack(push, 4)
@@ -52896,9 +52899,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01314
+    // ClassId: 01314
     // RuntimeId: 01287
-    // TypeInfo:  0x023CFBDC
+    // TypeInfo: 0x023CFBDC
 #ifndef _ValueSelectorEntry_
 #define _ValueSelectorEntry_
 #pragma pack(push, 4)
@@ -52924,9 +52927,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01238
+    // ClassId: 01238
     // RuntimeId: 01285
-    // TypeInfo:  0x023CFBB0
+    // TypeInfo: 0x023CFBB0
 #ifndef _TimerNodeData_
 #define _TimerNodeData_
 #pragma pack(push, 4)
@@ -52956,9 +52959,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01239
+    // ClassId: 01239
     // RuntimeId: 01281
-    // TypeInfo:  0x023CFB74
+    // TypeInfo: 0x023CFB74
 #ifndef _SwitcherNodeData_
 #define _SwitcherNodeData_
 #pragma pack(push, 4)
@@ -52986,9 +52989,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01315
+    // ClassId: 01315
     // RuntimeId: 01279
-    // TypeInfo:  0x023CFB48
+    // TypeInfo: 0x023CFB48
 #ifndef _SwitcherEntry_
 #define _SwitcherEntry_
 #pragma pack(push, 4)
@@ -53014,9 +53017,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01240
+    // ClassId: 01240
     // RuntimeId: 01277
-    // TypeInfo:  0x023CFB1C
+    // TypeInfo: 0x023CFB1C
 #ifndef _SimpleValueSelectorNodeData_
 #define _SimpleValueSelectorNodeData_
 #pragma pack(push, 4)
@@ -53043,9 +53046,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01241
+    // ClassId: 01241
     // RuntimeId: 01275
-    // TypeInfo:  0x023CFAF0
+    // TypeInfo: 0x023CFAF0
 #ifndef _SimpleTransformNodeData_
 #define _SimpleTransformNodeData_
 #pragma pack(push, 4)
@@ -53074,9 +53077,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01242
+    // ClassId: 01242
     // RuntimeId: 01269
-    // TypeInfo:  0x023CFAA4
+    // TypeInfo: 0x023CFAA4
 #ifndef _SequenceGeneratorNodeData_
 #define _SequenceGeneratorNodeData_
 #pragma pack(push, 4)
@@ -53106,9 +53109,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01243
+    // ClassId: 01243
     // RuntimeId: 01267
-    // TypeInfo:  0x023CFA78
+    // TypeInfo: 0x023CFA78
 #ifndef _SendNodeData_
 #define _SendNodeData_
 #pragma pack(push, 4)
@@ -53133,9 +53136,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01316
+    // ClassId: 01316
     // RuntimeId: 01265
-    // TypeInfo:  0x023CFA4C
+    // TypeInfo: 0x023CFA4C
 #ifndef _SendEntry_
 #define _SendEntry_
 #pragma pack(push, 4)
@@ -53161,9 +53164,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01244
+    // ClassId: 01244
     // RuntimeId: 01263
-    // TypeInfo:  0x023CFA20
+    // TypeInfo: 0x023CFA20
 #ifndef _ScaleClampNodeData_
 #define _ScaleClampNodeData_
 #pragma pack(push, 4)
@@ -53193,9 +53196,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01245
+    // ClassId: 01245
     // RuntimeId: 01261
-    // TypeInfo:  0x023CF9F4
+    // TypeInfo: 0x023CF9F4
 #ifndef _ReceiveNodeData_
 #define _ReceiveNodeData_
 #pragma pack(push, 4)
@@ -53220,9 +53223,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01317
+    // ClassId: 01317
     // RuntimeId: 01259
-    // TypeInfo:  0x023CF9C8
+    // TypeInfo: 0x023CF9C8
 #ifndef _ReceiveEntry_
 #define _ReceiveEntry_
 #pragma pack(push, 4)
@@ -53250,9 +53253,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01246
+    // ClassId: 01246
     // RuntimeId: 01257
-    // TypeInfo:  0x023CF99C
+    // TypeInfo: 0x023CF99C
 #ifndef _ParameterFilterLinearNodeData_
 #define _ParameterFilterLinearNodeData_
 #pragma pack(push, 4)
@@ -53280,9 +53283,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01247
+    // ClassId: 01247
     // RuntimeId: 01255
-    // TypeInfo:  0x023CF970
+    // TypeInfo: 0x023CF970
 #ifndef _ParameterFilterLpNodeData_
 #define _ParameterFilterLpNodeData_
 #pragma pack(push, 4)
@@ -53309,9 +53312,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01248
+    // ClassId: 01248
     // RuntimeId: 01253
-    // TypeInfo:  0x023CF944
+    // TypeInfo: 0x023CF944
 #ifndef _NumberGeneratorNodeData_
 #define _NumberGeneratorNodeData_
 #pragma pack(push, 4)
@@ -53340,9 +53343,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01249
+    // ClassId: 01249
     // RuntimeId: 01249
-    // TypeInfo:  0x023CF908
+    // TypeInfo: 0x023CF908
 #ifndef _MinMaxValueSelectorNodeData_
 #define _MinMaxValueSelectorNodeData_
 #pragma pack(push, 4)
@@ -53371,9 +53374,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01318
+    // ClassId: 01318
     // RuntimeId: 01247
-    // TypeInfo:  0x023CF8DC
+    // TypeInfo: 0x023CF8DC
 #ifndef _MinMaxValueSelectorEntry_
 #define _MinMaxValueSelectorEntry_
 #pragma pack(push, 4)
@@ -53398,9 +53401,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01250
+    // ClassId: 01250
     // RuntimeId: 01245
-    // TypeInfo:  0x023CF8B0
+    // TypeInfo: 0x023CF8B0
 #ifndef _MinMaxNodeData_
 #define _MinMaxNodeData_
 #pragma pack(push, 4)
@@ -53428,9 +53431,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01251
+    // ClassId: 01251
     // RuntimeId: 01243
-    // TypeInfo:  0x023CF884
+    // TypeInfo: 0x023CF884
 #ifndef _LogicalExpressionNodeData_
 #define _LogicalExpressionNodeData_
 #pragma pack(push, 4)
@@ -53457,9 +53460,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01319
+    // ClassId: 01319
     // RuntimeId: 01239
-    // TypeInfo:  0x023CF848
+    // TypeInfo: 0x023CF848
 #ifndef _LogicalExpressionEntry_
 #define _LogicalExpressionEntry_
 #pragma pack(push, 4)
@@ -53484,9 +53487,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01252
+    // ClassId: 01252
     // RuntimeId: 01237
-    // TypeInfo:  0x023CF81C
+    // TypeInfo: 0x023CF81C
 #ifndef _LinearTransformNodeData_
 #define _LinearTransformNodeData_
 #pragma pack(push, 4)
@@ -53514,9 +53517,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01253
+    // ClassId: 01253
     // RuntimeId: 01235
-    // TypeInfo:  0x023CF7F0
+    // TypeInfo: 0x023CF7F0
 #ifndef _LfoNodeData_
 #define _LfoNodeData_
 #pragma pack(push, 4)
@@ -53547,9 +53550,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01254
+    // ClassId: 01254
     // RuntimeId: 01233
-    // TypeInfo:  0x023CF7C4
+    // TypeInfo: 0x023CF7C4
 #ifndef _JoypadNodeData_
 #define _JoypadNodeData_
 #pragma pack(push, 4)
@@ -53579,9 +53582,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01255
+    // ClassId: 01255
     // RuntimeId: 01231
-    // TypeInfo:  0x023CF798
+    // TypeInfo: 0x023CF798
 #ifndef _FollowEnvelopeNodeData_
 #define _FollowEnvelopeNodeData_
 #pragma pack(push, 4)
@@ -53610,9 +53613,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01256
+    // ClassId: 01256
     // RuntimeId: 01229
-    // TypeInfo:  0x023CF76C
+    // TypeInfo: 0x023CF76C
 #ifndef _EventSwitcherNodeData_
 #define _EventSwitcherNodeData_
 #pragma pack(push, 4)
@@ -53638,9 +53641,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01320
+    // ClassId: 01320
     // RuntimeId: 01227
-    // TypeInfo:  0x023CF740
+    // TypeInfo: 0x023CF740
 #ifndef _EventSwitcherEntry_
 #define _EventSwitcherEntry_
 #pragma pack(push, 4)
@@ -53666,9 +53669,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01257
+    // ClassId: 01257
     // RuntimeId: 01225
-    // TypeInfo:  0x023CF714
+    // TypeInfo: 0x023CF714
 #ifndef _EventGateNodeData_
 #define _EventGateNodeData_
 #pragma pack(push, 4)
@@ -53696,9 +53699,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01258
+    // ClassId: 01258
     // RuntimeId: 01223
-    // TypeInfo:  0x023CF6E8
+    // TypeInfo: 0x023CF6E8
 #ifndef _DeMuxNodeData_
 #define _DeMuxNodeData_
 #pragma pack(push, 4)
@@ -53727,9 +53730,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01321
+    // ClassId: 01321
     // RuntimeId: 01221
-    // TypeInfo:  0x023CF6BC
+    // TypeInfo: 0x023CF6BC
 #ifndef _DeMuxOutput_
 #define _DeMuxOutput_
 #pragma pack(push, 4)
@@ -53754,9 +53757,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01259
+    // ClassId: 01259
     // RuntimeId: 01219
-    // TypeInfo:  0x023CF690
+    // TypeInfo: 0x023CF690
 #ifndef _DeltaNodeData_
 #define _DeltaNodeData_
 #pragma pack(push, 4)
@@ -53781,9 +53784,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01322
+    // ClassId: 01322
     // RuntimeId: 01217
-    // TypeInfo:  0x023CF664
+    // TypeInfo: 0x023CF664
 #ifndef _DeltaGroup_
 #define _DeltaGroup_
 #pragma pack(push, 4)
@@ -53809,9 +53812,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01260
+    // ClassId: 01260
     // RuntimeId: 01215
-    // TypeInfo:  0x023CF638
+    // TypeInfo: 0x023CF638
 #ifndef _EventDebugNodeData_
 #define _EventDebugNodeData_
 #pragma pack(push, 4)
@@ -53836,9 +53839,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01323
+    // ClassId: 01323
     // RuntimeId: 01213
-    // TypeInfo:  0x023CF60C
+    // TypeInfo: 0x023CF60C
 #ifndef _DebugEventInput_
 #define _DebugEventInput_
 #pragma pack(push, 4)
@@ -53866,9 +53869,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01261
+    // ClassId: 01261
     // RuntimeId: 01211
-    // TypeInfo:  0x023CF5E0
+    // TypeInfo: 0x023CF5E0
 #ifndef _ValueDebugNodeData_
 #define _ValueDebugNodeData_
 #pragma pack(push, 4)
@@ -53893,9 +53896,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01324
+    // ClassId: 01324
     // RuntimeId: 01209
-    // TypeInfo:  0x023CF5B4
+    // TypeInfo: 0x023CF5B4
 #ifndef _DebugValueInput_
 #define _DebugValueInput_
 #pragma pack(push, 4)
@@ -53924,9 +53927,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01262
+    // ClassId: 01262
     // RuntimeId: 01205
-    // TypeInfo:  0x023CF578
+    // TypeInfo: 0x023CF578
 #ifndef _Crossfader2NodeData_
 #define _Crossfader2NodeData_
 #pragma pack(push, 4)
@@ -53953,9 +53956,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01263
+    // ClassId: 01263
     // RuntimeId: 01203
-    // TypeInfo:  0x023CF54C
+    // TypeInfo: 0x023CF54C
 #ifndef _ConditionNodeData_
 #define _ConditionNodeData_
 #pragma pack(push, 4)
@@ -53980,9 +53983,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01325
+    // ClassId: 01325
     // RuntimeId: 01201
-    // TypeInfo:  0x023CF520
+    // TypeInfo: 0x023CF520
 #ifndef _ConditionGroup_
 #define _ConditionGroup_
 #pragma pack(push, 4)
@@ -54010,9 +54013,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01264
+    // ClassId: 01264
     // RuntimeId: 01197
-    // TypeInfo:  0x023CF4E4
+    // TypeInfo: 0x023CF4E4
 #ifndef _AdsrNodeData_
 #define _AdsrNodeData_
 #pragma pack(push, 4)
@@ -54044,9 +54047,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01224
+    // ClassId: 01224
     // RuntimeId: 01307
-    // TypeInfo:  0x023CFCEC
+    // TypeInfo: 0x023CFCEC
 #ifndef _MixerGraphData_
 #define _MixerGraphData_
 #pragma pack(push, 4)
@@ -54073,9 +54076,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01227
+    // ClassId: 01227
     // RuntimeId: 01842
-    // TypeInfo:  0x023D5A40
+    // TypeInfo: 0x023D5A40
 #ifndef _PadRumbleNodeData_
 #define _PadRumbleNodeData_
 #pragma pack(push, 4)
@@ -54101,9 +54104,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01308
+    // ClassId: 01308
     // RuntimeId: 01838
-    // TypeInfo:  0x023D59E8
+    // TypeInfo: 0x023D59E8
 #ifndef _MultiCrossfaderGroup_
 #define _MultiCrossfaderGroup_
 #pragma pack(push, 4)
@@ -54134,9 +54137,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01329
+    // ClassId: 01329
     // RuntimeId: 01183
-    // TypeInfo:  0x023CF3CC
+    // TypeInfo: 0x023CF3CC
 #ifndef _AudioGraphParameter_
 #define _AudioGraphParameter_
 #pragma pack(push, 4)
@@ -54164,9 +54167,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01331
+    // ClassId: 01331
     // RuntimeId: 01185
-    // TypeInfo:  0x023CF3F8
+    // TypeInfo: 0x023CF3F8
 #ifndef _AudioGraphEvent_
 #define _AudioGraphEvent_
 #pragma pack(push, 4)
@@ -54190,9 +54193,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01330
+    // ClassId: 01330
     // RuntimeId: 01187
-    // TypeInfo:  0x023CF424
+    // TypeInfo: 0x023CF424
 #ifndef _AudioGraphAssetParameter_
 #define _AudioGraphAssetParameter_
 #pragma pack(push, 4)
@@ -54216,9 +54219,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00548
+    // ClassId: 00548
     // RuntimeId: 01181
-    // TypeInfo:  0x023CE4EC
+    // TypeInfo: 0x023CE4EC
 #ifndef _VoiceOverConversationGroupEntity_
 #define _VoiceOverConversationGroupEntity_
     class VoiceOverConversationGroupEntity : public Entity
@@ -54237,9 +54240,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00549
+    // ClassId: 00549
     // RuntimeId: 01180
-    // TypeInfo:  0x023CE4C4
+    // TypeInfo: 0x023CE4C4
 #ifndef _SoundScopeSetupEntity_
 #define _SoundScopeSetupEntity_
     class SoundScopeSetupEntity : public Entity
@@ -54258,9 +54261,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00550
+    // ClassId: 00550
     // RuntimeId: 01179
-    // TypeInfo:  0x023CE49C
+    // TypeInfo: 0x023CE49C
 #ifndef _SoundPrimeEntity_
 #define _SoundPrimeEntity_
     class SoundPrimeEntity : public Entity
@@ -54279,9 +54282,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00551
+    // ClassId: 00551
     // RuntimeId: 01178
-    // TypeInfo:  0x023CE474
+    // TypeInfo: 0x023CE474
 #ifndef _SoundEntity_
 #define _SoundEntity_
     class SoundEntity : public Entity
@@ -54300,9 +54303,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00782
+    // ClassId: 00782
     // RuntimeId: 01177
-    // TypeInfo:  0x023CE44C
+    // TypeInfo: 0x023CE44C
 #ifndef _SoundEffectEntity_
 #define _SoundEffectEntity_
     class SoundEffectEntity : public EffectEntity
@@ -54321,9 +54324,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00552
+    // ClassId: 00552
     // RuntimeId: 01176
-    // TypeInfo:  0x023CE424
+    // TypeInfo: 0x023CE424
 #ifndef _IrReverbEntity_
 #define _IrReverbEntity_
     class IrReverbEntity : public Entity
@@ -54342,9 +54345,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00553
+    // ClassId: 00553
     // RuntimeId: 01175
-    // TypeInfo:  0x023CE3FC
+    // TypeInfo: 0x023CE3FC
 #ifndef _GameSoundEntity_
 #define _GameSoundEntity_
     class GameSoundEntity : public Entity
@@ -54363,9 +54366,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02358
+    // ClassId: 02358
     // RuntimeId: 01174
-    // TypeInfo:  0x023CE30C
+    // TypeInfo: 0x023CE30C
 #ifndef _VoiceOverCharacterAsset_
 #define _VoiceOverCharacterAsset_
 #pragma pack(push, 4)
@@ -54389,9 +54392,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02359
+    // ClassId: 02359
     // RuntimeId: 01172
-    // TypeInfo:  0x023CE2E0
+    // TypeInfo: 0x023CE2E0
 #ifndef _VoiceOverSystemAsset_
 #define _VoiceOverSystemAsset_
 #pragma pack(push, 4)
@@ -54426,9 +54429,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01332
+    // ClassId: 01332
     // RuntimeId: 01170
-    // TypeInfo:  0x023CE2B4
+    // TypeInfo: 0x023CE2B4
 #ifndef _VoiceOverPronunciation_
 #define _VoiceOverPronunciation_
 #pragma pack(push, 4)
@@ -54456,9 +54459,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01333
+    // ClassId: 01333
     // RuntimeId: 01166
-    // TypeInfo:  0x023CE278
+    // TypeInfo: 0x023CE278
 #ifndef _VoiceOverConversationQueueGroup_
 #define _VoiceOverConversationQueueGroup_
 #pragma pack(push, 4)
@@ -54485,9 +54488,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02360
+    // ClassId: 02360
     // RuntimeId: 01162
-    // TypeInfo:  0x023CE23C
+    // TypeInfo: 0x023CE23C
 #ifndef _VoiceOverManuscriptAsset_
 #define _VoiceOverManuscriptAsset_
 #pragma pack(push, 4)
@@ -54530,9 +54533,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01334
+    // ClassId: 01334
     // RuntimeId: 01156
-    // TypeInfo:  0x023CE1F0
+    // TypeInfo: 0x023CE1F0
 #ifndef _VoiceOverLanguageRoot_
 #define _VoiceOverLanguageRoot_
 #pragma pack(push, 4)
@@ -54558,9 +54561,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02361
+    // ClassId: 02361
     // RuntimeId: 01154
-    // TypeInfo:  0x023CE1C4
+    // TypeInfo: 0x023CE1C4
 #ifndef _VoiceOverLogicAsset_
 #define _VoiceOverLogicAsset_
 #pragma pack(push, 4)
@@ -54588,9 +54591,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01335
+    // ClassId: 01335
     // RuntimeId: 01152
-    // TypeInfo:  0x023CE198
+    // TypeInfo: 0x023CE198
 #ifndef _VoiceOverGroup_
 #define _VoiceOverGroup_
 #pragma pack(push, 4)
@@ -54616,9 +54619,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01336
+    // ClassId: 01336
     // RuntimeId: 01150
-    // TypeInfo:  0x023CE16C
+    // TypeInfo: 0x023CE16C
 #ifndef _VoiceOverLogicFlow_
 #define _VoiceOverLogicFlow_
 #pragma pack(push, 4)
@@ -54646,9 +54649,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01357
+    // ClassId: 01357
     // RuntimeId: 01054
-    // TypeInfo:  0x023CDA60
+    // TypeInfo: 0x023CDA60
 #ifndef _VoiceOverNode_
 #define _VoiceOverNode_
 #pragma pack(push, 4)
@@ -54672,9 +54675,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01337
+    // ClassId: 01337
     // RuntimeId: 01146
-    // TypeInfo:  0x023CE114
+    // TypeInfo: 0x023CE114
 #ifndef _VoiceOverTriggerParameter_
 #define _VoiceOverTriggerParameter_
 #pragma pack(push, 4)
@@ -54700,9 +54703,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01358
+    // ClassId: 01358
     // RuntimeId: 01118
-    // TypeInfo:  0x023CDF54
+    // TypeInfo: 0x023CDF54
 #ifndef _VoiceOverStructureNode_
 #define _VoiceOverStructureNode_
 #pragma pack(push, 4)
@@ -54727,9 +54730,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01361
+    // ClassId: 01361
     // RuntimeId: 01142
-    // TypeInfo:  0x023CE0BC
+    // TypeInfo: 0x023CE0BC
 #ifndef _VoiceOverConversationNode_
 #define _VoiceOverConversationNode_
 #pragma pack(push, 4)
@@ -54768,9 +54771,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01338
+    // ClassId: 01338
     // RuntimeId: 01136
-    // TypeInfo:  0x023CE070
+    // TypeInfo: 0x023CE070
 #ifndef _VoiceOverDialogGroup_
 #define _VoiceOverDialogGroup_
 #pragma pack(push, 4)
@@ -54796,9 +54799,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01339
+    // ClassId: 01339
     // RuntimeId: 01134
-    // TypeInfo:  0x023CE044
+    // TypeInfo: 0x023CE044
 #ifndef _VoiceOverDialogTrack_
 #define _VoiceOverDialogTrack_
 #pragma pack(push, 4)
@@ -54833,9 +54836,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01340
+    // ClassId: 01340
     // RuntimeId: 01128
-    // TypeInfo:  0x023CDFF8
+    // TypeInfo: 0x023CDFF8
 #ifndef _VoiceOverDialogClip_
 #define _VoiceOverDialogClip_
 #pragma pack(push, 4)
@@ -54865,9 +54868,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01341
+    // ClassId: 01341
     // RuntimeId: 01126
-    // TypeInfo:  0x023CDFCC
+    // TypeInfo: 0x023CDFCC
 #ifndef _VoiceOverDialogClipEvents_
 #define _VoiceOverDialogClipEvents_
 #pragma pack(push, 4)
@@ -54893,9 +54896,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01362
+    // ClassId: 01362
     // RuntimeId: 01122
-    // TypeInfo:  0x023CDF90
+    // TypeInfo: 0x023CDF90
 #ifndef _VoiceOverContainerNode_
 #define _VoiceOverContainerNode_
 #pragma pack(push, 4)
@@ -54925,9 +54928,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01359
+    // ClassId: 01359
     // RuntimeId: 01148
-    // TypeInfo:  0x023CE140
+    // TypeInfo: 0x023CE140
 #ifndef _VoiceOverTriggerNode_
 #define _VoiceOverTriggerNode_
 #pragma pack(push, 4)
@@ -54954,9 +54957,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01363
+    // ClassId: 01363
     // RuntimeId: 01064
-    // TypeInfo:  0x023CDB3C
+    // TypeInfo: 0x023CDB3C
 #ifndef _VoiceOverExpressionNode_
 #define _VoiceOverExpressionNode_
 #pragma pack(push, 4)
@@ -54980,9 +54983,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01365
+    // ClassId: 01365
     // RuntimeId: 01112
-    // TypeInfo:  0x023CDEEC
+    // TypeInfo: 0x023CDEEC
 #ifndef _VoiceOverProbabilityNode_
 #define _VoiceOverProbabilityNode_
 #pragma pack(push, 4)
@@ -55009,9 +55012,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01366
+    // ClassId: 01366
     // RuntimeId: 01110
-    // TypeInfo:  0x023CDEC0
+    // TypeInfo: 0x023CDEC0
 #ifndef _VoiceOverLabelNode_
 #define _VoiceOverLabelNode_
 #pragma pack(push, 4)
@@ -55043,9 +55046,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01342
+    // ClassId: 01342
     // RuntimeId: 01108
-    // TypeInfo:  0x023CDE94
+    // TypeInfo: 0x023CDE94
 #ifndef _VoiceOverLabelSource_
 #define _VoiceOverLabelSource_
 #pragma pack(push, 4)
@@ -55070,9 +55073,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01367
+    // ClassId: 01367
     // RuntimeId: 01102
-    // TypeInfo:  0x023CDE48
+    // TypeInfo: 0x023CDE48
 #ifndef _VoiceOverIntervalNode_
 #define _VoiceOverIntervalNode_
 #pragma pack(push, 4)
@@ -55101,9 +55104,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01368
+    // ClassId: 01368
     // RuntimeId: 01100
-    // TypeInfo:  0x023CDE1C
+    // TypeInfo: 0x023CDE1C
 #ifndef _VoiceOverInfoNode_
 #define _VoiceOverInfoNode_
 #pragma pack(push, 4)
@@ -55131,9 +55134,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01369
+    // ClassId: 01369
     // RuntimeId: 01098
-    // TypeInfo:  0x023CDDF0
+    // TypeInfo: 0x023CDDF0
 #ifndef _VoiceOverGlobalNode_
 #define _VoiceOverGlobalNode_
 #pragma pack(push, 4)
@@ -55160,9 +55163,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01370
+    // ClassId: 01370
     // RuntimeId: 01096
-    // TypeInfo:  0x023CDDC4
+    // TypeInfo: 0x023CDDC4
 #ifndef _VoiceOverDistanceNode_
 #define _VoiceOverDistanceNode_
 #pragma pack(push, 4)
@@ -55193,9 +55196,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01371
+    // ClassId: 01371
     // RuntimeId: 01094
-    // TypeInfo:  0x023CDD98
+    // TypeInfo: 0x023CDD98
 #ifndef _VoiceOverConstantNode_
 #define _VoiceOverConstantNode_
 #pragma pack(push, 4)
@@ -55221,9 +55224,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01344
+    // ClassId: 01344
     // RuntimeId: 01080
-    // TypeInfo:  0x023CDC64
+    // TypeInfo: 0x023CDC64
 #ifndef _VoiceOverConstantValue_
 #define _VoiceOverConstantValue_
 #pragma pack(push, 4)
@@ -55247,9 +55250,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01346
+    // ClassId: 01346
     // RuntimeId: 01090
-    // TypeInfo:  0x023CDD40
+    // TypeInfo: 0x023CDD40
 #ifndef _VoiceOverConstantGlobalValue_
 #define _VoiceOverConstantGlobalValue_
 #pragma pack(push, 4)
@@ -55274,9 +55277,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01347
+    // ClassId: 01347
     // RuntimeId: 01088
-    // TypeInfo:  0x023CDD14
+    // TypeInfo: 0x023CDD14
 #ifndef _VoiceOverConstantFloatValue_
 #define _VoiceOverConstantFloatValue_
 #pragma pack(push, 4)
@@ -55301,9 +55304,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01348
+    // ClassId: 01348
     // RuntimeId: 01086
-    // TypeInfo:  0x023CDCE8
+    // TypeInfo: 0x023CDCE8
 #ifndef _VoiceOverConstantIntegerValue_
 #define _VoiceOverConstantIntegerValue_
 #pragma pack(push, 4)
@@ -55328,9 +55331,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01349
+    // ClassId: 01349
     // RuntimeId: 01084
-    // TypeInfo:  0x023CDCBC
+    // TypeInfo: 0x023CDCBC
 #ifndef _VoiceOverConstantBooleanValue_
 #define _VoiceOverConstantBooleanValue_
 #pragma pack(push, 4)
@@ -55356,9 +55359,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01343
+    // ClassId: 01343
     // RuntimeId: 01082
-    // TypeInfo:  0x023CDC90
+    // TypeInfo: 0x023CDC90
 #ifndef _VoiceOverGlobalConstantValue_
 #define _VoiceOverGlobalConstantValue_
 #pragma pack(push, 4)
@@ -55384,9 +55387,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01345
+    // ClassId: 01345
     // RuntimeId: 01092
-    // TypeInfo:  0x023CDD6C
+    // TypeInfo: 0x023CDD6C
 #ifndef _VoiceOverConstantVectorValue_
 #define _VoiceOverConstantVectorValue_
 #pragma pack(push, 16)
@@ -55412,9 +55415,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01372
+    // ClassId: 01372
     // RuntimeId: 01078
-    // TypeInfo:  0x023CDC38
+    // TypeInfo: 0x023CDC38
 #ifndef _VoiceOverCompareNode_
 #define _VoiceOverCompareNode_
 #pragma pack(push, 4)
@@ -55443,9 +55446,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01373
+    // ClassId: 01373
     // RuntimeId: 01074
-    // TypeInfo:  0x023CDBFC
+    // TypeInfo: 0x023CDBFC
 #ifndef _VoiceOverArithmeticNode_
 #define _VoiceOverArithmeticNode_
 #pragma pack(push, 4)
@@ -55473,9 +55476,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01350
+    // ClassId: 01350
     // RuntimeId: 01070
-    // TypeInfo:  0x023CDBC0
+    // TypeInfo: 0x023CDBC0
 #ifndef _VoiceOverStructureConnection_
 #define _VoiceOverStructureConnection_
 #pragma pack(push, 4)
@@ -55501,9 +55504,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01351
+    // ClassId: 01351
     // RuntimeId: 01068
-    // TypeInfo:  0x023CDB94
+    // TypeInfo: 0x023CDB94
 #ifndef _VoiceOverRelationshipInput_
 #define _VoiceOverRelationshipInput_
 #pragma pack(push, 4)
@@ -55527,9 +55530,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01352
+    // ClassId: 01352
     // RuntimeId: 01066
-    // TypeInfo:  0x023CDB68
+    // TypeInfo: 0x023CDB68
 #ifndef _VoiceOverValueConnection_
 #define _VoiceOverValueConnection_
 #pragma pack(push, 4)
@@ -55555,9 +55558,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01364
+    // ClassId: 01364
     // RuntimeId: 01114
-    // TypeInfo:  0x023CDF18
+    // TypeInfo: 0x023CDF18
 #ifndef _VoiceOverVariableNode_
 #define _VoiceOverVariableNode_
 #pragma pack(push, 4)
@@ -55583,9 +55586,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01353
+    // ClassId: 01353
     // RuntimeId: 01062
-    // TypeInfo:  0x023CDB10
+    // TypeInfo: 0x023CDB10
 #ifndef _EntityVoiceOverInfo_
 #define _EntityVoiceOverInfo_
 #pragma pack(push, 4)
@@ -55611,9 +55614,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01354
+    // ClassId: 01354
     // RuntimeId: 01060
-    // TypeInfo:  0x023CDAE4
+    // TypeInfo: 0x023CDAE4
 #ifndef _VoiceOverInterval_
 #define _VoiceOverInterval_
 #pragma pack(push, 4)
@@ -55638,9 +55641,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01355
+    // ClassId: 01355
     // RuntimeId: 01058
-    // TypeInfo:  0x023CDAB8
+    // TypeInfo: 0x023CDAB8
 #ifndef _VoiceOverLabel_
 #define _VoiceOverLabel_
 #pragma pack(push, 4)
@@ -55665,9 +55668,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01356
+    // ClassId: 01356
     // RuntimeId: 01056
-    // TypeInfo:  0x023CDA8C
+    // TypeInfo: 0x023CDA8C
 #ifndef _VoiceOverValueRedirect_
 #define _VoiceOverValueRedirect_
 #pragma pack(push, 4)
@@ -55693,9 +55696,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01360
+    // ClassId: 01360
     // RuntimeId: 01144
-    // TypeInfo:  0x023CE0E8
+    // TypeInfo: 0x023CE0E8
 #ifndef _VoiceOverEventNode_
 #define _VoiceOverEventNode_
 #pragma pack(push, 4)
@@ -55723,9 +55726,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01374
+    // ClassId: 01374
     // RuntimeId: 01052
-    // TypeInfo:  0x023CDA34
+    // TypeInfo: 0x023CDA34
 #ifndef _VoiceOverEvent_
 #define _VoiceOverEvent_
 #pragma pack(push, 4)
@@ -55752,9 +55755,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01375
+    // ClassId: 01375
     // RuntimeId: 01046
-    // TypeInfo:  0x023CD9B0
+    // TypeInfo: 0x023CD9B0
 #ifndef _VoiceOverValue_
 #define _VoiceOverValue_
 #pragma pack(push, 4)
@@ -55779,9 +55782,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01376
+    // ClassId: 01376
     // RuntimeId: 01048
-    // TypeInfo:  0x023CD9DC
+    // TypeInfo: 0x023CD9DC
 #ifndef _VoiceOverNamedValue_
 #define _VoiceOverNamedValue_
 #pragma pack(push, 4)
@@ -55806,9 +55809,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01377
+    // ClassId: 01377
     // RuntimeId: 01050
-    // TypeInfo:  0x023CDA08
+    // TypeInfo: 0x023CDA08
 #ifndef _VoiceOverObject_
 #define _VoiceOverObject_
 #pragma pack(push, 4)
@@ -55833,9 +55836,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01793
+    // ClassId: 01793
     // RuntimeId: 01042
-    // TypeInfo:  0x023CD974
+    // TypeInfo: 0x023CD974
 #ifndef _IrReverbEntityData_
 #define _IrReverbEntityData_
 #pragma pack(push, 4)
@@ -55863,9 +55866,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01794
+    // ClassId: 01794
     // RuntimeId: 01040
-    // TypeInfo:  0x023CD948
+    // TypeInfo: 0x023CD948
 #ifndef _VoiceOverConversationGroupEntityData_
 #define _VoiceOverConversationGroupEntityData_
 #pragma pack(push, 4)
@@ -55890,9 +55893,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01795
+    // ClassId: 01795
     // RuntimeId: 01038
-    // TypeInfo:  0x023CD91C
+    // TypeInfo: 0x023CD91C
 #ifndef _SoundScopeSetupEntityData_
 #define _SoundScopeSetupEntityData_
 #pragma pack(push, 4)
@@ -55917,9 +55920,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01796
+    // ClassId: 01796
     // RuntimeId: 01036
-    // TypeInfo:  0x023CD8F0
+    // TypeInfo: 0x023CD8F0
 #ifndef _SoundPrimeEntityData_
 #define _SoundPrimeEntityData_
 #pragma pack(push, 4)
@@ -55944,9 +55947,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01797
+    // ClassId: 01797
     // RuntimeId: 01034
-    // TypeInfo:  0x023CD8C4
+    // TypeInfo: 0x023CD8C4
 #ifndef _SoundEntityData_
 #define _SoundEntityData_
 #pragma pack(push, 16)
@@ -55976,9 +55979,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01998
+    // ClassId: 01998
     // RuntimeId: 01032
-    // TypeInfo:  0x023CD898
+    // TypeInfo: 0x023CD898
 #ifndef _GameSoundEntityData_
 #define _GameSoundEntityData_
 #pragma pack(push, 16)
@@ -56005,9 +56008,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02002
+    // ClassId: 02002
     // RuntimeId: 01030
-    // TypeInfo:  0x023CD86C
+    // TypeInfo: 0x023CD86C
 #ifndef _SoundEffectEntityData_
 #define _SoundEffectEntityData_
 #pragma pack(push, 16)
@@ -56033,9 +56036,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01265
+    // ClassId: 01265
     // RuntimeId: 01028
-    // TypeInfo:  0x023CD840
+    // TypeInfo: 0x023CD840
 #ifndef _WaveSwitcherNodeData_
 #define _WaveSwitcherNodeData_
 #pragma pack(push, 4)
@@ -56068,9 +56071,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01266
+    // ClassId: 01266
     // RuntimeId: 01026
-    // TypeInfo:  0x023CD814
+    // TypeInfo: 0x023CD814
 #ifndef _UserMusicControllerNodeData_
 #define _UserMusicControllerNodeData_
 #pragma pack(push, 4)
@@ -56098,9 +56101,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01267
+    // ClassId: 01267
     // RuntimeId: 01024
-    // TypeInfo:  0x023CD7E8
+    // TypeInfo: 0x023CD7E8
 #ifndef _UserMusicArbiterNodeData_
 #define _UserMusicArbiterNodeData_
 #pragma pack(push, 4)
@@ -56128,9 +56131,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01268
+    // ClassId: 01268
     // RuntimeId: 01022
-    // TypeInfo:  0x023CD7BC
+    // TypeInfo: 0x023CD7BC
 #ifndef _SamplerNodeData_
 #define _SamplerNodeData_
 #pragma pack(push, 4)
@@ -56175,9 +56178,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01269
+    // ClassId: 01269
     // RuntimeId: 01018
-    // TypeInfo:  0x023CD780
+    // TypeInfo: 0x023CD780
 #ifndef _RouteNodeData_
 #define _RouteNodeData_
 #pragma pack(push, 4)
@@ -56203,9 +56206,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01326
+    // ClassId: 01326
     // RuntimeId: 01016
-    // TypeInfo:  0x023CD754
+    // TypeInfo: 0x023CD754
 #ifndef _RouteEntry_
 #define _RouteEntry_
 #pragma pack(push, 4)
@@ -56233,9 +56236,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01270
+    // ClassId: 01270
     // RuntimeId: 01012
-    // TypeInfo:  0x023CD718
+    // TypeInfo: 0x023CD718
 #ifndef _IrReverbControllerNodeData_
 #define _IrReverbControllerNodeData_
 #pragma pack(push, 4)
@@ -56263,9 +56266,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01271
+    // ClassId: 01271
     // RuntimeId: 01010
-    // TypeInfo:  0x023CD6EC
+    // TypeInfo: 0x023CD6EC
 #ifndef _IrReverbNodeData_
 #define _IrReverbNodeData_
 #pragma pack(push, 4)
@@ -56298,9 +56301,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01272
+    // ClassId: 01272
     // RuntimeId: 01008
-    // TypeInfo:  0x023CD6C0
+    // TypeInfo: 0x023CD6C0
 #ifndef _PhysicsNodeData_
 #define _PhysicsNodeData_
 #pragma pack(push, 4)
@@ -56330,9 +56333,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01327
+    // ClassId: 01327
     // RuntimeId: 01006
-    // TypeInfo:  0x023CD694
+    // TypeInfo: 0x023CD694
 #ifndef _PhysicsEntry_
 #define _PhysicsEntry_
 #pragma pack(push, 4)
@@ -56360,9 +56363,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01273
+    // ClassId: 01273
     // RuntimeId: 01004
-    // TypeInfo:  0x023CD668
+    // TypeInfo: 0x023CD668
 #ifndef _PeakingIir2NodeData_
 #define _PeakingIir2NodeData_
 #pragma pack(push, 4)
@@ -56393,9 +56396,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01274
+    // ClassId: 01274
     // RuntimeId: 01002
-    // TypeInfo:  0x023CD63C
+    // TypeInfo: 0x023CD63C
 #ifndef _OrientationNodeData_
 #define _OrientationNodeData_
 #pragma pack(push, 4)
@@ -56422,9 +56425,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01275
+    // ClassId: 01275
     // RuntimeId: 00994
-    // TypeInfo:  0x023CD58C
+    // TypeInfo: 0x023CD58C
 #ifndef _OutputNodeData_
 #define _OutputNodeData_
 #pragma pack(push, 4)
@@ -56466,9 +56469,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01277
+    // ClassId: 01277
     // RuntimeId: 00998
-    // TypeInfo:  0x023CD5E4
+    // TypeInfo: 0x023CD5E4
 #ifndef _FlatOutputNodeData_
 #define _FlatOutputNodeData_
 #pragma pack(push, 4)
@@ -56500,9 +56503,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01278
+    // ClassId: 01278
     // RuntimeId: 00996
-    // TypeInfo:  0x023CD5B8
+    // TypeInfo: 0x023CD5B8
 #ifndef _DirectOutputNodeData_
 #define _DirectOutputNodeData_
 #pragma pack(push, 4)
@@ -56526,9 +56529,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01276
+    // ClassId: 01276
     // RuntimeId: 01000
-    // TypeInfo:  0x023CD610
+    // TypeInfo: 0x023CD610
 #ifndef _ConeOutputNodeData_
 #define _ConeOutputNodeData_
 #pragma pack(push, 16)
@@ -56568,9 +56571,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01279
+    // ClassId: 01279
     // RuntimeId: 00990
-    // TypeInfo:  0x023CD550
+    // TypeInfo: 0x023CD550
 #ifndef _MixerNodeData_
 #define _MixerNodeData_
 #pragma pack(push, 4)
@@ -56596,9 +56599,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01328
+    // ClassId: 01328
     // RuntimeId: 00988
-    // TypeInfo:  0x023CD524
+    // TypeInfo: 0x023CD524
 #ifndef _MixerEntry_
 #define _MixerEntry_
 #pragma pack(push, 4)
@@ -56626,9 +56629,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01280
+    // ClassId: 01280
     // RuntimeId: 00986
-    // TypeInfo:  0x023CD4F8
+    // TypeInfo: 0x023CD4F8
 #ifndef _MatrixPannerNodeData_
 #define _MatrixPannerNodeData_
 #pragma pack(push, 4)
@@ -56662,9 +56665,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01281
+    // ClassId: 01281
     // RuntimeId: 00984
-    // TypeInfo:  0x023CD4CC
+    // TypeInfo: 0x023CD4CC
 #ifndef _MasterUnitNodeData_
 #define _MasterUnitNodeData_
 #pragma pack(push, 4)
@@ -56709,9 +56712,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01282
+    // ClassId: 01282
     // RuntimeId: 00982
-    // TypeInfo:  0x023CD4A0
+    // TypeInfo: 0x023CD4A0
 #ifndef _LowShelfIir2NodeData_
 #define _LowShelfIir2NodeData_
 #pragma pack(push, 4)
@@ -56741,9 +56744,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01283
+    // ClassId: 01283
     // RuntimeId: 00980
-    // TypeInfo:  0x023CD474
+    // TypeInfo: 0x023CD474
 #ifndef _LowPassIir2NodeData_
 #define _LowPassIir2NodeData_
 #pragma pack(push, 4)
@@ -56772,9 +56775,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01284
+    // ClassId: 01284
     // RuntimeId: 00978
-    // TypeInfo:  0x023CD448
+    // TypeInfo: 0x023CD448
 #ifndef _LowPassFir64NodeData_
 #define _LowPassFir64NodeData_
 #pragma pack(push, 4)
@@ -56803,9 +56806,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01285
+    // ClassId: 01285
     // RuntimeId: 00976
-    // TypeInfo:  0x023CD41C
+    // TypeInfo: 0x023CD41C
 #ifndef _LowPassButterworthNodeData_
 #define _LowPassButterworthNodeData_
 #pragma pack(push, 4)
@@ -56835,9 +56838,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01286
+    // ClassId: 01286
     // RuntimeId: 00974
-    // TypeInfo:  0x023CD3F0
+    // TypeInfo: 0x023CD3F0
 #ifndef _LimiterNodeData_
 #define _LimiterNodeData_
 #pragma pack(push, 4)
@@ -56868,9 +56871,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01287
+    // ClassId: 01287
     // RuntimeId: 00970
-    // TypeInfo:  0x023CD3B4
+    // TypeInfo: 0x023CD3B4
 #ifndef _HighShelfIir2NodeData_
 #define _HighShelfIir2NodeData_
 #pragma pack(push, 4)
@@ -56900,9 +56903,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01288
+    // ClassId: 01288
     // RuntimeId: 00968
-    // TypeInfo:  0x023CD388
+    // TypeInfo: 0x023CD388
 #ifndef _HighPassIir2NodeData_
 #define _HighPassIir2NodeData_
 #pragma pack(push, 4)
@@ -56931,9 +56934,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01289
+    // ClassId: 01289
     // RuntimeId: 00966
-    // TypeInfo:  0x023CD35C
+    // TypeInfo: 0x023CD35C
 #ifndef _HighPassFir64NodeData_
 #define _HighPassFir64NodeData_
 #pragma pack(push, 4)
@@ -56962,9 +56965,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01290
+    // ClassId: 01290
     // RuntimeId: 00964
-    // TypeInfo:  0x023CD330
+    // TypeInfo: 0x023CD330
 #ifndef _HighPassButterworthNodeData_
 #define _HighPassButterworthNodeData_
 #pragma pack(push, 4)
@@ -56994,9 +56997,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01291
+    // ClassId: 01291
     // RuntimeId: 00962
-    // TypeInfo:  0x023CD304
+    // TypeInfo: 0x023CD304
 #ifndef _GainFaderNodeData_
 #define _GainFaderNodeData_
 #pragma pack(push, 4)
@@ -57029,9 +57032,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01292
+    // ClassId: 01292
     // RuntimeId: 00958
-    // TypeInfo:  0x023CD2C8
+    // TypeInfo: 0x023CD2C8
 #ifndef _GainNodeData_
 #define _GainNodeData_
 #pragma pack(push, 4)
@@ -57060,9 +57063,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01293
+    // ClassId: 01293
     // RuntimeId: 00956
-    // TypeInfo:  0x023CD29C
+    // TypeInfo: 0x023CD29C
 #ifndef _FrequencyShiftSsbNodeData_
 #define _FrequencyShiftSsbNodeData_
 #pragma pack(push, 4)
@@ -57092,9 +57095,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01294
+    // ClassId: 01294
     // RuntimeId: 00952
-    // TypeInfo:  0x023CD260
+    // TypeInfo: 0x023CD260
 #ifndef _DivisibleLoopPlayerNodeData_
 #define _DivisibleLoopPlayerNodeData_
 #pragma pack(push, 4)
@@ -57129,9 +57132,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01295
+    // ClassId: 01295
     // RuntimeId: 00948
-    // TypeInfo:  0x023CD224
+    // TypeInfo: 0x023CD224
 #ifndef _ExpanderNodeData_
 #define _ExpanderNodeData_
 #pragma pack(push, 4)
@@ -57164,9 +57167,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01296
+    // ClassId: 01296
     // RuntimeId: 00944
-    // TypeInfo:  0x023CD1E8
+    // TypeInfo: 0x023CD1E8
 #ifndef _DistortionClipNodeData_
 #define _DistortionClipNodeData_
 #pragma pack(push, 4)
@@ -57195,9 +57198,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01297
+    // ClassId: 01297
     // RuntimeId: 00942
-    // TypeInfo:  0x023CD1BC
+    // TypeInfo: 0x023CD1BC
 #ifndef _DialogSamplerNodeData_
 #define _DialogSamplerNodeData_
 #pragma pack(push, 4)
@@ -57232,9 +57235,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01298
+    // ClassId: 01298
     // RuntimeId: 00940
-    // TypeInfo:  0x023CD190
+    // TypeInfo: 0x023CD190
 #ifndef _DelayNodeData_
 #define _DelayNodeData_
 #pragma pack(push, 4)
@@ -57265,9 +57268,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01299
+    // ClassId: 01299
     // RuntimeId: 00938
-    // TypeInfo:  0x023CD164
+    // TypeInfo: 0x023CD164
 #ifndef _DacNodeData_
 #define _DacNodeData_
 #pragma pack(push, 4)
@@ -57298,9 +57301,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01300
+    // ClassId: 01300
     // RuntimeId: 00936
-    // TypeInfo:  0x023CD138
+    // TypeInfo: 0x023CD138
 #ifndef _CrossfaderNodeData_
 #define _CrossfaderNodeData_
 #pragma pack(push, 4)
@@ -57331,9 +57334,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01301
+    // ClassId: 01301
     // RuntimeId: 00934
-    // TypeInfo:  0x023CD10C
+    // TypeInfo: 0x023CD10C
 #ifndef _CompressorNodeData_
 #define _CompressorNodeData_
 #pragma pack(push, 4)
@@ -57366,9 +57369,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01305
+    // ClassId: 01305
     // RuntimeId: 00872
-    // TypeInfo:  0x023CCD40
+    // TypeInfo: 0x023CCD40
 #ifndef _SoundBusData_
 #define _SoundBusData_
 #pragma pack(push, 4)
@@ -57395,9 +57398,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01302
+    // ClassId: 01302
     // RuntimeId: 00928
-    // TypeInfo:  0x023CD0A4
+    // TypeInfo: 0x023CD0A4
 #ifndef _BandPassIir2NodeData_
 #define _BandPassIir2NodeData_
 #pragma pack(push, 4)
@@ -57427,9 +57430,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01303
+    // ClassId: 01303
     // RuntimeId: 00926
-    // TypeInfo:  0x023CD078
+    // TypeInfo: 0x023CD078
 #ifndef _BandPassFir64NodeData_
 #define _BandPassFir64NodeData_
 #pragma pack(push, 4)
@@ -57459,9 +57462,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01304
+    // ClassId: 01304
     // RuntimeId: 00924
-    // TypeInfo:  0x023CD04C
+    // TypeInfo: 0x023CD04C
 #ifndef _AiffWriterNodeData_
 #define _AiffWriterNodeData_
 #pragma pack(push, 4)
@@ -57491,9 +57494,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01379
+    // ClassId: 01379
     // RuntimeId: 00912
-    // TypeInfo:  0x023CCF60
+    // TypeInfo: 0x023CCF60
 #ifndef _SoundScopeStrategyData_
 #define _SoundScopeStrategyData_
 #pragma pack(push, 4)
@@ -57518,9 +57521,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01381
+    // ClassId: 01381
     // RuntimeId: 00920
-    // TypeInfo:  0x023CCFF4
+    // TypeInfo: 0x023CCFF4
 #ifndef _DuplicateSpawnScopeStrategyData_
 #define _DuplicateSpawnScopeStrategyData_
 #pragma pack(push, 4)
@@ -57549,9 +57552,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01382
+    // ClassId: 01382
     // RuntimeId: 00918
-    // TypeInfo:  0x023CCFC8
+    // TypeInfo: 0x023CCFC8
 #ifndef _MaxInstancesScopeStrategyData_
 #define _MaxInstancesScopeStrategyData_
 #pragma pack(push, 4)
@@ -57578,9 +57581,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01378
+    // ClassId: 01378
     // RuntimeId: 00916
-    // TypeInfo:  0x023CCF9C
+    // TypeInfo: 0x023CCF9C
 #ifndef _SoundScopeSetupData_
 #define _SoundScopeSetupData_
 #pragma pack(push, 4)
@@ -57606,9 +57609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01380
+    // ClassId: 01380
     // RuntimeId: 00922
-    // TypeInfo:  0x023CD020
+    // TypeInfo: 0x023CD020
 #ifndef _ClosestInstancesScopeStrategyData_
 #define _ClosestInstancesScopeStrategyData_
 #pragma pack(push, 4)
@@ -57633,9 +57636,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01383
+    // ClassId: 01383
     // RuntimeId: 00910
-    // TypeInfo:  0x023CCF34
+    // TypeInfo: 0x023CCF34
 #ifndef _SoundScopeData_
 #define _SoundScopeData_
 #pragma pack(push, 4)
@@ -57661,9 +57664,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01384
+    // ClassId: 01384
     // RuntimeId: 00908
-    // TypeInfo:  0x023CCF08
+    // TypeInfo: 0x023CCF08
 #ifndef _SoundWaveVariation_
 #define _SoundWaveVariation_
 #pragma pack(push, 4)
@@ -57694,9 +57697,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01385
+    // ClassId: 01385
     // RuntimeId: 00888
-    // TypeInfo:  0x023CCE4C
+    // TypeInfo: 0x023CCE4C
 #ifndef _EqualizerSettings_
 #define _EqualizerSettings_
 #pragma pack(push, 4)
@@ -57725,9 +57728,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01386
+    // ClassId: 01386
     // RuntimeId: 00886
-    // TypeInfo:  0x023CCE20
+    // TypeInfo: 0x023CCE20
 #ifndef _CompressorSettings_
 #define _CompressorSettings_
 #pragma pack(push, 4)
@@ -57755,9 +57758,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01387
+    // ClassId: 01387
     // RuntimeId: 00884
-    // TypeInfo:  0x023CCDF4
+    // TypeInfo: 0x023CCDF4
 #ifndef _MasterUnitSettings_
 #define _MasterUnitSettings_
 #pragma pack(push, 4)
@@ -57793,9 +57796,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01388
+    // ClassId: 01388
     // RuntimeId: 00882
-    // TypeInfo:  0x023CCDC8
+    // TypeInfo: 0x023CCDC8
 #ifndef _HdrSetting_
 #define _HdrSetting_
 #pragma pack(push, 4)
@@ -57833,9 +57836,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01225
+    // ClassId: 01225
     // RuntimeId: 00874
-    // TypeInfo:  0x023CCD6C
+    // TypeInfo: 0x023CCD6C
 #ifndef _SoundGraphData_
 #define _SoundGraphData_
 #pragma pack(push, 4)
@@ -57864,9 +57867,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01306
+    // ClassId: 01306
     // RuntimeId: 00930
-    // TypeInfo:  0x023CD0D0
+    // TypeInfo: 0x023CD0D0
 #ifndef _BusNodeData_
 #define _BusNodeData_
 #pragma pack(push, 4)
@@ -57893,9 +57896,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01389
+    // ClassId: 01389
     // RuntimeId: 00850
-    // TypeInfo:  0x023CCC74
+    // TypeInfo: 0x023CCC74
 #ifndef _PointEnvelope_
 #define _PointEnvelope_
 #pragma pack(push, 4)
@@ -57920,9 +57923,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01390
+    // ClassId: 01390
     // RuntimeId: 00846
-    // TypeInfo:  0x023CCC38
+    // TypeInfo: 0x023CCC38
 #ifndef _AudioLanguage_
 #define _AudioLanguage_
 #pragma pack(push, 4)
@@ -57948,9 +57951,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01391
+    // ClassId: 01391
     // RuntimeId: 00842
-    // TypeInfo:  0x023CCBFC
+    // TypeInfo: 0x023CCBFC
 #ifndef _AudioSettings_
 #define _AudioSettings_
 #pragma pack(push, 4)
@@ -57992,9 +57995,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02362
+    // ClassId: 02362
     // RuntimeId: 00840
-    // TypeInfo:  0x023CCBD0
+    // TypeInfo: 0x023CCBD0
 #ifndef _LevelAudioObstructionAsset_
 #define _LevelAudioObstructionAsset_
 #pragma pack(push, 4)
@@ -58022,9 +58025,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02371
+    // ClassId: 02371
     // RuntimeId: 00768
-    // TypeInfo:  0x023CC69C
+    // TypeInfo: 0x023CC69C
 #ifndef _SoundAsset_
 #define _SoundAsset_
 #pragma pack(push, 4)
@@ -58049,9 +58052,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01392
+    // ClassId: 01392
     // RuntimeId: 00830
-    // TypeInfo:  0x023CCB10
+    // TypeInfo: 0x023CCB10
 #ifndef _SoundPatchConfigurationEntry_
 #define _SoundPatchConfigurationEntry_
 #pragma pack(push, 4)
@@ -58075,9 +58078,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01394
+    // ClassId: 01394
     // RuntimeId: 00832
-    // TypeInfo:  0x023CCB3C
+    // TypeInfo: 0x023CCB3C
 #ifndef _SoundPatchConfigurationParameterEntry_
 #define _SoundPatchConfigurationParameterEntry_
 #pragma pack(push, 4)
@@ -58103,9 +58106,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01393
+    // ClassId: 01393
     // RuntimeId: 00834
-    // TypeInfo:  0x023CCB68
+    // TypeInfo: 0x023CCB68
 #ifndef _SoundPatchConfigurationAssetEntry_
 #define _SoundPatchConfigurationAssetEntry_
 #pragma pack(push, 4)
@@ -58131,9 +58134,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02363
+    // ClassId: 02363
     // RuntimeId: 00828
-    // TypeInfo:  0x023CCAE4
+    // TypeInfo: 0x023CCAE4
 #ifndef _SoundTestAsset_
 #define _SoundTestAsset_
 #pragma pack(push, 4)
@@ -58160,9 +58163,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01395
+    // ClassId: 01395
     // RuntimeId: 00826
-    // TypeInfo:  0x023CCAB8
+    // TypeInfo: 0x023CCAB8
 #ifndef _SoundTestSuite_
 #define _SoundTestSuite_
 #pragma pack(push, 4)
@@ -58191,9 +58194,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01396
+    // ClassId: 01396
     // RuntimeId: 00824
-    // TypeInfo:  0x023CCA8C
+    // TypeInfo: 0x023CCA8C
 #ifndef _SoundTestSpec_
 #define _SoundTestSpec_
 #pragma pack(push, 4)
@@ -58223,9 +58226,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01397
+    // ClassId: 01397
     // RuntimeId: 00822
-    // TypeInfo:  0x023CCA60
+    // TypeInfo: 0x023CCA60
 #ifndef _SoundTestTask_
 #define _SoundTestTask_
 #pragma pack(push, 4)
@@ -58253,9 +58256,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01399
+    // ClassId: 01399
     // RuntimeId: 00808
-    // TypeInfo:  0x023CC964
+    // TypeInfo: 0x023CC964
 #ifndef _SoundTestTaskSpec_
 #define _SoundTestTaskSpec_
 #pragma pack(push, 4)
@@ -58281,9 +58284,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01401
+    // ClassId: 01401
     // RuntimeId: 00816
-    // TypeInfo:  0x023CC9F8
+    // TypeInfo: 0x023CC9F8
 #ifndef _SoundTestEventTask_
 #define _SoundTestEventTask_
 #pragma pack(push, 4)
@@ -58308,9 +58311,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01402
+    // ClassId: 01402
     // RuntimeId: 00814
-    // TypeInfo:  0x023CC9CC
+    // TypeInfo: 0x023CC9CC
 #ifndef _SoundTestParamTask_
 #define _SoundTestParamTask_
 #pragma pack(push, 4)
@@ -58339,9 +58342,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01398
+    // ClassId: 01398
     // RuntimeId: 00810
-    // TypeInfo:  0x023CC990
+    // TypeInfo: 0x023CC990
 #ifndef _SoundTestTaskParam_
 #define _SoundTestTaskParam_
 #pragma pack(push, 4)
@@ -58365,9 +58368,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01400
+    // ClassId: 01400
     // RuntimeId: 00820
-    // TypeInfo:  0x023CCA34
+    // TypeInfo: 0x023CCA34
 #ifndef _SoundTestTransformTask_
 #define _SoundTestTransformTask_
 #pragma pack(push, 16)
@@ -58395,9 +58398,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02364
+    // ClassId: 02364
     // RuntimeId: 00806
-    // TypeInfo:  0x023CC938
+    // TypeInfo: 0x023CC938
 #ifndef _AudioSystemAsset_
 #define _AudioSystemAsset_
 #pragma pack(push, 4)
@@ -58435,9 +58438,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01403
+    // ClassId: 01403
     // RuntimeId: 00804
-    // TypeInfo:  0x023CC90C
+    // TypeInfo: 0x023CC90C
 #ifndef _AudioLanguagesDependancyObject_
 #define _AudioLanguagesDependancyObject_
 #pragma pack(push, 4)
@@ -58462,9 +58465,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01404
+    // ClassId: 01404
     // RuntimeId: 00802
-    // TypeInfo:  0x023CC8E0
+    // TypeInfo: 0x023CC8E0
 #ifndef _AudioLanguageSetting_
 #define _AudioLanguageSetting_
 #pragma pack(push, 4)
@@ -58494,9 +58497,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02373
+    // ClassId: 02373
     // RuntimeId: 00790
-    // TypeInfo:  0x023CC82C
+    // TypeInfo: 0x023CC82C
 #ifndef _SoundGraphAsset_
 #define _SoundGraphAsset_
 #pragma pack(push, 4)
@@ -58522,9 +58525,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02375
+    // ClassId: 02375
     // RuntimeId: 00796
-    // TypeInfo:  0x023CC878
+    // TypeInfo: 0x023CC878
 #ifndef _SoundPatchAsset_
 #define _SoundPatchAsset_
 #pragma pack(push, 4)
@@ -58562,9 +58565,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02374
+    // ClassId: 02374
     // RuntimeId: 00798
-    // TypeInfo:  0x023CC8A4
+    // TypeInfo: 0x023CC8A4
 #ifndef _SoundMasterPatchAsset_
 #define _SoundMasterPatchAsset_
 #pragma pack(push, 4)
@@ -58590,9 +58593,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02365
+    // ClassId: 02365
     // RuntimeId: 00788
-    // TypeInfo:  0x023CC800
+    // TypeInfo: 0x023CC800
 #ifndef _SoundStateSettingsAsset_
 #define _SoundStateSettingsAsset_
 #pragma pack(push, 4)
@@ -58620,9 +58623,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01405
+    // ClassId: 01405
     // RuntimeId: 00786
-    // TypeInfo:  0x023CC7D4
+    // TypeInfo: 0x023CC7D4
 #ifndef _SoundState_
 #define _SoundState_
 #pragma pack(push, 4)
@@ -58656,9 +58659,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02366
+    // ClassId: 02366
     // RuntimeId: 00784
-    // TypeInfo:  0x023CC7A8
+    // TypeInfo: 0x023CC7A8
 #ifndef _AudioMaterialDefinitions_
 #define _AudioMaterialDefinitions_
 #pragma pack(push, 4)
@@ -58682,9 +58685,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02368
+    // ClassId: 02368
     // RuntimeId: 00770
-    // TypeInfo:  0x023CC6C8
+    // TypeInfo: 0x023CC6C8
 #ifndef _SoundDataAsset_
 #define _SoundDataAsset_
 #pragma pack(push, 4)
@@ -58710,9 +58713,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02367
+    // ClassId: 02367
     // RuntimeId: 00780
-    // TypeInfo:  0x023CC750
+    // TypeInfo: 0x023CC750
 #ifndef _StreamPoolAsset_
 #define _StreamPoolAsset_
 #pragma pack(push, 4)
@@ -58747,9 +58750,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02370
+    // ClassId: 02370
     // RuntimeId: 00774
-    // TypeInfo:  0x023CC704
+    // TypeInfo: 0x023CC704
 #ifndef _SoundWaveAsset_
 #define _SoundWaveAsset_
 #pragma pack(push, 4)
@@ -58786,9 +58789,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02369
+    // ClassId: 02369
     // RuntimeId: 00782
-    // TypeInfo:  0x023CC77C
+    // TypeInfo: 0x023CC77C
 #ifndef _ImpulseResponseAsset_
 #define _ImpulseResponseAsset_
 #pragma pack(push, 4)
@@ -58812,9 +58815,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02372
+    // ClassId: 02372
     // RuntimeId: 00836
-    // TypeInfo:  0x023CCB94
+    // TypeInfo: 0x023CCB94
 #ifndef _SoundPatchConfigurationAsset_
 #define _SoundPatchConfigurationAsset_
 #pragma pack(push, 4)
@@ -58841,9 +58844,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00554
+    // ClassId: 00554
     // RuntimeId: 00764
-    // TypeInfo:  0x023CC664
+    // TypeInfo: 0x023CC664
 #ifndef _MixerEntity_
 #define _MixerEntity_
     class MixerEntity : public Entity
@@ -58862,9 +58865,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00766
+    // ClassId: 00766
     // RuntimeId: 00753
-    // TypeInfo:  0x023C9EF8
+    // TypeInfo: 0x023C9EF8
 #ifndef _PhysicsEntityBase_
 #define _PhysicsEntityBase_
     class PhysicsEntityBase : public SpatialEntity
@@ -58883,9 +58886,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00771
+    // ClassId: 00771
     // RuntimeId: 00752
-    // TypeInfo:  0x023C9ED0
+    // TypeInfo: 0x023C9ED0
 #ifndef _PhysicsEntity_
 #define _PhysicsEntity_
     class PhysicsEntity : public PhysicsEntityBase
@@ -58904,9 +58907,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00216
+    // ClassId: 00216
     // RuntimeId: 00747
-    // TypeInfo:  0x023C9D44
+    // TypeInfo: 0x023C9D44
 #ifndef _PhysicsConstraint_
 #define _PhysicsConstraint_
     class PhysicsConstraint
@@ -58925,9 +58928,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00219
+    // ClassId: 00219
     // RuntimeId: 00748
-    // TypeInfo:  0x023C9D6C
+    // TypeInfo: 0x023C9D6C
 #ifndef _PhysicsHingeConstraint_
 #define _PhysicsHingeConstraint_
     class PhysicsHingeConstraint : public PhysicsConstraint
@@ -58945,9 +58948,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00221
+    // ClassId: 00221
     // RuntimeId: 00759
-    // TypeInfo:  0x023CA090
+    // TypeInfo: 0x023CA090
 #ifndef _HavokHingeConstraint_
 #define _HavokHingeConstraint_
     class HavokHingeConstraint : public PhysicsHingeConstraint
@@ -58966,9 +58969,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00222
+    // ClassId: 00222
     // RuntimeId: 00746
-    // TypeInfo:  0x023C9CAC
+    // TypeInfo: 0x023C9CAC
 #ifndef _HavokPhysicsData_
 #define _HavokPhysicsData_
     class HavokPhysicsData
@@ -58987,9 +58990,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00768
+    // ClassId: 00768
     // RuntimeId: 00757
-    // TypeInfo:  0x023C9F98
+    // TypeInfo: 0x023C9F98
 #ifndef _RagdollEntity_
 #define _RagdollEntity_
     class RagdollEntity : public PhysicsEntityBase
@@ -59008,9 +59011,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00769
+    // ClassId: 00769
     // RuntimeId: 00756
-    // TypeInfo:  0x023C9F70
+    // TypeInfo: 0x023C9F70
 #ifndef _WaterPhysicsEntity_
 #define _WaterPhysicsEntity_
     class WaterPhysicsEntity : public PhysicsEntityBase
@@ -59029,9 +59032,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00770
+    // ClassId: 00770
     // RuntimeId: 00755
-    // TypeInfo:  0x023C9F48
+    // TypeInfo: 0x023C9F48
 #ifndef _TerrainPhysicsEntity_
 #define _TerrainPhysicsEntity_
     class TerrainPhysicsEntity : public PhysicsEntityBase
@@ -59050,9 +59053,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00773
+    // ClassId: 00773
     // RuntimeId: 00754
-    // TypeInfo:  0x023C9F20
+    // TypeInfo: 0x023C9F20
 #ifndef _StaticPhysicsEntity_
 #define _StaticPhysicsEntity_
     class StaticPhysicsEntity : public PhysicsEntity
@@ -59071,9 +59074,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00767
+    // ClassId: 00767
     // RuntimeId: 00763
-    // TypeInfo:  0x023CA130
+    // TypeInfo: 0x023CA130
 #ifndef _GroupPhysicsEntity_
 #define _GroupPhysicsEntity_
     class GroupPhysicsEntity : public PhysicsEntityBase
@@ -59092,9 +59095,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00772
+    // ClassId: 00772
     // RuntimeId: 00762
-    // TypeInfo:  0x023CA108
+    // TypeInfo: 0x023CA108
 #ifndef _DynamicPhysicsEntity_
 #define _DynamicPhysicsEntity_
     class DynamicPhysicsEntity : public PhysicsEntity
@@ -59113,9 +59116,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00774
+    // ClassId: 00774
     // RuntimeId: 00751
-    // TypeInfo:  0x023C9EA8
+    // TypeInfo: 0x023C9EA8
 #ifndef _PhantomPhysicsEntity_
 #define _PhantomPhysicsEntity_
     class PhantomPhysicsEntity : public PhysicsEntityBase
@@ -59134,9 +59137,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00775
+    // ClassId: 00775
     // RuntimeId: 00750
-    // TypeInfo:  0x023C9DBC
+    // TypeInfo: 0x023C9DBC
 #ifndef _BreakablePhysicsEntity_
 #define _BreakablePhysicsEntity_
     class BreakablePhysicsEntity : public PhysicsEntityBase
@@ -59155,9 +59158,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00217
+    // ClassId: 00217
     // RuntimeId: 00749
-    // TypeInfo:  0x023C9D94
+    // TypeInfo: 0x023C9D94
 #ifndef _PhysicsRagdollConstraint_
 #define _PhysicsRagdollConstraint_
     class PhysicsRagdollConstraint : public PhysicsConstraint
@@ -59175,9 +59178,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00220
+    // ClassId: 00220
     // RuntimeId: 00760
-    // TypeInfo:  0x023CA0B8
+    // TypeInfo: 0x023CA0B8
 #ifndef _HavokLimitedHingeConstraint_
 #define _HavokLimitedHingeConstraint_
     class HavokLimitedHingeConstraint : public PhysicsHingeConstraint
@@ -59196,9 +59199,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00218
+    // ClassId: 00218
     // RuntimeId: 00761
-    // TypeInfo:  0x023CA0E0
+    // TypeInfo: 0x023CA0E0
 #ifndef _HavokRagdollConstraint_
 #define _HavokRagdollConstraint_
     class HavokRagdollConstraint : public PhysicsRagdollConstraint
@@ -59217,9 +59220,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00223
+    // ClassId: 00223
     // RuntimeId: 00758
-    // TypeInfo:  0x023C9FDC
+    // TypeInfo: 0x023C9FDC
 #ifndef _HavokDestructionPhysicsData_
 #define _HavokDestructionPhysicsData_
     class HavokDestructionPhysicsData : public HavokPhysicsData
@@ -59238,9 +59241,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00224
+    // ClassId: 00224
     // RuntimeId: 00745
-    // TypeInfo:  0x023C9C84
+    // TypeInfo: 0x023C9C84
 #ifndef _RagdollResource_
 #define _RagdollResource_
     class RagdollResource
@@ -59259,9 +59262,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00776
+    // ClassId: 00776
     // RuntimeId: 00744
-    // TypeInfo:  0x023C9C24
+    // TypeInfo: 0x023C9C24
 #ifndef _CharacterPhysicsEntity_
 #define _CharacterPhysicsEntity_
     class CharacterPhysicsEntity : public PhysicsEntityBase
@@ -59280,9 +59283,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01798
+    // ClassId: 01798
     // RuntimeId: 00743
-    // TypeInfo:  0x023C9BDC
+    // TypeInfo: 0x023C9BDC
 #ifndef _VehicleSpawnStateEntityData_
 #define _VehicleSpawnStateEntityData_
 #pragma pack(push, 16)
@@ -59315,9 +59318,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01408
+    // ClassId: 01408
     // RuntimeId: 00741
-    // TypeInfo:  0x023C9BB0
+    // TypeInfo: 0x023C9BB0
 #ifndef _LinearMovingBodyData_
 #define _LinearMovingBodyData_
 #pragma pack(push, 16)
@@ -59345,9 +59348,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01411
+    // ClassId: 01411
     // RuntimeId: 04977
-    // TypeInfo:  0x023F86B8
+    // TypeInfo: 0x023F86B8
 #ifndef _ChildRotationBodyData_
 #define _ChildRotationBodyData_
 #pragma pack(push, 4)
@@ -59378,9 +59381,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01406
+    // ClassId: 01406
     // RuntimeId: 00735
-    // TypeInfo:  0x023C9B48
+    // TypeInfo: 0x023C9B48
 #ifndef _ExtendedConstraintsData_
 #define _ExtendedConstraintsData_
 #pragma pack(push, 4)
@@ -59409,9 +59412,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01409
+    // ClassId: 01409
     // RuntimeId: 04979
-    // TypeInfo:  0x023F86E4
+    // TypeInfo: 0x023F86E4
 #ifndef _ChildMovingBodyData_
 #define _ChildMovingBodyData_
 #pragma pack(push, 16)
@@ -59441,9 +59444,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01414
+    // ClassId: 01414
     // RuntimeId: 00731
-    // TypeInfo:  0x023C9AF0
+    // TypeInfo: 0x023C9AF0
 #ifndef _CameraLoosePartPhysicsData_
 #define _CameraLoosePartPhysicsData_
 #pragma pack(push, 4)
@@ -59468,9 +59471,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01413
+    // ClassId: 01413
     // RuntimeId: 04878
-    // TypeInfo:  0x023F806C
+    // TypeInfo: 0x023F806C
 #ifndef _NetworkableLoosePartPhysicsData_
 #define _NetworkableLoosePartPhysicsData_
 #pragma pack(push, 4)
@@ -59496,9 +59499,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01415
+    // ClassId: 01415
     // RuntimeId: 00727
-    // TypeInfo:  0x023C9A98
+    // TypeInfo: 0x023C9A98
 #ifndef _WheelConfigData_
 #define _WheelConfigData_
 #pragma pack(push, 16)
@@ -59603,9 +59606,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01417
+    // ClassId: 01417
     // RuntimeId: 00705
-    // TypeInfo:  0x023C995C
+    // TypeInfo: 0x023C995C
 #ifndef _EngineConfigData_
 #define _EngineConfigData_
 #pragma pack(push, 16)
@@ -59641,9 +59644,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01419
+    // ClassId: 01419
     // RuntimeId: 00715
-    // TypeInfo:  0x023C9A00
+    // TypeInfo: 0x023C9A00
 #ifndef _PropellerEngineConfigData_
 #define _PropellerEngineConfigData_
 #pragma pack(push, 16)
@@ -59707,9 +59710,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01416
+    // ClassId: 01416
     // RuntimeId: 00713
-    // TypeInfo:  0x023C99D4
+    // TypeInfo: 0x023C99D4
 #ifndef _RotorParameters_
 #define _RotorParameters_
 #pragma pack(push, 4)
@@ -59747,9 +59750,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01420
+    // ClassId: 01420
     // RuntimeId: 00707
-    // TypeInfo:  0x023C9988
+    // TypeInfo: 0x023C9988
 #ifndef _CombustionEngineConfigData_
 #define _CombustionEngineConfigData_
 #pragma pack(push, 16)
@@ -59773,9 +59776,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01418
+    // ClassId: 01418
     // RuntimeId: 00717
-    // TypeInfo:  0x023C9A2C
+    // TypeInfo: 0x023C9A2C
 #ifndef _JetEngineConfigData_
 #define _JetEngineConfigData_
 #pragma pack(push, 16)
@@ -59808,9 +59811,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01421
+    // ClassId: 01421
     // RuntimeId: 00701
-    // TypeInfo:  0x023C9920
+    // TypeInfo: 0x023C9920
 #ifndef _GearboxConfigData_
 #define _GearboxConfigData_
 #pragma pack(push, 4)
@@ -59851,9 +59854,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01422
+    // ClassId: 01422
     // RuntimeId: 00699
-    // TypeInfo:  0x023C98F4
+    // TypeInfo: 0x023C98F4
 #ifndef _VehicleInputTweakData_
 #define _VehicleInputTweakData_
 #pragma pack(push, 4)
@@ -59882,9 +59885,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01423
+    // ClassId: 01423
     // RuntimeId: 00695
-    // TypeInfo:  0x023C98B8
+    // TypeInfo: 0x023C98B8
 #ifndef _MotionDampingData_
 #define _MotionDampingData_
 #pragma pack(push, 16)
@@ -59914,9 +59917,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01424
+    // ClassId: 01424
     // RuntimeId: 00693
-    // TypeInfo:  0x023C988C
+    // TypeInfo: 0x023C988C
 #ifndef _VehicleParachuteData_
 #define _VehicleParachuteData_
 #pragma pack(push, 4)
@@ -59956,9 +59959,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01425
+    // ClassId: 01425
     // RuntimeId: 00689
-    // TypeInfo:  0x023C9850
+    // TypeInfo: 0x023C9850
 #ifndef _StabilizerData_
 #define _StabilizerData_
 #pragma pack(push, 4)
@@ -59989,9 +59992,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01426
+    // ClassId: 01426
     // RuntimeId: 00687
-    // TypeInfo:  0x023C9824
+    // TypeInfo: 0x023C9824
 #ifndef _WingPhysicsData_
 #define _WingPhysicsData_
 #pragma pack(push, 4)
@@ -60031,9 +60034,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01427
+    // ClassId: 01427
     // RuntimeId: 00685
-    // TypeInfo:  0x023C97F8
+    // TypeInfo: 0x023C97F8
 #ifndef _Curve2D_
 #define _Curve2D_
 #pragma pack(push, 4)
@@ -60058,9 +60061,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01428
+    // ClassId: 01428
     // RuntimeId: 00683
-    // TypeInfo:  0x023C97CC
+    // TypeInfo: 0x023C97CC
 #ifndef _LandingFlapData_
 #define _LandingFlapData_
 #pragma pack(push, 4)
@@ -60088,9 +60091,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01429
+    // ClassId: 01429
     // RuntimeId: 00681
-    // TypeInfo:  0x023C97A0
+    // TypeInfo: 0x023C97A0
 #ifndef _AeroDynamicPhysicsData_
 #define _AeroDynamicPhysicsData_
 #pragma pack(push, 16)
@@ -60119,9 +60122,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01433
+    // ClassId: 01433
     // RuntimeId: 00649
-    // TypeInfo:  0x023C95C0
+    // TypeInfo: 0x023C95C0
 #ifndef _FloatPhysicsData_
 #define _FloatPhysicsData_
 #pragma pack(push, 4)
@@ -60147,9 +60150,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01434
+    // ClassId: 01434
     // RuntimeId: 00675
-    // TypeInfo:  0x023C971C
+    // TypeInfo: 0x023C971C
 #ifndef _HullFloatPhysicsData_
 #define _HullFloatPhysicsData_
 #pragma pack(push, 16)
@@ -60191,9 +60194,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01435
+    // ClassId: 01435
     // RuntimeId: 00679
-    // TypeInfo:  0x023C9774
+    // TypeInfo: 0x023C9774
 #ifndef _HovercraftFloatPhysicsData_
 #define _HovercraftFloatPhysicsData_
 #pragma pack(push, 16)
@@ -60222,9 +60225,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01430
+    // ClassId: 01430
     // RuntimeId: 00673
-    // TypeInfo:  0x023C96F0
+    // TypeInfo: 0x023C96F0
 #ifndef _VehicleConfigData_
 #define _VehicleConfigData_
 #pragma pack(push, 16)
@@ -60293,9 +60296,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01431
+    // ClassId: 01431
     // RuntimeId: 00671
-    // TypeInfo:  0x023C96C4
+    // TypeInfo: 0x023C96C4
 #ifndef _MotorbikeData_
 #define _MotorbikeData_
 #pragma pack(push, 16)
@@ -60360,9 +60363,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01432
+    // ClassId: 01432
     // RuntimeId: 00657
-    // TypeInfo:  0x023C9638
+    // TypeInfo: 0x023C9638
 #ifndef _AntiRollBar_
 #define _AntiRollBar_
 #pragma pack(push, 4)
@@ -60388,9 +60391,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01437
+    // ClassId: 01437
     // RuntimeId: 00651
-    // TypeInfo:  0x023C95EC
+    // TypeInfo: 0x023C95EC
 #ifndef _BoxFloatPhysicsData_
 #define _BoxFloatPhysicsData_
 #pragma pack(push, 4)
@@ -60414,9 +60417,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01436
+    // ClassId: 01436
     // RuntimeId: 00677
-    // TypeInfo:  0x023C9748
+    // TypeInfo: 0x023C9748
 #ifndef _BoatFloatPhysicsData_
 #define _BoatFloatPhysicsData_
 #pragma pack(push, 16)
@@ -60442,9 +60445,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01551
+    // ClassId: 01551
     // RuntimeId: 00643
-    // TypeInfo:  0x023C953C
+    // TypeInfo: 0x023C953C
 #ifndef _RigidBodyConstraintData_
 #define _RigidBodyConstraintData_
 #pragma pack(push, 16)
@@ -60474,9 +60477,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01553
+    // ClassId: 01553
     // RuntimeId: 00645
-    // TypeInfo:  0x023C9568
+    // TypeInfo: 0x023C9568
 #ifndef _RigidBodyHingeConstraintData_
 #define _RigidBodyHingeConstraintData_
 #pragma pack(push, 16)
@@ -60505,9 +60508,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01552
+    // ClassId: 01552
     // RuntimeId: 00647
-    // TypeInfo:  0x023C9594
+    // TypeInfo: 0x023C9594
 #ifndef _RigidBodyConeConstraintData_
 #define _RigidBodyConeConstraintData_
 #pragma pack(push, 16)
@@ -60536,9 +60539,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01438
+    // ClassId: 01438
     // RuntimeId: 00641
-    // TypeInfo:  0x023C9510
+    // TypeInfo: 0x023C9510
 #ifndef _RigidBodyData_
 #define _RigidBodyData_
 #pragma pack(push, 16)
@@ -60576,9 +60579,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01439
+    // ClassId: 01439
     // RuntimeId: 00627
-    // TypeInfo:  0x023C9484
+    // TypeInfo: 0x023C9484
 #ifndef _PhysicsDebugSettings_
 #define _PhysicsDebugSettings_
 #pragma pack(push, 4)
@@ -60606,9 +60609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01440
+    // ClassId: 01440
     // RuntimeId: 00625
-    // TypeInfo:  0x023C9458
+    // TypeInfo: 0x023C9458
 #ifndef _PhysicsSettings_
 #define _PhysicsSettings_
 #pragma pack(push, 4)
@@ -60652,9 +60655,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01441
+    // ClassId: 01441
     // RuntimeId: 00621
-    // TypeInfo:  0x023C941C
+    // TypeInfo: 0x023C941C
 #ifndef _PhysicsRenderSettings_
 #define _PhysicsRenderSettings_
 #pragma pack(push, 4)
@@ -60716,9 +60719,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01554
+    // ClassId: 01554
     // RuntimeId: 00615
-    // TypeInfo:  0x023C9398
+    // TypeInfo: 0x023C9398
 #ifndef _PhysicsConstraintData_
 #define _PhysicsConstraintData_
 #pragma pack(push, 16)
@@ -60748,9 +60751,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01556
+    // ClassId: 01556
     // RuntimeId: 00617
-    // TypeInfo:  0x023C93C4
+    // TypeInfo: 0x023C93C4
 #ifndef _PhysicsHingeConstraintData_
 #define _PhysicsHingeConstraintData_
 #pragma pack(push, 16)
@@ -60779,9 +60782,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01555
+    // ClassId: 01555
     // RuntimeId: 00619
-    // TypeInfo:  0x023C93F0
+    // TypeInfo: 0x023C93F0
 #ifndef _PhysicsConeConstraintData_
 #define _PhysicsConeConstraintData_
 #pragma pack(push, 16)
@@ -60810,9 +60813,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01519
+    // ClassId: 01519
     // RuntimeId: 00613
-    // TypeInfo:  0x023C936C
+    // TypeInfo: 0x023C936C
 #ifndef _MaterialPropertyPhysicsData_
 #define _MaterialPropertyPhysicsData_
 #pragma pack(push, 4)
@@ -60840,9 +60843,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01799
+    // ClassId: 01799
     // RuntimeId: 00611
-    // TypeInfo:  0x023C9340
+    // TypeInfo: 0x023C9340
 #ifndef _PhysicsEntityData_
 #define _PhysicsEntityData_
 #pragma pack(push, 16)
@@ -60882,9 +60885,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01442
+    // ClassId: 01442
     // RuntimeId: 00609
-    // TypeInfo:  0x023C9314
+    // TypeInfo: 0x023C9314
 #ifndef _ProximityData_
 #define _ProximityData_
 #pragma pack(push, 4)
@@ -60909,9 +60912,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02376
+    // ClassId: 02376
     // RuntimeId: 00605
-    // TypeInfo:  0x023C92D8
+    // TypeInfo: 0x023C92D8
 #ifndef _RagdollAsset_
 #define _RagdollAsset_
 #pragma pack(push, 4)
@@ -60938,9 +60941,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02377
+    // ClassId: 02377
     // RuntimeId: 00599
-    // TypeInfo:  0x023C9270
+    // TypeInfo: 0x023C9270
 #ifndef _HavokAsset_
 #define _HavokAsset_
 #pragma pack(push, 4)
@@ -60966,9 +60969,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02378
+    // ClassId: 02378
     // RuntimeId: 00603
-    // TypeInfo:  0x023C92AC
+    // TypeInfo: 0x023C92AC
 #ifndef _GroupHavokAsset_
 #define _GroupHavokAsset_
 #pragma pack(push, 4)
@@ -60994,9 +60997,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02379
+    // ClassId: 02379
     // RuntimeId: 00597
-    // TypeInfo:  0x023C9244
+    // TypeInfo: 0x023C9244
 #ifndef _CharacterPhysicsData_
 #define _CharacterPhysicsData_
 #pragma pack(push, 4)
@@ -61038,9 +61041,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01443
+    // ClassId: 01443
     // RuntimeId: 00577
-    // TypeInfo:  0x023C908C
+    // TypeInfo: 0x023C908C
 #ifndef _CharacterStateData_
 #define _CharacterStateData_
 #pragma pack(push, 4)
@@ -61065,9 +61068,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01445
+    // ClassId: 01445
     // RuntimeId: 00593
-    // TypeInfo:  0x023C91EC
+    // TypeInfo: 0x023C91EC
 #ifndef _SwimmingStateData_
 #define _SwimmingStateData_
 #pragma pack(push, 4)
@@ -61092,9 +61095,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01446
+    // ClassId: 01446
     // RuntimeId: 00591
-    // TypeInfo:  0x023C91C0
+    // TypeInfo: 0x023C91C0
 #ifndef _JumpStateData_
 #define _JumpStateData_
 #pragma pack(push, 4)
@@ -61120,9 +61123,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01447
+    // ClassId: 01447
     // RuntimeId: 00589
-    // TypeInfo:  0x023C9194
+    // TypeInfo: 0x023C9194
 #ifndef _ClimbingStateData_
 #define _ClimbingStateData_
 #pragma pack(push, 4)
@@ -61156,9 +61159,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01448
+    // ClassId: 01448
     // RuntimeId: 00587
-    // TypeInfo:  0x023C9168
+    // TypeInfo: 0x023C9168
 #ifndef _FallingStateData_
 #define _FallingStateData_
 #pragma pack(push, 4)
@@ -61182,9 +61185,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01449
+    // ClassId: 01449
     // RuntimeId: 00585
-    // TypeInfo:  0x023C913C
+    // TypeInfo: 0x023C913C
 #ifndef _InAirStateData_
 #define _InAirStateData_
 #pragma pack(push, 4)
@@ -61209,9 +61212,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01450
+    // ClassId: 01450
     // RuntimeId: 00583
-    // TypeInfo:  0x023C9110
+    // TypeInfo: 0x023C9110
 #ifndef _OnGroundStateData_
 #define _OnGroundStateData_
 #pragma pack(push, 4)
@@ -61241,9 +61244,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01451
+    // ClassId: 01451
     // RuntimeId: 00581
-    // TypeInfo:  0x023C90E4
+    // TypeInfo: 0x023C90E4
 #ifndef _SlidingStateData_
 #define _SlidingStateData_
 #pragma pack(push, 4)
@@ -61269,9 +61272,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01452
+    // ClassId: 01452
     // RuntimeId: 00579
-    // TypeInfo:  0x023C90B8
+    // TypeInfo: 0x023C90B8
 #ifndef _AnimationControlledStateData_
 #define _AnimationControlledStateData_
 #pragma pack(push, 4)
@@ -61296,9 +61299,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01444
+    // ClassId: 01444
     // RuntimeId: 00595
-    // TypeInfo:  0x023C9218
+    // TypeInfo: 0x023C9218
 #ifndef _ParachuteStateData_
 #define _ParachuteStateData_
 #pragma pack(push, 4)
@@ -61332,9 +61335,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01453
+    // ClassId: 01453
     // RuntimeId: 00573
-    // TypeInfo:  0x023C9050
+    // TypeInfo: 0x023C9050
 #ifndef _CharacterSprintData_
 #define _CharacterSprintData_
 #pragma pack(push, 4)
@@ -61363,9 +61366,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01454
+    // ClassId: 01454
     // RuntimeId: 00571
-    // TypeInfo:  0x023C9024
+    // TypeInfo: 0x023C9024
 #ifndef _CharacterStatePoseInfo_
 #define _CharacterStatePoseInfo_
 #pragma pack(push, 4)
@@ -61396,9 +61399,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01455
+    // ClassId: 01455
     // RuntimeId: 00567
-    // TypeInfo:  0x023C8FE8
+    // TypeInfo: 0x023C8FE8
 #ifndef _CharacterPoseData_
 #define _CharacterPoseData_
 #pragma pack(push, 16)
@@ -61434,9 +61437,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01456
+    // ClassId: 01456
     // RuntimeId: 00555
-    // TypeInfo:  0x023C8F6C
+    // TypeInfo: 0x023C8F6C
 #ifndef _EdgeModelLightMapData_
 #define _EdgeModelLightMapData_
 #pragma pack(push, 4)
@@ -61461,9 +61464,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01690
+    // ClassId: 01690
     // RuntimeId: 03419
-    // TypeInfo:  0x023E6DD8
+    // TypeInfo: 0x023E6DD8
 #ifndef _BreakableControllerComponentData_
 #define _BreakableControllerComponentData_
 #pragma pack(push, 16)
@@ -61490,9 +61493,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01692
+    // ClassId: 01692
     // RuntimeId: 03421
-    // TypeInfo:  0x023E6E04
+    // TypeInfo: 0x023E6E04
 #ifndef _EdgeModelComponentData_
 #define _EdgeModelComponentData_
 #pragma pack(push, 16)
@@ -61519,9 +61522,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01694
+    // ClassId: 01694
     // RuntimeId: 03413
-    // TypeInfo:  0x023E6D8C
+    // TypeInfo: 0x023E6D8C
 #ifndef _BreakablePartComponentData_
 #define _BreakablePartComponentData_
 #pragma pack(push, 16)
@@ -61549,9 +61552,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01457
+    // ClassId: 01457
     // RuntimeId: 00537
-    // TypeInfo:  0x023C8E34
+    // TypeInfo: 0x023C8E34
 #ifndef _FakePhysicsData_
 #define _FakePhysicsData_
 #pragma pack(push, 4)
@@ -61583,9 +61586,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01459
+    // ClassId: 01459
     // RuntimeId: 00539
-    // TypeInfo:  0x023C8E60
+    // TypeInfo: 0x023C8E60
 #ifndef _FakeSpringData_
 #define _FakeSpringData_
 #pragma pack(push, 16)
@@ -61615,9 +61618,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01458
+    // ClassId: 01458
     // RuntimeId: 00541
-    // TypeInfo:  0x023C8E8C
+    // TypeInfo: 0x023C8E8C
 #ifndef _FakeHingeData_
 #define _FakeHingeData_
 #pragma pack(push, 16)
@@ -61652,9 +61655,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00555
+    // ClassId: 00555
     // RuntimeId: 00535
-    // TypeInfo:  0x023C7B6C
+    // TypeInfo: 0x023C7B6C
 #ifndef _TrajectoryEntity_
 #define _TrajectoryEntity_
     class TrajectoryEntity : public Entity
@@ -61673,9 +61676,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00225
+    // ClassId: 00225
     // RuntimeId: 00534
-    // TypeInfo:  0x023C7B44
+    // TypeInfo: 0x023C7B44
 #ifndef _AnimTrackData_
 #define _AnimTrackData_
     class AnimTrackData
@@ -61694,9 +61697,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00557
+    // ClassId: 00557
     // RuntimeId: 03629
-    // TypeInfo:  0x023E9D28
+    // TypeInfo: 0x023E9D28
 #ifndef _ClientSyncedSequenceEntity_
 #define _ClientSyncedSequenceEntity_
     class ClientSyncedSequenceEntity : public SequenceEntity
@@ -61715,9 +61718,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00559
+    // ClassId: 00559
     // RuntimeId: 00532
-    // TypeInfo:  0x023C7AF4
+    // TypeInfo: 0x023C7AF4
 #ifndef _ScriptEntity_
 #define _ScriptEntity_
     class ScriptEntity : public Entity
@@ -61736,9 +61739,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00560
+    // ClassId: 00560
     // RuntimeId: 00529
-    // TypeInfo:  0x023C7ABC
+    // TypeInfo: 0x023C7ABC
 #ifndef _SettingEntity_
 #define _SettingEntity_
     class SettingEntity : public Entity
@@ -61757,9 +61760,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00561
+    // ClassId: 00561
     // RuntimeId: 00528
-    // TypeInfo:  0x023C7A94
+    // TypeInfo: 0x023C7A94
 #ifndef _IntegratorOrDifferentiatorEntity_
 #define _IntegratorOrDifferentiatorEntity_
     class IntegratorOrDifferentiatorEntity : public Entity
@@ -61778,9 +61781,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00562
+    // ClassId: 00562
     // RuntimeId: 00527
-    // TypeInfo:  0x023C7A6C
+    // TypeInfo: 0x023C7A6C
 #ifndef _ProfileEntity_
 #define _ProfileEntity_
     class ProfileEntity : public Entity
@@ -61799,9 +61802,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00563
+    // ClassId: 00563
     // RuntimeId: 00526
-    // TypeInfo:  0x023C7A44
+    // TypeInfo: 0x023C7A44
 #ifndef _CompareEntity_
 #define _CompareEntity_
     class CompareEntity : public Entity
@@ -61820,9 +61823,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00564
+    // ClassId: 00564
     // RuntimeId: 00525
-    // TypeInfo:  0x023C7A1C
+    // TypeInfo: 0x023C7A1C
 #ifndef _Vec3MathOpEntity_
 #define _Vec3MathOpEntity_
     class Vec3MathOpEntity : public Entity
@@ -61841,9 +61844,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00565
+    // ClassId: 00565
     // RuntimeId: 00524
-    // TypeInfo:  0x023C79F4
+    // TypeInfo: 0x023C79F4
 #ifndef _MathOpEntity_
 #define _MathOpEntity_
     class MathOpEntity : public Entity
@@ -61862,9 +61865,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00566
+    // ClassId: 00566
     // RuntimeId: 00523
-    // TypeInfo:  0x023C79CC
+    // TypeInfo: 0x023C79CC
 #ifndef _PropertyCastEntity_
 #define _PropertyCastEntity_
     class PropertyCastEntity : public Entity
@@ -61883,9 +61886,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00567
+    // ClassId: 00567
     // RuntimeId: 00522
-    // TypeInfo:  0x023C79A4
+    // TypeInfo: 0x023C79A4
 #ifndef _BoolToEventEntity_
 #define _BoolToEventEntity_
     class BoolToEventEntity : public Entity
@@ -61904,9 +61907,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00568
+    // ClassId: 00568
     // RuntimeId: 00521
-    // TypeInfo:  0x023C797C
+    // TypeInfo: 0x023C797C
 #ifndef _SwitchPropertyStringEntity_
 #define _SwitchPropertyStringEntity_
     class SwitchPropertyStringEntity : public Entity
@@ -61925,9 +61928,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00569
+    // ClassId: 00569
     // RuntimeId: 00520
-    // TypeInfo:  0x023C7954
+    // TypeInfo: 0x023C7954
 #ifndef _PropertyGateEntity_
 #define _PropertyGateEntity_
     class PropertyGateEntity : public Entity
@@ -61946,9 +61949,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00570
+    // ClassId: 00570
     // RuntimeId: 00519
-    // TypeInfo:  0x023C792C
+    // TypeInfo: 0x023C792C
 #ifndef _EventGateEntity_
 #define _EventGateEntity_
     class EventGateEntity : public Entity
@@ -61967,9 +61970,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00571
+    // ClassId: 00571
     // RuntimeId: 00518
-    // TypeInfo:  0x023C7904
+    // TypeInfo: 0x023C7904
 #ifndef _StopWatchEntity_
 #define _StopWatchEntity_
     class StopWatchEntity : public Entity
@@ -61988,9 +61991,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00572
+    // ClassId: 00572
     // RuntimeId: 00517
-    // TypeInfo:  0x023C78DC
+    // TypeInfo: 0x023C78DC
 #ifndef _TransformModifierEntity_
 #define _TransformModifierEntity_
     class TransformModifierEntity : public Entity
@@ -62009,9 +62012,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00573
+    // ClassId: 00573
     // RuntimeId: 00516
-    // TypeInfo:  0x023C78B4
+    // TypeInfo: 0x023C78B4
 #ifndef _VecSplitterEntity_
 #define _VecSplitterEntity_
     class VecSplitterEntity : public Entity
@@ -62030,9 +62033,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00574
+    // ClassId: 00574
     // RuntimeId: 00515
-    // TypeInfo:  0x023C788C
+    // TypeInfo: 0x023C788C
 #ifndef _EulerTransformEntity_
 #define _EulerTransformEntity_
     class EulerTransformEntity : public Entity
@@ -62051,9 +62054,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00575
+    // ClassId: 00575
     // RuntimeId: 00514
-    // TypeInfo:  0x023C7864
+    // TypeInfo: 0x023C7864
 #ifndef _EulerTransformSplitterEntity_
 #define _EulerTransformSplitterEntity_
     class EulerTransformSplitterEntity : public Entity
@@ -62072,9 +62075,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00576
+    // ClassId: 00576
     // RuntimeId: 00513
-    // TypeInfo:  0x023C783C
+    // TypeInfo: 0x023C783C
 #ifndef _TransformSplitterEntity_
 #define _TransformSplitterEntity_
     class TransformSplitterEntity : public Entity
@@ -62093,9 +62096,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00577
+    // ClassId: 00577
     // RuntimeId: 00512
-    // TypeInfo:  0x023C7814
+    // TypeInfo: 0x023C7814
 #ifndef _TransformBlendEntity_
 #define _TransformBlendEntity_
     class TransformBlendEntity : public Entity
@@ -62114,9 +62117,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00578
+    // ClassId: 00578
     // RuntimeId: 00511
-    // TypeInfo:  0x023C77EC
+    // TypeInfo: 0x023C77EC
 #ifndef _ToWorldSpaceTransformEntity_
 #define _ToWorldSpaceTransformEntity_
     class ToWorldSpaceTransformEntity : public Entity
@@ -62135,9 +62138,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00579
+    // ClassId: 00579
     // RuntimeId: 00510
-    // TypeInfo:  0x023C77C4
+    // TypeInfo: 0x023C77C4
 #ifndef _TransformMultiplierEntity_
 #define _TransformMultiplierEntity_
     class TransformMultiplierEntity : public Entity
@@ -62156,9 +62159,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00580
+    // ClassId: 00580
     // RuntimeId: 00509
-    // TypeInfo:  0x023C779C
+    // TypeInfo: 0x023C779C
 #ifndef _TransformHubEntity_
 #define _TransformHubEntity_
     class TransformHubEntity : public Entity
@@ -62177,9 +62180,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00581
+    // ClassId: 00581
     // RuntimeId: 00508
-    // TypeInfo:  0x023C7774
+    // TypeInfo: 0x023C7774
 #ifndef _TransformSelectorEntity_
 #define _TransformSelectorEntity_
     class TransformSelectorEntity : public Entity
@@ -62198,9 +62201,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00582
+    // ClassId: 00582
     // RuntimeId: 00507
-    // TypeInfo:  0x023C774C
+    // TypeInfo: 0x023C774C
 #ifndef _FloatHubEntity_
 #define _FloatHubEntity_
     class FloatHubEntity : public Entity
@@ -62219,9 +62222,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00583
+    // ClassId: 00583
     // RuntimeId: 00506
-    // TypeInfo:  0x023C7724
+    // TypeInfo: 0x023C7724
 #ifndef _IntHubEntity_
 #define _IntHubEntity_
     class IntHubEntity : public Entity
@@ -62240,9 +62243,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00584
+    // ClassId: 00584
     // RuntimeId: 00505
-    // TypeInfo:  0x023C76FC
+    // TypeInfo: 0x023C76FC
 #ifndef _BoolHubEntity_
 #define _BoolHubEntity_
     class BoolHubEntity : public Entity
@@ -62261,9 +62264,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00585
+    // ClassId: 00585
     // RuntimeId: 00504
-    // TypeInfo:  0x023C76D4
+    // TypeInfo: 0x023C76D4
 #ifndef _ObjectVariationSwitchEntity_
 #define _ObjectVariationSwitchEntity_
     class ObjectVariationSwitchEntity : public Entity
@@ -62282,9 +62285,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00586
+    // ClassId: 00586
     // RuntimeId: 00503
-    // TypeInfo:  0x023C76AC
+    // TypeInfo: 0x023C76AC
 #ifndef _RandomDelayEntity_
 #define _RandomDelayEntity_
     class RandomDelayEntity : public Entity
@@ -62303,9 +62306,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00587
+    // ClassId: 00587
     // RuntimeId: 00502
-    // TypeInfo:  0x023C7684
+    // TypeInfo: 0x023C7684
 #ifndef _DelayEntity_
 #define _DelayEntity_
     class DelayEntity : public Entity
@@ -62324,9 +62327,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00588
+    // ClassId: 00588
     // RuntimeId: 00501
-    // TypeInfo:  0x023C765C
+    // TypeInfo: 0x023C765C
 #ifndef _SelectEventEntity_
 #define _SelectEventEntity_
     class SelectEventEntity : public Entity
@@ -62345,9 +62348,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00589
+    // ClassId: 00589
     // RuntimeId: 00500
-    // TypeInfo:  0x023C7634
+    // TypeInfo: 0x023C7634
 #ifndef _EventAndGateEntity_
 #define _EventAndGateEntity_
     class EventAndGateEntity : public Entity
@@ -62366,9 +62369,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00590
+    // ClassId: 00590
     // RuntimeId: 00499
-    // TypeInfo:  0x023C760C
+    // TypeInfo: 0x023C760C
 #ifndef _EventSwitchEntity_
 #define _EventSwitchEntity_
     class EventSwitchEntity : public Entity
@@ -62387,9 +62390,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00591
+    // ClassId: 00591
     // RuntimeId: 00498
-    // TypeInfo:  0x023C75E4
+    // TypeInfo: 0x023C75E4
 #ifndef _RandomFloatEntity_
 #define _RandomFloatEntity_
     class RandomFloatEntity : public Entity
@@ -62408,9 +62411,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00592
+    // ClassId: 00592
     // RuntimeId: 00497
-    // TypeInfo:  0x023C75BC
+    // TypeInfo: 0x023C75BC
 #ifndef _RandomMultiEventEntity_
 #define _RandomMultiEventEntity_
     class RandomMultiEventEntity : public Entity
@@ -62429,9 +62432,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00593
+    // ClassId: 00593
     // RuntimeId: 00496
-    // TypeInfo:  0x023C7594
+    // TypeInfo: 0x023C7594
 #ifndef _RandomEventEntity_
 #define _RandomEventEntity_
     class RandomEventEntity : public Entity
@@ -62450,9 +62453,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00777
+    // ClassId: 00777
     // RuntimeId: 00495
-    // TypeInfo:  0x023C756C
+    // TypeInfo: 0x023C756C
 #ifndef _LocatorEntity_
 #define _LocatorEntity_
     class LocatorEntity : public SpatialEntity
@@ -62471,9 +62474,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00594
+    // ClassId: 00594
     // RuntimeId: 00494
-    // TypeInfo:  0x023C7544
+    // TypeInfo: 0x023C7544
 #ifndef _CountDownEntity_
 #define _CountDownEntity_
     class CountDownEntity : public Entity
@@ -62492,9 +62495,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00595
+    // ClassId: 00595
     // RuntimeId: 00493
-    // TypeInfo:  0x023C7090
+    // TypeInfo: 0x023C7090
 #ifndef _Or4Entity_
 #define _Or4Entity_
     class Or4Entity : public Entity
@@ -62513,9 +62516,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00596
+    // ClassId: 00596
     // RuntimeId: 00492
-    // TypeInfo:  0x023C7068
+    // TypeInfo: 0x023C7068
 #ifndef _XorEntity_
 #define _XorEntity_
     class XorEntity : public Entity
@@ -62534,9 +62537,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00597
+    // ClassId: 00597
     // RuntimeId: 00491
-    // TypeInfo:  0x023C7040
+    // TypeInfo: 0x023C7040
 #ifndef _OrEntity_
 #define _OrEntity_
     class OrEntity : public Entity
@@ -62555,9 +62558,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00598
+    // ClassId: 00598
     // RuntimeId: 00490
-    // TypeInfo:  0x023C7018
+    // TypeInfo: 0x023C7018
 #ifndef _AndEntity_
 #define _AndEntity_
     class AndEntity : public Entity
@@ -62576,9 +62579,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00599
+    // ClassId: 00599
     // RuntimeId: 00489
-    // TypeInfo:  0x023C6FF0
+    // TypeInfo: 0x023C6FF0
 #ifndef _NotEntity_
 #define _NotEntity_
     class NotEntity : public Entity
@@ -62597,9 +62600,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00398
+    // ClassId: 00398
     // RuntimeId: 00488
-    // TypeInfo:  0x023C6FC8
+    // TypeInfo: 0x023C6FC8
 #ifndef _EntityBusBridge_
 #define _EntityBusBridge_
     class EntityBusBridge : public EntityBusPeer
@@ -62618,9 +62621,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00612
+    // ClassId: 00612
     // RuntimeId: 06288
-    // TypeInfo:  0x02404EF8
+    // TypeInfo: 0x02404EF8
 #ifndef _RigidMeshEntity_
 #define _RigidMeshEntity_
     class RigidMeshEntity : public SpatialEntity
@@ -62639,9 +62642,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00784
+    // ClassId: 00784
     // RuntimeId: 04176
-    // TypeInfo:  0x023F0218
+    // TypeInfo: 0x023F0218
 #ifndef _WaypointParameterEvent_
 #define _WaypointParameterEvent_
     class WaypointParameterEvent : public EntityEvent
@@ -62660,9 +62663,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00781
+    // ClassId: 00781
     // RuntimeId: 03590
-    // TypeInfo:  0x023E94BC
+    // TypeInfo: 0x023E94BC
 #ifndef _VisualEnvironmentEffectEntity_
 #define _VisualEnvironmentEffectEntity_
     class VisualEnvironmentEffectEntity : public EffectEntity
@@ -62681,9 +62684,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00779
+    // ClassId: 00779
     // RuntimeId: 06530
-    // TypeInfo:  0x024077F0
+    // TypeInfo: 0x024077F0
 #ifndef _EmitterEntity_
 #define _EmitterEntity_
     class EmitterEntity : public EffectEntity
@@ -62697,14 +62700,17 @@ namespace fb
         {
             return 0x024077F0;
         }
-        char _0x0070[16];
+        void* m_instance; //0x0070 EmitterInstance*
+        EmitterEntityData* m_emitterEntityData; //0x0074
+        void* m_spatialQueryManager; //0x0078
+        char _0x007C[4];
     };//Size=0x0080
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00600
+    // ClassId: 00600
     // RuntimeId: 00483
-    // TypeInfo:  0x023C6F00
+    // TypeInfo: 0x023C6F00
 #ifndef _CompareFloatEntity_
 #define _CompareFloatEntity_
     class CompareFloatEntity : public Entity
@@ -62723,9 +62729,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00601
+    // ClassId: 00601
     // RuntimeId: 00482
-    // TypeInfo:  0x023C6ED8
+    // TypeInfo: 0x023C6ED8
 #ifndef _CompareIntEntity_
 #define _CompareIntEntity_
     class CompareIntEntity : public Entity
@@ -62744,9 +62750,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00602
+    // ClassId: 00602
     // RuntimeId: 00481
-    // TypeInfo:  0x023C6EB0
+    // TypeInfo: 0x023C6EB0
 #ifndef _CompareBoolEntity_
 #define _CompareBoolEntity_
     class CompareBoolEntity : public Entity
@@ -62765,9 +62771,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02382
+    // ClassId: 02382
     // RuntimeId: 00440
-    // TypeInfo:  0x023C69FC
+    // TypeInfo: 0x023C69FC
 #ifndef _SubWorldInclusion_
 #define _SubWorldInclusion_
 #pragma pack(push, 4)
@@ -62792,9 +62798,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01465
+    // ClassId: 01465
     // RuntimeId: 00438
-    // TypeInfo:  0x023C69D0
+    // TypeInfo: 0x023C69D0
 #ifndef _SubWorldInclusionCriterion_
 #define _SubWorldInclusionCriterion_
 #pragma pack(push, 4)
@@ -62820,9 +62826,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01463
+    // ClassId: 01463
     // RuntimeId: 00442
-    // TypeInfo:  0x023C6A28
+    // TypeInfo: 0x023C6A28
 #ifndef _SubWorldInclusionSetting_
 #define _SubWorldInclusionSetting_
 #pragma pack(push, 4)
@@ -62848,9 +62854,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01461
+    // ClassId: 01461
     // RuntimeId: 00444
-    // TypeInfo:  0x023C6A54
+    // TypeInfo: 0x023C6A54
 #ifndef _SubWorldInclusionSettings_
 #define _SubWorldInclusionSettings_
 #pragma pack(push, 4)
@@ -62875,9 +62881,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02016
+    // ClassId: 02016
     // RuntimeId: 00100
-    // TypeInfo:  0x023C2CEC
+    // TypeInfo: 0x023C2CEC
 #ifndef _DynamicDataContainer_
 #define _DynamicDataContainer_
 #pragma pack(push, 4)
@@ -62902,9 +62908,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01460
+    // ClassId: 01460
     // RuntimeId: 00470
-    // TypeInfo:  0x023C6C3C
+    // TypeInfo: 0x023C6C3C
 #ifndef _WorldObjectListData_
 #define _WorldObjectListData_
 #pragma pack(push, 4)
@@ -62928,9 +62934,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01800
+    // ClassId: 01800
     // RuntimeId: 00468
-    // TypeInfo:  0x023C6C10
+    // TypeInfo: 0x023C6C10
 #ifndef _ChunkStreamerEntityData_
 #define _ChunkStreamerEntityData_
 #pragma pack(push, 4)
@@ -62955,9 +62961,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02380
+    // ClassId: 02380
     // RuntimeId: 00456
-    // TypeInfo:  0x023C6B5C
+    // TypeInfo: 0x023C6B5C
 #ifndef _PackagingRule_
 #define _PackagingRule_
 #pragma pack(push, 16)
@@ -62985,9 +62991,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01801
+    // ClassId: 01801
     // RuntimeId: 00460
-    // TypeInfo:  0x023C6B98
+    // TypeInfo: 0x023C6B98
 #ifndef _PackagingCellData_
 #define _PackagingCellData_
 #pragma pack(push, 4)
@@ -63014,9 +63020,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02381
+    // ClassId: 02381
     // RuntimeId: 00464
-    // TypeInfo:  0x023C6BD4
+    // TypeInfo: 0x023C6BD4
 #ifndef _CellDetailSelectionRule_
 #define _CellDetailSelectionRule_
 #pragma pack(push, 16)
@@ -63042,9 +63048,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02011
+    // ClassId: 02011
     // RuntimeId: 00454
-    // TypeInfo:  0x023C6B30
+    // TypeInfo: 0x023C6B30
 #ifndef _WorldPartReferenceObjectData_
 #define _WorldPartReferenceObjectData_
 #pragma pack(push, 16)
@@ -63068,9 +63074,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02012
+    // ClassId: 02012
     // RuntimeId: 00452
-    // TypeInfo:  0x023C6B04
+    // TypeInfo: 0x023C6B04
 #ifndef _SubWorldReferenceObjectData_
 #define _SubWorldReferenceObjectData_
 #pragma pack(push, 16)
@@ -63101,9 +63107,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02419
+    // ClassId: 02419
     // RuntimeId: 00178
-    // TypeInfo:  0x023C4E14
+    // TypeInfo: 0x023C4E14
 #ifndef _PrefabBlueprint_
 #define _PrefabBlueprint_
 #pragma pack(push, 4)
@@ -63128,9 +63134,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02421
+    // ClassId: 02421
     // RuntimeId: 00180
-    // TypeInfo:  0x023C4E40
+    // TypeInfo: 0x023C4E40
 #ifndef _SpatialPrefabBlueprint_
 #define _SpatialPrefabBlueprint_
 #pragma pack(push, 4)
@@ -63154,9 +63160,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02425
+    // ClassId: 02425
     // RuntimeId: 00446
-    // TypeInfo:  0x023C6A80
+    // TypeInfo: 0x023C6A80
 #ifndef _WorldPartData_
 #define _WorldPartData_
 #pragma pack(push, 4)
@@ -63185,9 +63191,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01462
+    // ClassId: 01462
     // RuntimeId: 00474
-    // TypeInfo:  0x023C6C94
+    // TypeInfo: 0x023C6C94
 #ifndef _WorldPartInclusionSettings_
 #define _WorldPartInclusionSettings_
 #pragma pack(push, 4)
@@ -63211,9 +63217,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01464
+    // ClassId: 01464
     // RuntimeId: 00476
-    // TypeInfo:  0x023C6CC0
+    // TypeInfo: 0x023C6CC0
 #ifndef _WorldPartInclusionSetting_
 #define _WorldPartInclusionSetting_
 #pragma pack(push, 4)
@@ -63237,9 +63243,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02383
+    // ClassId: 02383
     // RuntimeId: 00480
-    // TypeInfo:  0x023C6D18
+    // TypeInfo: 0x023C6D18
 #ifndef _WorldPartInclusion_
 #define _WorldPartInclusion_
 #pragma pack(push, 4)
@@ -63263,9 +63269,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01466
+    // ClassId: 01466
     // RuntimeId: 00478
-    // TypeInfo:  0x023C6CEC
+    // TypeInfo: 0x023C6CEC
 #ifndef _WorldPartInclusionCriterion_
 #define _WorldPartInclusionCriterion_
 #pragma pack(push, 4)
@@ -63289,9 +63295,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02386
+    // ClassId: 02386
     // RuntimeId: 05945
-    // TypeInfo:  0x02401754
+    // TypeInfo: 0x02401754
 #ifndef _AwardDataTree_
 #define _AwardDataTree_
 #pragma pack(push, 4)
@@ -63316,9 +63322,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01470
+    // ClassId: 01470
     // RuntimeId: 05941
-    // TypeInfo:  0x024016FC
+    // TypeInfo: 0x024016FC
 #ifndef _AwardAchievementData_
 #define _AwardAchievementData_
 #pragma pack(push, 4)
@@ -63342,9 +63348,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01802
+    // ClassId: 01802
     // RuntimeId: 00432
-    // TypeInfo:  0x023C694C
+    // TypeInfo: 0x023C694C
 #ifndef _TransformEntityData_
 #define _TransformEntityData_
 #pragma pack(push, 16)
@@ -63372,9 +63378,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01803
+    // ClassId: 01803
     // RuntimeId: 00430
-    // TypeInfo:  0x023C6920
+    // TypeInfo: 0x023C6920
 #ifndef _Vec3EntityData_
 #define _Vec3EntityData_
 #pragma pack(push, 16)
@@ -63402,9 +63408,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01804
+    // ClassId: 01804
     // RuntimeId: 00428
-    // TypeInfo:  0x023C68F4
+    // TypeInfo: 0x023C68F4
 #ifndef _FloatEntityData_
 #define _FloatEntityData_
 #pragma pack(push, 4)
@@ -63431,9 +63437,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01805
+    // ClassId: 01805
     // RuntimeId: 00426
-    // TypeInfo:  0x023C68C8
+    // TypeInfo: 0x023C68C8
 #ifndef _IntEntityData_
 #define _IntEntityData_
 #pragma pack(push, 4)
@@ -63460,9 +63466,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01806
+    // ClassId: 01806
     // RuntimeId: 00424
-    // TypeInfo:  0x023C689C
+    // TypeInfo: 0x023C689C
 #ifndef _SyncedTransformEntityData_
 #define _SyncedTransformEntityData_
 #pragma pack(push, 16)
@@ -63490,9 +63496,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01807
+    // ClassId: 01807
     // RuntimeId: 00422
-    // TypeInfo:  0x023C6870
+    // TypeInfo: 0x023C6870
 #ifndef _SyncedBoolEntityData_
 #define _SyncedBoolEntityData_
 #pragma pack(push, 4)
@@ -63518,9 +63524,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01808
+    // ClassId: 01808
     // RuntimeId: 00420
-    // TypeInfo:  0x023C6844
+    // TypeInfo: 0x023C6844
 #ifndef _BoolEntityData_
 #define _BoolEntityData_
 #pragma pack(push, 4)
@@ -63547,9 +63553,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02403
+    // ClassId: 02403
     // RuntimeId: 00418
-    // TypeInfo:  0x023C6818
+    // TypeInfo: 0x023C6818
 #ifndef _MasterSkeletonAsset_
 #define _MasterSkeletonAsset_
 #pragma pack(push, 4)
@@ -63575,9 +63581,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02404
+    // ClassId: 02404
     // RuntimeId: 00412
-    // TypeInfo:  0x023C67B0
+    // TypeInfo: 0x023C67B0
 #ifndef _BaseSkeletonAsset_
 #define _BaseSkeletonAsset_
 #pragma pack(push, 4)
@@ -63601,9 +63607,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02405
+    // ClassId: 02405
     // RuntimeId: 00414
-    // TypeInfo:  0x023C67DC
+    // TypeInfo: 0x023C67DC
 #ifndef _SkeletonAsset_
 #define _SkeletonAsset_
 #pragma pack(push, 4)
@@ -63635,9 +63641,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01568
+    // ClassId: 01568
     // RuntimeId: 04260
-    // TypeInfo:  0x023F23DC
+    // TypeInfo: 0x023F23DC
 #ifndef _PathfindingBuildOrderData_
 #define _PathfindingBuildOrderData_
 #pragma pack(push, 4)
@@ -63661,9 +63667,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01570
+    // ClassId: 01570
     // RuntimeId: 04708
-    // TypeInfo:  0x023F5C04
+    // TypeInfo: 0x023F5C04
 #ifndef _GameSplineData_
 #define _GameSplineData_
 #pragma pack(push, 4)
@@ -63688,9 +63694,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01559
+    // ClassId: 01559
     // RuntimeId: 05328
-    // TypeInfo:  0x023FCF9C
+    // TypeInfo: 0x023FCF9C
 #ifndef _WaypointsShapeData_
 #define _WaypointsShapeData_
 #pragma pack(push, 4)
@@ -63715,9 +63721,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01572
+    // ClassId: 01572
     // RuntimeId: 06477
-    // TypeInfo:  0x024073D8
+    // TypeInfo: 0x024073D8
 #ifndef _EmitterExclusionVolumeData_
 #define _EmitterExclusionVolumeData_
 #pragma pack(push, 16)
@@ -63741,9 +63747,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01574
+    // ClassId: 01574
     // RuntimeId: 00402
-    // TypeInfo:  0x023C66D4
+    // TypeInfo: 0x023C66D4
 #ifndef _AABBData_
 #define _AABBData_
 #pragma pack(push, 16)
@@ -63770,9 +63776,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01575
+    // ClassId: 01575
     // RuntimeId: 00400
-    // TypeInfo:  0x023C66A8
+    // TypeInfo: 0x023C66A8
 #ifndef _SphereData_
 #define _SphereData_
 #pragma pack(push, 16)
@@ -63800,9 +63806,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01573
+    // ClassId: 01573
     // RuntimeId: 04256
-    // TypeInfo:  0x023F23A0
+    // TypeInfo: 0x023F23A0
 #ifndef _PathfindingExclusionVolumeData_
 #define _PathfindingExclusionVolumeData_
 #pragma pack(push, 16)
@@ -63826,9 +63832,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01493
+    // ClassId: 01493
     // RuntimeId: 00360
-    // TypeInfo:  0x023C5BA4
+    // TypeInfo: 0x023C5BA4
 #ifndef _PropertyTrackData_
 #define _PropertyTrackData_
 #pragma pack(push, 4)
@@ -63854,9 +63860,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01495
+    // ClassId: 01495
     // RuntimeId: 00376
-    // TypeInfo:  0x023C5D04
+    // TypeInfo: 0x023C5D04
 #ifndef _SimplePropertyTrackData_
 #define _SimplePropertyTrackData_
 #pragma pack(push, 4)
@@ -63881,9 +63887,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01497
+    // ClassId: 01497
     // RuntimeId: 00388
-    // TypeInfo:  0x023C5E0C
+    // TypeInfo: 0x023C5E0C
 #ifndef _Vec3PropertyTrackData_
 #define _Vec3PropertyTrackData_
 #pragma pack(push, 4)
@@ -63908,9 +63914,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01498
+    // ClassId: 01498
     // RuntimeId: 00386
-    // TypeInfo:  0x023C5DE0
+    // TypeInfo: 0x023C5DE0
 #ifndef _Vec2PropertyTrackData_
 #define _Vec2PropertyTrackData_
 #pragma pack(push, 4)
@@ -63935,9 +63941,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01499
+    // ClassId: 01499
     // RuntimeId: 00384
-    // TypeInfo:  0x023C5DB4
+    // TypeInfo: 0x023C5DB4
 #ifndef _TransformPropertyTrackData_
 #define _TransformPropertyTrackData_
 #pragma pack(push, 4)
@@ -63962,9 +63968,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01500
+    // ClassId: 01500
     // RuntimeId: 00382
-    // TypeInfo:  0x023C5D88
+    // TypeInfo: 0x023C5D88
 #ifndef _IntPropertyTrackData_
 #define _IntPropertyTrackData_
 #pragma pack(push, 4)
@@ -63989,9 +63995,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01501
+    // ClassId: 01501
     // RuntimeId: 00380
-    // TypeInfo:  0x023C5D5C
+    // TypeInfo: 0x023C5D5C
 #ifndef _FloatPropertyTrackData_
 #define _FloatPropertyTrackData_
 #pragma pack(push, 4)
@@ -64016,9 +64022,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01502
+    // ClassId: 01502
     // RuntimeId: 00378
-    // TypeInfo:  0x023C5D30
+    // TypeInfo: 0x023C5D30
 #ifndef _BoolPropertyTrackData_
 #define _BoolPropertyTrackData_
 #pragma pack(push, 4)
@@ -64043,9 +64049,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01496
+    // ClassId: 01496
     // RuntimeId: 00390
-    // TypeInfo:  0x023C5E38
+    // TypeInfo: 0x023C5E38
 #ifndef _Vec4PropertyTrackData_
 #define _Vec4PropertyTrackData_
 #pragma pack(push, 4)
@@ -64070,9 +64076,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01812
+    // ClassId: 01812
     // RuntimeId: 00374
-    // TypeInfo:  0x023C5CD8
+    // TypeInfo: 0x023C5CD8
 #ifndef _SequenceData_
 #define _SequenceData_
 #pragma pack(push, 4)
@@ -64096,9 +64102,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01809
+    // ClassId: 01809
     // RuntimeId: 00372
-    // TypeInfo:  0x023C5CAC
+    // TypeInfo: 0x023C5CAC
 #ifndef _TrajectoryEntityData_
 #define _TrajectoryEntityData_
 #pragma pack(push, 16)
@@ -64124,9 +64130,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01811
+    // ClassId: 01811
     // RuntimeId: 05127
-    // TypeInfo:  0x023FA54C
+    // TypeInfo: 0x023FA54C
 #ifndef _SyncedSequenceEntityData_
 #define _SyncedSequenceEntityData_
 #pragma pack(push, 4)
@@ -64152,9 +64158,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01814
+    // ClassId: 01814
     // RuntimeId: 05909
-    // TypeInfo:  0x0240151C
+    // TypeInfo: 0x0240151C
 #ifndef _AntTrackData_
 #define _AntTrackData_
 #pragma pack(push, 4)
@@ -64179,9 +64185,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01490
+    // ClassId: 01490
     // RuntimeId: 00366
-    // TypeInfo:  0x023C5C28
+    // TypeInfo: 0x023C5C28
 #ifndef _CustomSequenceTrackPropertyMapping_
 #define _CustomSequenceTrackPropertyMapping_
 #pragma pack(push, 4)
@@ -64207,9 +64213,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01491
+    // ClassId: 01491
     // RuntimeId: 00364
-    // TypeInfo:  0x023C5BFC
+    // TypeInfo: 0x023C5BFC
 #ifndef _CustomSequenceTrackEventMapping_
 #define _CustomSequenceTrackEventMapping_
 #pragma pack(push, 4)
@@ -64235,9 +64241,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01492
+    // ClassId: 01492
     // RuntimeId: 00362
-    // TypeInfo:  0x023C5BD0
+    // TypeInfo: 0x023C5BD0
 #ifndef _CustomSequenceTrackLinkMapping_
 #define _CustomSequenceTrackLinkMapping_
 #pragma pack(push, 4)
@@ -64263,9 +64269,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01494
+    // ClassId: 01494
     // RuntimeId: 00396
-    // TypeInfo:  0x023C5E84
+    // TypeInfo: 0x023C5E84
 #ifndef _TransformPartPropertyTrackData_
 #define _TransformPartPropertyTrackData_
 #pragma pack(push, 4)
@@ -64298,9 +64304,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01815
+    // ClassId: 01815
     // RuntimeId: 00354
-    // TypeInfo:  0x023C5B58
+    // TypeInfo: 0x023C5B58
 #ifndef _SettingEntityData_
 #define _SettingEntityData_
 #pragma pack(push, 4)
@@ -64328,9 +64334,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01816
+    // ClassId: 01816
     // RuntimeId: 00352
-    // TypeInfo:  0x023C5B2C
+    // TypeInfo: 0x023C5B2C
 #ifndef _IntegratorOrDifferentiatorEntityData_
 #define _IntegratorOrDifferentiatorEntityData_
 #pragma pack(push, 4)
@@ -64362,9 +64368,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01817
+    // ClassId: 01817
     // RuntimeId: 00350
-    // TypeInfo:  0x023C5B00
+    // TypeInfo: 0x023C5B00
 #ifndef _ProfileEntityData_
 #define _ProfileEntityData_
 #pragma pack(push, 4)
@@ -64390,9 +64396,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01818
+    // ClassId: 01818
     // RuntimeId: 00348
-    // TypeInfo:  0x023C5AD4
+    // TypeInfo: 0x023C5AD4
 #ifndef _CompareEntityData_
 #define _CompareEntityData_
 #pragma pack(push, 4)
@@ -64422,9 +64428,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01819
+    // ClassId: 01819
     // RuntimeId: 00344
-    // TypeInfo:  0x023C5A98
+    // TypeInfo: 0x023C5A98
 #ifndef _Vec3MathOpEntityData_
 #define _Vec3MathOpEntityData_
 #pragma pack(push, 4)
@@ -64450,9 +64456,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01820
+    // ClassId: 01820
     // RuntimeId: 00342
-    // TypeInfo:  0x023C5A6C
+    // TypeInfo: 0x023C5A6C
 #ifndef _MathOpEntityData_
 #define _MathOpEntityData_
 #pragma pack(push, 4)
@@ -64478,9 +64484,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01821
+    // ClassId: 01821
     // RuntimeId: 00336
-    // TypeInfo:  0x023C5A20
+    // TypeInfo: 0x023C5A20
 #ifndef _PropertyCastEntityData_
 #define _PropertyCastEntityData_
 #pragma pack(push, 4)
@@ -64509,9 +64515,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01822
+    // ClassId: 01822
     // RuntimeId: 00334
-    // TypeInfo:  0x023C59F4
+    // TypeInfo: 0x023C59F4
 #ifndef _BoolToEventEntityData_
 #define _BoolToEventEntityData_
 #pragma pack(push, 4)
@@ -64539,9 +64545,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01823
+    // ClassId: 01823
     // RuntimeId: 00332
-    // TypeInfo:  0x023C59C8
+    // TypeInfo: 0x023C59C8
 #ifndef _SwitchPropertyStringEntityData_
 #define _SwitchPropertyStringEntityData_
 #pragma pack(push, 4)
@@ -64567,9 +64573,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01824
+    // ClassId: 01824
     // RuntimeId: 00330
-    // TypeInfo:  0x023C599C
+    // TypeInfo: 0x023C599C
 #ifndef _PropertyGateEntityData_
 #define _PropertyGateEntityData_
 #pragma pack(push, 16)
@@ -64603,9 +64609,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01825
+    // ClassId: 01825
     // RuntimeId: 00328
-    // TypeInfo:  0x023C5970
+    // TypeInfo: 0x023C5970
 #ifndef _EventGateEntityData_
 #define _EventGateEntityData_
 #pragma pack(push, 4)
@@ -64632,9 +64638,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01826
+    // ClassId: 01826
     // RuntimeId: 00326
-    // TypeInfo:  0x023C5944
+    // TypeInfo: 0x023C5944
 #ifndef _StopWatchEntityData_
 #define _StopWatchEntityData_
 #pragma pack(push, 4)
@@ -64662,9 +64668,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01827
+    // ClassId: 01827
     // RuntimeId: 00324
-    // TypeInfo:  0x023C5918
+    // TypeInfo: 0x023C5918
 #ifndef _TransformModifierEntityData_
 #define _TransformModifierEntityData_
 #pragma pack(push, 16)
@@ -64698,9 +64704,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01828
+    // ClassId: 01828
     // RuntimeId: 00320
-    // TypeInfo:  0x023C58DC
+    // TypeInfo: 0x023C58DC
 #ifndef _VecSplitterEntityData_
 #define _VecSplitterEntityData_
 #pragma pack(push, 16)
@@ -64729,9 +64735,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01829
+    // ClassId: 01829
     // RuntimeId: 00318
-    // TypeInfo:  0x023C58B0
+    // TypeInfo: 0x023C58B0
 #ifndef _EulerTransformEntityData_
 #define _EulerTransformEntityData_
 #pragma pack(push, 16)
@@ -64761,9 +64767,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01830
+    // ClassId: 01830
     // RuntimeId: 00314
-    // TypeInfo:  0x023C5874
+    // TypeInfo: 0x023C5874
 #ifndef _EulerTransformSplitterEntityData_
 #define _EulerTransformSplitterEntityData_
 #pragma pack(push, 16)
@@ -64791,9 +64797,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01831
+    // ClassId: 01831
     // RuntimeId: 00312
-    // TypeInfo:  0x023C5848
+    // TypeInfo: 0x023C5848
 #ifndef _TransformSplitterEntityData_
 #define _TransformSplitterEntityData_
 #pragma pack(push, 16)
@@ -64821,9 +64827,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01832
+    // ClassId: 01832
     // RuntimeId: 00310
-    // TypeInfo:  0x023C581C
+    // TypeInfo: 0x023C581C
 #ifndef _TransformBlendEntityData_
 #define _TransformBlendEntityData_
 #pragma pack(push, 16)
@@ -64854,9 +64860,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01833
+    // ClassId: 01833
     // RuntimeId: 00308
-    // TypeInfo:  0x023C57F0
+    // TypeInfo: 0x023C57F0
 #ifndef _ToWorldSpaceTransformEntityData_
 #define _ToWorldSpaceTransformEntityData_
 #pragma pack(push, 16)
@@ -64884,9 +64890,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01834
+    // ClassId: 01834
     // RuntimeId: 00306
-    // TypeInfo:  0x023C57C4
+    // TypeInfo: 0x023C57C4
 #ifndef _TransformMultiplierEntityData_
 #define _TransformMultiplierEntityData_
 #pragma pack(push, 16)
@@ -64915,9 +64921,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01835
+    // ClassId: 01835
     // RuntimeId: 00304
-    // TypeInfo:  0x023C5798
+    // TypeInfo: 0x023C5798
 #ifndef _TransformSelectorEntityData_
 #define _TransformSelectorEntityData_
 #pragma pack(push, 16)
@@ -64947,9 +64953,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01836
+    // ClassId: 01836
     // RuntimeId: 00302
-    // TypeInfo:  0x023C576C
+    // TypeInfo: 0x023C576C
 #ifndef _TransformHubEntityData_
 #define _TransformHubEntityData_
 #pragma pack(push, 16)
@@ -64984,9 +64990,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01837
+    // ClassId: 01837
     // RuntimeId: 00300
-    // TypeInfo:  0x023C5740
+    // TypeInfo: 0x023C5740
 #ifndef _FloatHubEntityData_
 #define _FloatHubEntityData_
 #pragma pack(push, 4)
@@ -65013,9 +65019,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01838
+    // ClassId: 01838
     // RuntimeId: 00298
-    // TypeInfo:  0x023C5714
+    // TypeInfo: 0x023C5714
 #ifndef _IntHubEntityData_
 #define _IntHubEntityData_
 #pragma pack(push, 4)
@@ -65042,9 +65048,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01839
+    // ClassId: 01839
     // RuntimeId: 00296
-    // TypeInfo:  0x023C56E8
+    // TypeInfo: 0x023C56E8
 #ifndef _BoolHubEntityData_
 #define _BoolHubEntityData_
 #pragma pack(push, 4)
@@ -65071,9 +65077,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01840
+    // ClassId: 01840
     // RuntimeId: 00294
-    // TypeInfo:  0x023C56BC
+    // TypeInfo: 0x023C56BC
 #ifndef _ObjectVariationSwitchEntityData_
 #define _ObjectVariationSwitchEntityData_
 #pragma pack(push, 4)
@@ -65099,9 +65105,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01841
+    // ClassId: 01841
     // RuntimeId: 00292
-    // TypeInfo:  0x023C5690
+    // TypeInfo: 0x023C5690
 #ifndef _RandomDelayEntityData_
 #define _RandomDelayEntityData_
 #pragma pack(push, 4)
@@ -65131,9 +65137,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01842
+    // ClassId: 01842
     // RuntimeId: 00290
-    // TypeInfo:  0x023C5664
+    // TypeInfo: 0x023C5664
 #ifndef _DelayEntityData_
 #define _DelayEntityData_
 #pragma pack(push, 4)
@@ -65163,9 +65169,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01843
+    // ClassId: 01843
     // RuntimeId: 00288
-    // TypeInfo:  0x023C5638
+    // TypeInfo: 0x023C5638
 #ifndef _EventAndGateEntityData_
 #define _EventAndGateEntityData_
 #pragma pack(push, 4)
@@ -65191,9 +65197,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01844
+    // ClassId: 01844
     // RuntimeId: 00286
-    // TypeInfo:  0x023C560C
+    // TypeInfo: 0x023C560C
 #ifndef _SelectEventEntityData_
 #define _SelectEventEntityData_
 #pragma pack(push, 4)
@@ -65219,9 +65225,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01845
+    // ClassId: 01845
     // RuntimeId: 00284
-    // TypeInfo:  0x023C55E0
+    // TypeInfo: 0x023C55E0
 #ifndef _EventSwitchEntityData_
 #define _EventSwitchEntityData_
 #pragma pack(push, 4)
@@ -65249,9 +65255,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01846
+    // ClassId: 01846
     // RuntimeId: 00282
-    // TypeInfo:  0x023C55B4
+    // TypeInfo: 0x023C55B4
 #ifndef _RandomFloatEntityData_
 #define _RandomFloatEntityData_
 #pragma pack(push, 4)
@@ -65278,9 +65284,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01847
+    // ClassId: 01847
     // RuntimeId: 00280
-    // TypeInfo:  0x023C5588
+    // TypeInfo: 0x023C5588
 #ifndef _RandomMultiEventEntityData_
 #define _RandomMultiEventEntityData_
 #pragma pack(push, 4)
@@ -65310,9 +65316,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01848
+    // ClassId: 01848
     // RuntimeId: 00278
-    // TypeInfo:  0x023C555C
+    // TypeInfo: 0x023C555C
 #ifndef _RandomEventEntityData_
 #define _RandomEventEntityData_
 #pragma pack(push, 4)
@@ -65341,9 +65347,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01883
+    // ClassId: 01883
     // RuntimeId: 00276
-    // TypeInfo:  0x023C5530
+    // TypeInfo: 0x023C5530
 #ifndef _LocatorEntityData_
 #define _LocatorEntityData_
 #pragma pack(push, 16)
@@ -65369,9 +65375,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01849
+    // ClassId: 01849
     // RuntimeId: 00274
-    // TypeInfo:  0x023C5504
+    // TypeInfo: 0x023C5504
 #ifndef _CountDownEntityData_
 #define _CountDownEntityData_
 #pragma pack(push, 4)
@@ -65399,9 +65405,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02406
+    // ClassId: 02406
     // RuntimeId: 00272
-    // TypeInfo:  0x023C54D8
+    // TypeInfo: 0x023C54D8
 #ifndef _MaterialContainerAsset_
 #define _MaterialContainerAsset_
 #pragma pack(push, 4)
@@ -65427,9 +65433,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01503
+    // ClassId: 01503
     // RuntimeId: 00270
-    // TypeInfo:  0x023C54AC
+    // TypeInfo: 0x023C54AC
 #ifndef _MaterialContainerPair_
 #define _MaterialContainerPair_
 #pragma pack(push, 4)
@@ -65457,9 +65463,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02407
+    // ClassId: 02407
     // RuntimeId: 00268
-    // TypeInfo:  0x023C5480
+    // TypeInfo: 0x023C5480
 #ifndef _MaterialGridData_
 #define _MaterialGridData_
 #pragma pack(push, 4)
@@ -65489,9 +65495,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01506
+    // ClassId: 01506
     // RuntimeId: 05828
-    // TypeInfo:  0x0240050C
+    // TypeInfo: 0x0240050C
 #ifndef _MaterialRelationPenetrationData_
 #define _MaterialRelationPenetrationData_
 #pragma pack(push, 4)
@@ -65517,9 +65523,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01512
+    // ClassId: 01512
     // RuntimeId: 05830
-    // TypeInfo:  0x02400538
+    // TypeInfo: 0x02400538
 #ifndef _MaterialRelationVehicleData_
 #define _MaterialRelationVehicleData_
 #pragma pack(push, 4)
@@ -65547,9 +65553,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01513
+    // ClassId: 01513
     // RuntimeId: 05822
-    // TypeInfo:  0x02400488
+    // TypeInfo: 0x02400488
 #ifndef _MaterialRelationSoundData_
 #define _MaterialRelationSoundData_
 #pragma pack(push, 4)
@@ -65576,9 +65582,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01850
+    // ClassId: 01850
     // RuntimeId: 00256
-    // TypeInfo:  0x023C53B0
+    // TypeInfo: 0x023C53B0
 #ifndef _Or4EntityData_
 #define _Or4EntityData_
 #pragma pack(push, 4)
@@ -65607,9 +65613,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01851
+    // ClassId: 01851
     // RuntimeId: 00254
-    // TypeInfo:  0x023C5384
+    // TypeInfo: 0x023C5384
 #ifndef _XorEntityData_
 #define _XorEntityData_
 #pragma pack(push, 4)
@@ -65637,9 +65643,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01852
+    // ClassId: 01852
     // RuntimeId: 00252
-    // TypeInfo:  0x023C5358
+    // TypeInfo: 0x023C5358
 #ifndef _OrEntityData_
 #define _OrEntityData_
 #pragma pack(push, 4)
@@ -65667,9 +65673,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01853
+    // ClassId: 01853
     // RuntimeId: 00250
-    // TypeInfo:  0x023C532C
+    // TypeInfo: 0x023C532C
 #ifndef _AndEntityData_
 #define _AndEntityData_
 #pragma pack(push, 4)
@@ -65697,9 +65703,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01854
+    // ClassId: 01854
     // RuntimeId: 00248
-    // TypeInfo:  0x023C5300
+    // TypeInfo: 0x023C5300
 #ifndef _NotEntityData_
 #define _NotEntityData_
 #pragma pack(push, 4)
@@ -65726,9 +65732,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02466
+    // ClassId: 02466
     // RuntimeId: 00244
-    // TypeInfo:  0x023C52C4
+    // TypeInfo: 0x023C52C4
 #ifndef _EntitySettings_
 #define _EntitySettings_
 #pragma pack(push, 4)
@@ -65757,9 +65763,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01520
+    // ClassId: 01520
     // RuntimeId: 00240
-    // TypeInfo:  0x023C5288
+    // TypeInfo: 0x023C5288
 #ifndef _SceneRecordingData_
 #define _SceneRecordingData_
 #pragma pack(push, 4)
@@ -65784,9 +65790,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01521
+    // ClassId: 01521
     // RuntimeId: 00238
-    // TypeInfo:  0x023C525C
+    // TypeInfo: 0x023C525C
 #ifndef _EntityRecordingData_
 #define _EntityRecordingData_
 #pragma pack(push, 4)
@@ -65813,9 +65819,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01522
+    // ClassId: 01522
     // RuntimeId: 00222
-    // TypeInfo:  0x023C50FC
+    // TypeInfo: 0x023C50FC
 #ifndef _PropertyRecordingData_
 #define _PropertyRecordingData_
 #pragma pack(push, 4)
@@ -65840,9 +65846,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01524
+    // ClassId: 01524
     // RuntimeId: 00234
-    // TypeInfo:  0x023C5204
+    // TypeInfo: 0x023C5204
 #ifndef _Vec4RecordingData_
 #define _Vec4RecordingData_
 #pragma pack(push, 4)
@@ -65867,9 +65873,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01525
+    // ClassId: 01525
     // RuntimeId: 00232
-    // TypeInfo:  0x023C51D8
+    // TypeInfo: 0x023C51D8
 #ifndef _Vec3RecordingData_
 #define _Vec3RecordingData_
 #pragma pack(push, 4)
@@ -65894,9 +65900,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01526
+    // ClassId: 01526
     // RuntimeId: 00230
-    // TypeInfo:  0x023C51AC
+    // TypeInfo: 0x023C51AC
 #ifndef _Vec2RecordingData_
 #define _Vec2RecordingData_
 #pragma pack(push, 4)
@@ -65921,9 +65927,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01527
+    // ClassId: 01527
     // RuntimeId: 00228
-    // TypeInfo:  0x023C5180
+    // TypeInfo: 0x023C5180
 #ifndef _FloatRecordingData_
 #define _FloatRecordingData_
 #pragma pack(push, 4)
@@ -65948,9 +65954,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01528
+    // ClassId: 01528
     // RuntimeId: 00226
-    // TypeInfo:  0x023C5154
+    // TypeInfo: 0x023C5154
 #ifndef _IntRecordingData_
 #define _IntRecordingData_
 #pragma pack(push, 4)
@@ -65975,9 +65981,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01529
+    // ClassId: 01529
     // RuntimeId: 00224
-    // TypeInfo:  0x023C5128
+    // TypeInfo: 0x023C5128
 #ifndef _BoolRecordingData_
 #define _BoolRecordingData_
 #pragma pack(push, 4)
@@ -66002,9 +66008,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01523
+    // ClassId: 01523
     // RuntimeId: 00236
-    // TypeInfo:  0x023C5230
+    // TypeInfo: 0x023C5230
 #ifndef _LinearTransformRecordingData_
 #define _LinearTransformRecordingData_
 #pragma pack(push, 4)
@@ -66029,9 +66035,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02409
+    // ClassId: 02409
     // RuntimeId: 05412
-    // TypeInfo:  0x023FD3FC
+    // TypeInfo: 0x023FD3FC
 #ifndef _WeaponFiringDataAsset_
 #define _WeaponFiringDataAsset_
 #pragma pack(push, 4)
@@ -66055,9 +66061,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01578
+    // ClassId: 01578
     // RuntimeId: 06387
-    // TypeInfo:  0x02406144
+    // TypeInfo: 0x02406144
 #ifndef _MotionBlurComponentData_
 #define _MotionBlurComponentData_
 #pragma pack(push, 16)
@@ -66086,9 +66092,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01885
+    // ClassId: 01885
     // RuntimeId: 05959
-    // TypeInfo:  0x02401864
+    // TypeInfo: 0x02401864
 #ifndef _BlueprintBundleStateLogicEntityData_
 #define _BlueprintBundleStateLogicEntityData_
 #pragma pack(push, 16)
@@ -66114,9 +66120,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01855
+    // ClassId: 01855
     // RuntimeId: 00210
-    // TypeInfo:  0x023C502C
+    // TypeInfo: 0x023C502C
 #ifndef _ScriptEntityData_
 #define _ScriptEntityData_
 #pragma pack(push, 4)
@@ -66142,9 +66148,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02001
+    // ClassId: 02001
     // RuntimeId: 05306
-    // TypeInfo:  0x023FCE44
+    // TypeInfo: 0x023FCE44
 #ifndef _VisualEnvironmentEffectEntityData_
 #define _VisualEnvironmentEffectEntityData_
 #pragma pack(push, 16)
@@ -66175,9 +66181,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01857
+    // ClassId: 01857
     // RuntimeId: 06351
-    // TypeInfo:  0x02405E64
+    // TypeInfo: 0x02405E64
 #ifndef _MeshProxyEntityData_
 #define _MeshProxyEntityData_
 #pragma pack(push, 16)
@@ -66204,9 +66210,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01858
+    // ClassId: 01858
     // RuntimeId: 06349
-    // TypeInfo:  0x02405E38
+    // TypeInfo: 0x02405E38
 #ifndef _OccluderMeshEntityData_
 #define _OccluderMeshEntityData_
 #pragma pack(push, 16)
@@ -66232,9 +66238,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02013
+    // ClassId: 02013
     // RuntimeId: 00192
-    // TypeInfo:  0x023C4F2C
+    // TypeInfo: 0x023C4F2C
 #ifndef _LogicReferenceObjectData_
 #define _LogicReferenceObjectData_
 #pragma pack(push, 16)
@@ -66260,9 +66266,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02014
+    // ClassId: 02014
     // RuntimeId: 00190
-    // TypeInfo:  0x023C4F00
+    // TypeInfo: 0x023C4F00
 #ifndef _SpatialReferenceObjectData_
 #define _SpatialReferenceObjectData_
 #pragma pack(push, 16)
@@ -66286,9 +66292,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02007
+    // ClassId: 02007
     // RuntimeId: 05304
-    // TypeInfo:  0x023FCE18
+    // TypeInfo: 0x023FCE18
 #ifndef _VisualEnvironmentReferenceObjectData_
 #define _VisualEnvironmentReferenceObjectData_
 #pragma pack(push, 16)
@@ -66315,9 +66321,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02410
+    // ClassId: 02410
     // RuntimeId: 00184
-    // TypeInfo:  0x023C4E98
+    // TypeInfo: 0x023C4E98
 #ifndef _ObjectVariation_
 #define _ObjectVariation_
 #pragma pack(push, 4)
@@ -66342,9 +66348,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02420
+    // ClassId: 02420
     // RuntimeId: 00182
-    // TypeInfo:  0x023C4E6C
+    // TypeInfo: 0x023C4E6C
 #ifndef _LogicPrefabBlueprint_
 #define _LogicPrefabBlueprint_
 #pragma pack(push, 4)
@@ -66368,9 +66374,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02422
+    // ClassId: 02422
     // RuntimeId: 00448
-    // TypeInfo:  0x023C6AAC
+    // TypeInfo: 0x023C6AAC
 #ifndef _SubWorldData_
 #define _SubWorldData_
 #pragma pack(push, 4)
@@ -66399,9 +66405,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02423
+    // ClassId: 02423
     // RuntimeId: 00450
-    // TypeInfo:  0x023C6AD8
+    // TypeInfo: 0x023C6AD8
 #ifndef _WorldData_
 #define _WorldData_
 #pragma pack(push, 4)
@@ -66426,9 +66432,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02427
+    // ClassId: 02427
     // RuntimeId: 05300
-    // TypeInfo:  0x023FCDC0
+    // TypeInfo: 0x023FCDC0
 #ifndef _VisualEnvironmentBlueprint_
 #define _VisualEnvironmentBlueprint_
 #pragma pack(push, 4)
@@ -66452,9 +66458,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02411
+    // ClassId: 02411
     // RuntimeId: 00174
-    // TypeInfo:  0x023C4DBC
+    // TypeInfo: 0x023C4DBC
 #ifndef _BlueprintBundle_
 #define _BlueprintBundle_
 #pragma pack(push, 4)
@@ -66480,9 +66486,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02424
+    // ClassId: 02424
     // RuntimeId: 05646
-    // TypeInfo:  0x023FF77C
+    // TypeInfo: 0x023FF77C
 #ifndef _LevelData_
 #define _LevelData_
 #pragma pack(push, 4)
@@ -66533,9 +66539,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01530
+    // ClassId: 01530
     // RuntimeId: 00170
-    // TypeInfo:  0x023C4D64
+    // TypeInfo: 0x023C4D64
 #ifndef _RegistryContainer_
 #define _RegistryContainer_
 #pragma pack(push, 4)
@@ -66563,9 +66569,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02430
+    // ClassId: 02430
     // RuntimeId: 04806
-    // TypeInfo:  0x023F7B70
+    // TypeInfo: 0x023F7B70
 #ifndef _SoldierWeaponAsset_
 #define _SoldierWeaponAsset_
 #pragma pack(push, 4)
@@ -66589,9 +66595,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02017
+    // ClassId: 02017
     // RuntimeId: 00166
-    // TypeInfo:  0x023C4D0C
+    // TypeInfo: 0x023C4D0C
 #ifndef _InterfaceDescriptorData_
 #define _InterfaceDescriptorData_
 #pragma pack(push, 4)
@@ -66619,9 +66625,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02437
+    // ClassId: 02437
     // RuntimeId: 00148
-    // TypeInfo:  0x023C4C0C
+    // TypeInfo: 0x023C4C0C
 #ifndef _EffectBlueprint_
 #define _EffectBlueprint_
 #pragma pack(push, 4)
@@ -66645,9 +66651,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02000
+    // ClassId: 02000
     // RuntimeId: 06501
-    // TypeInfo:  0x0240755C
+    // TypeInfo: 0x0240755C
 #ifndef _EmitterEntityData_
 #define _EmitterEntityData_
 #pragma pack(push, 16)
@@ -66674,9 +66680,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02015
+    // ClassId: 02015
     // RuntimeId: 00150
-    // TypeInfo:  0x023C4C38
+    // TypeInfo: 0x023C4C38
 #ifndef _EffectReferenceObjectData_
 #define _EffectReferenceObjectData_
 #pragma pack(push, 16)
@@ -66702,9 +66708,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02438
+    // ClassId: 02438
     // RuntimeId: 00154
-    // TypeInfo:  0x023C4C90
+    // TypeInfo: 0x023C4C90
 #ifndef _EffectAsset_
 #define _EffectAsset_
 #pragma pack(push, 4)
@@ -66728,9 +66734,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02003
+    // ClassId: 02003
     // RuntimeId: 00146
-    // TypeInfo:  0x023C4BE0
+    // TypeInfo: 0x023C4BE0
 #ifndef _CompareFloatEntityData_
 #define _CompareFloatEntityData_
 #pragma pack(push, 4)
@@ -66760,9 +66766,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02004
+    // ClassId: 02004
     // RuntimeId: 00144
-    // TypeInfo:  0x023C4BB4
+    // TypeInfo: 0x023C4BB4
 #ifndef _CompareIntEntityData_
 #define _CompareIntEntityData_
 #pragma pack(push, 4)
@@ -66792,9 +66798,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02005
+    // ClassId: 02005
     // RuntimeId: 00142
-    // TypeInfo:  0x023C4B88
+    // TypeInfo: 0x023C4B88
 #ifndef _CompareBoolEntityData_
 #define _CompareBoolEntityData_
 #pragma pack(push, 4)
@@ -66822,9 +66828,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00604
+    // ClassId: 00604
     // RuntimeId: 03614
-    // TypeInfo:  0x023E9868
+    // TypeInfo: 0x023E9868
 #ifndef _ClientSubLevelEntity_
 #define _ClientSubLevelEntity_
     class ClientSubLevelEntity : public SubLevelEntity
@@ -66843,9 +66849,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00606
+    // ClassId: 00606
     // RuntimeId: 00139
-    // TypeInfo:  0x023C4B38
+    // TypeInfo: 0x023C4B38
 #ifndef _TransformEntity_
 #define _TransformEntity_
     class TransformEntity : public Entity
@@ -66864,9 +66870,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00607
+    // ClassId: 00607
     // RuntimeId: 00138
-    // TypeInfo:  0x023C4B10
+    // TypeInfo: 0x023C4B10
 #ifndef _Vec3Entity_
 #define _Vec3Entity_
     class Vec3Entity : public Entity
@@ -66885,9 +66891,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00608
+    // ClassId: 00608
     // RuntimeId: 00137
-    // TypeInfo:  0x023C4AE8
+    // TypeInfo: 0x023C4AE8
 #ifndef _FloatEntity_
 #define _FloatEntity_
     class FloatEntity : public Entity
@@ -66906,9 +66912,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00609
+    // ClassId: 00609
     // RuntimeId: 00136
-    // TypeInfo:  0x023C4AC0
+    // TypeInfo: 0x023C4AC0
 #ifndef _IntEntity_
 #define _IntEntity_
     class IntEntity : public Entity
@@ -66927,9 +66933,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00610
+    // ClassId: 00610
     // RuntimeId: 00135
-    // TypeInfo:  0x023C4A98
+    // TypeInfo: 0x023C4A98
 #ifndef _BoolEntity_
 #define _BoolEntity_
     class BoolEntity : public Entity
@@ -66948,9 +66954,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00780
+    // ClassId: 00780
     // RuntimeId: 06531
-    // TypeInfo:  0x02407818
+    // TypeInfo: 0x02407818
 #ifndef _ClientEmitterEntity_
 #define _ClientEmitterEntity_
     class ClientEmitterEntity : public EmitterEntity
@@ -66964,14 +66970,15 @@ namespace fb
         {
             return 0x02407818;
         }
-        char _0x0080[16];
+        class PointLightEntity* m_pointLight; //0x0080 ActAsPointLight, written by updatePointLight
+        char _0x0084[12];
     };//Size=0x0090
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00798
+    // ClassId: 00798
     // RuntimeId: 00133
-    // TypeInfo:  0x023C3234
+    // TypeInfo: 0x023C3234
 #ifndef _AssetBank_
 #define _AssetBank_
     class AssetBank
@@ -66990,9 +66997,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00799
+    // ClassId: 00799
     // RuntimeId: 00132
-    // TypeInfo:  0x023C320C
+    // TypeInfo: 0x023C320C
 #ifndef _Animatable_
 #define _Animatable_
     class Animatable
@@ -67011,9 +67018,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01531
+    // ClassId: 01531
     // RuntimeId: 00129
-    // TypeInfo:  0x023C3198
+    // TypeInfo: 0x023C3198
 #ifndef _AntMemorySettings_
 #define _AntMemorySettings_
 #pragma pack(push, 4)
@@ -67045,9 +67052,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01532
+    // ClassId: 01532
     // RuntimeId: 00127
-    // TypeInfo:  0x023C316C
+    // TypeInfo: 0x023C316C
 #ifndef _AntSettings_
 #define _AntSettings_
 #pragma pack(push, 4)
@@ -67101,9 +67108,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02412
+    // ClassId: 02412
     // RuntimeId: 00125
-    // TypeInfo:  0x023C3140
+    // TypeInfo: 0x023C3140
 #ifndef _AntAnimationSetAsset_
 #define _AntAnimationSetAsset_
 #pragma pack(push, 4)
@@ -67135,9 +67142,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01533
+    // ClassId: 01533
     // RuntimeId: 00121
-    // TypeInfo:  0x023C3104
+    // TypeInfo: 0x023C3104
 #ifndef _ProceduralAwarenessAntRefs_
 #define _ProceduralAwarenessAntRefs_
 #pragma pack(push, 4)
@@ -67164,9 +67171,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02413
+    // ClassId: 02413
     // RuntimeId: 00119
-    // TypeInfo:  0x023C30D8
+    // TypeInfo: 0x023C30D8
 #ifndef _AntProjectAsset_
 #define _AntProjectAsset_
 #pragma pack(push, 4)
@@ -67194,9 +67201,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02414
+    // ClassId: 02414
     // RuntimeId: 00117
-    // TypeInfo:  0x023C30AC
+    // TypeInfo: 0x023C30AC
 #ifndef _AntPackageAsset_
 #define _AntPackageAsset_
 #pragma pack(push, 4)
@@ -67226,9 +67233,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00800
+    // ClassId: 00800
     // RuntimeId: 00111
-    // TypeInfo:  0x023C3064
+    // TypeInfo: 0x023C3064
 #ifndef _SceneOpMatrix_
 #define _SceneOpMatrix_
     class SceneOpMatrix
@@ -67247,9 +67254,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02467
+    // ClassId: 02467
     // RuntimeId: 00110
-    // TypeInfo:  0x023C2DAC
+    // TypeInfo: 0x023C2DAC
 #ifndef _ResourceManagerSettings_
 #define _ResourceManagerSettings_
 #pragma pack(push, 4)
@@ -67279,9 +67286,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02415
+    // ClassId: 02415
     // RuntimeId: 00108
-    // TypeInfo:  0x023C2D80
+    // TypeInfo: 0x023C2D80
 #ifndef _SettingsBundleAsset_
 #define _SettingsBundleAsset_
 #pragma pack(push, 4)
@@ -67306,9 +67313,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   01576
+    // ClassId: 01576
     // RuntimeId: 06081
-    // TypeInfo:  0x02402CD8
+    // TypeInfo: 0x02402CD8
 #ifndef _SenseTerrainSphereData_
 #define _SenseTerrainSphereData_
 #pragma pack(push, 16)
@@ -67332,9 +67339,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02434
+    // ClassId: 02434
     // RuntimeId: 04802
-    // TypeInfo:  0x023F7B18
+    // TypeInfo: 0x023F7B18
 #ifndef _SoldierAsset_
 #define _SoldierAsset_
 #pragma pack(push, 4)
@@ -67358,9 +67365,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02018
+    // ClassId: 02018
     // RuntimeId: 00472
-    // TypeInfo:  0x023C6C68
+    // TypeInfo: 0x023C6C68
 #ifndef _AssemblyDescriptorData_
 #define _AssemblyDescriptorData_
 #pragma pack(push, 4)
@@ -67384,9 +67391,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02439
+    // ClassId: 02439
     // RuntimeId: 00088
-    // TypeInfo:  0x023C2C70
+    // TypeInfo: 0x023C2C70
 #ifndef _DataContainerAsset_
 #define _DataContainerAsset_
 #pragma pack(push, 4)
@@ -67411,9 +67418,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02022
+    // ClassId: 02022
     // RuntimeId: 06499
-    // TypeInfo:  0x02407530
+    // TypeInfo: 0x02407530
 #ifndef _EmitterDocument_
 #define _EmitterDocument_
 #pragma pack(push, 4)
@@ -67439,9 +67446,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02440
+    // ClassId: 02440
     // RuntimeId: 00084
-    // TypeInfo:  0x023C2C18
+    // TypeInfo: 0x023C2C18
 #ifndef _TimingViewCategories_
 #define _TimingViewCategories_
 #pragma pack(push, 4)
@@ -67466,9 +67473,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02441
+    // ClassId: 02441
     // RuntimeId: 00082
-    // TypeInfo:  0x023C2BEC
+    // TypeInfo: 0x023C2BEC
 #ifndef _TimingViewCategory_
 #define _TimingViewCategory_
 #pragma pack(push, 4)
@@ -67497,9 +67504,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02442
+    // ClassId: 02442
     // RuntimeId: 00080
-    // TypeInfo:  0x023C2BC0
+    // TypeInfo: 0x023C2BC0
 #ifndef _TimingViewSettings_
 #define _TimingViewSettings_
 #pragma pack(push, 8)
@@ -67557,9 +67564,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02443
+    // ClassId: 02443
     // RuntimeId: 00071
-    // TypeInfo:  0x023C2B24
+    // TypeInfo: 0x023C2B24
 #ifndef _DebugRenderSettings_
 #define _DebugRenderSettings_
 #pragma pack(push, 4)
@@ -67596,9 +67603,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00801
+    // ClassId: 00801
     // RuntimeId: 00069
-    // TypeInfo:  0x023C27F0
+    // TypeInfo: 0x023C27F0
 #ifndef _ChunkOnlyResourceType_
 #define _ChunkOnlyResourceType_
     class ChunkOnlyResourceType
@@ -67617,9 +67624,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02445
+    // ClassId: 02445
     // RuntimeId: 06301
-    // TypeInfo:  0x02405A88
+    // TypeInfo: 0x02405A88
 #ifndef _EnlightenRuntimeSettings_
 #define _EnlightenRuntimeSettings_
 #pragma pack(push, 16)
@@ -67682,9 +67689,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   00809
+    // ClassId: 00809
     // RuntimeId: 06525
-    // TypeInfo:  0x02407734
+    // TypeInfo: 0x02407734
 #ifndef _CameraProximityEvaluatorData_
 #define _CameraProximityEvaluatorData_
 #pragma pack(push, 16)
@@ -67715,9 +67722,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02468
+    // ClassId: 02468
     // RuntimeId: 00004
-    // TypeInfo:  0x023C20F8
+    // TypeInfo: 0x023C20F8
 #ifndef _ServiceBase_
 #define _ServiceBase_
     class ServiceBase
@@ -67736,9 +67743,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02469
+    // ClassId: 02469
     // RuntimeId: 00002
-    // TypeInfo:  0x023C20A8
+    // TypeInfo: 0x023C20A8
 #ifndef _ComponentBase_
 #define _ComponentBase_
     class ComponentBase
@@ -67757,9 +67764,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02470
+    // ClassId: 02470
     // RuntimeId: 00003
-    // TypeInfo:  0x023C20D0
+    // TypeInfo: 0x023C20D0
 #ifndef _ApplicationBase_
 #define _ApplicationBase_
     class ApplicationBase : public ComponentBase
@@ -67778,9 +67785,9 @@ namespace fb
 #endif
 
     ////////////////////////////////////////
-    // ClassId:   02471
+    // ClassId: 02471
     // RuntimeId: 00001
-    // TypeInfo:  0x023C201C
+    // TypeInfo: 0x023C201C
 #ifndef _Main_
 #define _Main_
     class Main : public ApplicationBase

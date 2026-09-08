@@ -3,10 +3,6 @@
 
 #if defined(BFVE_GAME_BF3)
 
-// COPY RULES:
-// instead of memcpy whole object we copy only important fields
-// this is because changing textures, realm will be very invalid
-// and for trick we still use memcpy but partialy
 namespace editor::copy
 {
     void outdoorLight(fb::CapturedOutdoorLightComponentData* dst, const fb::CapturedOutdoorLightComponentData* src)
@@ -97,14 +93,14 @@ namespace editor::copy
 
     void sunFlare(fb::CapturedSunFlareComponentData* dst, const fb::CapturedSunFlareComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         dst->m_Enable = src->m_Enable;
         dst->m_DebugDrawOccluder = src->m_DebugDrawOccluder;
         dst->m_OccluderSize = src->m_OccluderSize;
-        
-        // should be SDK changee to wrap it under static array
+
+// should be SDK changee to wrap it under static array
 #define COPY_ELEMENT(n) \
         dst->m_Element##n##Enable = src->m_Element##n##Enable; \
         dst->m_Element##n##Size = src->m_Element##n##Size; \
@@ -130,7 +126,7 @@ namespace editor::copy
 
     void dof(fb::CapturedDofComponentData* dst, const fb::CapturedDofComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         using T = fb::CapturedDofComponentData;
@@ -140,7 +136,7 @@ namespace editor::copy
 
     void vignette(fb::CapturedVignetteComponentData* dst, const fb::CapturedVignetteComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         dst->m_Enable = src->m_Enable;
@@ -152,7 +148,7 @@ namespace editor::copy
 
     void filmGrain(fb::CapturedFilmGrainComponentData* dst, const fb::CapturedFilmGrainComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         dst->m_Enable = src->m_Enable;
@@ -164,7 +160,7 @@ namespace editor::copy
 
     void lensScope(fb::CapturedLensScopeComponentData* dst, const fb::CapturedLensScopeComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         using T = fb::CapturedLensScopeComponentData;
@@ -177,7 +173,7 @@ namespace editor::copy
 
     void cameraParams(fb::CapturedCameraParamsComponentData* dst, const fb::CapturedCameraParamsComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         dst->m_ViewDistance = src->m_ViewDistance;
@@ -187,7 +183,7 @@ namespace editor::copy
 
     void screenEffect(fb::CapturedScreenEffectComponentData* dst, const fb::CapturedScreenEffectComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         dst->m_FrameType = src->m_FrameType;
@@ -200,7 +196,7 @@ namespace editor::copy
 
     void damageEffect(fb::CapturedDamageEffectComponentData* dst, const fb::CapturedDamageEffectComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         using T = fb::CapturedDamageEffectComponentData;
@@ -213,7 +209,7 @@ namespace editor::copy
 
     void planarReflection(fb::CapturedPlanarReflectionComponentData* dst, const fb::CapturedPlanarReflectionComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         using T = fb::CapturedPlanarReflectionComponentData;
@@ -223,7 +219,7 @@ namespace editor::copy
 
     void dynamicEnvmap(fb::CapturedDynamicEnvmapComponentData* dst, const fb::CapturedDynamicEnvmapComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         dst->m_Enable = src->m_Enable;
@@ -234,7 +230,7 @@ namespace editor::copy
 
     void characterLighting(fb::CapturedCharacterLightingComponentData* dst, const fb::CapturedCharacterLightingComponentData* src)
     {
-        if (!dst || !src) 
+        if (!dst || !src)
             return;
 
         using T = fb::CapturedCharacterLightingComponentData;
@@ -256,7 +252,7 @@ namespace editor::copy
     {
         if (!dst || !src)
             return;
-        
+
         constexpr size_t startOffset = sizeof(fb::DataContainer) + sizeof(fb::WorldRenderSettings::SKIPME);
         constexpr size_t endOffset = offsetof(fb::WorldRenderSettings, m_ViewFxEnable) + sizeof(fb::WorldRenderSettings::m_ViewFxEnable);
         constexpr size_t copySize = endOffset - startOffset;

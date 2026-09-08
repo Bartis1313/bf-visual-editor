@@ -77,6 +77,52 @@ namespace editor::lights
         j["hasOverride"] = entry.hasOverride;
         j["saveWithPosition"] = entry.saveWithPosition;
 
+        if (!entry.flareShaders.empty())
+        {
+            json flares = json::array();
+            for (const LightDataEntry::FlareShaderEdit& e : entry.flareShaders)
+            {
+                json f;
+                f["element"] = e.element; // 0xFFFFFFFF = every element
+                f["shader"] = e.shader;
+                flares.push_back(std::move(f));
+            }
+            j["flareShaders"] = std::move(flares);
+        }
+
+        if (!entry.flareFields.empty())
+        {
+            json fields = json::array();
+            for (const LightDataEntry::FlareFieldEdit& f : entry.flareFields)
+            {
+                json e;
+                e["element"] = f.element;
+                e["offset"] = f.offset;
+
+                if (f.count == 4)
+                    e["value"] = json::array({ f.value[0], f.value[1], f.value[2], f.value[3] });
+                else
+                    e["value"] = f.value[0];
+
+                fields.push_back(std::move(e));
+            }
+            j["flareFields"] = std::move(fields);
+        }
+
+        if (!entry.shaderDrivers.empty())
+        {
+            json drivers = json::array();
+            for (const LightDataEntry::ShaderDriverEdit& drv : entry.shaderDrivers)
+            {
+                json e;
+                e["handle"] = drv.handle;
+                e["value"] = json::array({ drv.value[0], drv.value[1],
+                                            drv.value[2], drv.value[3] });
+                drivers.push_back(std::move(e));
+            }
+            j["shaderDrivers"] = std::move(drivers);
+        }
+
         if (!entry.hasOverride)
             return j;
 
@@ -120,6 +166,77 @@ namespace editor::lights
     {
         JSON_GET_BOOL(j, "hasOverride", entry.hasOverride);
         JSON_GET_BOOL(j, "saveWithPosition", entry.saveWithPosition);
+
+        entry.flareShaders.clear();
+        entry.flareShadersApplied = false;
+        entry.flareFields.clear();
+        entry.flareFieldsApplied = false;
+        entry.shaderDrivers.clear();
+        entry.shaderDriversApplied = false;
+
+        if (j.contains("shaderDrivers") && j["shaderDrivers"].is_array())
+        {
+            for (const json& e : j["shaderDrivers"])
+            {
+                if (!e.is_object() || !e.contains("handle") || !e.contains("value") ||
+                    !e["value"].is_array() || e["value"].size() != 4)
+                    continue;
+
+                LightDataEntry::ShaderDriverEdit drv;
+                drv.handle = e["handle"].get<uint32_t>();
+                for (size_t i = 0; i < 4; ++i)
+                    if (e["value"][i].is_number())
+                        drv.value[i] = e["value"][i].get<float>();
+
+                entry.shaderDrivers.push_back(drv);
+            }
+        }
+        if (j.contains("flareShaders") && j["flareShaders"].is_array())
+        {
+            for (const json& f : j["flareShaders"])
+            {
+                if (!f.is_object() || !f.contains("shader") || !f["shader"].is_string())
+                    continue;
+
+                LightDataEntry::FlareShaderEdit e;
+                e.element = f.value("element", 0u);
+                e.shader = f["shader"].get<std::string>();
+                entry.flareShaders.push_back(std::move(e));
+            }
+        }
+
+        if (j.contains("flareFields") && j["flareFields"].is_array())
+        {
+            for (const json& f : j["flareFields"])
+            {
+                if (!f.is_object() || !f.contains("offset") || !f.contains("value"))
+                    continue;
+
+                LightDataEntry::FlareFieldEdit e;
+                e.element = f.value("element", 0u);
+                e.offset = f["offset"].get<uint32_t>();
+
+                const json& v = f["value"];
+                if (v.is_array() && v.size() == 4)
+                {
+                    e.count = 4;
+                    for (size_t i = 0; i < 4; ++i)
+                        if (v[i].is_number())
+                            e.value[i] = v[i].get<float>();
+                }
+                else if (v.is_number())
+                {
+                    e.count = 1;
+                    e.value[0] = v.get<float>();
+                }
+                else
+                {
+                    continue;
+                }
+
+                entry.flareFields.push_back(e);
+            }
+        }
 
         if (!entry.hasOverride)
             return;

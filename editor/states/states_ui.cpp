@@ -132,26 +132,26 @@ namespace editor::states
                 ImGui::Separator();
                 ImGui::Text("Components (%d):", compCount);
 
-                if (hash.componentMask & Comp_OutdoorLight)      ImGui::BulletText("OutdoorLight");
-                if (hash.componentMask & Comp_Enlighten)         ImGui::BulletText("Enlighten");
-                if (hash.componentMask & Comp_Tonemap)           ImGui::BulletText("Tonemap");
-                if (hash.componentMask & Comp_ColorCorrection)   ImGui::BulletText("ColorCorrection");
-                if (hash.componentMask & Comp_Sky)               ImGui::BulletText("Sky");
-                if (hash.componentMask & Comp_Fog)               ImGui::BulletText("Fog");
-                if (hash.componentMask & Comp_Wind)              ImGui::BulletText("Wind");
-                if (hash.componentMask & Comp_Sunflare)          ImGui::BulletText("Sunflare");
-                if (hash.componentMask & Comp_DynamicAO)         ImGui::BulletText("DynamicAO");
-                if (hash.componentMask & Comp_Dof)               ImGui::BulletText("DoF");
-                if (hash.componentMask & Comp_Vignette)          ImGui::BulletText("Vignette");
-                if (hash.componentMask & Comp_FilmGrain)         ImGui::BulletText("FilmGrain");
-                if (hash.componentMask & Comp_LensScope)         ImGui::BulletText("LensScope");
-                if (hash.componentMask & Comp_CameraParams)      ImGui::BulletText("CameraParams");
-                if (hash.componentMask & Comp_ScreenEffect)      ImGui::BulletText("ScreenEffect");
-                if (hash.componentMask & Comp_DamageEffect)      ImGui::BulletText("DamageEffect");
-                if (hash.componentMask & Comp_PlanarReflection)  ImGui::BulletText("PlanarReflection");
-                if (hash.componentMask & Comp_DynamicEnvmap)     ImGui::BulletText("DynamicEnvmap");
+                if (hash.componentMask & Comp_OutdoorLight) ImGui::BulletText("OutdoorLight");
+                if (hash.componentMask & Comp_Enlighten) ImGui::BulletText("Enlighten");
+                if (hash.componentMask & Comp_Tonemap) ImGui::BulletText("Tonemap");
+                if (hash.componentMask & Comp_ColorCorrection) ImGui::BulletText("ColorCorrection");
+                if (hash.componentMask & Comp_Sky) ImGui::BulletText("Sky");
+                if (hash.componentMask & Comp_Fog) ImGui::BulletText("Fog");
+                if (hash.componentMask & Comp_Wind) ImGui::BulletText("Wind");
+                if (hash.componentMask & Comp_Sunflare) ImGui::BulletText("Sunflare");
+                if (hash.componentMask & Comp_DynamicAO) ImGui::BulletText("DynamicAO");
+                if (hash.componentMask & Comp_Dof) ImGui::BulletText("DoF");
+                if (hash.componentMask & Comp_Vignette) ImGui::BulletText("Vignette");
+                if (hash.componentMask & Comp_FilmGrain) ImGui::BulletText("FilmGrain");
+                if (hash.componentMask & Comp_LensScope) ImGui::BulletText("LensScope");
+                if (hash.componentMask & Comp_CameraParams) ImGui::BulletText("CameraParams");
+                if (hash.componentMask & Comp_ScreenEffect) ImGui::BulletText("ScreenEffect");
+                if (hash.componentMask & Comp_DamageEffect) ImGui::BulletText("DamageEffect");
+                if (hash.componentMask & Comp_PlanarReflection) ImGui::BulletText("PlanarReflection");
+                if (hash.componentMask & Comp_DynamicEnvmap) ImGui::BulletText("DynamicEnvmap");
                 if (hash.componentMask & Comp_CharacterLighting) ImGui::BulletText("CharacterLighting");
-                if (hash.componentMask & Comp_MotionBlur)        ImGui::BulletText("MotionBlur");
+                if (hash.componentMask & Comp_MotionBlur) ImGui::BulletText("MotionBlur");
 
                 if (data->overrideEnabled)
                 {

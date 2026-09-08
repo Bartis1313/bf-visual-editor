@@ -4,7 +4,7 @@ namespace fb
 {
     ////////////////////////////////////////
 // RuntimeId: 06556
-// TypeInfo:  0x02C27D84
+// TypeInfo: 0x02C27D84
     enum ReadinessLevel
     {
         RLPatrol, //0x0000
@@ -15,7 +15,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06550
-    // TypeInfo:  0x02C27D1C
+    // TypeInfo: 0x02C27D1C
     enum ReadinessState
     {
         RSPatrol, //0x0000
@@ -25,7 +25,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06544
-    // TypeInfo:  0x02C27CB4
+    // TypeInfo: 0x02C27CB4
     enum StrengthType
     {
         Infantry, //0x0000
@@ -37,7 +37,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06538
-    // TypeInfo:  0x02C27C68
+    // TypeInfo: 0x02C27C68
     enum ReloadBehavior
     {
         RbInCover, //0x0000
@@ -47,7 +47,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06536
-    // TypeInfo:  0x02C27C58
+    // TypeInfo: 0x02C27C58
     enum AimOrigin
     {
         AoDefault, //0x0000
@@ -57,7 +57,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06534
-    // TypeInfo:  0x02C27C48
+    // TypeInfo: 0x02C27C48
     enum SweepSelectionType
     {
         SstTargetLost, //0x0000
@@ -66,7 +66,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06514
-    // TypeInfo:  0x02C27AE4
+    // TypeInfo: 0x02C27AE4
     enum CoverType
     {
         CoverType_Stand, //0x0000
@@ -77,7 +77,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06510
-    // TypeInfo:  0x02C27AA8
+    // TypeInfo: 0x02C27AA8
     enum CoverSelectionMethod
     {
         CSMAgainstThreatPosition, //0x0000
@@ -89,7 +89,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06435
-    // TypeInfo:  0x02C268F0
+    // TypeInfo: 0x02C268F0
     enum UIGraphPriority
     {
         UIGraphPriority_Low, //0x0000
@@ -101,7 +101,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06393
-    // TypeInfo:  0x02C2658C
+    // TypeInfo: 0x02C2658C
     enum WidgetVerticalAlignment
     {
         WVA_Top, //0x0000
@@ -111,7 +111,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06391
-    // TypeInfo:  0x02C2657C
+    // TypeInfo: 0x02C2657C
     enum WidgetHorisontalAlignment
     {
         WHA_Left, //0x0000
@@ -121,7 +121,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06355
-    // TypeInfo:  0x02C2630C
+    // TypeInfo: 0x02C2630C
     enum UILogicOperator
     {
         UILogicOperator_None, //0x0000
@@ -134,7 +134,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06353
-    // TypeInfo:  0x02C262FC
+    // TypeInfo: 0x02C262FC
     enum UIInputEvent
     {
         UIInputEvent_None, //0x0000
@@ -154,7 +154,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06351
-    // TypeInfo:  0x02C262EC
+    // TypeInfo: 0x02C262EC
     enum UIWidgetEventID
     {
         UIWidgetEventID_None, //0x0000
@@ -211,7 +211,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06345
-    // TypeInfo:  0x02C26284
+    // TypeInfo: 0x02C26284
     enum UIInterruptID
     {
         UIInterruptID_None, //0x0000
@@ -220,7 +220,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06319
-    // TypeInfo:  0x02C260D4
+    // TypeInfo: 0x02C260D4
     enum UIConsoleKeyboardStatus
     {
         UIConsoleKeyboardStatus_Success, //0x0000
@@ -233,7 +233,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06317
-    // TypeInfo:  0x02C260C4
+    // TypeInfo: 0x02C260C4
     enum UIInputAction
     {
         UIInputAction_NavigateUp, //0x0000
@@ -267,7 +267,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06315
-    // TypeInfo:  0x02C260B4
+    // TypeInfo: 0x02C260B4
     enum UIInputActionEventType
     {
         UIInputActionEventType_Pressed, //0x0000
@@ -276,7 +276,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06313
-    // TypeInfo:  0x02C260A4
+    // TypeInfo: 0x02C260A4
     enum UIKeyboardEventType
     {
         UIKeyboardEventType_KeyDown, //0x0000
@@ -286,7 +286,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06311
-    // TypeInfo:  0x02C26094
+    // TypeInfo: 0x02C26094
     enum UIMouseEventType
     {
         UIMouseEventType_MouseMove, //0x0000
@@ -297,7 +297,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06309
-    // TypeInfo:  0x02C26084
+    // TypeInfo: 0x02C26084
     enum UIMouseButton
     {
         UIMouseButton_Left, //0x0000
@@ -307,7 +307,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06307
-    // TypeInfo:  0x02C26074
+    // TypeInfo: 0x02C26074
     enum UISystemType
     {
         UISystem_None, //0x0000
@@ -316,7 +316,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06303
-    // TypeInfo:  0x02C26038
+    // TypeInfo: 0x02C26038
     enum UIState
     {
         UIState_Menu, //0x0000
@@ -336,7 +336,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06299
-    // TypeInfo:  0x02C25FFC
+    // TypeInfo: 0x02C25FFC
     enum UIUpdateType
     {
         UIUpdateType_Always, //0x0000
@@ -347,7 +347,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06295
-    // TypeInfo:  0x02C252A4
+    // TypeInfo: 0x02C252A4
     enum SecureReason
     {
         SecureReason_Ok, //0x0000
@@ -392,7 +392,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06105
-    // TypeInfo:  0x02C213C8
+    // TypeInfo: 0x02C213C8
     enum ServerUnlockSystemType
     {
         ServerUnlockSystemType_All, //0x0000
@@ -406,7 +406,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 06096
-    // TypeInfo:  0x02C21348
+    // TypeInfo: 0x02C21348
     enum ServerMapSequencerEventType
     {
         ServerMapSequencerEventType_Add, //0x0000
@@ -425,7 +425,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05891
-    // TypeInfo:  0x02C2056C
+    // TypeInfo: 0x02C2056C
     enum SoldierEmote
     {
         SoldierEmote_Spot, //0x0000
@@ -447,7 +447,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05869
-    // TypeInfo:  0x02C203F8
+    // TypeInfo: 0x02C203F8
     enum SpecialMovesPoseType
     {
         SpecialMovesPoseType_None, //0x0000
@@ -458,7 +458,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05837
-    // TypeInfo:  0x02C20284
+    // TypeInfo: 0x02C20284
     enum ServerUnlockListEventType
     {
         ServerUnlockListEventType_Add, //0x0000
@@ -474,7 +474,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05832
-    // TypeInfo:  0x02C20244
+    // TypeInfo: 0x02C20244
     enum AddGameBanResponseType
     {
         AddGameBanResponseType_Success, //0x0000
@@ -485,7 +485,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05807
-    // TypeInfo:  0x02C20094
+    // TypeInfo: 0x02C20094
     enum FaderType
     {
         FaderType_Linear, //0x0000
@@ -494,7 +494,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05663
-    // TypeInfo:  0x02C1DEA8
+    // TypeInfo: 0x02C1DEA8
     enum AIStunReactionAnimationType
     {
         AIStunReactionAnimationType_1, //0x0000
@@ -507,7 +507,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05661
-    // TypeInfo:  0x02C1DE98
+    // TypeInfo: 0x02C1DE98
     enum InviteType
     {
         InviteType_Invalid, //0x0000
@@ -519,7 +519,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05659
-    // TypeInfo:  0x02C1DE88
+    // TypeInfo: 0x02C1DE88
     enum InvitePlatform
     {
         InvitePlatform_Invalid, //0x0000
@@ -531,7 +531,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05653
-    // TypeInfo:  0x02C1DE38
+    // TypeInfo: 0x02C1DE38
     enum SwitchTeamsResult
     {
         SwitchTeamsResult_Success, //0x0000
@@ -545,7 +545,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05627
-    // TypeInfo:  0x02C1DCC8
+    // TypeInfo: 0x02C1DCC8
     enum VeniceNetworkUnlockGainedType
     {
         VeniceNetworkUnlockGainedType_Bucket, //0x0000
@@ -556,7 +556,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05602
-    // TypeInfo:  0x02C1CFB4
+    // TypeInfo: 0x02C1CFB4
     enum PoseType
     {
         PoseType_Current, //0x0000
@@ -566,7 +566,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05600
-    // TypeInfo:  0x02C1CFA4
+    // TypeInfo: 0x02C1CFA4
     enum ShootType
     {
         ShootType_OneBurstPerTarget, //0x0000
@@ -575,7 +575,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05594
-    // TypeInfo:  0x02C1CF3C
+    // TypeInfo: 0x02C1CF3C
     enum TargetPosKnowledgeType
     {
         TargetPosKnown, //0x0000
@@ -585,7 +585,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05574
-    // TypeInfo:  0x02C1CDA0
+    // TypeInfo: 0x02C1CDA0
     enum CombatPatrolMode
     {
         CombatPatrolMode_MustStayOnPath, //0x0000
@@ -595,7 +595,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05486
-    // TypeInfo:  0x02C1B588
+    // TypeInfo: 0x02C1B588
     enum TerrainRenderMode
     {
         TerrainRenderMode_Default, //0x0000
@@ -608,7 +608,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05319
-    // TypeInfo:  0x02C18A44
+    // TypeInfo: 0x02C18A44
     enum ClientGameType
     {
         ClientGameType_SinglePlayer, //0x0000
@@ -618,7 +618,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05317
-    // TypeInfo:  0x02C18A34
+    // TypeInfo: 0x02C18A34
     enum ClientState
     {
         ClientState_WaitingForStaticBundleLoad, //0x0000
@@ -641,7 +641,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05098
-    // TypeInfo:  0x02C15528
+    // TypeInfo: 0x02C15528
     enum PolynomialOperation
     {
         Multiplication, //0x0000
@@ -651,7 +651,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05078
-    // TypeInfo:  0x02C153A8
+    // TypeInfo: 0x02C153A8
     enum EmitterParameter
     {
         EmitterParameterNone, //0x0000
@@ -666,7 +666,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05076
-    // TypeInfo:  0x02C15398
+    // TypeInfo: 0x02C15398
     enum ProcessorType
     {
         PtBaseEmitter, //0x0000
@@ -708,7 +708,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05074
-    // TypeInfo:  0x02C15388
+    // TypeInfo: 0x02C15388
     enum EvaluatorType
     {
         EtDefault, //0x0000
@@ -728,7 +728,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05072
-    // TypeInfo:  0x02C15378
+    // TypeInfo: 0x02C15378
     enum EmittableType
     {
         Point, //0x0000
@@ -743,7 +743,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 05070
-    // TypeInfo:  0x02C15368
+    // TypeInfo: 0x02C15368
     enum EmittableField
     {
         EfZero, //0x0000
@@ -764,7 +764,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04910
-    // TypeInfo:  0x02C13750
+    // TypeInfo: 0x02C13750
     enum SampleCenter
     {
         SampleCenter_Center, //0x0000
@@ -773,7 +773,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04906
-    // TypeInfo:  0x02C13714
+    // TypeInfo: 0x02C13714
     enum RasterNodeUsage
     {
         RasterNodeUsage_Default, //0x0000
@@ -785,7 +785,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04898
-    // TypeInfo:  0x02C1369C
+    // TypeInfo: 0x02C1369C
     enum RasterTreeBuildMode
     {
         RasterTreeBuildMode_InlinePersistentStreamRest, //0x0000
@@ -795,7 +795,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04884
-    // TypeInfo:  0x02C1362C
+    // TypeInfo: 0x02C1362C
     enum TerrainDrawPassType
     {
         TerrainDrawPassType_SinglePass, //0x0000
@@ -805,7 +805,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04878
-    // TypeInfo:  0x02C135C4
+    // TypeInfo: 0x02C135C4
     enum TerrainBrushDetailOperation
     {
         Lerp, //0x0000
@@ -815,7 +815,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04872
-    // TypeInfo:  0x02C1355C
+    // TypeInfo: 0x02C1355C
     enum TerrainLayerType
     {
         TerrainLayerType_IgnoreMask, //0x0000
@@ -825,7 +825,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04862
-    // TypeInfo:  0x02C134D4
+    // TypeInfo: 0x02C134D4
     enum MeshScatteringInstanceDataMode
     {
         MeshScatteringInstanceDataMode_None, //0x0000
@@ -835,7 +835,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04860
-    // TypeInfo:  0x02C134C4
+    // TypeInfo: 0x02C134C4
     enum UndergrowthOrientationMode
     {
         UndergrowthOrientationMode_Horizontal, //0x0000
@@ -845,7 +845,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04858
-    // TypeInfo:  0x02C134B4
+    // TypeInfo: 0x02C134B4
     enum MeshScatteringOrientationMode
     {
         MeshScatteringOrientationMode_Horizontal, //0x0000
@@ -855,7 +855,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04856
-    // TypeInfo:  0x02C134A4
+    // TypeInfo: 0x02C134A4
     enum UndergrowthRotationMode
     {
         UndergrowthRotationMode_Random, //0x0000
@@ -865,7 +865,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04854
-    // TypeInfo:  0x02C13494
+    // TypeInfo: 0x02C13494
     enum MeshScatteringRotationMode
     {
         MeshScatteringRotationMode_Random, //0x0000
@@ -875,7 +875,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04852
-    // TypeInfo:  0x02C13484
+    // TypeInfo: 0x02C13484
     enum MeshScatteringElevationMode
     {
         MeshScatteringElevationMode_SnapBoundingBox, //0x0000
@@ -884,7 +884,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04824
-    // TypeInfo:  0x02C12650
+    // TypeInfo: 0x02C12650
     enum BreakableControllerComponentNetworkIdMultiplier
     {
         BreakableControllerComponentNetworkIdMultiplier_HidePartObjects, //0x0000
@@ -894,7 +894,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04822
-    // TypeInfo:  0x02C12640
+    // TypeInfo: 0x02C12640
     enum BreakableControllerComponentNetworkId
     {
         BreakableControllerComponentNetworkId_Collapsed, //0x0000
@@ -904,7 +904,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04774
-    // TypeInfo:  0x02C11F28
+    // TypeInfo: 0x02C11F28
     enum UIListEmptyRowType
     {
         emptyRow_28px, //0x0000
@@ -914,7 +914,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04772
-    // TypeInfo:  0x02C11F18
+    // TypeInfo: 0x02C11F18
     enum UIListUnFocusMode
     {
         DeSelect, //0x0000
@@ -924,7 +924,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04770
-    // TypeInfo:  0x02C11F08
+    // TypeInfo: 0x02C11F08
     enum UIListRowType
     {
         MixedRows, //0x0000
@@ -977,7 +977,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04768
-    // TypeInfo:  0x02C11EF8
+    // TypeInfo: 0x02C11EF8
     enum UIListNavigationType
     {
         loop, //0x0000
@@ -990,7 +990,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04754
-    // TypeInfo:  0x02C11E50
+    // TypeInfo: 0x02C11E50
     enum UICreditsTextType
     {
         SingleLine, //0x0000
@@ -999,7 +999,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04736
-    // TypeInfo:  0x02C11D6C
+    // TypeInfo: 0x02C11D6C
     enum UIIconState
     {
         UIIconState_Default, //0x0000
@@ -1014,7 +1014,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04681
-    // TypeInfo:  0x02C1195C
+    // TypeInfo: 0x02C1195C
     enum UIPopupType
     {
         PopupType_MemCard, //0x0000
@@ -1040,7 +1040,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04659
-    // TypeInfo:  0x02C117B0
+    // TypeInfo: 0x02C117B0
     enum VehicleStateType
     {
         VehicleStateType_Normal, //0x0000
@@ -1051,7 +1051,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04653
-    // TypeInfo:  0x02C11748
+    // TypeInfo: 0x02C11748
     enum ScoreboardPosition
     {
         ScoreboardPosition_FirstPlace, //0x0000
@@ -1064,7 +1064,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04609
-    // TypeInfo:  0x02C1139C
+    // TypeInfo: 0x02C1139C
     enum OrderType
     {
         OrderType_None, //0x0000
@@ -1090,7 +1090,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04607
-    // TypeInfo:  0x02C1138C
+    // TypeInfo: 0x02C1138C
     enum SpotType
     {
         SpotType_None, //0x0000
@@ -1103,7 +1103,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04533
-    // TypeInfo:  0x02C10E48
+    // TypeInfo: 0x02C10E48
     enum PresenceRequest
     {
         PresenceRequest_Invalid, //0x0000
@@ -1174,7 +1174,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04529
-    // TypeInfo:  0x02C10E28
+    // TypeInfo: 0x02C10E28
     enum VirtualGameState
     {
         VirtualGameState_Inactive, //0x0000
@@ -1186,7 +1186,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04511
-    // TypeInfo:  0x02C10D0C
+    // TypeInfo: 0x02C10D0C
     enum ServerBackendAttribute
     {
         ServerBackendAttribute_Level, //0x0000
@@ -1242,7 +1242,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04479
-    // TypeInfo:  0x02C10AD8
+    // TypeInfo: 0x02C10AD8
     enum MatchmakingSessionMode
     {
         MatchmakingSessionMode_FindDedicatedServer, //0x0000
@@ -1254,7 +1254,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04459
-    // TypeInfo:  0x02C10A38
+    // TypeInfo: 0x02C10A38
     enum MatchmakingRankedMode
     {
         MatchmakingRankedMode_Ranked, //0x0000
@@ -1264,7 +1264,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04451
-    // TypeInfo:  0x02C109F8
+    // TypeInfo: 0x02C109F8
     enum MatchmakingVirtualizationMode
     {
         MatchmakingVirtualizationMode_Virtualized, //0x0000
@@ -1274,7 +1274,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04449
-    // TypeInfo:  0x02C109E8
+    // TypeInfo: 0x02C109E8
     enum MatchmakingPlatform
     {
         MatchmakingPlatform_PC, //0x0000
@@ -1286,7 +1286,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04447
-    // TypeInfo:  0x02C109D8
+    // TypeInfo: 0x02C109D8
     enum MatchmakingPeer2PeerMode
     {
         MatchmakingPeer2PeerMode_FullMesh, //0x0000
@@ -1296,7 +1296,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04445
-    // TypeInfo:  0x02C109C8
+    // TypeInfo: 0x02C109C8
     enum MatchmakingNetworkTopology
     {
         MatchmakingNetworkTopology_Disabled, //0x0000
@@ -1307,7 +1307,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04377
-    // TypeInfo:  0x02C10578
+    // TypeInfo: 0x02C10578
     enum DogTagCategory
     {
         DTC_Invalid, //0x0000
@@ -1322,7 +1322,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04287
-    // TypeInfo:  0x02C0D670
+    // TypeInfo: 0x02C0D670
     enum UISettingSymbols
     {
         UISettingSymbols_Pluses, //0x0000
@@ -1332,7 +1332,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04285
-    // TypeInfo:  0x02C0D660
+    // TypeInfo: 0x02C0D660
     enum UISettingType
     {
         UISettingType_Slider, //0x0000
@@ -1345,7 +1345,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04171
-    // TypeInfo:  0x02C0CD20
+    // TypeInfo: 0x02C0CD20
     enum UI3dIconQuery
     {
         UI3dIconQuery_Active3dIconsData //0x0000
@@ -1353,7 +1353,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04159
-    // TypeInfo:  0x02C0CC50
+    // TypeInfo: 0x02C0CC50
     enum UIWidgetEventQuery
     {
         UIWidgetEventQuery_FireEvent //0x0000
@@ -1361,7 +1361,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04105
-    // TypeInfo:  0x02C0C7F0
+    // TypeInfo: 0x02C0C7F0
     enum DTagUploadPolicy
     {
         DTUP_FirstTimeSeenAndEndOfRound, //0x0000
@@ -1370,7 +1370,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04093
-    // TypeInfo:  0x02C0C720
+    // TypeInfo: 0x02C0C720
     enum ProgressType
     {
         PT_CapturePointCooldown //0x0000
@@ -1378,7 +1378,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04065
-    // TypeInfo:  0x02C0C544
+    // TypeInfo: 0x02C0C544
     enum UIColorType
     {
         UIColorType_Unselected, //0x0000
@@ -1404,7 +1404,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04055
-    // TypeInfo:  0x02C0C4D8
+    // TypeInfo: 0x02C0C4D8
     enum UIMinimapZoomState
     {
         UIMinimapZoomState_Default, //0x0000
@@ -1419,7 +1419,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04047
-    // TypeInfo:  0x02C0C444
+    // TypeInfo: 0x02C0C444
     enum MinimapIconInteractionConcept
     {
         MinimapIconInteractionConcept_None, //0x0000
@@ -1430,7 +1430,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04045
-    // TypeInfo:  0x02C0C434
+    // TypeInfo: 0x02C0C434
     enum UIConstants
     {
         UIConstants_MaxCaptureAreas //0x0000
@@ -1438,7 +1438,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04007
-    // TypeInfo:  0x02C0A538
+    // TypeInfo: 0x02C0A538
     enum WeaponUnlocks
     {
         WeaponUnlocks_MaxAmount //0x0000
@@ -1446,7 +1446,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04005
-    // TypeInfo:  0x02C0A528
+    // TypeInfo: 0x02C0A528
     enum WeaponSlot
     {
         WeaponSlot_0, //0x0000
@@ -1465,7 +1465,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 04003
-    // TypeInfo:  0x02C0A518
+    // TypeInfo: 0x02C0A518
     enum GearSlot
     {
         GearSlot_Melee, //0x0000
@@ -1486,7 +1486,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03985
-    // TypeInfo:  0x02C0A424
+    // TypeInfo: 0x02C0A424
     enum WeaponOverrideValueType
     {
         OverrideValue_BulletEntity_DistributeDamageOverTime, //0x0000
@@ -1498,7 +1498,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03979
-    // TypeInfo:  0x02C0A3BC
+    // TypeInfo: 0x02C0A3BC
     enum QuickThrowTypeEnum
     {
         QttHand, //0x0000
@@ -1507,7 +1507,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03961
-    // TypeInfo:  0x02C0A284
+    // TypeInfo: 0x02C0A284
     enum WeaponAnimType
     {
         WeaponAnimType_NoAddon, //0x0000
@@ -1523,7 +1523,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03935
-    // TypeInfo:  0x02C0A09C
+    // TypeInfo: 0x02C0A09C
     enum WeaponClassEnum
     {
         wc12gauge, //0x0000
@@ -1570,7 +1570,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03933
-    // TypeInfo:  0x02C0A08C
+    // TypeInfo: 0x02C0A08C
     enum WeaponAnimBaseSetEnum
     {
         wabsRif, //0x0000
@@ -1587,7 +1587,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03923
-    // TypeInfo:  0x02C0A03C
+    // TypeInfo: 0x02C0A03C
     enum AnimatedAimingEnum
     {
         AnimatedAimingTwoHanded, //0x0000
@@ -1597,7 +1597,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03921
-    // TypeInfo:  0x02C0A02C
+    // TypeInfo: 0x02C0A02C
     enum AnimatedFireEnum
     {
         AnimatedFireAutomatic, //0x0000
@@ -1609,7 +1609,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03893
-    // TypeInfo:  0x02C09E6C
+    // TypeInfo: 0x02C09E6C
     enum ZoomLevelActivateEventType
     {
         ZoomLevelActivateEventType_Disable, //0x0000
@@ -1619,7 +1619,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03859
-    // TypeInfo:  0x02C09B9C
+    // TypeInfo: 0x02C09B9C
     enum LockType
     {
         LockAlways, //0x0000
@@ -1632,7 +1632,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03853
-    // TypeInfo:  0x02C09B34
+    // TypeInfo: 0x02C09B34
     enum WeaponFiringEvent
     {
         WeaponFiringEvent_Push, //0x0000
@@ -1655,7 +1655,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03833
-    // TypeInfo:  0x02C09A5C
+    // TypeInfo: 0x02C09A5C
     enum ReloadLogic
     {
         rlWeaponSwitchCancelsUnfinishedReload, //0x0000
@@ -1664,7 +1664,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03831
-    // TypeInfo:  0x02C09A4C
+    // TypeInfo: 0x02C09A4C
     enum ReloadType
     {
         rtSingleBullet, //0x0000
@@ -1674,7 +1674,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03829
-    // TypeInfo:  0x02C09A3C
+    // TypeInfo: 0x02C09A3C
     enum FireLogicType
     {
         fltSingleFire, //0x0000
@@ -1688,7 +1688,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03793
-    // TypeInfo:  0x02C09874
+    // TypeInfo: 0x02C09874
     enum WarnTarget
     {
         wtWarnSoldierAndVehicle, //0x0000
@@ -1699,7 +1699,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03787
-    // TypeInfo:  0x02C0980C
+    // TypeInfo: 0x02C0980C
     enum GrenadeType
     {
         GrenadeType_NotSet, //0x0000
@@ -1710,7 +1710,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03779
-    // TypeInfo:  0x02C09778
+    // TypeInfo: 0x02C09778
     enum AntHitReactionWeaponType
     {
         AntHitReactionWeaponType_Pistol, //0x0000
@@ -1726,7 +1726,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03769
-    // TypeInfo:  0x02C096D4
+    // TypeInfo: 0x02C096D4
     enum RouteType
     {
         RouteStop, //0x0000
@@ -1735,7 +1735,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03767
-    // TypeInfo:  0x02C096C4
+    // TypeInfo: 0x02C096C4
     enum WaypointsSnappingSettings
     {
         UseShapeSettings, //0x0000
@@ -1745,7 +1745,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03753
-    // TypeInfo:  0x02C095E4
+    // TypeInfo: 0x02C095E4
     enum WarningPlayerType
     {
         WPTInflictor, //0x0000
@@ -1754,7 +1754,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03673
-    // TypeInfo:  0x02C0741C
+    // TypeInfo: 0x02C0741C
     enum TeamAssignMode
     {
         TamEqualTeams, //0x0000
@@ -1764,7 +1764,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03657
-    // TypeInfo:  0x02C072D8
+    // TypeInfo: 0x02C072D8
     enum EventGateState
     {
         EGSInvalid, //0x0000
@@ -1777,7 +1777,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03651
-    // TypeInfo:  0x02C07270
+    // TypeInfo: 0x02C07270
     enum EventCompareGateType
     {
         EventCompareGate_Equals, //0x0000
@@ -1790,7 +1790,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03637
-    // TypeInfo:  0x02C07174
+    // TypeInfo: 0x02C07174
     enum MapMarkerColorType
     {
         MMCTRed, //0x0000
@@ -1800,7 +1800,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03635
-    // TypeInfo:  0x02C07164
+    // TypeInfo: 0x02C07164
     enum MapMarkerType
     {
         MMTMissionObjective, //0x0000
@@ -1814,7 +1814,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03629
-    // TypeInfo:  0x02C07118
+    // TypeInfo: 0x02C07118
     enum UIMessageEntityType
     {
         UIMessageEntityType_Message, //0x0000
@@ -1827,7 +1827,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03621
-    // TypeInfo:  0x02C07084
+    // TypeInfo: 0x02C07084
     enum MessageReciever
     {
         MrAll, //0x0000
@@ -1838,7 +1838,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03617
-    // TypeInfo:  0x02C07048
+    // TypeInfo: 0x02C07048
     enum ObjectiveType
     {
         OTPrimary, //0x0000
@@ -1848,7 +1848,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03605
-    // TypeInfo:  0x02C06F5C
+    // TypeInfo: 0x02C06F5C
     enum BlinkType
     {
         BTHold, //0x0000
@@ -1858,7 +1858,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03603
-    // TypeInfo:  0x02C06F4C
+    // TypeInfo: 0x02C06F4C
     enum InteractionEntityType
     {
         IET_None, //0x0000
@@ -1869,7 +1869,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03601
-    // TypeInfo:  0x02C06F3C
+    // TypeInfo: 0x02C06F3C
     enum DisableTeamType
     {
         DttDisable, //0x0000
@@ -1878,7 +1878,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03581
-    // TypeInfo:  0x02C06DA0
+    // TypeInfo: 0x02C06DA0
     enum CapturableType
     {
         CTDefault, //0x0000
@@ -1888,7 +1888,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03571
-    // TypeInfo:  0x02C06D18
+    // TypeInfo: 0x02C06D18
     enum TicketDecreaseType
     {
         TDTOnKilled, //0x0000
@@ -1898,7 +1898,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03515
-    // TypeInfo:  0x02C0690C
+    // TypeInfo: 0x02C0690C
     enum InputDeviceKeys
     {
         IDK_None, //0x0000
@@ -2049,7 +2049,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03513
-    // TypeInfo:  0x02C068FC
+    // TypeInfo: 0x02C068FC
     enum InputDevicePOVs
     {
         IDP_POV_0, //0x0000
@@ -2060,7 +2060,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03511
-    // TypeInfo:  0x02C068EC
+    // TypeInfo: 0x02C068EC
     enum InputDeviceMouseButtons
     {
         IDB_Button_0, //0x0000
@@ -2076,7 +2076,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03509
-    // TypeInfo:  0x02C068DC
+    // TypeInfo: 0x02C068DC
     enum InputDeviceMotionControllerButtons
     {
         IDMCB_Rup, //0x0000
@@ -2097,7 +2097,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03507
-    // TypeInfo:  0x02C068CC
+    // TypeInfo: 0x02C068CC
     enum InputDevicePadButtons
     {
         IDB_Lup, //0x0000
@@ -2166,7 +2166,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03505
-    // TypeInfo:  0x02C068BC
+    // TypeInfo: 0x02C068BC
     enum InputDeviceAxes
     {
         IDA_Axis0X, //0x0000
@@ -2198,7 +2198,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03503
-    // TypeInfo:  0x02C068AC
+    // TypeInfo: 0x02C068AC
     enum InputConceptIdentifiers
     {
         ConceptMoveFB, //0x0000
@@ -2331,7 +2331,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03495
-    // TypeInfo:  0x02C05294
+    // TypeInfo: 0x02C05294
     enum ExampleVehicleType
     {
         ExampleVehicleType_Small, //0x0000
@@ -2341,7 +2341,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03449
-    // TypeInfo:  0x02C04F50
+    // TypeInfo: 0x02C04F50
     enum AwardKitAssociation
     {
         AwardKitAssociation_Undefined, //0x0000
@@ -2355,7 +2355,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03447
-    // TypeInfo:  0x02C04F40
+    // TypeInfo: 0x02C04F40
     enum StatsMultiplicity
     {
         StatsMultiplicity_Invalid, //0x0000
@@ -2366,7 +2366,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03445
-    // TypeInfo:  0x02C04F30
+    // TypeInfo: 0x02C04F30
     enum AwardGroup
     {
         AwardGroup_Undefined, //0x0000
@@ -2382,7 +2382,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03443
-    // TypeInfo:  0x02C04F20
+    // TypeInfo: 0x02C04F20
     enum AwardType
     {
         AwardType_OnceGlobally, //0x0000
@@ -2394,7 +2394,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03431
-    // TypeInfo:  0x02C04E6C
+    // TypeInfo: 0x02C04E6C
     enum AIDeathReactionAnimationType
     {
         AIDeathReactionAnimationType_1, //0x0000
@@ -2407,7 +2407,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03421
-    // TypeInfo:  0x02C04E00
+    // TypeInfo: 0x02C04E00
     enum AIAltFireFromAntState
     {
         AltFireFromAntState_NoForcedFire, //0x0000
@@ -2417,7 +2417,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03393
-    // TypeInfo:  0x02C04C24
+    // TypeInfo: 0x02C04C24
     enum CoverExitStyle
     {
         CoverExitStyle_ExitCover, //0x0000
@@ -2429,7 +2429,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03391
-    // TypeInfo:  0x02C04C14
+    // TypeInfo: 0x02C04C14
     enum CoverEnterStrategy
     {
         CoverEnterStrategy_EnterNormally, //0x0000
@@ -2439,7 +2439,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03389
-    // TypeInfo:  0x02C04C04
+    // TypeInfo: 0x02C04C04
     enum CoverPeekType
     {
         CoverPeekType_Out, //0x0000
@@ -2449,7 +2449,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03387
-    // TypeInfo:  0x02C04BF4
+    // TypeInfo: 0x02C04BF4
     enum AntCoverFireType
     {
         AntCoverFireType_PeekFire, //0x0000
@@ -2467,7 +2467,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03385
-    // TypeInfo:  0x02C04BE4
+    // TypeInfo: 0x02C04BE4
     enum CoverFireType
     {
         CoverFireType_NoFire, //0x0000
@@ -2489,7 +2489,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03377
-    // TypeInfo:  0x02C04BA4
+    // TypeInfo: 0x02C04BA4
     enum AntSpeedLevel
     {
         AntSpeedLevel_Still, //0x0000
@@ -2511,7 +2511,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03375
-    // TypeInfo:  0x02C04B94
+    // TypeInfo: 0x02C04B94
     enum AntAttentionStateEnum
     {
         AntAttentionStateEnum_Relaxed, //0x0000
@@ -2526,7 +2526,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03373
-    // TypeInfo:  0x02C04B84
+    // TypeInfo: 0x02C04B84
     enum AntCoverEnum
     {
         AntCoverEnum_RightCover, //0x0000
@@ -2540,7 +2540,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03371
-    // TypeInfo:  0x02C04B74
+    // TypeInfo: 0x02C04B74
     enum AntPoseEnum
     {
         AntPoseEnum_Stand, //0x0000
@@ -2552,7 +2552,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03335
-    // TypeInfo:  0x02C03D24
+    // TypeInfo: 0x02C03D24
     enum VehicleHudType
     {
         VehicleHudType_Car, //0x0000
@@ -2567,7 +2567,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03307
-    // TypeInfo:  0x02C03B2C
+    // TypeInfo: 0x02C03B2C
     enum UnlockAvailability
     {
         UnlockAvailability_All, //0x0000
@@ -2577,7 +2577,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03269
-    // TypeInfo:  0x02C03864
+    // TypeInfo: 0x02C03864
     enum CharacterPoseAction
     {
         CPTNoAction, //0x0000
@@ -2588,7 +2588,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03255
-    // TypeInfo:  0x02C0374C
+    // TypeInfo: 0x02C0374C
     enum AreaTriggerInclude
     {
         ATNone, //0x0000
@@ -2602,7 +2602,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03223
-    // TypeInfo:  0x02C034C4
+    // TypeInfo: 0x02C034C4
     enum CameraMovementActionMode
     {
         CameraMovementActionMode_Start, //0x0000
@@ -2612,7 +2612,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03203
-    // TypeInfo:  0x02C03344
+    // TypeInfo: 0x02C03344
     enum DebugMenuItemType
     {
         DmitItem, //0x0000
@@ -2621,7 +2621,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03186
-    // TypeInfo:  0x02C031F0
+    // TypeInfo: 0x02C031F0
     enum SyncAnimationsState
     {
         Idle, //0x0000
@@ -2632,7 +2632,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03174
-    // TypeInfo:  0x02C03104
+    // TypeInfo: 0x02C03104
     enum PersistentValueHistoryType
     {
         PersistentValueHistoryType_None, //0x0000
@@ -2643,7 +2643,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03127
-    // TypeInfo:  0x02C02D8C
+    // TypeInfo: 0x02C02D8C
     enum EntryEnterRestriction
     {
         EntryEnterRestriction_NoRestriction, //0x0000
@@ -2652,7 +2652,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03125
-    // TypeInfo:  0x02C02D7C
+    // TypeInfo: 0x02C02D7C
     enum PlayerSpawnType
     {
         PlayerSpawnType_HumanPlayer, //0x0000
@@ -2662,7 +2662,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03121
-    // TypeInfo:  0x02C017F4
+    // TypeInfo: 0x02C017F4
     enum CriteriaType
     {
         CriteriaType_IAR_InARound, //0x0000
@@ -2683,7 +2683,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03119
-    // TypeInfo:  0x02C017E4
+    // TypeInfo: 0x02C017E4
     enum StatEvent
     {
         StatEvent_Kill, //0x0000
@@ -2835,7 +2835,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03117
-    // TypeInfo:  0x02C017D4
+    // TypeInfo: 0x02C017D4
     enum IKEffectorEnum
     {
         IKLeftHand, //0x0000
@@ -2844,7 +2844,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03115
-    // TypeInfo:  0x02C017C4
+    // TypeInfo: 0x02C017C4
     enum RotationAxis
     {
         raX, //0x0000
@@ -2854,7 +2854,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03113
-    // TypeInfo:  0x02C017B4
+    // TypeInfo: 0x02C017B4
     enum WheelPhysicsType
     {
         wptNormal, //0x0000
@@ -2864,7 +2864,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03111
-    // TypeInfo:  0x02C017A4
+    // TypeInfo: 0x02C017A4
     enum EntryClass
     {
         ecPrimary, //0x0000
@@ -2873,7 +2873,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03071
-    // TypeInfo:  0x02C01494
+    // TypeInfo: 0x02C01494
     enum CustomizationConstants
     {
         MaxVisualSockets, //0x0000
@@ -2882,7 +2882,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03045
-    // TypeInfo:  0x02C0131C
+    // TypeInfo: 0x02C0131C
     enum RotationChannel
     {
         RotationChannel_Pitch, //0x0000
@@ -2892,7 +2892,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03021
-    // TypeInfo:  0x02C01144
+    // TypeInfo: 0x02C01144
     enum RotationAxisEnum
     {
         RALeft, //0x0000
@@ -2902,7 +2902,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 03003
-    // TypeInfo:  0x02C00FF0
+    // TypeInfo: 0x02C00FF0
     enum WeaponClassification
     {
         WCNone, //0x0000
@@ -2912,7 +2912,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02991
-    // TypeInfo:  0x02C00F3C
+    // TypeInfo: 0x02C00F3C
     enum HitReactionType
     {
         HRT_Body, //0x0000
@@ -2926,7 +2926,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02975
-    // TypeInfo:  0x02C00E68
+    // TypeInfo: 0x02C00E68
     enum GameplayBones
     {
         GameplayBones_UndefinedBone, //0x0000
@@ -2942,7 +2942,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02963
-    // TypeInfo:  0x02C00DB4
+    // TypeInfo: 0x02C00DB4
     enum AntEntryIdEnum
     {
         AntEntryIdEnum_Humvee_Driver, //0x0000
@@ -2969,7 +2969,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02952
-    // TypeInfo:  0x02C00D00
+    // TypeInfo: 0x02C00D00
     enum EntrySpottingSettings
     {
         ESSDefault, //0x0000
@@ -2980,7 +2980,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02948
-    // TypeInfo:  0x02C00CE0
+    // TypeInfo: 0x02C00CE0
     enum EntrySeatType
     {
         EST_Driver, //0x0000
@@ -2990,7 +2990,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02942
-    // TypeInfo:  0x02C00C78
+    // TypeInfo: 0x02C00C78
     enum PartComponentConstants
     {
         MaxHealthStateCount //0x0000
@@ -2998,7 +2998,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02926
-    // TypeInfo:  0x02C00B34
+    // TypeInfo: 0x02C00B34
     enum ChatChannelType
     {
         CctSayAll, //0x0000
@@ -3011,7 +3011,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02920
-    // TypeInfo:  0x02C00AE8
+    // TypeInfo: 0x02C00AE8
     enum PersonViewMode
     {
         PersonViewMode_FirstPerson, //0x0000
@@ -3020,7 +3020,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02902
-    // TypeInfo:  0x02C009B0
+    // TypeInfo: 0x02C009B0
     enum TargetMode
     {
         TargetMode_FirstPerson, //0x0000
@@ -3030,7 +3030,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02818
-    // TypeInfo:  0x02BFEAB4
+    // TypeInfo: 0x02BFEAB4
     enum PoseTransition
     {
         PTStandToProne, //0x0000
@@ -3043,7 +3043,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02814
-    // TypeInfo:  0x02BFEA78
+    // TypeInfo: 0x02BFEA78
     enum EntryInputActionEnum
     {
         EIAThrottle, //0x0000
@@ -3120,7 +3120,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02804
-    // TypeInfo:  0x02BFE9B8
+    // TypeInfo: 0x02BFE9B8
     enum InputActionMapSlot
     {
         InputActionMapSlot_Undefined, //0x0000
@@ -3169,7 +3169,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02802
-    // TypeInfo:  0x02BFE9A8
+    // TypeInfo: 0x02BFE9A8
     enum InputActionMapPlatform
     {
         IAMPWin32, //0x0000
@@ -3180,7 +3180,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02798
-    // TypeInfo:  0x02BFE96C
+    // TypeInfo: 0x02BFE96C
     enum SpottingType
     {
         STGunner, //0x0000
@@ -3194,7 +3194,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02788
-    // TypeInfo:  0x02BFE8E4
+    // TypeInfo: 0x02BFE8E4
     enum UIHudIcon
     {
         UIHudIcon_Unused, //0x0000
@@ -3372,7 +3372,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02786
-    // TypeInfo:  0x02BFE8D4
+    // TypeInfo: 0x02BFE8D4
     enum UIPartIdentifier
     {
         HCI_None, //0x0000
@@ -3384,7 +3384,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02784
-    // TypeInfo:  0x02BFE8C4
+    // TypeInfo: 0x02BFE8C4
     enum CollisionMethodEnum
     {
         CMESimple, //0x0000
@@ -3393,7 +3393,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02778
-    // TypeInfo:  0x02BFE878
+    // TypeInfo: 0x02BFE878
     enum AIHitReactionAnimationType
     {
         AIHitReactionAnimationType_1, //0x0000
@@ -3406,7 +3406,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02768
-    // TypeInfo:  0x02BFE7D4
+    // TypeInfo: 0x02BFE7D4
     enum GameSplineType
     {
         GameSplineType_Generic, //0x0000
@@ -3417,7 +3417,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02750
-    // TypeInfo:  0x02BFE664
+    // TypeInfo: 0x02BFE664
     enum LogFileCollisionMode
     {
         LFCM_Overwrite, //0x0000
@@ -3427,7 +3427,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02748
-    // TypeInfo:  0x02BFE654
+    // TypeInfo: 0x02BFE654
     enum SKU
     {
         WW, //0x0000
@@ -3441,7 +3441,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02746
-    // TypeInfo:  0x02BFE644
+    // TypeInfo: 0x02BFE644
     enum GamePlatform
     {
         GamePlatform_Ps3, //0x0000
@@ -3454,7 +3454,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02728
-    // TypeInfo:  0x02BFE4F0
+    // TypeInfo: 0x02BFE4F0
     enum DamageIndicationType
     {
         DamageIndicationType_GiverPlayer, //0x0000
@@ -3463,7 +3463,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02714
-    // TypeInfo:  0x02BFE3F0
+    // TypeInfo: 0x02BFE3F0
     enum ExitToMenuReason
     {
         ExitToMenuReason_None, //0x0000
@@ -3492,7 +3492,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02705
-    // TypeInfo:  0x02BFE368
+    // TypeInfo: 0x02BFE368
     enum EntitlementType
     {
         EntitlementType_Ignored, //0x0000
@@ -3502,7 +3502,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02699
-    // TypeInfo:  0x02BFE300
+    // TypeInfo: 0x02BFE300
     enum DynamicAvoidanceMode
     {
         DynamicAvoidanceMode_Never, //0x0000
@@ -3513,7 +3513,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02683
-    // TypeInfo:  0x02BFE1D8
+    // TypeInfo: 0x02BFE1D8
     enum Difficulty
     {
         Difficulty_Easy, //0x0000
@@ -3525,7 +3525,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02677
-    // TypeInfo:  0x02BFE18C
+    // TypeInfo: 0x02BFE18C
     enum CompareOperation
     {
         Equal, //0x0000
@@ -3538,7 +3538,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02675
-    // TypeInfo:  0x02BFE17C
+    // TypeInfo: 0x02BFE17C
     enum VoiceChannel
     {
         VoiceChannel_Off, //0x0000
@@ -3550,7 +3550,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02663
-    // TypeInfo:  0x02BFE090
+    // TypeInfo: 0x02BFE090
     enum SquadAction
     {
         SquadAction_PlayerJoined, //0x0000
@@ -3560,7 +3560,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02661
-    // TypeInfo:  0x02BFE080
+    // TypeInfo: 0x02BFE080
     enum SquadId
     {
         SquadNone, //0x0000
@@ -3601,7 +3601,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02659
-    // TypeInfo:  0x02BFE070
+    // TypeInfo: 0x02BFE070
     enum FactionId
     {
         FactionNeutral, //0x0000
@@ -3614,7 +3614,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02657
-    // TypeInfo:  0x02BFE060
+    // TypeInfo: 0x02BFE060
     enum TeamId
     {
         TeamNeutral, //0x0000
@@ -3639,7 +3639,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02653
-    // TypeInfo:  0x02BFE024
+    // TypeInfo: 0x02BFE024
     enum VehicleCategory
     {
         VehicleCategory_Land, //0x0000
@@ -3648,7 +3648,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02611
-    // TypeInfo:  0x02BFDCE8
+    // TypeInfo: 0x02BFDCE8
     enum SocketType
     {
         SocketType_Undefined, //0x0000
@@ -3658,7 +3658,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02601
-    // TypeInfo:  0x02BFDC28
+    // TypeInfo: 0x02BFDC28
     enum SocketPhysics
     {
         SocketPhysics_Default, //0x0000
@@ -3668,7 +3668,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02563
-    // TypeInfo:  0x02BFC000
+    // TypeInfo: 0x02BFC000
     enum WeaponSwitchingEnum
     {
         wsSlot0, //0x0000
@@ -3690,7 +3690,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02561
-    // TypeInfo:  0x02BFBFF0
+    // TypeInfo: 0x02BFBFF0
     enum SoldierBuffId
     {
         SBImprovedBodyArmor, //0x0000
@@ -3699,7 +3699,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02559
-    // TypeInfo:  0x02BFBFE0
+    // TypeInfo: 0x02BFBFE0
     enum PlayerRole
     {
         PRSquadLeader, //0x0000
@@ -3709,7 +3709,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02540
-    // TypeInfo:  0x02BFBE88
+    // TypeInfo: 0x02BFBE88
     enum DeathAnimationOperation
     {
         DALessThan, //0x0000
@@ -3719,7 +3719,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02510
-    // TypeInfo:  0x02BFBC9C
+    // TypeInfo: 0x02BFBC9C
     enum ModelAnimationTransformType
     {
         ModelAnimationTransformType_World, //0x0000
@@ -3729,7 +3729,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02508
-    // TypeInfo:  0x02BFBC8C
+    // TypeInfo: 0x02BFBC8C
     enum ModelAnimationUpdateOrder
     {
         ModelAnimationUpdateOrder_PostAnimation, //0x0000
@@ -3739,7 +3739,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02468
-    // TypeInfo:  0x02BFB938
+    // TypeInfo: 0x02BFB938
     enum ScoringVisibilityType
     {
         ScoringVisibilityType_Major, //0x0000
@@ -3749,7 +3749,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02462
-    // TypeInfo:  0x02BFB8EC
+    // TypeInfo: 0x02BFB8EC
     enum ScoringBucketType
     {
         ScoringBucketType_Disabled, //0x0000
@@ -3761,7 +3761,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02460
-    // TypeInfo:  0x02BFB8DC
+    // TypeInfo: 0x02BFB8DC
     enum ScoringBucket
     {
         ScoringBucket_General, //0x0000
@@ -3792,7 +3792,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02418
-    // TypeInfo:  0x02BFB5E8
+    // TypeInfo: 0x02BFB5E8
     enum ProfileOptionsType
     {
         GstAudio, //0x0000
@@ -3809,7 +3809,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02392
-    // TypeInfo:  0x02BFB41C
+    // TypeInfo: 0x02BFB41C
     enum PickupPlayerEnum
     {
         PickupPlayerEnum_None, //0x0000
@@ -3820,7 +3820,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02372
-    // TypeInfo:  0x02BFB2B8
+    // TypeInfo: 0x02BFB2B8
     enum RichPresencePropertyType
     {
         RichPresencePropertyType_Float, //0x0000
@@ -3831,7 +3831,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02356
-    // TypeInfo:  0x02BFB1AC
+    // TypeInfo: 0x02BFB1AC
     enum PersistenceGameType
     {
         PersistenceGameType_Singleplayer, //0x0000
@@ -3842,7 +3842,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02352
-    // TypeInfo:  0x02BFB170
+    // TypeInfo: 0x02BFB170
     enum StatPeriod
     {
         StatPeriod_AllTime, //0x0000
@@ -3855,7 +3855,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02336
-    // TypeInfo:  0x02BFB064
+    // TypeInfo: 0x02BFB064
     enum CustomReportValueKind
     {
         CustomReportValueKind_ScoreMultiplier, //0x0000
@@ -3864,7 +3864,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02334
-    // TypeInfo:  0x02BFB054
+    // TypeInfo: 0x02BFB054
     enum PersistentValueDataKind
     {
         PersistentValueDataKind_Raw, //0x0000
@@ -3876,7 +3876,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02332
-    // TypeInfo:  0x02BFB044
+    // TypeInfo: 0x02BFB044
     enum PersistentValueDataType
     {
         PersistentValueDataType_Decimal, //0x0000
@@ -3887,7 +3887,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02330
-    // TypeInfo:  0x02BFB034
+    // TypeInfo: 0x02BFB034
     enum PersistentValueType
     {
         PersistentValueType_Set, //0x0000
@@ -3899,7 +3899,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02328
-    // TypeInfo:  0x02BFB024
+    // TypeInfo: 0x02BFB024
     enum ConsumableGroup
     {
         ConsumableGroup_0, //0x0000
@@ -3915,7 +3915,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02324
-    // TypeInfo:  0x02BFAFE8
+    // TypeInfo: 0x02BFAFE8
     enum PathfindingReplayMode
     {
         PathfindingReplayMode_Disabled, //0x0000
@@ -3925,7 +3925,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02320
-    // TypeInfo:  0x02BFAFAC
+    // TypeInfo: 0x02BFAFAC
     enum PathfindingStreamAndConnect
     {
         PathfindingStreamAndConnect_Grid, //0x0000
@@ -3934,7 +3934,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02312
-    // TypeInfo:  0x02BFAF34
+    // TypeInfo: 0x02BFAF34
     enum PathfindingRepresentation
     {
         PathfindingRepresentation_Ignore, //0x0000
@@ -3946,7 +3946,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02306
-    // TypeInfo:  0x02BFAECC
+    // TypeInfo: 0x02BFAECC
     enum BackendType
     {
         Backend_Lan, //0x0000
@@ -3958,7 +3958,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02292
-    // TypeInfo:  0x02BFAE40
+    // TypeInfo: 0x02BFAE40
     enum OnlineEnvironment
     {
         OnlineEnvironment_Development, //0x0000
@@ -3970,7 +3970,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02256
-    // TypeInfo:  0x02BF8F80
+    // TypeInfo: 0x02BF8F80
     enum AdministrationRestrictionLevel
     {
         AdministrationRestrictionLevel_Zero, //0x0000
@@ -3982,7 +3982,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02254
-    // TypeInfo:  0x02BF8F70
+    // TypeInfo: 0x02BF8F70
     enum AdministrationEventType
     {
         AdministrationEventType_Add, //0x0000
@@ -3995,7 +3995,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02228
-    // TypeInfo:  0x02BF6E40
+    // TypeInfo: 0x02BF6E40
     enum CoopPlayerEvent
     {
         CoopPlayerEvent_Connecting, //0x0000
@@ -4007,7 +4007,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02218
-    // TypeInfo:  0x02BF6DB0
+    // TypeInfo: 0x02BF6DB0
     enum PlayerKilledWeaponType
     {
         PlayerKilledWeaponType_Unknown, //0x0000
@@ -4018,7 +4018,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02196
-    // TypeInfo:  0x02BF6C60
+    // TypeInfo: 0x02BF6C60
     enum GunMasterNotificationType
     {
         GunMasterNotificationType_LevelUp, //0x0000
@@ -4030,7 +4030,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02185
-    // TypeInfo:  0x02BF6BE0
+    // TypeInfo: 0x02BF6BE0
     enum ShooterInfo
     {
         ShooterInfoInVehicle, //0x0000
@@ -4052,7 +4052,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02183
-    // TypeInfo:  0x02BF6BD0
+    // TypeInfo: 0x02BF6BD0
     enum GameOverResult
     {
         GameOver_MajorDefeat, //0x0000
@@ -4066,7 +4066,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02181
-    // TypeInfo:  0x02BF6BC0
+    // TypeInfo: 0x02BF6BC0
     enum ToolTipType
     {
         AimAtTeamMateToolTip, //0x0000
@@ -4075,7 +4075,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02179
-    // TypeInfo:  0x02BF6BB0
+    // TypeInfo: 0x02BF6BB0
     enum Buttons
     {
         NoneButton, //0x0000
@@ -4087,7 +4087,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02177
-    // TypeInfo:  0x02BF6BA0
+    // TypeInfo: 0x02BF6BA0
     enum VotingType
     {
         VotingMap, //0x0000
@@ -4097,7 +4097,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02175
-    // TypeInfo:  0x02BF6B90
+    // TypeInfo: 0x02BF6B90
     enum NotifyType
     {
         NotifyPersonal, //0x0000
@@ -4109,7 +4109,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02173
-    // TypeInfo:  0x02BF6B80
+    // TypeInfo: 0x02BF6B80
     enum MenuResponse
     {
         ResponseOk, //0x0000
@@ -4120,7 +4120,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02171
-    // TypeInfo:  0x02BF6B70
+    // TypeInfo: 0x02BF6B70
     enum InputIds
     {
         NoInputId, //0x0000
@@ -4131,7 +4131,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02169
-    // TypeInfo:  0x02BF6B60
+    // TypeInfo: 0x02BF6B60
     enum CameraIds
     {
         NoCameraId, //0x0000
@@ -4142,7 +4142,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02167
-    // TypeInfo:  0x02BF6B50
+    // TypeInfo: 0x02BF6B50
     enum UIMessageType
     {
         UIMessageType_Text, //0x0000
@@ -4185,7 +4185,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02165
-    // TypeInfo:  0x02BF6B40
+    // TypeInfo: 0x02BF6B40
     enum HudTextReceiver
     {
         HudTextReceiver_Team, //0x0000
@@ -4196,7 +4196,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02131
-    // TypeInfo:  0x02BF6940
+    // TypeInfo: 0x02BF6940
     enum ChangeGameSettingType
     {
         CGSNone, //0x0000
@@ -4206,7 +4206,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02124
-    // TypeInfo:  0x02BF68E0
+    // TypeInfo: 0x02BF68E0
     enum PerformanceProfilePlatform
     {
         PPP_Win32, //0x0000
@@ -4216,7 +4216,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 02002
-    // TypeInfo:  0x02BF6170
+    // TypeInfo: 0x02BF6170
     enum SoldierChangeAction
     {
         SCA_Done, //0x0000
@@ -4226,7 +4226,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01836
-    // TypeInfo:  0x02BF5720
+    // TypeInfo: 0x02BF5720
     enum TinyEvent
     {
         TinyEvent_AckTimeSyncDone, //0x0000
@@ -4244,7 +4244,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01797
-    // TypeInfo:  0x02BF444C
+    // TypeInfo: 0x02BF444C
     enum MipmapFilterMode
     {
         MipmapFilterMode_Box, //0x0000
@@ -4255,7 +4255,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01795
-    // TypeInfo:  0x02BF443C
+    // TypeInfo: 0x02BF443C
     enum WorldViewMode
     {
         WorldViewMode_Default, //0x0000
@@ -4287,7 +4287,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01777
-    // TypeInfo:  0x02BF42E8
+    // TypeInfo: 0x02BF42E8
     enum CharacterLightingMode
     {
         CharacterLightingMode_Add, //0x0000
@@ -4296,7 +4296,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01771
-    // TypeInfo:  0x02BF4280
+    // TypeInfo: 0x02BF4280
     enum ScreenEffectFrameType
     {
         ScreenEffectFrameType_FullFrame, //0x0000
@@ -4306,7 +4306,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01729
-    // TypeInfo:  0x02BF3F00
+    // TypeInfo: 0x02BF3F00
     enum EnlightenColorMode
     {
         EnlightenColorMode_Multiply, //0x0000
@@ -4315,7 +4315,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01703
-    // TypeInfo:  0x02BF3D18
+    // TypeInfo: 0x02BF3D18
     enum RenderVolumeTransformType
     {
         RenderVolumeTransformType_WorldSpaceInv, //0x0000
@@ -4324,7 +4324,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01669
-    // TypeInfo:  0x02BF2DBC
+    // TypeInfo: 0x02BF2DBC
     enum TextureCompressQualityMode
     {
         TextureCompressQualityMode_Default, //0x0000
@@ -4334,7 +4334,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01667
-    // TypeInfo:  0x02BF2DAC
+    // TypeInfo: 0x02BF2DAC
     enum ShaderConstantSystemTexture
     {
         ShaderConstantSystemTexture_DepthBufferTexture, //0x0000
@@ -4343,7 +4343,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01665
-    // TypeInfo:  0x02BF2D9C
+    // TypeInfo: 0x02BF2D9C
     enum ShaderTimeType
     {
         ShaderTimeType_Game, //0x0000
@@ -4352,7 +4352,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01663
-    // TypeInfo:  0x02BF2D8C
+    // TypeInfo: 0x02BF2D8C
     enum ShaderInterpolationType
     {
         ShaderInterpolationType_Linear, //0x0000
@@ -4365,7 +4365,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01661
-    // TypeInfo:  0x02BF2D7C
+    // TypeInfo: 0x02BF2D7C
     enum ShaderDepthBiasGroup
     {
         ShaderDepthBiasGroup_Default, //0x0000
@@ -4383,7 +4383,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01659
-    // TypeInfo:  0x02BF2D6C
+    // TypeInfo: 0x02BF2D6C
     enum ShaderTextureCoordType
     {
         ShaderTextureCoordType_Unknown, //0x0000
@@ -4393,7 +4393,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01657
-    // TypeInfo:  0x02BF2D5C
+    // TypeInfo: 0x02BF2D5C
     enum ShaderValueFormat
     {
         ShaderValueFormat_Half, //0x0000
@@ -4405,7 +4405,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01655
-    // TypeInfo:  0x02BF2D4C
+    // TypeInfo: 0x02BF2D4C
     enum ShaderValueType
     {
         ShaderValueType_None, //0x0000
@@ -4499,7 +4499,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01653
-    // TypeInfo:  0x02BF2D3C
+    // TypeInfo: 0x02BF2D3C
     enum ShaderGeometrySpace
     {
         ShaderGeometrySpace_Object, //0x0000
@@ -4510,7 +4510,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01651
-    // TypeInfo:  0x02BF2D2C
+    // TypeInfo: 0x02BF2D2C
     enum XenonTessellationMode
     {
         XenonTessellationMode_Discrete, //0x0000
@@ -4520,7 +4520,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01649
-    // TypeInfo:  0x02BF2D1C
+    // TypeInfo: 0x02BF2D1C
     enum ShaderShadowmapMethod
     {
         ShaderShadowmapMethod_None, //0x0000
@@ -4532,7 +4532,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01647
-    // TypeInfo:  0x02BF2D0C
+    // TypeInfo: 0x02BF2D0C
     enum ShaderShadowmapQuality
     {
         ShaderShadowmapQuality_Pcf2x2, //0x0000
@@ -4542,7 +4542,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01645
-    // TypeInfo:  0x02BF2CFC
+    // TypeInfo: 0x02BF2CFC
     enum ShaderObjectLighting
     {
         ShaderObjectLighting_None, //0x0000
@@ -4552,7 +4552,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01643
-    // TypeInfo:  0x02BF2CEC
+    // TypeInfo: 0x02BF2CEC
     enum ShaderGBufferLayout
     {
         ShaderGBufferLayout_Default, //0x0000
@@ -4561,7 +4561,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01641
-    // TypeInfo:  0x02BF2CDC
+    // TypeInfo: 0x02BF2CDC
     enum ShaderRenderMode
     {
         ShaderRenderMode_Default, //0x0000
@@ -4583,7 +4583,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01639
-    // TypeInfo:  0x02BF2CCC
+    // TypeInfo: 0x02BF2CCC
     enum ShaderSkinningMethod
     {
         ShaderSkinningMethod_None, //0x0000
@@ -4597,7 +4597,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01637
-    // TypeInfo:  0x02BF2CBC
+    // TypeInfo: 0x02BF2CBC
     enum ShaderInstancingMethod
     {
         ShaderInstancingMethod_None, //0x0000
@@ -4615,7 +4615,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01635
-    // TypeInfo:  0x02BF2CAC
+    // TypeInfo: 0x02BF2CAC
     enum ShaderBlendMode
     {
         ShaderBlendMode_Lerp, //0x0000
@@ -4631,7 +4631,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01633
-    // TypeInfo:  0x02BF2C9C
+    // TypeInfo: 0x02BF2C9C
     enum SurfaceShaderType
     {
         SurfaceShaderType_Opaque, //0x0000
@@ -4643,7 +4643,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01627
-    // TypeInfo:  0x02BF2850
+    // TypeInfo: 0x02BF2850
     enum XenonShaderBranchType
     {
         XsbtDefault, //0x0000
@@ -4654,7 +4654,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01625
-    // TypeInfo:  0x02BF2840
+    // TypeInfo: 0x02BF2840
     enum ShaderBranchMethod
     {
         SbmStatic, //0x0000
@@ -4666,7 +4666,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01623
-    // TypeInfo:  0x02BF2830
+    // TypeInfo: 0x02BF2830
     enum ShaderComparisonOperator
     {
         ScoEquals, //0x0000
@@ -4679,7 +4679,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01621
-    // TypeInfo:  0x02BF2820
+    // TypeInfo: 0x02BF2820
     enum BlendShaderMode
     {
         BsmLerp, //0x0000
@@ -4696,7 +4696,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01619
-    // TypeInfo:  0x02BF2810
+    // TypeInfo: 0x02BF2810
     enum CurveShaderType
     {
         CstSine, //0x0000
@@ -4708,7 +4708,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01617
-    // TypeInfo:  0x02BF2800
+    // TypeInfo: 0x02BF2800
     enum EyeVectorSpace
     {
         EyeVectorSpace_World, //0x0000
@@ -4718,7 +4718,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01615
-    // TypeInfo:  0x02BF27F0
+    // TypeInfo: 0x02BF27F0
     enum PixelNormalSpace
     {
         PnsTangent //0x0000
@@ -4726,7 +4726,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01613
-    // TypeInfo:  0x02BF27E0
+    // TypeInfo: 0x02BF27E0
     enum VertexNormalSpace
     {
         VnsObject, //0x0000
@@ -4736,7 +4736,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01611
-    // TypeInfo:  0x02BF27D0
+    // TypeInfo: 0x02BF27D0
     enum ShaderPositionSpace
     {
         ShaderPositionSpace_Object, //0x0000
@@ -4745,7 +4745,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01609
-    // TypeInfo:  0x02BF27C0
+    // TypeInfo: 0x02BF27C0
     enum ShaderTextureDecompression
     {
         ShaderTextureDecompression_None, //0x0000
@@ -4759,7 +4759,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01607
-    // TypeInfo:  0x02BF27B0
+    // TypeInfo: 0x02BF27B0
     enum ShaderValueParameterType
     {
         SvptLiteral, //0x0000
@@ -4770,7 +4770,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01605
-    // TypeInfo:  0x02BF27A0
+    // TypeInfo: 0x02BF27A0
     enum ShaderLightingModel
     {
         ShaderLightingModel_Standard, //0x0000
@@ -4782,7 +4782,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01603
-    // TypeInfo:  0x02BF2790
+    // TypeInfo: 0x02BF2790
     enum ShaderPortType
     {
         SptBool, //0x0000
@@ -4796,7 +4796,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01585
-    // TypeInfo:  0x02BF26AC
+    // TypeInfo: 0x02BF26AC
     enum ShaderParameterType
     {
         ShaderParameterType_Bool, //0x0000
@@ -4812,7 +4812,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01579
-    // TypeInfo:  0x02BF2644
+    // TypeInfo: 0x02BF2644
     enum ShaderConstantFunction
     {
         ShaderConstantFunction_ViewMatrix, //0x0000
@@ -4872,7 +4872,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01569
-    // TypeInfo:  0x02BF25C8
+    // TypeInfo: 0x02BF25C8
     enum BlurFilter
     {
         BfNone, //0x0000
@@ -4886,7 +4886,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01559
-    // TypeInfo:  0x02BF2508
+    // TypeInfo: 0x02BF2508
     enum DynamicAOMethod
     {
         DynamicAOMethod_SSAO, //0x0000
@@ -4895,7 +4895,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01557
-    // TypeInfo:  0x02BF24F8
+    // TypeInfo: 0x02BF24F8
     enum PostProcessDebugMode
     {
         PpdmDefault, //0x0000
@@ -4909,7 +4909,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01541
-    // TypeInfo:  0x02BF23B4
+    // TypeInfo: 0x02BF23B4
     enum TonemapMethod
     {
         TonemapMethod_None, //0x0000
@@ -4921,7 +4921,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01539
-    // TypeInfo:  0x02BF23A4
+    // TypeInfo: 0x02BF23A4
     enum EntropyCodecType
     {
         EntropyCodecType_Arithmetic //0x0000
@@ -4929,7 +4929,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01537
-    // TypeInfo:  0x02BF2394
+    // TypeInfo: 0x02BF2394
     enum PointCloudAttributeQuantization
     {
         PointCloudAttributeQuantization_s5e5, //0x0000
@@ -4942,7 +4942,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01535
-    // TypeInfo:  0x02BF2384
+    // TypeInfo: 0x02BF2384
     enum PointCloudAttributeUsage
     {
         PointCloudAttributeUsage_Position, //0x0000
@@ -4954,7 +4954,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01533
-    // TypeInfo:  0x02BF2374
+    // TypeInfo: 0x02BF2374
     enum MeshSubsetCategoryFlags
     {
         MeshSubsetCategoryFlags_Opaque, //0x0000
@@ -4969,7 +4969,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01531
-    // TypeInfo:  0x02BF2364
+    // TypeInfo: 0x02BF2364
     enum MeshSubsetCategory
     {
         MeshSubsetCategory_Opaque, //0x0000
@@ -4981,7 +4981,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01529
-    // TypeInfo:  0x02BF2354
+    // TypeInfo: 0x02BF2354
     enum MeshType
     {
         MeshType_Rigid, //0x0000
@@ -4991,7 +4991,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01527
-    // TypeInfo:  0x02BF2344
+    // TypeInfo: 0x02BF2344
     enum MeshLimits
     {
         MaxMeshLodCount //0x0000
@@ -4999,7 +4999,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01525
-    // TypeInfo:  0x02BF2334
+    // TypeInfo: 0x02BF2334
     enum MeshHandleFlags
     {
         InvalidMeshHandle //0x0000
@@ -5007,7 +5007,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01489
-    // TypeInfo:  0x02BF208C
+    // TypeInfo: 0x02BF208C
     enum EnlightenType
     {
         EnlightenType_Dynamic, //0x0000
@@ -5017,7 +5017,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01485
-    // TypeInfo:  0x02BF2050
+    // TypeInfo: 0x02BF2050
     enum SpotLightShape
     {
         SpotLightShape_Cone, //0x0000
@@ -5027,7 +5027,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01447
-    // TypeInfo:  0x02BF1DEC
+    // TypeInfo: 0x02BF1DEC
     enum VertexElementClassification
     {
         VertexElementClassification_PerVertex, //0x0000
@@ -5037,7 +5037,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01445
-    // TypeInfo:  0x02BF1DDC
+    // TypeInfo: 0x02BF1DDC
     enum VertexElementUsage
     {
         VertexElementUsage_Unknown, //0x0000
@@ -5130,7 +5130,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01443
-    // TypeInfo:  0x02BF1DCC
+    // TypeInfo: 0x02BF1DCC
     enum VertexElementFormat
     {
         VertexElementFormat_None, //0x0000
@@ -5189,7 +5189,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01427
-    // TypeInfo:  0x02BF0B3C
+    // TypeInfo: 0x02BF0B3C
     enum ShaderProgram
     {
         ShaderProgram_DebugRender_Font2d, //0x0000
@@ -5419,7 +5419,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01417
-    // TypeInfo:  0x02BF0A7C
+    // TypeInfo: 0x02BF0A7C
     enum QualityLevel
     {
         QualityLevel_Low, //0x0000
@@ -5430,7 +5430,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01415
-    // TypeInfo:  0x02BF0A6C
+    // TypeInfo: 0x02BF0A6C
     enum ShaderRenderPath
     {
         ShaderRenderPath_Dx10, //0x0000
@@ -5445,7 +5445,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01413
-    // TypeInfo:  0x02BF0A5C
+    // TypeInfo: 0x02BF0A5C
     enum ShaderStageType
     {
         ShaderStageType_Vertex, //0x0000
@@ -5459,7 +5459,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01411
-    // TypeInfo:  0x02BF0A4C
+    // TypeInfo: 0x02BF0A4C
     enum StencilOperation
     {
         StencilOperation_Keep, //0x0000
@@ -5474,7 +5474,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01409
-    // TypeInfo:  0x02BF0A3C
+    // TypeInfo: 0x02BF0A3C
     enum DepthStencilCompareFunc
     {
         DepthStencilCompareFunc_Never, //0x0000
@@ -5489,7 +5489,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01407
-    // TypeInfo:  0x02BF0A2C
+    // TypeInfo: 0x02BF0A2C
     enum RenderFillMode
     {
         RenderFillMode_Solid, //0x0000
@@ -5498,7 +5498,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01405
-    // TypeInfo:  0x02BF0A1C
+    // TypeInfo: 0x02BF0A1C
     enum RenderDepthMode
     {
         RenderDepthMode_Disabled, //0x0000
@@ -5509,7 +5509,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01403
-    // TypeInfo:  0x02BF0A0C
+    // TypeInfo: 0x02BF0A0C
     enum RenderClearMask
     {
         RenderClearMask_Color0, //0x0000
@@ -5528,7 +5528,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01401
-    // TypeInfo:  0x02BF09FC
+    // TypeInfo: 0x02BF09FC
     enum RenderWriteMask
     {
         RenderWriteMask_Red, //0x0000
@@ -5542,7 +5542,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01399
-    // TypeInfo:  0x02BF09EC
+    // TypeInfo: 0x02BF09EC
     enum RenderBlendOp
     {
         RenderBlendOp_Add, //0x0000
@@ -5554,7 +5554,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01397
-    // TypeInfo:  0x02BF09DC
+    // TypeInfo: 0x02BF09DC
     enum RenderBlendMode
     {
         RenderBlendMode_Zero, //0x0000
@@ -5572,7 +5572,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01395
-    // TypeInfo:  0x02BF09CC
+    // TypeInfo: 0x02BF09CC
     enum RenderCullMode
     {
         RenderCullMode_None, //0x0000
@@ -5582,7 +5582,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01393
-    // TypeInfo:  0x02BF09BC
+    // TypeInfo: 0x02BF09BC
     enum IndexBufferFormat
     {
         IndexBufferFormat_16Bit, //0x0000
@@ -5591,7 +5591,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01391
-    // TypeInfo:  0x02BF09AC
+    // TypeInfo: 0x02BF09AC
     enum PrimitiveType
     {
         PrimitiveType_PointList, //0x0000
@@ -5605,7 +5605,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01389
-    // TypeInfo:  0x02BF099C
+    // TypeInfo: 0x02BF099C
     enum TextureFilter
     {
         TfNone, //0x0000
@@ -5617,7 +5617,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01387
-    // TypeInfo:  0x02BF098C
+    // TypeInfo: 0x02BF098C
     enum TextureAddress
     {
         TaWrap, //0x0000
@@ -5629,7 +5629,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01385
-    // TypeInfo:  0x02BF097C
+    // TypeInfo: 0x02BF097C
     enum TextureType
     {
         TextureType_1d, //0x0000
@@ -5642,7 +5642,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01383
-    // TypeInfo:  0x02BF096C
+    // TypeInfo: 0x02BF096C
     enum TextureFormat
     {
         TextureFormat_DXT1, //0x0000
@@ -5681,7 +5681,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01377
-    // TypeInfo:  0x02BF051C
+    // TypeInfo: 0x02BF051C
     enum MixerValueUIScale
     {
         MixerValueUIScale_Linear, //0x0000
@@ -5690,7 +5690,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01375
-    // TypeInfo:  0x02BF050C
+    // TypeInfo: 0x02BF050C
     enum MixerValueUIOrientation
     {
         MixerValueUIOrientation_Horizontal, //0x0000
@@ -5699,7 +5699,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01373
-    // TypeInfo:  0x02BF04FC
+    // TypeInfo: 0x02BF04FC
     enum MixerValueUI
     {
         MixerValueUI_None, //0x0000
@@ -5710,7 +5710,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01341
-    // TypeInfo:  0x02BF0258
+    // TypeInfo: 0x02BF0258
     enum MixerValueAccumulateMode
     {
         MixerValueAccumulateMode_None, //0x0000
@@ -5720,7 +5720,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01331
-    // TypeInfo:  0x02BF01EC
+    // TypeInfo: 0x02BF01EC
     enum MixGroupPropertyType
     {
         MixGroupPropertyType_Gain, //0x0000
@@ -5730,7 +5730,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01327
-    // TypeInfo:  0x02BF01B0
+    // TypeInfo: 0x02BF01B0
     enum MixGroupState
     {
         MixGroupState_Normal, //0x0000
@@ -5740,7 +5740,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01319
-    // TypeInfo:  0x02BF011C
+    // TypeInfo: 0x02BF011C
     enum TimerMode
     {
         TimerMode_Repeating, //0x0000
@@ -5749,7 +5749,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01309
-    // TypeInfo:  0x02BF005C
+    // TypeInfo: 0x02BF005C
     enum AngleUnit
     {
         AngleUnit_Radians, //0x0000
@@ -5758,7 +5758,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01307
-    // TypeInfo:  0x02BF004C
+    // TypeInfo: 0x02BF004C
     enum SimpleTransformOperation
     {
         SimpleTransformOperation_Add, //0x0000
@@ -5785,7 +5785,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01287
-    // TypeInfo:  0x02BEFEB0
+    // TypeInfo: 0x02BEFEB0
     enum NumberGeneratorMode
     {
         NumberGeneratorMode_RandomUniform //0x0000
@@ -5793,7 +5793,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01277
-    // TypeInfo:  0x02BEFDF0
+    // TypeInfo: 0x02BEFDF0
     enum LogicalExpressionOperator
     {
         LogicalExpressionOperator_And, //0x0000
@@ -5804,7 +5804,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01243
-    // TypeInfo:  0x02BEFB20
+    // TypeInfo: 0x02BEFB20
     enum DebugRenderType
     {
         DebugRenderType_Text, //0x0000
@@ -5814,7 +5814,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01235
-    // TypeInfo:  0x02BEFA8C
+    // TypeInfo: 0x02BEFA8C
     enum ConditionType
     {
         ConditionType_And, //0x0000
@@ -5829,7 +5829,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01204
-    // TypeInfo:  0x02BEE820
+    // TypeInfo: 0x02BEE820
     enum VoiceOverPronunciationFallback
     {
         VoiceOverPronunciationFallback_None, //0x0000
@@ -5838,7 +5838,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01200
-    // TypeInfo:  0x02BEE7E4
+    // TypeInfo: 0x02BEE7E4
     enum VoiceOverConversationQueueGroupPolyphony
     {
         VoiceOverConversationQueueGroupPolyphony_Sources, //0x0000
@@ -5847,7 +5847,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01194
-    // TypeInfo:  0x02BEE798
+    // TypeInfo: 0x02BEE798
     enum VoiceOverWaveNameTranslation
     {
         VoiceOverWaveNameTranslation_FullName, //0x0000
@@ -5857,7 +5857,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01176
-    // TypeInfo:  0x02BEE628
+    // TypeInfo: 0x02BEE628
     enum VoiceOverConversationQueueMode
     {
         VoiceOverConversationQueueMode_Always, //0x0000
@@ -5867,7 +5867,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01174
-    // TypeInfo:  0x02BEE618
+    // TypeInfo: 0x02BEE618
     enum VoiceOverConversationInterruptMode
     {
         VoiceOverConversationInterruptMode_Disallow, //0x0000
@@ -5877,7 +5877,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01168
-    // TypeInfo:  0x02BEE5B0
+    // TypeInfo: 0x02BEE5B0
     enum VoiceOverDialogTakeBehavior
     {
         VoiceOverDialogTakeBehavior_Start, //0x0000
@@ -5887,7 +5887,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01156
-    // TypeInfo:  0x02BEE4FC
+    // TypeInfo: 0x02BEE4FC
     enum VoiceOverContainerConditionMode
     {
         VoiceOverContainerConditionMode_All, //0x0000
@@ -5896,7 +5896,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01152
-    // TypeInfo:  0x02BEE4C0
+    // TypeInfo: 0x02BEE4C0
     enum VoiceOverLogicFlowMode
     {
         VoiceOverLogicFlowMode_All, //0x0000
@@ -5905,7 +5905,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01142
-    // TypeInfo:  0x02BEE400
+    // TypeInfo: 0x02BEE400
     enum VoiceOverLabelCompareMode
     {
         VoiceOverLabelCompareMode_Any, //0x0000
@@ -5915,7 +5915,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01140
-    // TypeInfo:  0x02BEE3F0
+    // TypeInfo: 0x02BEE3F0
     enum VoiceOverLabelSourceMode
     {
         VoiceOverLabelSourceMode_Combined, //0x0000
@@ -5924,7 +5924,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01112
-    // TypeInfo:  0x02BEE1A4
+    // TypeInfo: 0x02BEE1A4
     enum VoiceOverCompareExpressionType
     {
         VoiceOverCompareExpressionType_Equals, //0x0000
@@ -5937,7 +5937,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01108
-    // TypeInfo:  0x02BEE168
+    // TypeInfo: 0x02BEE168
     enum VoiceOverArithmeticExpressionType
     {
         VoiceOverArithmeticExpressionType_Addition, //0x0000
@@ -5949,7 +5949,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01080
-    // TypeInfo:  0x02BEDF1C
+    // TypeInfo: 0x02BEDF1C
     enum VoiceOverValueType
     {
         VoiceOverValueType_Boolean, //0x0000
@@ -5962,7 +5962,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01050
-    // TypeInfo:  0x02BEDCC0
+    // TypeInfo: 0x02BEDCC0
     enum RouteChannel
     {
         RouteChannel_0, //0x0000
@@ -6032,7 +6032,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01028
-    // TypeInfo:  0x02BEDAF8
+    // TypeInfo: 0x02BEDAF8
     enum OutputTransformSource
     {
         OutputTransformSource_Sound, //0x0000
@@ -6042,7 +6042,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 01008
-    // TypeInfo:  0x02BED95C
+    // TypeInfo: 0x02BED95C
     enum LimiterChannelMode
     {
         LimiterChannelMode_Independent, //0x0000
@@ -6051,7 +6051,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00996
-    // TypeInfo:  0x02BED870
+    // TypeInfo: 0x02BED870
     enum GainFaderFadeType
     {
         GainFaderFadeType_LinearAmplitude, //0x0000
@@ -6061,7 +6061,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00990
-    // TypeInfo:  0x02BED808
+    // TypeInfo: 0x02BED808
     enum FrequencyShiftSsbFilter
     {
         FrequencyShiftSsbFilter_None, //0x0000
@@ -6070,7 +6070,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00982
-    // TypeInfo:  0x02BED790
+    // TypeInfo: 0x02BED790
     enum ExpanderChannelMode
     {
         ExpanderChannelMode_Independent, //0x0000
@@ -6079,7 +6079,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00968
-    // TypeInfo:  0x02BED678
+    // TypeInfo: 0x02BED678
     enum CompressorChannelMode
     {
         CompressorChannelMode_Independent, //0x0000
@@ -6088,7 +6088,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00936
-    // TypeInfo:  0x02BED444
+    // TypeInfo: 0x02BED444
     enum SoundDataState
     {
         SoundDataState_Pending, //0x0000
@@ -6099,7 +6099,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00934
-    // TypeInfo:  0x02BED434
+    // TypeInfo: 0x02BED434
     enum SoundDataRequestResult
     {
         SoundDataRequestResult_NotRequested, //0x0000
@@ -6109,7 +6109,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00932
-    // TypeInfo:  0x02BED424
+    // TypeInfo: 0x02BED424
     enum SoundWaveVariationSelection
     {
         SwvsSequential, //0x0000
@@ -6118,7 +6118,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00930
-    // TypeInfo:  0x02BED414
+    // TypeInfo: 0x02BED414
     enum SoundWaveReadPriority
     {
         SoundWaveReadPriority_Unspecified, //0x0000
@@ -6130,7 +6130,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00928
-    // TypeInfo:  0x02BED404
+    // TypeInfo: 0x02BED404
     enum SoundWaveVoicePriority
     {
         SoundWaveVoicePriority_Unspecified, //0x0000
@@ -6142,7 +6142,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00926
-    // TypeInfo:  0x02BED3F4
+    // TypeInfo: 0x02BED3F4
     enum WavePriority
     {
         WpNone, //0x0000
@@ -6154,7 +6154,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00914
-    // TypeInfo:  0x02BED324
+    // TypeInfo: 0x02BED324
     enum AudioCurveType
     {
         AudioCurveType_Spline //0x0000
@@ -6162,7 +6162,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00892
-    // TypeInfo:  0x02BED23C
+    // TypeInfo: 0x02BED23C
     enum SoundGraphPluginConnectionType
     {
         SoundGraphPluginConnectionType_Unconnected, //0x0000
@@ -6172,7 +6172,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00888
-    // TypeInfo:  0x02BED21C
+    // TypeInfo: 0x02BED21C
     enum FadeCurveType
     {
         FadeCurveType_LinearAmplitude, //0x0000
@@ -6182,7 +6182,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00880
-    // TypeInfo:  0x02BED1A4
+    // TypeInfo: 0x02BED1A4
     enum AudioSystemSpeakerSetup
     {
         FiveDotOne, //0x0000
@@ -6191,7 +6191,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00854
-    // TypeInfo:  0x02BECFA0
+    // TypeInfo: 0x02BECFA0
     enum SoundTestTransformBehavior
     {
         SoundTestTransformBehavior_Static //0x0000
@@ -6199,7 +6199,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00848
-    // TypeInfo:  0x02BECF38
+    // TypeInfo: 0x02BECF38
     enum SoundTestParamBehavior
     {
         SoundTestParamBehavior_Constant, //0x0000
@@ -6209,7 +6209,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00830
-    // TypeInfo:  0x02BECDE4
+    // TypeInfo: 0x02BECDE4
     enum SoundPatchDefaultEvent
     {
         SoundPatchDefaultEvent_Start, //0x0000
@@ -6220,7 +6220,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00814
-    // TypeInfo:  0x02BECCBC
+    // TypeInfo: 0x02BECCBC
     enum StreamStarveMode
     {
         StreamStarveMode_Off, //0x0000
@@ -6230,7 +6230,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00812
-    // TypeInfo:  0x02BECCAC
+    // TypeInfo: 0x02BECCAC
     enum WaveCodec
     {
         WaveCodec_EaLayer3, //0x0000
@@ -6243,7 +6243,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00802
-    // TypeInfo:  0x02BECC08
+    // TypeInfo: 0x02BECC08
     enum LoopType
     {
         LtNone, //0x0000
@@ -6254,7 +6254,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00747
-    // TypeInfo:  0x02BE9F40
+    // TypeInfo: 0x02BE9F40
     enum ForceMagnitudeInputType
     {
         FMITYaw, //0x0000
@@ -6265,7 +6265,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00745
-    // TypeInfo:  0x02BE9F30
+    // TypeInfo: 0x02BE9F30
     enum PropellerType
     {
         PropellerType_Regular, //0x0000
@@ -6274,7 +6274,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00733
-    // TypeInfo:  0x02BE9E60
+    // TypeInfo: 0x02BE9E60
     enum VehicleInputTweakType
     {
         CombinedTimedSpeedTweakType, //0x0000
@@ -6285,7 +6285,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00727
-    // TypeInfo:  0x02BE9DF8
+    // TypeInfo: 0x02BE9DF8
     enum StabilizerProperty
     {
         SPPitchAngle, //0x0000
@@ -6297,7 +6297,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00703
-    // TypeInfo:  0x02BE9C20
+    // TypeInfo: 0x02BE9C20
     enum SpaceType
     {
         STBody, //0x0000
@@ -6306,7 +6306,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00701
-    // TypeInfo:  0x02BE9C10
+    // TypeInfo: 0x02BE9C10
     enum ForceType
     {
         FTForce, //0x0000
@@ -6315,7 +6315,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00699
-    // TypeInfo:  0x02BE9C00
+    // TypeInfo: 0x02BE9C00
     enum ForceCondition
     {
         FCNever, //0x0000
@@ -6328,7 +6328,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00689
-    // TypeInfo:  0x02BE9B94
+    // TypeInfo: 0x02BE9B94
     enum VehicleMode
     {
         VmIdle, //0x0000
@@ -6342,7 +6342,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00673
-    // TypeInfo:  0x02BE9A6C
+    // TypeInfo: 0x02BE9A6C
     enum RigidBodyCollisionLayer
     {
         RigidBodyCollisionLayer_Invalid, //0x0000
@@ -6353,7 +6353,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00671
-    // TypeInfo:  0x02BE9A5C
+    // TypeInfo: 0x02BE9A5C
     enum RigidBodyQualityType
     {
         RigidBodyQualityType_Invalid, //0x0000
@@ -6367,7 +6367,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00669
-    // TypeInfo:  0x02BE9A4C
+    // TypeInfo: 0x02BE9A4C
     enum RigidBodyMotionType
     {
         RigidBodyMotionType_Invalid, //0x0000
@@ -6379,7 +6379,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00667
-    // TypeInfo:  0x02BE9A3C
+    // TypeInfo: 0x02BE9A3C
     enum ShapeType
     {
         ShapeType_Hull, //0x0000
@@ -6395,7 +6395,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00665
-    // TypeInfo:  0x02BE9A2C
+    // TypeInfo: 0x02BE9A2C
     enum RigidBodyType
     {
         RBTypeCollision, //0x0000
@@ -6408,7 +6408,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00659
-    // TypeInfo:  0x02BE99C4
+    // TypeInfo: 0x02BE99C4
     enum PhysicsWorldType
     {
         PhysicsWorldType_Client, //0x0000
@@ -6419,7 +6419,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00643
-    // TypeInfo:  0x02BE9880
+    // TypeInfo: 0x02BE9880
     enum ProximityObjectType
     {
         PotProximityDisabled, //0x0000
@@ -6432,7 +6432,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00611
-    // TypeInfo:  0x02BE95F8
+    // TypeInfo: 0x02BE95F8
     enum CharacterStateType
     {
         CharacterStateType_OnGround, //0x0000
@@ -6455,7 +6455,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00599
-    // TypeInfo:  0x02BE9544
+    // TypeInfo: 0x02BE9544
     enum CharacterPoseCollisionType
     {
         CharacterPoseCollisionType_Capsule, //0x0000
@@ -6464,7 +6464,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00597
-    // TypeInfo:  0x02BE9534
+    // TypeInfo: 0x02BE9534
     enum CharacterPoseType
     {
         CharacterPoseType_Stand, //0x0000
@@ -6475,7 +6475,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00579
-    // TypeInfo:  0x02BE9434
+    // TypeInfo: 0x02BE9434
     enum DestructionConnectivityType
     {
         DestructionConnectivityType_Full, //0x0000
@@ -6486,7 +6486,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00498
-    // TypeInfo:  0x02BE7140
+    // TypeInfo: 0x02BE7140
     enum PackagingDetailLevel
     {
         PackagingDetailLevel_Low, //0x0000
@@ -6498,7 +6498,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00428
-    // TypeInfo:  0x02BE63E0
+    // TypeInfo: 0x02BE63E0
     enum AnimTangentType
     {
         kTangentFixed, //0x0000
@@ -6514,7 +6514,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00426
-    // TypeInfo:  0x02BE63D0
+    // TypeInfo: 0x02BE63D0
     enum CurveInfinityType
     {
         CurveInfinityType_Constant, //0x0000
@@ -6526,7 +6526,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00424
-    // TypeInfo:  0x02BE63C0
+    // TypeInfo: 0x02BE63C0
     enum TransformPart
     {
         TransformPart_TranslationX, //0x0000
@@ -6539,7 +6539,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00390
-    // TypeInfo:  0x02BE60F0
+    // TypeInfo: 0x02BE60F0
     enum InterpolationType
     {
         InterpolationType_None, //0x0000
@@ -6550,7 +6550,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00378
-    // TypeInfo:  0x02BE6020
+    // TypeInfo: 0x02BE6020
     enum CompareOp
     {
         CompareOp_Equal, //0x0000
@@ -6563,7 +6563,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00372
-    // TypeInfo:  0x02BE5FB8
+    // TypeInfo: 0x02BE5FB8
     enum Vec3MathOp
     {
         Vec3MathOp_Add, //0x0000
@@ -6581,7 +6581,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00370
-    // TypeInfo:  0x02BE5FA8
+    // TypeInfo: 0x02BE5FA8
     enum MathOp
     {
         MathOp_Add, //0x0000
@@ -6594,7 +6594,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00354
-    // TypeInfo:  0x02BE5E64
+    // TypeInfo: 0x02BE5E64
     enum ModifierAxis
     {
         maLeft, //0x0000
@@ -6604,7 +6604,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00348
-    // TypeInfo:  0x02BE5DFC
+    // TypeInfo: 0x02BE5DFC
     enum ModifierEuler
     {
         Roll, //0x0000
@@ -6615,7 +6615,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00274
-    // TypeInfo:  0x02BE5810
+    // TypeInfo: 0x02BE5810
     enum ExecutionModeType
     {
         ExecutionMode_Play, //0x0000
@@ -6625,7 +6625,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00248
-    // TypeInfo:  0x02BE560C
+    // TypeInfo: 0x02BE560C
     enum LinkDirection
     {
         LinkDirection_In, //0x0000
@@ -6634,7 +6634,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00246
-    // TypeInfo:  0x02BE55FC
+    // TypeInfo: 0x02BE55FC
     enum PropertyDirection
     {
         PropertyDirection_In, //0x0000
@@ -6643,7 +6643,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00244
-    // TypeInfo:  0x02BE55EC
+    // TypeInfo: 0x02BE55EC
     enum EventDirection
     {
         EventDirection_In, //0x0000
@@ -6652,7 +6652,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00242
-    // TypeInfo:  0x02BE55DC
+    // TypeInfo: 0x02BE55DC
     enum EntityUpdateOrder
     {
         EntityUpdateOrder_Async, //0x0000
@@ -6662,7 +6662,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00240
-    // TypeInfo:  0x02BE55CC
+    // TypeInfo: 0x02BE55CC
     enum UpdatePass
     {
         UpdatePass_PreSim, //0x0000
@@ -6676,7 +6676,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00226
-    // TypeInfo:  0x02BE54B4
+    // TypeInfo: 0x02BE54B4
     enum EntityInitPass
     {
         EntityInitPass_Early, //0x0000
@@ -6686,7 +6686,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00224
-    // TypeInfo:  0x02BE54A4
+    // TypeInfo: 0x02BE54A4
     enum EntityCreatorType
     {
         EntityCreatorType_Unknown, //0x0000
@@ -6698,7 +6698,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00220
-    // TypeInfo:  0x02BE5468
+    // TypeInfo: 0x02BE5468
     enum IndexInBlueprint
     {
         IndexInBlueprint_HighestIndex, //0x0000
@@ -6707,7 +6707,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00218
-    // TypeInfo:  0x02BE5458
+    // TypeInfo: 0x02BE5458
     enum SubRealm
     {
         SubRealm_All, //0x0000
@@ -6717,7 +6717,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00216
-    // TypeInfo:  0x02BE5448
+    // TypeInfo: 0x02BE5448
     enum Realm
     {
         Realm_Client, //0x0000
@@ -6729,7 +6729,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00208
-    // TypeInfo:  0x02BE53B4
+    // TypeInfo: 0x02BE53B4
     enum StreamRealm
     {
         StreamRealm_None, //0x0000
@@ -6739,7 +6739,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00180
-    // TypeInfo:  0x02BE51BC
+    // TypeInfo: 0x02BE51BC
     enum EventConnectionTargetType
     {
         EventConnectionTargetType_Invalid, //0x0000
@@ -6752,7 +6752,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00153
-    // TypeInfo:  0x02BE358C
+    // TypeInfo: 0x02BE358C
     enum WaypointVaultType
     {
         WaypointVaultType_VaultOverHigh, //0x0000
@@ -6767,7 +6767,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00137
-    // TypeInfo:  0x02BE3464
+    // TypeInfo: 0x02BE3464
     enum AntPackagingType
     {
         AntPackagingType_Static, //0x0000
@@ -6778,7 +6778,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00124
-    // TypeInfo:  0x02BE2FF0
+    // TypeInfo: 0x02BE2FF0
     enum ResourceBundleKind
     {
         ResourceBundleKind_AlwaysLoaded, //0x0000
@@ -6790,7 +6790,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00114
-    // TypeInfo:  0x02BE2F4C
+    // TypeInfo: 0x02BE2F4C
     enum FieldAccessType
     {
         FieldAccessType_Source, //0x0000
@@ -6800,7 +6800,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00108
-    // TypeInfo:  0x02BE2F1C
+    // TypeInfo: 0x02BE2F1C
     enum LanguageFormat
     {
         LanguageFormat_English, //0x0000
@@ -6822,7 +6822,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00067
-    // TypeInfo:  0x02BE27F4
+    // TypeInfo: 0x02BE27F4
     enum BugSubmitTool
     {
         BST_None, //0x0000
@@ -6832,7 +6832,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00065
-    // TypeInfo:  0x02BE27E4
+    // TypeInfo: 0x02BE27E4
     enum HardwareProfile
     {
         Hardware_Autodetect, //0x0000
@@ -6844,7 +6844,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00063
-    // TypeInfo:  0x02BE27D4
+    // TypeInfo: 0x02BE27D4
     enum JuiceUserType
     {
         jutDev, //0x0000
@@ -6856,7 +6856,7 @@ namespace fb
 
     ////////////////////////////////////////
     // RuntimeId: 00061
-    // TypeInfo:  0x02BE27C4
+    // TypeInfo: 0x02BE27C4
     enum CoreLogLevel
     {
         CllNone, //0x0000

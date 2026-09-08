@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <string>
 #include <unordered_set>
@@ -63,6 +63,16 @@ enum ComponentBit : uint32_t
     Comp_DynamicEnvmap = 1 << 17,
     Comp_CharacterLighting = 1 << 18,
     Comp_MotionBlur = 1 << 19,
+};
+
+struct MeshVariationRef
+{
+    uint64_t key = 0;
+    std::string name;
+
+    void* asset = nullptr;
+
+    bool operator==(const MeshVariationRef& o) const { return key == o.key && name == o.name; }
 };
 
 struct LightDataEntry
@@ -132,6 +142,43 @@ struct LightDataEntry
     unsigned int translucencyPower = 0;
     float translucencyDistortion = 0.f;
 
+    std::vector<MeshVariationRef> lampMeshes;
+
+    std::vector<void*> lampFlares;
+
+    struct FlareShaderEdit
+    {
+        uint32_t element = 0;
+        std::string shader; // full path, e.g. FX/Lensflare/Shaders/LF_Blue_HaloGlow
+    };
+    std::vector<FlareShaderEdit> flareShaders;
+
+    bool flareShadersApplied = false;
+
+    struct FlareFieldEdit
+    {
+        uint32_t element = 0;
+        uint32_t offset = 0;
+        uint8_t count = 1;
+        float value[4] = { 0, 0, 0, 0 };
+    };
+    std::vector<FlareFieldEdit> flareFields;
+    bool flareFieldsApplied = false;
+
+    struct ShaderDriverEdit
+    {
+        uint32_t handle = 0;
+        float value[4] = { 0, 0, 0, 0 };
+    };
+    std::vector<ShaderDriverEdit> shaderDrivers;
+    bool shaderDriversApplied = false;
+
+    std::vector<void*> lampMeshObjects;
+
+    std::vector<void*> lampShaderParams;
+
+    std::vector<std::string> lampEffects;
+
     std::unordered_set<fb::LocalLightEntity*> activeEntities;
 
     size_t ActiveCount() const { return activeEntities.size(); }
@@ -168,66 +215,52 @@ struct LightDataEntry
     }
 };
 
-// X-macro for all Visual Environment components. Define once, use everywhere.
-//
-// Each entry is X(Type, field) where:
-//   Type  - PascalCase, used for type names and suffixes (fb::TypeComponentData, has##Type, orig##Type, edit##Type)
-//   field - camelCase, used for struct members and function names (state->field, copy::field())
-//
-// To use, define a macro taking (Type, field), invoke VE_COMPONENTS with it, then undef:
-//
-//   #define COPY_ALL(Type, field) copy::field(&data.orig##Type, &ve->field);
-//   VE_COMPONENTS(COPY_ALL)
-//   #undef COPY_ALL
-//
-// This expands to copy::outdoorLight(&data.origOutdoorLight, &ve->outdoorLight); for each component.
-// Adding a new component here automatically updates all places that use the macro.
 #if defined(BFVE_GAME_BF4)
 #define VE_COMPONENTS(X) \
-    X(OutdoorLight,        outdoorLight) \
-    X(Enlighten,           enlighten) \
-    X(Tonemap,             tonemap) \
-    X(ColorCorrection,     colorCorrection) \
-    X(Sky,                 sky) \
-    X(Fog,                 fog) \
-    X(Wind,                wind) \
-    X(SunFlare,            sunFlare) \
-    X(DynamicAO,           dynamicAO) \
-    X(Dof,                 dof) \
-    X(Vignette,            vignette) \
-    X(FilmGrain,           filmGrain) \
-    X(LensScope,           lensScope) \
-    X(CameraParams,        cameraParams) \
-    X(ScreenEffect,        screenEffect) \
-    X(DamageEffect,        damageEffect) \
-    X(PlanarReflection,    planarReflection) \
-    X(DynamicEnvmap,       dynamicEnvmap) \
-    X(CharacterLighting,   characterLighting) \
-    X(VehicleLighting,     vehicleLighting) \
+    X(OutdoorLight, outdoorLight) \
+    X(Enlighten, enlighten) \
+    X(Tonemap, tonemap) \
+    X(ColorCorrection, colorCorrection) \
+    X(Sky, sky) \
+    X(Fog, fog) \
+    X(Wind, wind) \
+    X(SunFlare, sunFlare) \
+    X(DynamicAO, dynamicAO) \
+    X(Dof, dof) \
+    X(Vignette, vignette) \
+    X(FilmGrain, filmGrain) \
+    X(LensScope, lensScope) \
+    X(CameraParams, cameraParams) \
+    X(ScreenEffect, screenEffect) \
+    X(DamageEffect, damageEffect) \
+    X(PlanarReflection, planarReflection) \
+    X(DynamicEnvmap, dynamicEnvmap) \
+    X(CharacterLighting, characterLighting) \
+    X(VehicleLighting, vehicleLighting) \
     X(SubSurfaceScattering, subSurfaceScattering) \
-    X(MotionBlur,          motionBlur)
+    X(MotionBlur, motionBlur)
 #else
 #define VE_COMPONENTS(X) \
-    X(OutdoorLight,      outdoorLight) \
-    X(Enlighten,         enlighten) \
-    X(Tonemap,           tonemap) \
-    X(ColorCorrection,   colorCorrection) \
-    X(Sky,               sky) \
-    X(Fog,               fog) \
-    X(Wind,              wind) \
-    X(SunFlare,          sunFlare) \
-    X(DynamicAO,         dynamicAO) \
-    X(Dof,               dof) \
-    X(Vignette,          vignette) \
-    X(FilmGrain,         filmGrain) \
-    X(LensScope,         lensScope) \
-    X(CameraParams,      cameraParams) \
-    X(ScreenEffect,      screenEffect) \
-    X(DamageEffect,      damageEffect) \
-    X(PlanarReflection,  planarReflection) \
-    X(DynamicEnvmap,     dynamicEnvmap) \
+    X(OutdoorLight, outdoorLight) \
+    X(Enlighten, enlighten) \
+    X(Tonemap, tonemap) \
+    X(ColorCorrection, colorCorrection) \
+    X(Sky, sky) \
+    X(Fog, fog) \
+    X(Wind, wind) \
+    X(SunFlare, sunFlare) \
+    X(DynamicAO, dynamicAO) \
+    X(Dof, dof) \
+    X(Vignette, vignette) \
+    X(FilmGrain, filmGrain) \
+    X(LensScope, lensScope) \
+    X(CameraParams, cameraParams) \
+    X(ScreenEffect, screenEffect) \
+    X(DamageEffect, damageEffect) \
+    X(PlanarReflection, planarReflection) \
+    X(DynamicEnvmap, dynamicEnvmap) \
     X(CharacterLighting, characterLighting) \
-    X(MotionBlur,        motionBlur)
+    X(MotionBlur, motionBlur)
 #endif
 
 struct StateEditData
@@ -309,12 +342,6 @@ struct GlobalVEData
     }
 };
 
-// Per-game snapshot of an EmitterTemplateData. Fields shared by BF3 and BF4
-// are unconditional; per-game fields live under their respective #if so we
-// don't carry dead state for the other game. BF4 dropped the PointLight*
-// family entirely along with VisibleAfterDistance / ActAsPointLight; BF4
-// equivalents (per-particle effect parameters, motion stretch, etc.) live
-// in nested processor structs the editor doesn't yet expose.
 struct EmitterSnapshot
 {
     // Common to both games.
@@ -335,29 +362,29 @@ struct EmitterSnapshot
     float maxSpawnDistance;
     float minScreenArea;
     float particleCullingFactor;
-    bool  followSpawnSource;
-    bool  repeatParticleSpawning;
-    bool  emissive;
-    bool  exclusionVolumeCullEnable;
-    bool  transparencySunShadowEnable;
-    bool  forceFullRes;
-    bool  localSpace;
-    bool  opaque;
-    bool  killParticlesWithEmitter;
-    bool  forceNiceSorting;
+    bool followSpawnSource;
+    bool repeatParticleSpawning;
+    bool emissive;
+    bool exclusionVolumeCullEnable;
+    bool transparencySunShadowEnable;
+    bool forceFullRes;
+    bool localSpace;
+    bool opaque;
+    bool killParticlesWithEmitter;
+    bool forceNiceSorting;
 
 #if defined(BFVE_GAME_BF3)
     // BF3-only: emitter can act as a point light directly.
     fb::Vec4 pointLightIntensity;
     fb::Vec3 pointLightPivot;
     fb::Vec3 pointLightColor;
-    float    pointLightRadius;
-    float    pointLightRandomIntensityMin;
-    float    pointLightRandomIntensityMax;
-    float    pointLightMaxClamp;
-    float    pointLightMinClamp;
-    float    visibleAfterDistance;
-    bool     actAsPointLight;
+    float pointLightRadius;
+    float pointLightRandomIntensityMin;
+    float pointLightRandomIntensityMax;
+    float pointLightMaxClamp;
+    float pointLightMinClamp;
+    float visibleAfterDistance;
+    bool actAsPointLight;
 #endif
 
     void captureFrom(const fb::EmitterTemplateData* d);
@@ -393,7 +420,7 @@ struct EmitterProcNode
     std::vector<uint8_t> procBytes; // processor value region [0x20, totalSize)
     bool hasPre = false;
     uint32_t preClassId = 0;
-    std::vector<uint8_t> preBytes;  // evaluator value region [0x18, totalSize)
+    std::vector<uint8_t> preBytes; // evaluator value region [0x18, totalSize)
 };
 
 struct EmitterProcSnapshot

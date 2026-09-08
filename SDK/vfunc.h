@@ -38,5 +38,5 @@ type name args { \
 //#define VFUNC_VA_ARGS(type, name, index, ...) \
 //template <typename... Args_t> \
 //type name(Args_t&&... args) { \
-//    return vfunc::callVPack<type, index, Args...>(this, std::forward<Args>(args)...); \
+// return vfunc::callVPack<type, index, Args...>(this, std::forward<Args>(args)...); \
 //}

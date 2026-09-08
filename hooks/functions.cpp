@@ -1,12 +1,23 @@
-﻿#include "functions.h"
+#include "functions.h"
+#include "../editor/textures/texgen.h"
+#include "../editor/textures/surfacepick.h"
+#include "../editor/textures/textures.h"
+#include "../editor/camera/camera.h"
+
 
 #include "../SDK/fb.h"
 
 #include <iostream>
 #include <algorithm>
+#include <cstring>
+#include <unordered_set>
+#include <cstdio>
+#include <filesystem>
 #include "../editor/editor.h"
+#include "../editor/editor_context.h"
 #include "../utils/log.h"
 #include "../editor/emitters/emitters.h"
+#include "../editor/lights/lights.h"
 
 LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -28,12 +39,24 @@ int __fastcall hkfb__VisualEnvironmentManager__update(fb::VisualEnvironmentManag
     return ret;
 }
 
-//void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDatabasePartition* _this, void* edx)
-//{
-//    //printf("Ret addr %p\n", _ReturnAddress());
-//
-//    ofb__InternalDatabasePartition_onPartitonLoaded(_this);
-//}
+void __fastcall hkfb__GameRenderer__createUpdateJob(void* _this, void*, float simDt, float wallDt, fb::GameRenderViewParams* params, void* outSync, void* outRoot)
+{
+    editor::camera::onRenderViewParams(params ? &params->view : nullptr);
+
+    ofb__GameRenderer__createUpdateJob(_this, simDt, wallDt, params, outSync, outRoot);
+}
+
+void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDatabasePartition* _this, void* edx)
+{
+    editor::lights::onPartitionLoaded(_this);
+    ofb__InternalDatabasePartition_onPartitonLoaded(_this);
+}
+
+void __fastcall hkfb__ClientGameContext__unloadLevel(void* _this, void*)
+{
+    editor::onLevelUnloadBegin();
+    ofb__ClientGameContext__unloadLevel(_this);
+}
 
 void __fastcall hkfb__MessageManager__dispatchMessage(int pMessageManager, void* edx, fb::Message* pMessage)
 {
@@ -45,16 +68,79 @@ void __fastcall hkfb__MessageManager__dispatchMessage(int pMessageManager, void*
     ofb__MessageManager__dispatchMessage(pMessageManager, pMessage);
 }
 
-//fb::EntityBusPeer* __cdecl hkfb__ClientEntityFactory__internalCreateEntity(fb::ClientEntityFactoryParams* params, fb::DataContext* dc)
-//{
-//    return ofb__ClientEntityFactory__internalCreateEntity(params, dc);
-//}
-
 int __fastcall hkfb__LocalLightEntity__LocalLightEntity(fb::LocalLightEntity* _this, void*, void* info, fb::LocalLightEntityData* data, int lightType)
 {
     int result = ofb__LocalLightEntity__LocalLightEntity(_this, info, data, lightType);
     editor::onLightEntityCreated(_this, data);
     return result;
+}
+
+int __fastcall hkfb__LensFlareEntity__buildShaders(fb::LensFlareEntity* _this, void*, void* data)
+{
+    const int result = ofb__LensFlareEntity__buildShaders(_this, data);
+
+    if (editor::lights::hasFlareShaderClaims())
+        editor::lights::applyFlareShaderClaims(_this);
+
+    return result;
+}
+
+void __fastcall hkfb__DxTexture__releaseGpu(fb::DxTexture* _this, void*)
+{
+    editor::textures::gen::onEngineReleasingViews(_this);
+    ofb__DxTexture__releaseGpu(_this);
+}
+
+fb::DxTexture* __cdecl hkfb__DxTexture__create(void* arena, fb::DxTextureCreateDesc* desc)
+{
+    fb::DxTexture* const inPlace = desc->m_rebuildInPlace ? desc->m_target : nullptr;
+    const bool edited = inPlace && editor::textures::gen::hasOverride(inPlace);
+    fb::DxTexture* const tex = ofb__DxTexture__create(arena, desc);
+    if (tex)
+        editor::textures::gen::onEngineCreatedViews(tex);
+    if (edited && tex)
+    {
+        static uint32_t n = 0;
+        if (++n <= 16 || (n % 64) == 0)
+            logger::info("[texgen] create in place {}: {}x{} mips {} ({} total)", static_cast<const void*>(tex), tex->m_width, tex->m_height, tex->m_mipmapCount, n);
+    }
+    return tex;
+}
+
+void __fastcall hkfb__DxTexture__reassign(fb::DxTexture* _this, void*, fb::DxTexture* source)
+{
+    const bool edited = editor::textures::gen::hasOverride(_this);
+    const uint32_t mipsBefore = _this->m_mipmapCount, widthBefore = _this->m_width;
+    editor::textures::gen::onEngineReleasingViews(_this);
+    ofb__DxTexture__reassign(_this, source);
+    editor::textures::gen::onEngineCreatedViews(_this);
+    if (edited)
+    {
+        static uint32_t n = 0;
+        if (++n <= 16 || (n % 64) == 0)
+            logger::info("[texgen] reassign {}: {}x mips {} -> {}x mips {} ({} total)", static_cast<const void*>(_this),
+                         widthBefore, mipsBefore, _this->m_width, _this->m_mipmapCount, n);
+    }
+}
+
+void __fastcall hkfb__ClientCameraManager__getTransform(void* _this, void*, fb::LinearTransform* out)
+{
+    ofb__ClientCameraManager__getTransform(_this, out);
+    editor::camera::onGameCameraTransform(out, 0);
+}
+
+void __fastcall hkfb__ShaderParameterBlock__setVector(void* block, void*, unsigned int index, int handle, const void* value)
+{
+    alignas(16) float claimed[4];
+
+    if (editor::lights::shaderParamOverride(uint32_t(handle), claimed) ||
+        editor::textures::heldVecParam(block, uint32_t(handle), claimed))
+    {
+        ofb__ShaderParameterBlock__setVector(block, index, handle, claimed);
+        return;
+    }
+
+    ofb__ShaderParameterBlock__setVector(block, index, handle, value);
 }
 
 void __fastcall hkLocalLightEntityDestr(fb::LocalLightEntity* _this, void*)
@@ -100,6 +186,7 @@ void __fastcall hkfb__EmitterTemplate__EmitterTemplate(void* _this, void*, fb::E
 void* __fastcall hkfb__ClientEmitterEntity__ctor(void* _this, void*, void* a2, void* a3, fb::EmitterEntityData* data)
 {
     void* ret = ofb__ClientEmitterEntity__ctor(_this, a2, a3, data);
+    std::lock_guard<std::recursive_mutex> guard(editor::lock());
     editor::emitters::onEmitterEntityCreated(data, _this);
     return ret;
 }
@@ -113,38 +200,14 @@ fb::EmitterTemplate* __fastcall hkfb__EmitterManager__createEmitterTemplate(void
     return emitter;
 }
 
-//int __fastcall hksub_17B0180(fb::EnlightenRenderer* _this, void*, int a2, __m128** a3, int a4, int a5)
-//{
-//    //_this->state = 0;
-//    return osub_17B0180(_this, a2, a3, a4, a5);
-//}
-//
-//__m128* __fastcall hksub_17A4E90(
-//    fb::EnlightenRenderer* a1,
-//    void*,
-//    fb::Vec3* sky,
-//    fb::Vec3* ground,
-//    fb::Vec3* sunlight,
-//    fb::Vec3 sunLightDir,
-//    float sunSize,
-//    fb::Vec3* backLightColor,
-//    float backLightRotationX,
-//    float backLightRotationY,
-//    float backLightSize,
-//    unsigned int skyBoxScale,
-//    __m128* outSkyBox)
-//{
-//    printf("calling compute skybox\n");
-//
-//    return osub_17A4E90(a1, sky, ground, sunlight, sunLightDir, sunSize, backLightColor, backLightRotationX, backLightRotationY, backLightSize, skyBoxScale, outSkyBox);
-//}
-#endif // BFVE_GAME_BF3
+#endif
 
 void InitImGui(IDXGISwapChain* pSwapChain)
 {
     if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&g_pDevice)))
     {
         g_pDevice->GetImmediateContext(&g_pContext);
+        editor::textures::pick::init(g_pDevice, g_pContext);
 
         DXGI_SWAP_CHAIN_DESC sd;
         pSwapChain->GetDesc(&sd);
@@ -194,6 +257,13 @@ HRESULT WINAPI hkD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UIN
         InitImGui(pSwapChain);
     }
 
+    if (g_ImGuiInitialized && ImGui::GetCurrentContext())
+    {
+        const ImVec2 d = ImGui::GetIO().DisplaySize;
+        editor::textures::pick::onPresent(int(d.x * 0.5f), int(d.y * 0.5f), int(d.x), int(d.y));
+    }
+    if (!g_ImGuiInitialized)
+        return oD3D11Present(pSwapChain, SyncInterval, Flags);
     RenderImGui();
 
     return oD3D11Present(pSwapChain, SyncInterval, Flags);
@@ -201,6 +271,25 @@ HRESULT WINAPI hkD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UIN
 
 LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
+    if (msg == WM_INPUT)
+    {
+        RAWINPUT ri{};
+        UINT size = sizeof(ri);
+        if (GetRawInputData(reinterpret_cast<HRAWINPUT>(lParam), RID_INPUT, &ri, &size,
+                            sizeof(RAWINPUTHEADER)) != UINT(-1) &&
+            ri.header.dwType == RIM_TYPEMOUSE &&
+            (ri.data.mouse.usFlags & MOUSE_MOVE_ABSOLUTE) == 0)
+        {
+            editor::camera::onRawMouse(ri.data.mouse.lLastX, ri.data.mouse.lLastY);
+        }
+    }
+
+    if (msg == WM_SETCURSOR && editor::camera::hidesCursor())
+    {
+        SetCursor(nullptr);
+        return TRUE;
+    }
+
     if (msg == WM_KEYDOWN && wParam == VK_INSERT)
     {
         bool& enabled = editor::isEnabled();
@@ -242,7 +331,7 @@ LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 struct ImGui_ImplDX11_Data
 {
     ID3D11Device* pd3dDevice;
-};
+}; //Size=0x0100
 
 static ImGui_ImplDX11_Data* ImGui_ImplDX11_GetBackendData()
 {
@@ -309,6 +398,22 @@ void hkBf4_VisualEnvironment_operator(fb::VisualEnvironment* _this, fb::VisualEn
     oBf4_VisualEnvironment_operator(_this, _that);
 }
 
+void hkBf4_GameRenderer_createUpdateJob(void* _this, float simDt, float wallDt, uint32_t viewCount, fb::GameRenderViewParams* params, void* outSync, void* outRoot)
+{
+    editor::camera::onRenderViewParams(params && viewCount ? &params->view : nullptr);
+
+    oBf4_GameRenderer_createUpdateJob(_this, simDt, wallDt, viewCount, params, outSync, outRoot);
+}
+
+__int64 hkBf4_ClientCameraManager_getTransform(void* _this, fb::LinearTransform* out, int viewIndex)
+{
+    const __int64 result = oBf4_ClientCameraManager_getTransform(_this, out, viewIndex);
+
+    editor::camera::onGameCameraTransform(out, viewIndex);
+
+    return result;
+}
+
 void hkBf4_MessageManager_dispatch(void* pMessageManager, fb::Message* pMessage)
 {
     if (pMessage)
@@ -337,10 +442,58 @@ void* hkBf4_LocalLightEntity_ctor(fb::LocalLightEntity* _this, void* a2, fb::Loc
     return ret;
 }
 
+void hkBf4_DxTexture_releaseGpu(fb::DxTexture* texture)
+{
+    editor::textures::gen::onEngineReleasingViews(texture);
+    oBf4_DxTexture_releaseGpu(texture);
+}
+
+fb::DxTexture* hkBf4_DxTexture_create(void* arena, void* desc)
+{
+    fb::DxTexture* tex = oBf4_DxTexture_create(arena, desc);
+    editor::textures::gen::onEngineCreatedViews(tex);
+    return tex;
+}
+
+void hkBf4_DxTexture_assign(fb::DxTexture* dst, fb::DxTexture* src)
+{
+    editor::textures::gen::onEngineReleasingViews(dst);
+    oBf4_DxTexture_assign(dst, src);
+    editor::textures::gen::onEngineCreatedViews(dst);
+}
+
+__int64 hkBf4_LensFlareEntity_buildShaders(__int64 entity, __int64 a2)
+{
+    const __int64 result = oBf4_LensFlareEntity_buildShaders(entity, a2);
+
+    if (editor::lights::hasFlareShaderClaims())
+        editor::lights::applyFlareShaderClaims(reinterpret_cast<void*>(entity));
+
+    return result;
+}
+
+__int64 hkBf4_ShaderParamBlock_set(__int64 block, unsigned int index, int handle,
+                                   void* value)
+{
+    alignas(16) float claimed[4];
+
+    if (editor::lights::shaderParamOverride(uint32_t(handle), claimed) ||
+        editor::textures::heldVecParam(reinterpret_cast<const void*>(block), uint32_t(handle), claimed))
+        return oBf4_ShaderParamBlock_set(block, index, handle, claimed);
+
+    return oBf4_ShaderParamBlock_set(block, index, handle, value);
+}
+
 void hkBf4_LocalLightEntity_dtor(fb::LocalLightEntity* _this)
 {
     editor::onLightEntityDestroyed(_this);
     oBf4_LocalLightEntity_dtor(_this);
+}
+
+__int64 hkBf4_ClientGameContext_unloadLevel(void* _this)
+{
+    editor::onLevelUnloadBegin();
+    return oBf4_ClientGameContext_unloadLevel(_this);
 }
 
 void* hkBf4_EmitterEntity_ctor(
@@ -348,8 +501,7 @@ void* hkBf4_EmitterEntity_ctor(
 {
     void* ret = oBf4_EmitterEntity_ctor(_this, a2, data);
 
-    //logger::info("ADD EMITTER");
-
+    std::lock_guard<std::recursive_mutex> guard(editor::lock());
     editor::emitters::onEmitterEntityCreatedBF4(data, _this);
     return ret;
 }
@@ -364,4 +516,4 @@ uint_fast32_t hkplayeff(fb::EffectManager* effectManager, fb::Asset* asset, fb::
     return handle;
 }
 
-#endif // BFVE_GAME_BF4
+#endif

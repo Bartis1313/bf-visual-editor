@@ -31,6 +31,10 @@ namespace editor
     fb::VisualEnvironmentManager* getManager();
     fb::WorldRenderSettings* getWorldRenderSettings();
     std::string getConfigDir();
+
+    std::string getEditorRoot();
+    std::string getDumpsDir();
+    std::string getTexturesDir(); // imported replacement images the configs refer to by name
     std::string getConfigPath(const std::string& mapName);
     std::string sanitizeMapName(const std::string& mapName);
     std::vector<std::string> getAvailableConfigs();

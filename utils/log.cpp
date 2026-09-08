@@ -3,6 +3,8 @@
 #include <chrono>
 #include <mutex>
 #include <vector>
+#include <cstdio>
+#include <share.h>
 #include <magic_enum/magic_enum.hpp>
 
 namespace logger
@@ -11,7 +13,7 @@ namespace logger
     std::mutex mutex;
     bool scrollToBottom = false;
     char filterText[128] = "";
-    int levelFilter = 0;
+    int levelFilter = Level_Info;
     std::string textBuffer;
 
     static const char* getLevelName(Level level)
@@ -23,11 +25,11 @@ namespace logger
     {
         switch (level)
         {
-        case Level_Debug:   return { 0.6f, 0.6f, 0.6f, 1.0f };
-        case Level_Info:    return { 1.0f, 1.0f, 1.0f, 1.0f };
+        case Level_Debug: return { 0.6f, 0.6f, 0.6f, 1.0f };
+        case Level_Info: return { 1.0f, 1.0f, 1.0f, 1.0f };
         case Level_Warning: return { 1.0f, 0.8f, 0.2f, 1.0f };
-        case Level_Error:   return { 1.0f, 0.3f, 0.3f, 1.0f };
-        default:            return { 1.0f, 1.0f, 1.0f, 1.0f };
+        case Level_Error: return { 1.0f, 0.3f, 0.3f, 1.0f };
+        default: return { 1.0f, 1.0f, 1.0f, 1.0f };
         }
     }
 
@@ -81,6 +83,18 @@ namespace logger
         return result;
     }
 
+    static FILE* file = nullptr;
+
+    void setFile(const std::string& path)
+    {
+        std::lock_guard lock(mutex);
+        if (file)
+            std::fclose(file);
+        file = nullptr;
+        if (!path.empty())
+            file = _fsopen(path.c_str(), "w", _SH_DENYNO);
+    }
+
     void addEntry(Level level, std::string message)
     {
         if (level < minLevel)
@@ -89,6 +103,11 @@ namespace logger
         std::puts(message.c_str());
 
         std::lock_guard lock(mutex);
+        if (file)
+        {
+            std::fprintf(file, "[%s] [%s] %s\n", getTimestamp().c_str(), getLevelName(level), message.c_str());
+            std::fflush(file);
+        }
 
         if (collapseDuplicates && !entries.empty())
         {
@@ -144,6 +163,7 @@ namespace logger
                 ImGui::RadioButton("Info", reinterpret_cast<int*>(&minLevel), Level_Info);
                 ImGui::RadioButton("Warning", reinterpret_cast<int*>(&minLevel), Level_Warning);
                 ImGui::RadioButton("Error", reinterpret_cast<int*>(&minLevel), Level_Error);
+
                 ImGui::EndMenu();
             }
             if (ImGui::SmallButton("Clear"))
@@ -173,7 +193,7 @@ namespace logger
             }
             ImGui::EndCombo();
         }
-       
+
         ImGui::SameLine();
 
         std::lock_guard lock(mutex);

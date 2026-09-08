@@ -27,9 +27,10 @@ namespace logger
     inline bool collapseDuplicates = true;
     inline bool textMode = false;
     inline size_t maxEntries = 1000;
-    inline Level minLevel = Level_Info;
+    inline Level minLevel = Level_Debug;
 
     void addEntry(Level level, std::string message);
+    void setFile(const std::string& path);
     void clear();
     void render(const char* title = "Console", bool* open = nullptr);
 

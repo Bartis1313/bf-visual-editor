@@ -1,4 +1,4 @@
-﻿#include "editor.h"
+#include "editor.h"
 #include "editor_context.h"
 #include "states/states.h"
 #include "lights/lights.h"
@@ -6,13 +6,17 @@
 #include "effects/effects.h"
 #include "global_ve/global_ve.h"
 #include "world_render/world_render.h"
+#include "textures/textures.h"
 #include "config/config.h"
 #include "ui/ui_helpers.h"
+#include "ui/file_dialog.h"
+#include "camera/camera.h"
 #include "../utils/log.h"
 #include "render/render.h"
 
 #include <imgui.h>
 #include <filesystem>
+#include <mutex>
 
 namespace fs = std::filesystem;
 
@@ -20,13 +24,25 @@ namespace editor
 {
     bool showConsole = false;
 
+    // Present thread (render), VE update thread, level and entity hooks all take it.
+    static std::recursive_mutex g_lock;
+    using Lock = std::lock_guard<std::recursive_mutex>;
+
+    std::recursive_mutex& lock()
+    {
+        return g_lock;
+    }
+
+    // Set at unload begin; recovery from Unloading waits for a different level name.
+    static std::string unloadingMap;
+
     void init()
     {
         try
         {
-            fs::path configPath = fs::path(getConfigDir()) / "VisEnvEditor";
-            if (!fs::exists(configPath))
-                fs::create_directories(configPath);
+            fs::create_directories(fs::path(getEditorRoot()));
+            fs::create_directories(fs::path(getDumpsDir()));
+            logger::setFile(getEditorRoot() + "/log.txt");
         }
         catch (const fs::filesystem_error& err)
         {
@@ -39,6 +55,7 @@ namespace editor
         effects::init();
         global_ve::init();
         world_render::init();
+        textures::init();
         config::init();
     }
 
@@ -50,12 +67,32 @@ namespace editor
         effects::shutdown();
         global_ve::shutdown();
         world_render::shutdown();
+        textures::shutdown();
         config::shutdown();
+
+        // GPU textures we made for previews, which nothing else owns.
+        ui::filedlg::releasePreviews();
     }
 
     bool& isEnabled()
     {
         return enabled;
+    }
+
+    static bool g_levelScanPending = false;
+
+    static bool resourcesSettled()
+    {
+        static uint32_t settled = 0;
+        fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
+        if (!rm || rm->m_bundleLoadInProgress)
+        {
+            settled = 0;
+            return false;
+        }
+        if (settled < 1000)
+            ++settled;
+        return settled > 30;
     }
 
     static void onLevelLoaded()
@@ -73,7 +110,7 @@ namespace editor
         global_ve::clear();
         world_render::clear();
 
-        lights::scanAll();
+        g_levelScanPending = true;
 
         if (autoLoadConfigs && !currentMap.empty())
         {
@@ -88,10 +125,15 @@ namespace editor
         setEditorState(EditorState::Ready);
     }
 
-    static void onLevelUnloading()
+    void onLevelUnloadBegin()
     {
+        Lock guard(g_lock);
+        if (levelUnloadingSignaled)
+            return;
+
         logger::info("OnLevelUnloading - Map: {}", capturedMapName.c_str());
 
+        unloadingMap = getCurrentMapName();
         levelUnloadingSignaled = true;
         safeToOperate = false;
 
@@ -106,6 +148,7 @@ namespace editor
         emitters::clear();
         global_ve::clear();
         effects::stopAll();
+        textures::clear();
 
         setEditorState(EditorState::Unloading);
     }
@@ -116,7 +159,7 @@ namespace editor
             return;
 
         std::string currentMap = getCurrentMapName();
-        if (currentMap.empty())
+        if (currentMap.empty() || currentMap == unloadingMap)
             return;
 
         logger::debug("Recovering from Unloading state, map: {}", currentMap.c_str());
@@ -157,7 +200,7 @@ namespace editor
         lights::scanAll();
         lights::scanExistingEntities();
         emitters::scan();
-        effects::scanAssets();        
+        effects::scanAssets();
         world_render::capture();
 
         setEditorState(EditorState::Active);
@@ -175,6 +218,7 @@ namespace editor
     {
         if (!manager)
             return;
+        Lock guard(g_lock);
 
         if (detectedMapChange())
         {
@@ -189,6 +233,21 @@ namespace editor
             setEditorState(EditorState::Ready);
 
         states::syncWithManager(manager);
+
+        // Not gated on resourcesSettled(): bundle loads never stop while the player moves.
+        const bool levelStable = editorState != EditorState::Unloading;
+        if (levelStable)
+        {
+            lights::tickAimRay(); // physics query: update thread
+            textures::tickGameThread();
+        }
+        if (levelStable && render::backend == render::Backend::Engine && ImGui::GetCurrentContext())
+        {
+            // DebugRenderer queues are per thread
+            lights::renderOverlay();
+            emitters::renderOverlay();
+            effects::renderOverlay();
+        }
 
         if (!hasCapturedOriginals)
         {
@@ -228,6 +287,7 @@ namespace editor
     {
         if (!manager)
             return;
+        Lock guard(g_lock);
 
         if (editorState == EditorState::Unloading || levelUnloadingSignaled)
         {
@@ -246,11 +306,41 @@ namespace editor
 
         states::syncWithManager(manager);
 
+        const bool settled = resourcesSettled();
+        const bool levelStable = editorState != EditorState::Unloading;
+        if (levelStable)
+        {
+            lights::tickAimRay();
+            textures::tickGameThread();
+        }
+        if (levelStable && render::backend == render::Backend::Engine && ImGui::GetCurrentContext())
+        {
+            // DebugRenderer2 queues are per thread
+            lights::renderOverlay();
+            emitters::renderOverlay();
+            effects::renderOverlay();
+        }
+        if (g_levelScanPending && settled)
+        {
+            g_levelScanPending = false;
+            lights::scanAll();
+            if (textures::autoScan)
+                textures::requestRescan();
+        }
+
         if (!hasCapturedOriginals)
         {
-            tryInitialCapture();
+            if (settled)
+                tryInitialCapture();
             return;
         }
+        // no light ctor hook on BF3: walk the entities every ~2 s so late ones are collected
+        static uint32_t lightWalkTick = 0;
+        if (levelStable && (++lightWalkTick % 120) == 0)
+            lights::refreshEntities();
+
+        if (settled)
+            lights::rescanIfResourcesGrew();
 
         states::refreshData();
     }
@@ -259,6 +349,7 @@ namespace editor
     {
         if (!manager || !overridesEnabled)
             return;
+        Lock guard(g_lock);
 
         auto& editList = states::getEditList();
         if (editList.empty())
@@ -319,8 +410,12 @@ namespace editor
 
     void onVisualEnvironmentUpdated(fb::VisualEnvironment* ve)
     {
+        Lock guard(g_lock);
         if (!ve || levelUnloadingSignaled || editorState == EditorState::Unloading)
             return;
+
+        // sky texture pointers are not carried by copy::sky
+        textures::applySkyOverrides(ve);
 
         if (!hasCapturedOriginals || !overridesEnabled)
             return;
@@ -330,45 +425,47 @@ namespace editor
 
     void onMessage(uint32_t category, uint32_t type)
     {
+        Lock guard(g_lock);
         if (category == "Client"_fbhash)
         {
             if (type == "ClientLevelUnloadedMessage"_fbhash)
             {
-                onLevelUnloading();
+                onLevelUnloadBegin();
             }
             else if (type == "ClientLevelLoadedMessage"_fbhash)
             {
                 onLevelLoaded();
             }
-            /*else if (type == "ClientEnteredIngameMessage"_fbhash)
-            {
-                world_render::Capture();
-            }*/
         }
     }
 
     void onVisualEnvironmentEntityCreated(fb::VisualEnvironmentEntity* entity, fb::VisualEnvironmentEntityData* data)
     {
+        Lock guard(g_lock);
         states::onEntityCreated(entity, data);
     }
 
     void onVisualEnvironmentEntityDestroyed(fb::VisualEnvironmentEntity* entity)
     {
+        Lock guard(g_lock);
         states::onEntityDestroyed(entity);
     }
 
     void onLightEntityCreated(fb::LocalLightEntity* entity, fb::LocalLightEntityData* data)
     {
+        Lock guard(g_lock);
         lights::onEntityCreated(entity, data);
     }
 
     void onLightEntityDestroyed(fb::LocalLightEntity* entity)
     {
+        Lock guard(g_lock);
         lights::onEntityDestroyed(entity);
     }
 
     void onEmitterCreated(fb::EmitterTemplate* emitter, fb::EmitterTemplateData* data)
     {
+        Lock guard(g_lock);
         emitters::onCreated(emitter, data);
     }
 
@@ -443,9 +540,9 @@ namespace editor
 
         switch (editorState)
         {
-        case EditorState::Idle:      stateStr = "IDLE";      stateColor = ImVec4{ 0.5f, 0.5f, 0.5f, 1.0f }; break;
-        case EditorState::Loading:   stateStr = "LOADING";   stateColor = ImVec4{ 1.0f, 1.0f, 0.2f, 1.0f }; break;
-        case EditorState::Ready:     stateStr = "READY";     stateColor = ImVec4{ 0.2f, 0.8f, 1.0f, 1.0f }; break;
+        case EditorState::Idle: stateStr = "IDLE"; stateColor = ImVec4{ 0.5f, 0.5f, 0.5f, 1.0f }; break;
+        case EditorState::Loading: stateStr = "LOADING"; stateColor = ImVec4{ 1.0f, 1.0f, 0.2f, 1.0f }; break;
+        case EditorState::Ready: stateStr = "READY"; stateColor = ImVec4{ 0.2f, 0.8f, 1.0f, 1.0f }; break;
         case EditorState::Active:
             stateStr = overridesEnabled ? "ACTIVE" : "PAUSED";
             stateColor = overridesEnabled ? ImVec4(0.2f, 1.0f, 0.4f, 1.0f) : ImVec4{ 1.0f, 0.8f, 0.2f, 1.0f };
@@ -515,7 +612,8 @@ namespace editor
                 ImGui::EndTabItem();
             }
 
-            if (ImGui::BeginTabItem("Emitters"))
+            if (ImGui::BeginTabItem("Emitters", nullptr,
+                    emitters::focusTab ? ImGuiTabItemFlags_SetSelected : 0))
             {
                 emitters::renderTab();
                 ImGui::EndTabItem();
@@ -533,6 +631,19 @@ namespace editor
                 ImGui::EndTabItem();
             }
 
+            if (ImGui::BeginTabItem("Textures", nullptr,
+                    textures::focusTab ? ImGuiTabItemFlags_SetSelected : 0))
+            {
+                textures::renderTab();
+                ImGui::EndTabItem();
+            }
+
+            if (ImGui::BeginTabItem("Camera"))
+            {
+                camera::renderTab();
+                ImGui::EndTabItem();
+            }
+
             if (ImGui::BeginTabItem("Config"))
             {
                 config::renderTab();
@@ -547,9 +658,21 @@ namespace editor
 
     void render()
     {
-        effects::renderOverlay();
-        lights::renderOverlay();
-        emitters::renderOverlay();
+        Lock guard(g_lock);
+        const bool levelStable = !levelUnloadingSignaled && editorState != EditorState::Unloading;
+        if (levelStable)
+        {
+            textures::tick();
+            lights::tick();
+            lights::tickGeometryCopies();
+        }
+
+        if (levelStable && render::backend == render::Backend::ImGui) // engine backend: drawn from the update thread
+        {
+            effects::renderOverlay();
+            lights::renderOverlay();
+            emitters::renderOverlay();
+        }
         render::ImNotify::handle();
 
         renderMenu();

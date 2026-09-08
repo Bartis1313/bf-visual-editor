@@ -81,7 +81,7 @@ namespace editor::config
             std::string safeName = sanitizeMapName(customConfigName);
             if (!safeName.empty())
             {
-                std::string fullPath = getConfigDir() + "/VisEnvEditor/" + safeName + ".json";
+                std::string fullPath = getEditorRoot() + "/" + safeName + ".json";
                 if (fs::exists(fullPath))
                 {
                     showSaveAsPopup = true;
@@ -107,7 +107,7 @@ namespace editor::config
             std::string safeName = sanitizeMapName(customConfigName);
             if (!safeName.empty())
             {
-                std::string fullPath = getConfigDir() + "/VisEnvEditor/" + safeName + ".json";
+                std::string fullPath = getEditorRoot() + "/" + safeName + ".json";
                 if (!fs::exists(fullPath))
                 {
                     render::ImNotify::add(NotifyType::Error, "Load Failed", std::format("'{}' not found", safeName));
@@ -136,7 +136,7 @@ namespace editor::config
             if (ImGui::Button("Overwrite", ImVec2{ 120, 0 }))
             {
                 std::string safeName = sanitizeMapName(customConfigName);
-                std::string fullPath = getConfigDir() + "/VisEnvEditor/" + safeName + ".json";
+                std::string fullPath = getEditorRoot() + "/" + safeName + ".json";
                 if (save(fullPath))
                 {
                     render::ImNotify::add(NotifyType::Success, "Config Saved", std::format("{} (overwritten)", safeName));
@@ -184,7 +184,7 @@ namespace editor::config
 
                     if (ImGui::IsMouseDoubleClicked(0))
                     {
-                        std::string fullPath = getConfigDir() + "/VisEnvEditor/" + configName + ".json";
+                        std::string fullPath = getEditorRoot() + "/" + configName + ".json";
                         load(fullPath);
                     }
                 }
@@ -196,7 +196,7 @@ namespace editor::config
                 {
                     if (ImGui::MenuItem("Load"))
                     {
-                        std::string fullPath = getConfigDir() + "/VisEnvEditor/" + configName + ".json";
+                        std::string fullPath = getEditorRoot() + "/" + configName + ".json";
                         load(fullPath);
                     }
 
@@ -251,7 +251,7 @@ namespace editor::config
 
             if (ImGui::Button("Delete", ImVec2{ 120, 0 }))
             {
-                std::string fullPath = getConfigDir() + "/VisEnvEditor/" + configToDelete + ".json";
+                std::string fullPath = getEditorRoot() + "/" + configToDelete + ".json";
                 std::error_code ec;
                 if (fs::remove(fullPath, ec))
                 {

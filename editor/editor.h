@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../SDK/fb.h"
+#include <mutex>
 
 namespace editor
 {
@@ -17,6 +18,8 @@ namespace editor
 
     void onVisualEnvironmentUpdated(fb::VisualEnvironment* ve);
     void onMessage(uint32_t category, uint32_t type);
+    void onLevelUnloadBegin();
+    std::recursive_mutex& lock();
 
     void onVisualEnvironmentEntityCreated(fb::VisualEnvironmentEntity* entity, fb::VisualEnvironmentEntityData* data);
     void onVisualEnvironmentEntityDestroyed(fb::VisualEnvironmentEntity* entity);

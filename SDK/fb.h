@@ -13,6 +13,7 @@
 #endif
 
 #if defined(BFVE_GAME_BF3)
+  #include "offsets.h"
   #include "sdk.h"
 #elif defined(BFVE_GAME_BF4)
   #include "sdkfb3.h"

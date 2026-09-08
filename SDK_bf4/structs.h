@@ -8,7 +8,7 @@ namespace fb
 
 ////////////////////////////////////////
 // RuntimeId: 10190
-// TypeInfo:  0x0000000142C92740
+// TypeInfo: 0x0000000142C92740
 struct WaterEntityClipInfo
 {
     bool m_Enable; //0x0000
@@ -20,7 +20,7 @@ struct WaterEntityClipInfo
 
 ////////////////////////////////////////
 // RuntimeId: 10186
-// TypeInfo:  0x0000000142C92780
+// TypeInfo: 0x0000000142C92780
 struct WaterAmbientFoamEffectSpawner
 {
     EffectBlueprint* m_Effect; //0x0000
@@ -36,7 +36,7 @@ struct WaterAmbientFoamEffectSpawner
 
 ////////////////////////////////////////
 // RuntimeId: 03702
-// TypeInfo:  0x0000000142305810
+// TypeInfo: 0x0000000142305810
 struct Vec4
 {
     float m_x; //0x0000
@@ -47,7 +47,7 @@ struct Vec4
 
 ////////////////////////////////////////
 // RuntimeId: 10175
-// TypeInfo:  0x0000000142C91E28
+// TypeInfo: 0x0000000142C91E28
 struct VoipInboundTalkersMessage
 {
     char _0x0000[48];
@@ -55,7 +55,7 @@ struct VoipInboundTalkersMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10155
-// TypeInfo:  0x0000000142C916A0
+// TypeInfo: 0x0000000142C916A0
 struct TwinkleHideLoadingSpinnerMessage
 {
     char _0x0000[40];
@@ -63,7 +63,7 @@ struct TwinkleHideLoadingSpinnerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10154
-// TypeInfo:  0x0000000142C916C0
+// TypeInfo: 0x0000000142C916C0
 struct TwinkleShowLoadingSpinnerMessage
 {
     char _0x0000[40];
@@ -71,7 +71,7 @@ struct TwinkleShowLoadingSpinnerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10153
-// TypeInfo:  0x0000000142C916E0
+// TypeInfo: 0x0000000142C916E0
 struct TwinkleJscModuleFailedMessage
 {
     char _0x0000[40];
@@ -79,7 +79,7 @@ struct TwinkleJscModuleFailedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10152
-// TypeInfo:  0x0000000142C91700
+// TypeInfo: 0x0000000142C91700
 struct TwinkleStartVoipStatusPollingMessage
 {
     char _0x0000[48];
@@ -87,7 +87,7 @@ struct TwinkleStartVoipStatusPollingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10151
-// TypeInfo:  0x0000000142C91720
+// TypeInfo: 0x0000000142C91720
 struct TwinkleJsBundleSignatureCheckFailedMessage
 {
     char _0x0000[48];
@@ -95,7 +95,7 @@ struct TwinkleJsBundleSignatureCheckFailedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10150
-// TypeInfo:  0x0000000142C91740
+// TypeInfo: 0x0000000142C91740
 struct TwinkleManifestAssetDownloadFailedMessage
 {
     char _0x0000[64];
@@ -103,7 +103,7 @@ struct TwinkleManifestAssetDownloadFailedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10149
-// TypeInfo:  0x0000000142C91760
+// TypeInfo: 0x0000000142C91760
 struct TwinkleNewManifestBundleDownloadCompletedMessage
 {
     char _0x0000[48];
@@ -111,7 +111,7 @@ struct TwinkleNewManifestBundleDownloadCompletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10148
-// TypeInfo:  0x0000000142C91780
+// TypeInfo: 0x0000000142C91780
 struct TwinkleNewManifestBundleDownloadStartedMessage
 {
     char _0x0000[56];
@@ -119,7 +119,7 @@ struct TwinkleNewManifestBundleDownloadStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10147
-// TypeInfo:  0x0000000142C917A0
+// TypeInfo: 0x0000000142C917A0
 struct TwinkleToggleVirtualKeyboardMessage
 {
     char _0x0000[80];
@@ -127,7 +127,7 @@ struct TwinkleToggleVirtualKeyboardMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10146
-// TypeInfo:  0x0000000142C917C0
+// TypeInfo: 0x0000000142C917C0
 struct TwinkleAssetsWrittenMessage
 {
     char _0x0000[40];
@@ -135,7 +135,7 @@ struct TwinkleAssetsWrittenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10145
-// TypeInfo:  0x0000000142C917E0
+// TypeInfo: 0x0000000142C917E0
 struct TwinkleEnableInputMessage
 {
     char _0x0000[40];
@@ -143,7 +143,7 @@ struct TwinkleEnableInputMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10144
-// TypeInfo:  0x0000000142C91800
+// TypeInfo: 0x0000000142C91800
 struct TwinkleDisableInputMessage
 {
     char _0x0000[40];
@@ -151,7 +151,7 @@ struct TwinkleDisableInputMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10143
-// TypeInfo:  0x0000000142C91820
+// TypeInfo: 0x0000000142C91820
 struct TwinkleRequestWriteBundledDataCompletedMessage
 {
     char _0x0000[40];
@@ -159,7 +159,7 @@ struct TwinkleRequestWriteBundledDataCompletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10142
-// TypeInfo:  0x0000000142C91840
+// TypeInfo: 0x0000000142C91840
 struct TwinkleRequestWriteBundledDataMessage
 {
     char _0x0000[48];
@@ -167,7 +167,7 @@ struct TwinkleRequestWriteBundledDataMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10141
-// TypeInfo:  0x0000000142C91860
+// TypeInfo: 0x0000000142C91860
 struct TwinkleShowFallbackUIMessage
 {
     char _0x0000[40];
@@ -175,7 +175,7 @@ struct TwinkleShowFallbackUIMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10140
-// TypeInfo:  0x0000000142C91880
+// TypeInfo: 0x0000000142C91880
 struct TwinkleHideMessage
 {
     char _0x0000[40];
@@ -183,7 +183,7 @@ struct TwinkleHideMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10139
-// TypeInfo:  0x0000000142C918A0
+// TypeInfo: 0x0000000142C918A0
 struct TwinkleShowMessage
 {
     char _0x0000[48];
@@ -191,7 +191,7 @@ struct TwinkleShowMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10138
-// TypeInfo:  0x0000000142C918C0
+// TypeInfo: 0x0000000142C918C0
 struct TwinkleScriptEngineReloadedMessage
 {
     char _0x0000[40];
@@ -199,7 +199,7 @@ struct TwinkleScriptEngineReloadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10137
-// TypeInfo:  0x0000000142C918E0
+// TypeInfo: 0x0000000142C918E0
 struct TwinkleStateChangedMessage
 {
     char _0x0000[56];
@@ -207,7 +207,7 @@ struct TwinkleStateChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10136
-// TypeInfo:  0x0000000142C91900
+// TypeInfo: 0x0000000142C91900
 struct TwinkleProcessMessagesFromJSMessage
 {
     char _0x0000[40];
@@ -215,7 +215,7 @@ struct TwinkleProcessMessagesFromJSMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10116
-// TypeInfo:  0x0000000142C905F8
+// TypeInfo: 0x0000000142C905F8
 struct TireTrailConfiguration
 {
     float m_SectionWidth; //0x0000
@@ -230,7 +230,7 @@ struct TireTrailConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 10112
-// TypeInfo:  0x0000000142C90618
+// TypeInfo: 0x0000000142C90618
 struct VehicleEffectSet
 {
     EffectBlueprint* m_WheelEffect; //0x0000
@@ -239,7 +239,7 @@ struct VehicleEffectSet
 
 ////////////////////////////////////////
 // RuntimeId: 10085
-// TypeInfo:  0x0000000142C8F1F8
+// TypeInfo: 0x0000000142C8F1F8
 struct SpartaGatewayHostSettings
 {
     char* m_ManifestProtocol; //0x0000
@@ -249,7 +249,7 @@ struct SpartaGatewayHostSettings
 
 ////////////////////////////////////////
 // RuntimeId: 10087
-// TypeInfo:  0x0000000142C8F898
+// TypeInfo: 0x0000000142C8F898
 struct SpartaGatewayToOnlineEnvironmentMapping
 {
     SpartaOnlineEnvironment m_SpartaOnlineEnvironment; //0x0000
@@ -259,7 +259,7 @@ struct SpartaGatewayToOnlineEnvironmentMapping
 
 ////////////////////////////////////////
 // RuntimeId: 10081
-// TypeInfo:  0x0000000142C8F218
+// TypeInfo: 0x0000000142C8F218
 struct SpartaModMaskUpdatedMessage
 {
     char _0x0000[48];
@@ -267,7 +267,7 @@ struct SpartaModMaskUpdatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10080
-// TypeInfo:  0x0000000142C8F238
+// TypeInfo: 0x0000000142C8F238
 struct SpartaShowOfflineMessage
 {
     char _0x0000[40];
@@ -275,7 +275,7 @@ struct SpartaShowOfflineMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10079
-// TypeInfo:  0x0000000142C8F258
+// TypeInfo: 0x0000000142C8F258
 struct SpartaVoipSpeakerStatusChangedMessage
 {
     char _0x0000[48];
@@ -283,7 +283,7 @@ struct SpartaVoipSpeakerStatusChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10078
-// TypeInfo:  0x0000000142C8F8B8
+// TypeInfo: 0x0000000142C8F8B8
 struct SpeakerChange
 {
     char* m_SpeakerId; //0x0000
@@ -294,7 +294,7 @@ struct SpeakerChange
 
 ////////////////////////////////////////
 // RuntimeId: 10076
-// TypeInfo:  0x0000000142C8F278
+// TypeInfo: 0x0000000142C8F278
 struct SpartaNucleusRegistrationMessage
 {
     char _0x0000[48];
@@ -302,7 +302,7 @@ struct SpartaNucleusRegistrationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10075
-// TypeInfo:  0x0000000142C8F298
+// TypeInfo: 0x0000000142C8F298
 struct SpartaFirstPartyConnectedMessage
 {
     char _0x0000[48];
@@ -310,7 +310,7 @@ struct SpartaFirstPartyConnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10074
-// TypeInfo:  0x0000000142C8F2B8
+// TypeInfo: 0x0000000142C8F2B8
 struct SpartaSessionInfoMessage
 {
     char _0x0000[56];
@@ -318,7 +318,7 @@ struct SpartaSessionInfoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10073
-// TypeInfo:  0x0000000142C8F2D8
+// TypeInfo: 0x0000000142C8F2D8
 struct SpartaShowFirstPartyUserProfileMessage
 {
     char _0x0000[56];
@@ -326,7 +326,7 @@ struct SpartaShowFirstPartyUserProfileMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10072
-// TypeInfo:  0x0000000142C8F2F8
+// TypeInfo: 0x0000000142C8F2F8
 struct SpartaPushNotificationMessage
 {
     char _0x0000[56];
@@ -334,7 +334,7 @@ struct SpartaPushNotificationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10071
-// TypeInfo:  0x0000000142C8F318
+// TypeInfo: 0x0000000142C8F318
 struct SpartaNotificationInvokedMessage
 {
     char _0x0000[56];
@@ -342,7 +342,7 @@ struct SpartaNotificationInvokedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10070
-// TypeInfo:  0x0000000142C8F338
+// TypeInfo: 0x0000000142C8F338
 struct SpartaInteractiveNotificationMessage
 {
     char _0x0000[88];
@@ -350,7 +350,7 @@ struct SpartaInteractiveNotificationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10069
-// TypeInfo:  0x0000000142C8F358
+// TypeInfo: 0x0000000142C8F358
 struct SpartaNotificationMessage
 {
     char _0x0000[64];
@@ -358,7 +358,7 @@ struct SpartaNotificationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10066
-// TypeInfo:  0x0000000142C8F398
+// TypeInfo: 0x0000000142C8F398
 struct SpartaShowUserProfileMessage
 {
     char _0x0000[80];
@@ -366,7 +366,7 @@ struct SpartaShowUserProfileMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10065
-// TypeInfo:  0x0000000142C8F3B8
+// TypeInfo: 0x0000000142C8F3B8
 struct SpartaStreamingInstallStateChangedMessage
 {
     char _0x0000[56];
@@ -374,7 +374,7 @@ struct SpartaStreamingInstallStateChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10064
-// TypeInfo:  0x0000000142C8F8D8
+// TypeInfo: 0x0000000142C8F8D8
 struct SpartaStreamingInstallStateData
 {
     float m_SpInstallProgress; //0x0000
@@ -387,7 +387,7 @@ struct SpartaStreamingInstallStateData
 
 ////////////////////////////////////////
 // RuntimeId: 10056
-// TypeInfo:  0x0000000142C8F3F8
+// TypeInfo: 0x0000000142C8F3F8
 struct SpartaPresenceUserTitleInfoMessage
 {
     char _0x0000[56];
@@ -395,7 +395,7 @@ struct SpartaPresenceUserTitleInfoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10055
-// TypeInfo:  0x0000000142C8F8F8
+// TypeInfo: 0x0000000142C8F8F8
 struct SpartaUserTitleInfo
 {
     unsigned __int64 m_PersonaId; //0x0000
@@ -407,7 +407,7 @@ struct SpartaUserTitleInfo
 
 ////////////////////////////////////////
 // RuntimeId: 10051
-// TypeInfo:  0x0000000142C8F438
+// TypeInfo: 0x0000000142C8F438
 struct SpartaMatchmakingResultMessage
 {
     char _0x0000[56];
@@ -415,7 +415,7 @@ struct SpartaMatchmakingResultMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10050
-// TypeInfo:  0x0000000142C8F458
+// TypeInfo: 0x0000000142C8F458
 struct SpartaMatchmakingCanceledMessage
 {
     char _0x0000[40];
@@ -423,7 +423,7 @@ struct SpartaMatchmakingCanceledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10049
-// TypeInfo:  0x0000000142C8F478
+// TypeInfo: 0x0000000142C8F478
 struct SpartaMatchmakingStartedMessage
 {
     char _0x0000[40];
@@ -431,7 +431,7 @@ struct SpartaMatchmakingStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10046
-// TypeInfo:  0x0000000142C8F4B8
+// TypeInfo: 0x0000000142C8F4B8
 struct SpartaMatchmakingRequestMessage
 {
     char _0x0000[5464];
@@ -439,7 +439,7 @@ struct SpartaMatchmakingRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10043
-// TypeInfo:  0x0000000142C8F4F8
+// TypeInfo: 0x0000000142C8F4F8
 struct SpartaPartyResponseMessageBase
 {
     char _0x0000[208];
@@ -447,7 +447,7 @@ struct SpartaPartyResponseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 10042
-// TypeInfo:  0x0000000142C8F518
+// TypeInfo: 0x0000000142C8F518
 struct SpartaPartyRequestMessage
 {
     char _0x0000[80];
@@ -455,7 +455,7 @@ struct SpartaPartyRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10033
-// TypeInfo:  0x0000000142C8F5B8
+// TypeInfo: 0x0000000142C8F5B8
 struct SpartaStopLoadingTransitionEffectMessage
 {
     char _0x0000[48];
@@ -463,7 +463,7 @@ struct SpartaStopLoadingTransitionEffectMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10032
-// TypeInfo:  0x0000000142C8F5D8
+// TypeInfo: 0x0000000142C8F5D8
 struct SpartaStartLoadingTransitionEffectMessage
 {
     char _0x0000[40];
@@ -471,7 +471,7 @@ struct SpartaStartLoadingTransitionEffectMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10031
-// TypeInfo:  0x0000000142C8F5F8
+// TypeInfo: 0x0000000142C8F5F8
 struct SpartaCrossLaunchMessage
 {
     char _0x0000[40];
@@ -479,7 +479,7 @@ struct SpartaCrossLaunchMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10030
-// TypeInfo:  0x0000000142C8F618
+// TypeInfo: 0x0000000142C8F618
 struct SpartaPressToStartMessage
 {
     char _0x0000[40];
@@ -487,7 +487,7 @@ struct SpartaPressToStartMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10029
-// TypeInfo:  0x0000000142C8F638
+// TypeInfo: 0x0000000142C8F638
 struct SpartaLoadProfileDataCompleteMessage
 {
     char _0x0000[40];
@@ -495,7 +495,7 @@ struct SpartaLoadProfileDataCompleteMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10028
-// TypeInfo:  0x0000000142C8F658
+// TypeInfo: 0x0000000142C8F658
 struct SpartaLoadProfileDataMessage
 {
     char _0x0000[40];
@@ -503,7 +503,7 @@ struct SpartaLoadProfileDataMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10027
-// TypeInfo:  0x0000000142C8F678
+// TypeInfo: 0x0000000142C8F678
 struct SpartaShowDisconnectionMessage
 {
     char _0x0000[72];
@@ -511,7 +511,7 @@ struct SpartaShowDisconnectionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10024
-// TypeInfo:  0x0000000142C8F6B8
+// TypeInfo: 0x0000000142C8F6B8
 struct SpartaShowLoadingScreenMessage
 {
     char _0x0000[48];
@@ -519,7 +519,7 @@ struct SpartaShowLoadingScreenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10023
-// TypeInfo:  0x0000000142C8F6D8
+// TypeInfo: 0x0000000142C8F6D8
 struct SpartaCommerceCheckoutCompleteMessage
 {
     char _0x0000[48];
@@ -527,7 +527,7 @@ struct SpartaCommerceCheckoutCompleteMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10020
-// TypeInfo:  0x0000000142C8F718
+// TypeInfo: 0x0000000142C8F718
 struct SpartaCommerceCheckoutPsPlusMessage
 {
     char _0x0000[48];
@@ -535,7 +535,7 @@ struct SpartaCommerceCheckoutPsPlusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10019
-// TypeInfo:  0x0000000142C8F738
+// TypeInfo: 0x0000000142C8F738
 struct SpartaCommerceShowDetailsMessage
 {
     char _0x0000[48];
@@ -543,7 +543,7 @@ struct SpartaCommerceShowDetailsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10018
-// TypeInfo:  0x0000000142C8F758
+// TypeInfo: 0x0000000142C8F758
 struct SpartaCommerceCheckoutMessage
 {
     char _0x0000[64];
@@ -551,7 +551,7 @@ struct SpartaCommerceCheckoutMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10017
-// TypeInfo:  0x0000000142C8F778
+// TypeInfo: 0x0000000142C8F778
 struct SpartaShowEndOfRoundMessage
 {
     char _0x0000[48];
@@ -559,7 +559,7 @@ struct SpartaShowEndOfRoundMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10016
-// TypeInfo:  0x0000000142C8F798
+// TypeInfo: 0x0000000142C8F798
 struct SpartaGetFriendsMessage
 {
     char _0x0000[40];
@@ -567,7 +567,7 @@ struct SpartaGetFriendsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10015
-// TypeInfo:  0x0000000142C8F7B8
+// TypeInfo: 0x0000000142C8F7B8
 struct SpartaEndOfRoundMessage
 {
     char _0x0000[208];
@@ -575,7 +575,7 @@ struct SpartaEndOfRoundMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10014
-// TypeInfo:  0x0000000142C8F7D8
+// TypeInfo: 0x0000000142C8F7D8
 struct SpartaCampaignInfoResponseMessage
 {
     char _0x0000[56];
@@ -583,7 +583,7 @@ struct SpartaCampaignInfoResponseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10013
-// TypeInfo:  0x0000000142C8F7F8
+// TypeInfo: 0x0000000142C8F7F8
 struct SpartaCampaignInfoRequestMessage
 {
     char _0x0000[40];
@@ -591,7 +591,7 @@ struct SpartaCampaignInfoRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10012
-// TypeInfo:  0x0000000142C8F818
+// TypeInfo: 0x0000000142C8F818
 struct SpartaReadyMessage
 {
     char _0x0000[40];
@@ -599,7 +599,7 @@ struct SpartaReadyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10009
-// TypeInfo:  0x0000000142C8F838
+// TypeInfo: 0x0000000142C8F838
 struct SpartaCampaignStatisticsInfo
 {
     float m_Score; //0x0000
@@ -614,7 +614,7 @@ struct SpartaCampaignStatisticsInfo
 
 ////////////////////////////////////////
 // RuntimeId: 10011
-// TypeInfo:  0x0000000142C8F918
+// TypeInfo: 0x0000000142C8F918
 struct SpartaCampaignLevelInfo
 {
     char* m_Path; //0x0000
@@ -628,7 +628,7 @@ struct SpartaCampaignLevelInfo
 
 ////////////////////////////////////////
 // RuntimeId: 10007
-// TypeInfo:  0x0000000142C8F858
+// TypeInfo: 0x0000000142C8F858
 struct SpartaFirstPartyTokensMessage
 {
     char _0x0000[48];
@@ -636,7 +636,7 @@ struct SpartaFirstPartyTokensMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10006
-// TypeInfo:  0x0000000142C8F938
+// TypeInfo: 0x0000000142C8F938
 struct SpartaFirstPartyToken
 {
     char* m_ServiceName; //0x0000
@@ -647,7 +647,7 @@ struct SpartaFirstPartyToken
 
 ////////////////////////////////////////
 // RuntimeId: 10004
-// TypeInfo:  0x0000000142C8F878
+// TypeInfo: 0x0000000142C8F878
 struct SpartaGetFirstPartyTokensMessage
 {
     char _0x0000[48];
@@ -655,7 +655,7 @@ struct SpartaGetFirstPartyTokensMessage
 
 ////////////////////////////////////////
 // RuntimeId: 10003
-// TypeInfo:  0x0000000142C8F958
+// TypeInfo: 0x0000000142C8F958
 struct SpartaFirstPartyService
 {
     char* m_ServiceName; //0x0000
@@ -664,7 +664,7 @@ struct SpartaFirstPartyService
 
 ////////////////////////////////////////
 // RuntimeId: 10001
-// TypeInfo:  0x0000000142C8F978
+// TypeInfo: 0x0000000142C8F978
 struct SpartaEorTeamStats
 {
     char* m_Name; //0x0000
@@ -675,7 +675,7 @@ struct SpartaEorTeamStats
 
 ////////////////////////////////////////
 // RuntimeId: 09999
-// TypeInfo:  0x0000000142C8F998
+// TypeInfo: 0x0000000142C8F998
 struct SpartaEorPlayerStats
 {
     char* m_Name; //0x0000
@@ -695,7 +695,7 @@ struct SpartaEorPlayerStats
 
 ////////////////////////////////////////
 // RuntimeId: 09997
-// TypeInfo:  0x0000000142C8F9B8
+// TypeInfo: 0x0000000142C8F9B8
 struct SpartaEorSquadStats
 {
     char* m_Name; //0x0000
@@ -717,7 +717,7 @@ struct SpartaEorSquadStats
 
 ////////////////////////////////////////
 // RuntimeId: 09995
-// TypeInfo:  0x0000000142C8F9D8
+// TypeInfo: 0x0000000142C8F9D8
 struct SpartaEorAwardInfo
 {
     char* m_Code; //0x0000
@@ -728,7 +728,7 @@ struct SpartaEorAwardInfo
 
 ////////////////////////////////////////
 // RuntimeId: 09993
-// TypeInfo:  0x0000000142C8F9F8
+// TypeInfo: 0x0000000142C8F9F8
 struct SpartaEorPlayerInfo
 {
     unsigned __int32 m_FlagCaptures; //0x0000
@@ -760,7 +760,7 @@ struct SpartaEorPlayerInfo
 
 ////////////////////////////////////////
 // RuntimeId: 09979
-// TypeInfo:  0x0000000142C8FA18
+// TypeInfo: 0x0000000142C8FA18
 struct SpartaPs4Service
 {
     char* m_ServiceId; //0x0000
@@ -769,7 +769,7 @@ struct SpartaPs4Service
 
 ////////////////////////////////////////
 // RuntimeId: 09977
-// TypeInfo:  0x0000000142C8FA38
+// TypeInfo: 0x0000000142C8FA38
 struct SpartaUserId
 {
     char* m_SceNpId; //0x0000
@@ -781,7 +781,7 @@ struct SpartaUserId
 
 ////////////////////////////////////////
 // RuntimeId: 09971
-// TypeInfo:  0x0000000142C8FA58
+// TypeInfo: 0x0000000142C8FA58
 struct OffsetInfo
 {
     char* m_AssetName; //0x0000
@@ -791,7 +791,7 @@ struct OffsetInfo
 
 ////////////////////////////////////////
 // RuntimeId: 09952
-// TypeInfo:  0x0000000142C8D2A8
+// TypeInfo: 0x0000000142C8D2A8
 struct WeaponZeroingEntry
 {
     float m_Distance; //0x0000
@@ -800,7 +800,7 @@ struct WeaponZeroingEntry
 
 ////////////////////////////////////////
 // RuntimeId: 09948
-// TypeInfo:  0x0000000142C8D2C8
+// TypeInfo: 0x0000000142C8D2C8
 struct GunSwayModifierUnlock
 {
     Guid m_UnlockAssetGuid; //0x0000
@@ -810,7 +810,7 @@ struct GunSwayModifierUnlock
 
 ////////////////////////////////////////
 // RuntimeId: 09924
-// TypeInfo:  0x0000000142C8D268
+// TypeInfo: 0x0000000142C8D268
 struct GunSwayDispersionModData
 {
     float m_MinAngleModifier; //0x0000
@@ -821,7 +821,7 @@ struct GunSwayDispersionModData
 
 ////////////////////////////////////////
 // RuntimeId: 09922
-// TypeInfo:  0x0000000142C8D288
+// TypeInfo: 0x0000000142C8D288
 struct GunSwayDispersionData
 {
     float m_MinAngle; //0x0000
@@ -834,7 +834,7 @@ struct GunSwayDispersionData
 
 ////////////////////////////////////////
 // RuntimeId: 09930
-// TypeInfo:  0x0000000142C8D228
+// TypeInfo: 0x0000000142C8D228
 struct GunSwayRecoilData
 {
     float m_RecoilAmplitudeMax; //0x0000
@@ -847,7 +847,7 @@ struct GunSwayRecoilData
 
 ////////////////////////////////////////
 // RuntimeId: 09926
-// TypeInfo:  0x0000000142C8D248
+// TypeInfo: 0x0000000142C8D248
 struct GunSwayLagData
 {
     float m_MoveStrafeModifier; //0x0000
@@ -859,7 +859,7 @@ struct GunSwayLagData
 
 ////////////////////////////////////////
 // RuntimeId: 09936
-// TypeInfo:  0x0000000142C8D1E8
+// TypeInfo: 0x0000000142C8D1E8
 struct GunSwayBaseMoveData
 {
     GunSwayDispersionData m_BaseValue; //0x0000
@@ -870,7 +870,7 @@ struct GunSwayBaseMoveData
 
 ////////////////////////////////////////
 // RuntimeId: 09934
-// TypeInfo:  0x0000000142C8D2E8
+// TypeInfo: 0x0000000142C8D2E8
 struct GunSwayBaseData
 {
     GunSwayDispersionData m_BaseValue; //0x0000
@@ -880,7 +880,7 @@ struct GunSwayBaseData
 
 ////////////////////////////////////////
 // RuntimeId: 09932
-// TypeInfo:  0x0000000142C8D208
+// TypeInfo: 0x0000000142C8D208
 struct GunSwayStanceTransition
 {
     GunSwayDispersionData m_MaxPenaltyValue; //0x0000
@@ -889,7 +889,7 @@ struct GunSwayStanceTransition
 
 ////////////////////////////////////////
 // RuntimeId: 09938
-// TypeInfo:  0x0000000142C8D1C8
+// TypeInfo: 0x0000000142C8D1C8
 struct GunSwayBaseMoveJumpData
 {
     GunSwayDispersionData m_BaseValue; //0x0000
@@ -904,7 +904,7 @@ struct GunSwayBaseMoveJumpData
 
 ////////////////////////////////////////
 // RuntimeId: 09940
-// TypeInfo:  0x0000000142C8D1A8
+// TypeInfo: 0x0000000142C8D1A8
 struct GunSwayStandData
 {
     GunSwayBaseMoveJumpData m_NoZoom; //0x0000
@@ -913,7 +913,7 @@ struct GunSwayStandData
 
 ////////////////////////////////////////
 // RuntimeId: 09944
-// TypeInfo:  0x0000000142C8D168
+// TypeInfo: 0x0000000142C8D168
 struct GunSwayStanceZoomModifierData
 {
     GunSwayDispersionModData m_DispersionMod; //0x0000
@@ -928,7 +928,7 @@ struct GunSwayStanceZoomModifierData
 
 ////////////////////////////////////////
 // RuntimeId: 09942
-// TypeInfo:  0x0000000142C8D188
+// TypeInfo: 0x0000000142C8D188
 struct GunSwayCrouchProneData
 {
     GunSwayBaseMoveData m_NoZoom; //0x0000
@@ -937,7 +937,7 @@ struct GunSwayCrouchProneData
 
 ////////////////////////////////////////
 // RuntimeId: 03877
-// TypeInfo:  0x0000000142C00520
+// TypeInfo: 0x0000000142C00520
 struct AntRef
 {
     Guid m_AssetGuid; //0x0000
@@ -947,7 +947,7 @@ struct AntRef
 
 ////////////////////////////////////////
 // RuntimeId: 09914
-// TypeInfo:  0x0000000142C89C68
+// TypeInfo: 0x0000000142C89C68
 struct WeaponMesh1p
 {
     SkinnedMeshAsset* m_Mesh; //0x0000
@@ -956,7 +956,7 @@ struct WeaponMesh1p
 
 ////////////////////////////////////////
 // RuntimeId: 09898
-// TypeInfo:  0x0000000142C89C88
+// TypeInfo: 0x0000000142C89C88
 struct WeaponModifierData
 {
     Guid m_UnlockAssetGuid; //0x0000
@@ -966,7 +966,7 @@ struct WeaponModifierData
 
 ////////////////////////////////////////
 // RuntimeId: 09896
-// TypeInfo:  0x0000000142C89CA8
+// TypeInfo: 0x0000000142C89CA8
 struct WeaponModifier
 {
     char _0x0000[144];
@@ -976,7 +976,7 @@ struct WeaponModifier
 
 ////////////////////////////////////////
 // RuntimeId: 09862
-// TypeInfo:  0x0000000142C89728
+// TypeInfo: 0x0000000142C89728
 struct SupplyData
 {
     HealingSupplyUnitSphereData* m_Healing; //0x0000
@@ -995,7 +995,7 @@ struct SupplyData
 
 ////////////////////////////////////////
 // RuntimeId: 09846
-// TypeInfo:  0x0000000142C89CC8
+// TypeInfo: 0x0000000142C89CC8
 struct PlatformAimAssistData
 {
     GamePlatform m_Platform; //0x0000
@@ -1005,7 +1005,7 @@ struct PlatformAimAssistData
 
 ////////////////////////////////////////
 // RuntimeId: 09836
-// TypeInfo:  0x0000000142C89748
+// TypeInfo: 0x0000000142C89748
 struct NetworkDefibrillatorKillMessage
 {
     char _0x0000[112];
@@ -1013,7 +1013,7 @@ struct NetworkDefibrillatorKillMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09835
-// TypeInfo:  0x0000000142C89768
+// TypeInfo: 0x0000000142C89768
 struct NetworkDefibrillatorReviveMessage
 {
     char _0x0000[112];
@@ -1021,7 +1021,7 @@ struct NetworkDefibrillatorReviveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09832
-// TypeInfo:  0x0000000142C89788
+// TypeInfo: 0x0000000142C89788
 struct DefibrillatorUpgradeWeaponData
 {
     ValueUnlockAsset* m_UpgradeUnlock; //0x0000
@@ -1033,7 +1033,7 @@ struct DefibrillatorUpgradeWeaponData
 
 ////////////////////////////////////////
 // RuntimeId: 09798
-// TypeInfo:  0x0000000142C897A8
+// TypeInfo: 0x0000000142C897A8
 struct SoldierDetonationData
 {
     float m_Angle; //0x0000
@@ -1047,7 +1047,7 @@ struct SoldierDetonationData
 
 ////////////////////////////////////////
 // RuntimeId: 09796
-// TypeInfo:  0x0000000142C897C8
+// TypeInfo: 0x0000000142C897C8
 struct NetworkSetCustomizationWeaponSlotMessage
 {
     char _0x0000[88];
@@ -1055,7 +1055,7 @@ struct NetworkSetCustomizationWeaponSlotMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09795
-// TypeInfo:  0x0000000142C897E8
+// TypeInfo: 0x0000000142C897E8
 struct NetworkSetActiveWeaponSlotMessage
 {
     char _0x0000[72];
@@ -1063,7 +1063,7 @@ struct NetworkSetActiveWeaponSlotMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09794
-// TypeInfo:  0x0000000142C89808
+// TypeInfo: 0x0000000142C89808
 struct BulletToCharacterComponentsHitMessage
 {
     char _0x0000[128];
@@ -1071,7 +1071,7 @@ struct BulletToCharacterComponentsHitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03700
-// TypeInfo:  0x00000001423057F0
+// TypeInfo: 0x00000001423057F0
 struct Vec3
 {
     float m_x; //0x0000
@@ -1082,7 +1082,7 @@ struct Vec3
 
 ////////////////////////////////////////
 // RuntimeId: 09789
-// TypeInfo:  0x0000000142C89828
+// TypeInfo: 0x0000000142C89828
 struct CustomizationAccessoryPivots
 {
     Vec3 m_BasePivotPos; //0x0000
@@ -1094,7 +1094,7 @@ struct CustomizationAccessoryPivots
 
 ////////////////////////////////////////
 // RuntimeId: 09785
-// TypeInfo:  0x0000000142C89848
+// TypeInfo: 0x0000000142C89848
 struct WeaponAnimationSettingsData
 {
     float m_KickbackFactor; //0x0000
@@ -1108,7 +1108,7 @@ struct WeaponAnimationSettingsData
 
 ////////////////////////////////////////
 // RuntimeId: 09779
-// TypeInfo:  0x0000000142C89D08
+// TypeInfo: 0x0000000142C89D08
 struct WeaponOverrideValue
 {
     WeaponOverrideValueType m_ValueType; //0x0000
@@ -1117,7 +1117,7 @@ struct WeaponOverrideValue
 
 ////////////////////////////////////////
 // RuntimeId: 09769
-// TypeInfo:  0x0000000142C89868
+// TypeInfo: 0x0000000142C89868
 struct PickupSettingsData
 {
     Vec3 m_MeshRenderOffset; //0x0000
@@ -1126,7 +1126,7 @@ struct PickupSettingsData
 
 ////////////////////////////////////////
 // RuntimeId: 03708
-// TypeInfo:  0x0000000142305850
+// TypeInfo: 0x0000000142305850
 struct LinearTransform
 {
     Vec3 m_right; //0x0000
@@ -1137,7 +1137,7 @@ struct LinearTransform
 
 ////////////////////////////////////////
 // RuntimeId: 09761
-// TypeInfo:  0x0000000142C89D48
+// TypeInfo: 0x0000000142C89D48
 struct RigidMeshSocketTransform
 {
     LinearTransform m_Transform; //0x0000
@@ -1147,7 +1147,7 @@ struct RigidMeshSocketTransform
 
 ////////////////////////////////////////
 // RuntimeId: 09759
-// TypeInfo:  0x0000000142C89D68
+// TypeInfo: 0x0000000142C89D68
 struct AnimationConfigurationShootModuleData
 {
     float m_ZoomedKickbackFactor; //0x0000
@@ -1158,7 +1158,7 @@ struct AnimationConfigurationShootModuleData
 
 ////////////////////////////////////////
 // RuntimeId: 09749
-// TypeInfo:  0x0000000142C89888
+// TypeInfo: 0x0000000142C89888
 struct WeaponLagEffectForceData
 {
     Vec3 m_OffsetForce; //0x0000
@@ -1167,7 +1167,7 @@ struct WeaponLagEffectForceData
 
 ////////////////////////////////////////
 // RuntimeId: 09745
-// TypeInfo:  0x0000000142C898C8
+// TypeInfo: 0x0000000142C898C8
 struct WeaponLagEffectSpringData
 {
     float m_Constant; //0x0000
@@ -1176,7 +1176,7 @@ struct WeaponLagEffectSpringData
 
 ////////////////////////////////////////
 // RuntimeId: 09747
-// TypeInfo:  0x0000000142C898A8
+// TypeInfo: 0x0000000142C898A8
 struct WeaponLagEffectSpringVector
 {
     WeaponLagEffectSpringData m_SpringX; //0x0000
@@ -1186,7 +1186,7 @@ struct WeaponLagEffectSpringVector
 
 ////////////////////////////////////////
 // RuntimeId: 09739
-// TypeInfo:  0x0000000142C89D88
+// TypeInfo: 0x0000000142C89D88
 struct ZoomLevelSpecificTransitionTime
 {
     __int32 m_FromZoomLevel; //0x0000
@@ -1197,7 +1197,7 @@ struct ZoomLevelSpecificTransitionTime
 
 ////////////////////////////////////////
 // RuntimeId: 09737
-// TypeInfo:  0x0000000142C898E8
+// TypeInfo: 0x0000000142C898E8
 struct AimingPoseData
 {
     float m_MinimumPitch; //0x0000
@@ -1210,7 +1210,7 @@ struct AimingPoseData
 
 ////////////////////////////////////////
 // RuntimeId: 09731
-// TypeInfo:  0x0000000142C89908
+// TypeInfo: 0x0000000142C89908
 struct UnlockWeaponAndSlot
 {
     SoldierWeaponUnlockAsset* m_Weapon; //0x0000
@@ -1222,7 +1222,7 @@ struct UnlockWeaponAndSlot
 
 ////////////////////////////////////////
 // RuntimeId: 09727
-// TypeInfo:  0x0000000142C89DA8
+// TypeInfo: 0x0000000142C89DA8
 struct UnlockToBlueprintBundle
 {
     Guid m_UnlockAssetGuid; //0x0000
@@ -1234,7 +1234,7 @@ struct UnlockToBlueprintBundle
 
 ////////////////////////////////////////
 // RuntimeId: 09725
-// TypeInfo:  0x0000000142C89928
+// TypeInfo: 0x0000000142C89928
 struct StoredWeaponData
 {
     __int32 m_WeaponClass; //0x0000
@@ -1246,7 +1246,7 @@ struct StoredWeaponData
 
 ////////////////////////////////////////
 // RuntimeId: 09709
-// TypeInfo:  0x0000000142C89DC8
+// TypeInfo: 0x0000000142C89DC8
 struct DirectWeaponSwitchingMapData
 {
     __int32 m_Action; //0x0000
@@ -1261,7 +1261,7 @@ struct DirectWeaponSwitchingMapData
 
 ////////////////////////////////////////
 // RuntimeId: 09707
-// TypeInfo:  0x0000000142C89DE8
+// TypeInfo: 0x0000000142C89DE8
 struct WeaponSwitchingMapData
 {
     WeaponSwitchingEnum m_FromWeapon; //0x0000
@@ -1275,7 +1275,7 @@ struct WeaponSwitchingMapData
 
 ////////////////////////////////////////
 // RuntimeId: 09697
-// TypeInfo:  0x0000000142C89E08
+// TypeInfo: 0x0000000142C89E08
 struct DamageEntryData
 {
     float m_Damage; //0x0000
@@ -1284,7 +1284,7 @@ struct DamageEntryData
 
 ////////////////////////////////////////
 // RuntimeId: 09689
-// TypeInfo:  0x0000000142C89988
+// TypeInfo: 0x0000000142C89988
 struct SoldierToComponentsOnClearSpottingMessage
 {
     char _0x0000[48];
@@ -1292,7 +1292,7 @@ struct SoldierToComponentsOnClearSpottingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09688
-// TypeInfo:  0x0000000142C899A8
+// TypeInfo: 0x0000000142C899A8
 struct ClientSoldierToComponentsOnHandleDamageMessage
 {
     char _0x0000[80];
@@ -1300,7 +1300,7 @@ struct ClientSoldierToComponentsOnHandleDamageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09687
-// TypeInfo:  0x0000000142C899C8
+// TypeInfo: 0x0000000142C899C8
 struct ClientSoldierToComponentsOnImpulseMessage
 {
     char _0x0000[48];
@@ -1308,7 +1308,7 @@ struct ClientSoldierToComponentsOnImpulseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09686
-// TypeInfo:  0x0000000142C899E8
+// TypeInfo: 0x0000000142C899E8
 struct SoldierToComponentsOnActionStateChangedMessage
 {
     char _0x0000[48];
@@ -1316,7 +1316,7 @@ struct SoldierToComponentsOnActionStateChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09685
-// TypeInfo:  0x0000000142C89A08
+// TypeInfo: 0x0000000142C89A08
 struct SoldierToComponentsOnIncapableMessage
 {
     char _0x0000[80];
@@ -1324,7 +1324,7 @@ struct SoldierToComponentsOnIncapableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09684
-// TypeInfo:  0x0000000142C89A28
+// TypeInfo: 0x0000000142C89A28
 struct SoldierToComponentsOnCustomizeSoldierMessage
 {
     char _0x0000[48];
@@ -1332,7 +1332,7 @@ struct SoldierToComponentsOnCustomizeSoldierMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09683
-// TypeInfo:  0x0000000142C89A48
+// TypeInfo: 0x0000000142C89A48
 struct SoldierToComponentsInitializedMessage
 {
     char _0x0000[40];
@@ -1340,7 +1340,7 @@ struct SoldierToComponentsInitializedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09674
-// TypeInfo:  0x0000000142C89E28
+// TypeInfo: 0x0000000142C89E28
 struct ValueAtX
 {
     float m_X; //0x0000
@@ -1349,7 +1349,7 @@ struct ValueAtX
 
 ////////////////////////////////////////
 // RuntimeId: 09666
-// TypeInfo:  0x0000000142C89E48
+// TypeInfo: 0x0000000142C89E48
 struct HidableSoldierMeshWeaponPart
 {
     SkinnedMeshAsset* m_WeaponMesh; //0x0000
@@ -1362,7 +1362,7 @@ struct HidableSoldierMeshWeaponPart
 
 ////////////////////////////////////////
 // RuntimeId: 09662
-// TypeInfo:  0x0000000142C89E68
+// TypeInfo: 0x0000000142C89E68
 struct SoldierHeadCollisionPoseData
 {
     Vec3 m_IdleOffset; //0x0000
@@ -1371,7 +1371,7 @@ struct SoldierHeadCollisionPoseData
 
 ////////////////////////////////////////
 // RuntimeId: 09658
-// TypeInfo:  0x0000000142C89E88
+// TypeInfo: 0x0000000142C89E88
 struct AutoAimData
 {
     Vec3 m_AutoAimOuterBoxOffset; //0x0000
@@ -1384,7 +1384,7 @@ struct AutoAimData
 
 ////////////////////////////////////////
 // RuntimeId: 09656
-// TypeInfo:  0x0000000142C89EA8
+// TypeInfo: 0x0000000142C89EA8
 struct FootStepTrigger
 {
     float m_Time; //0x0000
@@ -1392,7 +1392,7 @@ struct FootStepTrigger
 
 ////////////////////////////////////////
 // RuntimeId: 09648
-// TypeInfo:  0x0000000142C89A88
+// TypeInfo: 0x0000000142C89A88
 struct NetworkPickupWeaponFromKitMessage
 {
     char _0x0000[88];
@@ -1400,7 +1400,7 @@ struct NetworkPickupWeaponFromKitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09645
-// TypeInfo:  0x0000000142C89EC8
+// TypeInfo: 0x0000000142C89EC8
 struct DynamicWeaponPickupSlotData
 {
     unsigned __int32 m_WeaponSlot; //0x0000
@@ -1410,7 +1410,7 @@ struct DynamicWeaponPickupSlotData
 
 ////////////////////////////////////////
 // RuntimeId: 09637
-// TypeInfo:  0x0000000142C89EE8
+// TypeInfo: 0x0000000142C89EE8
 struct WeaponUnlockPickupData
 {
     UnlockWeaponAndSlot m_UnlockWeaponAndSlot; //0x0000
@@ -1424,7 +1424,7 @@ struct WeaponUnlockPickupData
 
 ////////////////////////////////////////
 // RuntimeId: 09619
-// TypeInfo:  0x0000000142C89AA8
+// TypeInfo: 0x0000000142C89AA8
 struct HitReactionComponentBinding
 {
     AntRef m_Hit; //0x0000
@@ -1440,7 +1440,7 @@ struct HitReactionComponentBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09613
-// TypeInfo:  0x0000000142C89AE8
+// TypeInfo: 0x0000000142C89AE8
 struct BlockAimAssistData
 {
     float m_BlockingRadius; //0x0000
@@ -1449,7 +1449,7 @@ struct BlockAimAssistData
 
 ////////////////////////////////////////
 // RuntimeId: 09607
-// TypeInfo:  0x0000000142C89B08
+// TypeInfo: 0x0000000142C89B08
 struct NetworkPlayerSelectedWeaponMessage
 {
     char _0x0000[96];
@@ -1457,7 +1457,7 @@ struct NetworkPlayerSelectedWeaponMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09604
-// TypeInfo:  0x0000000142C89B28
+// TypeInfo: 0x0000000142C89B28
 struct CoverPeekBinding
 {
     AntRef m_CoverHeight1p; //0x0000
@@ -1470,7 +1470,7 @@ struct CoverPeekBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09580
-// TypeInfo:  0x0000000142C89B48
+// TypeInfo: 0x0000000142C89B48
 struct MovementComponentBinding
 {
     AntRef m_AnimationControlled; //0x0000
@@ -1482,7 +1482,7 @@ struct MovementComponentBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09576
-// TypeInfo:  0x0000000142C89B68
+// TypeInfo: 0x0000000142C89B68
 struct CameraCommonBinding
 {
     AntRef m_FirstPersonCameraHeight; //0x0000
@@ -1491,7 +1491,7 @@ struct CameraCommonBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09574
-// TypeInfo:  0x0000000142C89B88
+// TypeInfo: 0x0000000142C89B88
 struct Camera1pBinding
 {
     AntRef m_Render1pInBackground; //0x0000
@@ -1501,7 +1501,7 @@ struct Camera1pBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09566
-// TypeInfo:  0x0000000142C89BA8
+// TypeInfo: 0x0000000142C89BA8
 struct AimingWorldSpaceLockEfficiencyData
 {
     float m_EfficiencyYaw; //0x0000
@@ -1512,7 +1512,7 @@ struct AimingWorldSpaceLockEfficiencyData
 
 ////////////////////////////////////////
 // RuntimeId: 09556
-// TypeInfo:  0x0000000142C89F08
+// TypeInfo: 0x0000000142C89F08
 struct SoldierHealthModuleBinding
 {
     AntRef m_HeadShot; //0x0000
@@ -1543,7 +1543,7 @@ struct SoldierHealthModuleBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09552
-// TypeInfo:  0x0000000142C89BE8
+// TypeInfo: 0x0000000142C89BE8
 struct AnimatedWeaponBinding
 {
     AntRef m_Deploy; //0x0000
@@ -1622,7 +1622,7 @@ struct AnimatedWeaponBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09550
-// TypeInfo:  0x0000000142C89C08
+// TypeInfo: 0x0000000142C89C08
 struct Animated3pOnlyWeaponBinding
 {
     AntRef m_Deploy3P; //0x0000
@@ -1632,7 +1632,7 @@ struct Animated3pOnlyWeaponBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09548
-// TypeInfo:  0x0000000142C89C28
+// TypeInfo: 0x0000000142C89C28
 struct Animated1pOnlyWeaponBinding
 {
     AntRef m_UndeployFinished; //0x0000
@@ -1643,7 +1643,7 @@ struct Animated1pOnlyWeaponBinding
 
 ////////////////////////////////////////
 // RuntimeId: 09472
-// TypeInfo:  0x0000000142C82058
+// TypeInfo: 0x0000000142C82058
 struct ServerSoldierSelfHealMessage
 {
     char _0x0000[48];
@@ -1651,7 +1651,7 @@ struct ServerSoldierSelfHealMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09471
-// TypeInfo:  0x0000000142C82078
+// TypeInfo: 0x0000000142C82078
 struct ServerSoldierManDownMessage
 {
     char _0x0000[56];
@@ -1659,7 +1659,7 @@ struct ServerSoldierManDownMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09470
-// TypeInfo:  0x0000000142C82098
+// TypeInfo: 0x0000000142C82098
 struct ServerSoldierOnInitMessage
 {
     char _0x0000[48];
@@ -1667,7 +1667,7 @@ struct ServerSoldierOnInitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09469
-// TypeInfo:  0x0000000142C820B8
+// TypeInfo: 0x0000000142C820B8
 struct ServerSoldierChangingWeaponMessage
 {
     char _0x0000[48];
@@ -1675,7 +1675,7 @@ struct ServerSoldierChangingWeaponMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09468
-// TypeInfo:  0x0000000142C820D8
+// TypeInfo: 0x0000000142C820D8
 struct ServerSoldierFiringMessage
 {
     char _0x0000[48];
@@ -1683,7 +1683,7 @@ struct ServerSoldierFiringMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09467
-// TypeInfo:  0x0000000142C820F8
+// TypeInfo: 0x0000000142C820F8
 struct ServerSoldierDamagedMessage
 {
     char _0x0000[48];
@@ -1691,7 +1691,7 @@ struct ServerSoldierDamagedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09466
-// TypeInfo:  0x0000000142C82118
+// TypeInfo: 0x0000000142C82118
 struct ServerProjectileMissileDestroyedMessage
 {
     char _0x0000[48];
@@ -1699,7 +1699,7 @@ struct ServerProjectileMissileDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09465
-// TypeInfo:  0x0000000142C82138
+// TypeInfo: 0x0000000142C82138
 struct ServerProjectileMissileDamagedMessage
 {
     char _0x0000[56];
@@ -1707,7 +1707,7 @@ struct ServerProjectileMissileDamagedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09464
-// TypeInfo:  0x0000000142C82158
+// TypeInfo: 0x0000000142C82158
 struct ClientSoldierChangeCoverStateMessage
 {
     char _0x0000[56];
@@ -1715,7 +1715,7 @@ struct ClientSoldierChangeCoverStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09463
-// TypeInfo:  0x0000000142C82178
+// TypeInfo: 0x0000000142C82178
 struct ClientSoldierOnLandMessage
 {
     char _0x0000[40];
@@ -1723,7 +1723,7 @@ struct ClientSoldierOnLandMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09462
-// TypeInfo:  0x0000000142C82198
+// TypeInfo: 0x0000000142C82198
 struct ClientSoldierOnJumpMessage
 {
     char _0x0000[40];
@@ -1731,7 +1731,7 @@ struct ClientSoldierOnJumpMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09439
-// TypeInfo:  0x0000000142C81620
+// TypeInfo: 0x0000000142C81620
 struct OriginErrorMessage
 {
     char _0x0000[48];
@@ -1739,7 +1739,7 @@ struct OriginErrorMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09438
-// TypeInfo:  0x0000000142C81640
+// TypeInfo: 0x0000000142C81640
 struct OriginResponseMessageBase
 {
     char _0x0000[40];
@@ -1747,7 +1747,7 @@ struct OriginResponseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09437
-// TypeInfo:  0x0000000142C81660
+// TypeInfo: 0x0000000142C81660
 struct OriginRequestMessageBase
 {
     char _0x0000[40];
@@ -1755,7 +1755,7 @@ struct OriginRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09358
-// TypeInfo:  0x0000000142C7EE88
+// TypeInfo: 0x0000000142C7EE88
 struct OnlineProviderConfiguration
 {
     GamePlatform m_Platform; //0x0000
@@ -1771,7 +1771,7 @@ struct OnlineProviderConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 09356
-// TypeInfo:  0x0000000142C7EEA8
+// TypeInfo: 0x0000000142C7EEA8
 struct OnlinePlatformConfiguration
 {
     GamePlatform m_Platform; //0x0000
@@ -1785,7 +1785,7 @@ struct OnlinePlatformConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 09346
-// TypeInfo:  0x0000000142C7EEE8
+// TypeInfo: 0x0000000142C7EEE8
 struct OnlineEnvironmentUrlData
 {
     char* m_Url; //0x0000
@@ -1795,7 +1795,7 @@ struct OnlineEnvironmentUrlData
 
 ////////////////////////////////////////
 // RuntimeId: 09348
-// TypeInfo:  0x0000000142C7EDC8
+// TypeInfo: 0x0000000142C7EDC8
 struct OnlineEnvironmentUrl
 {
     Array<OnlineEnvironmentUrlData> m_Urls; //0x0000
@@ -1803,7 +1803,7 @@ struct OnlineEnvironmentUrl
 
 ////////////////////////////////////////
 // RuntimeId: 09350
-// TypeInfo:  0x0000000142C7EEC8
+// TypeInfo: 0x0000000142C7EEC8
 struct OnlineEnvironmentConsoleUrlData
 {
     GamePlatform m_Platform; //0x0000
@@ -1813,7 +1813,7 @@ struct OnlineEnvironmentConsoleUrlData
 
 ////////////////////////////////////////
 // RuntimeId: 09352
-// TypeInfo:  0x0000000142C7EDA8
+// TypeInfo: 0x0000000142C7EDA8
 struct OnlineEnvironmentConsoleUrl
 {
     Array<OnlineEnvironmentConsoleUrlData> m_Urls; //0x0000
@@ -1821,7 +1821,7 @@ struct OnlineEnvironmentConsoleUrl
 
 ////////////////////////////////////////
 // RuntimeId: 09336
-// TypeInfo:  0x0000000142C7EDE8
+// TypeInfo: 0x0000000142C7EDE8
 struct BlazeCreateGameParameters
 {
     GameParametersData* m_Base; //0x0000
@@ -1829,7 +1829,7 @@ struct BlazeCreateGameParameters
 
 ////////////////////////////////////////
 // RuntimeId: 09322
-// TypeInfo:  0x0000000142C7EF08
+// TypeInfo: 0x0000000142C7EF08
 struct Ps4CountryAgeOverrides
 {
     char* m_CountryCode; //0x0000
@@ -1839,7 +1839,7 @@ struct Ps4CountryAgeOverrides
 
 ////////////////////////////////////////
 // RuntimeId: 09324
-// TypeInfo:  0x0000000142C7EE08
+// TypeInfo: 0x0000000142C7EE08
 struct Ps4AgeSettings
 {
     __int32 m_DefaultAgeRequirement; //0x0000
@@ -1849,7 +1849,7 @@ struct Ps4AgeSettings
 
 ////////////////////////////////////////
 // RuntimeId: 09320
-// TypeInfo:  0x0000000142C7EE28
+// TypeInfo: 0x0000000142C7EE28
 struct Ps4TitleData
 {
     char* m_TitleId; //0x0000
@@ -1858,7 +1858,7 @@ struct Ps4TitleData
 
 ////////////////////////////////////////
 // RuntimeId: 09312
-// TypeInfo:  0x0000000142C7EE48
+// TypeInfo: 0x0000000142C7EE48
 struct Ps3ServiceId
 {
     char* m_SPID; //0x0000
@@ -1867,7 +1867,7 @@ struct Ps3ServiceId
 
 ////////////////////////////////////////
 // RuntimeId: 09314
-// TypeInfo:  0x0000000142C7EF28
+// TypeInfo: 0x0000000142C7EF28
 struct Ps3ServiceSettings
 {
     char* m_Region; //0x0000
@@ -1878,7 +1878,7 @@ struct Ps3ServiceSettings
 
 ////////////////////////////////////////
 // RuntimeId: 09304
-// TypeInfo:  0x0000000142C7EE68
+// TypeInfo: 0x0000000142C7EE68
 struct Ps3AgeLevels
 {
     __int32 m_AgeLevel7; //0x0000
@@ -1889,7 +1889,7 @@ struct Ps3AgeLevels
 
 ////////////////////////////////////////
 // RuntimeId: 09306
-// TypeInfo:  0x0000000142C7EF68
+// TypeInfo: 0x0000000142C7EF68
 struct Ps3ParentalLockAgeSettingsForCountry
 {
     char* m_CountryCode; //0x0000
@@ -1898,7 +1898,7 @@ struct Ps3ParentalLockAgeSettingsForCountry
 
 ////////////////////////////////////////
 // RuntimeId: 09310
-// TypeInfo:  0x0000000142C7EF48
+// TypeInfo: 0x0000000142C7EF48
 struct Ps3ParentalLockAgeSettings
 {
     char* m_Region; //0x0000
@@ -1908,7 +1908,7 @@ struct Ps3ParentalLockAgeSettings
 
 ////////////////////////////////////////
 // RuntimeId: 09262
-// TypeInfo:  0x0000000142C7D9C0
+// TypeInfo: 0x0000000142C7D9C0
 struct MatchmakingSizeConfiguration
 {
     MatchmakingPlatform m_Platform; //0x0000
@@ -1923,7 +1923,7 @@ struct MatchmakingSizeConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 09284
-// TypeInfo:  0x0000000142C7CFE0
+// TypeInfo: 0x0000000142C7CFE0
 struct MatchmakingFreePlayerSlotsRule
 {
     unsigned __int32 m_MaxFreePlayerSlots; //0x0000
@@ -1932,7 +1932,7 @@ struct MatchmakingFreePlayerSlotsRule
 
 ////////////////////////////////////////
 // RuntimeId: 09282
-// TypeInfo:  0x0000000142C7D000
+// TypeInfo: 0x0000000142C7D000
 struct MatchmakingSlotUtilizationRule
 {
     unsigned __int32 m_PreferredPercentage; //0x0000
@@ -1944,7 +1944,7 @@ struct MatchmakingSlotUtilizationRule
 
 ////////////////////////////////////////
 // RuntimeId: 09278
-// TypeInfo:  0x0000000142C7D940
+// TypeInfo: 0x0000000142C7D940
 struct MatchmakingMod
 {
     Array<char*> m_Licenses; //0x0000
@@ -1952,7 +1952,7 @@ struct MatchmakingMod
 
 ////////////////////////////////////////
 // RuntimeId: 09280
-// TypeInfo:  0x0000000142C7D020
+// TypeInfo: 0x0000000142C7D020
 struct MatchmakingModRule
 {
     Array<MatchmakingMod> m_Mods; //0x0000
@@ -1961,7 +1961,7 @@ struct MatchmakingModRule
 
 ////////////////////////////////////////
 // RuntimeId: 09276
-// TypeInfo:  0x0000000142C7D960
+// TypeInfo: 0x0000000142C7D960
 struct MatchmakingUserExtendedDataRule
 {
     char* m_Rule; //0x0000
@@ -1970,7 +1970,7 @@ struct MatchmakingUserExtendedDataRule
 
 ////////////////////////////////////////
 // RuntimeId: 09272
-// TypeInfo:  0x0000000142C7D9A0
+// TypeInfo: 0x0000000142C7D9A0
 struct MatchmakingRuleString
 {
     char* m_Value; //0x0000
@@ -1983,7 +1983,7 @@ struct MatchmakingRuleString
 
 ////////////////////////////////////////
 // RuntimeId: 09274
-// TypeInfo:  0x0000000142C7D980
+// TypeInfo: 0x0000000142C7D980
 struct MatchmakingGenericRule
 {
     char* m_Rule; //0x0000
@@ -1998,7 +1998,7 @@ struct MatchmakingGenericRule
 
 ////////////////////////////////////////
 // RuntimeId: 09270
-// TypeInfo:  0x0000000142C7D040
+// TypeInfo: 0x0000000142C7D040
 struct MatchmakingRankedRule
 {
     char* m_MinFitThreshold; //0x0000
@@ -2006,7 +2006,7 @@ struct MatchmakingRankedRule
 
 ////////////////////////////////////////
 // RuntimeId: 09268
-// TypeInfo:  0x0000000142C7D060
+// TypeInfo: 0x0000000142C7D060
 struct MatchmakingPingSiteRule
 {
     char* m_MinFitThreshold; //0x0000
@@ -2014,7 +2014,7 @@ struct MatchmakingPingSiteRule
 
 ////////////////////////////////////////
 // RuntimeId: 09264
-// TypeInfo:  0x0000000142C7D0A0
+// TypeInfo: 0x0000000142C7D0A0
 struct MatchmakingSizeRule
 {
     char* m_Setting; //0x0000
@@ -2023,7 +2023,7 @@ struct MatchmakingSizeRule
 
 ////////////////////////////////////////
 // RuntimeId: 09260
-// TypeInfo:  0x0000000142C7D0C0
+// TypeInfo: 0x0000000142C7D0C0
 struct MatchmakingVirtualizedRule
 {
     char* m_MinFitThreshold; //0x0000
@@ -2033,7 +2033,7 @@ struct MatchmakingVirtualizedRule
 
 ////////////////////////////////////////
 // RuntimeId: 09286
-// TypeInfo:  0x0000000142C7CFC0
+// TypeInfo: 0x0000000142C7CFC0
 struct MatchmakingCriteria
 {
     MatchmakingSizeRule m_SizeRule; //0x0000
@@ -2049,7 +2049,7 @@ struct MatchmakingCriteria
 
 ////////////////////////////////////////
 // RuntimeId: 09254
-// TypeInfo:  0x0000000142C7D0E0
+// TypeInfo: 0x0000000142C7D0E0
 struct ServerBackendEjectHostMessage
 {
     char _0x0000[40];
@@ -2057,7 +2057,7 @@ struct ServerBackendEjectHostMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09253
-// TypeInfo:  0x0000000142C7D100
+// TypeInfo: 0x0000000142C7D100
 struct ServerBackendStatsDownloadFailMessage
 {
     char _0x0000[40];
@@ -2065,7 +2065,7 @@ struct ServerBackendStatsDownloadFailMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09252
-// TypeInfo:  0x0000000142C7D120
+// TypeInfo: 0x0000000142C7D120
 struct ServerGameManagerAvailableMapsChangedMessage
 {
     char _0x0000[40];
@@ -2073,7 +2073,7 @@ struct ServerGameManagerAvailableMapsChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09251
-// TypeInfo:  0x0000000142C7D140
+// TypeInfo: 0x0000000142C7D140
 struct ServerGameManagerKickPlayerMessage
 {
     char _0x0000[56];
@@ -2081,7 +2081,7 @@ struct ServerGameManagerKickPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09250
-// TypeInfo:  0x0000000142C7D160
+// TypeInfo: 0x0000000142C7D160
 struct ServerGameManagerAddQueuedPlayerMessage
 {
     char _0x0000[64];
@@ -2089,7 +2089,7 @@ struct ServerGameManagerAddQueuedPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09249
-// TypeInfo:  0x0000000142C7D180
+// TypeInfo: 0x0000000142C7D180
 struct ServerGameManagerValidateBannerResponseMessage
 {
     char _0x0000[56];
@@ -2097,7 +2097,7 @@ struct ServerGameManagerValidateBannerResponseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09248
-// TypeInfo:  0x0000000142C7D1A0
+// TypeInfo: 0x0000000142C7D1A0
 struct ServerGameManagerValidateBannerRequestMessage
 {
     char _0x0000[48];
@@ -2105,7 +2105,7 @@ struct ServerGameManagerValidateBannerRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09247
-// TypeInfo:  0x0000000142C7D1C0
+// TypeInfo: 0x0000000142C7D1C0
 struct ServerGameManagerAddGameBanResponseMessage
 {
     char _0x0000[56];
@@ -2113,7 +2113,7 @@ struct ServerGameManagerAddGameBanResponseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09246
-// TypeInfo:  0x0000000142C7D1E0
+// TypeInfo: 0x0000000142C7D1E0
 struct ServerGameManagerAddGameBanRequestMessage
 {
     char _0x0000[56];
@@ -2121,7 +2121,7 @@ struct ServerGameManagerAddGameBanRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09245
-// TypeInfo:  0x0000000142C7D200
+// TypeInfo: 0x0000000142C7D200
 struct ServerGameManagerGetGameDataMessage
 {
     char _0x0000[40];
@@ -2129,7 +2129,7 @@ struct ServerGameManagerGetGameDataMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09244
-// TypeInfo:  0x0000000142C7D220
+// TypeInfo: 0x0000000142C7D220
 struct ServerGameManagerRestartLevelRequestMessage
 {
     char _0x0000[40];
@@ -2137,7 +2137,7 @@ struct ServerGameManagerRestartLevelRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09243
-// TypeInfo:  0x0000000142C7D240
+// TypeInfo: 0x0000000142C7D240
 struct ServerGameManagerGameDestructingMessage
 {
     char _0x0000[40];
@@ -2145,7 +2145,7 @@ struct ServerGameManagerGameDestructingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09242
-// TypeInfo:  0x0000000142C7D260
+// TypeInfo: 0x0000000142C7D260
 struct ServerGameManagerPlayerRemovedMessageBase
 {
     char _0x0000[40];
@@ -2153,7 +2153,7 @@ struct ServerGameManagerPlayerRemovedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09241
-// TypeInfo:  0x0000000142C7D280
+// TypeInfo: 0x0000000142C7D280
 struct ServerGameManagerPlayerJoiningQueueMessage
 {
     char _0x0000[56];
@@ -2161,7 +2161,7 @@ struct ServerGameManagerPlayerJoiningQueueMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09240
-// TypeInfo:  0x0000000142C7D2A0
+// TypeInfo: 0x0000000142C7D2A0
 struct ServerGameManagerCheckPlayerStatusMessage
 {
     char _0x0000[64];
@@ -2169,7 +2169,7 @@ struct ServerGameManagerCheckPlayerStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09239
-// TypeInfo:  0x0000000142C7D2C0
+// TypeInfo: 0x0000000142C7D2C0
 struct ServerGameManagerPlayerJoiningMessageBase
 {
     char _0x0000[40];
@@ -2177,7 +2177,7 @@ struct ServerGameManagerPlayerJoiningMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09238
-// TypeInfo:  0x0000000142C7D2E0
+// TypeInfo: 0x0000000142C7D2E0
 struct ServerGameManagerUpdateCapacityMessageBase
 {
     char _0x0000[40];
@@ -2185,7 +2185,7 @@ struct ServerGameManagerUpdateCapacityMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09237
-// TypeInfo:  0x0000000142C7D300
+// TypeInfo: 0x0000000142C7D300
 struct ServerGameManagerGameParametersChangedMessageBase
 {
     char _0x0000[40];
@@ -2193,7 +2193,7 @@ struct ServerGameManagerGameParametersChangedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09236
-// TypeInfo:  0x0000000142C7D320
+// TypeInfo: 0x0000000142C7D320
 struct ServerGameManagerChangeGameParametersMessageBase
 {
     char _0x0000[40];
@@ -2201,7 +2201,7 @@ struct ServerGameManagerChangeGameParametersMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09235
-// TypeInfo:  0x0000000142C7D340
+// TypeInfo: 0x0000000142C7D340
 struct ServerGameManagerReconfigurableGameCreatedMessage
 {
     char _0x0000[40];
@@ -2209,7 +2209,7 @@ struct ServerGameManagerReconfigurableGameCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09234
-// TypeInfo:  0x0000000142C7D360
+// TypeInfo: 0x0000000142C7D360
 struct ServerGameManagerCreatingReconfigurableGameMessage
 {
     char _0x0000[40];
@@ -2217,7 +2217,7 @@ struct ServerGameManagerCreatingReconfigurableGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09233
-// TypeInfo:  0x0000000142C7D380
+// TypeInfo: 0x0000000142C7D380
 struct ServerGameManagerGameResetMessageBase
 {
     char _0x0000[40];
@@ -2225,7 +2225,7 @@ struct ServerGameManagerGameResetMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09232
-// TypeInfo:  0x0000000142C7D3A0
+// TypeInfo: 0x0000000142C7D3A0
 struct ServerGameManagerGameCreatedMessageBase
 {
     char _0x0000[40];
@@ -2233,7 +2233,7 @@ struct ServerGameManagerGameCreatedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09231
-// TypeInfo:  0x0000000142C7D3C0
+// TypeInfo: 0x0000000142C7D3C0
 struct ServerGameManagerCreatingGameMessageBase
 {
     char _0x0000[40];
@@ -2241,7 +2241,7 @@ struct ServerGameManagerCreatingGameMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09230
-// TypeInfo:  0x0000000142C7D3E0
+// TypeInfo: 0x0000000142C7D3E0
 struct ServerBackendFinalizingMessage
 {
     char _0x0000[40];
@@ -2249,7 +2249,7 @@ struct ServerBackendFinalizingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 09229
-// TypeInfo:  0x0000000142C7D400
+// TypeInfo: 0x0000000142C7D400
 struct ServerBackendDownloadCompleteMessageBase
 {
     char _0x0000[40];
@@ -2257,7 +2257,7 @@ struct ServerBackendDownloadCompleteMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09226
-// TypeInfo:  0x0000000142C7D9E0
+// TypeInfo: 0x0000000142C7D9E0
 struct LicenseInfo
 {
     char* m_Name; //0x0000
@@ -2267,7 +2267,7 @@ struct LicenseInfo
 
 ////////////////////////////////////////
 // RuntimeId: 09216
-// TypeInfo:  0x0000000142C7DA00
+// TypeInfo: 0x0000000142C7DA00
 struct GameAttributeData
 {
     char* m_Attribute; //0x0000
@@ -2276,7 +2276,7 @@ struct GameAttributeData
 
 ////////////////////////////////////////
 // RuntimeId: 09210
-// TypeInfo:  0x0000000142C7D460
+// TypeInfo: 0x0000000142C7D460
 struct PresenceUserProfileRequestMessageBase
 {
     char _0x0000[40];
@@ -2284,7 +2284,7 @@ struct PresenceUserProfileRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09209
-// TypeInfo:  0x0000000142C7D480
+// TypeInfo: 0x0000000142C7D480
 struct PresenceUserProfileMessageBase
 {
     char _0x0000[40];
@@ -2292,7 +2292,7 @@ struct PresenceUserProfileMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09208
-// TypeInfo:  0x0000000142C7D4A0
+// TypeInfo: 0x0000000142C7D4A0
 struct PresenceUserIdRequestMessageBase
 {
     char _0x0000[40];
@@ -2300,7 +2300,7 @@ struct PresenceUserIdRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09207
-// TypeInfo:  0x0000000142C7D4C0
+// TypeInfo: 0x0000000142C7D4C0
 struct PresenceUserIdMessageBase
 {
     char _0x0000[40];
@@ -2308,7 +2308,7 @@ struct PresenceUserIdMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09206
-// TypeInfo:  0x0000000142C7D4E0
+// TypeInfo: 0x0000000142C7D4E0
 struct PresenceStorageRequestMessageBase
 {
     char _0x0000[40];
@@ -2316,7 +2316,7 @@ struct PresenceStorageRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09205
-// TypeInfo:  0x0000000142C7D500
+// TypeInfo: 0x0000000142C7D500
 struct PresenceStorageMessageBase
 {
     char _0x0000[40];
@@ -2324,7 +2324,7 @@ struct PresenceStorageMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09204
-// TypeInfo:  0x0000000142C7D520
+// TypeInfo: 0x0000000142C7D520
 struct PresenceProfileInfoRequestMessageBase
 {
     char _0x0000[40];
@@ -2332,7 +2332,7 @@ struct PresenceProfileInfoRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09203
-// TypeInfo:  0x0000000142C7D540
+// TypeInfo: 0x0000000142C7D540
 struct PresenceProfileInfoMessageBase
 {
     char _0x0000[40];
@@ -2340,7 +2340,7 @@ struct PresenceProfileInfoMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09202
-// TypeInfo:  0x0000000142C7D560
+// TypeInfo: 0x0000000142C7D560
 struct PresencePrivilegeRequestResultMessageBase
 {
     char _0x0000[40];
@@ -2348,7 +2348,7 @@ struct PresencePrivilegeRequestResultMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09201
-// TypeInfo:  0x0000000142C7D580
+// TypeInfo: 0x0000000142C7D580
 struct PresencePrivilegeRequestMessageBase
 {
     char _0x0000[40];
@@ -2356,7 +2356,7 @@ struct PresencePrivilegeRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09200
-// TypeInfo:  0x0000000142C7D5A0
+// TypeInfo: 0x0000000142C7D5A0
 struct PresencePlaygroupRequestMessageBase
 {
     char _0x0000[40];
@@ -2364,7 +2364,7 @@ struct PresencePlaygroupRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09199
-// TypeInfo:  0x0000000142C7D5C0
+// TypeInfo: 0x0000000142C7D5C0
 struct PresencePlaygroupAttributesMessageBase
 {
     char _0x0000[40];
@@ -2372,7 +2372,7 @@ struct PresencePlaygroupAttributesMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09198
-// TypeInfo:  0x0000000142C7D5E0
+// TypeInfo: 0x0000000142C7D5E0
 struct PresencePlaygroupMessageBase
 {
     char _0x0000[40];
@@ -2380,7 +2380,7 @@ struct PresencePlaygroupMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09197
-// TypeInfo:  0x0000000142C7D600
+// TypeInfo: 0x0000000142C7D600
 struct PresenceOverlayMessageBase
 {
     char _0x0000[40];
@@ -2388,7 +2388,7 @@ struct PresenceOverlayMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09196
-// TypeInfo:  0x0000000142C7D620
+// TypeInfo: 0x0000000142C7D620
 struct PresenceMatchmakerMessageBase
 {
     char _0x0000[40];
@@ -2396,7 +2396,7 @@ struct PresenceMatchmakerMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09195
-// TypeInfo:  0x0000000142C7D640
+// TypeInfo: 0x0000000142C7D640
 struct PresenceLivePartyMessageBase
 {
     char _0x0000[40];
@@ -2404,7 +2404,7 @@ struct PresenceLivePartyMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09194
-// TypeInfo:  0x0000000142C7D660
+// TypeInfo: 0x0000000142C7D660
 struct PresenceLicenseMetricMessageBase
 {
     char _0x0000[40];
@@ -2412,7 +2412,7 @@ struct PresenceLicenseMetricMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09193
-// TypeInfo:  0x0000000142C7D680
+// TypeInfo: 0x0000000142C7D680
 struct PresenceLicenseRequestMessageBase
 {
     char _0x0000[40];
@@ -2420,7 +2420,7 @@ struct PresenceLicenseRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09192
-// TypeInfo:  0x0000000142C7D6A0
+// TypeInfo: 0x0000000142C7D6A0
 struct PresenceLicenseMessageBase
 {
     char _0x0000[40];
@@ -2428,7 +2428,7 @@ struct PresenceLicenseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09191
-// TypeInfo:  0x0000000142C7D6C0
+// TypeInfo: 0x0000000142C7D6C0
 struct PresenceJoinResultMessageBase
 {
     char _0x0000[40];
@@ -2436,7 +2436,7 @@ struct PresenceJoinResultMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09190
-// TypeInfo:  0x0000000142C7D6E0
+// TypeInfo: 0x0000000142C7D6E0
 struct PresenceGameRequestMessageBase
 {
     char _0x0000[40];
@@ -2444,7 +2444,7 @@ struct PresenceGameRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09189
-// TypeInfo:  0x0000000142C7D700
+// TypeInfo: 0x0000000142C7D700
 struct PresenceGameQueueMessageBase
 {
     char _0x0000[40];
@@ -2452,7 +2452,7 @@ struct PresenceGameQueueMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09188
-// TypeInfo:  0x0000000142C7D720
+// TypeInfo: 0x0000000142C7D720
 struct PresenceGameMessageBase
 {
     char _0x0000[40];
@@ -2460,7 +2460,7 @@ struct PresenceGameMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09187
-// TypeInfo:  0x0000000142C7D740
+// TypeInfo: 0x0000000142C7D740
 struct PresenceInviteRequestMessageBase
 {
     char _0x0000[40];
@@ -2468,7 +2468,7 @@ struct PresenceInviteRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09186
-// TypeInfo:  0x0000000142C7D760
+// TypeInfo: 0x0000000142C7D760
 struct PresenceInviteMessageBase
 {
     char _0x0000[40];
@@ -2476,7 +2476,7 @@ struct PresenceInviteMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09185
-// TypeInfo:  0x0000000142C7D780
+// TypeInfo: 0x0000000142C7D780
 struct PresenceFriendsListManagerSettingsMessageBase
 {
     char _0x0000[40];
@@ -2484,7 +2484,7 @@ struct PresenceFriendsListManagerSettingsMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09184
-// TypeInfo:  0x0000000142C7D7A0
+// TypeInfo: 0x0000000142C7D7A0
 struct PresenceFriendRequestMessageBase
 {
     char _0x0000[40];
@@ -2492,7 +2492,7 @@ struct PresenceFriendRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09183
-// TypeInfo:  0x0000000142C7D7C0
+// TypeInfo: 0x0000000142C7D7C0
 struct PresenceFriendMessageBase
 {
     char _0x0000[40];
@@ -2500,7 +2500,7 @@ struct PresenceFriendMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09182
-// TypeInfo:  0x0000000142C7D7E0
+// TypeInfo: 0x0000000142C7D7E0
 struct PresenceConnectionRequestMessageBase
 {
     char _0x0000[40];
@@ -2508,7 +2508,7 @@ struct PresenceConnectionRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09181
-// TypeInfo:  0x0000000142C7D800
+// TypeInfo: 0x0000000142C7D800
 struct PresenceConnectionMessageBase
 {
     char _0x0000[40];
@@ -2516,7 +2516,7 @@ struct PresenceConnectionMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09180
-// TypeInfo:  0x0000000142C7D820
+// TypeInfo: 0x0000000142C7D820
 struct PresenceBrowserRequestMessageBase
 {
     char _0x0000[40];
@@ -2524,7 +2524,7 @@ struct PresenceBrowserRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09179
-// TypeInfo:  0x0000000142C7D840
+// TypeInfo: 0x0000000142C7D840
 struct PresenceBlockListRequestMessageBase
 {
     char _0x0000[40];
@@ -2532,7 +2532,7 @@ struct PresenceBlockListRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09178
-// TypeInfo:  0x0000000142C7D860
+// TypeInfo: 0x0000000142C7D860
 struct PresenceBlockListMessageBase
 {
     char _0x0000[40];
@@ -2540,7 +2540,7 @@ struct PresenceBlockListMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09177
-// TypeInfo:  0x0000000142C7D880
+// TypeInfo: 0x0000000142C7D880
 struct PresenceBlobRequestMessageBase
 {
     char _0x0000[40];
@@ -2548,7 +2548,7 @@ struct PresenceBlobRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09176
-// TypeInfo:  0x0000000142C7D8A0
+// TypeInfo: 0x0000000142C7D8A0
 struct PresenceBlobMessageBase
 {
     char _0x0000[40];
@@ -2556,7 +2556,7 @@ struct PresenceBlobMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09175
-// TypeInfo:  0x0000000142C7D8C0
+// TypeInfo: 0x0000000142C7D8C0
 struct PresenceAuthenticationRequestMessageBase
 {
     char _0x0000[40];
@@ -2564,7 +2564,7 @@ struct PresenceAuthenticationRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09174
-// TypeInfo:  0x0000000142C7D8E0
+// TypeInfo: 0x0000000142C7D8E0
 struct PresenceAuthenticationMessageBase
 {
     char _0x0000[40];
@@ -2572,7 +2572,7 @@ struct PresenceAuthenticationMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09173
-// TypeInfo:  0x0000000142C7D900
+// TypeInfo: 0x0000000142C7D900
 struct PresenceAchievementRequestMessageBase
 {
     char _0x0000[40];
@@ -2580,7 +2580,7 @@ struct PresenceAchievementRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09172
-// TypeInfo:  0x0000000142C7D920
+// TypeInfo: 0x0000000142C7D920
 struct OnlineInternalGameMessageBase
 {
     char _0x0000[40];
@@ -2588,7 +2588,7 @@ struct OnlineInternalGameMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09168
-// TypeInfo:  0x0000000142C7B550
+// TypeInfo: 0x0000000142C7B550
 struct PresenceNickelRequestMessageBase
 {
     char _0x0000[40];
@@ -2596,7 +2596,7 @@ struct PresenceNickelRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09167
-// TypeInfo:  0x0000000142C7B570
+// TypeInfo: 0x0000000142C7B570
 struct PresenceNickelMessageBase
 {
     char _0x0000[40];
@@ -2604,7 +2604,7 @@ struct PresenceNickelMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 09111
-// TypeInfo:  0x0000000142C78FA8
+// TypeInfo: 0x0000000142C78FA8
 struct SkyCloudLayer
 {
     Vec3 m_Color; //0x0000
@@ -2622,7 +2622,7 @@ struct SkyCloudLayer
 
 ////////////////////////////////////////
 // RuntimeId: 03698
-// TypeInfo:  0x00000001423057D0
+// TypeInfo: 0x00000001423057D0
 struct Vec2
 {
     float m_x; //0x0000
@@ -2631,7 +2631,7 @@ struct Vec2
 
 ////////////////////////////////////////
 // RuntimeId: 09033
-// TypeInfo:  0x0000000142C78FC8
+// TypeInfo: 0x0000000142C78FC8
 struct GroundHeightData
 {
     float m_WorldSize; //0x0000
@@ -2642,7 +2642,7 @@ struct GroundHeightData
 
 ////////////////////////////////////////
 // RuntimeId: 08962
-// TypeInfo:  0x0000000142C76010
+// TypeInfo: 0x0000000142C76010
 struct VegetationEffectSlot
 {
     EffectBlueprint* m_Effect; //0x0000
@@ -2654,7 +2654,7 @@ struct VegetationEffectSlot
 
 ////////////////////////////////////////
 // RuntimeId: 08953
-// TypeInfo:  0x0000000142C73ED8
+// TypeInfo: 0x0000000142C73ED8
 struct UIPremiumContentUpdateMessage
 {
     char _0x0000[48];
@@ -2662,7 +2662,7 @@ struct UIPremiumContentUpdateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08952
-// TypeInfo:  0x0000000142C73EF8
+// TypeInfo: 0x0000000142C73EF8
 struct UIComponentDeferActionMessage
 {
     char _0x0000[40];
@@ -2670,7 +2670,7 @@ struct UIComponentDeferActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08951
-// TypeInfo:  0x0000000142C73F18
+// TypeInfo: 0x0000000142C73F18
 struct UIComponentOnItemChangedMessage
 {
     char _0x0000[40];
@@ -2678,7 +2678,7 @@ struct UIComponentOnItemChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08950
-// TypeInfo:  0x0000000142C73F38
+// TypeInfo: 0x0000000142C73F38
 struct UIComponentChangeCameraViewPointMessage
 {
     char _0x0000[56];
@@ -2686,7 +2686,7 @@ struct UIComponentChangeCameraViewPointMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08949
-// TypeInfo:  0x0000000142C73F58
+// TypeInfo: 0x0000000142C73F58
 struct UIComponentSetSettingMessage
 {
     char _0x0000[64];
@@ -2694,7 +2694,7 @@ struct UIComponentSetSettingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08948
-// TypeInfo:  0x0000000142C73F78
+// TypeInfo: 0x0000000142C73F78
 struct UIComponentLoadCompleteMessage
 {
     char _0x0000[40];
@@ -2702,7 +2702,7 @@ struct UIComponentLoadCompleteMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08947
-// TypeInfo:  0x0000000142C73F98
+// TypeInfo: 0x0000000142C73F98
 struct UIReadyForUnloadMessage
 {
     char _0x0000[40];
@@ -2710,7 +2710,7 @@ struct UIReadyForUnloadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08946
-// TypeInfo:  0x0000000142C73FB8
+// TypeInfo: 0x0000000142C73FB8
 struct UISoldierChangeMessage
 {
     char _0x0000[48];
@@ -2718,7 +2718,7 @@ struct UISoldierChangeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08943
-// TypeInfo:  0x0000000142C73FF8
+// TypeInfo: 0x0000000142C73FF8
 struct UIAssetChangedMessage
 {
     char _0x0000[48];
@@ -2726,7 +2726,7 @@ struct UIAssetChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08942
-// TypeInfo:  0x0000000142C74018
+// TypeInfo: 0x0000000142C74018
 struct UIInputPressedMessage
 {
     char _0x0000[48];
@@ -2734,7 +2734,7 @@ struct UIInputPressedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08941
-// TypeInfo:  0x0000000142C74038
+// TypeInfo: 0x0000000142C74038
 struct UIGraphExitedMessage
 {
     char _0x0000[48];
@@ -2742,7 +2742,7 @@ struct UIGraphExitedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08940
-// TypeInfo:  0x0000000142C74058
+// TypeInfo: 0x0000000142C74058
 struct UIScreenLoadedMessage
 {
     char _0x0000[48];
@@ -2750,7 +2750,7 @@ struct UIScreenLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08939
-// TypeInfo:  0x0000000142C74078
+// TypeInfo: 0x0000000142C74078
 struct UIFirstPartyUIMessage
 {
     char _0x0000[48];
@@ -2758,7 +2758,7 @@ struct UIFirstPartyUIMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08938
-// TypeInfo:  0x0000000142C74098
+// TypeInfo: 0x0000000142C74098
 struct UITransitionEffectStopMessage
 {
     char _0x0000[40];
@@ -2766,7 +2766,7 @@ struct UITransitionEffectStopMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08937
-// TypeInfo:  0x0000000142C740B8
+// TypeInfo: 0x0000000142C740B8
 struct UITransitionEffectStartMessage
 {
     char _0x0000[40];
@@ -2774,7 +2774,7 @@ struct UITransitionEffectStartMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08936
-// TypeInfo:  0x0000000142C740D8
+// TypeInfo: 0x0000000142C740D8
 struct UIExitToMenuReasonMessage
 {
     char _0x0000[48];
@@ -2782,7 +2782,7 @@ struct UIExitToMenuReasonMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08935
-// TypeInfo:  0x0000000142C740F8
+// TypeInfo: 0x0000000142C740F8
 struct UISpawnAllowedMessage
 {
     char _0x0000[48];
@@ -2790,7 +2790,7 @@ struct UISpawnAllowedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08934
-// TypeInfo:  0x0000000142C74118
+// TypeInfo: 0x0000000142C74118
 struct UIVehicleHitUpdatedMessage
 {
     char _0x0000[64];
@@ -2798,7 +2798,7 @@ struct UIVehicleHitUpdatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08933
-// TypeInfo:  0x0000000142C74138
+// TypeInfo: 0x0000000142C74138
 struct UISquadStatusChangedMessage
 {
     char _0x0000[40];
@@ -2806,7 +2806,7 @@ struct UISquadStatusChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08932
-// TypeInfo:  0x0000000142C74158
+// TypeInfo: 0x0000000142C74158
 struct UISoldierHitUpdatedMessage
 {
     char _0x0000[80];
@@ -2814,7 +2814,7 @@ struct UISoldierHitUpdatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08931
-// TypeInfo:  0x0000000142C74178
+// TypeInfo: 0x0000000142C74178
 struct UIReturnMouseToUIMessage
 {
     char _0x0000[40];
@@ -2822,7 +2822,7 @@ struct UIReturnMouseToUIMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08930
-// TypeInfo:  0x0000000142C74198
+// TypeInfo: 0x0000000142C74198
 struct UIPlayerVehicleHealthChangeMessage
 {
     char _0x0000[48];
@@ -2830,7 +2830,7 @@ struct UIPlayerVehicleHealthChangeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08929
-// TypeInfo:  0x0000000142C741B8
+// TypeInfo: 0x0000000142C741B8
 struct UILevelWarmUpTimerMessage
 {
     char _0x0000[48];
@@ -2838,7 +2838,7 @@ struct UILevelWarmUpTimerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08928
-// TypeInfo:  0x0000000142C741D8
+// TypeInfo: 0x0000000142C741D8
 struct UIInputStatusChangedMessage
 {
     char _0x0000[48];
@@ -2846,7 +2846,7 @@ struct UIInputStatusChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08927
-// TypeInfo:  0x0000000142C741F8
+// TypeInfo: 0x0000000142C741F8
 struct UIHudWarningMessage
 {
     char _0x0000[48];
@@ -2854,7 +2854,7 @@ struct UIHudWarningMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08926
-// TypeInfo:  0x0000000142C74218
+// TypeInfo: 0x0000000142C74218
 struct UIHudUpdateCrosshairMessage
 {
     char _0x0000[40];
@@ -2862,7 +2862,7 @@ struct UIHudUpdateCrosshairMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08925
-// TypeInfo:  0x0000000142C74238
+// TypeInfo: 0x0000000142C74238
 struct UIHudToggleMapZoomMessage
 {
     char _0x0000[40];
@@ -2870,7 +2870,7 @@ struct UIHudToggleMapZoomMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08924
-// TypeInfo:  0x0000000142C74258
+// TypeInfo: 0x0000000142C74258
 struct UIHudShowVoteResultsMessage
 {
     char _0x0000[40];
@@ -2878,7 +2878,7 @@ struct UIHudShowVoteResultsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08923
-// TypeInfo:  0x0000000142C74278
+// TypeInfo: 0x0000000142C74278
 struct UIHudShowVoteMenuMessage
 {
     char _0x0000[40];
@@ -2886,7 +2886,7 @@ struct UIHudShowVoteMenuMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08922
-// TypeInfo:  0x0000000142C74298
+// TypeInfo: 0x0000000142C74298
 struct UIHudOutputStaticMessage
 {
     char _0x0000[48];
@@ -2894,7 +2894,7 @@ struct UIHudOutputStaticMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08921
-// TypeInfo:  0x0000000142C742B8
+// TypeInfo: 0x0000000142C742B8
 struct UIHudDistortHudMessage
 {
     char _0x0000[48];
@@ -2902,7 +2902,7 @@ struct UIHudDistortHudMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08920
-// TypeInfo:  0x0000000142C742D8
+// TypeInfo: 0x0000000142C742D8
 struct UIHudDebugPauseMessage
 {
     char _0x0000[48];
@@ -2910,7 +2910,7 @@ struct UIHudDebugPauseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08919
-// TypeInfo:  0x0000000142C742F8
+// TypeInfo: 0x0000000142C742F8
 struct UIHudChatMessage
 {
     char _0x0000[56];
@@ -2918,7 +2918,7 @@ struct UIHudChatMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08918
-// TypeInfo:  0x0000000142C74318
+// TypeInfo: 0x0000000142C74318
 struct UIHudChangeInventoryWeaponMessage
 {
     char _0x0000[40];
@@ -2926,7 +2926,7 @@ struct UIHudChangeInventoryWeaponMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08917
-// TypeInfo:  0x0000000142C74338
+// TypeInfo: 0x0000000142C74338
 struct UIHasSuppressedEnemyMessage
 {
     char _0x0000[48];
@@ -2934,7 +2934,7 @@ struct UIHasSuppressedEnemyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08916
-// TypeInfo:  0x0000000142C74358
+// TypeInfo: 0x0000000142C74358
 struct UIDamageGivenToEnemyMessage
 {
     char _0x0000[56];
@@ -2942,7 +2942,7 @@ struct UIDamageGivenToEnemyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08915
-// TypeInfo:  0x0000000142C74378
+// TypeInfo: 0x0000000142C74378
 struct UICycleRadioChannelMessage
 {
     char _0x0000[48];
@@ -2950,7 +2950,7 @@ struct UICycleRadioChannelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08914
-// TypeInfo:  0x0000000142C74398
+// TypeInfo: 0x0000000142C74398
 struct UIMatchImagesRetrievedMessageBase
 {
     char _0x0000[40];
@@ -2958,7 +2958,7 @@ struct UIMatchImagesRetrievedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08913
-// TypeInfo:  0x0000000142C743B8
+// TypeInfo: 0x0000000142C743B8
 struct UIRequestMatchImagesMessage
 {
     char _0x0000[48];
@@ -2966,7 +2966,7 @@ struct UIRequestMatchImagesMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08912
-// TypeInfo:  0x0000000142C743D8
+// TypeInfo: 0x0000000142C743D8
 struct UIVKBDInputDoneMessage
 {
     char _0x0000[56];
@@ -2974,7 +2974,7 @@ struct UIVKBDInputDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08911
-// TypeInfo:  0x0000000142C743F8
+// TypeInfo: 0x0000000142C743F8
 struct UISubtitleMessage
 {
     char _0x0000[56];
@@ -2982,7 +2982,7 @@ struct UISubtitleMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08910
-// TypeInfo:  0x0000000142C74418
+// TypeInfo: 0x0000000142C74418
 struct UIMessageEntityMessage
 {
     char _0x0000[56];
@@ -2990,7 +2990,7 @@ struct UIMessageEntityMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08909
-// TypeInfo:  0x0000000142C74438
+// TypeInfo: 0x0000000142C74438
 struct UIScreenCountChangeMessage
 {
     char _0x0000[40];
@@ -2998,7 +2998,7 @@ struct UIScreenCountChangeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08908
-// TypeInfo:  0x0000000142C74458
+// TypeInfo: 0x0000000142C74458
 struct UIControllerDisconnectedMessage
 {
     char _0x0000[40];
@@ -3006,7 +3006,7 @@ struct UIControllerDisconnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08907
-// TypeInfo:  0x0000000142C74478
+// TypeInfo: 0x0000000142C74478
 struct UIControllerConnectedMessage
 {
     char _0x0000[40];
@@ -3014,7 +3014,7 @@ struct UIControllerConnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08906
-// TypeInfo:  0x0000000142C74498
+// TypeInfo: 0x0000000142C74498
 struct UIUserDisconnectedMessage
 {
     char _0x0000[40];
@@ -3022,7 +3022,7 @@ struct UIUserDisconnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08905
-// TypeInfo:  0x0000000142C744B8
+// TypeInfo: 0x0000000142C744B8
 struct UIUserConnectedMessage
 {
     char _0x0000[40];
@@ -3030,7 +3030,7 @@ struct UIUserConnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08904
-// TypeInfo:  0x0000000142C744D8
+// TypeInfo: 0x0000000142C744D8
 struct UIUserNotificationMessage
 {
     char _0x0000[40];
@@ -3038,7 +3038,7 @@ struct UIUserNotificationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08903
-// TypeInfo:  0x0000000142C744F8
+// TypeInfo: 0x0000000142C744F8
 struct UIUserSkippedLoginMessage
 {
     char _0x0000[48];
@@ -3046,7 +3046,7 @@ struct UIUserSkippedLoginMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08902
-// TypeInfo:  0x0000000142C74518
+// TypeInfo: 0x0000000142C74518
 struct MemoryCardBootCheckMessageBase
 {
     char _0x0000[40];
@@ -3054,7 +3054,7 @@ struct MemoryCardBootCheckMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08901
-// TypeInfo:  0x0000000142C74538
+// TypeInfo: 0x0000000142C74538
 struct MemoryCardFindEntriesDoneMessageBase
 {
     char _0x0000[40];
@@ -3062,7 +3062,7 @@ struct MemoryCardFindEntriesDoneMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08900
-// TypeInfo:  0x0000000142C74558
+// TypeInfo: 0x0000000142C74558
 struct MemoryCardFindEntriesMessageBase
 {
     char _0x0000[40];
@@ -3070,7 +3070,7 @@ struct MemoryCardFindEntriesMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08899
-// TypeInfo:  0x0000000142C74578
+// TypeInfo: 0x0000000142C74578
 struct MemoryCardSaveDoneMessageBase
 {
     char _0x0000[40];
@@ -3078,7 +3078,7 @@ struct MemoryCardSaveDoneMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08898
-// TypeInfo:  0x0000000142C74598
+// TypeInfo: 0x0000000142C74598
 struct MemoryCardSaveMessageBase
 {
     char _0x0000[40];
@@ -3086,7 +3086,7 @@ struct MemoryCardSaveMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08897
-// TypeInfo:  0x0000000142C745B8
+// TypeInfo: 0x0000000142C745B8
 struct MemoryCardLoadDoneMessageBase
 {
     char _0x0000[40];
@@ -3094,7 +3094,7 @@ struct MemoryCardLoadDoneMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08896
-// TypeInfo:  0x0000000142C745D8
+// TypeInfo: 0x0000000142C745D8
 struct MemoryCardLoadMessageBase
 {
     char _0x0000[40];
@@ -3102,7 +3102,7 @@ struct MemoryCardLoadMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08895
-// TypeInfo:  0x0000000142C745F8
+// TypeInfo: 0x0000000142C745F8
 struct MemoryCardDestroyedMessageBase
 {
     char _0x0000[40];
@@ -3110,7 +3110,7 @@ struct MemoryCardDestroyedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08894
-// TypeInfo:  0x0000000142C74618
+// TypeInfo: 0x0000000142C74618
 struct MemoryCardInitializedMessageBase
 {
     char _0x0000[40];
@@ -3118,7 +3118,7 @@ struct MemoryCardInitializedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08893
-// TypeInfo:  0x0000000142C74638
+// TypeInfo: 0x0000000142C74638
 struct MemoryCardCreatedMessageBase
 {
     char _0x0000[40];
@@ -3126,7 +3126,7 @@ struct MemoryCardCreatedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08892
-// TypeInfo:  0x0000000142C74658
+// TypeInfo: 0x0000000142C74658
 struct MemoryCardPopupHideMessageBase
 {
     char _0x0000[40];
@@ -3134,7 +3134,7 @@ struct MemoryCardPopupHideMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08891
-// TypeInfo:  0x0000000142C74678
+// TypeInfo: 0x0000000142C74678
 struct MemoryCardPopupResponseMessageBase
 {
     char _0x0000[40];
@@ -3142,7 +3142,7 @@ struct MemoryCardPopupResponseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08890
-// TypeInfo:  0x0000000142C74698
+// TypeInfo: 0x0000000142C74698
 struct MemoryCardPopupRequestMessageBase
 {
     char _0x0000[40];
@@ -3150,7 +3150,7 @@ struct MemoryCardPopupRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 08875
-// TypeInfo:  0x0000000142C74818
+// TypeInfo: 0x0000000142C74818
 struct UIPopupButton
 {
     UIInputAction m_InputConcept; //0x0000
@@ -3160,7 +3160,7 @@ struct UIPopupButton
 
 ////////////////////////////////////////
 // RuntimeId: 08827
-// TypeInfo:  0x0000000142C74838
+// TypeInfo: 0x0000000142C74838
 struct WidgetEventQueryPair
 {
     char* m_Name; //0x0000
@@ -3173,7 +3173,7 @@ struct WidgetEventQueryPair
 
 ////////////////////////////////////////
 // RuntimeId: 08817
-// TypeInfo:  0x0000000142C74858
+// TypeInfo: 0x0000000142C74858
 struct UIDataSourceInfo
 {
     char* m_DataName; //0x0000
@@ -3186,7 +3186,7 @@ struct UIDataSourceInfo
 
 ////////////////////////////////////////
 // RuntimeId: 08815
-// TypeInfo:  0x0000000142C746B8
+// TypeInfo: 0x0000000142C746B8
 struct UISimpleDataSource
 {
     UIComponentData* m_DataCategory; //0x0000
@@ -3196,7 +3196,7 @@ struct UISimpleDataSource
 
 ////////////////////////////////////////
 // RuntimeId: 08811
-// TypeInfo:  0x0000000142C74878
+// TypeInfo: 0x0000000142C74878
 struct UIWidgetProperty
 {
     char* m_Name; //0x0000
@@ -3205,7 +3205,7 @@ struct UIWidgetProperty
 
 ////////////////////////////////////////
 // RuntimeId: 08797
-// TypeInfo:  0x0000000142C74898
+// TypeInfo: 0x0000000142C74898
 struct InterruptFlow
 {
     UIInterruptID m_interruptEnum; //0x0000
@@ -3215,7 +3215,7 @@ struct InterruptFlow
 
 ////////////////////////////////////////
 // RuntimeId: 08793
-// TypeInfo:  0x0000000142C748B8
+// TypeInfo: 0x0000000142C748B8
 struct UIAudioEventMapping
 {
     char* m_EventName; //0x0000
@@ -3224,7 +3224,7 @@ struct UIAudioEventMapping
 
 ////////////////////////////////////////
 // RuntimeId: 08773
-// TypeInfo:  0x0000000142C748D8
+// TypeInfo: 0x0000000142C748D8
 struct UIResourceTableEntry
 {
     // unhandled basic type ResourceRef m_Resource; //0x0000
@@ -3235,7 +3235,7 @@ struct UIResourceTableEntry
 
 ////////////////////////////////////////
 // RuntimeId: 08765
-// TypeInfo:  0x0000000142C748F8
+// TypeInfo: 0x0000000142C748F8
 struct UIFontMapping
 {
     Array<char*> m_ScaleformFontName; //0x0000
@@ -3246,7 +3246,7 @@ struct UIFontMapping
 
 ////////////////////////////////////////
 // RuntimeId: 08759
-// TypeInfo:  0x0000000142C74918
+// TypeInfo: 0x0000000142C74918
 struct FontCollectionLookupEntry
 {
     char* m_CollectionBasePath; //0x0000
@@ -3256,7 +3256,7 @@ struct FontCollectionLookupEntry
 
 ////////////////////////////////////////
 // RuntimeId: 08757
-// TypeInfo:  0x0000000142C74938
+// TypeInfo: 0x0000000142C74938
 struct UIBundleAssetState
 {
     char* m_StateName; //0x0000
@@ -3269,7 +3269,7 @@ struct UIBundleAssetState
 
 ////////////////////////////////////////
 // RuntimeId: 08695
-// TypeInfo:  0x0000000142C6FA00
+// TypeInfo: 0x0000000142C6FA00
 struct TerrainQuadDecalAtlasTile
 {
     unsigned __int32 m_TileIndexX; //0x0000
@@ -3283,7 +3283,7 @@ struct TerrainQuadDecalAtlasTile
 
 ////////////////////////////////////////
 // RuntimeId: 08683
-// TypeInfo:  0x0000000142C6FBC0
+// TypeInfo: 0x0000000142C6FBC0
 struct RibbonPointData
 {
     Vec4 m_UserMaskLeft; //0x0000
@@ -3295,7 +3295,7 @@ struct RibbonPointData
 
 ////////////////////////////////////////
 // RuntimeId: 08675
-// TypeInfo:  0x0000000142C6FBE0
+// TypeInfo: 0x0000000142C6FBE0
 struct TerrainLayerShaderData
 {
     char _0x0000[1];
@@ -3303,7 +3303,7 @@ struct TerrainLayerShaderData
 
 ////////////////////////////////////////
 // RuntimeId: 08673
-// TypeInfo:  0x0000000142C6FC00
+// TypeInfo: 0x0000000142C6FC00
 struct MeshScatteringSpawnData
 {
     char _0x0000[1];
@@ -3311,7 +3311,7 @@ struct MeshScatteringSpawnData
 
 ////////////////////////////////////////
 // RuntimeId: 08659
-// TypeInfo:  0x0000000142C6FC20
+// TypeInfo: 0x0000000142C6FC20
 struct TerrainLayerMaskData
 {
     char _0x0000[1];
@@ -3319,7 +3319,7 @@ struct TerrainLayerMaskData
 
 ////////////////////////////////////////
 // RuntimeId: 08647
-// TypeInfo:  0x0000000142C6FC40
+// TypeInfo: 0x0000000142C6FC40
 struct TerrainLayerCombinationDrawData
 {
     char _0x0000[1];
@@ -3327,7 +3327,7 @@ struct TerrainLayerCombinationDrawData
 
 ////////////////////////////////////////
 // RuntimeId: 08645
-// TypeInfo:  0x0000000142C6FC60
+// TypeInfo: 0x0000000142C6FC60
 struct Surface3dDrawMethodData
 {
     char _0x0000[1];
@@ -3335,7 +3335,7 @@ struct Surface3dDrawMethodData
 
 ////////////////////////////////////////
 // RuntimeId: 08643
-// TypeInfo:  0x0000000142C6FC80
+// TypeInfo: 0x0000000142C6FC80
 struct MeshScatteringMaskScaleDrawMethodData
 {
     char _0x0000[1];
@@ -3343,7 +3343,7 @@ struct MeshScatteringMaskScaleDrawMethodData
 
 ////////////////////////////////////////
 // RuntimeId: 08641
-// TypeInfo:  0x0000000142C6FCA0
+// TypeInfo: 0x0000000142C6FCA0
 struct Surface2dDrawMethodData
 {
     char _0x0000[1];
@@ -3351,7 +3351,7 @@ struct Surface2dDrawMethodData
 
 ////////////////////////////////////////
 // RuntimeId: 08639
-// TypeInfo:  0x0000000142C6FCC0
+// TypeInfo: 0x0000000142C6FCC0
 struct Surface2dDrawPassData
 {
     char _0x0000[1];
@@ -3359,7 +3359,7 @@ struct Surface2dDrawPassData
 
 ////////////////////////////////////////
 // RuntimeId: 08637
-// TypeInfo:  0x0000000142C6FCE0
+// TypeInfo: 0x0000000142C6FCE0
 struct TerrainLayerCombinationDrawPassData
 {
     char _0x0000[1];
@@ -3367,7 +3367,7 @@ struct TerrainLayerCombinationDrawPassData
 
 ////////////////////////////////////////
 // RuntimeId: 08621
-// TypeInfo:  0x0000000142C6FD00
+// TypeInfo: 0x0000000142C6FD00
 struct TerrainLayerProceduralMask
 {
     float m_AltitudeMin; //0x0000
@@ -3375,7 +3375,7 @@ struct TerrainLayerProceduralMask
 
 ////////////////////////////////////////
 // RuntimeId: 08619
-// TypeInfo:  0x0000000142C6FD20
+// TypeInfo: 0x0000000142C6FD20
 struct TerrainGeoTexture
 {
     char _0x0000[1];
@@ -3383,7 +3383,7 @@ struct TerrainGeoTexture
 
 ////////////////////////////////////////
 // RuntimeId: 08575
-// TypeInfo:  0x0000000142C6FD40
+// TypeInfo: 0x0000000142C6FD40
 struct RectangularCoverageData
 {
     char _0x0000[1];
@@ -3391,7 +3391,7 @@ struct RectangularCoverageData
 
 ////////////////////////////////////////
 // RuntimeId: 08559
-// TypeInfo:  0x0000000142C6C618
+// TypeInfo: 0x0000000142C6C618
 struct PerformanceClientMessage
 {
     char _0x0000[48];
@@ -3399,7 +3399,7 @@ struct PerformanceClientMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08558
-// TypeInfo:  0x0000000142C6C638
+// TypeInfo: 0x0000000142C6C638
 struct PerformanceShaderMessage
 {
     char _0x0000[48];
@@ -3407,7 +3407,7 @@ struct PerformanceShaderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08507
-// TypeInfo:  0x0000000142C6CBD8
+// TypeInfo: 0x0000000142C6CBD8
 struct TerrainShaderParameter
 {
     unsigned __int32 m_ParameterHandle; //0x0000
@@ -3417,7 +3417,7 @@ struct TerrainShaderParameter
 
 ////////////////////////////////////////
 // RuntimeId: 08455
-// TypeInfo:  0x0000000142C6CC58
+// TypeInfo: 0x0000000142C6CC58
 struct BoolShaderParameter
 {
     char* m_ParameterName; //0x0000
@@ -3427,7 +3427,7 @@ struct BoolShaderParameter
 
 ////////////////////////////////////////
 // RuntimeId: 08461
-// TypeInfo:  0x0000000142C6CBF8
+// TypeInfo: 0x0000000142C6CBF8
 struct VectorArrayShaderParameter
 {
     char* m_ParameterName; //0x0000
@@ -3438,7 +3438,7 @@ struct VectorArrayShaderParameter
 
 ////////////////////////////////////////
 // RuntimeId: 08459
-// TypeInfo:  0x0000000142C6CC18
+// TypeInfo: 0x0000000142C6CC18
 struct TextureShaderParameter
 {
     char* m_ParameterName; //0x0000
@@ -3447,7 +3447,7 @@ struct TextureShaderParameter
 
 ////////////////////////////////////////
 // RuntimeId: 08457
-// TypeInfo:  0x0000000142C6CC38
+// TypeInfo: 0x0000000142C6CC38
 struct VectorShaderParameter
 {
     Vec4 m_Value; //0x0000
@@ -3458,7 +3458,7 @@ struct VectorShaderParameter
 
 ////////////////////////////////////////
 // RuntimeId: 08467
-// TypeInfo:  0x0000000142C6CA98
+// TypeInfo: 0x0000000142C6CA98
 struct SurfaceShaderInstanceDataStruct
 {
     SurfaceShaderBaseAsset* m_Shader; //0x0000
@@ -3470,7 +3470,7 @@ struct SurfaceShaderInstanceDataStruct
 
 ////////////////////////////////////////
 // RuntimeId: 08439
-// TypeInfo:  0x0000000142C6CAD8
+// TypeInfo: 0x0000000142C6CAD8
 struct PoissonRadialBlurData
 {
     float m_BlendFactor; //0x0000
@@ -3481,7 +3481,7 @@ struct PoissonRadialBlurData
 
 ////////////////////////////////////////
 // RuntimeId: 08437
-// TypeInfo:  0x0000000142C6CAF8
+// TypeInfo: 0x0000000142C6CAF8
 struct ColorTintData
 {
     Vec3 m_Contrast; //0x0000
@@ -3493,7 +3493,7 @@ struct ColorTintData
 
 ////////////////////////////////////////
 // RuntimeId: 08385
-// TypeInfo:  0x0000000142C6CC78
+// TypeInfo: 0x0000000142C6CC78
 struct AnimatedPointCloudAttributeDesc
 {
     PointCloudAttributeUsage m_Usage; //0x0000
@@ -3503,7 +3503,7 @@ struct AnimatedPointCloudAttributeDesc
 
 ////////////////////////////////////////
 // RuntimeId: 08383
-// TypeInfo:  0x0000000142C6CC98
+// TypeInfo: 0x0000000142C6CC98
 struct VariationLink
 {
     unsigned __int64 m_VariationKey; //0x0000
@@ -3513,7 +3513,7 @@ struct VariationLink
 
 ////////////////////////////////////////
 // RuntimeId: 08375
-// TypeInfo:  0x0000000142C6CCB8
+// TypeInfo: 0x0000000142C6CCB8
 struct MeshVariationDatabaseRedirectEntry
 {
     MeshAsset* m_Mesh; //0x0000
@@ -3523,7 +3523,7 @@ struct MeshVariationDatabaseRedirectEntry
 
 ////////////////////////////////////////
 // RuntimeId: 08371
-// TypeInfo:  0x0000000142C6CCF8
+// TypeInfo: 0x0000000142C6CCF8
 struct MeshVariationDatabaseMaterial
 {
     MeshMaterial* m_Material; //0x0000
@@ -3533,7 +3533,7 @@ struct MeshVariationDatabaseMaterial
 
 ////////////////////////////////////////
 // RuntimeId: 08373
-// TypeInfo:  0x0000000142C6CCD8
+// TypeInfo: 0x0000000142C6CCD8
 struct MeshVariationDatabaseEntry
 {
     MeshAsset* m_Mesh; //0x0000
@@ -3544,7 +3544,7 @@ struct MeshVariationDatabaseEntry
 
 ////////////////////////////////////////
 // RuntimeId: 08324
-// TypeInfo:  0x0000000142C690E8
+// TypeInfo: 0x0000000142C690E8
 struct DecalAtlasTile
 {
     float m_TileIndexX; //0x0000
@@ -3558,7 +3558,7 @@ struct DecalAtlasTile
 
 ////////////////////////////////////////
 // RuntimeId: 03712
-// TypeInfo:  0x0000000142305890
+// TypeInfo: 0x0000000142305890
 struct AxisAlignedBox
 {
     Vec3 m_min; //0x0000
@@ -3567,7 +3567,7 @@ struct AxisAlignedBox
 
 ////////////////////////////////////////
 // RuntimeId: 08179
-// TypeInfo:  0x0000000142C65348
+// TypeInfo: 0x0000000142C65348
 struct PhysicsComponentOnImpulseMessage
 {
     char _0x0000[48];
@@ -3575,7 +3575,7 @@ struct PhysicsComponentOnImpulseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08178
-// TypeInfo:  0x0000000142C65368
+// TypeInfo: 0x0000000142C65368
 struct PhysicsComponentOnDamageMessage
 {
     char _0x0000[48];
@@ -3583,7 +3583,7 @@ struct PhysicsComponentOnDamageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 08157
-// TypeInfo:  0x0000000142C654C8
+// TypeInfo: 0x0000000142C654C8
 struct AssetAabbs
 {
     Array<AxisAlignedBox> m_PartAabb; //0x0000
@@ -3591,7 +3591,7 @@ struct AssetAabbs
 
 ////////////////////////////////////////
 // RuntimeId: 08149
-// TypeInfo:  0x0000000142C65388
+// TypeInfo: 0x0000000142C65388
 struct EndPointData
 {
     float m_Pos; //0x0000
@@ -3603,7 +3603,7 @@ struct EndPointData
 
 ////////////////////////////////////////
 // RuntimeId: 08133
-// TypeInfo:  0x0000000142C654E8
+// TypeInfo: 0x0000000142C654E8
 struct FrictionScaleAtVelocity
 {
     float m_FrictionScale; //0x0000
@@ -3612,7 +3612,7 @@ struct FrictionScaleAtVelocity
 
 ////////////////////////////////////////
 // RuntimeId: 08131
-// TypeInfo:  0x0000000142C65508
+// TypeInfo: 0x0000000142C65508
 struct SensitivityAtVelocity
 {
     float m_SteeringSensitivity; //0x0000
@@ -3621,7 +3621,7 @@ struct SensitivityAtVelocity
 
 ////////////////////////////////////////
 // RuntimeId: 08129
-// TypeInfo:  0x0000000142C653A8
+// TypeInfo: 0x0000000142C653A8
 struct SpringData
 {
     float m_Length; //0x0000
@@ -3636,7 +3636,7 @@ struct SpringData
 
 ////////////////////////////////////////
 // RuntimeId: 08127
-// TypeInfo:  0x0000000142C653C8
+// TypeInfo: 0x0000000142C653C8
 struct SphereCollisionData
 {
     float m_ExtraRadius; //0x0000
@@ -3647,7 +3647,7 @@ struct SphereCollisionData
 
 ////////////////////////////////////////
 // RuntimeId: 08111
-// TypeInfo:  0x0000000142C653E8
+// TypeInfo: 0x0000000142C653E8
 struct Boost
 {
     float m_ForwardStrength; //0x0000
@@ -3662,7 +3662,7 @@ struct Boost
 
 ////////////////////////////////////////
 // RuntimeId: 08079
-// TypeInfo:  0x0000000142C65408
+// TypeInfo: 0x0000000142C65408
 struct InputThrottle
 {
     float m_ForwardSpeedSupressionAmount; //0x0000
@@ -3675,7 +3675,7 @@ struct InputThrottle
 
 ////////////////////////////////////////
 // RuntimeId: 08077
-// TypeInfo:  0x0000000142C65528
+// TypeInfo: 0x0000000142C65528
 struct ConstantForceData
 {
     Vec3 m_Value; //0x0000
@@ -3687,7 +3687,7 @@ struct ConstantForceData
 
 ////////////////////////////////////////
 // RuntimeId: 08069
-// TypeInfo:  0x0000000142C65548
+// TypeInfo: 0x0000000142C65548
 struct StabilizerSettings
 {
     StabilizerProperty m_Property; //0x0000
@@ -3701,7 +3701,7 @@ struct StabilizerSettings
 
 ////////////////////////////////////////
 // RuntimeId: 08067
-// TypeInfo:  0x0000000142C65428
+// TypeInfo: 0x0000000142C65428
 struct AntiRollBars
 {
     AntiRollBar* m_Front; //0x0000
@@ -3710,7 +3710,7 @@ struct AntiRollBars
 
 ////////////////////////////////////////
 // RuntimeId: 08063
-// TypeInfo:  0x0000000142C65448
+// TypeInfo: 0x0000000142C65448
 struct VehicleInputData
 {
     float m_ThrottleDeadzone; //0x0000
@@ -3737,7 +3737,7 @@ struct VehicleInputData
 
 ////////////////////////////////////////
 // RuntimeId: 08031
-// TypeInfo:  0x0000000142C65468
+// TypeInfo: 0x0000000142C65468
 struct SpeedModifierData
 {
     float m_ForwardConstant; //0x0000
@@ -3748,7 +3748,7 @@ struct SpeedModifierData
 
 ////////////////////////////////////////
 // RuntimeId: 08027
-// TypeInfo:  0x0000000142C65568
+// TypeInfo: 0x0000000142C65568
 struct PoseTransitionTime
 {
     CharacterPoseType m_ToPose; //0x0000
@@ -3757,7 +3757,7 @@ struct PoseTransitionTime
 
 ////////////////////////////////////////
 // RuntimeId: 08021
-// TypeInfo:  0x0000000142C65588
+// TypeInfo: 0x0000000142C65588
 struct CharacterPoseConstraintsData
 {
     bool m_StandPose; //0x0000
@@ -3767,7 +3767,7 @@ struct CharacterPoseConstraintsData
 
 ////////////////////////////////////////
 // RuntimeId: 08019
-// TypeInfo:  0x0000000142C65488
+// TypeInfo: 0x0000000142C65488
 struct LookConstraintsData
 {
     float m_MinLookYaw; //0x0000
@@ -3778,7 +3778,7 @@ struct LookConstraintsData
 
 ////////////////////////////////////////
 // RuntimeId: 08007
-// TypeInfo:  0x0000000142C62890
+// TypeInfo: 0x0000000142C62890
 struct EdgeModelInstance
 {
     LinearTransform m_Transform; //0x0000
@@ -3786,7 +3786,7 @@ struct EdgeModelInstance
 
 ////////////////////////////////////////
 // RuntimeId: 07991
-// TypeInfo:  0x0000000142C628D0
+// TypeInfo: 0x0000000142C628D0
 struct ClothStateSetupTransitionLookup
 {
     unsigned __int32 m_FirstTransitionableLodIndex; //0x0000
@@ -3795,7 +3795,7 @@ struct ClothStateSetupTransitionLookup
 
 ////////////////////////////////////////
 // RuntimeId: 07993
-// TypeInfo:  0x0000000142C628B0
+// TypeInfo: 0x0000000142C628B0
 struct ClothStateSetupTransition
 {
     unsigned __int32 m_TransitionLodIndex; //0x0000
@@ -3804,7 +3804,7 @@ struct ClothStateSetupTransition
 
 ////////////////////////////////////////
 // RuntimeId: 07995
-// TypeInfo:  0x0000000142C62870
+// TypeInfo: 0x0000000142C62870
 struct ClothStatesSetup
 {
     Array<unsigned __int32> m_States; //0x0000
@@ -3816,7 +3816,7 @@ struct ClothStatesSetup
 
 ////////////////////////////////////////
 // RuntimeId: 07989
-// TypeInfo:  0x0000000142C628F0
+// TypeInfo: 0x0000000142C628F0
 struct ClothBoneTableEntry
 {
     char* m_BoneName; //0x0000
@@ -3826,7 +3826,7 @@ struct ClothBoneTableEntry
 
 ////////////////////////////////////////
 // RuntimeId: 07987
-// TypeInfo:  0x0000000142C62910
+// TypeInfo: 0x0000000142C62910
 struct ClothSectionMapping
 {
     char* m_ClothMeshName; //0x0000
@@ -3837,7 +3837,7 @@ struct ClothSectionMapping
 
 ////////////////////////////////////////
 // RuntimeId: 07975
-// TypeInfo:  0x0000000142C61FA8
+// TypeInfo: 0x0000000142C61FA8
 struct SpikeInternalMessagePartMessage
 {
     char _0x0000[120];
@@ -3845,7 +3845,7 @@ struct SpikeInternalMessagePartMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07974
-// TypeInfo:  0x0000000142C61FC8
+// TypeInfo: 0x0000000142C61FC8
 struct SpikeInternalMessageWrapperMessage
 {
     char _0x0000[96];
@@ -3853,7 +3853,7 @@ struct SpikeInternalMessageWrapperMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07969
-// TypeInfo:  0x0000000142C61ED0
+// TypeInfo: 0x0000000142C61ED0
 struct CoreDemoStatusMessage
 {
     char _0x0000[48];
@@ -3861,7 +3861,7 @@ struct CoreDemoStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07966
-// TypeInfo:  0x0000000142C61D50
+// TypeInfo: 0x0000000142C61D50
 struct MovieAsyncUnloadMessage
 {
     char _0x0000[48];
@@ -3869,7 +3869,7 @@ struct MovieAsyncUnloadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07961
-// TypeInfo:  0x0000000142C61220
+// TypeInfo: 0x0000000142C61220
 struct AntAnimatableComponentMeshData
 {
     AntAnimatableComponentMeshRenderType m_MeshRenderType; //0x0000
@@ -3885,7 +3885,7 @@ struct AntAnimatableComponentMeshData
 
 ////////////////////////////////////////
 // RuntimeId: 03891
-// TypeInfo:  0x0000000142C00580
+// TypeInfo: 0x0000000142C00580
 struct AntAnimatableData
 {
     AntRef m_Actor; //0x0000
@@ -3898,7 +3898,7 @@ struct AntAnimatableData
 
 ////////////////////////////////////////
 // RuntimeId: 07947
-// TypeInfo:  0x0000000142C611C0
+// TypeInfo: 0x0000000142C611C0
 struct LodBinding
 {
     AntRef m_DisableControllerUpdate; //0x0000
@@ -3910,7 +3910,7 @@ struct LodBinding
 
 ////////////////////////////////////////
 // RuntimeId: 07939
-// TypeInfo:  0x0000000142C61240
+// TypeInfo: 0x0000000142C61240
 struct PoseConstraintsData
 {
     bool m_StandPose; //0x0000
@@ -3920,7 +3920,7 @@ struct PoseConstraintsData
 
 ////////////////////////////////////////
 // RuntimeId: 07937
-// TypeInfo:  0x0000000142C61260
+// TypeInfo: 0x0000000142C61260
 struct AimingConstraintsData
 {
     float m_MinYaw; //0x0000
@@ -3931,7 +3931,7 @@ struct AimingConstraintsData
 
 ////////////////////////////////////////
 // RuntimeId: 07885
-// TypeInfo:  0x0000000142C61280
+// TypeInfo: 0x0000000142C61280
 struct DataVisualizerValue
 {
     char* m_Value; //0x0000
@@ -3939,7 +3939,7 @@ struct DataVisualizerValue
 
 ////////////////////////////////////////
 // RuntimeId: 07869
-// TypeInfo:  0x0000000142C5F2C0
+// TypeInfo: 0x0000000142C5F2C0
 struct WeaponModifierCore
 {
     __int32 m_DummyToMakeFrostEDcompile; //0x0000
@@ -3948,7 +3948,7 @@ struct WeaponModifierCore
 
 ////////////////////////////////////////
 // RuntimeId: 07851
-// TypeInfo:  0x0000000142C5F2E0
+// TypeInfo: 0x0000000142C5F2E0
 struct WeaponMiscModifierSettings
 {
     bool m_EnableBreathControl; //0x0000
@@ -3960,7 +3960,7 @@ struct WeaponMiscModifierSettings
 
 ////////////////////////////////////////
 // RuntimeId: 07835
-// TypeInfo:  0x0000000142C5F020
+// TypeInfo: 0x0000000142C5F020
 struct ArtilleryDispersionData
 {
     float m_MaxDispersion; //0x0000
@@ -3975,7 +3975,7 @@ struct ArtilleryDispersionData
 
 ////////////////////////////////////////
 // RuntimeId: 07817
-// TypeInfo:  0x0000000142C5F060
+// TypeInfo: 0x0000000142C5F060
 struct RumbleFiringData
 {
     float m_LowRumble; //0x0000
@@ -3985,7 +3985,7 @@ struct RumbleFiringData
 
 ////////////////////////////////////////
 // RuntimeId: 07807
-// TypeInfo:  0x0000000142C5F0E0
+// TypeInfo: 0x0000000142C5F0E0
 struct FiringDispersionData
 {
     float m_MinAngle; //0x0000
@@ -3996,7 +3996,7 @@ struct FiringDispersionData
 
 ////////////////////////////////////////
 // RuntimeId: 07809
-// TypeInfo:  0x0000000142C5F0C0
+// TypeInfo: 0x0000000142C5F0C0
 struct FireEffectData
 {
     Vec3 m_Offset; //0x0000
@@ -4014,7 +4014,7 @@ struct FireEffectData
 
 ////////////////////////////////////////
 // RuntimeId: 07811
-// TypeInfo:  0x0000000142C5F0A0
+// TypeInfo: 0x0000000142C5F0A0
 struct OverHeatData
 {
     FireEffectData m_OverHeatEffect; //0x0000
@@ -4026,7 +4026,7 @@ struct OverHeatData
 
 ////////////////////////////////////////
 // RuntimeId: 07813
-// TypeInfo:  0x0000000142C5F080
+// TypeInfo: 0x0000000142C5F080
 struct WeaponDispersion
 {
     FiringDispersionData m_StandDispersion; //0x0000
@@ -4041,7 +4041,7 @@ struct WeaponDispersion
 
 ////////////////////////////////////////
 // RuntimeId: 07793
-// TypeInfo:  0x0000000142C5F160
+// TypeInfo: 0x0000000142C5F160
 struct HoldAndReleaseData
 {
     float m_MaxHoldTime; //0x0000
@@ -4056,7 +4056,7 @@ struct HoldAndReleaseData
 
 ////////////////////////////////////////
 // RuntimeId: 07803
-// TypeInfo:  0x0000000142C5F120
+// TypeInfo: 0x0000000142C5F120
 struct RecoilData
 {
     float m_MaxRecoilAngleX; //0x0000
@@ -4073,7 +4073,7 @@ struct RecoilData
 
 ////////////////////////////////////////
 // RuntimeId: 07795
-// TypeInfo:  0x0000000142C5F140
+// TypeInfo: 0x0000000142C5F140
 struct BoltActionData
 {
     float m_BoltActionDelay; //0x0000
@@ -4088,7 +4088,7 @@ struct BoltActionData
 
 ////////////////////////////////////////
 // RuntimeId: 07805
-// TypeInfo:  0x0000000142C5F100
+// TypeInfo: 0x0000000142C5F100
 struct FireLogicData
 {
     HoldAndReleaseData m_HoldAndRelease; //0x0000
@@ -4126,7 +4126,7 @@ struct FireLogicData
 
 ////////////////////////////////////////
 // RuntimeId: 07787
-// TypeInfo:  0x0000000142C5F320
+// TypeInfo: 0x0000000142C5F320
 struct InitialDirectionScaleByPitchData
 {
     Vec3 m_InitialDirectionScale; //0x0000
@@ -4136,7 +4136,7 @@ struct InitialDirectionScaleByPitchData
 
 ////////////////////////////////////////
 // RuntimeId: 07789
-// TypeInfo:  0x0000000142C5F300
+// TypeInfo: 0x0000000142C5F300
 struct InitialSpeedScaleByPitchData
 {
     Vec3 m_InitialSpeedScale; //0x0000
@@ -4146,7 +4146,7 @@ struct InitialSpeedScaleByPitchData
 
 ////////////////////////////////////////
 // RuntimeId: 07791
-// TypeInfo:  0x0000000142C5F180
+// TypeInfo: 0x0000000142C5F180
 struct ShotConfigData
 {
     Vec3 m_InitialPosition; //0x0000
@@ -4175,7 +4175,7 @@ struct ShotConfigData
 
 ////////////////////////////////////////
 // RuntimeId: 07785
-// TypeInfo:  0x0000000142C5F340
+// TypeInfo: 0x0000000142C5F340
 struct HealingSphereData
 {
     float m_Radius; //0x0000
@@ -4184,7 +4184,7 @@ struct HealingSphereData
 
 ////////////////////////////////////////
 // RuntimeId: 07781
-// TypeInfo:  0x0000000142C5F1A0
+// TypeInfo: 0x0000000142C5F1A0
 struct NearTargetDetonationData
 {
     float m_DetonationRadius; //0x0000
@@ -4196,7 +4196,7 @@ struct NearTargetDetonationData
 
 ////////////////////////////////////////
 // RuntimeId: 07779
-// TypeInfo:  0x0000000142C5F1C0
+// TypeInfo: 0x0000000142C5F1C0
 struct MissileUnguidedData
 {
     Vec2 m_StaticPosition; //0x0000
@@ -4208,7 +4208,7 @@ struct MissileUnguidedData
 
 ////////////////////////////////////////
 // RuntimeId: 07777
-// TypeInfo:  0x0000000142C5F1E0
+// TypeInfo: 0x0000000142C5F1E0
 struct MissileLockableInfoData
 {
     float m_HeatSignature; //0x0000
@@ -4217,7 +4217,7 @@ struct MissileLockableInfoData
 
 ////////////////////////////////////////
 // RuntimeId: 07773
-// TypeInfo:  0x0000000142C5F200
+// TypeInfo: 0x0000000142C5F200
 struct LockingAndHomingData
 {
     WarnTarget m_WarnLock; //0x0000
@@ -4231,7 +4231,7 @@ struct LockingAndHomingData
 
 ////////////////////////////////////////
 // RuntimeId: 07771
-// TypeInfo:  0x0000000142C5F360
+// TypeInfo: 0x0000000142C5F360
 struct ZoomLevelLockData
 {
     float m_OutlineTaggedDistance; //0x0000
@@ -4240,7 +4240,7 @@ struct ZoomLevelLockData
 
 ////////////////////////////////////////
 // RuntimeId: 07755
-// TypeInfo:  0x0000000142C5F220
+// TypeInfo: 0x0000000142C5F220
 struct AmmoConfigData
 {
     __int32 m_MagazineCapacity; //0x0000
@@ -4258,7 +4258,7 @@ struct AmmoConfigData
 
 ////////////////////////////////////////
 // RuntimeId: 07737
-// TypeInfo:  0x0000000142C5F280
+// TypeInfo: 0x0000000142C5F280
 struct CannedAnimationBinding
 {
     AntRef m_LevelIndex; //0x0000
@@ -4276,7 +4276,7 @@ struct CannedAnimationBinding
 
 ////////////////////////////////////////
 // RuntimeId: 07735
-// TypeInfo:  0x0000000142C5F2A0
+// TypeInfo: 0x0000000142C5F2A0
 struct WarpAnimationBinding
 {
     AntRef m_ConnectJointGroup; //0x0000
@@ -4290,7 +4290,7 @@ struct WarpAnimationBinding
 
 ////////////////////////////////////////
 // RuntimeId: 07708
-// TypeInfo:  0x0000000142C59110
+// TypeInfo: 0x0000000142C59110
 struct VehicleCameraControlBinding
 {
     AntRef m_EnableAnimatedVehicleCamera; //0x0000
@@ -4298,7 +4298,7 @@ struct VehicleCameraControlBinding
 
 ////////////////////////////////////////
 // RuntimeId: 07706
-// TypeInfo:  0x0000000142C59130
+// TypeInfo: 0x0000000142C59130
 struct VehicleEntryListenerBinding
 {
     AntRef m_InVehicle; //0x0000
@@ -4321,7 +4321,7 @@ struct VehicleEntryListenerBinding
 
 ////////////////////////////////////////
 // RuntimeId: 07704
-// TypeInfo:  0x0000000142C59150
+// TypeInfo: 0x0000000142C59150
 struct ClientCameraToComponentsInitMessage
 {
     char _0x0000[48];
@@ -4329,7 +4329,7 @@ struct ClientCameraToComponentsInitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07703
-// TypeInfo:  0x0000000142C59170
+// TypeInfo: 0x0000000142C59170
 struct VehicleToComponentsStartDisabledDamagedMessage
 {
     char _0x0000[40];
@@ -4337,7 +4337,7 @@ struct VehicleToComponentsStartDisabledDamagedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07702
-// TypeInfo:  0x0000000142C59190
+// TypeInfo: 0x0000000142C59190
 struct ClientVehicleToComponentsHealthChangedMessage
 {
     char _0x0000[48];
@@ -4345,7 +4345,7 @@ struct ClientVehicleToComponentsHealthChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07697
-// TypeInfo:  0x0000000142C591B0
+// TypeInfo: 0x0000000142C591B0
 struct NormalizeSettings
 {
     float m_Minimum; //0x0000
@@ -4359,7 +4359,7 @@ struct NormalizeSettings
 
 ////////////////////////////////////////
 // RuntimeId: 07693
-// TypeInfo:  0x0000000142C591D0
+// TypeInfo: 0x0000000142C591D0
 struct VehicleLockableInfoData
 {
     float m_HeatSignature; //0x0000
@@ -4370,7 +4370,7 @@ struct VehicleLockableInfoData
 
 ////////////////////////////////////////
 // RuntimeId: 07691
-// TypeInfo:  0x0000000142C591F0
+// TypeInfo: 0x0000000142C591F0
 struct AngleOfImpactData
 {
     float m_Zone12Delimiter; //0x0000
@@ -4384,7 +4384,7 @@ struct AngleOfImpactData
 
 ////////////////////////////////////////
 // RuntimeId: 07689
-// TypeInfo:  0x0000000142C59210
+// TypeInfo: 0x0000000142C59210
 struct MPModeData
 {
     __int32 m_VehiclePoints; //0x0000
@@ -4392,7 +4392,7 @@ struct MPModeData
 
 ////////////////////////////////////////
 // RuntimeId: 07687
-// TypeInfo:  0x0000000142C59230
+// TypeInfo: 0x0000000142C59230
 struct VehicleHealthZoneData
 {
     float m_MaxHealth; //0x0000
@@ -4407,7 +4407,7 @@ struct VehicleHealthZoneData
 
 ////////////////////////////////////////
 // RuntimeId: 07685
-// TypeInfo:  0x0000000142C59250
+// TypeInfo: 0x0000000142C59250
 struct VehicleHudData
 {
     Vec3 m_CustomizationOffset; //0x0000
@@ -4424,7 +4424,7 @@ struct VehicleHudData
 
 ////////////////////////////////////////
 // RuntimeId: 05344
-// TypeInfo:  0x0000000142C223A8
+// TypeInfo: 0x0000000142C223A8
 struct MaterialDecl
 {
     unsigned __int32 m_Packed; //0x0000
@@ -4432,7 +4432,7 @@ struct MaterialDecl
 
 ////////////////////////////////////////
 // RuntimeId: 07669
-// TypeInfo:  0x0000000142C595B0
+// TypeInfo: 0x0000000142C595B0
 struct CameraRelativeControlPerSpeedData
 {
     float m_SpeedThreshold; //0x0000
@@ -4459,7 +4459,7 @@ struct CameraRelativeControlPerSpeedData
 
 ////////////////////////////////////////
 // RuntimeId: 07663
-// TypeInfo:  0x0000000142C59270
+// TypeInfo: 0x0000000142C59270
 struct LandingGearConditionData
 {
     float m_Height; //0x0000
@@ -4469,7 +4469,7 @@ struct LandingGearConditionData
 
 ////////////////////////////////////////
 // RuntimeId: 07651
-// TypeInfo:  0x0000000142C595D0
+// TypeInfo: 0x0000000142C595D0
 struct TurretRotationInfo
 {
     RotationAxis m_RotationAxis; //0x0000
@@ -4484,7 +4484,7 @@ struct TurretRotationInfo
 
 ////////////////////////////////////////
 // RuntimeId: 07639
-// TypeInfo:  0x0000000142C59290
+// TypeInfo: 0x0000000142C59290
 struct RotorModelData
 {
     float m_RotationRpm; //0x0000
@@ -4493,7 +4493,7 @@ struct RotorModelData
 
 ////////////////////////////////////////
 // RuntimeId: 07615
-// TypeInfo:  0x0000000142C595F0
+// TypeInfo: 0x0000000142C595F0
 struct UnlockIdTable
 {
     Array<unsigned __int32> m_Identifiers; //0x0000
@@ -4501,7 +4501,7 @@ struct UnlockIdTable
 
 ////////////////////////////////////////
 // RuntimeId: 07613
-// TypeInfo:  0x0000000142C59610
+// TypeInfo: 0x0000000142C59610
 struct BasicUnlockInfo
 {
     Guid m_UnlockGuid; //0x0000
@@ -4519,7 +4519,7 @@ struct BasicUnlockInfo
 
 ////////////////////////////////////////
 // RuntimeId: 07601
-// TypeInfo:  0x0000000142C59630
+// TypeInfo: 0x0000000142C59630
 struct UnlockAssetPair
 {
     UnlockAssetBase* m_Second; //0x0000
@@ -4528,7 +4528,7 @@ struct UnlockAssetPair
 
 ////////////////////////////////////////
 // RuntimeId: 07465
-// TypeInfo:  0x0000000142C59410
+// TypeInfo: 0x0000000142C59410
 struct UIElementColor
 {
     Vec3 m_Rgb; //0x0000
@@ -4539,7 +4539,7 @@ struct UIElementColor
 
 ////////////////////////////////////////
 // RuntimeId: 07527
-// TypeInfo:  0x0000000142C592F0
+// TypeInfo: 0x0000000142C592F0
 struct UIElementInclusionSettings
 {
     Array<char*> m_CustomInclusionCritera; //0x0000
@@ -4558,7 +4558,7 @@ struct UIElementInclusionSettings
 
 ////////////////////////////////////////
 // RuntimeId: 07525
-// TypeInfo:  0x0000000142C59650
+// TypeInfo: 0x0000000142C59650
 struct UIElementEditorSettings
 {
     float m_Opacity; //0x0000
@@ -4566,7 +4566,7 @@ struct UIElementEditorSettings
 
 ////////////////////////////////////////
 // RuntimeId: 07505
-// TypeInfo:  0x0000000142C59310
+// TypeInfo: 0x0000000142C59310
 struct UIElementGradient
 {
     UIElementColor m_TopLeftColor; //0x0000
@@ -4577,7 +4577,7 @@ struct UIElementGradient
 
 ////////////////////////////////////////
 // RuntimeId: 07461
-// TypeInfo:  0x0000000142C59450
+// TypeInfo: 0x0000000142C59450
 struct UIDataSource
 {
     UIComponentData* m_DataCategory; //0x0000
@@ -4588,7 +4588,7 @@ struct UIDataSource
 
 ////////////////////////////////////////
 // RuntimeId: 07501
-// TypeInfo:  0x0000000142C59350
+// TypeInfo: 0x0000000142C59350
 struct UIElementTransform
 {
     Vec3 m_Rotation; //0x0000
@@ -4600,7 +4600,7 @@ struct UIElementTransform
 
 ////////////////////////////////////////
 // RuntimeId: 07499
-// TypeInfo:  0x0000000142C59370
+// TypeInfo: 0x0000000142C59370
 struct UIElementAnchor
 {
     float m_X; //0x0000
@@ -4609,7 +4609,7 @@ struct UIElementAnchor
 
 ////////////////////////////////////////
 // RuntimeId: 07497
-// TypeInfo:  0x0000000142C59390
+// TypeInfo: 0x0000000142C59390
 struct UIElementSize
 {
     float m_X; //0x0000
@@ -4618,7 +4618,7 @@ struct UIElementSize
 
 ////////////////////////////////////////
 // RuntimeId: 07495
-// TypeInfo:  0x0000000142C593B0
+// TypeInfo: 0x0000000142C593B0
 struct UIElementOffset
 {
     float m_X; //0x0000
@@ -4627,7 +4627,7 @@ struct UIElementOffset
 
 ////////////////////////////////////////
 // RuntimeId: 07493
-// TypeInfo:  0x0000000142C593D0
+// TypeInfo: 0x0000000142C593D0
 struct UIElementRectExpansion
 {
     float m_X; //0x0000
@@ -4638,7 +4638,7 @@ struct UIElementRectExpansion
 
 ////////////////////////////////////////
 // RuntimeId: 07491
-// TypeInfo:  0x0000000142C59670
+// TypeInfo: 0x0000000142C59670
 struct UIElementRect
 {
     float m_X; //0x0000
@@ -4649,7 +4649,7 @@ struct UIElementRect
 
 ////////////////////////////////////////
 // RuntimeId: 07487
-// TypeInfo:  0x0000000142C59690
+// TypeInfo: 0x0000000142C59690
 struct UIElementTextEntry
 {
     UITextEntryType m_TextType; //0x0000
@@ -4663,7 +4663,7 @@ struct UIElementTextEntry
 
 ////////////////////////////////////////
 // RuntimeId: 07469
-// TypeInfo:  0x0000000142C593F0
+// TypeInfo: 0x0000000142C593F0
 struct UIElementFont
 {
     char* m_ScaleformFontName; //0x0000
@@ -4673,7 +4673,7 @@ struct UIElementFont
 
 ////////////////////////////////////////
 // RuntimeId: 07467
-// TypeInfo:  0x0000000142C596B0
+// TypeInfo: 0x0000000142C596B0
 struct UIElementLineStyle
 {
     UIElementColor m_Color; //0x0000
@@ -4683,7 +4683,7 @@ struct UIElementLineStyle
 
 ////////////////////////////////////////
 // RuntimeId: 07549
-// TypeInfo:  0x0000000142C592D0
+// TypeInfo: 0x0000000142C592D0
 struct UIElementBitmapDistanceFieldParams
 {
     UIElementColor m_OutlineColor; //0x0000
@@ -4695,7 +4695,7 @@ struct UIElementBitmapDistanceFieldParams
 
 ////////////////////////////////////////
 // RuntimeId: 07463
-// TypeInfo:  0x0000000142C59430
+// TypeInfo: 0x0000000142C59430
 struct UICompareDataSource
 {
     UIComponentData* m_DataCategory; //0x0000
@@ -4707,7 +4707,7 @@ struct UICompareDataSource
 
 ////////////////////////////////////////
 // RuntimeId: 07503
-// TypeInfo:  0x0000000142C59330
+// TypeInfo: 0x0000000142C59330
 struct UIElementText
 {
     char* m_Sid; //0x0000
@@ -4721,7 +4721,7 @@ struct UIElementText
 
 ////////////////////////////////////////
 // RuntimeId: 07457
-// TypeInfo:  0x0000000142C59470
+// TypeInfo: 0x0000000142C59470
 struct UIAutoScrollTextSettings
 {
     float m_NoScrollWaitTime; //0x0000
@@ -4733,7 +4733,7 @@ struct UIAutoScrollTextSettings
 
 ////////////////////////////////////////
 // RuntimeId: 07451
-// TypeInfo:  0x0000000142C596D0
+// TypeInfo: 0x0000000142C596D0
 struct UITextureMapping
 {
     char* m_Id; //0x0000
@@ -4742,7 +4742,7 @@ struct UITextureMapping
 
 ////////////////////////////////////////
 // RuntimeId: 07449
-// TypeInfo:  0x0000000142C596F0
+// TypeInfo: 0x0000000142C596F0
 struct UITextureMappingOutputEntry
 {
     char* m_Id; //0x0000
@@ -4755,7 +4755,7 @@ struct UITextureMappingOutputEntry
 
 ////////////////////////////////////////
 // RuntimeId: 07445
-// TypeInfo:  0x0000000142C59710
+// TypeInfo: 0x0000000142C59710
 struct UIImmediateModeFontLookup
 {
     LanguageFormat m_Language; //0x0000
@@ -4765,7 +4765,7 @@ struct UIImmediateModeFontLookup
 
 ////////////////////////////////////////
 // RuntimeId: 07443
-// TypeInfo:  0x0000000142C59730
+// TypeInfo: 0x0000000142C59730
 struct UIImmediateModeFontBundle
 {
     LanguageFormat m_Language; //0x0000
@@ -4776,7 +4776,7 @@ struct UIImmediateModeFontBundle
 
 ////////////////////////////////////////
 // RuntimeId: 07437
-// TypeInfo:  0x0000000142C59490
+// TypeInfo: 0x0000000142C59490
 struct UIFlowDialogNodeReachedMessage
 {
     char _0x0000[64];
@@ -4784,7 +4784,7 @@ struct UIFlowDialogNodeReachedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07436
-// TypeInfo:  0x0000000142C594B0
+// TypeInfo: 0x0000000142C594B0
 struct UIDialogScreenPushedMessage
 {
     char _0x0000[48];
@@ -4792,7 +4792,7 @@ struct UIDialogScreenPushedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07379
-// TypeInfo:  0x0000000142C59750
+// TypeInfo: 0x0000000142C59750
 struct InputRecorderTrackData
 {
     char* m_Name; //0x0000
@@ -4803,7 +4803,7 @@ struct InputRecorderTrackData
 
 ////////////////////////////////////////
 // RuntimeId: 07369
-// TypeInfo:  0x0000000142C594F0
+// TypeInfo: 0x0000000142C594F0
 struct SimpleMovementActionTimeData
 {
     float m_Time; //0x0000
@@ -4812,7 +4812,7 @@ struct SimpleMovementActionTimeData
 
 ////////////////////////////////////////
 // RuntimeId: 07309
-// TypeInfo:  0x0000000142C59530
+// TypeInfo: 0x0000000142C59530
 struct IndexRange
 {
     unsigned __int32 m_First; //0x0000
@@ -4821,7 +4821,7 @@ struct IndexRange
 
 ////////////////////////////////////////
 // RuntimeId: 07311
-// TypeInfo:  0x0000000142C59770
+// TypeInfo: 0x0000000142C59770
 struct ChildStaticModelNetworkInfo
 {
     IndexRange m_NetworkRange; //0x0000
@@ -4832,7 +4832,7 @@ struct ChildStaticModelNetworkInfo
 
 ////////////////////////////////////////
 // RuntimeId: 07313
-// TypeInfo:  0x0000000142C59510
+// TypeInfo: 0x0000000142C59510
 struct StaticModelNetworkInfo
 {
     Array<IndexRange> m_PartNetworkIdRanges; //0x0000
@@ -4845,7 +4845,7 @@ struct StaticModelNetworkInfo
 
 ////////////////////////////////////////
 // RuntimeId: 07307
-// TypeInfo:  0x0000000142C59790
+// TypeInfo: 0x0000000142C59790
 struct PhysicsPartInfo
 {
     unsigned __int32 m_PartComponentIndex; //0x0000
@@ -4854,7 +4854,7 @@ struct PhysicsPartInfo
 
 ////////////////////////////////////////
 // RuntimeId: 07301
-// TypeInfo:  0x0000000142C59550
+// TypeInfo: 0x0000000142C59550
 struct CharacterToComponentsSpawnTemplateMessage
 {
     char _0x0000[56];
@@ -4862,7 +4862,7 @@ struct CharacterToComponentsSpawnTemplateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07272
-// TypeInfo:  0x0000000142C50DF0
+// TypeInfo: 0x0000000142C50DF0
 struct PID
 {
     float m_P; //0x0000
@@ -4876,7 +4876,7 @@ struct PID
 
 ////////////////////////////////////////
 // RuntimeId: 07250
-// TypeInfo:  0x0000000142C51190
+// TypeInfo: 0x0000000142C51190
 struct CustomizeVisual
 {
     Array<UnlockAsset*> m_Visual; //0x0000
@@ -4884,7 +4884,7 @@ struct CustomizeVisual
 
 ////////////////////////////////////////
 // RuntimeId: 07248
-// TypeInfo:  0x0000000142C50E90
+// TypeInfo: 0x0000000142C50E90
 struct NetworkPlayerSelectedUnlockAssetsMessage
 {
     char _0x0000[112];
@@ -4892,7 +4892,7 @@ struct NetworkPlayerSelectedUnlockAssetsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07247
-// TypeInfo:  0x0000000142C511B0
+// TypeInfo: 0x0000000142C511B0
 struct CamoUnlockSelection
 {
     __int32 m_Category; //0x0000
@@ -4902,7 +4902,7 @@ struct CamoUnlockSelection
 
 ////////////////////////////////////////
 // RuntimeId: 07227
-// TypeInfo:  0x0000000142C511D0
+// TypeInfo: 0x0000000142C511D0
 struct CustomizedMeshMaterialsData
 {
     ObjectBlueprint* m_MeshBlueprint; //0x0000
@@ -4911,7 +4911,7 @@ struct CustomizedMeshMaterialsData
 
 ////////////////////////////////////////
 // RuntimeId: 07197
-// TypeInfo:  0x0000000142C50F10
+// TypeInfo: 0x0000000142C50F10
 struct PartComponentOverridePreDamagedMessage
 {
     char _0x0000[48];
@@ -4919,7 +4919,7 @@ struct PartComponentOverridePreDamagedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07178
-// TypeInfo:  0x0000000142C50F30
+// TypeInfo: 0x0000000142C50F30
 struct EntityToComponentsResetMessage
 {
     char _0x0000[40];
@@ -4927,7 +4927,7 @@ struct EntityToComponentsResetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07175
-// TypeInfo:  0x0000000142C50F50
+// TypeInfo: 0x0000000142C50F50
 struct UnlockComponentEnabledMessage
 {
     char _0x0000[48];
@@ -4935,7 +4935,7 @@ struct UnlockComponentEnabledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07170
-// TypeInfo:  0x0000000142C511F0
+// TypeInfo: 0x0000000142C511F0
 struct SoldierAnimatedCameraData
 {
     float m_CameraTransitionTime; //0x0000
@@ -4945,7 +4945,7 @@ struct SoldierAnimatedCameraData
 
 ////////////////////////////////////////
 // RuntimeId: 07160
-// TypeInfo:  0x0000000142C51210
+// TypeInfo: 0x0000000142C51210
 struct ShaderParameterVector
 {
     Vec4 m_Value; //0x0000
@@ -4955,7 +4955,7 @@ struct ShaderParameterVector
 
 ////////////////////////////////////////
 // RuntimeId: 07158
-// TypeInfo:  0x0000000142C51230
+// TypeInfo: 0x0000000142C51230
 struct CameraBinding
 {
     AntRef m_Render1pInBackground; //0x0000
@@ -4964,7 +4964,7 @@ struct CameraBinding
 
 ////////////////////////////////////////
 // RuntimeId: 07118
-// TypeInfo:  0x0000000142C512D0
+// TypeInfo: 0x0000000142C512D0
 struct ActionSuppressor
 {
     __int32 m_ActionToSuppress; //0x0000
@@ -4973,7 +4973,7 @@ struct ActionSuppressor
 
 ////////////////////////////////////////
 // RuntimeId: 07154
-// TypeInfo:  0x0000000142C50F90
+// TypeInfo: 0x0000000142C50F90
 struct InputSuppressionData
 {
     Array<ActionSuppressor> m_SuppressVehicleInput; //0x0000
@@ -4981,7 +4981,7 @@ struct InputSuppressionData
 
 ////////////////////////////////////////
 // RuntimeId: 07142
-// TypeInfo:  0x0000000142C51270
+// TypeInfo: 0x0000000142C51270
 struct BuoyantPartsData
 {
     BuoyantParts m_PartName; //0x0000
@@ -4990,7 +4990,7 @@ struct BuoyantPartsData
 
 ////////////////////////////////////////
 // RuntimeId: 07126
-// TypeInfo:  0x0000000142C51010
+// TypeInfo: 0x0000000142C51010
 struct PitchModifier
 {
     Vec3 m_Offset; //0x0000
@@ -5001,7 +5001,7 @@ struct PitchModifier
 
 ////////////////////////////////////////
 // RuntimeId: 07130
-// TypeInfo:  0x0000000142C50FF0
+// TypeInfo: 0x0000000142C50FF0
 struct AimAssistCollisionBonePrioritiesData
 {
     __int32 m_StartPriority; //0x0000
@@ -5011,7 +5011,7 @@ struct AimAssistCollisionBonePrioritiesData
 
 ////////////////////////////////////////
 // RuntimeId: 07132
-// TypeInfo:  0x0000000142C50FD0
+// TypeInfo: 0x0000000142C50FD0
 struct AimAssistCollisionBoneSnapAimData
 {
     float m_Bounding_LengthScale; //0x0000
@@ -5023,7 +5023,7 @@ struct AimAssistCollisionBoneSnapAimData
 
 ////////////////////////////////////////
 // RuntimeId: 07136
-// TypeInfo:  0x0000000142C51290
+// TypeInfo: 0x0000000142C51290
 struct BoneCollisionData
 {
     Vec4 m_DebugDrawColor; //0x0000
@@ -5047,7 +5047,7 @@ struct BoneCollisionData
 
 ////////////////////////////////////////
 // RuntimeId: 07124
-// TypeInfo:  0x0000000142C512B0
+// TypeInfo: 0x0000000142C512B0
 struct HIKData
 {
     float m_ReachT; //0x0000
@@ -5058,7 +5058,7 @@ struct HIKData
 
 ////////////////////////////////////////
 // RuntimeId: 07122
-// TypeInfo:  0x0000000142C51030
+// TypeInfo: 0x0000000142C51030
 struct RagdollBinding
 {
     AntRef m_RagdollOnBack; //0x0000
@@ -5071,7 +5071,7 @@ struct RagdollBinding
 
 ////////////////////////////////////////
 // RuntimeId: 07156
-// TypeInfo:  0x0000000142C51250
+// TypeInfo: 0x0000000142C51250
 struct RegularCameraViewData
 {
     Vec3 m_MeshOffset; //0x0000
@@ -5090,7 +5090,7 @@ struct RegularCameraViewData
 
 ////////////////////////////////////////
 // RuntimeId: 07116
-// TypeInfo:  0x0000000142C512F0
+// TypeInfo: 0x0000000142C512F0
 struct StanceCameraData
 {
     Array<__int32> m_ValidStances; //0x0000
@@ -5099,7 +5099,7 @@ struct StanceCameraData
 
 ////////////////////////////////////////
 // RuntimeId: 07108
-// TypeInfo:  0x0000000142C51050
+// TypeInfo: 0x0000000142C51050
 struct EntryComponentStanceChangedMessage
 {
     char _0x0000[56];
@@ -5107,7 +5107,7 @@ struct EntryComponentStanceChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07103
-// TypeInfo:  0x0000000142C51310
+// TypeInfo: 0x0000000142C51310
 struct StanceSwitchSoundData
 {
     SoundAsset* m_StanceSwitchSound; //0x0000
@@ -5116,7 +5116,7 @@ struct StanceSwitchSoundData
 
 ////////////////////////////////////////
 // RuntimeId: 07099
-// TypeInfo:  0x0000000142C51070
+// TypeInfo: 0x0000000142C51070
 struct EntryComponentHudData
 {
     __int32 m_Index; //0x0000
@@ -5129,7 +5129,7 @@ struct EntryComponentHudData
 
 ////////////////////////////////////////
 // RuntimeId: 07073
-// TypeInfo:  0x0000000142C510B0
+// TypeInfo: 0x0000000142C510B0
 struct CharacterToComponentsOnKilledMessage
 {
     char _0x0000[40];
@@ -5137,7 +5137,7 @@ struct CharacterToComponentsOnKilledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07066
-// TypeInfo:  0x0000000142C510D0
+// TypeInfo: 0x0000000142C510D0
 struct CharacterToComponentsOnTeleportedMessage
 {
     char _0x0000[40];
@@ -5145,7 +5145,7 @@ struct CharacterToComponentsOnTeleportedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 07033
-// TypeInfo:  0x0000000142C51330
+// TypeInfo: 0x0000000142C51330
 struct CameraLeapData
 {
     LinearTransform m_Transform; //0x0000
@@ -5156,7 +5156,7 @@ struct CameraLeapData
 
 ////////////////////////////////////////
 // RuntimeId: 07021
-// TypeInfo:  0x0000000142C51350
+// TypeInfo: 0x0000000142C51350
 struct HudImpactData
 {
     float m_MinHealth; //0x0000
@@ -5169,7 +5169,7 @@ struct HudImpactData
 
 ////////////////////////////////////////
 // RuntimeId: 07017
-// TypeInfo:  0x0000000142C510F0
+// TypeInfo: 0x0000000142C510F0
 struct BlurEffectData
 {
     float m_DispersionStrength; //0x0000
@@ -5182,7 +5182,7 @@ struct BlurEffectData
 
 ////////////////////////////////////////
 // RuntimeId: 07015
-// TypeInfo:  0x0000000142C51110
+// TypeInfo: 0x0000000142C51110
 struct TurnEffectData
 {
     float m_MaxRollAngle; //0x0000
@@ -5197,7 +5197,7 @@ struct TurnEffectData
 
 ////////////////////////////////////////
 // RuntimeId: 07013
-// TypeInfo:  0x0000000142C51370
+// TypeInfo: 0x0000000142C51370
 struct CameraSineCurveData
 {
     float m_Frequency; //0x0000
@@ -5207,7 +5207,7 @@ struct CameraSineCurveData
 
 ////////////////////////////////////////
 // RuntimeId: 05008
-// TypeInfo:  0x0000000142C1E0A8
+// TypeInfo: 0x0000000142C1E0A8
 struct BundleHeapInfo
 {
     BundleHeapType m_HeapType; //0x0000
@@ -5218,7 +5218,7 @@ struct BundleHeapInfo
 
 ////////////////////////////////////////
 // RuntimeId: 06991
-// TypeInfo:  0x0000000142C51150
+// TypeInfo: 0x0000000142C51150
 struct BlueprintBundleSettings
 {
     BundleHeapInfo m_Heap; //0x0000
@@ -5226,7 +5226,7 @@ struct BlueprintBundleSettings
 
 ////////////////////////////////////////
 // RuntimeId: 05048
-// TypeInfo:  0x0000000142C1DF08
+// TypeInfo: 0x0000000142C1DF08
 struct EventSpec
 {
     __int32 m_Id; //0x0000
@@ -5234,7 +5234,7 @@ struct EventSpec
 
 ////////////////////////////////////////
 // RuntimeId: 06939
-// TypeInfo:  0x0000000142C4B0C0
+// TypeInfo: 0x0000000142C4B0C0
 struct SubLevelPreloadInfo
 {
     char* m_SubLevelBundlePath; //0x0000
@@ -5243,7 +5243,7 @@ struct SubLevelPreloadInfo
 
 ////////////////////////////////////////
 // RuntimeId: 06941
-// TypeInfo:  0x0000000142C4AEA0
+// TypeInfo: 0x0000000142C4AEA0
 struct LevelPreloadInfo
 {
     Array<char*> m_PreloadedBlueprintBundles; //0x0000
@@ -5252,7 +5252,7 @@ struct LevelPreloadInfo
 
 ////////////////////////////////////////
 // RuntimeId: 06929
-// TypeInfo:  0x0000000142C4B0E0
+// TypeInfo: 0x0000000142C4B0E0
 struct PathfindingBlob
 {
     Guid m_BlobId; //0x0000
@@ -5264,7 +5264,7 @@ struct PathfindingBlob
 
 ////////////////////////////////////////
 // RuntimeId: 06923
-// TypeInfo:  0x0000000142C4B100
+// TypeInfo: 0x0000000142C4B100
 struct FaceAnimationWaveMapping
 {
     __int32 m_WaveNameHash; //0x0000
@@ -5273,7 +5273,7 @@ struct FaceAnimationWaveMapping
 
 ////////////////////////////////////////
 // RuntimeId: 06913
-// TypeInfo:  0x0000000142C4B120
+// TypeInfo: 0x0000000142C4B120
 struct LevelStartPoint
 {
     char* m_Name; //0x0000
@@ -5284,7 +5284,7 @@ struct LevelStartPoint
 
 ////////////////////////////////////////
 // RuntimeId: 06911
-// TypeInfo:  0x0000000142C4B140
+// TypeInfo: 0x0000000142C4B140
 struct LevelBundleLoad
 {
     char* m_Name; //0x0000
@@ -5294,7 +5294,7 @@ struct LevelBundleLoad
 
 ////////////////////////////////////////
 // RuntimeId: 06909
-// TypeInfo:  0x0000000142C4B160
+// TypeInfo: 0x0000000142C4B160
 struct LevelDescriptionInclusionCategory
 {
     char* m_Category; //0x0000
@@ -5303,7 +5303,7 @@ struct LevelDescriptionInclusionCategory
 
 ////////////////////////////////////////
 // RuntimeId: 06905
-// TypeInfo:  0x0000000142C4AEC0
+// TypeInfo: 0x0000000142C4AEC0
 struct LevelDescription
 {
     char* m_Name; //0x0000
@@ -5318,7 +5318,7 @@ struct LevelDescription
 
 ////////////////////////////////////////
 // RuntimeId: 06901
-// TypeInfo:  0x0000000142C4AEE0
+// TypeInfo: 0x0000000142C4AEE0
 struct InputMessagesSingleInputEventMessage
 {
     char _0x0000[48];
@@ -5326,7 +5326,7 @@ struct InputMessagesSingleInputEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06858
-// TypeInfo:  0x0000000142C4AF00
+// TypeInfo: 0x0000000142C4AF00
 struct EditableActions
 {
     Array<EditableAction*> m_Actions; //0x0000
@@ -5334,7 +5334,7 @@ struct EditableActions
 
 ////////////////////////////////////////
 // RuntimeId: 06860
-// TypeInfo:  0x0000000142C4B180
+// TypeInfo: 0x0000000142C4B180
 struct EditableActionMap
 {
     char* m_Id; //0x0000
@@ -5345,7 +5345,7 @@ struct EditableActionMap
 
 ////////////////////////////////////////
 // RuntimeId: 06844
-// TypeInfo:  0x0000000142C4B1A0
+// TypeInfo: 0x0000000142C4B1A0
 struct EntryInputActionBinding
 {
     __int32 m_Action; //0x0000
@@ -5357,7 +5357,7 @@ struct EntryInputActionBinding
 
 ////////////////////////////////////////
 // RuntimeId: 06820
-// TypeInfo:  0x0000000142C4B1C0
+// TypeInfo: 0x0000000142C4B1C0
 struct HudData
 {
     float m_CrosshairScaleMin; //0x0000
@@ -5398,7 +5398,7 @@ struct HudData
 
 ////////////////////////////////////////
 // RuntimeId: 06812
-// TypeInfo:  0x0000000142C4B1E0
+// TypeInfo: 0x0000000142C4B1E0
 struct UIPartProperties
 {
     UIPartIdentifier m_Identifier; //0x0000
@@ -5410,7 +5410,7 @@ struct UIPartProperties
 
 ////////////////////////////////////////
 // RuntimeId: 06798
-// TypeInfo:  0x0000000142C4B200
+// TypeInfo: 0x0000000142C4B200
 struct StaticModelGroupMemberData
 {
     Array<LinearTransform> m_InstanceTransforms; //0x0000
@@ -5433,7 +5433,7 @@ struct StaticModelGroupMemberData
 
 ////////////////////////////////////////
 // RuntimeId: 06756
-// TypeInfo:  0x0000000142C4AFC0
+// TypeInfo: 0x0000000142C4AFC0
 struct ServerControllableToComponentsPlayerExitMessage
 {
     char _0x0000[48];
@@ -5441,7 +5441,7 @@ struct ServerControllableToComponentsPlayerExitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06755
-// TypeInfo:  0x0000000142C4AFE0
+// TypeInfo: 0x0000000142C4AFE0
 struct ServerControllableToComponentsPlayerEnteredMessage
 {
     char _0x0000[48];
@@ -5449,7 +5449,7 @@ struct ServerControllableToComponentsPlayerEnteredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06754
-// TypeInfo:  0x0000000142C4B000
+// TypeInfo: 0x0000000142C4B000
 struct ClientControllableToComponentsPlayerExitMessage
 {
     char _0x0000[48];
@@ -5457,7 +5457,7 @@ struct ClientControllableToComponentsPlayerExitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06753
-// TypeInfo:  0x0000000142C4B020
+// TypeInfo: 0x0000000142C4B020
 struct ClientControllableToComponentsPlayerEnteredMessage
 {
     char _0x0000[48];
@@ -5465,7 +5465,7 @@ struct ClientControllableToComponentsPlayerEnteredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06744
-// TypeInfo:  0x0000000142C4B220
+// TypeInfo: 0x0000000142C4B220
 struct VoiceOverConversationEntityTrackInfo
 {
     unsigned __int32 m_TakeControlId; //0x0000
@@ -5474,7 +5474,7 @@ struct VoiceOverConversationEntityTrackInfo
 
 ////////////////////////////////////////
 // RuntimeId: 06734
-// TypeInfo:  0x0000000142C4B040
+// TypeInfo: 0x0000000142C4B040
 struct FbProxyControllerEntityBinding
 {
     AntRef m_Trigger; //0x0000
@@ -5483,7 +5483,7 @@ struct FbProxyControllerEntityBinding
 
 ////////////////////////////////////////
 // RuntimeId: 06728
-// TypeInfo:  0x0000000142C4B080
+// TypeInfo: 0x0000000142C4B080
 struct EventSyncReachedClientMessage
 {
     char _0x0000[96];
@@ -5491,7 +5491,7 @@ struct EventSyncReachedClientMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06723
-// TypeInfo:  0x0000000142C4B240
+// TypeInfo: 0x0000000142C4B240
 struct EntitlementData
 {
     char* m_License; //0x0000
@@ -5506,7 +5506,7 @@ struct EntitlementData
 
 ////////////////////////////////////////
 // RuntimeId: 06721
-// TypeInfo:  0x0000000142C4B260
+// TypeInfo: 0x0000000142C4B260
 struct PlatformProjectId
 {
     GamePlatform m_Platform; //0x0000
@@ -5516,7 +5516,7 @@ struct PlatformProjectId
 
 ////////////////////////////////////////
 // RuntimeId: 06719
-// TypeInfo:  0x0000000142C4B280
+// TypeInfo: 0x0000000142C4B280
 struct EntitlementPlatformType
 {
     GamePlatform m_Platform; //0x0000
@@ -5525,7 +5525,7 @@ struct EntitlementPlatformType
 
 ////////////////////////////////////////
 // RuntimeId: 06699
-// TypeInfo:  0x0000000142C4B0A0
+// TypeInfo: 0x0000000142C4B0A0
 struct AntDynamicAvoidanceBinding
 {
     AntRef m_TimeUntilCollision; //0x0000
@@ -5536,7 +5536,7 @@ struct AntDynamicAvoidanceBinding
 
 ////////////////////////////////////////
 // RuntimeId: 06695
-// TypeInfo:  0x0000000142C45228
+// TypeInfo: 0x0000000142C45228
 struct CongestionControlSettings
 {
     float m_LatencyMsMax; //0x0000
@@ -5557,7 +5557,7 @@ struct CongestionControlSettings
 
 ////////////////////////////////////////
 // RuntimeId: 06657
-// TypeInfo:  0x0000000142C45368
+// TypeInfo: 0x0000000142C45368
 struct ProfileOptionDataEnumItem
 {
     char* m_DisplayName; //0x0000
@@ -5567,7 +5567,7 @@ struct ProfileOptionDataEnumItem
 
 ////////////////////////////////////////
 // RuntimeId: 06647
-// TypeInfo:  0x0000000142C45388
+// TypeInfo: 0x0000000142C45388
 struct BinaryOption
 {
     char* m_Name; //0x0000
@@ -5575,7 +5575,7 @@ struct BinaryOption
 
 ////////////////////////////////////////
 // RuntimeId: 06645
-// TypeInfo:  0x0000000142C453A8
+// TypeInfo: 0x0000000142C453A8
 struct StringOption
 {
     char* m_Name; //0x0000
@@ -5584,7 +5584,7 @@ struct StringOption
 
 ////////////////////////////////////////
 // RuntimeId: 06643
-// TypeInfo:  0x0000000142C453C8
+// TypeInfo: 0x0000000142C453C8
 struct IntOption
 {
     char* m_Name; //0x0000
@@ -5594,7 +5594,7 @@ struct IntOption
 
 ////////////////////////////////////////
 // RuntimeId: 06641
-// TypeInfo:  0x0000000142C453E8
+// TypeInfo: 0x0000000142C453E8
 struct FloatOption
 {
     char* m_Name; //0x0000
@@ -5606,7 +5606,7 @@ struct FloatOption
 
 ////////////////////////////////////////
 // RuntimeId: 06633
-// TypeInfo:  0x0000000142C45268
+// TypeInfo: 0x0000000142C45268
 struct ProceduralAwarenessComponentBinding
 {
     AntRef m_StrengthScale; //0x0000
@@ -5618,7 +5618,7 @@ struct ProceduralAwarenessComponentBinding
 
 ////////////////////////////////////////
 // RuntimeId: 06621
-// TypeInfo:  0x0000000142C45288
+// TypeInfo: 0x0000000142C45288
 struct PhysicsDrivenAnimationEntityBinding
 {
     AntRef m_PhysicsMotionTarget; //0x0000
@@ -5660,7 +5660,7 @@ struct PhysicsDrivenAnimationEntityBinding
 
 ////////////////////////////////////////
 // RuntimeId: 06605
-// TypeInfo:  0x0000000142C45408
+// TypeInfo: 0x0000000142C45408
 struct RichPresenceProperty
 {
     char* m_Name; //0x0000
@@ -5670,7 +5670,7 @@ struct RichPresenceProperty
 
 ////////////////////////////////////////
 // RuntimeId: 06601
-// TypeInfo:  0x0000000142C45428
+// TypeInfo: 0x0000000142C45428
 struct RichPresenceContextSetting
 {
     RichPresenceContext* m_Context; //0x0000
@@ -5679,7 +5679,7 @@ struct RichPresenceContextSetting
 
 ////////////////////////////////////////
 // RuntimeId: 06589
-// TypeInfo:  0x0000000142C45448
+// TypeInfo: 0x0000000142C45448
 struct PersistenceConsumableMapping
 {
     ConsumableGroup m_Group; //0x0000
@@ -5687,7 +5687,7 @@ struct PersistenceConsumableMapping
 
 ////////////////////////////////////////
 // RuntimeId: 06575
-// TypeInfo:  0x0000000142C452E8
+// TypeInfo: 0x0000000142C452E8
 struct PersistentValueTemplateData
 {
     char* m_Name; //0x0000
@@ -5702,7 +5702,7 @@ struct PersistentValueTemplateData
 
 ////////////////////////////////////////
 // RuntimeId: 06519
-// TypeInfo:  0x0000000142C45468
+// TypeInfo: 0x0000000142C45468
 struct EffectWithSpeedRange
 {
     EffectBlueprint* m_Effect; //0x0000
@@ -5712,7 +5712,7 @@ struct EffectWithSpeedRange
 
 ////////////////////////////////////////
 // RuntimeId: 06252
-// TypeInfo:  0x0000000142C3A0D0
+// TypeInfo: 0x0000000142C3A0D0
 struct ServerProjectileOnSpawnMessage
 {
     char _0x0000[48];
@@ -5720,7 +5720,7 @@ struct ServerProjectileOnSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06251
-// TypeInfo:  0x0000000142C3A0F0
+// TypeInfo: 0x0000000142C3A0F0
 struct ServerAdministrationRestartRequiredMessage
 {
     char _0x0000[48];
@@ -5728,7 +5728,7 @@ struct ServerAdministrationRestartRequiredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06250
-// TypeInfo:  0x0000000142C3A110
+// TypeInfo: 0x0000000142C3A110
 struct AIDirectorStateMessage
 {
     char _0x0000[56];
@@ -5736,7 +5736,7 @@ struct AIDirectorStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06249
-// TypeInfo:  0x0000000142C3A130
+// TypeInfo: 0x0000000142C3A130
 struct AISpawnBotMessage
 {
     char _0x0000[64];
@@ -5744,7 +5744,7 @@ struct AISpawnBotMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06248
-// TypeInfo:  0x0000000142C3A150
+// TypeInfo: 0x0000000142C3A150
 struct AIPlayerEnableAsTargetMessage
 {
     char _0x0000[56];
@@ -5752,7 +5752,7 @@ struct AIPlayerEnableAsTargetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06247
-// TypeInfo:  0x0000000142C3A170
+// TypeInfo: 0x0000000142C3A170
 struct ServerPeerLoadLevelMessage
 {
     char _0x0000[40];
@@ -5760,7 +5760,7 @@ struct ServerPeerLoadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06246
-// TypeInfo:  0x0000000142C3A190
+// TypeInfo: 0x0000000142C3A190
 struct ServerPeerInitializedMessage
 {
     char _0x0000[48];
@@ -5768,7 +5768,7 @@ struct ServerPeerInitializedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06245
-// TypeInfo:  0x0000000142C3A1B0
+// TypeInfo: 0x0000000142C3A1B0
 struct ServerMissionObjectiveCompletedMessage
 {
     char _0x0000[48];
@@ -5776,7 +5776,7 @@ struct ServerMissionObjectiveCompletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06244
-// TypeInfo:  0x0000000142C3A1D0
+// TypeInfo: 0x0000000142C3A1D0
 struct ServerSubLevelOnStreamedInMessage
 {
     char _0x0000[40];
@@ -5784,7 +5784,7 @@ struct ServerSubLevelOnStreamedInMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06243
-// TypeInfo:  0x0000000142C3A1F0
+// TypeInfo: 0x0000000142C3A1F0
 struct ServerLevelCompletedMessage
 {
     char _0x0000[40];
@@ -5792,7 +5792,7 @@ struct ServerLevelCompletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06242
-// TypeInfo:  0x0000000142C3A210
+// TypeInfo: 0x0000000142C3A210
 struct ServerLevelStartedMessage
 {
     char _0x0000[48];
@@ -5800,7 +5800,7 @@ struct ServerLevelStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06241
-// TypeInfo:  0x0000000142C3A230
+// TypeInfo: 0x0000000142C3A230
 struct ServerLevelSpawnEntitiesEndMessage
 {
     char _0x0000[40];
@@ -5808,7 +5808,7 @@ struct ServerLevelSpawnEntitiesEndMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06240
-// TypeInfo:  0x0000000142C3A250
+// TypeInfo: 0x0000000142C3A250
 struct ServerLevelSpawnEntitiesBeginMessage
 {
     char _0x0000[40];
@@ -5816,7 +5816,7 @@ struct ServerLevelSpawnEntitiesBeginMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06239
-// TypeInfo:  0x0000000142C3A270
+// TypeInfo: 0x0000000142C3A270
 struct ServerRoundInterruptedMessage
 {
     char _0x0000[40];
@@ -5824,7 +5824,7 @@ struct ServerRoundInterruptedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06238
-// TypeInfo:  0x0000000142C3A290
+// TypeInfo: 0x0000000142C3A290
 struct ServerRoundOverMessage
 {
     char _0x0000[48];
@@ -5832,7 +5832,7 @@ struct ServerRoundOverMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06237
-// TypeInfo:  0x0000000142C3A2B0
+// TypeInfo: 0x0000000142C3A2B0
 struct ServerRoundResetMessage
 {
     char _0x0000[40];
@@ -5840,7 +5840,7 @@ struct ServerRoundResetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06236
-// TypeInfo:  0x0000000142C3A2D0
+// TypeInfo: 0x0000000142C3A2D0
 struct ServerGameplayCheckpointActivatedMessage
 {
     char _0x0000[40];
@@ -5848,7 +5848,7 @@ struct ServerGameplayCheckpointActivatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06235
-// TypeInfo:  0x0000000142C3A2F0
+// TypeInfo: 0x0000000142C3A2F0
 struct ServerGameplayCheckpointTriggeredMessage
 {
     char _0x0000[40];
@@ -5856,7 +5856,7 @@ struct ServerGameplayCheckpointTriggeredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06234
-// TypeInfo:  0x0000000142C3A310
+// TypeInfo: 0x0000000142C3A310
 struct ServerGameModeResetMessage
 {
     char _0x0000[40];
@@ -5864,7 +5864,7 @@ struct ServerGameModeResetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06233
-// TypeInfo:  0x0000000142C3A330
+// TypeInfo: 0x0000000142C3A330
 struct ServerGameplaySetPostRoundLogicMessage
 {
     char _0x0000[48];
@@ -5872,7 +5872,7 @@ struct ServerGameplaySetPostRoundLogicMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06232
-// TypeInfo:  0x0000000142C3A350
+// TypeInfo: 0x0000000142C3A350
 struct ServerGameplaySetPreRoundLogicMessage
 {
     char _0x0000[48];
@@ -5880,7 +5880,7 @@ struct ServerGameplaySetPreRoundLogicMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06231
-// TypeInfo:  0x0000000142C3A370
+// TypeInfo: 0x0000000142C3A370
 struct ServerGameplayGameModeResetMessage
 {
     char _0x0000[40];
@@ -5888,7 +5888,7 @@ struct ServerGameplayGameModeResetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06230
-// TypeInfo:  0x0000000142C3A390
+// TypeInfo: 0x0000000142C3A390
 struct ServerGameplayServerPlayerMenuCancelMessage
 {
     char _0x0000[48];
@@ -5896,7 +5896,7 @@ struct ServerGameplayServerPlayerMenuCancelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06229
-// TypeInfo:  0x0000000142C3A3B0
+// TypeInfo: 0x0000000142C3A3B0
 struct ServerGameplayServerPlayerMenuOkMessage
 {
     char _0x0000[48];
@@ -5904,7 +5904,7 @@ struct ServerGameplayServerPlayerMenuOkMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06228
-// TypeInfo:  0x0000000142C3A3D0
+// TypeInfo: 0x0000000142C3A3D0
 struct ServerGameplayPreviousWeatherStateMessage
 {
     char _0x0000[48];
@@ -5912,7 +5912,7 @@ struct ServerGameplayPreviousWeatherStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06227
-// TypeInfo:  0x0000000142C3A3F0
+// TypeInfo: 0x0000000142C3A3F0
 struct ServerGameplayFightHarderMessage
 {
     char _0x0000[48];
@@ -5920,7 +5920,7 @@ struct ServerGameplayFightHarderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06226
-// TypeInfo:  0x0000000142C3A410
+// TypeInfo: 0x0000000142C3A410
 struct ServerGameplayDeserterReturnMessage
 {
     char _0x0000[48];
@@ -5928,7 +5928,7 @@ struct ServerGameplayDeserterReturnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06225
-// TypeInfo:  0x0000000142C3A430
+// TypeInfo: 0x0000000142C3A430
 struct ServerGameplayDeserterMessage
 {
     char _0x0000[48];
@@ -5936,7 +5936,7 @@ struct ServerGameplayDeserterMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06224
-// TypeInfo:  0x0000000142C3A450
+// TypeInfo: 0x0000000142C3A450
 struct ServerGameplayPlayerMenuCancelMessage
 {
     char _0x0000[48];
@@ -5944,7 +5944,7 @@ struct ServerGameplayPlayerMenuCancelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06223
-// TypeInfo:  0x0000000142C3A470
+// TypeInfo: 0x0000000142C3A470
 struct ServerGameplayPlayerMenuOkMessage
 {
     char _0x0000[48];
@@ -5952,7 +5952,7 @@ struct ServerGameplayPlayerMenuOkMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06222
-// TypeInfo:  0x0000000142C3A490
+// TypeInfo: 0x0000000142C3A490
 struct ServerGameplayVoiceOverFinishedMessage
 {
     char _0x0000[48];
@@ -5960,7 +5960,7 @@ struct ServerGameplayVoiceOverFinishedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06221
-// TypeInfo:  0x0000000142C3A4B0
+// TypeInfo: 0x0000000142C3A4B0
 struct ServerStaticModelDamagedPartByPlayerMessage
 {
     char _0x0000[80];
@@ -5968,7 +5968,7 @@ struct ServerStaticModelDamagedPartByPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06220
-// TypeInfo:  0x0000000142C3A4D0
+// TypeInfo: 0x0000000142C3A4D0
 struct ServerStaticModelDestroyedPartMessage
 {
     char _0x0000[96];
@@ -5976,7 +5976,7 @@ struct ServerStaticModelDestroyedPartMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06219
-// TypeInfo:  0x0000000142C3A4F0
+// TypeInfo: 0x0000000142C3A4F0
 struct ServerStaticModelGroupDestroyedPartMessage
 {
     char _0x0000[96];
@@ -5984,7 +5984,7 @@ struct ServerStaticModelGroupDestroyedPartMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06218
-// TypeInfo:  0x0000000142C3A510
+// TypeInfo: 0x0000000142C3A510
 struct ServerStaticModelDestroyedAllCollapsablePartsMessage
 {
     char _0x0000[160];
@@ -5992,7 +5992,7 @@ struct ServerStaticModelDestroyedAllCollapsablePartsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06217
-// TypeInfo:  0x0000000142C3A530
+// TypeInfo: 0x0000000142C3A530
 struct ServerStaticModelSpawnMessage
 {
     char _0x0000[144];
@@ -6000,7 +6000,7 @@ struct ServerStaticModelSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06216
-// TypeInfo:  0x0000000142C3A550
+// TypeInfo: 0x0000000142C3A550
 struct ServerSoundVoiceOverFinishedMessage
 {
     char _0x0000[48];
@@ -6008,7 +6008,7 @@ struct ServerSoundVoiceOverFinishedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06215
-// TypeInfo:  0x0000000142C3A570
+// TypeInfo: 0x0000000142C3A570
 struct ServerInputDeactivateInputRestrictionMessage
 {
     char _0x0000[48];
@@ -6016,7 +6016,7 @@ struct ServerInputDeactivateInputRestrictionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06214
-// TypeInfo:  0x0000000142C3A590
+// TypeInfo: 0x0000000142C3A590
 struct ServerInputReactivateInputRestrictionMessage
 {
     char _0x0000[48];
@@ -6024,7 +6024,7 @@ struct ServerInputReactivateInputRestrictionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06213
-// TypeInfo:  0x0000000142C3A5B0
+// TypeInfo: 0x0000000142C3A5B0
 struct ServerCollisionExplosionPackDestroyedMessage
 {
     char _0x0000[64];
@@ -6032,7 +6032,7 @@ struct ServerCollisionExplosionPackDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06212
-// TypeInfo:  0x0000000142C3A5D0
+// TypeInfo: 0x0000000142C3A5D0
 struct ServerCollisionExplosionPackPlacedMessage
 {
     char _0x0000[48];
@@ -6040,7 +6040,7 @@ struct ServerCollisionExplosionPackPlacedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06211
-// TypeInfo:  0x0000000142C3A5F0
+// TypeInfo: 0x0000000142C3A5F0
 struct ServerCollisionExplosionUnSpawnMessage
 {
     char _0x0000[56];
@@ -6048,7 +6048,7 @@ struct ServerCollisionExplosionUnSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06210
-// TypeInfo:  0x0000000142C3A610
+// TypeInfo: 0x0000000142C3A610
 struct ServerCollisionExplosionDamageMessage
 {
     char _0x0000[96];
@@ -6056,7 +6056,7 @@ struct ServerCollisionExplosionDamageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06209
-// TypeInfo:  0x0000000142C3A630
+// TypeInfo: 0x0000000142C3A630
 struct ServerCollisionExplosionSpawnMessage
 {
     char _0x0000[96];
@@ -6064,7 +6064,7 @@ struct ServerCollisionExplosionSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06208
-// TypeInfo:  0x0000000142C3A650
+// TypeInfo: 0x0000000142C3A650
 struct ServerCollisionProjectileTimeoutMessage
 {
     char _0x0000[80];
@@ -6072,7 +6072,7 @@ struct ServerCollisionProjectileTimeoutMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06207
-// TypeInfo:  0x0000000142C3A670
+// TypeInfo: 0x0000000142C3A670
 struct ServerCollisionProjectileImpactMessage
 {
     char _0x0000[112];
@@ -6080,7 +6080,7 @@ struct ServerCollisionProjectileImpactMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06206
-// TypeInfo:  0x0000000142C3A690
+// TypeInfo: 0x0000000142C3A690
 struct ServerCollisionProjectileFireMessage
 {
     char _0x0000[64];
@@ -6088,7 +6088,7 @@ struct ServerCollisionProjectileFireMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06205
-// TypeInfo:  0x0000000142C3A6B0
+// TypeInfo: 0x0000000142C3A6B0
 struct ServerCollisionGrenadeCollisionMessage
 {
     char _0x0000[80];
@@ -6096,7 +6096,7 @@ struct ServerCollisionGrenadeCollisionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06204
-// TypeInfo:  0x0000000142C3A6D0
+// TypeInfo: 0x0000000142C3A6D0
 struct ServerCollisionGrenadeThrowMessage
 {
     char _0x0000[80];
@@ -6104,7 +6104,7 @@ struct ServerCollisionGrenadeThrowMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06203
-// TypeInfo:  0x0000000142C3A6F0
+// TypeInfo: 0x0000000142C3A6F0
 struct ServerComponentEntryComponentProcessedInputMessage
 {
     char _0x0000[48];
@@ -6112,7 +6112,7 @@ struct ServerComponentEntryComponentProcessedInputMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06202
-// TypeInfo:  0x0000000142C3A710
+// TypeInfo: 0x0000000142C3A710
 struct ServerComponentEntryOnPlayerExitsMessage
 {
     char _0x0000[64];
@@ -6120,7 +6120,7 @@ struct ServerComponentEntryOnPlayerExitsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06201
-// TypeInfo:  0x0000000142C3A730
+// TypeInfo: 0x0000000142C3A730
 struct ServerComponentEntryOnPlayerEntersMessage
 {
     char _0x0000[64];
@@ -6128,7 +6128,7 @@ struct ServerComponentEntryOnPlayerEntersMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06200
-// TypeInfo:  0x0000000142C3A750
+// TypeInfo: 0x0000000142C3A750
 struct ServerComponentEntryOnUnspawnMessage
 {
     char _0x0000[48];
@@ -6136,7 +6136,7 @@ struct ServerComponentEntryOnUnspawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06199
-// TypeInfo:  0x0000000142C3A770
+// TypeInfo: 0x0000000142C3A770
 struct ServerComponentWeaponOnUnspawnMessage
 {
     char _0x0000[48];
@@ -6144,7 +6144,7 @@ struct ServerComponentWeaponOnUnspawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06198
-// TypeInfo:  0x0000000142C3A790
+// TypeInfo: 0x0000000142C3A790
 struct ServerComponentWeaponOnSpawnMessage
 {
     char _0x0000[48];
@@ -6152,7 +6152,7 @@ struct ServerComponentWeaponOnSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06197
-// TypeInfo:  0x0000000142C3A7B0
+// TypeInfo: 0x0000000142C3A7B0
 struct ServerEntityPickupOnUnspawnMessage
 {
     char _0x0000[48];
@@ -6160,7 +6160,7 @@ struct ServerEntityPickupOnUnspawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06196
-// TypeInfo:  0x0000000142C3A7D0
+// TypeInfo: 0x0000000142C3A7D0
 struct ServerEntityPickupOnSpawnMessage
 {
     char _0x0000[48];
@@ -6168,7 +6168,7 @@ struct ServerEntityPickupOnSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06195
-// TypeInfo:  0x0000000142C3A7F0
+// TypeInfo: 0x0000000142C3A7F0
 struct ServerEntityBangerEntityOnUnspawnMessage
 {
     char _0x0000[48];
@@ -6176,7 +6176,7 @@ struct ServerEntityBangerEntityOnUnspawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06194
-// TypeInfo:  0x0000000142C3A810
+// TypeInfo: 0x0000000142C3A810
 struct ServerEntityBangerEntityOnSpawnMessage
 {
     char _0x0000[48];
@@ -6184,7 +6184,7 @@ struct ServerEntityBangerEntityOnSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06193
-// TypeInfo:  0x0000000142C3A830
+// TypeInfo: 0x0000000142C3A830
 struct ServerClubMemberDeletedMessage
 {
     char _0x0000[48];
@@ -6192,7 +6192,7 @@ struct ServerClubMemberDeletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06192
-// TypeInfo:  0x0000000142C3A850
+// TypeInfo: 0x0000000142C3A850
 struct ServerClubMemberCreatedMessage
 {
     char _0x0000[48];
@@ -6200,7 +6200,7 @@ struct ServerClubMemberCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06191
-// TypeInfo:  0x0000000142C3A870
+// TypeInfo: 0x0000000142C3A870
 struct ServerControllableUnspawnDoneMessage
 {
     char _0x0000[48];
@@ -6208,7 +6208,7 @@ struct ServerControllableUnspawnDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06190
-// TypeInfo:  0x0000000142C3A890
+// TypeInfo: 0x0000000142C3A890
 struct ServerControllableSpawnDoneMessage
 {
     char _0x0000[48];
@@ -6216,7 +6216,7 @@ struct ServerControllableSpawnDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06189
-// TypeInfo:  0x0000000142C3A8B0
+// TypeInfo: 0x0000000142C3A8B0
 struct ServerConnectionExitMessage
 {
     char _0x0000[56];
@@ -6224,7 +6224,7 @@ struct ServerConnectionExitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06188
-// TypeInfo:  0x0000000142C3A8D0
+// TypeInfo: 0x0000000142C3A8D0
 struct ServerConnectionInitMessage
 {
     char _0x0000[48];
@@ -6232,7 +6232,7 @@ struct ServerConnectionInitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06187
-// TypeInfo:  0x0000000142C3A8F0
+// TypeInfo: 0x0000000142C3A8F0
 struct ServerWeaponPlayerWeaponPickupMessage
 {
     char _0x0000[64];
@@ -6240,7 +6240,7 @@ struct ServerWeaponPlayerWeaponPickupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06184
-// TypeInfo:  0x0000000142C3A930
+// TypeInfo: 0x0000000142C3A930
 struct ServerWeaponReplacedMessage
 {
     char _0x0000[64];
@@ -6248,7 +6248,7 @@ struct ServerWeaponReplacedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06183
-// TypeInfo:  0x0000000142C3A950
+// TypeInfo: 0x0000000142C3A950
 struct ServerWeaponWeaponComponentActivateMessage
 {
     char _0x0000[48];
@@ -6256,7 +6256,7 @@ struct ServerWeaponWeaponComponentActivateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06182
-// TypeInfo:  0x0000000142C3A970
+// TypeInfo: 0x0000000142C3A970
 struct ServerWeaponWeaponComponentReloadMessage
 {
     char _0x0000[48];
@@ -6264,7 +6264,7 @@ struct ServerWeaponWeaponComponentReloadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06181
-// TypeInfo:  0x0000000142C3A990
+// TypeInfo: 0x0000000142C3A990
 struct ServerWeaponPlayerResupplyMessage
 {
     char _0x0000[64];
@@ -6272,7 +6272,7 @@ struct ServerWeaponPlayerResupplyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06180
-// TypeInfo:  0x0000000142C3A9B0
+// TypeInfo: 0x0000000142C3A9B0
 struct ServerWeaponPlayerReloadMessage
 {
     char _0x0000[80];
@@ -6280,7 +6280,7 @@ struct ServerWeaponPlayerReloadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06179
-// TypeInfo:  0x0000000142C3A9D0
+// TypeInfo: 0x0000000142C3A9D0
 struct ServerWeaponPlayerWeaponDestroyedMessage
 {
     char _0x0000[48];
@@ -6288,7 +6288,7 @@ struct ServerWeaponPlayerWeaponDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06178
-// TypeInfo:  0x0000000142C3A9F0
+// TypeInfo: 0x0000000142C3A9F0
 struct ServerWeaponPlayerWeaponRemovedMessage
 {
     char _0x0000[48];
@@ -6296,7 +6296,7 @@ struct ServerWeaponPlayerWeaponRemovedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06177
-// TypeInfo:  0x0000000142C3AA10
+// TypeInfo: 0x0000000142C3AA10
 struct ServerWeaponPlayerWeaponReloadEndMessage
 {
     char _0x0000[48];
@@ -6304,7 +6304,7 @@ struct ServerWeaponPlayerWeaponReloadEndMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06176
-// TypeInfo:  0x0000000142C3AA30
+// TypeInfo: 0x0000000142C3AA30
 struct ServerWeaponPlayerPrimaryFireShotSpawnedMessage
 {
     char _0x0000[56];
@@ -6312,7 +6312,7 @@ struct ServerWeaponPlayerPrimaryFireShotSpawnedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06175
-// TypeInfo:  0x0000000142C3AA50
+// TypeInfo: 0x0000000142C3AA50
 struct ServerWeaponPlayerPrimaryOutOfAmmoMessage
 {
     char _0x0000[56];
@@ -6320,7 +6320,7 @@ struct ServerWeaponPlayerPrimaryOutOfAmmoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06174
-// TypeInfo:  0x0000000142C3AA70
+// TypeInfo: 0x0000000142C3AA70
 struct ServerWeaponArtilleryFiredMessage
 {
     char _0x0000[64];
@@ -6328,7 +6328,7 @@ struct ServerWeaponArtilleryFiredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06173
-// TypeInfo:  0x0000000142C3AA90
+// TypeInfo: 0x0000000142C3AA90
 struct ServerWeaponLaserDesignatorMessage
 {
     char _0x0000[48];
@@ -6336,7 +6336,7 @@ struct ServerWeaponLaserDesignatorMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06172
-// TypeInfo:  0x0000000142C3AAB0
+// TypeInfo: 0x0000000142C3AAB0
 struct ServerWeaponMortarStrikeMessage
 {
     char _0x0000[64];
@@ -6344,7 +6344,7 @@ struct ServerWeaponMortarStrikeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06171
-// TypeInfo:  0x0000000142C3AAD0
+// TypeInfo: 0x0000000142C3AAD0
 struct ServerVehicleLockableMessage
 {
     char _0x0000[72];
@@ -6352,7 +6352,7 @@ struct ServerVehicleLockableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06170
-// TypeInfo:  0x0000000142C3AAF0
+// TypeInfo: 0x0000000142C3AAF0
 struct ServerVehicleExitMessage
 {
     char _0x0000[56];
@@ -6360,7 +6360,7 @@ struct ServerVehicleExitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06169
-// TypeInfo:  0x0000000142C3AB10
+// TypeInfo: 0x0000000142C3AB10
 struct ServerVehicleEnterMessage
 {
     char _0x0000[56];
@@ -6368,7 +6368,7 @@ struct ServerVehicleEnterMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06168
-// TypeInfo:  0x0000000142C3AB30
+// TypeInfo: 0x0000000142C3AB30
 struct ServerVehicleDisabledMessage
 {
     char _0x0000[56];
@@ -6376,7 +6376,7 @@ struct ServerVehicleDisabledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06167
-// TypeInfo:  0x0000000142C3AB50
+// TypeInfo: 0x0000000142C3AB50
 struct ServerVehicleDamageMessage
 {
     char _0x0000[64];
@@ -6384,7 +6384,7 @@ struct ServerVehicleDamageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06166
-// TypeInfo:  0x0000000142C3AB70
+// TypeInfo: 0x0000000142C3AB70
 struct ServerVehicleEnterRestrictionMessage
 {
     char _0x0000[56];
@@ -6392,7 +6392,7 @@ struct ServerVehicleEnterRestrictionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06165
-// TypeInfo:  0x0000000142C3AB90
+// TypeInfo: 0x0000000142C3AB90
 struct ServerVehicleUnspawnMessage
 {
     char _0x0000[48];
@@ -6400,7 +6400,7 @@ struct ServerVehicleUnspawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06164
-// TypeInfo:  0x0000000142C3ABB0
+// TypeInfo: 0x0000000142C3ABB0
 struct ServerVehicleSpawnDoneMessage
 {
     char _0x0000[48];
@@ -6408,7 +6408,7 @@ struct ServerVehicleSpawnDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06163
-// TypeInfo:  0x0000000142C3ABD0
+// TypeInfo: 0x0000000142C3ABD0
 struct ServerVehicleForceArmamentReturnMessage
 {
     char _0x0000[48];
@@ -6416,7 +6416,7 @@ struct ServerVehicleForceArmamentReturnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06162
-// TypeInfo:  0x0000000142C3ABF0
+// TypeInfo: 0x0000000142C3ABF0
 struct ServerVehicleSwitchTeamMessage
 {
     char _0x0000[48];
@@ -6424,7 +6424,7 @@ struct ServerVehicleSwitchTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06161
-// TypeInfo:  0x0000000142C3AC10
+// TypeInfo: 0x0000000142C3AC10
 struct ServerVehicleDestroyedMessage
 {
     char _0x0000[64];
@@ -6432,7 +6432,7 @@ struct ServerVehicleDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06160
-// TypeInfo:  0x0000000142C3AC30
+// TypeInfo: 0x0000000142C3AC30
 struct ServerPlayerDisconnectMessage
 {
     char _0x0000[56];
@@ -6440,7 +6440,7 @@ struct ServerPlayerDisconnectMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06159
-// TypeInfo:  0x0000000142C3AC50
+// TypeInfo: 0x0000000142C3AC50
 struct ServerPlayerStartedFireMessage
 {
     char _0x0000[48];
@@ -6448,7 +6448,7 @@ struct ServerPlayerStartedFireMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06158
-// TypeInfo:  0x0000000142C3AC70
+// TypeInfo: 0x0000000142C3AC70
 struct ServerPlayerInteractionEntityInRangeChangedMessage
 {
     char _0x0000[64];
@@ -6456,7 +6456,7 @@ struct ServerPlayerInteractionEntityInRangeChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06157
-// TypeInfo:  0x0000000142C3AC90
+// TypeInfo: 0x0000000142C3AC90
 struct ServerPlayerOnPickupMessage
 {
     char _0x0000[56];
@@ -6464,7 +6464,7 @@ struct ServerPlayerOnPickupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06154
-// TypeInfo:  0x0000000142C3ACD0
+// TypeInfo: 0x0000000142C3ACD0
 struct ServerPlayerAssistCountsAsKillMessage
 {
     char _0x0000[64];
@@ -6472,7 +6472,7 @@ struct ServerPlayerAssistCountsAsKillMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06153
-// TypeInfo:  0x0000000142C3ACF0
+// TypeInfo: 0x0000000142C3ACF0
 struct ServerPlayerApplyCustomizationMessage
 {
     char _0x0000[56];
@@ -6480,7 +6480,7 @@ struct ServerPlayerApplyCustomizationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06152
-// TypeInfo:  0x0000000142C3AD10
+// TypeInfo: 0x0000000142C3AD10
 struct ServerPlayerCustomizationDoneMessage
 {
     char _0x0000[56];
@@ -6488,7 +6488,7 @@ struct ServerPlayerCustomizationDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06151
-// TypeInfo:  0x0000000142C3AD30
+// TypeInfo: 0x0000000142C3AD30
 struct ServerPlayerChatMessage
 {
     char _0x0000[80];
@@ -6496,7 +6496,7 @@ struct ServerPlayerChatMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06150
-// TypeInfo:  0x0000000142C3AD50
+// TypeInfo: 0x0000000142C3AD50
 struct ServerPlayerTickMessage
 {
     char _0x0000[64];
@@ -6504,7 +6504,7 @@ struct ServerPlayerTickMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06149
-// TypeInfo:  0x0000000142C3AD70
+// TypeInfo: 0x0000000142C3AD70
 struct ServerPlayerExitEntryMessage
 {
     char _0x0000[64];
@@ -6512,7 +6512,7 @@ struct ServerPlayerExitEntryMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06148
-// TypeInfo:  0x0000000142C3AD90
+// TypeInfo: 0x0000000142C3AD90
 struct ServerPlayerEnterEntryMessage
 {
     char _0x0000[80];
@@ -6520,7 +6520,7 @@ struct ServerPlayerEnterEntryMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06147
-// TypeInfo:  0x0000000142C3ADB0
+// TypeInfo: 0x0000000142C3ADB0
 struct ServerPlayerAboutToClearCharacterMessage
 {
     char _0x0000[48];
@@ -6528,7 +6528,7 @@ struct ServerPlayerAboutToClearCharacterMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06146
-// TypeInfo:  0x0000000142C3ADD0
+// TypeInfo: 0x0000000142C3ADD0
 struct ServerPlayerInstantSuicideMessage
 {
     char _0x0000[64];
@@ -6536,7 +6536,7 @@ struct ServerPlayerInstantSuicideMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06145
-// TypeInfo:  0x0000000142C3ADF0
+// TypeInfo: 0x0000000142C3ADF0
 struct ServerPlayerKilledMessage
 {
     char _0x0000[112];
@@ -6544,7 +6544,7 @@ struct ServerPlayerKilledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06144
-// TypeInfo:  0x0000000142C3AE10
+// TypeInfo: 0x0000000142C3AE10
 struct ServerPlayerManuallySelectedSpawnPointMessage
 {
     char _0x0000[48];
@@ -6552,7 +6552,7 @@ struct ServerPlayerManuallySelectedSpawnPointMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06143
-// TypeInfo:  0x0000000142C3AE30
+// TypeInfo: 0x0000000142C3AE30
 struct ServerPlayerChangeChatChannelMessage
 {
     char _0x0000[56];
@@ -6560,7 +6560,7 @@ struct ServerPlayerChangeChatChannelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06142
-// TypeInfo:  0x0000000142C3AE50
+// TypeInfo: 0x0000000142C3AE50
 struct ServerPlayerSwitchTeamMessage
 {
     char _0x0000[56];
@@ -6568,7 +6568,7 @@ struct ServerPlayerSwitchTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06141
-// TypeInfo:  0x0000000142C3AE70
+// TypeInfo: 0x0000000142C3AE70
 struct ServerPlayerKitPickedupMessage
 {
     char _0x0000[56];
@@ -6576,7 +6576,7 @@ struct ServerPlayerKitPickedupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06140
-// TypeInfo:  0x0000000142C3AE90
+// TypeInfo: 0x0000000142C3AE90
 struct ServerPlayerKitReplacedMessage
 {
     char _0x0000[64];
@@ -6584,7 +6584,7 @@ struct ServerPlayerKitReplacedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06139
-// TypeInfo:  0x0000000142C3AEB0
+// TypeInfo: 0x0000000142C3AEB0
 struct ServerPlayerChangedCharacterMessage
 {
     char _0x0000[72];
@@ -6592,7 +6592,7 @@ struct ServerPlayerChangedCharacterMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06138
-// TypeInfo:  0x0000000142C3AED0
+// TypeInfo: 0x0000000142C3AED0
 struct ServerPlayerReviveRefusedMessage
 {
     char _0x0000[48];
@@ -6600,7 +6600,7 @@ struct ServerPlayerReviveRefusedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06137
-// TypeInfo:  0x0000000142C3AEF0
+// TypeInfo: 0x0000000142C3AEF0
 struct ServerPlayerReviveAcceptedMessage
 {
     char _0x0000[56];
@@ -6608,7 +6608,7 @@ struct ServerPlayerReviveAcceptedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06136
-// TypeInfo:  0x0000000142C3AF10
+// TypeInfo: 0x0000000142C3AF10
 struct ServerPlayerReviveMessage
 {
     char _0x0000[56];
@@ -6616,7 +6616,7 @@ struct ServerPlayerReviveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06135
-// TypeInfo:  0x0000000142C3AF30
+// TypeInfo: 0x0000000142C3AF30
 struct ServerPlayerLeftLevelMessage
 {
     char _0x0000[48];
@@ -6624,7 +6624,7 @@ struct ServerPlayerLeftLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06134
-// TypeInfo:  0x0000000142C3AF50
+// TypeInfo: 0x0000000142C3AF50
 struct ServerPlayerReleasingLevelMessage
 {
     char _0x0000[48];
@@ -6632,7 +6632,7 @@ struct ServerPlayerReleasingLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06133
-// TypeInfo:  0x0000000142C3AF70
+// TypeInfo: 0x0000000142C3AF70
 struct ServerPlayerEnteredLevelMessage
 {
     char _0x0000[56];
@@ -6640,7 +6640,7 @@ struct ServerPlayerEnteredLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06132
-// TypeInfo:  0x0000000142C3AF90
+// TypeInfo: 0x0000000142C3AF90
 struct ServerPlayerLevelLoadedMessage
 {
     char _0x0000[48];
@@ -6648,7 +6648,7 @@ struct ServerPlayerLevelLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06131
-// TypeInfo:  0x0000000142C3AFB0
+// TypeInfo: 0x0000000142C3AFB0
 struct ServerPlayerDebugFriendZoneSpawnMessage
 {
     char _0x0000[96];
@@ -6656,7 +6656,7 @@ struct ServerPlayerDebugFriendZoneSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06130
-// TypeInfo:  0x0000000142C3AFD0
+// TypeInfo: 0x0000000142C3AFD0
 struct ServerPlayerRespawnMessage
 {
     char _0x0000[48];
@@ -6664,7 +6664,7 @@ struct ServerPlayerRespawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06129
-// TypeInfo:  0x0000000142C3AFF0
+// TypeInfo: 0x0000000142C3AFF0
 struct ServerPlayerDestroyMessage
 {
     char _0x0000[48];
@@ -6672,7 +6672,7 @@ struct ServerPlayerDestroyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06128
-// TypeInfo:  0x0000000142C3B010
+// TypeInfo: 0x0000000142C3B010
 struct ServerPlayerCreatedForConnectionMessage
 {
     char _0x0000[64];
@@ -6680,7 +6680,7 @@ struct ServerPlayerCreatedForConnectionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06127
-// TypeInfo:  0x0000000142C3B030
+// TypeInfo: 0x0000000142C3B030
 struct ServerPlayerCreateMessage
 {
     char _0x0000[88];
@@ -6688,7 +6688,7 @@ struct ServerPlayerCreateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06126
-// TypeInfo:  0x0000000142C3B050
+// TypeInfo: 0x0000000142C3B050
 struct ServerPlayerAboutToCreateForConnectionMessage
 {
     char _0x0000[72];
@@ -6696,7 +6696,7 @@ struct ServerPlayerAboutToCreateForConnectionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06125
-// TypeInfo:  0x0000000142C3B070
+// TypeInfo: 0x0000000142C3B070
 struct ServerCharacterCharacterDamageMessage
 {
     char _0x0000[72];
@@ -6704,7 +6704,7 @@ struct ServerCharacterCharacterDamageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06124
-// TypeInfo:  0x0000000142C3B090
+// TypeInfo: 0x0000000142C3B090
 struct ServerCharacterKilledMessage
 {
     char _0x0000[48];
@@ -6712,7 +6712,7 @@ struct ServerCharacterKilledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06123
-// TypeInfo:  0x0000000142C3B0B0
+// TypeInfo: 0x0000000142C3B0B0
 struct ServerMetricsDetonateExplosionMessage
 {
     char _0x0000[80];
@@ -6720,7 +6720,7 @@ struct ServerMetricsDetonateExplosionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06122
-// TypeInfo:  0x0000000142C3B0D0
+// TypeInfo: 0x0000000142C3B0D0
 struct ServerMetricsObjectiveSuccessMessage
 {
     char _0x0000[48];
@@ -6728,7 +6728,7 @@ struct ServerMetricsObjectiveSuccessMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06121
-// TypeInfo:  0x0000000142C3B0F0
+// TypeInfo: 0x0000000142C3B0F0
 struct ServerMetricsSaveGameSavedMessage
 {
     char _0x0000[48];
@@ -6736,7 +6736,7 @@ struct ServerMetricsSaveGameSavedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06120
-// TypeInfo:  0x0000000142C3B110
+// TypeInfo: 0x0000000142C3B110
 struct ServerMetricsSaveGameLoadedMessage
 {
     char _0x0000[48];
@@ -6744,7 +6744,7 @@ struct ServerMetricsSaveGameLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06119
-// TypeInfo:  0x0000000142C3B130
+// TypeInfo: 0x0000000142C3B130
 struct ServerPlayerAccessLockedVisualContentMessage
 {
     char _0x0000[48];
@@ -6752,7 +6752,7 @@ struct ServerPlayerAccessLockedVisualContentMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06118
-// TypeInfo:  0x0000000142C3B150
+// TypeInfo: 0x0000000142C3B150
 struct ServerClientConnectionRemovedMessage
 {
     char _0x0000[56];
@@ -6760,7 +6760,7 @@ struct ServerClientConnectionRemovedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06117
-// TypeInfo:  0x0000000142C3B170
+// TypeInfo: 0x0000000142C3B170
 struct ServerClientConnectionConnectedMessage
 {
     char _0x0000[48];
@@ -6768,7 +6768,7 @@ struct ServerClientConnectionConnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06116
-// TypeInfo:  0x0000000142C3B190
+// TypeInfo: 0x0000000142C3B190
 struct ServerAdminBanPlayerMessage
 {
     char _0x0000[56];
@@ -6776,7 +6776,7 @@ struct ServerAdminBanPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06115
-// TypeInfo:  0x0000000142C3B1B0
+// TypeInfo: 0x0000000142C3B1B0
 struct ServerAdminSetServerNameMessage
 {
     char _0x0000[48];
@@ -6784,7 +6784,7 @@ struct ServerAdminSetServerNameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06114
-// TypeInfo:  0x0000000142C3B1D0
+// TypeInfo: 0x0000000142C3B1D0
 struct ServerScriptTickMessage
 {
     char _0x0000[40];
@@ -6792,7 +6792,7 @@ struct ServerScriptTickMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06113
-// TypeInfo:  0x0000000142C3B1F0
+// TypeInfo: 0x0000000142C3B1F0
 struct ServerStopMessageBase
 {
     char _0x0000[40];
@@ -6800,7 +6800,7 @@ struct ServerStopMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 06112
-// TypeInfo:  0x0000000142C3B210
+// TypeInfo: 0x0000000142C3B210
 struct ServerLoadLevelMessageBase
 {
     char _0x0000[40];
@@ -6808,7 +6808,7 @@ struct ServerLoadLevelMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 06111
-// TypeInfo:  0x0000000142C3B230
+// TypeInfo: 0x0000000142C3B230
 struct ServerLevelUnloadedMessage
 {
     char _0x0000[40];
@@ -6816,7 +6816,7 @@ struct ServerLevelUnloadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06110
-// TypeInfo:  0x0000000142C3B250
+// TypeInfo: 0x0000000142C3B250
 struct ServerUnloadLevelMessage
 {
     char _0x0000[40];
@@ -6824,7 +6824,7 @@ struct ServerUnloadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06109
-// TypeInfo:  0x0000000142C3B270
+// TypeInfo: 0x0000000142C3B270
 struct ServerLevelLoadedMessage
 {
     char _0x0000[40];
@@ -6832,7 +6832,7 @@ struct ServerLevelLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06108
-// TypeInfo:  0x0000000142C3B290
+// TypeInfo: 0x0000000142C3B290
 struct ServerStoppedMessage
 {
     char _0x0000[40];
@@ -6840,7 +6840,7 @@ struct ServerStoppedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06107
-// TypeInfo:  0x0000000142C3B2B0
+// TypeInfo: 0x0000000142C3B2B0
 struct ServerApplyConfigurationMessage
 {
     char _0x0000[48];
@@ -6848,7 +6848,7 @@ struct ServerApplyConfigurationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06106
-// TypeInfo:  0x0000000142C3B2D0
+// TypeInfo: 0x0000000142C3B2D0
 struct ServerResetConfigurationMessage
 {
     char _0x0000[40];
@@ -6856,7 +6856,7 @@ struct ServerResetConfigurationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06105
-// TypeInfo:  0x0000000142C3B2F0
+// TypeInfo: 0x0000000142C3B2F0
 struct ServerStartedMessage
 {
     char _0x0000[48];
@@ -6864,7 +6864,7 @@ struct ServerStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06104
-// TypeInfo:  0x0000000142C3B310
+// TypeInfo: 0x0000000142C3B310
 struct ServerDoneLoadGameMessage
 {
     char _0x0000[40];
@@ -6872,7 +6872,7 @@ struct ServerDoneLoadGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06103
-// TypeInfo:  0x0000000142C3B330
+// TypeInfo: 0x0000000142C3B330
 struct ServerLoadGameMessage
 {
     char _0x0000[112];
@@ -6880,7 +6880,7 @@ struct ServerLoadGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06102
-// TypeInfo:  0x0000000142C3B350
+// TypeInfo: 0x0000000142C3B350
 struct SaveGameSaveMessage
 {
     char _0x0000[40];
@@ -6888,7 +6888,7 @@ struct SaveGameSaveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06101
-// TypeInfo:  0x0000000142C3B370
+// TypeInfo: 0x0000000142C3B370
 struct StatDisableMessage
 {
     char _0x0000[40];
@@ -6896,7 +6896,7 @@ struct StatDisableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06100
-// TypeInfo:  0x0000000142C3B390
+// TypeInfo: 0x0000000142C3B390
 struct StatEnableMessage
 {
     char _0x0000[40];
@@ -6904,7 +6904,7 @@ struct StatEnableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06058
-// TypeInfo:  0x0000000142C368A8
+// TypeInfo: 0x0000000142C368A8
 struct PlayerScore
 {
     __int32 m_Rank; //0x0000
@@ -6919,7 +6919,7 @@ struct PlayerScore
 
 ////////////////////////////////////////
 // RuntimeId: 06056
-// TypeInfo:  0x0000000142C35E88
+// TypeInfo: 0x0000000142C35E88
 struct UINetworkGunMasterNotificationMessage
 {
     char _0x0000[80];
@@ -6927,7 +6927,7 @@ struct UINetworkGunMasterNotificationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06053
-// TypeInfo:  0x0000000142C35EC8
+// TypeInfo: 0x0000000142C35EC8
 struct UINetworkCheckLevelInstalledMessage
 {
     char _0x0000[72];
@@ -6935,7 +6935,7 @@ struct UINetworkCheckLevelInstalledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06052
-// TypeInfo:  0x0000000142C35EE8
+// TypeInfo: 0x0000000142C35EE8
 struct UINetworkCoopPlayerMessage
 {
     char _0x0000[96];
@@ -6943,7 +6943,7 @@ struct UINetworkCoopPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06049
-// TypeInfo:  0x0000000142C35F28
+// TypeInfo: 0x0000000142C35F28
 struct UINetworkCoopGameMessage
 {
     char _0x0000[80];
@@ -6951,7 +6951,7 @@ struct UINetworkCoopGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06048
-// TypeInfo:  0x0000000142C35F48
+// TypeInfo: 0x0000000142C35F48
 struct UINetworkSetCoopServerLobbyGameTypeMessage
 {
     char _0x0000[72];
@@ -6959,7 +6959,7 @@ struct UINetworkSetCoopServerLobbyGameTypeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06047
-// TypeInfo:  0x0000000142C35F68
+// TypeInfo: 0x0000000142C35F68
 struct UINetworkSquadWipeInstigatorMessage
 {
     char _0x0000[72];
@@ -6967,7 +6967,7 @@ struct UINetworkSquadWipeInstigatorMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06046
-// TypeInfo:  0x0000000142C35F88
+// TypeInfo: 0x0000000142C35F88
 struct UINetworkSquadWipeMessage
 {
     char _0x0000[64];
@@ -6975,7 +6975,7 @@ struct UINetworkSquadWipeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06045
-// TypeInfo:  0x0000000142C35FA8
+// TypeInfo: 0x0000000142C35FA8
 struct UINetworkRoundWarningMessage
 {
     char _0x0000[72];
@@ -6983,7 +6983,7 @@ struct UINetworkRoundWarningMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06044
-// TypeInfo:  0x0000000142C35FC8
+// TypeInfo: 0x0000000142C35FC8
 struct UINetworkRollCreditsMessage
 {
     char _0x0000[64];
@@ -6991,7 +6991,7 @@ struct UINetworkRollCreditsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06043
-// TypeInfo:  0x0000000142C35FE8
+// TypeInfo: 0x0000000142C35FE8
 struct UINetworkKilledOtherPlayerMessage
 {
     char _0x0000[120];
@@ -6999,7 +6999,7 @@ struct UINetworkKilledOtherPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06042
-// TypeInfo:  0x0000000142C36008
+// TypeInfo: 0x0000000142C36008
 struct UINetworkOwnPlayerKilledMessage
 {
     char _0x0000[152];
@@ -7007,7 +7007,7 @@ struct UINetworkOwnPlayerKilledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06039
-// TypeInfo:  0x0000000142C36048
+// TypeInfo: 0x0000000142C36048
 struct UINetworkStealBodyMessage
 {
     char _0x0000[80];
@@ -7015,7 +7015,7 @@ struct UINetworkStealBodyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06038
-// TypeInfo:  0x0000000142C36068
+// TypeInfo: 0x0000000142C36068
 struct UINetworkEndOfRoundBonusMessage
 {
     char _0x0000[96];
@@ -7023,7 +7023,7 @@ struct UINetworkEndOfRoundBonusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06037
-// TypeInfo:  0x0000000142C36088
+// TypeInfo: 0x0000000142C36088
 struct UINetworkMenuResponseMessage
 {
     char _0x0000[72];
@@ -7031,7 +7031,7 @@ struct UINetworkMenuResponseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06036
-// TypeInfo:  0x0000000142C360A8
+// TypeInfo: 0x0000000142C360A8
 struct UINetworkFieldUpgradeScoringMessage
 {
     char _0x0000[72];
@@ -7039,7 +7039,7 @@ struct UINetworkFieldUpgradeScoringMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06035
-// TypeInfo:  0x0000000142C360C8
+// TypeInfo: 0x0000000142C360C8
 struct UINetworkHudScoringMessage
 {
     char _0x0000[152];
@@ -7047,7 +7047,7 @@ struct UINetworkHudScoringMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06034
-// TypeInfo:  0x0000000142C360E8
+// TypeInfo: 0x0000000142C360E8
 struct UINetworkPlayerRankUpMessage
 {
     char _0x0000[88];
@@ -7055,7 +7055,7 @@ struct UINetworkPlayerRankUpMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06033
-// TypeInfo:  0x0000000142C36108
+// TypeInfo: 0x0000000142C36108
 struct UINetworkVoiceOverSubtitleTextMessage
 {
     char _0x0000[96];
@@ -7063,7 +7063,7 @@ struct UINetworkVoiceOverSubtitleTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06032
-// TypeInfo:  0x0000000142C36128
+// TypeInfo: 0x0000000142C36128
 struct UINetworkPlayerCollectibleTextMessage
 {
     char _0x0000[80];
@@ -7071,7 +7071,7 @@ struct UINetworkPlayerCollectibleTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06031
-// TypeInfo:  0x0000000142C36148
+// TypeInfo: 0x0000000142C36148
 struct UINetworkPlayerTutorialInstructionsTextMessage
 {
     char _0x0000[80];
@@ -7079,7 +7079,7 @@ struct UINetworkPlayerTutorialInstructionsTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06030
-// TypeInfo:  0x0000000142C36168
+// TypeInfo: 0x0000000142C36168
 struct UINetworkPlayerMissionObjectiveTextMessage
 {
     char _0x0000[104];
@@ -7087,7 +7087,7 @@ struct UINetworkPlayerMissionObjectiveTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06029
-// TypeInfo:  0x0000000142C36188
+// TypeInfo: 0x0000000142C36188
 struct UINetworkVideoDoneMessage
 {
     char _0x0000[72];
@@ -7095,7 +7095,7 @@ struct UINetworkVideoDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06028
-// TypeInfo:  0x0000000142C361A8
+// TypeInfo: 0x0000000142C361A8
 struct UINetworkAllowSkipVideoMessage
 {
     char _0x0000[80];
@@ -7103,7 +7103,7 @@ struct UINetworkAllowSkipVideoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06027
-// TypeInfo:  0x0000000142C361C8
+// TypeInfo: 0x0000000142C361C8
 struct UINetworkSkipVideoMessage
 {
     char _0x0000[72];
@@ -7111,7 +7111,7 @@ struct UINetworkSkipVideoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06026
-// TypeInfo:  0x0000000142C361E8
+// TypeInfo: 0x0000000142C361E8
 struct UINetworkStopVideoMessage
 {
     char _0x0000[72];
@@ -7119,7 +7119,7 @@ struct UINetworkStopVideoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06025
-// TypeInfo:  0x0000000142C36208
+// TypeInfo: 0x0000000142C36208
 struct UINetworkPauseVideoMessage
 {
     char _0x0000[80];
@@ -7127,7 +7127,7 @@ struct UINetworkPauseVideoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06024
-// TypeInfo:  0x0000000142C36228
+// TypeInfo: 0x0000000142C36228
 struct UINetworkPlayVideoMessage
 {
     char _0x0000[136];
@@ -7135,7 +7135,7 @@ struct UINetworkPlayVideoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06023
-// TypeInfo:  0x0000000142C36248
+// TypeInfo: 0x0000000142C36248
 struct UINetworkPlayerKillsTextMessage
 {
     char _0x0000[136];
@@ -7143,7 +7143,7 @@ struct UINetworkPlayerKillsTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06022
-// TypeInfo:  0x0000000142C36268
+// TypeInfo: 0x0000000142C36268
 struct UINetworkPlayerDisconnectMessage
 {
     char _0x0000[80];
@@ -7151,7 +7151,7 @@ struct UINetworkPlayerDisconnectMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06021
-// TypeInfo:  0x0000000142C36288
+// TypeInfo: 0x0000000142C36288
 struct UINetworkPlayerConnectMessage
 {
     char _0x0000[80];
@@ -7159,7 +7159,7 @@ struct UINetworkPlayerConnectMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06020
-// TypeInfo:  0x0000000142C362A8
+// TypeInfo: 0x0000000142C362A8
 struct UINetworkPlayerDeserterTextMessage
 {
     char _0x0000[72];
@@ -7167,7 +7167,7 @@ struct UINetworkPlayerDeserterTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06019
-// TypeInfo:  0x0000000142C362C8
+// TypeInfo: 0x0000000142C362C8
 struct UINetworkAdminYellMessage
 {
     char _0x0000[80];
@@ -7175,7 +7175,7 @@ struct UINetworkAdminYellMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06018
-// TypeInfo:  0x0000000142C362E8
+// TypeInfo: 0x0000000142C362E8
 struct UINetworkPlayerTextMessage
 {
     char _0x0000[80];
@@ -7183,7 +7183,7 @@ struct UINetworkPlayerTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06017
-// TypeInfo:  0x0000000142C368C8
+// TypeInfo: 0x0000000142C368C8
 struct UINetworkTextInfo
 {
     char* m_StringId; //0x0000
@@ -7193,7 +7193,7 @@ struct UINetworkTextInfo
 
 ////////////////////////////////////////
 // RuntimeId: 06015
-// TypeInfo:  0x0000000142C36308
+// TypeInfo: 0x0000000142C36308
 struct UINetworkHudTextMessage
 {
     char _0x0000[96];
@@ -7201,7 +7201,7 @@ struct UINetworkHudTextMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06014
-// TypeInfo:  0x0000000142C36328
+// TypeInfo: 0x0000000142C36328
 struct UINetworkHudTooltipMessage
 {
     char _0x0000[88];
@@ -7209,7 +7209,7 @@ struct UINetworkHudTooltipMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06013
-// TypeInfo:  0x0000000142C36348
+// TypeInfo: 0x0000000142C36348
 struct UINetworkEnableHudMessage
 {
     char _0x0000[72];
@@ -7217,7 +7217,7 @@ struct UINetworkEnableHudMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06006
-// TypeInfo:  0x0000000142C363C8
+// TypeInfo: 0x0000000142C363C8
 struct NetworkLevelInstalledMessage
 {
     char _0x0000[64];
@@ -7225,7 +7225,7 @@ struct NetworkLevelInstalledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06005
-// TypeInfo:  0x0000000142C363E8
+// TypeInfo: 0x0000000142C363E8
 struct NetworkSynchronizeInternetSimulationStateMessage
 {
     char _0x0000[184];
@@ -7233,7 +7233,7 @@ struct NetworkSynchronizeInternetSimulationStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06004
-// TypeInfo:  0x0000000142C36408
+// TypeInfo: 0x0000000142C36408
 struct NetworkMatchReadyStatusChangedMessage
 {
     char _0x0000[88];
@@ -7241,7 +7241,7 @@ struct NetworkMatchReadyStatusChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06003
-// TypeInfo:  0x0000000142C36428
+// TypeInfo: 0x0000000142C36428
 struct ServerRestartTimerMessage
 {
     char _0x0000[72];
@@ -7249,7 +7249,7 @@ struct ServerRestartTimerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06002
-// TypeInfo:  0x0000000142C36448
+// TypeInfo: 0x0000000142C36448
 struct NetworkMetricsLevelCompleteMessage
 {
     char _0x0000[64];
@@ -7257,7 +7257,7 @@ struct NetworkMetricsLevelCompleteMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06001
-// TypeInfo:  0x0000000142C36468
+// TypeInfo: 0x0000000142C36468
 struct NetworkMetricsLevelProgressMessage
 {
     char _0x0000[72];
@@ -7265,7 +7265,7 @@ struct NetworkMetricsLevelProgressMessage
 
 ////////////////////////////////////////
 // RuntimeId: 06000
-// TypeInfo:  0x0000000142C36488
+// TypeInfo: 0x0000000142C36488
 struct NetworkMetricsSaveGameSavedMessage
 {
     char _0x0000[72];
@@ -7273,7 +7273,7 @@ struct NetworkMetricsSaveGameSavedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05999
-// TypeInfo:  0x0000000142C364A8
+// TypeInfo: 0x0000000142C364A8
 struct NetworkSetPlayerViewMessage
 {
     char _0x0000[80];
@@ -7281,7 +7281,7 @@ struct NetworkSetPlayerViewMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05998
-// TypeInfo:  0x0000000142C364C8
+// TypeInfo: 0x0000000142C364C8
 struct NetworkSuicideMessage
 {
     char _0x0000[64];
@@ -7289,7 +7289,7 @@ struct NetworkSuicideMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05997
-// TypeInfo:  0x0000000142C364E8
+// TypeInfo: 0x0000000142C364E8
 struct NetworkGameplayContinueMessage
 {
     char _0x0000[64];
@@ -7297,7 +7297,7 @@ struct NetworkGameplayContinueMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05996
-// TypeInfo:  0x0000000142C36508
+// TypeInfo: 0x0000000142C36508
 struct PerformanceLogMessage
 {
     char _0x0000[256];
@@ -7305,7 +7305,7 @@ struct PerformanceLogMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05995
-// TypeInfo:  0x0000000142C368E8
+// TypeInfo: 0x0000000142C368E8
 struct PerformanceFpsHistogram
 {
     float m_Below5; //0x0000
@@ -7325,7 +7325,7 @@ struct PerformanceFpsHistogram
 
 ////////////////////////////////////////
 // RuntimeId: 05993
-// TypeInfo:  0x0000000142C36528
+// TypeInfo: 0x0000000142C36528
 struct NetworkFirstPlayerEnteredMessage
 {
     char _0x0000[64];
@@ -7333,7 +7333,7 @@ struct NetworkFirstPlayerEnteredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05992
-// TypeInfo:  0x0000000142C36548
+// TypeInfo: 0x0000000142C36548
 struct NetworkDifficultyChangedMessage
 {
     char _0x0000[72];
@@ -7341,7 +7341,7 @@ struct NetworkDifficultyChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05991
-// TypeInfo:  0x0000000142C36568
+// TypeInfo: 0x0000000142C36568
 struct NetworkSettingsMessage
 {
     char _0x0000[120];
@@ -7349,7 +7349,7 @@ struct NetworkSettingsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05990
-// TypeInfo:  0x0000000142C36588
+// TypeInfo: 0x0000000142C36588
 struct DebugSpawnGameEntityMessage
 {
     char _0x0000[144];
@@ -7357,7 +7357,7 @@ struct DebugSpawnGameEntityMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05989
-// TypeInfo:  0x0000000142C365A8
+// TypeInfo: 0x0000000142C365A8
 struct NetworkCreatePlayerMessage
 {
     char _0x0000[80];
@@ -7365,7 +7365,7 @@ struct NetworkCreatePlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05988
-// TypeInfo:  0x0000000142C365C8
+// TypeInfo: 0x0000000142C365C8
 struct NetworkCameraReplayMessage
 {
     char _0x0000[80];
@@ -7373,7 +7373,7 @@ struct NetworkCameraReplayMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05987
-// TypeInfo:  0x0000000142C365E8
+// TypeInfo: 0x0000000142C365E8
 struct NetworkCameraFreeCameraMessage
 {
     char _0x0000[128];
@@ -7381,7 +7381,7 @@ struct NetworkCameraFreeCameraMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05986
-// TypeInfo:  0x0000000142C36608
+// TypeInfo: 0x0000000142C36608
 struct NetworkMovePlayerMessage
 {
     char _0x0000[144];
@@ -7389,7 +7389,7 @@ struct NetworkMovePlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05985
-// TypeInfo:  0x0000000142C36628
+// TypeInfo: 0x0000000142C36628
 struct NetworkJuiceSessionMessage
 {
     char _0x0000[72];
@@ -7397,7 +7397,7 @@ struct NetworkJuiceSessionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05984
-// TypeInfo:  0x0000000142C36648
+// TypeInfo: 0x0000000142C36648
 struct NetworkSelectTeamMessage
 {
     char _0x0000[72];
@@ -7405,7 +7405,7 @@ struct NetworkSelectTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05983
-// TypeInfo:  0x0000000142C36668
+// TypeInfo: 0x0000000142C36668
 struct NetworkOnPlayerSpawnedMessage
 {
     char _0x0000[80];
@@ -7413,7 +7413,7 @@ struct NetworkOnPlayerSpawnedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05982
-// TypeInfo:  0x0000000142C36688
+// TypeInfo: 0x0000000142C36688
 struct NetworkSelectSpawnGroupMessage
 {
     char _0x0000[104];
@@ -7421,7 +7421,7 @@ struct NetworkSelectSpawnGroupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05981
-// TypeInfo:  0x0000000142C366A8
+// TypeInfo: 0x0000000142C366A8
 struct NetworkSpawnVehicleCustomizationMessage
 {
     char _0x0000[72];
@@ -7429,7 +7429,7 @@ struct NetworkSpawnVehicleCustomizationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05980
-// TypeInfo:  0x0000000142C366C8
+// TypeInfo: 0x0000000142C366C8
 struct NetworkUnSpawnCustomizationMessage
 {
     char _0x0000[64];
@@ -7437,7 +7437,7 @@ struct NetworkUnSpawnCustomizationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05979
-// TypeInfo:  0x0000000142C366E8
+// TypeInfo: 0x0000000142C366E8
 struct NetworkSpawnCustomizationMessage
 {
     char _0x0000[72];
@@ -7445,7 +7445,7 @@ struct NetworkSpawnCustomizationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05978
-// TypeInfo:  0x0000000142C36708
+// TypeInfo: 0x0000000142C36708
 struct NetworkSpawnOnSelectedMessage
 {
     char _0x0000[72];
@@ -7453,7 +7453,7 @@ struct NetworkSpawnOnSelectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05977
-// TypeInfo:  0x0000000142C36728
+// TypeInfo: 0x0000000142C36728
 struct NetworkSpawnHereMessage
 {
     char _0x0000[144];
@@ -7461,7 +7461,7 @@ struct NetworkSpawnHereMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05976
-// TypeInfo:  0x0000000142C36748
+// TypeInfo: 0x0000000142C36748
 struct NetworkSpawnMessage
 {
     char _0x0000[96];
@@ -7469,7 +7469,7 @@ struct NetworkSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05975
-// TypeInfo:  0x0000000142C36768
+// TypeInfo: 0x0000000142C36768
 struct NetworkRequestLoadLevelMessage
 {
     char _0x0000[120];
@@ -7477,7 +7477,7 @@ struct NetworkRequestLoadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05974
-// TypeInfo:  0x0000000142C36788
+// TypeInfo: 0x0000000142C36788
 struct NetworkScreenFadeMessage
 {
     char _0x0000[80];
@@ -7485,7 +7485,7 @@ struct NetworkScreenFadeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05973
-// TypeInfo:  0x0000000142C367A8
+// TypeInfo: 0x0000000142C367A8
 struct NetworkChangeGameSettingMessage
 {
     char _0x0000[72];
@@ -7493,7 +7493,7 @@ struct NetworkChangeGameSettingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05970
-// TypeInfo:  0x0000000142C367E8
+// TypeInfo: 0x0000000142C367E8
 struct LevelConsoleSetActiveHealthStateMessage
 {
     char _0x0000[72];
@@ -7501,7 +7501,7 @@ struct LevelConsoleSetActiveHealthStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05969
-// TypeInfo:  0x0000000142C36808
+// TypeInfo: 0x0000000142C36808
 struct NetworkTimeSyncMessage
 {
     char _0x0000[80];
@@ -7509,7 +7509,7 @@ struct NetworkTimeSyncMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05968
-// TypeInfo:  0x0000000142C36828
+// TypeInfo: 0x0000000142C36828
 struct NetworkLoadLevelMessage
 {
     char _0x0000[136];
@@ -7517,7 +7517,7 @@ struct NetworkLoadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05967
-// TypeInfo:  0x0000000142C36848
+// TypeInfo: 0x0000000142C36848
 struct NetworkLevelLoadedAckMessage
 {
     char _0x0000[88];
@@ -7525,7 +7525,7 @@ struct NetworkLevelLoadedAckMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05966
-// TypeInfo:  0x0000000142C36868
+// TypeInfo: 0x0000000142C36868
 struct NetworkTinyEventMessage
 {
     char _0x0000[72];
@@ -7533,7 +7533,7 @@ struct NetworkTinyEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05965
-// TypeInfo:  0x0000000142C36888
+// TypeInfo: 0x0000000142C36888
 struct NetworkPerformanceProfileMessage
 {
     char _0x0000[112];
@@ -7541,7 +7541,7 @@ struct NetworkPerformanceProfileMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05442
-// TypeInfo:  0x0000000142C250E0
+// TypeInfo: 0x0000000142C250E0
 struct LevelSetupOption
 {
     char* m_Criterion; //0x0000
@@ -7550,7 +7550,7 @@ struct LevelSetupOption
 
 ////////////////////////////////////////
 // RuntimeId: 05962
-// TypeInfo:  0x0000000142C36928
+// TypeInfo: 0x0000000142C36928
 struct BlueprintBundlePreloadInfo
 {
     char* m_Name; //0x0000
@@ -7560,7 +7560,7 @@ struct BlueprintBundlePreloadInfo
 
 ////////////////////////////////////////
 // RuntimeId: 05960
-// TypeInfo:  0x0000000142C344D8
+// TypeInfo: 0x0000000142C344D8
 struct SyncedSequenceStateChangeMessageBase
 {
     char _0x0000[80];
@@ -7568,7 +7568,7 @@ struct SyncedSequenceStateChangeMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05959
-// TypeInfo:  0x0000000142C344F8
+// TypeInfo: 0x0000000142C344F8
 struct JuiceSoldierRagdollDeactivateMessage
 {
     char _0x0000[40];
@@ -7576,7 +7576,7 @@ struct JuiceSoldierRagdollDeactivateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05958
-// TypeInfo:  0x0000000142C34518
+// TypeInfo: 0x0000000142C34518
 struct JuiceSoldierRagdollActivateMessage
 {
     char _0x0000[40];
@@ -7584,7 +7584,7 @@ struct JuiceSoldierRagdollActivateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05957
-// TypeInfo:  0x0000000142C34538
+// TypeInfo: 0x0000000142C34538
 struct CoreReadSaveGameDoneMessage
 {
     char _0x0000[64];
@@ -7592,7 +7592,7 @@ struct CoreReadSaveGameDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05956
-// TypeInfo:  0x0000000142C34558
+// TypeInfo: 0x0000000142C34558
 struct CoreWriteSaveGameDoneMessage
 {
     char _0x0000[48];
@@ -7600,7 +7600,7 @@ struct CoreWriteSaveGameDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05955
-// TypeInfo:  0x0000000142C34578
+// TypeInfo: 0x0000000142C34578
 struct CoreWriteProfileGameMessage
 {
     char _0x0000[96];
@@ -7608,7 +7608,7 @@ struct CoreWriteProfileGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05954
-// TypeInfo:  0x0000000142C34598
+// TypeInfo: 0x0000000142C34598
 struct CoreWriteSaveGameMessage
 {
     char _0x0000[80];
@@ -7616,7 +7616,7 @@ struct CoreWriteSaveGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05953
-// TypeInfo:  0x0000000142C345B8
+// TypeInfo: 0x0000000142C345B8
 struct StatisticsEventMessageBase
 {
     char _0x0000[40];
@@ -7624,7 +7624,7 @@ struct StatisticsEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05952
-// TypeInfo:  0x0000000142C345D8
+// TypeInfo: 0x0000000142C345D8
 struct BlueprintBundleStreamedInMessage
 {
     char _0x0000[48];
@@ -7632,7 +7632,7 @@ struct BlueprintBundleStreamedInMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05951
-// TypeInfo:  0x0000000142C345F8
+// TypeInfo: 0x0000000142C345F8
 struct LoadGameBeginLoadMessage
 {
     char _0x0000[56];
@@ -7640,7 +7640,7 @@ struct LoadGameBeginLoadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05950
-// TypeInfo:  0x0000000142C34618
+// TypeInfo: 0x0000000142C34618
 struct SaveGameBeginSaveMessage
 {
     char _0x0000[48];
@@ -7648,7 +7648,7 @@ struct SaveGameBeginSaveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05949
-// TypeInfo:  0x0000000142C34638
+// TypeInfo: 0x0000000142C34638
 struct SessionPlayerJoinedMessage
 {
     char _0x0000[56];
@@ -7656,7 +7656,7 @@ struct SessionPlayerJoinedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05948
-// TypeInfo:  0x0000000142C34658
+// TypeInfo: 0x0000000142C34658
 struct SessionPlayerAuthenticatedMessage
 {
     char _0x0000[64];
@@ -7664,7 +7664,7 @@ struct SessionPlayerAuthenticatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05947
-// TypeInfo:  0x0000000142C34678
+// TypeInfo: 0x0000000142C34678
 struct SessionPlayerLeftMessage
 {
     char _0x0000[56];
@@ -7672,7 +7672,7 @@ struct SessionPlayerLeftMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05946
-// TypeInfo:  0x0000000142C34698
+// TypeInfo: 0x0000000142C34698
 struct CoreToggleBugSentryMessage
 {
     char _0x0000[48];
@@ -7680,7 +7680,7 @@ struct CoreToggleBugSentryMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05945
-// TypeInfo:  0x0000000142C346B8
+// TypeInfo: 0x0000000142C346B8
 struct CoreGameTimerMessage
 {
     char _0x0000[48];
@@ -7688,7 +7688,7 @@ struct CoreGameTimerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05944
-// TypeInfo:  0x0000000142C346D8
+// TypeInfo: 0x0000000142C346D8
 struct CoreExitIngameMessage
 {
     char _0x0000[40];
@@ -7696,7 +7696,7 @@ struct CoreExitIngameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05943
-// TypeInfo:  0x0000000142C346F8
+// TypeInfo: 0x0000000142C346F8
 struct CoreEnteredIngameMessage
 {
     char _0x0000[40];
@@ -7704,7 +7704,7 @@ struct CoreEnteredIngameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05942
-// TypeInfo:  0x0000000142C34718
+// TypeInfo: 0x0000000142C34718
 struct PerformanceClientNetworkMessage
 {
     char _0x0000[48];
@@ -7712,7 +7712,7 @@ struct PerformanceClientNetworkMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05941
-// TypeInfo:  0x0000000142C34738
+// TypeInfo: 0x0000000142C34738
 struct PerformanceServerNetworkMessage
 {
     char _0x0000[48];
@@ -7720,7 +7720,7 @@ struct PerformanceServerNetworkMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05940
-// TypeInfo:  0x0000000142C34758
+// TypeInfo: 0x0000000142C34758
 struct PerformanceServerMessage
 {
     char _0x0000[48];
@@ -7728,7 +7728,7 @@ struct PerformanceServerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05939
-// TypeInfo:  0x0000000142C34778
+// TypeInfo: 0x0000000142C34778
 struct ProfileOptionsSettingsSavedMessage
 {
     char _0x0000[48];
@@ -7736,7 +7736,7 @@ struct ProfileOptionsSettingsSavedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05938
-// TypeInfo:  0x0000000142C34798
+// TypeInfo: 0x0000000142C34798
 struct ProfileOptionsSettingsPreSaveMessage
 {
     char _0x0000[40];
@@ -7744,7 +7744,7 @@ struct ProfileOptionsSettingsPreSaveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05937
-// TypeInfo:  0x0000000142C347B8
+// TypeInfo: 0x0000000142C347B8
 struct ProfileOptionsSettingsLoadedMessage
 {
     char _0x0000[48];
@@ -7752,7 +7752,7 @@ struct ProfileOptionsSettingsLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05936
-// TypeInfo:  0x0000000142C347D8
+// TypeInfo: 0x0000000142C347D8
 struct ProfileOptionsApplyMessage
 {
     char _0x0000[56];
@@ -7760,7 +7760,7 @@ struct ProfileOptionsApplyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05933
-// TypeInfo:  0x0000000142C34818
+// TypeInfo: 0x0000000142C34818
 struct NetworkDisconnectedMessage
 {
     char _0x0000[56];
@@ -7768,7 +7768,7 @@ struct NetworkDisconnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05932
-// TypeInfo:  0x0000000142C34838
+// TypeInfo: 0x0000000142C34838
 struct NetworkConnectedMessage
 {
     char _0x0000[112];
@@ -7776,7 +7776,7 @@ struct NetworkConnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05931
-// TypeInfo:  0x0000000142C34858
+// TypeInfo: 0x0000000142C34858
 struct AIClientBridgeDynamicModelEntityOnUnspawnMessage
 {
     char _0x0000[48];
@@ -7784,7 +7784,7 @@ struct AIClientBridgeDynamicModelEntityOnUnspawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05930
-// TypeInfo:  0x0000000142C34878
+// TypeInfo: 0x0000000142C34878
 struct AIClientBridgeDynamicModelEntityOnSpawnMessage
 {
     char _0x0000[48];
@@ -7792,7 +7792,7 @@ struct AIClientBridgeDynamicModelEntityOnSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05927
-// TypeInfo:  0x0000000142C348B8
+// TypeInfo: 0x0000000142C348B8
 struct BundleManagerBundleUnloadMessage
 {
     char _0x0000[48];
@@ -7800,7 +7800,7 @@ struct BundleManagerBundleUnloadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05926
-// TypeInfo:  0x0000000142C348D8
+// TypeInfo: 0x0000000142C348D8
 struct CoreReadSaveGameDataDoneMessage
 {
     char _0x0000[40];
@@ -7808,7 +7808,7 @@ struct CoreReadSaveGameDataDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05925
-// TypeInfo:  0x0000000142C348F8
+// TypeInfo: 0x0000000142C348F8
 struct CoreDebugReadProfileGameDataMessage
 {
     char _0x0000[80];
@@ -7816,7 +7816,7 @@ struct CoreDebugReadProfileGameDataMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05924
-// TypeInfo:  0x0000000142C34918
+// TypeInfo: 0x0000000142C34918
 struct CoreDebugReadSaveGameDataMessage
 {
     char _0x0000[72];
@@ -7824,7 +7824,7 @@ struct CoreDebugReadSaveGameDataMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05923
-// TypeInfo:  0x0000000142C34938
+// TypeInfo: 0x0000000142C34938
 struct NetworkLogicFireDoublePlayerEventMessageBase
 {
     char _0x0000[80];
@@ -7832,7 +7832,7 @@ struct NetworkLogicFireDoublePlayerEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05922
-// TypeInfo:  0x0000000142C34958
+// TypeInfo: 0x0000000142C34958
 struct NetworkLogicFirePlayerEventMessageBase
 {
     char _0x0000[80];
@@ -7840,7 +7840,7 @@ struct NetworkLogicFirePlayerEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05921
-// TypeInfo:  0x0000000142C34978
+// TypeInfo: 0x0000000142C34978
 struct NetworkLogicFireEventMessageBase
 {
     char _0x0000[72];
@@ -7848,7 +7848,7 @@ struct NetworkLogicFireEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05920
-// TypeInfo:  0x0000000142C34998
+// TypeInfo: 0x0000000142C34998
 struct SubLevelFromClientSubLevelLoadedMessage
 {
     char _0x0000[80];
@@ -7856,7 +7856,7 @@ struct SubLevelFromClientSubLevelLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05919
-// TypeInfo:  0x0000000142C349B8
+// TypeInfo: 0x0000000142C349B8
 struct SubLevelFromClientRequestBundleBaselineMessage
 {
     char _0x0000[72];
@@ -7864,7 +7864,7 @@ struct SubLevelFromClientRequestBundleBaselineMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05918
-// TypeInfo:  0x0000000142C349D8
+// TypeInfo: 0x0000000142C349D8
 struct SubLevelToClientDropBundleBaselineMessage
 {
     char _0x0000[72];
@@ -7872,7 +7872,7 @@ struct SubLevelToClientDropBundleBaselineMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05917
-// TypeInfo:  0x0000000142C349F8
+// TypeInfo: 0x0000000142C349F8
 struct SubLevelToClientUnloadRequestsMessage
 {
     char _0x0000[80];
@@ -7880,7 +7880,7 @@ struct SubLevelToClientUnloadRequestsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05916
-// TypeInfo:  0x0000000142C34A18
+// TypeInfo: 0x0000000142C34A18
 struct SubLevelToClientLoadRequestsMessage
 {
     char _0x0000[80];
@@ -7888,7 +7888,7 @@ struct SubLevelToClientLoadRequestsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05915
-// TypeInfo:  0x0000000142C34B38
+// TypeInfo: 0x0000000142C34B38
 struct SubLevelBundleInfo
 {
     __int32 m_CompartmentIndex; //0x0000
@@ -7903,7 +7903,7 @@ struct SubLevelBundleInfo
 
 ////////////////////////////////////////
 // RuntimeId: 05913
-// TypeInfo:  0x0000000142C34A38
+// TypeInfo: 0x0000000142C34A38
 struct SubLevelToClientSubLevelNameMessage
 {
     char _0x0000[72];
@@ -7911,7 +7911,7 @@ struct SubLevelToClientSubLevelNameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05912
-// TypeInfo:  0x0000000142C34B58
+// TypeInfo: 0x0000000142C34B58
 struct BundleNameAndIndex
 {
     char* m_Name; //0x0000
@@ -7921,7 +7921,7 @@ struct BundleNameAndIndex
 
 ////////////////////////////////////////
 // RuntimeId: 05906
-// TypeInfo:  0x0000000142C34A98
+// TypeInfo: 0x0000000142C34A98
 struct ServerAdministrationPasswordMessage
 {
     char _0x0000[48];
@@ -7929,7 +7929,7 @@ struct ServerAdministrationPasswordMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05905
-// TypeInfo:  0x0000000142C34AB8
+// TypeInfo: 0x0000000142C34AB8
 struct ServerAdministrationEventsEnabledMessage
 {
     char _0x0000[56];
@@ -7937,7 +7937,7 @@ struct ServerAdministrationEventsEnabledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05904
-// TypeInfo:  0x0000000142C34AD8
+// TypeInfo: 0x0000000142C34AD8
 struct ServerAdministrationQuitMessage
 {
     char _0x0000[48];
@@ -7945,7 +7945,7 @@ struct ServerAdministrationQuitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05903
-// TypeInfo:  0x0000000142C34AF8
+// TypeInfo: 0x0000000142C34AF8
 struct ServerAdministrationLoginMessage
 {
     char _0x0000[56];
@@ -7953,7 +7953,7 @@ struct ServerAdministrationLoginMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05902
-// TypeInfo:  0x0000000142C34B18
+// TypeInfo: 0x0000000142C34B18
 struct ServerAdministrationPacketMessageBase
 {
     char _0x0000[56];
@@ -7961,7 +7961,7 @@ struct ServerAdministrationPacketMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05822
-// TypeInfo:  0x0000000142C2F330
+// TypeInfo: 0x0000000142C2F330
 struct ClientSetServerPasswordMessage
 {
     char _0x0000[48];
@@ -7969,7 +7969,7 @@ struct ClientSetServerPasswordMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05821
-// TypeInfo:  0x0000000142C2F350
+// TypeInfo: 0x0000000142C2F350
 struct ClientWantFullscreenMessage
 {
     char _0x0000[48];
@@ -7977,7 +7977,7 @@ struct ClientWantFullscreenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05820
-// TypeInfo:  0x0000000142C2F370
+// TypeInfo: 0x0000000142C2F370
 struct ClientLeftRemoteServerMessage
 {
     char _0x0000[40];
@@ -7985,7 +7985,7 @@ struct ClientLeftRemoteServerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05819
-// TypeInfo:  0x0000000142C2F390
+// TypeInfo: 0x0000000142C2F390
 struct ClientDisconnectedMessage
 {
     char _0x0000[40];
@@ -7993,7 +7993,7 @@ struct ClientDisconnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05818
-// TypeInfo:  0x0000000142C2F3B0
+// TypeInfo: 0x0000000142C2F3B0
 struct ClientConnectedMessage
 {
     char _0x0000[40];
@@ -8001,7 +8001,7 @@ struct ClientConnectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05817
-// TypeInfo:  0x0000000142C2F3D0
+// TypeInfo: 0x0000000142C2F3D0
 struct ClientAbortCutsceneMessage
 {
     char _0x0000[40];
@@ -8009,7 +8009,7 @@ struct ClientAbortCutsceneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05816
-// TypeInfo:  0x0000000142C2F3F0
+// TypeInfo: 0x0000000142C2F3F0
 struct ClientLevelLoadedMessage
 {
     char _0x0000[48];
@@ -8017,7 +8017,7 @@ struct ClientLevelLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05815
-// TypeInfo:  0x0000000142C2F410
+// TypeInfo: 0x0000000142C2F410
 struct ClientLevelLoadProgressMessage
 {
     char _0x0000[48];
@@ -8025,7 +8025,7 @@ struct ClientLevelLoadProgressMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05814
-// TypeInfo:  0x0000000142C2F430
+// TypeInfo: 0x0000000142C2F430
 struct ClientLevelDescriptionLoadedMessage
 {
     char _0x0000[48];
@@ -8033,7 +8033,7 @@ struct ClientLevelDescriptionLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05813
-// TypeInfo:  0x0000000142C2F450
+// TypeInfo: 0x0000000142C2F450
 struct ClientLevelUnloadedMessage
 {
     char _0x0000[40];
@@ -8041,7 +8041,7 @@ struct ClientLevelUnloadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05812
-// TypeInfo:  0x0000000142C2F470
+// TypeInfo: 0x0000000142C2F470
 struct ClientLoadLevelMessage
 {
     char _0x0000[48];
@@ -8049,7 +8049,7 @@ struct ClientLoadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05811
-// TypeInfo:  0x0000000142C2F490
+// TypeInfo: 0x0000000142C2F490
 struct ClientLoadLevelRequestedMessage
 {
     char _0x0000[40];
@@ -8057,7 +8057,7 @@ struct ClientLoadLevelRequestedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05810
-// TypeInfo:  0x0000000142C2F4B0
+// TypeInfo: 0x0000000142C2F4B0
 struct ClientEnteredIngameMessage
 {
     char _0x0000[40];
@@ -8065,7 +8065,7 @@ struct ClientEnteredIngameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05809
-// TypeInfo:  0x0000000142C2F4D0
+// TypeInfo: 0x0000000142C2F4D0
 struct ClientEnterHudIngameMessage
 {
     char _0x0000[40];
@@ -8073,7 +8073,7 @@ struct ClientEnterHudIngameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05808
-// TypeInfo:  0x0000000142C2F4F0
+// TypeInfo: 0x0000000142C2F4F0
 struct ClientExitGameMessage
 {
     char _0x0000[40];
@@ -8081,7 +8081,7 @@ struct ClientExitGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05807
-// TypeInfo:  0x0000000142C2F510
+// TypeInfo: 0x0000000142C2F510
 struct ClientExitToMenuMessage
 {
     char _0x0000[48];
@@ -8089,7 +8089,7 @@ struct ClientExitToMenuMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05806
-// TypeInfo:  0x0000000142C2F530
+// TypeInfo: 0x0000000142C2F530
 struct ClientReturnToMenuMessage
 {
     char _0x0000[48];
@@ -8097,7 +8097,7 @@ struct ClientReturnToMenuMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05805
-// TypeInfo:  0x0000000142C2F550
+// TypeInfo: 0x0000000142C2F550
 struct ClientStartMultiplayerMessage
 {
     char _0x0000[104];
@@ -8105,7 +8105,7 @@ struct ClientStartMultiplayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05804
-// TypeInfo:  0x0000000142C2F570
+// TypeInfo: 0x0000000142C2F570
 struct ClientContinueSingleplayerMessage
 {
     char _0x0000[40];
@@ -8113,7 +8113,7 @@ struct ClientContinueSingleplayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05803
-// TypeInfo:  0x0000000142C2F590
+// TypeInfo: 0x0000000142C2F590
 struct ClientStartedMessage
 {
     char _0x0000[40];
@@ -8121,7 +8121,7 @@ struct ClientStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05802
-// TypeInfo:  0x0000000142C2F5B0
+// TypeInfo: 0x0000000142C2F5B0
 struct ClientJoinServerJobMessage
 {
     char _0x0000[40];
@@ -8129,7 +8129,7 @@ struct ClientJoinServerJobMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05801
-// TypeInfo:  0x0000000142C2F5D0
+// TypeInfo: 0x0000000142C2F5D0
 struct ClientPeerNetworkRemovedMessageBase
 {
     char _0x0000[40];
@@ -8137,7 +8137,7 @@ struct ClientPeerNetworkRemovedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05800
-// TypeInfo:  0x0000000142C2F5F0
+// TypeInfo: 0x0000000142C2F5F0
 struct ClientRequirePasswordMessageBase
 {
     char _0x0000[40];
@@ -8145,7 +8145,7 @@ struct ClientRequirePasswordMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05799
-// TypeInfo:  0x0000000142C2F610
+// TypeInfo: 0x0000000142C2F610
 struct ClientJoinMultiplayerMessageBase
 {
     char _0x0000[56];
@@ -8153,7 +8153,7 @@ struct ClientJoinMultiplayerMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05798
-// TypeInfo:  0x0000000142C2F630
+// TypeInfo: 0x0000000142C2F630
 struct ClientRestartSingleplayerMessageBase
 {
     char _0x0000[56];
@@ -8161,7 +8161,7 @@ struct ClientRestartSingleplayerMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05797
-// TypeInfo:  0x0000000142C2F650
+// TypeInfo: 0x0000000142C2F650
 struct ClientStartSingleplayerMessageBase
 {
     char _0x0000[112];
@@ -8169,7 +8169,7 @@ struct ClientStartSingleplayerMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 05644
-// TypeInfo:  0x0000000142C28EB0
+// TypeInfo: 0x0000000142C28EB0
 struct UserGamerpicBufferReceivedMessage
 {
     char _0x0000[40];
@@ -8177,7 +8177,7 @@ struct UserGamerpicBufferReceivedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05635
-// TypeInfo:  0x0000000142C28ED0
+// TypeInfo: 0x0000000142C28ED0
 struct UIBundleUnloadedMessage
 {
     char _0x0000[56];
@@ -8185,7 +8185,7 @@ struct UIBundleUnloadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05634
-// TypeInfo:  0x0000000142C28EF0
+// TypeInfo: 0x0000000142C28EF0
 struct UIBundleLoadedMessage
 {
     char _0x0000[56];
@@ -8193,7 +8193,7 @@ struct UIBundleLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05627
-// TypeInfo:  0x0000000142C28F30
+// TypeInfo: 0x0000000142C28F30
 struct ClientInputDeviceAddedMessage
 {
     char _0x0000[40];
@@ -8201,7 +8201,7 @@ struct ClientInputDeviceAddedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05626
-// TypeInfo:  0x0000000142C28F50
+// TypeInfo: 0x0000000142C28F50
 struct ClientEffectPlayMessage
 {
     char _0x0000[56];
@@ -8209,7 +8209,7 @@ struct ClientEffectPlayMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05625
-// TypeInfo:  0x0000000142C28F70
+// TypeInfo: 0x0000000142C28F70
 struct ClientCommanderPlayerChangedMessage
 {
     char _0x0000[56];
@@ -8217,7 +8217,7 @@ struct ClientCommanderPlayerChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05624
-// TypeInfo:  0x0000000142C28F90
+// TypeInfo: 0x0000000142C28F90
 struct ClientConnectionUnloadLevelMessage
 {
     char _0x0000[40];
@@ -8225,7 +8225,7 @@ struct ClientConnectionUnloadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05623
-// TypeInfo:  0x0000000142C28FB0
+// TypeInfo: 0x0000000142C28FB0
 struct ClientConnectionLinkLevelMessage
 {
     char _0x0000[40];
@@ -8233,7 +8233,7 @@ struct ClientConnectionLinkLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05622
-// TypeInfo:  0x0000000142C28FD0
+// TypeInfo: 0x0000000142C28FD0
 struct ClientConnectionLoadLevelMessage
 {
     char _0x0000[48];
@@ -8241,7 +8241,7 @@ struct ClientConnectionLoadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05621
-// TypeInfo:  0x0000000142C28FF0
+// TypeInfo: 0x0000000142C28FF0
 struct ClientConnectionInitializedMessage
 {
     char _0x0000[48];
@@ -8249,7 +8249,7 @@ struct ClientConnectionInitializedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05620
-// TypeInfo:  0x0000000142C29010
+// TypeInfo: 0x0000000142C29010
 struct ClientStateChangingStateMessage
 {
     char _0x0000[48];
@@ -8257,7 +8257,7 @@ struct ClientStateChangingStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05619
-// TypeInfo:  0x0000000142C29030
+// TypeInfo: 0x0000000142C29030
 struct ClientLevelFinalizedMessage
 {
     char _0x0000[40];
@@ -8265,7 +8265,7 @@ struct ClientLevelFinalizedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05618
-// TypeInfo:  0x0000000142C29050
+// TypeInfo: 0x0000000142C29050
 struct ClientLevelSpawnEntitiesEndMessage
 {
     char _0x0000[40];
@@ -8273,7 +8273,7 @@ struct ClientLevelSpawnEntitiesEndMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05617
-// TypeInfo:  0x0000000142C29070
+// TypeInfo: 0x0000000142C29070
 struct ClientLevelSpawnDebugEntitiesMessage
 {
     char _0x0000[48];
@@ -8281,7 +8281,7 @@ struct ClientLevelSpawnDebugEntitiesMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05616
-// TypeInfo:  0x0000000142C29090
+// TypeInfo: 0x0000000142C29090
 struct ClientGameplaySoldierHealthRequestMessage
 {
     char _0x0000[48];
@@ -8289,7 +8289,7 @@ struct ClientGameplaySoldierHealthRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05615
-// TypeInfo:  0x0000000142C290B0
+// TypeInfo: 0x0000000142C290B0
 struct ClientGameplayControllableLowHealthMessage
 {
     char _0x0000[48];
@@ -8297,7 +8297,7 @@ struct ClientGameplayControllableLowHealthMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05614
-// TypeInfo:  0x0000000142C290D0
+// TypeInfo: 0x0000000142C290D0
 struct ClientGameplaySoldierHitMessage
 {
     char _0x0000[80];
@@ -8305,7 +8305,7 @@ struct ClientGameplaySoldierHitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05613
-// TypeInfo:  0x0000000142C290F0
+// TypeInfo: 0x0000000142C290F0
 struct ClientCameraShowKillerMessage
 {
     char _0x0000[40];
@@ -8313,7 +8313,7 @@ struct ClientCameraShowKillerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05612
-// TypeInfo:  0x0000000142C29110
+// TypeInfo: 0x0000000142C29110
 struct ClientCollisionProjectileImpactMessage
 {
     char _0x0000[64];
@@ -8321,7 +8321,7 @@ struct ClientCollisionProjectileImpactMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05611
-// TypeInfo:  0x0000000142C29130
+// TypeInfo: 0x0000000142C29130
 struct ClientCollisionSpawnExplosionMessage
 {
     char _0x0000[80];
@@ -8329,7 +8329,7 @@ struct ClientCollisionSpawnExplosionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05610
-// TypeInfo:  0x0000000142C29150
+// TypeInfo: 0x0000000142C29150
 struct ClientCollisionExplosionPackDetonatedMessage
 {
     char _0x0000[48];
@@ -8337,7 +8337,7 @@ struct ClientCollisionExplosionPackDetonatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05609
-// TypeInfo:  0x0000000142C29170
+// TypeInfo: 0x0000000142C29170
 struct ClientCollisionExplosionPackPlacedMessage
 {
     char _0x0000[48];
@@ -8345,7 +8345,7 @@ struct ClientCollisionExplosionPackPlacedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05608
-// TypeInfo:  0x0000000142C29190
+// TypeInfo: 0x0000000142C29190
 struct ClientCollisionGrenadeCollisionMessage
 {
     char _0x0000[64];
@@ -8353,7 +8353,7 @@ struct ClientCollisionGrenadeCollisionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05607
-// TypeInfo:  0x0000000142C291B0
+// TypeInfo: 0x0000000142C291B0
 struct ClientSoundVoiceOverFinishedMessage
 {
     char _0x0000[48];
@@ -8361,7 +8361,7 @@ struct ClientSoundVoiceOverFinishedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05606
-// TypeInfo:  0x0000000142C291D0
+// TypeInfo: 0x0000000142C291D0
 struct ClientVehicleCriticalDamageMessage
 {
     char _0x0000[48];
@@ -8369,7 +8369,7 @@ struct ClientVehicleCriticalDamageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05605
-// TypeInfo:  0x0000000142C291F0
+// TypeInfo: 0x0000000142C291F0
 struct ClientEntityDummyToGetTheClientEntityMessageCategoryMessage
 {
     char _0x0000[40];
@@ -8377,7 +8377,7 @@ struct ClientEntityDummyToGetTheClientEntityMessageCategoryMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05604
-// TypeInfo:  0x0000000142C29210
+// TypeInfo: 0x0000000142C29210
 struct ClientCharacterSpawnDoneMessage
 {
     char _0x0000[48];
@@ -8385,7 +8385,7 @@ struct ClientCharacterSpawnDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05603
-// TypeInfo:  0x0000000142C29230
+// TypeInfo: 0x0000000142C29230
 struct ClientCharacterLocalPlayerDeletedMessage
 {
     char _0x0000[40];
@@ -8393,7 +8393,7 @@ struct ClientCharacterLocalPlayerDeletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05602
-// TypeInfo:  0x0000000142C29250
+// TypeInfo: 0x0000000142C29250
 struct ClientCharacterLocalPlayerSetMessage
 {
     char _0x0000[48];
@@ -8401,7 +8401,7 @@ struct ClientCharacterLocalPlayerSetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05601
-// TypeInfo:  0x0000000142C29270
+// TypeInfo: 0x0000000142C29270
 struct ClientSpawnSpawnedOrUnSpawnedMessage
 {
     char _0x0000[56];
@@ -8409,7 +8409,7 @@ struct ClientSpawnSpawnedOrUnSpawnedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05600
-// TypeInfo:  0x0000000142C29290
+// TypeInfo: 0x0000000142C29290
 struct ClientControllableUnspawnDoneMessage
 {
     char _0x0000[48];
@@ -8417,7 +8417,7 @@ struct ClientControllableUnspawnDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05599
-// TypeInfo:  0x0000000142C292B0
+// TypeInfo: 0x0000000142C292B0
 struct ClientControllableSpawnDoneMessage
 {
     char _0x0000[48];
@@ -8425,7 +8425,7 @@ struct ClientControllableSpawnDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05598
-// TypeInfo:  0x0000000142C292D0
+// TypeInfo: 0x0000000142C292D0
 struct ClientInputUnchangedInputMessage
 {
     char _0x0000[48];
@@ -8433,7 +8433,7 @@ struct ClientInputUnchangedInputMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05597
-// TypeInfo:  0x0000000142C292F0
+// TypeInfo: 0x0000000142C292F0
 struct ClientInputSettingsRefreshMessage
 {
     char _0x0000[48];
@@ -8441,7 +8441,7 @@ struct ClientInputSettingsRefreshMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05596
-// TypeInfo:  0x0000000142C29310
+// TypeInfo: 0x0000000142C29310
 struct ClientWeaponDispersionUpdatedMessage
 {
     char _0x0000[40];
@@ -8449,7 +8449,7 @@ struct ClientWeaponDispersionUpdatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05595
-// TypeInfo:  0x0000000142C29330
+// TypeInfo: 0x0000000142C29330
 struct ClientWeaponPlayerPrimaryOutOfAmmoMessage
 {
     char _0x0000[48];
@@ -8457,7 +8457,7 @@ struct ClientWeaponPlayerPrimaryOutOfAmmoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05594
-// TypeInfo:  0x0000000142C29350
+// TypeInfo: 0x0000000142C29350
 struct ClientWeaponPlayerWeaponReloadEndMessage
 {
     char _0x0000[40];
@@ -8465,7 +8465,7 @@ struct ClientWeaponPlayerWeaponReloadEndMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05593
-// TypeInfo:  0x0000000142C29370
+// TypeInfo: 0x0000000142C29370
 struct ClientWeaponPlayerWeaponReloadBeginMessage
 {
     char _0x0000[48];
@@ -8473,7 +8473,7 @@ struct ClientWeaponPlayerWeaponReloadBeginMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05592
-// TypeInfo:  0x0000000142C29390
+// TypeInfo: 0x0000000142C29390
 struct ClientWeaponPlayerPrimaryWeaponFireMessage
 {
     char _0x0000[48];
@@ -8481,7 +8481,7 @@ struct ClientWeaponPlayerPrimaryWeaponFireMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05591
-// TypeInfo:  0x0000000142C293B0
+// TypeInfo: 0x0000000142C293B0
 struct ClientWeaponPlayerWeaponChangeMessage
 {
     char _0x0000[40];
@@ -8489,7 +8489,7 @@ struct ClientWeaponPlayerWeaponChangeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05590
-// TypeInfo:  0x0000000142C293D0
+// TypeInfo: 0x0000000142C293D0
 struct ClientPlayerReviveRefusedMessage
 {
     char _0x0000[48];
@@ -8497,7 +8497,7 @@ struct ClientPlayerReviveRefusedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05589
-// TypeInfo:  0x0000000142C293F0
+// TypeInfo: 0x0000000142C293F0
 struct ClientPlayerReviveAcceptedMessage
 {
     char _0x0000[48];
@@ -8505,7 +8505,7 @@ struct ClientPlayerReviveAcceptedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05588
-// TypeInfo:  0x0000000142C29410
+// TypeInfo: 0x0000000142C29410
 struct ClientPlayerReviveMessage
 {
     char _0x0000[48];
@@ -8513,7 +8513,7 @@ struct ClientPlayerReviveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05587
-// TypeInfo:  0x0000000142C29430
+// TypeInfo: 0x0000000142C29430
 struct ClientPlayerInteractionEntityInRangeChangedMessage
 {
     char _0x0000[64];
@@ -8521,7 +8521,7 @@ struct ClientPlayerInteractionEntityInRangeChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05586
-// TypeInfo:  0x0000000142C29450
+// TypeInfo: 0x0000000142C29450
 struct ClientPlayerOnWeaponUndeployFinishedMessage
 {
     char _0x0000[48];
@@ -8529,7 +8529,7 @@ struct ClientPlayerOnWeaponUndeployFinishedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05585
-// TypeInfo:  0x0000000142C29470
+// TypeInfo: 0x0000000142C29470
 struct ClientPlayerSelectedUnlocksMessage
 {
     char _0x0000[40];
@@ -8537,7 +8537,7 @@ struct ClientPlayerSelectedUnlocksMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05584
-// TypeInfo:  0x0000000142C29490
+// TypeInfo: 0x0000000142C29490
 struct ClientPlayerDeletedMessage
 {
     char _0x0000[48];
@@ -8545,7 +8545,7 @@ struct ClientPlayerDeletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05583
-// TypeInfo:  0x0000000142C294B0
+// TypeInfo: 0x0000000142C294B0
 struct ClientPlayerConnectMessage
 {
     char _0x0000[56];
@@ -8553,7 +8553,7 @@ struct ClientPlayerConnectMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05582
-// TypeInfo:  0x0000000142C294D0
+// TypeInfo: 0x0000000142C294D0
 struct ClientPlayerLocalSetMessage
 {
     char _0x0000[56];
@@ -8561,7 +8561,7 @@ struct ClientPlayerLocalSetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05581
-// TypeInfo:  0x0000000142C294F0
+// TypeInfo: 0x0000000142C294F0
 struct ClientPlayerChangedPlayerViewMessage
 {
     char _0x0000[48];
@@ -8569,7 +8569,7 @@ struct ClientPlayerChangedPlayerViewMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05580
-// TypeInfo:  0x0000000142C29510
+// TypeInfo: 0x0000000142C29510
 struct ClientPlayerSwitchGroupMessage
 {
     char _0x0000[56];
@@ -8577,7 +8577,7 @@ struct ClientPlayerSwitchGroupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05579
-// TypeInfo:  0x0000000142C29530
+// TypeInfo: 0x0000000142C29530
 struct ClientPlayerSwitchTeamMessage
 {
     char _0x0000[56];
@@ -8585,7 +8585,7 @@ struct ClientPlayerSwitchTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05578
-// TypeInfo:  0x0000000142C29550
+// TypeInfo: 0x0000000142C29550
 struct ClientPlayerManDownMessage
 {
     char _0x0000[48];
@@ -8593,7 +8593,7 @@ struct ClientPlayerManDownMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05577
-// TypeInfo:  0x0000000142C29570
+// TypeInfo: 0x0000000142C29570
 struct ClientPlayerWeaponPickupMessage
 {
     char _0x0000[40];
@@ -8601,7 +8601,7 @@ struct ClientPlayerWeaponPickupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05576
-// TypeInfo:  0x0000000142C29590
+// TypeInfo: 0x0000000142C29590
 struct ClientPlayerAmmoPickupMessage
 {
     char _0x0000[40];
@@ -8609,7 +8609,7 @@ struct ClientPlayerAmmoPickupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05575
-// TypeInfo:  0x0000000142C295B0
+// TypeInfo: 0x0000000142C295B0
 struct ClientPlayerShowKillCardOnlyMessage
 {
     char _0x0000[40];
@@ -8617,7 +8617,7 @@ struct ClientPlayerShowKillCardOnlyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05574
-// TypeInfo:  0x0000000142C295D0
+// TypeInfo: 0x0000000142C295D0
 struct ClientPlayerShowKillCameraMessage
 {
     char _0x0000[56];
@@ -8625,7 +8625,7 @@ struct ClientPlayerShowKillCameraMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05573
-// TypeInfo:  0x0000000142C295F0
+// TypeInfo: 0x0000000142C295F0
 struct ClientPlayerKilledMessage
 {
     char _0x0000[48];
@@ -8633,7 +8633,7 @@ struct ClientPlayerKilledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05572
-// TypeInfo:  0x0000000142C29610
+// TypeInfo: 0x0000000142C29610
 struct ClientPlayerEnterEntryMessage
 {
     char _0x0000[80];
@@ -8641,7 +8641,7 @@ struct ClientPlayerEnterEntryMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05571
-// TypeInfo:  0x0000000142C29630
+// TypeInfo: 0x0000000142C29630
 struct ClientPlayerEnterExitVehicleMessage
 {
     char _0x0000[64];
@@ -8649,7 +8649,7 @@ struct ClientPlayerEnterExitVehicleMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05570
-// TypeInfo:  0x0000000142C29650
+// TypeInfo: 0x0000000142C29650
 struct ClientPlayerRequestCameraChangeMessage
 {
     char _0x0000[40];
@@ -8657,7 +8657,7 @@ struct ClientPlayerRequestCameraChangeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05569
-// TypeInfo:  0x0000000142C29670
+// TypeInfo: 0x0000000142C29670
 struct ClientPlayerUpdateCameraComponentMessage
 {
     char _0x0000[48];
@@ -8665,7 +8665,7 @@ struct ClientPlayerUpdateCameraComponentMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05568
-// TypeInfo:  0x0000000142C29690
+// TypeInfo: 0x0000000142C29690
 struct ClientMetricsPauseGameMessage
 {
     char _0x0000[48];
@@ -8673,7 +8673,7 @@ struct ClientMetricsPauseGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05567
-// TypeInfo:  0x0000000142C296B0
+// TypeInfo: 0x0000000142C296B0
 struct ClientMetricsUIActionMessage
 {
     char _0x0000[56];
@@ -8681,7 +8681,7 @@ struct ClientMetricsUIActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05566
-// TypeInfo:  0x0000000142C296D0
+// TypeInfo: 0x0000000142C296D0
 struct ClientMetricsPopUIScreenMessage
 {
     char _0x0000[48];
@@ -8689,7 +8689,7 @@ struct ClientMetricsPopUIScreenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05565
-// TypeInfo:  0x0000000142C296F0
+// TypeInfo: 0x0000000142C296F0
 struct ClientMetricsPushUIScreenMessage
 {
     char _0x0000[56];
@@ -8697,7 +8697,7 @@ struct ClientMetricsPushUIScreenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05514
-// TypeInfo:  0x0000000142C264F8
+// TypeInfo: 0x0000000142C264F8
 struct EventKeyframe
 {
     float m_Time; //0x0000
@@ -8705,7 +8705,7 @@ struct EventKeyframe
 
 ////////////////////////////////////////
 // RuntimeId: 05490
-// TypeInfo:  0x0000000142C26518
+// TypeInfo: 0x0000000142C26518
 struct ColorKeyframe
 {
     Vec4 m_RGBColor; //0x0000
@@ -8715,7 +8715,7 @@ struct ColorKeyframe
 
 ////////////////////////////////////////
 // RuntimeId: 05486
-// TypeInfo:  0x0000000142C26538
+// TypeInfo: 0x0000000142C26538
 struct BoolKeyframe
 {
     float m_Time; //0x0000
@@ -8725,7 +8725,7 @@ struct BoolKeyframe
 
 ////////////////////////////////////////
 // RuntimeId: 05444
-// TypeInfo:  0x0000000142C250C0
+// TypeInfo: 0x0000000142C250C0
 struct LevelSetup
 {
     char* m_Name; //0x0000
@@ -8742,7 +8742,7 @@ struct LevelSetup
 
 ////////////////////////////////////////
 // RuntimeId: 05964
-// TypeInfo:  0x0000000142C36908
+// TypeInfo: 0x0000000142C36908
 struct LoadLevelInfo
 {
     LevelSetup m_Setup; //0x0000
@@ -8753,7 +8753,7 @@ struct LoadLevelInfo
 
 ////////////////////////////////////////
 // RuntimeId: 05402
-// TypeInfo:  0x0000000142C223C8
+// TypeInfo: 0x0000000142C223C8
 struct TransformPartPropertyKey
 {
     float m_Value; //0x0000
@@ -8767,7 +8767,7 @@ struct TransformPartPropertyKey
 
 ////////////////////////////////////////
 // RuntimeId: 05360
-// TypeInfo:  0x0000000142C223E8
+// TypeInfo: 0x0000000142C223E8
 struct SequenceEventData
 {
     EventSpec m_Event; //0x0000
@@ -8776,7 +8776,7 @@ struct SequenceEventData
 
 ////////////////////////////////////////
 // RuntimeId: 05352
-// TypeInfo:  0x0000000142C22428
+// TypeInfo: 0x0000000142C22428
 struct MaterialRelationPropertyPair
 {
     Array<PhysicsMaterialRelationPropertyData*> m_PhysicsMaterialProperties; //0x0000
@@ -8785,7 +8785,7 @@ struct MaterialRelationPropertyPair
 
 ////////////////////////////////////////
 // RuntimeId: 05354
-// TypeInfo:  0x0000000142C22408
+// TypeInfo: 0x0000000142C22408
 struct MaterialInteractionGridRow
 {
     Array<MaterialRelationPropertyPair> m_Items; //0x0000
@@ -8793,7 +8793,7 @@ struct MaterialInteractionGridRow
 
 ////////////////////////////////////////
 // RuntimeId: 07673
-// TypeInfo:  0x0000000142C59590
+// TypeInfo: 0x0000000142C59590
 struct OnImpulseModifierData
 {
     MaterialDecl m_MaterialPair; //0x0000
@@ -8802,7 +8802,7 @@ struct OnImpulseModifierData
 
 ////////////////////////////////////////
 // RuntimeId: 05314
-// TypeInfo:  0x0000000142C1DE68
+// TypeInfo: 0x0000000142C1DE68
 struct SubLevelDestroyedMessage
 {
     char _0x0000[48];
@@ -8810,7 +8810,7 @@ struct SubLevelDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05313
-// TypeInfo:  0x0000000142C1DE88
+// TypeInfo: 0x0000000142C1DE88
 struct SubLevelEntitiesCreatedMessage
 {
     char _0x0000[48];
@@ -8818,7 +8818,7 @@ struct SubLevelEntitiesCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 05286
-// TypeInfo:  0x0000000142C1DF48
+// TypeInfo: 0x0000000142C1DF48
 struct SubSkeleton
 {
     SkeletonAsset* m_Skeleton; //0x0000
@@ -8828,7 +8828,7 @@ struct SubSkeleton
 
 ////////////////////////////////////////
 // RuntimeId: 05280
-// TypeInfo:  0x0000000142C1DF68
+// TypeInfo: 0x0000000142C1DF68
 struct GameplayBone
 {
     char* m_Name; //0x0000
@@ -8838,7 +8838,7 @@ struct GameplayBone
 
 ////////////////////////////////////////
 // RuntimeId: 05138
-// TypeInfo:  0x0000000142C1DF88
+// TypeInfo: 0x0000000142C1DF88
 struct EntityStableUid
 {
     unsigned __int32 m_Id; //0x0000
@@ -8846,7 +8846,7 @@ struct EntityStableUid
 
 ////////////////////////////////////////
 // RuntimeId: 05136
-// TypeInfo:  0x0000000142C1DFA8
+// TypeInfo: 0x0000000142C1DFA8
 struct EntityOwnerUid
 {
     unsigned __int32 m_Id; //0x0000
@@ -8854,7 +8854,7 @@ struct EntityOwnerUid
 
 ////////////////////////////////////////
 // RuntimeId: 05134
-// TypeInfo:  0x0000000142C1DFC8
+// TypeInfo: 0x0000000142C1DFC8
 struct EntityUid
 {
     unsigned __int32 m_Id; //0x0000
@@ -8862,7 +8862,7 @@ struct EntityUid
 
 ////////////////////////////////////////
 // RuntimeId: 05090
-// TypeInfo:  0x0000000142C1DFE8
+// TypeInfo: 0x0000000142C1DFE8
 struct PropertyChannel
 {
     Realm m_Realm; //0x0000
@@ -8871,7 +8871,7 @@ struct PropertyChannel
 
 ////////////////////////////////////////
 // RuntimeId: 05088
-// TypeInfo:  0x0000000142C1E008
+// TypeInfo: 0x0000000142C1E008
 struct EventChannel
 {
     Realm m_Realm; //0x0000
@@ -8880,7 +8880,7 @@ struct EventChannel
 
 ////////////////////////////////////////
 // RuntimeId: 05086
-// TypeInfo:  0x0000000142C1E028
+// TypeInfo: 0x0000000142C1E028
 struct LinkChannel
 {
     Realm m_Realm; //0x0000
@@ -8889,7 +8889,7 @@ struct LinkChannel
 
 ////////////////////////////////////////
 // RuntimeId: 05056
-// TypeInfo:  0x0000000142C1E048
+// TypeInfo: 0x0000000142C1E048
 struct DynamicLink
 {
     __int32 m_Id; //0x0000
@@ -8897,7 +8897,7 @@ struct DynamicLink
 
 ////////////////////////////////////////
 // RuntimeId: 05054
-// TypeInfo:  0x0000000142C1E068
+// TypeInfo: 0x0000000142C1E068
 struct DynamicEvent
 {
     __int32 m_Id; //0x0000
@@ -8905,7 +8905,7 @@ struct DynamicEvent
 
 ////////////////////////////////////////
 // RuntimeId: 05052
-// TypeInfo:  0x0000000142C1E088
+// TypeInfo: 0x0000000142C1E088
 struct EventConnection
 {
     DataContainer* m_Source; //0x0000
@@ -8918,7 +8918,7 @@ struct EventConnection
 
 ////////////////////////////////////////
 // RuntimeId: 06969
-// TypeInfo:  0x0000000142C51390
+// TypeInfo: 0x0000000142C51390
 struct AntEventData
 {
     __int32 m_TagId; //0x0000
@@ -8927,7 +8927,7 @@ struct AntEventData
 
 ////////////////////////////////////////
 // RuntimeId: 06995
-// TypeInfo:  0x0000000142C51130
+// TypeInfo: 0x0000000142C51130
 struct BlueprintBundleReference
 {
     char* m_Name; //0x0000
@@ -8937,7 +8937,7 @@ struct BlueprintBundleReference
 
 ////////////////////////////////////////
 // RuntimeId: 04903
-// TypeInfo:  0x0000000142C152C8
+// TypeInfo: 0x0000000142C152C8
 struct EmitterExclusionVolumeBoundingSphereSoA
 {
     Vec4 m_PosX; //0x0000
@@ -8948,7 +8948,7 @@ struct EmitterExclusionVolumeBoundingSphereSoA
 
 ////////////////////////////////////////
 // RuntimeId: 04901
-// TypeInfo:  0x0000000142C152E8
+// TypeInfo: 0x0000000142C152E8
 struct EmitterExclusionVolume
 {
     Vec4 m_Left; //0x0000
@@ -8959,7 +8959,7 @@ struct EmitterExclusionVolume
 
 ////////////////////////////////////////
 // RuntimeId: 04753
-// TypeInfo:  0x0000000142C15250
+// TypeInfo: 0x0000000142C15250
 struct PolynomialTempData
 {
     Vec4 m_Coefficients; //0x0000
@@ -8971,7 +8971,7 @@ struct PolynomialTempData
 
 ////////////////////////////////////////
 // RuntimeId: 04744
-// TypeInfo:  0x0000000142C12BC0
+// TypeInfo: 0x0000000142C12BC0
 struct BreakablePartToStaticEntityPart
 {
     unsigned __int32 m_BreakablePartIndex; //0x0000
@@ -8980,7 +8980,7 @@ struct BreakablePartToStaticEntityPart
 
 ////////////////////////////////////////
 // RuntimeId: 04742
-// TypeInfo:  0x0000000142C12BE0
+// TypeInfo: 0x0000000142C12BE0
 struct StaticModelToBreakableParts
 {
     unsigned __int32 m_StaticModelIndex; //0x0000
@@ -8990,7 +8990,7 @@ struct StaticModelToBreakableParts
 
 ////////////////////////////////////////
 // RuntimeId: 04734
-// TypeInfo:  0x0000000142C12B40
+// TypeInfo: 0x0000000142C12B40
 struct BreakableModelToComponentsSpawnPartObjectsOnCollapseMessage
 {
     char _0x0000[40];
@@ -8998,7 +8998,7 @@ struct BreakableModelToComponentsSpawnPartObjectsOnCollapseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 04733
-// TypeInfo:  0x0000000142C12B60
+// TypeInfo: 0x0000000142C12B60
 struct BreakableModelToComponentsCollapseMessage
 {
     char _0x0000[40];
@@ -9006,7 +9006,7 @@ struct BreakableModelToComponentsCollapseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 04706
-// TypeInfo:  0x0000000142C11B88
+// TypeInfo: 0x0000000142C11B88
 struct DebrisClusterPartInfoData
 {
     Vec3 m_LinearVelocity; //0x0000
@@ -9022,7 +9022,7 @@ struct DebrisClusterPartInfoData
 
 ////////////////////////////////////////
 // RuntimeId: 04700
-// TypeInfo:  0x0000000142C11BA8
+// TypeInfo: 0x0000000142C11BA8
 struct DebrisHavokInfo
 {
     HavokAsset* m_HavokAsset; //0x0000
@@ -9032,7 +9032,7 @@ struct DebrisHavokInfo
 
 ////////////////////////////////////////
 // RuntimeId: 04698
-// TypeInfo:  0x0000000142C11BC8
+// TypeInfo: 0x0000000142C11BC8
 struct DebrisSystemMetrics
 {
     __int32 m_HavokParticleCount; //0x0000
@@ -9041,7 +9041,7 @@ struct DebrisSystemMetrics
 
 ////////////////////////////////////////
 // RuntimeId: 04625
-// TypeInfo:  0x0000000142C09B90
+// TypeInfo: 0x0000000142C09B90
 struct AudioLanguageMapping
 {
     AudioLanguage* m_Source; //0x0000
@@ -9050,7 +9050,7 @@ struct AudioLanguageMapping
 
 ////////////////////////////////////////
 // RuntimeId: 04617
-// TypeInfo:  0x0000000142C09BB0
+// TypeInfo: 0x0000000142C09BB0
 struct SoundPatchPublicNode
 {
     AudioGraphNodeData* m_Node; //0x0000
@@ -9060,7 +9060,7 @@ struct SoundPatchPublicNode
 
 ////////////////////////////////////////
 // RuntimeId: 04599
-// TypeInfo:  0x0000000142C09BD0
+// TypeInfo: 0x0000000142C09BD0
 struct SoundWaveLocalizationInfo
 {
     AudioLanguage* m_Language; //0x0000
@@ -9071,7 +9071,7 @@ struct SoundWaveLocalizationInfo
 
 ////////////////////////////////////////
 // RuntimeId: 04593
-// TypeInfo:  0x0000000142C09BF0
+// TypeInfo: 0x0000000142C09BF0
 struct SoundDataReference
 {
     DataContainer* m_DataOwner; //0x0000
@@ -9080,7 +9080,7 @@ struct SoundDataReference
 
 ////////////////////////////////////////
 // RuntimeId: 04581
-// TypeInfo:  0x0000000142C09C10
+// TypeInfo: 0x0000000142C09C10
 struct MixerInputInfo
 {
     MixerValueAccumulateMode m_Mode; //0x0000
@@ -9090,7 +9090,7 @@ struct MixerInputInfo
 
 ////////////////////////////////////////
 // RuntimeId: 04575
-// TypeInfo:  0x0000000142C09C30
+// TypeInfo: 0x0000000142C09C30
 struct MixerPresetNodeData
 {
     AudioGraphNodeData* m_Node; //0x0000
@@ -9100,7 +9100,7 @@ struct MixerPresetNodeData
 
 ////////////////////////////////////////
 // RuntimeId: 04571
-// TypeInfo:  0x0000000142C09C70
+// TypeInfo: 0x0000000142C09C70
 struct MixGroupPropertyValue
 {
     unsigned __int32 m_Property; //0x0000
@@ -9111,7 +9111,7 @@ struct MixGroupPropertyValue
 
 ////////////////////////////////////////
 // RuntimeId: 04573
-// TypeInfo:  0x0000000142C09C50
+// TypeInfo: 0x0000000142C09C50
 struct MixerPresetGroupData
 {
     MixGroup* m_Group; //0x0000
@@ -9127,7 +9127,7 @@ struct MixerPresetGroupData
 
 ////////////////////////////////////////
 // RuntimeId: 04565
-// TypeInfo:  0x0000000142C09C90
+// TypeInfo: 0x0000000142C09C90
 struct MixGroupPropertyParameters
 {
     unsigned __int32 m_Property; //0x0000
@@ -9141,7 +9141,7 @@ struct MixGroupPropertyParameters
 
 ////////////////////////////////////////
 // RuntimeId: 04511
-// TypeInfo:  0x0000000142C09A10
+// TypeInfo: 0x0000000142C09A10
 struct AudioGraphNodePort
 {
     float m_UnconnectedValue; //0x0000
@@ -9152,7 +9152,7 @@ struct AudioGraphNodePort
 
 ////////////////////////////////////////
 // RuntimeId: 04453
-// TypeInfo:  0x0000000142C09CB0
+// TypeInfo: 0x0000000142C09CB0
 struct RangeMapperEntry
 {
     float m_RangeStart; //0x0000
@@ -9162,7 +9162,7 @@ struct RangeMapperEntry
 
 ////////////////////////////////////////
 // RuntimeId: 04355
-// TypeInfo:  0x0000000142C09CD0
+// TypeInfo: 0x0000000142C09CD0
 struct VoiceOverManuscriptLanguageColumns
 {
     AudioLanguage* m_Language; //0x0000
@@ -9172,7 +9172,7 @@ struct VoiceOverManuscriptLanguageColumns
 
 ////////////////////////////////////////
 // RuntimeId: 04327
-// TypeInfo:  0x0000000142C09A30
+// TypeInfo: 0x0000000142C09A30
 struct VoiceOverConversationInfo
 {
     Array<VoiceOverDialogGroup*> m_Groups; //0x0000
@@ -9188,7 +9188,7 @@ struct VoiceOverConversationInfo
 
 ////////////////////////////////////////
 // RuntimeId: 04315
-// TypeInfo:  0x0000000142C09CF0
+// TypeInfo: 0x0000000142C09CF0
 struct VoiceOverDialogTakeMapping
 {
     float m_TakeControlMin; //0x0000
@@ -9199,7 +9199,7 @@ struct VoiceOverDialogTakeMapping
 
 ////////////////////////////////////////
 // RuntimeId: 04309
-// TypeInfo:  0x0000000142C09D10
+// TypeInfo: 0x0000000142C09D10
 struct VoiceOverDialogTake
 {
     SoundWaveAsset* m_Wave; //0x0000
@@ -9207,7 +9207,7 @@ struct VoiceOverDialogTake
 
 ////////////////////////////////////////
 // RuntimeId: 04229
-// TypeInfo:  0x0000000142C09A50
+// TypeInfo: 0x0000000142C09A50
 struct VoiceOverValueConnection
 {
     VoiceOverExpressionNode* m_TargetNode; //0x0000
@@ -9216,7 +9216,7 @@ struct VoiceOverValueConnection
 
 ////////////////////////////////////////
 // RuntimeId: 04059
-// TypeInfo:  0x0000000142C09B30
+// TypeInfo: 0x0000000142C09B30
 struct SoundGraphPluginRef
 {
     bool m_IsValid; //0x0000
@@ -9226,7 +9226,7 @@ struct SoundGraphPluginRef
 
 ////////////////////////////////////////
 // RuntimeId: 04167
-// TypeInfo:  0x0000000142C09D50
+// TypeInfo: 0x0000000142C09D50
 struct MusicOverlayVariation
 {
     float m_MinimumTimeRemaining; //0x0000
@@ -9236,7 +9236,7 @@ struct MusicOverlayVariation
 
 ////////////////////////////////////////
 // RuntimeId: 04115
-// TypeInfo:  0x0000000142C09D70
+// TypeInfo: 0x0000000142C09D70
 struct SoundScopeStrategyMapping
 {
     SoundScopeData* m_Scope; //0x0000
@@ -9245,7 +9245,7 @@ struct SoundScopeStrategyMapping
 
 ////////////////////////////////////////
 // RuntimeId: 04107
-// TypeInfo:  0x0000000142C09D90
+// TypeInfo: 0x0000000142C09D90
 struct SoundWaveRuntimeVariation
 {
     unsigned __int32 m_PersistentDataSize; //0x0000
@@ -9260,7 +9260,7 @@ struct SoundWaveRuntimeVariation
 
 ////////////////////////////////////////
 // RuntimeId: 04103
-// TypeInfo:  0x0000000142C09DB0
+// TypeInfo: 0x0000000142C09DB0
 struct SoundWaveSubtitle
 {
     float m_Time; //0x0000
@@ -9270,7 +9270,7 @@ struct SoundWaveSubtitle
 
 ////////////////////////////////////////
 // RuntimeId: 04101
-// TypeInfo:  0x0000000142C09DD0
+// TypeInfo: 0x0000000142C09DD0
 struct SoundWaveVariationSegment
 {
     unsigned __int32 m_SamplesOffset; //0x0000
@@ -9280,7 +9280,7 @@ struct SoundWaveVariationSegment
 
 ////////////////////////////////////////
 // RuntimeId: 04087
-// TypeInfo:  0x0000000142C09DF0
+// TypeInfo: 0x0000000142C09DF0
 struct SoundDataChunk
 {
     Guid m_ChunkId; //0x0000
@@ -9290,7 +9290,7 @@ struct SoundDataChunk
 
 ////////////////////////////////////////
 // RuntimeId: 04061
-// TypeInfo:  0x0000000142C09E50
+// TypeInfo: 0x0000000142C09E50
 struct SoundGraphPluginInfo
 {
     unsigned __int32 m_Id; //0x0000
@@ -9303,7 +9303,7 @@ struct SoundGraphPluginInfo
 
 ////////////////////////////////////////
 // RuntimeId: 04065
-// TypeInfo:  0x0000000142C09E10
+// TypeInfo: 0x0000000142C09E10
 struct SoundGraphVoiceInfo
 {
     Array<SoundGraphPluginInfo> m_Plugins; //0x0000
@@ -9311,7 +9311,7 @@ struct SoundGraphVoiceInfo
 
 ////////////////////////////////////////
 // RuntimeId: 04063
-// TypeInfo:  0x0000000142C09E30
+// TypeInfo: 0x0000000142C09E30
 struct SoundGraphLinkedPluginAttribute
 {
     float m_UnconnectedValue; //0x0000
@@ -9325,7 +9325,7 @@ struct SoundGraphLinkedPluginAttribute
 
 ////////////////////////////////////////
 // RuntimeId: 04051
-// TypeInfo:  0x0000000142C09EB0
+// TypeInfo: 0x0000000142C09EB0
 struct SoundGraphPluginConnectionParam
 {
     __int32 m_Value; //0x0000
@@ -9335,7 +9335,7 @@ struct SoundGraphPluginConnectionParam
 
 ////////////////////////////////////////
 // RuntimeId: 04199
-// TypeInfo:  0x0000000142C09D30
+// TypeInfo: 0x0000000142C09D30
 struct MusicPlayerPlugins
 {
     SoundGraphPluginRef m_SndPlayer; //0x0000
@@ -9347,7 +9347,7 @@ struct MusicPlayerPlugins
 
 ////////////////////////////////////////
 // RuntimeId: 04057
-// TypeInfo:  0x0000000142C09E70
+// TypeInfo: 0x0000000142C09E70
 struct SoundGraphPluginConstructParam
 {
     float m_Value; //0x0000
@@ -9357,7 +9357,7 @@ struct SoundGraphPluginConstructParam
 
 ////////////////////////////////////////
 // RuntimeId: 04055
-// TypeInfo:  0x0000000142C09E90
+// TypeInfo: 0x0000000142C09E90
 struct SoundGraphPluginConnection
 {
     SoundGraphPluginConnectionType m_ConnectionType; //0x0000
@@ -9372,7 +9372,7 @@ struct SoundGraphPluginConnection
 
 ////////////////////////////////////////
 // RuntimeId: 04067
-// TypeInfo:  0x0000000142C09B10
+// TypeInfo: 0x0000000142C09B10
 struct SoundGraphInfo
 {
     Array<SoundGraphVoiceInfo> m_Voices; //0x0000
@@ -9385,7 +9385,7 @@ struct SoundGraphInfo
 
 ////////////////////////////////////////
 // RuntimeId: 04045
-// TypeInfo:  0x0000000142C09ED0
+// TypeInfo: 0x0000000142C09ED0
 struct PointEnvelopePoint
 {
     float m_X; //0x0000
@@ -9394,7 +9394,7 @@ struct PointEnvelopePoint
 
 ////////////////////////////////////////
 // RuntimeId: 04017
-// TypeInfo:  0x0000000142C09EF0
+// TypeInfo: 0x0000000142C09EF0
 struct SamplerPlugins
 {
     SoundGraphPluginRef m_SndPlayer; //0x0000
@@ -9405,7 +9405,7 @@ struct SamplerPlugins
 
 ////////////////////////////////////////
 // RuntimeId: 03931
-// TypeInfo:  0x0000000142C09F10
+// TypeInfo: 0x0000000142C09F10
 struct DivisibleLoopPlayerPlugins
 {
     SoundGraphPluginRef m_SndPlayer; //0x0000
@@ -9416,7 +9416,7 @@ struct DivisibleLoopPlayerPlugins
 
 ////////////////////////////////////////
 // RuntimeId: 07949
-// TypeInfo:  0x0000000142C611A0
+// TypeInfo: 0x0000000142C611A0
 struct AntAnimationHandlerData
 {
     AntAnimatableData m_Animatable; //0x0000
@@ -9433,7 +9433,7 @@ struct AntAnimationHandlerData
 
 ////////////////////////////////////////
 // RuntimeId: 03883
-// TypeInfo:  0x0000000142C005A0
+// TypeInfo: 0x0000000142C005A0
 struct AntScenario
 {
     char _0x0000[1];
@@ -9441,7 +9441,7 @@ struct AntScenario
 
 ////////////////////////////////////////
 // RuntimeId: 03881
-// TypeInfo:  0x0000000142C005C0
+// TypeInfo: 0x0000000142C005C0
 struct AntRefInfo
 {
     Guid m_FrostbitePartition; //0x0000
@@ -9451,7 +9451,7 @@ struct AntRefInfo
 
 ////////////////////////////////////////
 // RuntimeId: 09918
-// TypeInfo:  0x0000000142C89708
+// TypeInfo: 0x0000000142C89708
 struct WeaponLagBinding
 {
     AntRef m_EntityPitch; //0x0000
@@ -9463,7 +9463,7 @@ struct WeaponLagBinding
 
 ////////////////////////////////////////
 // RuntimeId: 03850
-// TypeInfo:  0x0000000142BFF7E8
+// TypeInfo: 0x0000000142BFF7E8
 struct CrossGameLauncherSuccessMessage
 {
     char _0x0000[40];
@@ -9471,7 +9471,7 @@ struct CrossGameLauncherSuccessMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03849
-// TypeInfo:  0x0000000142BFF808
+// TypeInfo: 0x0000000142BFF808
 struct CrossGameLauncherFailedMessage
 {
     char _0x0000[48];
@@ -9479,7 +9479,7 @@ struct CrossGameLauncherFailedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03848
-// TypeInfo:  0x0000000142BFF828
+// TypeInfo: 0x0000000142BFF828
 struct CrossGameLauncherStartGameMessage
 {
     char _0x0000[96];
@@ -9487,7 +9487,7 @@ struct CrossGameLauncherStartGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03845
-// TypeInfo:  0x0000000142BFF848
+// TypeInfo: 0x0000000142BFF848
 struct CrossLaunchIds
 {
     char* m_XboxOneId; //0x0000
@@ -9500,7 +9500,7 @@ struct CrossLaunchIds
 
 ////////////////////////////////////////
 // RuntimeId: 03847
-// TypeInfo:  0x0000000142BFF868
+// TypeInfo: 0x0000000142BFF868
 struct StartGameArgs
 {
     char* m_GameArguments; //0x0000
@@ -9509,7 +9509,7 @@ struct StartGameArgs
 
 ////////////////////////////////////////
 // RuntimeId: 03841
-// TypeInfo:  0x0000000142BFF128
+// TypeInfo: 0x0000000142BFF128
 struct CoreSettings
 {
     char* m_Host; //0x0000
@@ -9543,7 +9543,7 @@ struct CoreSettings
 
 ////////////////////////////////////////
 // RuntimeId: 03833
-// TypeInfo:  0x0000000142BFF148
+// TypeInfo: 0x0000000142BFF148
 struct PlatformScalableBool
 {
     bool m_Default; //0x0000
@@ -9555,7 +9555,7 @@ struct PlatformScalableBool
 
 ////////////////////////////////////////
 // RuntimeId: 03831
-// TypeInfo:  0x0000000142BFF168
+// TypeInfo: 0x0000000142BFF168
 struct PlatformScalableFloat
 {
     float m_Default; //0x0000
@@ -9567,7 +9567,7 @@ struct PlatformScalableFloat
 
 ////////////////////////////////////////
 // RuntimeId: 03829
-// TypeInfo:  0x0000000142BFF188
+// TypeInfo: 0x0000000142BFF188
 struct PlatformScalableInt
 {
     __int32 m_Default; //0x0000
@@ -9579,7 +9579,7 @@ struct PlatformScalableInt
 
 ////////////////////////////////////////
 // RuntimeId: 03825
-// TypeInfo:  0x0000000142BFF1A8
+// TypeInfo: 0x0000000142BFF1A8
 struct QualityScalableBool
 {
     bool m_Low; //0x0000
@@ -9590,7 +9590,7 @@ struct QualityScalableBool
 
 ////////////////////////////////////////
 // RuntimeId: 03823
-// TypeInfo:  0x0000000142BFF1C8
+// TypeInfo: 0x0000000142BFF1C8
 struct QualityScalableFloat
 {
     float m_Low; //0x0000
@@ -9601,7 +9601,7 @@ struct QualityScalableFloat
 
 ////////////////////////////////////////
 // RuntimeId: 03821
-// TypeInfo:  0x0000000142BFF1E8
+// TypeInfo: 0x0000000142BFF1E8
 struct QualityScalableInt
 {
     __int32 m_Low; //0x0000
@@ -9612,7 +9612,7 @@ struct QualityScalableInt
 
 ////////////////////////////////////////
 // RuntimeId: 03811
-// TypeInfo:  0x0000000142BFF208
+// TypeInfo: 0x0000000142BFF208
 struct DataField
 {
     char* m_Value; //0x0000
@@ -9623,7 +9623,7 @@ struct DataField
 
 ////////////////////////////////////////
 // RuntimeId: 03807
-// TypeInfo:  0x0000000142BFF228
+// TypeInfo: 0x0000000142BFF228
 struct LinkConnection
 {
     DataContainer* m_Source; //0x0000
@@ -9634,7 +9634,7 @@ struct LinkConnection
 
 ////////////////////////////////////////
 // RuntimeId: 03805
-// TypeInfo:  0x0000000142BFF248
+// TypeInfo: 0x0000000142BFF248
 struct PropertyConnection
 {
     DataContainer* m_Source; //0x0000
@@ -9647,7 +9647,7 @@ struct PropertyConnection
 
 ////////////////////////////////////////
 // RuntimeId: 03785
-// TypeInfo:  0x0000000142BFF268
+// TypeInfo: 0x0000000142BFF268
 struct InternetSimulationState
 {
     float m_ReorderRatio; //0x0000
@@ -9669,7 +9669,7 @@ struct InternetSimulationState
 
 ////////////////////////////////////////
 // RuntimeId: 03783
-// TypeInfo:  0x0000000142BFEF48
+// TypeInfo: 0x0000000142BFEF48
 struct StreamInstallGameInstalledMessage
 {
     char _0x0000[40];
@@ -9677,7 +9677,7 @@ struct StreamInstallGameInstalledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03782
-// TypeInfo:  0x0000000142BFEF68
+// TypeInfo: 0x0000000142BFEF68
 struct StreamInstallRequestResumeMessage
 {
     char _0x0000[40];
@@ -9685,7 +9685,7 @@ struct StreamInstallRequestResumeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03781
-// TypeInfo:  0x0000000142BFEF88
+// TypeInfo: 0x0000000142BFEF88
 struct StreamInstallRequestSuspendMessage
 {
     char _0x0000[40];
@@ -9693,7 +9693,7 @@ struct StreamInstallRequestSuspendMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03780
-// TypeInfo:  0x0000000142BFEFA8
+// TypeInfo: 0x0000000142BFEFA8
 struct StreamInstallInstallDoneMessage
 {
     char _0x0000[48];
@@ -9701,7 +9701,7 @@ struct StreamInstallInstallDoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03779
-// TypeInfo:  0x0000000142BFEFC8
+// TypeInfo: 0x0000000142BFEFC8
 struct StreamInstallChunkInstalledMessage
 {
     char _0x0000[48];
@@ -9709,7 +9709,7 @@ struct StreamInstallChunkInstalledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03778
-// TypeInfo:  0x0000000142BFEFE8
+// TypeInfo: 0x0000000142BFEFE8
 struct StreamInstallInstallProgressMessage
 {
     char _0x0000[56];
@@ -9717,7 +9717,7 @@ struct StreamInstallInstallProgressMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03777
-// TypeInfo:  0x0000000142BFF008
+// TypeInfo: 0x0000000142BFF008
 struct StreamInstallInstallingMessage
 {
     char _0x0000[40];
@@ -9725,7 +9725,7 @@ struct StreamInstallInstallingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03776
-// TypeInfo:  0x0000000142BFF028
+// TypeInfo: 0x0000000142BFF028
 struct CoreCleanupMessage
 {
     char _0x0000[40];
@@ -9733,7 +9733,7 @@ struct CoreCleanupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03775
-// TypeInfo:  0x0000000142BFF048
+// TypeInfo: 0x0000000142BFF048
 struct CoreSublevelStartStreamOutMessage
 {
     char _0x0000[40];
@@ -9741,7 +9741,7 @@ struct CoreSublevelStartStreamOutMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03774
-// TypeInfo:  0x0000000142BFF068
+// TypeInfo: 0x0000000142BFF068
 struct CorePanicMessage
 {
     char _0x0000[40];
@@ -9749,7 +9749,7 @@ struct CorePanicMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03773
-// TypeInfo:  0x0000000142BFF088
+// TypeInfo: 0x0000000142BFF088
 struct CoreQuitMessage
 {
     char _0x0000[40];
@@ -9757,7 +9757,7 @@ struct CoreQuitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03772
-// TypeInfo:  0x0000000142BFF0A8
+// TypeInfo: 0x0000000142BFF0A8
 struct CoreUpdateClipboardMessage
 {
     char _0x0000[48];
@@ -9765,7 +9765,7 @@ struct CoreUpdateClipboardMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03771
-// TypeInfo:  0x0000000142BFF0C8
+// TypeInfo: 0x0000000142BFF0C8
 struct CoreMainThreadInitMessage
 {
     char _0x0000[40];
@@ -9773,7 +9773,7 @@ struct CoreMainThreadInitMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03770
-// TypeInfo:  0x0000000142BFF0E8
+// TypeInfo: 0x0000000142BFF0E8
 struct CoreHibernateMessage
 {
     char _0x0000[40];
@@ -9781,7 +9781,7 @@ struct CoreHibernateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03769
-// TypeInfo:  0x0000000142BFF108
+// TypeInfo: 0x0000000142BFF108
 struct CoreQuittingInitiatedMessage
 {
     char _0x0000[48];
@@ -9789,7 +9789,7 @@ struct CoreQuittingInitiatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 03762
-// TypeInfo:  0x0000000142BFDDE8
+// TypeInfo: 0x0000000142BFDDE8
 struct SplineCurve
 {
     Vec4 m_XValues0; //0x0000
@@ -9811,7 +9811,7 @@ struct SplineCurve
 
 ////////////////////////////////////////
 // RuntimeId: 03754
-// TypeInfo:  0x0000000142BFDE28
+// TypeInfo: 0x0000000142BFDE28
 struct AudioCurvePoint
 {
     float m_X; //0x0000
@@ -9821,7 +9821,7 @@ struct AudioCurvePoint
 
 ////////////////////////////////////////
 // RuntimeId: 03758
-// TypeInfo:  0x0000000142BFDE08
+// TypeInfo: 0x0000000142BFDE08
 struct AudioCurve
 {
     Array<AudioCurvePoint> m_Points; //0x0000
@@ -9831,7 +9831,7 @@ struct AudioCurve
 
 ////////////////////////////////////////
 // RuntimeId: 08197
-// TypeInfo:  0x0000000142C654A8
+// TypeInfo: 0x0000000142C654A8
 struct PartInfoData
 {
     AxisAlignedBox m_Aabb; //0x0000
@@ -9840,7 +9840,7 @@ struct PartInfoData
 
 ////////////////////////////////////////
 // RuntimeId: 03710
-// TypeInfo:  0x0000000142305870
+// TypeInfo: 0x0000000142305870
 struct Mat4
 {
     float m_m11; //0x0000
@@ -9863,7 +9863,7 @@ struct Mat4
 
 ////////////////////////////////////////
 // RuntimeId: 09763
-// TypeInfo:  0x0000000142C89D28
+// TypeInfo: 0x0000000142C89D28
 struct WeaponStateData
 {
     Array<unsigned __int32> m_ReferencedAssetHashes; //0x0000
@@ -9895,7 +9895,7 @@ struct WeaponStateData
 
 ////////////////////////////////////////
 // RuntimeId: 03706
-// TypeInfo:  0x00000001423058B0
+// TypeInfo: 0x00000001423058B0
 struct Plane
 {
     float m_x; //0x0000
@@ -9906,7 +9906,7 @@ struct Plane
 
 ////////////////////////////////////////
 // RuntimeId: 03704
-// TypeInfo:  0x0000000142305830
+// TypeInfo: 0x0000000142305830
 struct Quat
 {
     float m_x; //0x0000
@@ -9917,7 +9917,7 @@ struct Quat
 
 ////////////////////////////////////////
 // RuntimeId: 10184
-// TypeInfo:  0x0000000142C92760
+// TypeInfo: 0x0000000142C92760
 struct AmbientWaveSettings
 {
     SplineCurve m_WindDistribution; //0x0000
@@ -9933,7 +9933,7 @@ struct AmbientWaveSettings
 
 ////////////////////////////////////////
 // RuntimeId: 09793
-// TypeInfo:  0x0000000142C89CE8
+// TypeInfo: 0x0000000142C89CE8
 struct BulletHitInfo
 {
     Vec3 m_Direction; //0x0000
@@ -9949,7 +9949,7 @@ struct BulletHitInfo
 
 ////////////////////////////////////////
 // RuntimeId: 09037
-// TypeInfo:  0x0000000142C78FE8
+// TypeInfo: 0x0000000142C78FE8
 struct LensFlareElement
 {
     Vec4 m_SizeOccluderCurve; //0x0000
@@ -9974,7 +9974,7 @@ struct LensFlareElement
 
 ////////////////////////////////////////
 // RuntimeId: 03690
-// TypeInfo:  0x0000000142BFAF68
+// TypeInfo: 0x0000000142BFAF68
 struct SuppressionReactionData
 {
     float m_SuppressionHighThreshold; //0x0000
@@ -9984,7 +9984,7 @@ struct SuppressionReactionData
 
 ////////////////////////////////////////
 // RuntimeId: 03542
-// TypeInfo:  0x0000000142BFB068
+// TypeInfo: 0x0000000142BFB068
 struct ScoringBucketModifierData
 {
     ScoringBucket m_Bucket; //0x0000
@@ -9993,7 +9993,7 @@ struct ScoringBucketModifierData
 
 ////////////////////////////////////////
 // RuntimeId: 03540
-// TypeInfo:  0x0000000142BFB088
+// TypeInfo: 0x0000000142BFB088
 struct ScoringBucketUnlockData
 {
     unsigned __int32 m_PointsNeeded; //0x0000
@@ -10003,7 +10003,7 @@ struct ScoringBucketUnlockData
 
 ////////////////////////////////////////
 // RuntimeId: 03530
-// TypeInfo:  0x0000000142BFB0C8
+// TypeInfo: 0x0000000142BFB0C8
 struct MapRotationEntry
 {
     char* m_ShortGameModeName; //0x0000
@@ -10014,7 +10014,7 @@ struct MapRotationEntry
 
 ////////////////////////////////////////
 // RuntimeId: 03532
-// TypeInfo:  0x0000000142BFB0A8
+// TypeInfo: 0x0000000142BFB0A8
 struct MapRotationConfig
 {
     __int32 m_MapRotationId; //0x0000
@@ -10029,7 +10029,7 @@ struct MapRotationConfig
 
 ////////////////////////////////////////
 // RuntimeId: 03528
-// TypeInfo:  0x0000000142BFB0E8
+// TypeInfo: 0x0000000142BFB0E8
 struct SettingCategory
 {
     unsigned __int32 m_CategoryId; //0x0000
@@ -10039,7 +10039,7 @@ struct SettingCategory
 
 ////////////////////////////////////////
 // RuntimeId: 03522
-// TypeInfo:  0x0000000142BFB148
+// TypeInfo: 0x0000000142BFB148
 struct SettingRange
 {
     char* m_Key; //0x0000
@@ -10049,7 +10049,7 @@ struct SettingRange
 
 ////////////////////////////////////////
 // RuntimeId: 03524
-// TypeInfo:  0x0000000142BFB128
+// TypeInfo: 0x0000000142BFB128
 struct RSPPlatformSettingRange
 {
     Array<GamePlatform> m_Platforms; //0x0000
@@ -10058,7 +10058,7 @@ struct RSPPlatformSettingRange
 
 ////////////////////////////////////////
 // RuntimeId: 03526
-// TypeInfo:  0x0000000142BFB108
+// TypeInfo: 0x0000000142BFB108
 struct SettingsRangeConfig
 {
     char* m_Key; //0x0000
@@ -10068,7 +10068,7 @@ struct SettingsRangeConfig
 
 ////////////////////////////////////////
 // RuntimeId: 03516
-// TypeInfo:  0x0000000142BFB1A8
+// TypeInfo: 0x0000000142BFB1A8
 struct LockedSettingConfig
 {
     char* m_Key; //0x0000
@@ -10079,7 +10079,7 @@ struct LockedSettingConfig
 
 ////////////////////////////////////////
 // RuntimeId: 03518
-// TypeInfo:  0x0000000142BFB188
+// TypeInfo: 0x0000000142BFB188
 struct RSPPlatformSetting
 {
     Array<GamePlatform> m_Platforms; //0x0000
@@ -10088,7 +10088,7 @@ struct RSPPlatformSetting
 
 ////////////////////////////////////////
 // RuntimeId: 03520
-// TypeInfo:  0x0000000142BFB168
+// TypeInfo: 0x0000000142BFB168
 struct PresetTypeConfig
 {
     __int32 m_PresetId; //0x0000
@@ -10103,7 +10103,7 @@ struct PresetTypeConfig
 
 ////////////////////////////////////////
 // RuntimeId: 03514
-// TypeInfo:  0x0000000142BFB1C8
+// TypeInfo: 0x0000000142BFB1C8
 struct SettingConfig
 {
     char* m_Key; //0x0000
@@ -10115,7 +10115,7 @@ struct SettingConfig
 
 ////////////////////////////////////////
 // RuntimeId: 03498
-// TypeInfo:  0x0000000142BFB1E8
+// TypeInfo: 0x0000000142BFB1E8
 struct StatSpamSetting
 {
     StatEvent m_Event; //0x0000
@@ -10127,7 +10127,7 @@ struct StatSpamSetting
 
 ////////////////////////////////////////
 // RuntimeId: 03492
-// TypeInfo:  0x0000000142BFB048
+// TypeInfo: 0x0000000142BFB048
 struct SkillLevelComponent
 {
     float m_MaxValue; //0x0000
@@ -10136,7 +10136,7 @@ struct SkillLevelComponent
 
 ////////////////////////////////////////
 // RuntimeId: 03466
-// TypeInfo:  0x0000000142BF11B8
+// TypeInfo: 0x0000000142BF11B8
 struct SquadIcon
 {
     char* m_Black; //0x0000
@@ -10145,7 +10145,7 @@ struct SquadIcon
 
 ////////////////////////////////////////
 // RuntimeId: 03430
-// TypeInfo:  0x0000000142BF11D8
+// TypeInfo: 0x0000000142BF11D8
 struct UIPerformanceMetricSettings
 {
     UIPerformanceMetric m_MetricType; //0x0000
@@ -10164,7 +10164,7 @@ struct UIPerformanceMetricSettings
 
 ////////////////////////////////////////
 // RuntimeId: 03408
-// TypeInfo:  0x0000000142BF0CB8
+// TypeInfo: 0x0000000142BF0CB8
 struct UICustomizationDisplay
 {
     Array<UICustomizationCategoryOrdering*> m_CategoryOrdering; //0x0000
@@ -10172,7 +10172,7 @@ struct UICustomizationDisplay
 
 ////////////////////////////////////////
 // RuntimeId: 03366
-// TypeInfo:  0x0000000142BF11F8
+// TypeInfo: 0x0000000142BF11F8
 struct TitanScoringInfoState
 {
     char* m_ShipBarOutlineTexture; //0x0000
@@ -10183,7 +10183,7 @@ struct TitanScoringInfoState
 
 ////////////////////////////////////////
 // RuntimeId: 03356
-// TypeInfo:  0x0000000142BF1218
+// TypeInfo: 0x0000000142BF1218
 struct OverrideVideoData
 {
     MovieTextureAsset* m_Video; //0x0000
@@ -10193,7 +10193,7 @@ struct OverrideVideoData
 
 ////////////////////////////////////////
 // RuntimeId: 03326
-// TypeInfo:  0x0000000142BF1238
+// TypeInfo: 0x0000000142BF1238
 struct CellTemplateData
 {
     char* m_MappingID; //0x0000
@@ -10204,7 +10204,7 @@ struct CellTemplateData
 
 ////////////////////////////////////////
 // RuntimeId: 03298
-// TypeInfo:  0x0000000142BF1278
+// TypeInfo: 0x0000000142BF1278
 struct UIInputConceptFilterData
 {
     InputConceptIdentifiers m_First; //0x0000
@@ -10215,7 +10215,7 @@ struct UIInputConceptFilterData
 
 ////////////////////////////////////////
 // RuntimeId: 03300
-// TypeInfo:  0x0000000142BF1258
+// TypeInfo: 0x0000000142BF1258
 struct UIOptionKeyBindingsType
 {
     char* m_ActivatorEventName; //0x0000
@@ -10225,7 +10225,7 @@ struct UIOptionKeyBindingsType
 
 ////////////////////////////////////////
 // RuntimeId: 03296
-// TypeInfo:  0x0000000142BF1298
+// TypeInfo: 0x0000000142BF1298
 struct UIOptionTableColumn
 {
     float m_widthMin; //0x0000
@@ -10236,7 +10236,7 @@ struct UIOptionTableColumn
 
 ////////////////////////////////////////
 // RuntimeId: 03288
-// TypeInfo:  0x0000000142BF0CD8
+// TypeInfo: 0x0000000142BF0CD8
 struct UIOptionsConsoleControlsTextFieldMappings
 {
     Array<UIOptionControlTextFieldMapping_NonChanging*> m_NonChanging; //0x0000
@@ -10246,7 +10246,7 @@ struct UIOptionsConsoleControlsTextFieldMappings
 
 ////////////////////////////////////////
 // RuntimeId: 03276
-// TypeInfo:  0x0000000142BF12B8
+// TypeInfo: 0x0000000142BF12B8
 struct UIOptionsOption
 {
     ProfileOptionData* m_OptionData; //0x0000
@@ -10270,7 +10270,7 @@ struct UIOptionsOption
 
 ////////////////////////////////////////
 // RuntimeId: 03270
-// TypeInfo:  0x0000000142BF12F8
+// TypeInfo: 0x0000000142BF12F8
 struct SquadDeployGameModeData
 {
     SquadDeployGameMode m_GameMode; //0x0000
@@ -10284,7 +10284,7 @@ struct SquadDeployGameModeData
 
 ////////////////////////////////////////
 // RuntimeId: 03272
-// TypeInfo:  0x0000000142BF12D8
+// TypeInfo: 0x0000000142BF12D8
 struct SquadDeployMapPackData
 {
     SquadDeployMapPack m_MapPack; //0x0000
@@ -10296,7 +10296,7 @@ struct SquadDeployMapPackData
 
 ////////////////////////////////////////
 // RuntimeId: 03254
-// TypeInfo:  0x0000000142BF1318
+// TypeInfo: 0x0000000142BF1318
 struct UITabBarButton
 {
     char* m_Sid; //0x0000
@@ -10310,7 +10310,7 @@ struct UITabBarButton
 
 ////////////////////////////////////////
 // RuntimeId: 03248
-// TypeInfo:  0x0000000142BF0D18
+// TypeInfo: 0x0000000142BF0D18
 struct UIWorldIconZoneFloats
 {
     float m_Interaction; //0x0000
@@ -10321,7 +10321,7 @@ struct UIWorldIconZoneFloats
 
 ////////////////////////////////////////
 // RuntimeId: 03250
-// TypeInfo:  0x0000000142BF0CF8
+// TypeInfo: 0x0000000142BF0CF8
 struct UIWorldIconFadeConfiguration
 {
     UIWorldIconZoneFloats m_ZoneFadeValues; //0x0000
@@ -10330,7 +10330,7 @@ struct UIWorldIconFadeConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03228
-// TypeInfo:  0x0000000142BF0D38
+// TypeInfo: 0x0000000142BF0D38
 struct BFUIColorizationData
 {
     BFUIColorizationMode m_ColorizationMode; //0x0000
@@ -10340,7 +10340,7 @@ struct BFUIColorizationData
 
 ////////////////////////////////////////
 // RuntimeId: 03216
-// TypeInfo:  0x0000000142BF0D58
+// TypeInfo: 0x0000000142BF0D58
 struct UIAirRadarConfiguration
 {
     float m_RadarSensitivity; //0x0000
@@ -10351,7 +10351,7 @@ struct UIAirRadarConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03214
-// TypeInfo:  0x0000000142BF0D78
+// TypeInfo: 0x0000000142BF0D78
 struct UIChatConfiguration
 {
     UICppScreenData* m_ChatScreenData; //0x0000
@@ -10359,7 +10359,7 @@ struct UIChatConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03212
-// TypeInfo:  0x0000000142BF0D98
+// TypeInfo: 0x0000000142BF0D98
 struct UIMinimapIconConfiguration
 {
     UIElementColor m_BgCol; //0x0000
@@ -10369,7 +10369,7 @@ struct UIMinimapIconConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03210
-// TypeInfo:  0x0000000142BF0DB8
+// TypeInfo: 0x0000000142BF0DB8
 struct UIDeployConfiguration
 {
     UIElementFontStyle* m_SpawnLabelFont; //0x0000
@@ -10377,7 +10377,7 @@ struct UIDeployConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03200
-// TypeInfo:  0x0000000142BF0E38
+// TypeInfo: 0x0000000142BF0E38
 struct UILockingConfiguration
 {
     UIElementColor m_TextColor; //0x0000
@@ -10405,7 +10405,7 @@ struct UILockingConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03206
-// TypeInfo:  0x0000000142BF0DF8
+// TypeInfo: 0x0000000142BF0DF8
 struct UIWorldZoneDistanceConfiguration
 {
     float m_CriticalDistance; //0x0000
@@ -10414,7 +10414,7 @@ struct UIWorldZoneDistanceConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03202
-// TypeInfo:  0x0000000142BF0E18
+// TypeInfo: 0x0000000142BF0E18
 struct UIShieldIconConfiguration
 {
     float m_BlinkRate; //0x0000
@@ -10426,7 +10426,7 @@ struct UIShieldIconConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03198
-// TypeInfo:  0x0000000142BF0E58
+// TypeInfo: 0x0000000142BF0E58
 struct UIColorConfiguration
 {
     UIElementColor m_Neutral; //0x0000
@@ -10443,7 +10443,7 @@ struct UIColorConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03188
-// TypeInfo:  0x0000000142BF0ED8
+// TypeInfo: 0x0000000142BF0ED8
 struct UIGrenadeConfiguration
 {
     float m_IconVerticalOffset; //0x0000
@@ -10463,7 +10463,7 @@ struct UIGrenadeConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03190
-// TypeInfo:  0x0000000142BF0EB8
+// TypeInfo: 0x0000000142BF0EB8
 struct UINametagVisibilityValues
 {
     bool m_VisibleClose; //0x0000
@@ -10472,7 +10472,7 @@ struct UINametagVisibilityValues
 
 ////////////////////////////////////////
 // RuntimeId: 03192
-// TypeInfo:  0x0000000142BF0E98
+// TypeInfo: 0x0000000142BF0E98
 struct UINametagVisibilityConfiguration
 {
     UINametagVisibilityValues m_LookAtVisibility; //0x0000
@@ -10481,7 +10481,7 @@ struct UINametagVisibilityConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03194
-// TypeInfo:  0x0000000142BF0E78
+// TypeInfo: 0x0000000142BF0E78
 struct UINametagBehavior
 {
     float m_CloseDistance; //0x0000
@@ -10495,7 +10495,7 @@ struct UINametagBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 03208
-// TypeInfo:  0x0000000142BF0DD8
+// TypeInfo: 0x0000000142BF0DD8
 struct UIWorldIconConfiguration
 {
     UILockingConfiguration m_LockingCfg; //0x0000
@@ -10514,7 +10514,7 @@ struct UIWorldIconConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 03160
-// TypeInfo:  0x0000000142BF0EF8
+// TypeInfo: 0x0000000142BF0EF8
 struct UIGridStepperConfig
 {
     UIElementScrollbarStyle* m_ScrollBarStyle; //0x0000
@@ -10526,7 +10526,7 @@ struct UIGridStepperConfig
 
 ////////////////////////////////////////
 // RuntimeId: 03100
-// TypeInfo:  0x0000000142BF1338
+// TypeInfo: 0x0000000142BF1338
 struct UIHitIndicatorIcon
 {
     float m_BaseShowTime; //0x0000
@@ -10542,7 +10542,7 @@ struct UIHitIndicatorIcon
 
 ////////////////////////////////////////
 // RuntimeId: 03056
-// TypeInfo:  0x0000000142BF1358
+// TypeInfo: 0x0000000142BF1358
 struct UIBattledashHorisontalListData
 {
     unsigned __int32 m_Index; //0x0000
@@ -10555,7 +10555,7 @@ struct UIBattledashHorisontalListData
 
 ////////////////////////////////////////
 // RuntimeId: 03052
-// TypeInfo:  0x0000000142BF1378
+// TypeInfo: 0x0000000142BF1378
 struct UIAutoListCategoryData
 {
     UIAutoListType m_listtype; //0x0000
@@ -10569,7 +10569,7 @@ struct UIAutoListCategoryData
 
 ////////////////////////////////////////
 // RuntimeId: 03044
-// TypeInfo:  0x0000000142BF1398
+// TypeInfo: 0x0000000142BF1398
 struct UIBattledashDetailPane
 {
     char* m_title; //0x0000
@@ -10579,7 +10579,7 @@ struct UIBattledashDetailPane
 
 ////////////////////////////////////////
 // RuntimeId: 03036
-// TypeInfo:  0x0000000142BF13B8
+// TypeInfo: 0x0000000142BF13B8
 struct UIBattledashIndicatorData
 {
     char* m_Name; //0x0000
@@ -10590,7 +10590,7 @@ struct UIBattledashIndicatorData
 
 ////////////////////////////////////////
 // RuntimeId: 03008
-// TypeInfo:  0x0000000142BF13D8
+// TypeInfo: 0x0000000142BF13D8
 struct UINPXTooltipWidgetLayout
 {
     UILayoutMode m_LayoutMode; //0x0000
@@ -10602,7 +10602,7 @@ struct UINPXTooltipWidgetLayout
 
 ////////////////////////////////////////
 // RuntimeId: 02988
-// TypeInfo:  0x0000000142BF0F18
+// TypeInfo: 0x0000000142BF0F18
 struct UIScoreboardColumnStyle
 {
     float m_Width; //0x0000
@@ -10614,7 +10614,7 @@ struct UIScoreboardColumnStyle
 
 ////////////////////////////////////////
 // RuntimeId: 02976
-// TypeInfo:  0x0000000142BF13F8
+// TypeInfo: 0x0000000142BF13F8
 struct UICommoRoseButtonInfo
 {
     char* m_ButtonId; //0x0000
@@ -10637,7 +10637,7 @@ struct UICommoRoseButtonInfo
 
 ////////////////////////////////////////
 // RuntimeId: 02930
-// TypeInfo:  0x0000000142BF0F38
+// TypeInfo: 0x0000000142BF0F38
 struct UIDeactivateCameraMessageBase
 {
     char _0x0000[40];
@@ -10645,7 +10645,7 @@ struct UIDeactivateCameraMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 02929
-// TypeInfo:  0x0000000142BF0F58
+// TypeInfo: 0x0000000142BF0F58
 struct UIDeployScreenUpdateCameraMessage
 {
     char _0x0000[40];
@@ -10653,7 +10653,7 @@ struct UIDeployScreenUpdateCameraMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02928
-// TypeInfo:  0x0000000142BF0F78
+// TypeInfo: 0x0000000142BF0F78
 struct UIMapWidgetHelperData
 {
     Vec4 m_MapFocusMargins; //0x0000
@@ -10663,7 +10663,7 @@ struct UIMapWidgetHelperData
 
 ////////////////////////////////////////
 // RuntimeId: 02888
-// TypeInfo:  0x0000000142BF0F98
+// TypeInfo: 0x0000000142BF0F98
 struct BFServerConfigurationData
 {
     unsigned __int32 m_ScoreMultiplier; //0x0000
@@ -10671,7 +10671,7 @@ struct BFServerConfigurationData
 
 ////////////////////////////////////////
 // RuntimeId: 02890
-// TypeInfo:  0x0000000142BF1418
+// TypeInfo: 0x0000000142BF1418
 struct BFServerConfigurationSchedule
 {
     Array<char*> m_Licenses; //0x0000
@@ -10682,7 +10682,7 @@ struct BFServerConfigurationSchedule
 
 ////////////////////////////////////////
 // RuntimeId: 02858
-// TypeInfo:  0x0000000142BF1438
+// TypeInfo: 0x0000000142BF1438
 struct GameConfigurationContentMapping
 {
     GamePlatform m_Platform; //0x0000
@@ -10693,7 +10693,7 @@ struct GameConfigurationContentMapping
 
 ////////////////////////////////////////
 // RuntimeId: 02834
-// TypeInfo:  0x0000000142BF0FD8
+// TypeInfo: 0x0000000142BF0FD8
 struct PeerCreateGameParameters
 {
     GameParametersData* m_Base; //0x0000
@@ -10703,7 +10703,7 @@ struct PeerCreateGameParameters
 
 ////////////////////////////////////////
 // RuntimeId: 02830
-// TypeInfo:  0x0000000142BF1458
+// TypeInfo: 0x0000000142BF1458
 struct NucleusPlatformConfiguration
 {
     GamePlatform m_Platform; //0x0000
@@ -10719,7 +10719,7 @@ struct NucleusPlatformConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 02828
-// TypeInfo:  0x0000000142BF1478
+// TypeInfo: 0x0000000142BF1478
 struct NucleusEnvironmentConfiguration
 {
     NucleusEnvironment m_Env; //0x0000
@@ -10730,7 +10730,7 @@ struct NucleusEnvironmentConfiguration
 
 ////////////////////////////////////////
 // RuntimeId: 02816
-// TypeInfo:  0x0000000142BF1498
+// TypeInfo: 0x0000000142BF1498
 struct BFModMaskMapping
 {
     char* m_ModName; //0x0000
@@ -10741,7 +10741,7 @@ struct BFModMaskMapping
 
 ////////////////////////////////////////
 // RuntimeId: 02770
-// TypeInfo:  0x0000000142BF14B8
+// TypeInfo: 0x0000000142BF14B8
 struct PCAchievementSettings
 {
     char _0x0000[1];
@@ -10749,7 +10749,7 @@ struct PCAchievementSettings
 
 ////////////////////////////////////////
 // RuntimeId: 02768
-// TypeInfo:  0x0000000142BF0FF8
+// TypeInfo: 0x0000000142BF0FF8
 struct DurangoAchievementSettings
 {
     unsigned __int32 m_CompletionValue; //0x0000
@@ -10757,7 +10757,7 @@ struct DurangoAchievementSettings
 
 ////////////////////////////////////////
 // RuntimeId: 02762
-// TypeInfo:  0x0000000142BF14D8
+// TypeInfo: 0x0000000142BF14D8
 struct AwardStarNameInstance
 {
     char* m_Name; //0x0000
@@ -10766,7 +10766,7 @@ struct AwardStarNameInstance
 
 ////////////////////////////////////////
 // RuntimeId: 02754
-// TypeInfo:  0x0000000142BF14F8
+// TypeInfo: 0x0000000142BF14F8
 struct EventScaleData
 {
     StatEvent m_Event; //0x0000
@@ -10775,7 +10775,7 @@ struct EventScaleData
 
 ////////////////////////////////////////
 // RuntimeId: 02752
-// TypeInfo:  0x0000000142BF1518
+// TypeInfo: 0x0000000142BF1518
 struct CriteriaAward
 {
     AwardData* m_Award; //0x0000
@@ -10786,7 +10786,7 @@ struct CriteriaAward
 
 ////////////////////////////////////////
 // RuntimeId: 02746
-// TypeInfo:  0x0000000142BF1538
+// TypeInfo: 0x0000000142BF1538
 struct CriteriaStarCategoryInstance
 {
     char* m_Name; //0x0000
@@ -10796,7 +10796,7 @@ struct CriteriaStarCategoryInstance
 
 ////////////////////////////////////////
 // RuntimeId: 02728
-// TypeInfo:  0x0000000142BF1558
+// TypeInfo: 0x0000000142BF1558
 struct AIProximityReactionsBinding
 {
     AntRef m_AIReaction; //0x0000
@@ -10830,7 +10830,7 @@ struct AIProximityReactionsBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02710
-// TypeInfo:  0x0000000142BF1098
+// TypeInfo: 0x0000000142BF1098
 struct ScenarioTaskData
 {
     Vec3 m_StartPoint; //0x0000
@@ -10855,7 +10855,7 @@ struct ScenarioTaskData
 
 ////////////////////////////////////////
 // RuntimeId: 02708
-// TypeInfo:  0x0000000142BF10B8
+// TypeInfo: 0x0000000142BF10B8
 struct AILocoCoverTaskData
 {
     Vec3 m_WantedPos; //0x0000
@@ -10882,7 +10882,7 @@ struct AILocoCoverTaskData
 
 ////////////////////////////////////////
 // RuntimeId: 02694
-// TypeInfo:  0x0000000142BF10F8
+// TypeInfo: 0x0000000142BF10F8
 struct AILocoBaseTaskData
 {
     AntPoseEnum m_PoseChangeMovingTowards; //0x0000
@@ -10898,7 +10898,7 @@ struct AILocoBaseTaskData
 
 ////////////////////////////////////////
 // RuntimeId: 02692
-// TypeInfo:  0x0000000142BF1118
+// TypeInfo: 0x0000000142BF1118
 struct AILocoMoveTaskData
 {
     Vec3 m_WantedPos; //0x0000
@@ -10915,7 +10915,7 @@ struct AILocoMoveTaskData
 
 ////////////////////////////////////////
 // RuntimeId: 02690
-// TypeInfo:  0x0000000142BF1138
+// TypeInfo: 0x0000000142BF1138
 struct AILocoVaultTaskData
 {
     Vec3 m_StartPoint; //0x0000
@@ -10932,7 +10932,7 @@ struct AILocoVaultTaskData
 
 ////////////////////////////////////////
 // RuntimeId: 02680
-// TypeInfo:  0x0000000142BF1158
+// TypeInfo: 0x0000000142BF1158
 struct AILocoCoverBinding
 {
     AntRef m_PrepareFire; //0x0000
@@ -10965,7 +10965,7 @@ struct AILocoCoverBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02678
-// TypeInfo:  0x0000000142BF1178
+// TypeInfo: 0x0000000142BF1178
 struct AILocoVaultBinding
 {
     AntRef m_Vault; //0x0000
@@ -10979,7 +10979,7 @@ struct AILocoVaultBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02676
-// TypeInfo:  0x0000000142BF1198
+// TypeInfo: 0x0000000142BF1198
 struct AILocoBinding
 {
     AntRef m_LocoTarget; //0x0000
@@ -10997,7 +10997,7 @@ struct AILocoBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02670
-// TypeInfo:  0x0000000142BF1578
+// TypeInfo: 0x0000000142BF1578
 struct AdvertisementZoneMember
 {
     char* m_Identifier; //0x0000
@@ -11006,7 +11006,7 @@ struct AdvertisementZoneMember
 
 ////////////////////////////////////////
 // RuntimeId: 02666
-// TypeInfo:  0x0000000142BE28C8
+// TypeInfo: 0x0000000142BE28C8
 struct XdpChallengeData
 {
     char _0x0000[1];
@@ -11014,7 +11014,7 @@ struct XdpChallengeData
 
 ////////////////////////////////////////
 // RuntimeId: 02664
-// TypeInfo:  0x0000000142BE28E8
+// TypeInfo: 0x0000000142BE28E8
 struct XdpHeroStatData
 {
     char _0x0000[1];
@@ -11022,7 +11022,7 @@ struct XdpHeroStatData
 
 ////////////////////////////////////////
 // RuntimeId: 02662
-// TypeInfo:  0x0000000142BE2908
+// TypeInfo: 0x0000000142BE2908
 struct XdpStatCodeData
 {
     char* m_XdpCode; //0x0000
@@ -11031,7 +11031,7 @@ struct XdpStatCodeData
 
 ////////////////////////////////////////
 // RuntimeId: 02658
-// TypeInfo:  0x0000000142BE2928
+// TypeInfo: 0x0000000142BE2928
 struct XdpStatExport
 {
     char _0x0000[1];
@@ -11039,7 +11039,7 @@ struct XdpStatExport
 
 ////////////////////////////////////////
 // RuntimeId: 02656
-// TypeInfo:  0x0000000142BE2948
+// TypeInfo: 0x0000000142BE2948
 struct WebExportLoadingImages
 {
     char _0x0000[1];
@@ -11047,7 +11047,7 @@ struct WebExportLoadingImages
 
 ////////////////////////////////////////
 // RuntimeId: 02654
-// TypeInfo:  0x0000000142BE2968
+// TypeInfo: 0x0000000142BE2968
 struct WebExportLevelLoadingImage
 {
     LevelData* m_Level; //0x0000
@@ -11055,7 +11055,7 @@ struct WebExportLevelLoadingImage
 
 ////////////////////////////////////////
 // RuntimeId: 02628
-// TypeInfo:  0x0000000142BE2988
+// TypeInfo: 0x0000000142BE2988
 struct SurveyButton
 {
     char* m_Sid; //0x0000
@@ -11065,7 +11065,7 @@ struct SurveyButton
 
 ////////////////////////////////////////
 // RuntimeId: 02624
-// TypeInfo:  0x0000000142BE29A8
+// TypeInfo: 0x0000000142BE29A8
 struct QuickMatchFilterInfo
 {
     char* m_ID; //0x0000
@@ -11075,7 +11075,7 @@ struct QuickMatchFilterInfo
 
 ////////////////////////////////////////
 // RuntimeId: 02542
-// TypeInfo:  0x0000000142BE29E8
+// TypeInfo: 0x0000000142BE29E8
 struct IngameMenuElementData
 {
     char* m_Sid; //0x0000
@@ -11086,7 +11086,7 @@ struct IngameMenuElementData
 
 ////////////////////////////////////////
 // RuntimeId: 02546
-// TypeInfo:  0x0000000142BE29C8
+// TypeInfo: 0x0000000142BE29C8
 struct IngameMenuCategory
 {
     IngameMenuCategoryType m_CategoryType; //0x0000
@@ -11096,7 +11096,7 @@ struct IngameMenuCategory
 
 ////////////////////////////////////////
 // RuntimeId: 02534
-// TypeInfo:  0x0000000142BE2A48
+// TypeInfo: 0x0000000142BE2A48
 struct UISettingsItem
 {
     char* m_NameSid; //0x0000
@@ -11107,7 +11107,7 @@ struct UISettingsItem
 
 ////////////////////////////////////////
 // RuntimeId: 02536
-// TypeInfo:  0x0000000142BE2A28
+// TypeInfo: 0x0000000142BE2A28
 struct UISettingsGroup
 {
     char* m_NameSid; //0x0000
@@ -11118,7 +11118,7 @@ struct UISettingsGroup
 
 ////////////////////////////////////////
 // RuntimeId: 02538
-// TypeInfo:  0x0000000142BE2A08
+// TypeInfo: 0x0000000142BE2A08
 struct UISettingsPage
 {
     char* m_NameSid; //0x0000
@@ -11127,7 +11127,7 @@ struct UISettingsPage
 
 ////////////////////////////////////////
 // RuntimeId: 02524
-// TypeInfo:  0x0000000142BE2A68
+// TypeInfo: 0x0000000142BE2A68
 struct ScreenshotInfo
 {
     char* m_Name; //0x0000
@@ -11144,7 +11144,7 @@ struct ScreenshotInfo
 
 ////////////////////////////////////////
 // RuntimeId: 02502
-// TypeInfo:  0x0000000142BE2A88
+// TypeInfo: 0x0000000142BE2A88
 struct UILeaderboardData
 {
     char* m_Name; //0x0000
@@ -11153,7 +11153,7 @@ struct UILeaderboardData
 
 ////////////////////////////////////////
 // RuntimeId: 02488
-// TypeInfo:  0x0000000142BE2AA8
+// TypeInfo: 0x0000000142BE2AA8
 struct ServerInfoSetting
 {
     char* m_Key; //0x0000
@@ -11164,7 +11164,7 @@ struct ServerInfoSetting
 
 ////////////////////////////////////////
 // RuntimeId: 02482
-// TypeInfo:  0x0000000142BE2AC8
+// TypeInfo: 0x0000000142BE2AC8
 struct SlotRange
 {
     __int32 m_Min; //0x0000
@@ -11173,7 +11173,7 @@ struct SlotRange
 
 ////////////////////////////////////////
 // RuntimeId: 02466
-// TypeInfo:  0x0000000142BE2AE8
+// TypeInfo: 0x0000000142BE2AE8
 struct DataSource
 {
     UIComponentData* m_Category; //0x0000
@@ -11183,7 +11183,7 @@ struct DataSource
 
 ////////////////////////////////////////
 // RuntimeId: 02448
-// TypeInfo:  0x0000000142BE2B08
+// TypeInfo: 0x0000000142BE2B08
 struct UIStreamInstallGroup
 {
     char* m_MainMenuSid; //0x0000
@@ -11194,7 +11194,7 @@ struct UIStreamInstallGroup
 
 ////////////////////////////////////////
 // RuntimeId: 02408
-// TypeInfo:  0x0000000142BE2708
+// TypeInfo: 0x0000000142BE2708
 struct SoldierToComponentsReviveMessage
 {
     char _0x0000[40];
@@ -11202,7 +11202,7 @@ struct SoldierToComponentsReviveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02405
-// TypeInfo:  0x0000000142BE2728
+// TypeInfo: 0x0000000142BE2728
 struct RotateToHitData
 {
     float m_RotationSpeedFactor; //0x0000
@@ -11210,7 +11210,7 @@ struct RotateToHitData
 
 ////////////////////////////////////////
 // RuntimeId: 02393
-// TypeInfo:  0x0000000142BE2B28
+// TypeInfo: 0x0000000142BE2B28
 struct MinimapData
 {
     Vec3 m_OverlayColor; //0x0000
@@ -11235,7 +11235,7 @@ struct MinimapData
 
 ////////////////////////////////////////
 // RuntimeId: 02371
-// TypeInfo:  0x0000000142BE2748
+// TypeInfo: 0x0000000142BE2748
 struct ClientRoundOverMessage
 {
     char _0x0000[40];
@@ -11243,7 +11243,7 @@ struct ClientRoundOverMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02362
-// TypeInfo:  0x0000000142BE2B48
+// TypeInfo: 0x0000000142BE2B48
 struct Minimap2DTile
 {
     TextureAsset* m_Texture; //0x0000
@@ -11255,7 +11255,7 @@ struct Minimap2DTile
 
 ////////////////////////////////////////
 // RuntimeId: 02350
-// TypeInfo:  0x0000000142BE2B68
+// TypeInfo: 0x0000000142BE2B68
 struct AreaValueTeam
 {
     __int32 m_AreaValue; //0x0000
@@ -11264,7 +11264,7 @@ struct AreaValueTeam
 
 ////////////////////////////////////////
 // RuntimeId: 02346
-// TypeInfo:  0x0000000142BE2B88
+// TypeInfo: 0x0000000142BE2B88
 struct TicketCountPercentage
 {
     __int32 m_MaxPercentOfTicketsLeft; //0x0000
@@ -11273,7 +11273,7 @@ struct TicketCountPercentage
 
 ////////////////////////////////////////
 // RuntimeId: 02296
-// TypeInfo:  0x0000000142BE2BA8
+// TypeInfo: 0x0000000142BE2BA8
 struct SimpleAnimationControlBinding
 {
     AntRef m_LocoTarget; //0x0000
@@ -11281,7 +11281,7 @@ struct SimpleAnimationControlBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02294
-// TypeInfo:  0x0000000142BE2BC8
+// TypeInfo: 0x0000000142BE2BC8
 struct SupportedShootingBinding
 {
     AntRef m_Supported; //0x0000
@@ -11297,7 +11297,7 @@ struct SupportedShootingBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02292
-// TypeInfo:  0x0000000142BE2BE8
+// TypeInfo: 0x0000000142BE2BE8
 struct SpecialMovesBinding
 {
     AntRef m_UseNewVault; //0x0000
@@ -11318,7 +11318,7 @@ struct SpecialMovesBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02290
-// TypeInfo:  0x0000000142BE2C08
+// TypeInfo: 0x0000000142BE2C08
 struct SoldierParachuteBinding
 {
     AntRef m_Enabled; //0x0000
@@ -11330,7 +11330,7 @@ struct SoldierParachuteBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02288
-// TypeInfo:  0x0000000142BE2768
+// TypeInfo: 0x0000000142BE2768
 struct SoldierEmoteBinding
 {
     AntRef m_Speak; //0x0000
@@ -11353,7 +11353,7 @@ struct SoldierEmoteBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02286
-// TypeInfo:  0x0000000142BE2C28
+// TypeInfo: 0x0000000142BE2C28
 struct ClimbLadderBinding
 {
     AntRef m_ClimbLadderPhase; //0x0000
@@ -11366,7 +11366,7 @@ struct ClimbLadderBinding
 
 ////////////////////////////////////////
 // RuntimeId: 02284
-// TypeInfo:  0x0000000142BE2788
+// TypeInfo: 0x0000000142BE2788
 struct UIPopupUpdateMessage
 {
     char _0x0000[72];
@@ -11374,7 +11374,7 @@ struct UIPopupUpdateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02283
-// TypeInfo:  0x0000000142BE27A8
+// TypeInfo: 0x0000000142BE27A8
 struct UIPopupHideMessage
 {
     char _0x0000[48];
@@ -11382,7 +11382,7 @@ struct UIPopupHideMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02282
-// TypeInfo:  0x0000000142BE27C8
+// TypeInfo: 0x0000000142BE27C8
 struct UIPopupShowMessage
 {
     char _0x0000[104];
@@ -11390,7 +11390,7 @@ struct UIPopupShowMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02281
-// TypeInfo:  0x0000000142BE27E8
+// TypeInfo: 0x0000000142BE27E8
 struct UITriggerPopupHideMessage
 {
     char _0x0000[40];
@@ -11398,7 +11398,7 @@ struct UITriggerPopupHideMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02280
-// TypeInfo:  0x0000000142BE2808
+// TypeInfo: 0x0000000142BE2808
 struct UITriggerPopupShowMessage
 {
     char _0x0000[40];
@@ -11406,7 +11406,7 @@ struct UITriggerPopupShowMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02279
-// TypeInfo:  0x0000000142BE2C48
+// TypeInfo: 0x0000000142BE2C48
 struct UIPopupTextInput
 {
     char* m_Id; //0x0000
@@ -11418,7 +11418,7 @@ struct UIPopupTextInput
 
 ////////////////////////////////////////
 // RuntimeId: 02267
-// TypeInfo:  0x0000000142BE2C68
+// TypeInfo: 0x0000000142BE2C68
 struct UILevelSpecificPageHeader
 {
     char* m_LevelNameSID; //0x0000
@@ -11428,7 +11428,7 @@ struct UILevelSpecificPageHeader
 
 ////////////////////////////////////////
 // RuntimeId: 02247
-// TypeInfo:  0x0000000142BE2C88
+// TypeInfo: 0x0000000142BE2C88
 struct UIButton
 {
     char* m_ButtonLabel; //0x0000
@@ -11439,7 +11439,7 @@ struct UIButton
 
 ////////////////////////////////////////
 // RuntimeId: 02249
-// TypeInfo:  0x0000000142BE2848
+// TypeInfo: 0x0000000142BE2848
 struct UIButtonSet
 {
     Array<UIButton> m_Buttons; //0x0000
@@ -11447,7 +11447,7 @@ struct UIButtonSet
 
 ////////////////////////////////////////
 // RuntimeId: 02229
-// TypeInfo:  0x0000000142BE2868
+// TypeInfo: 0x0000000142BE2868
 struct DefaultSelectionItem
 {
     UIDataSourceInfo m_DefaultSelectionQuery; //0x0000
@@ -11457,7 +11457,7 @@ struct DefaultSelectionItem
 
 ////////////////////////////////////////
 // RuntimeId: 02239
-// TypeInfo:  0x0000000142BE2CC8
+// TypeInfo: 0x0000000142BE2CC8
 struct StaticListItem
 {
     char* m_ItemName; //0x0000
@@ -11471,7 +11471,7 @@ struct StaticListItem
 
 ////////////////////////////////////////
 // RuntimeId: 02243
-// TypeInfo:  0x0000000142BE2CA8
+// TypeInfo: 0x0000000142BE2CA8
 struct NestedList
 {
     char* m_Label; //0x0000
@@ -11489,7 +11489,7 @@ struct NestedList
 
 ////////////////////////////////////////
 // RuntimeId: 02213
-// TypeInfo:  0x0000000142BE2CE8
+// TypeInfo: 0x0000000142BE2CE8
 struct HudCameraShakeParams
 {
     float m_WeaponDispersionMin; //0x0000
@@ -11520,7 +11520,7 @@ struct HudCameraShakeParams
 
 ////////////////////////////////////////
 // RuntimeId: 02193
-// TypeInfo:  0x0000000142BE2D08
+// TypeInfo: 0x0000000142BE2D08
 struct UITooltipLine
 {
     __int32 m_InputAction; //0x0000
@@ -11532,7 +11532,7 @@ struct UITooltipLine
 
 ////////////////////////////////////////
 // RuntimeId: 02187
-// TypeInfo:  0x0000000142BE2D28
+// TypeInfo: 0x0000000142BE2D28
 struct UIMouseButtonsGroup
 {
     bool m_IsWin32; //0x0000
@@ -11544,7 +11544,7 @@ struct UIMouseButtonsGroup
 
 ////////////////////////////////////////
 // RuntimeId: 02137
-// TypeInfo:  0x0000000142BE28A8
+// TypeInfo: 0x0000000142BE28A8
 struct UITextureAtlasInfo
 {
     Vec2 m_MinUv; //0x0000
@@ -11553,7 +11553,7 @@ struct UITextureAtlasInfo
 
 ////////////////////////////////////////
 // RuntimeId: 02183
-// TypeInfo:  0x0000000142BE2D68
+// TypeInfo: 0x0000000142BE2D68
 struct UIKeysButtonsGroup
 {
     bool m_IsWin32; //0x0000
@@ -11565,7 +11565,7 @@ struct UIKeysButtonsGroup
 
 ////////////////////////////////////////
 // RuntimeId: 02181
-// TypeInfo:  0x0000000142BE2D88
+// TypeInfo: 0x0000000142BE2D88
 struct UIKeysButtonTexture
 {
     InputDeviceKeys m_Key; //0x0000
@@ -11574,7 +11574,7 @@ struct UIKeysButtonTexture
 
 ////////////////////////////////////////
 // RuntimeId: 02179
-// TypeInfo:  0x0000000142BE2DA8
+// TypeInfo: 0x0000000142BE2DA8
 struct UIPadButtonsGroup
 {
     bool m_IsWin32; //0x0000
@@ -11586,7 +11586,7 @@ struct UIPadButtonsGroup
 
 ////////////////////////////////////////
 // RuntimeId: 02177
-// TypeInfo:  0x0000000142BE2DC8
+// TypeInfo: 0x0000000142BE2DC8
 struct UIPadButtonTexture
 {
     InputDevicePadButtons m_PadButton; //0x0000
@@ -11595,7 +11595,7 @@ struct UIPadButtonTexture
 
 ////////////////////////////////////////
 // RuntimeId: 02175
-// TypeInfo:  0x0000000142BE2DE8
+// TypeInfo: 0x0000000142BE2DE8
 struct UIAxesButtonsGroup
 {
     bool m_IsWin32; //0x0000
@@ -11607,7 +11607,7 @@ struct UIAxesButtonsGroup
 
 ////////////////////////////////////////
 // RuntimeId: 02173
-// TypeInfo:  0x0000000142BE2E08
+// TypeInfo: 0x0000000142BE2E08
 struct UIAxesButtonTexture
 {
     InputDeviceAxes m_Axis; //0x0000
@@ -11616,7 +11616,7 @@ struct UIAxesButtonTexture
 
 ////////////////////////////////////////
 // RuntimeId: 02167
-// TypeInfo:  0x0000000142BE2E48
+// TypeInfo: 0x0000000142BE2E48
 struct UICreditsColumn
 {
     char* m_Text; //0x0000
@@ -11624,7 +11624,7 @@ struct UICreditsColumn
 
 ////////////////////////////////////////
 // RuntimeId: 02169
-// TypeInfo:  0x0000000142BE2E28
+// TypeInfo: 0x0000000142BE2E28
 struct UICreditsRow
 {
     UICreditsTextType m_TextType; //0x0000
@@ -11634,7 +11634,7 @@ struct UICreditsRow
 
 ////////////////////////////////////////
 // RuntimeId: 02163
-// TypeInfo:  0x0000000142BE2E68
+// TypeInfo: 0x0000000142BE2E68
 struct UIMinimapData
 {
     float m_WorldRotation; //0x0000
@@ -11643,7 +11643,7 @@ struct UIMinimapData
 
 ////////////////////////////////////////
 // RuntimeId: 02161
-// TypeInfo:  0x0000000142BE2E88
+// TypeInfo: 0x0000000142BE2E88
 struct UIMinimapDistanceFieldParams
 {
     Vec4 m_ColorTint; //0x0000
@@ -11658,7 +11658,7 @@ struct UIMinimapDistanceFieldParams
 
 ////////////////////////////////////////
 // RuntimeId: 02151
-// TypeInfo:  0x0000000142BE2EE8
+// TypeInfo: 0x0000000142BE2EE8
 struct UIMinimapIconUv
 {
     Vec2 m_MinUv; //0x0000
@@ -11667,7 +11667,7 @@ struct UIMinimapIconUv
 
 ////////////////////////////////////////
 // RuntimeId: 02153
-// TypeInfo:  0x0000000142BE2EC8
+// TypeInfo: 0x0000000142BE2EC8
 struct UIMinimapIconTextureState
 {
     UIIconMode m_Mode; //0x0000
@@ -11681,7 +11681,7 @@ struct UIMinimapIconTextureState
 
 ////////////////////////////////////////
 // RuntimeId: 02155
-// TypeInfo:  0x0000000142BE2EA8
+// TypeInfo: 0x0000000142BE2EA8
 struct UIMinimapIconTexture
 {
     UIHudIcon m_IconType; //0x0000
@@ -11692,7 +11692,7 @@ struct UIMinimapIconTexture
 
 ////////////////////////////////////////
 // RuntimeId: 02185
-// TypeInfo:  0x0000000142BE2D48
+// TypeInfo: 0x0000000142BE2D48
 struct UIMouseButtonTexture
 {
     InputDeviceMouseButtons m_MouseButton; //0x0000
@@ -11701,7 +11701,7 @@ struct UIMouseButtonTexture
 
 ////////////////////////////////////////
 // RuntimeId: 02127
-// TypeInfo:  0x0000000142BD91A8
+// TypeInfo: 0x0000000142BD91A8
 struct UIScreenActionInputEventMessage
 {
     char _0x0000[48];
@@ -11709,7 +11709,7 @@ struct UIScreenActionInputEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 02040
-// TypeInfo:  0x0000000142BD93E8
+// TypeInfo: 0x0000000142BD93E8
 struct ManualDataEntry
 {
     GamePlatform m_Platform; //0x0000
@@ -11719,7 +11719,7 @@ struct ManualDataEntry
 
 ////////////////////////////////////////
 // RuntimeId: 02022
-// TypeInfo:  0x0000000142BD9428
+// TypeInfo: 0x0000000142BD9428
 struct InspectAnimationTriggerData
 {
     AntRef m_Animation; //0x0000
@@ -11728,7 +11728,7 @@ struct InspectAnimationTriggerData
 
 ////////////////////////////////////////
 // RuntimeId: 02024
-// TypeInfo:  0x0000000142BD9408
+// TypeInfo: 0x0000000142BD9408
 struct InspectViewPointData
 {
     char* m_ViewPointID; //0x0000
@@ -11746,7 +11746,7 @@ struct InspectViewPointData
 
 ////////////////////////////////////////
 // RuntimeId: 02002
-// TypeInfo:  0x0000000142BD91C8
+// TypeInfo: 0x0000000142BD91C8
 struct UIMapNavigationData
 {
     float m_NearestZoomRange; //0x0000
@@ -11759,7 +11759,7 @@ struct UIMapNavigationData
 
 ////////////////////////////////////////
 // RuntimeId: 01996
-// TypeInfo:  0x0000000142BD9468
+// TypeInfo: 0x0000000142BD9468
 struct UILevelLoadIconData
 {
     char* m_Label; //0x0000
@@ -11769,7 +11769,7 @@ struct UILevelLoadIconData
 
 ////////////////////////////////////////
 // RuntimeId: 01998
-// TypeInfo:  0x0000000142BD9448
+// TypeInfo: 0x0000000142BD9448
 struct UILevelLoadGameModeData
 {
     char* m_GameModeIdentifier; //0x0000
@@ -11781,7 +11781,7 @@ struct UILevelLoadGameModeData
 
 ////////////////////////////////////////
 // RuntimeId: 01994
-// TypeInfo:  0x0000000142BD91E8
+// TypeInfo: 0x0000000142BD91E8
 struct UIGPSPosition
 {
     double m_Latitude; //0x0000
@@ -11791,7 +11791,7 @@ struct UIGPSPosition
 
 ////////////////////////////////////////
 // RuntimeId: 01992
-// TypeInfo:  0x0000000142BD9208
+// TypeInfo: 0x0000000142BD9208
 struct UILevelStatData
 {
     char* m_StatEasy; //0x0000
@@ -11802,7 +11802,7 @@ struct UILevelStatData
 
 ////////////////////////////////////////
 // RuntimeId: 01986
-// TypeInfo:  0x0000000142BD9228
+// TypeInfo: 0x0000000142BD9228
 struct UIGeoLongitude
 {
     __int32 m_Degrees; //0x0000
@@ -11812,7 +11812,7 @@ struct UIGeoLongitude
 
 ////////////////////////////////////////
 // RuntimeId: 01984
-// TypeInfo:  0x0000000142BD9248
+// TypeInfo: 0x0000000142BD9248
 struct UIGeoLatitude
 {
     __int32 m_Degrees; //0x0000
@@ -11822,7 +11822,7 @@ struct UIGeoLatitude
 
 ////////////////////////////////////////
 // RuntimeId: 01980
-// TypeInfo:  0x0000000142BD9268
+// TypeInfo: 0x0000000142BD9268
 struct SoldierLeaningBinding
 {
     AntRef m_Lean; //0x0000
@@ -11830,7 +11830,7 @@ struct SoldierLeaningBinding
 
 ////////////////////////////////////////
 // RuntimeId: 01976
-// TypeInfo:  0x0000000142BD9488
+// TypeInfo: 0x0000000142BD9488
 struct GameTipData
 {
     char* m_Text; //0x0000
@@ -11838,7 +11838,7 @@ struct GameTipData
 
 ////////////////////////////////////////
 // RuntimeId: 01966
-// TypeInfo:  0x0000000142BD94C8
+// TypeInfo: 0x0000000142BD94C8
 struct GameModeTeamSize
 {
     unsigned __int32 m_PlayerCount; //0x0000
@@ -11848,7 +11848,7 @@ struct GameModeTeamSize
 
 ////////////////////////////////////////
 // RuntimeId: 01968
-// TypeInfo:  0x0000000142BD9288
+// TypeInfo: 0x0000000142BD9288
 struct GameModeSize
 {
     char* m_Name; //0x0000
@@ -11865,7 +11865,7 @@ struct GameModeSize
 
 ////////////////////////////////////////
 // RuntimeId: 01970
-// TypeInfo:  0x0000000142BD94A8
+// TypeInfo: 0x0000000142BD94A8
 struct GameModeInformation
 {
     GamePlatform m_Platform; //0x0000
@@ -11878,7 +11878,7 @@ struct GameModeInformation
 
 ////////////////////////////////////////
 // RuntimeId: 01960
-// TypeInfo:  0x0000000142BD94E8
+// TypeInfo: 0x0000000142BD94E8
 struct FreeStreamingChunksLoadInfo
 {
     char* m_Name; //0x0000
@@ -11890,7 +11890,7 @@ struct FreeStreamingChunksLoadInfo
 
 ////////////////////////////////////////
 // RuntimeId: 01940
-// TypeInfo:  0x0000000142BD9508
+// TypeInfo: 0x0000000142BD9508
 struct CounterHelper
 {
     bool m_dummy; //0x0000
@@ -11898,7 +11898,7 @@ struct CounterHelper
 
 ////////////////////////////////////////
 // RuntimeId: 01868
-// TypeInfo:  0x0000000142BD93C8
+// TypeInfo: 0x0000000142BD93C8
 struct AntiSpamConfig
 {
     float m_DetectionInterval; //0x0000
@@ -11914,7 +11914,7 @@ struct AntiSpamConfig
 
 ////////////////////////////////////////
 // RuntimeId: 01852
-// TypeInfo:  0x0000000142BD9528
+// TypeInfo: 0x0000000142BD9528
 struct UILevelLocation
 {
     char _0x0000[1];
@@ -11922,7 +11922,7 @@ struct UILevelLocation
 
 ////////////////////////////////////////
 // RuntimeId: 01848
-// TypeInfo:  0x0000000142BD9548
+// TypeInfo: 0x0000000142BD9548
 struct UIMatchmakingGamemodeMappack
 {
     char* m_Experience; //0x0000
@@ -11932,7 +11932,7 @@ struct UIMatchmakingGamemodeMappack
 
 ////////////////////////////////////////
 // RuntimeId: 01818
-// TypeInfo:  0x0000000142BD9568
+// TypeInfo: 0x0000000142BD9568
 struct GameModeVariation
 {
     char* m_Identifier; //0x0000
@@ -11941,7 +11941,7 @@ struct GameModeVariation
 
 ////////////////////////////////////////
 // RuntimeId: 01742
-// TypeInfo:  0x0000000142BD1CE0
+// TypeInfo: 0x0000000142BD1CE0
 struct GameTweakBlindedBehavior
 {
     float m_BlindedTime; //0x0000
@@ -11950,7 +11950,7 @@ struct GameTweakBlindedBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 01740
-// TypeInfo:  0x0000000142BD1C40
+// TypeInfo: 0x0000000142BD1C40
 struct GameTweakPanicBehavior
 {
     float m_PrePanicTime; //0x0000
@@ -11960,7 +11960,7 @@ struct GameTweakPanicBehavior
 
 ////////////////////////////////////////
 // RuntimeId: 01738
-// TypeInfo:  0x0000000142BD1D60
+// TypeInfo: 0x0000000142BD1D60
 struct GameTweakSniper
 {
     float m_GlintToShotFiredDelay; //0x0000
@@ -11971,7 +11971,7 @@ struct GameTweakSniper
 
 ////////////////////////////////////////
 // RuntimeId: 01736
-// TypeInfo:  0x0000000142BD1DC0
+// TypeInfo: 0x0000000142BD1DC0
 struct GameTweakAIDamage
 {
     float m_DamageBucketSizeHumanSquad; //0x0000
@@ -11981,7 +11981,7 @@ struct GameTweakAIDamage
 
 ////////////////////////////////////////
 // RuntimeId: 01730
-// TypeInfo:  0x0000000142BD1DA0
+// TypeInfo: 0x0000000142BD1DA0
 struct EvasiveBucketTimeSettings
 {
     Array<float> m_SprintDamageBucketTimes; //0x0000
@@ -11995,7 +11995,7 @@ struct EvasiveBucketTimeSettings
 
 ////////////////////////////////////////
 // RuntimeId: 01724
-// TypeInfo:  0x0000000142BD1DE0
+// TypeInfo: 0x0000000142BD1DE0
 struct TinyPiecewiseLinearCurve
 {
     float m_X0; //0x0000
@@ -12006,7 +12006,7 @@ struct TinyPiecewiseLinearCurve
 
 ////////////////////////////////////////
 // RuntimeId: 01734
-// TypeInfo:  0x0000000142BD1E00
+// TypeInfo: 0x0000000142BD1E00
 struct GameTweakBucketDamage
 {
     Array<float> m_PlayerDamageBucketTimes; //0x0000
@@ -12015,7 +12015,7 @@ struct GameTweakBucketDamage
 
 ////////////////////////////////////////
 // RuntimeId: 01728
-// TypeInfo:  0x0000000142BD1EC0
+// TypeInfo: 0x0000000142BD1EC0
 struct AccuracyPenaltySettings
 {
     float m_SprintMultiplier; //0x0000
@@ -12029,7 +12029,7 @@ struct AccuracyPenaltySettings
 
 ////////////////////////////////////////
 // RuntimeId: 01726
-// TypeInfo:  0x0000000142BD1E20
+// TypeInfo: 0x0000000142BD1E20
 struct GameTweakCommon
 {
     float m_SensingConeRange; //0x0000
@@ -12064,7 +12064,7 @@ struct GameTweakCommon
 
 ////////////////////////////////////////
 // RuntimeId: 01732
-// TypeInfo:  0x0000000142BD1D00
+// TypeInfo: 0x0000000142BD1D00
 struct GameTweakAITargeting
 {
     float m_IntervalBetweenAdditionalEnemiesTargetingPlayer; //0x0000
@@ -12078,7 +12078,7 @@ struct GameTweakAITargeting
 
 ////////////////////////////////////////
 // RuntimeId: 01720
-// TypeInfo:  0x0000000142BD1F20
+// TypeInfo: 0x0000000142BD1F20
 struct FiringPatternData
 {
     unsigned __int64 m_Pattern; //0x0000
@@ -12092,7 +12092,7 @@ struct FiringPatternData
 
 ////////////////////////////////////////
 // RuntimeId: 01706
-// TypeInfo:  0x0000000142BD1C60
+// TypeInfo: 0x0000000142BD1C60
 struct Distances
 {
     float m_Min; //0x0000
@@ -12101,7 +12101,7 @@ struct Distances
 
 ////////////////////////////////////////
 // RuntimeId: 01708
-// TypeInfo:  0x0000000142BD1D20
+// TypeInfo: 0x0000000142BD1D20
 struct VehicleVsSoldier
 {
     Distances m_Distances; //0x0000
@@ -12111,7 +12111,7 @@ struct VehicleVsSoldier
 
 ////////////////////////////////////////
 // RuntimeId: 01710
-// TypeInfo:  0x0000000142BD1CC0
+// TypeInfo: 0x0000000142BD1CC0
 struct VehicleVsVehicle
 {
     Distances m_Distances; //0x0000
@@ -12121,7 +12121,7 @@ struct VehicleVsVehicle
 
 ////////////////////////////////////////
 // RuntimeId: 01700
-// TypeInfo:  0x0000000142BD1E40
+// TypeInfo: 0x0000000142BD1E40
 struct VehicleSuppressionSettings
 {
     float m_SuppressionDistance; //0x0000
@@ -12130,7 +12130,7 @@ struct VehicleSuppressionSettings
 
 ////////////////////////////////////////
 // RuntimeId: 01698
-// TypeInfo:  0x0000000142BD1D80
+// TypeInfo: 0x0000000142BD1D80
 struct WeaponSuppressionSettings
 {
     float m_SuppressionValue; //0x0000
@@ -12140,7 +12140,7 @@ struct WeaponSuppressionSettings
 
 ////////////////////////////////////////
 // RuntimeId: 01696
-// TypeInfo:  0x0000000142BD1EA0
+// TypeInfo: 0x0000000142BD1EA0
 struct EngageSettings
 {
     float m_DistanceToTarget; //0x0000
@@ -12149,7 +12149,7 @@ struct EngageSettings
 
 ////////////////////////////////////////
 // RuntimeId: 01682
-// TypeInfo:  0x0000000142BD1E60
+// TypeInfo: 0x0000000142BD1E60
 struct AttackCoverRequestSettings
 {
     float m_MinimumTimeInCoverToRequest; //0x0000
@@ -12166,7 +12166,7 @@ struct AttackCoverRequestSettings
 
 ////////////////////////////////////////
 // RuntimeId: 01600
-// TypeInfo:  0x0000000142BD1F00
+// TypeInfo: 0x0000000142BD1F00
 struct BFCoverSlot
 {
     Vec3 m_Position; //0x0000
@@ -12174,7 +12174,7 @@ struct BFCoverSlot
 
 ////////////////////////////////////////
 // RuntimeId: 01594
-// TypeInfo:  0x0000000142BD1F60
+// TypeInfo: 0x0000000142BD1F60
 struct BFCoverData
 {
     Vec4 m_PosAndExtra0; //0x0000
@@ -12183,7 +12183,7 @@ struct BFCoverData
 
 ////////////////////////////////////////
 // RuntimeId: 01590
-// TypeInfo:  0x0000000142BD1F40
+// TypeInfo: 0x0000000142BD1F40
 struct CoverQueryScoreRuntime
 {
     __int32 m_RelationMask; //0x0000
@@ -12199,7 +12199,7 @@ struct CoverQueryScoreRuntime
 
 ////////////////////////////////////////
 // RuntimeId: 01584
-// TypeInfo:  0x0000000142BD1CA0
+// TypeInfo: 0x0000000142BD1CA0
 struct CoverQueryFilter
 {
     bool m_LeftBlocked; //0x0000
@@ -12218,7 +12218,7 @@ struct CoverQueryFilter
 
 ////////////////////////////////////////
 // RuntimeId: 01564
-// TypeInfo:  0x0000000142BD1C80
+// TypeInfo: 0x0000000142BD1C80
 struct BFCoverZones
 {
     BFCoverZoneDefinition* m_CoverZonesOverAndOut; //0x0000
@@ -12230,7 +12230,7 @@ struct BFCoverZones
 
 ////////////////////////////////////////
 // RuntimeId: 01560
-// TypeInfo:  0x0000000142BD1F80
+// TypeInfo: 0x0000000142BD1F80
 struct BFCoverZone
 {
     float m_FirstAngle; //0x0000
@@ -12252,7 +12252,7 @@ struct BFCoverZone
 
 ////////////////////////////////////////
 // RuntimeId: 01522
-// TypeInfo:  0x0000000142BCE678
+// TypeInfo: 0x0000000142BCE678
 struct BurstInterval
 {
     float m_BurstLength; //0x0000
@@ -12263,7 +12263,7 @@ struct BurstInterval
 
 ////////////////////////////////////////
 // RuntimeId: 01516
-// TypeInfo:  0x0000000142BCE638
+// TypeInfo: 0x0000000142BCE638
 struct Interval
 {
     float m_MinimumTime; //0x0000
@@ -12272,7 +12272,7 @@ struct Interval
 
 ////////////////////////////////////////
 // RuntimeId: 01504
-// TypeInfo:  0x0000000142BCE558
+// TypeInfo: 0x0000000142BCE558
 struct BFAIProjectileBinding
 {
     AntRef m_FireProjectile; //0x0000
@@ -12280,7 +12280,7 @@ struct BFAIProjectileBinding
 
 ////////////////////////////////////////
 // RuntimeId: 01498
-// TypeInfo:  0x0000000142BCE5B8
+// TypeInfo: 0x0000000142BCE5B8
 struct LinearTime
 {
     float m_Distance; //0x0000
@@ -12289,7 +12289,7 @@ struct LinearTime
 
 ////////////////////////////////////////
 // RuntimeId: 01500
-// TypeInfo:  0x0000000142BCE5F8
+// TypeInfo: 0x0000000142BCE5F8
 struct Dispersion
 {
     float m_MinimumHorizontal; //0x0000
@@ -12303,7 +12303,7 @@ struct Dispersion
 
 ////////////////////////////////////////
 // RuntimeId: 01502
-// TypeInfo:  0x0000000142BCE658
+// TypeInfo: 0x0000000142BCE658
 struct BFAIProjectile
 {
     BFAIProjectileCurveType m_Curve; //0x0000
@@ -12317,7 +12317,7 @@ struct BFAIProjectile
 
 ////////////////////////////////////////
 // RuntimeId: 01484
-// TypeInfo:  0x0000000142BCE4B8
+// TypeInfo: 0x0000000142BCE4B8
 struct AreaBookingSettings
 {
     float m_EnemyTeamBookingRadius; //0x0000
@@ -12327,7 +12327,7 @@ struct AreaBookingSettings
 
 ////////////////////////////////////////
 // RuntimeId: 01482
-// TypeInfo:  0x0000000142BCE598
+// TypeInfo: 0x0000000142BCE598
 struct SquadEngageData
 {
     float m_EngageTime; //0x0000
@@ -12342,7 +12342,7 @@ struct SquadEngageData
 
 ////////////////////////////////////////
 // RuntimeId: 01480
-// TypeInfo:  0x0000000142BCE4D8
+// TypeInfo: 0x0000000142BCE4D8
 struct ShootingData
 {
     float m_KeepFiringAtPlayerTime; //0x0000
@@ -12351,7 +12351,7 @@ struct ShootingData
 
 ////////////////////////////////////////
 // RuntimeId: 01476
-// TypeInfo:  0x0000000142BCE538
+// TypeInfo: 0x0000000142BCE538
 struct SquadTargettingData
 {
     float m_VisibleTargetLimit; //0x0000
@@ -12361,7 +12361,7 @@ struct SquadTargettingData
 
 ////////////////////////////////////////
 // RuntimeId: 01478
-// TypeInfo:  0x0000000142BCE578
+// TypeInfo: 0x0000000142BCE578
 struct TargetingData
 {
     float m_ForcePlayerAsTargetRange; //0x0000
@@ -12373,7 +12373,7 @@ struct TargetingData
 
 ////////////////////////////////////////
 // RuntimeId: 01474
-// TypeInfo:  0x0000000142BCE618
+// TypeInfo: 0x0000000142BCE618
 struct DamageAndPrecisionData
 {
     float m_BulletDamage; //0x0000
@@ -12384,7 +12384,7 @@ struct DamageAndPrecisionData
 
 ////////////////////////////////////////
 // RuntimeId: 01472
-// TypeInfo:  0x0000000142BCE4F8
+// TypeInfo: 0x0000000142BCE4F8
 struct BFAI2SpottingPotentialMessage
 {
     char _0x0000[80];
@@ -12392,7 +12392,7 @@ struct BFAI2SpottingPotentialMessage
 
 ////////////////////////////////////////
 // RuntimeId: 01471
-// TypeInfo:  0x0000000142BCE5D8
+// TypeInfo: 0x0000000142BCE5D8
 struct BFAI2SpottingFoundMessage
 {
     char _0x0000[80];
@@ -12400,7 +12400,7 @@ struct BFAI2SpottingFoundMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00954
-// TypeInfo:  0x0000000142BB4A40
+// TypeInfo: 0x0000000142BB4A40
 struct StatDamageHelperMessage
 {
     char _0x0000[64];
@@ -12408,7 +12408,7 @@ struct StatDamageHelperMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00953
-// TypeInfo:  0x0000000142BB4A60
+// TypeInfo: 0x0000000142BB4A60
 struct StatPointsMessageBase
 {
     char _0x0000[80];
@@ -12416,7 +12416,7 @@ struct StatPointsMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00952
-// TypeInfo:  0x0000000142BB4A80
+// TypeInfo: 0x0000000142BB4A80
 struct StatEventMessageBase
 {
     char _0x0000[96];
@@ -12424,7 +12424,7 @@ struct StatEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00951
-// TypeInfo:  0x0000000142BB4AA0
+// TypeInfo: 0x0000000142BB4AA0
 struct StatTriggerEntityMessage
 {
     char _0x0000[72];
@@ -12432,7 +12432,7 @@ struct StatTriggerEntityMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00950
-// TypeInfo:  0x0000000142BB4AC0
+// TypeInfo: 0x0000000142BB4AC0
 struct StatEventEntityTriggerMessage
 {
     char _0x0000[72];
@@ -12440,7 +12440,7 @@ struct StatEventEntityTriggerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00949
-// TypeInfo:  0x0000000142BB4AE0
+// TypeInfo: 0x0000000142BB4AE0
 struct StatGainRankMessage
 {
     char _0x0000[56];
@@ -12448,7 +12448,7 @@ struct StatGainRankMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00948
-// TypeInfo:  0x0000000142BB4B00
+// TypeInfo: 0x0000000142BB4B00
 struct StatGainAwardMessage
 {
     char _0x0000[56];
@@ -12456,7 +12456,7 @@ struct StatGainAwardMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00947
-// TypeInfo:  0x0000000142BB4B20
+// TypeInfo: 0x0000000142BB4B20
 struct StatFinalizeStatsMessageBase
 {
     char _0x0000[48];
@@ -12464,7 +12464,7 @@ struct StatFinalizeStatsMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00946
-// TypeInfo:  0x0000000142BB4B40
+// TypeInfo: 0x0000000142BB4B40
 struct StatClubRecordClosingMessage
 {
     char _0x0000[48];
@@ -12472,7 +12472,7 @@ struct StatClubRecordClosingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00945
-// TypeInfo:  0x0000000142BB4B60
+// TypeInfo: 0x0000000142BB4B60
 struct StatClubRecordCreatedMessage
 {
     char _0x0000[56];
@@ -12480,7 +12480,7 @@ struct StatClubRecordCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00944
-// TypeInfo:  0x0000000142BB4B80
+// TypeInfo: 0x0000000142BB4B80
 struct StatPlayerRecordClosingMessage
 {
     char _0x0000[48];
@@ -12488,7 +12488,7 @@ struct StatPlayerRecordClosingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00943
-// TypeInfo:  0x0000000142BB4BA0
+// TypeInfo: 0x0000000142BB4BA0
 struct StatPlayerRecordCreatedMessage
 {
     char _0x0000[56];
@@ -12496,7 +12496,7 @@ struct StatPlayerRecordCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00942
-// TypeInfo:  0x0000000142BB4BC0
+// TypeInfo: 0x0000000142BB4BC0
 struct ServerBackendExternalIdResponseMessage
 {
     char _0x0000[56];
@@ -12504,7 +12504,7 @@ struct ServerBackendExternalIdResponseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00941
-// TypeInfo:  0x0000000142BB4BE0
+// TypeInfo: 0x0000000142BB4BE0
 struct ServerBackendExternalIdRequestMessage
 {
     char _0x0000[48];
@@ -12512,7 +12512,7 @@ struct ServerBackendExternalIdRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00940
-// TypeInfo:  0x0000000142BB4C00
+// TypeInfo: 0x0000000142BB4C00
 struct ServerBackendStringMetricMessageBase
 {
     char _0x0000[40];
@@ -12520,7 +12520,7 @@ struct ServerBackendStringMetricMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00939
-// TypeInfo:  0x0000000142BB4C20
+// TypeInfo: 0x0000000142BB4C20
 struct ServerBackendCounterMetricMessageBase
 {
     char _0x0000[40];
@@ -12528,7 +12528,7 @@ struct ServerBackendCounterMetricMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00938
-// TypeInfo:  0x0000000142BB4C40
+// TypeInfo: 0x0000000142BB4C40
 struct ServerBackendGaugeMetricMessageBase
 {
     char _0x0000[40];
@@ -12536,7 +12536,7 @@ struct ServerBackendGaugeMetricMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00937
-// TypeInfo:  0x0000000142BB4C60
+// TypeInfo: 0x0000000142BB4C60
 struct ServerBackendTagMetricMessageBase
 {
     char _0x0000[40];
@@ -12544,7 +12544,7 @@ struct ServerBackendTagMetricMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00936
-// TypeInfo:  0x0000000142BB4C80
+// TypeInfo: 0x0000000142BB4C80
 struct ServerBackendLiveScoreboardDisableMessage
 {
     char _0x0000[40];
@@ -12552,7 +12552,7 @@ struct ServerBackendLiveScoreboardDisableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00935
-// TypeInfo:  0x0000000142BB4CA0
+// TypeInfo: 0x0000000142BB4CA0
 struct ServerBackendLiveScoreboardEnableMessage
 {
     char _0x0000[40];
@@ -12560,7 +12560,7 @@ struct ServerBackendLiveScoreboardEnableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00934
-// TypeInfo:  0x0000000142BB4CC0
+// TypeInfo: 0x0000000142BB4CC0
 struct ServerBackendLiveServerProxyDisableMessage
 {
     char _0x0000[40];
@@ -12568,7 +12568,7 @@ struct ServerBackendLiveServerProxyDisableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00933
-// TypeInfo:  0x0000000142BB4CE0
+// TypeInfo: 0x0000000142BB4CE0
 struct ServerBackendLiveServerProxyEnableMessage
 {
     char _0x0000[40];
@@ -12576,7 +12576,7 @@ struct ServerBackendLiveServerProxyEnableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00932
-// TypeInfo:  0x0000000142BB4D00
+// TypeInfo: 0x0000000142BB4D00
 struct ServerBackendLiveServerProxyConfigUpdatedMessage
 {
     char _0x0000[40];
@@ -12584,7 +12584,7 @@ struct ServerBackendLiveServerProxyConfigUpdatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00931
-// TypeInfo:  0x0000000142BB4D20
+// TypeInfo: 0x0000000142BB4D20
 struct ServerBackendLogTransmitterSettingsUpdatedMessage
 {
     char _0x0000[40];
@@ -12592,7 +12592,7 @@ struct ServerBackendLogTransmitterSettingsUpdatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00930
-// TypeInfo:  0x0000000142BB4D40
+// TypeInfo: 0x0000000142BB4D40
 struct ServerBackendBattlelogTransactionMessageBase
 {
     char _0x0000[40];
@@ -12600,7 +12600,7 @@ struct ServerBackendBattlelogTransactionMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00929
-// TypeInfo:  0x0000000142BB4D60
+// TypeInfo: 0x0000000142BB4D60
 struct PlaygroundServerBackendResponseMessageBase
 {
     char _0x0000[40];
@@ -12608,7 +12608,7 @@ struct PlaygroundServerBackendResponseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00928
-// TypeInfo:  0x0000000142BB4D80
+// TypeInfo: 0x0000000142BB4D80
 struct PeerServerBackendResponseMessageBase
 {
     char _0x0000[40];
@@ -12616,7 +12616,7 @@ struct PeerServerBackendResponseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00927
-// TypeInfo:  0x0000000142BB4DA0
+// TypeInfo: 0x0000000142BB4DA0
 struct PeerServerBackendRequestMessageBase
 {
     char _0x0000[40];
@@ -12624,7 +12624,7 @@ struct PeerServerBackendRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00926
-// TypeInfo:  0x0000000142BB4DC0
+// TypeInfo: 0x0000000142BB4DC0
 struct ServerBackendRoleResponseMessageBase
 {
     char _0x0000[40];
@@ -12632,7 +12632,7 @@ struct ServerBackendRoleResponseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00925
-// TypeInfo:  0x0000000142BB4DE0
+// TypeInfo: 0x0000000142BB4DE0
 struct ServerBackendRoleRequestMessageBase
 {
     char _0x0000[40];
@@ -12640,7 +12640,7 @@ struct ServerBackendRoleRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00924
-// TypeInfo:  0x0000000142BB4E00
+// TypeInfo: 0x0000000142BB4E00
 struct ServerBackendBattlepackResponseMessageBase
 {
     char _0x0000[40];
@@ -12648,7 +12648,7 @@ struct ServerBackendBattlepackResponseMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00923
-// TypeInfo:  0x0000000142BB4E20
+// TypeInfo: 0x0000000142BB4E20
 struct ServerBackendBattlepackRequestMessageBase
 {
     char _0x0000[40];
@@ -12656,7 +12656,7 @@ struct ServerBackendBattlepackRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00922
-// TypeInfo:  0x0000000142BB4E40
+// TypeInfo: 0x0000000142BB4E40
 struct ServerBackendOnGameReportMetricMessage
 {
     char _0x0000[72];
@@ -12664,7 +12664,7 @@ struct ServerBackendOnGameReportMetricMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00921
-// TypeInfo:  0x0000000142BB4E60
+// TypeInfo: 0x0000000142BB4E60
 struct ServerBackendOnGameReportCompleteMessage
 {
     char _0x0000[48];
@@ -12672,7 +12672,7 @@ struct ServerBackendOnGameReportCompleteMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00920
-// TypeInfo:  0x0000000142BB4E80
+// TypeInfo: 0x0000000142BB4E80
 struct ServerBackendGameReportCompleteMessage
 {
     char _0x0000[64];
@@ -12680,7 +12680,7 @@ struct ServerBackendGameReportCompleteMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00919
-// TypeInfo:  0x0000000142BB4EA0
+// TypeInfo: 0x0000000142BB4EA0
 struct ServerBackendOnFinalizationCompleteMessage
 {
     char _0x0000[48];
@@ -12688,7 +12688,7 @@ struct ServerBackendOnFinalizationCompleteMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00918
-// TypeInfo:  0x0000000142BB4EC0
+// TypeInfo: 0x0000000142BB4EC0
 struct VeniceServerMetricsFriendZoneSpawnMessage
 {
     char _0x0000[128];
@@ -12696,7 +12696,7 @@ struct VeniceServerMetricsFriendZoneSpawnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00917
-// TypeInfo:  0x0000000142BB4EE0
+// TypeInfo: 0x0000000142BB4EE0
 struct VeniceServerMetricsManDownImmobilizedMessage
 {
     char _0x0000[48];
@@ -12704,7 +12704,7 @@ struct VeniceServerMetricsManDownImmobilizedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00916
-// TypeInfo:  0x0000000142BB4F00
+// TypeInfo: 0x0000000142BB4F00
 struct VeniceServerMetricsManDownMessage
 {
     char _0x0000[56];
@@ -12712,7 +12712,7 @@ struct VeniceServerMetricsManDownMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00915
-// TypeInfo:  0x0000000142BB4F20
+// TypeInfo: 0x0000000142BB4F20
 struct VeniceServerMetricsRestartRoundMessage
 {
     char _0x0000[48];
@@ -12720,7 +12720,7 @@ struct VeniceServerMetricsRestartRoundMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00914
-// TypeInfo:  0x0000000142BB4F40
+// TypeInfo: 0x0000000142BB4F40
 struct VeniceServerMetricsStartRoundMessage
 {
     char _0x0000[48];
@@ -12728,7 +12728,7 @@ struct VeniceServerMetricsStartRoundMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00913
-// TypeInfo:  0x0000000142BB4F60
+// TypeInfo: 0x0000000142BB4F60
 struct VeniceServerMetricsLifeCounterMessage
 {
     char _0x0000[48];
@@ -12736,7 +12736,7 @@ struct VeniceServerMetricsLifeCounterMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00912
-// TypeInfo:  0x0000000142BB4F80
+// TypeInfo: 0x0000000142BB4F80
 struct VeniceServerMetricsTicketCounterMessage
 {
     char _0x0000[48];
@@ -12744,7 +12744,7 @@ struct VeniceServerMetricsTicketCounterMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00911
-// TypeInfo:  0x0000000142BB4FA0
+// TypeInfo: 0x0000000142BB4FA0
 struct VeniceServerMetricsRankupMessage
 {
     char _0x0000[56];
@@ -12752,7 +12752,7 @@ struct VeniceServerMetricsRankupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00910
-// TypeInfo:  0x0000000142BB4FC0
+// TypeInfo: 0x0000000142BB4FC0
 struct VeniceServerMetricsCreateLogMessage
 {
     char _0x0000[48];
@@ -12760,7 +12760,7 @@ struct VeniceServerMetricsCreateLogMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00818
-// TypeInfo:  0x0000000142BAD180
+// TypeInfo: 0x0000000142BAD180
 struct ServerLevolutionTriggeredMessage
 {
     char _0x0000[96];
@@ -12768,7 +12768,7 @@ struct ServerLevolutionTriggeredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00813
-// TypeInfo:  0x0000000142BAD1A0
+// TypeInfo: 0x0000000142BAD1A0
 struct VeniceNetworkWeaponAimingMessage
 {
     char _0x0000[80];
@@ -12776,7 +12776,7 @@ struct VeniceNetworkWeaponAimingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00800
-// TypeInfo:  0x0000000142BAD1C0
+// TypeInfo: 0x0000000142BAD1C0
 struct IndirectFireDispersionData
 {
     float m_MaxAngle; //0x0000
@@ -12790,7 +12790,7 @@ struct IndirectFireDispersionData
 
 ////////////////////////////////////////
 // RuntimeId: 00794
-// TypeInfo:  0x0000000142BAD1E0
+// TypeInfo: 0x0000000142BAD1E0
 struct PlayerFriendManagerFriendJoinEventMessage
 {
     char _0x0000[104];
@@ -12798,7 +12798,7 @@ struct PlayerFriendManagerFriendJoinEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00791
-// TypeInfo:  0x0000000142BAD220
+// TypeInfo: 0x0000000142BAD220
 struct PlayerFriendManagerSetAllowCreateFriendSquadMessage
 {
     char _0x0000[72];
@@ -12806,7 +12806,7 @@ struct PlayerFriendManagerSetAllowCreateFriendSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00790
-// TypeInfo:  0x0000000142BAD240
+// TypeInfo: 0x0000000142BAD240
 struct PlayerFriendManagerAbortFriendJoinMessage
 {
     char _0x0000[64];
@@ -12814,7 +12814,7 @@ struct PlayerFriendManagerAbortFriendJoinMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00781
-// TypeInfo:  0x0000000142BAD260
+// TypeInfo: 0x0000000142BAD260
 struct ColorPalletesMessageBase
 {
     char _0x0000[64];
@@ -12822,7 +12822,7 @@ struct ColorPalletesMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00780
-// TypeInfo:  0x0000000142BAD280
+// TypeInfo: 0x0000000142BAD280
 struct VeniceNetworkHardwareIdMessage
 {
     char _0x0000[88];
@@ -12830,7 +12830,7 @@ struct VeniceNetworkHardwareIdMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00779
-// TypeInfo:  0x0000000142BAD2A0
+// TypeInfo: 0x0000000142BAD2A0
 struct VeniceNetworkRequestHardwareIdMessage
 {
     char _0x0000[72];
@@ -12838,7 +12838,7 @@ struct VeniceNetworkRequestHardwareIdMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00778
-// TypeInfo:  0x0000000142BAD2C0
+// TypeInfo: 0x0000000142BAD2C0
 struct VeniceNetworkRequestFrontBufferScreenshot2Message
 {
     char _0x0000[80];
@@ -12846,7 +12846,7 @@ struct VeniceNetworkRequestFrontBufferScreenshot2Message
 
 ////////////////////////////////////////
 // RuntimeId: 00777
-// TypeInfo:  0x0000000142BAD2E0
+// TypeInfo: 0x0000000142BAD2E0
 struct VeniceNetworkRequestFrontBufferScreenshotMessage
 {
     char _0x0000[80];
@@ -12854,7 +12854,7 @@ struct VeniceNetworkRequestFrontBufferScreenshotMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00776
-// TypeInfo:  0x0000000142BAD300
+// TypeInfo: 0x0000000142BAD300
 struct VeniceNetworkVictimDisabledPartMessage
 {
     char _0x0000[96];
@@ -12862,7 +12862,7 @@ struct VeniceNetworkVictimDisabledPartMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00775
-// TypeInfo:  0x0000000142BAD320
+// TypeInfo: 0x0000000142BAD320
 struct VeniceNetworkVictimMissingPhysicsComponentMessage
 {
     char _0x0000[96];
@@ -12870,7 +12870,7 @@ struct VeniceNetworkVictimMissingPhysicsComponentMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00774
-// TypeInfo:  0x0000000142BAD340
+// TypeInfo: 0x0000000142BAD340
 struct VeniceNetworkIgnoredDamageMessage
 {
     char _0x0000[120];
@@ -12878,7 +12878,7 @@ struct VeniceNetworkIgnoredDamageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00773
-// TypeInfo:  0x0000000142BAD360
+// TypeInfo: 0x0000000142BAD360
 struct VeniceNetworkSavePersistenceMessage
 {
     char _0x0000[64];
@@ -12886,7 +12886,7 @@ struct VeniceNetworkSavePersistenceMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00772
-// TypeInfo:  0x0000000142BAD380
+// TypeInfo: 0x0000000142BAD380
 struct VeniceNetworkClientLanguageMessage
 {
     char _0x0000[72];
@@ -12894,7 +12894,7 @@ struct VeniceNetworkClientLanguageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00771
-// TypeInfo:  0x0000000142BAD3A0
+// TypeInfo: 0x0000000142BAD3A0
 struct VeniceNetworkRequestClientLanguageMessage
 {
     char _0x0000[64];
@@ -12902,7 +12902,7 @@ struct VeniceNetworkRequestClientLanguageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00770
-// TypeInfo:  0x0000000142BAD3C0
+// TypeInfo: 0x0000000142BAD3C0
 struct VeniceNetworkRequestScreenshotMessage
 {
     char _0x0000[88];
@@ -12910,7 +12910,7 @@ struct VeniceNetworkRequestScreenshotMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00769
-// TypeInfo:  0x0000000142BAD3E0
+// TypeInfo: 0x0000000142BAD3E0
 struct VeniceNetworkClientCameraInfoMessageBase
 {
     char _0x0000[64];
@@ -12918,7 +12918,7 @@ struct VeniceNetworkClientCameraInfoMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00768
-// TypeInfo:  0x0000000142BAD400
+// TypeInfo: 0x0000000142BAD400
 struct VeniceNetworkServerStatInfoMessageBase
 {
     char _0x0000[64];
@@ -12926,7 +12926,7 @@ struct VeniceNetworkServerStatInfoMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00767
-// TypeInfo:  0x0000000142BAD420
+// TypeInfo: 0x0000000142BAD420
 struct VeniceNetworkRequestServerStatInfoMessage
 {
     char _0x0000[80];
@@ -12934,7 +12934,7 @@ struct VeniceNetworkRequestServerStatInfoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00766
-// TypeInfo:  0x0000000142BAD440
+// TypeInfo: 0x0000000142BAD440
 struct VeniceNetworkSuspiciousKeyMessage
 {
     char _0x0000[72];
@@ -12942,7 +12942,7 @@ struct VeniceNetworkSuspiciousKeyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00765
-// TypeInfo:  0x0000000142BAD460
+// TypeInfo: 0x0000000142BAD460
 struct VeniceNetworkPunkBusterActiveMessage
 {
     char _0x0000[72];
@@ -12950,7 +12950,7 @@ struct VeniceNetworkPunkBusterActiveMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00764
-// TypeInfo:  0x0000000142BAD480
+// TypeInfo: 0x0000000142BAD480
 struct VeniceNetworkPunkBusterPacketMessageBase
 {
     char _0x0000[64];
@@ -12958,7 +12958,7 @@ struct VeniceNetworkPunkBusterPacketMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00763
-// TypeInfo:  0x0000000142BAD4A0
+// TypeInfo: 0x0000000142BAD4A0
 struct VeniceNetworkServerInfoMessage
 {
     char _0x0000[144];
@@ -12966,7 +12966,7 @@ struct VeniceNetworkServerInfoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00762
-// TypeInfo:  0x0000000142BAD4C0
+// TypeInfo: 0x0000000142BAD4C0
 struct VeniceNetworkRequestServerInfoMessage
 {
     char _0x0000[64];
@@ -12974,7 +12974,7 @@ struct VeniceNetworkRequestServerInfoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00761
-// TypeInfo:  0x0000000142BAD4E0
+// TypeInfo: 0x0000000142BAD4E0
 struct VeniceNetworkSetPingMessage
 {
     char _0x0000[72];
@@ -12982,7 +12982,7 @@ struct VeniceNetworkSetPingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00760
-// TypeInfo:  0x0000000142BAD500
+// TypeInfo: 0x0000000142BAD500
 struct VeniceNetworkMetricsAchievementMessage
 {
     char _0x0000[72];
@@ -12990,7 +12990,7 @@ struct VeniceNetworkMetricsAchievementMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00759
-// TypeInfo:  0x0000000142BAD520
+// TypeInfo: 0x0000000142BAD520
 struct VeniceNetworkLocalClientConnectionInfoUpdatedMessageBase
 {
     char _0x0000[64];
@@ -12998,7 +12998,7 @@ struct VeniceNetworkLocalClientConnectionInfoUpdatedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00758
-// TypeInfo:  0x0000000142BAD540
+// TypeInfo: 0x0000000142BAD540
 struct VeniceNetworkOnPlayerSelectedTeamMessage
 {
     char _0x0000[72];
@@ -13006,7 +13006,7 @@ struct VeniceNetworkOnPlayerSelectedTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00755
-// TypeInfo:  0x0000000142BAD580
+// TypeInfo: 0x0000000142BAD580
 struct VeniceNetworkFriendZoneDebugEnableMessage
 {
     char _0x0000[64];
@@ -13014,7 +13014,7 @@ struct VeniceNetworkFriendZoneDebugEnableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00754
-// TypeInfo:  0x0000000142BAD5A0
+// TypeInfo: 0x0000000142BAD5A0
 struct VeniceNetworkFriendZoneMessage
 {
     char _0x0000[72];
@@ -13022,7 +13022,7 @@ struct VeniceNetworkFriendZoneMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00753
-// TypeInfo:  0x0000000142BAD5C0
+// TypeInfo: 0x0000000142BAD5C0
 struct VeniceNetworkVirtualGameStateMessage
 {
     char _0x0000[72];
@@ -13030,7 +13030,7 @@ struct VeniceNetworkVirtualGameStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00752
-// TypeInfo:  0x0000000142BAD5E0
+// TypeInfo: 0x0000000142BAD5E0
 struct VeniceNetworkSendTelemetryTokenMessage
 {
     char _0x0000[80];
@@ -13038,7 +13038,7 @@ struct VeniceNetworkSendTelemetryTokenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00751
-// TypeInfo:  0x0000000142BAD600
+// TypeInfo: 0x0000000142BAD600
 struct VeniceNetworkNotifyMicStateMessage
 {
     char _0x0000[72];
@@ -13046,7 +13046,7 @@ struct VeniceNetworkNotifyMicStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00750
-// TypeInfo:  0x0000000142BAD620
+// TypeInfo: 0x0000000142BAD620
 struct VeniceNetworkSetVoiceChannelMessage
 {
     char _0x0000[72];
@@ -13054,7 +13054,7 @@ struct VeniceNetworkSetVoiceChannelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00749
-// TypeInfo:  0x0000000142BAD640
+// TypeInfo: 0x0000000142BAD640
 struct VeniceNetworkVoiceTokenMessage
 {
     char _0x0000[72];
@@ -13062,7 +13062,7 @@ struct VeniceNetworkVoiceTokenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00748
-// TypeInfo:  0x0000000142BAD660
+// TypeInfo: 0x0000000142BAD660
 struct VeniceNetworkEorStatsMessage
 {
     char _0x0000[176];
@@ -13070,7 +13070,7 @@ struct VeniceNetworkEorStatsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00747
-// TypeInfo:  0x0000000142BAD680
+// TypeInfo: 0x0000000142BAD680
 struct VeniceNetworkSettingsMessage
 {
     char _0x0000[216];
@@ -13078,7 +13078,7 @@ struct VeniceNetworkSettingsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00746
-// TypeInfo:  0x0000000142BAD6A0
+// TypeInfo: 0x0000000142BAD6A0
 struct VeniceNetworkRequestCoopPlayerInformationMessage
 {
     char _0x0000[64];
@@ -13086,7 +13086,7 @@ struct VeniceNetworkRequestCoopPlayerInformationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00745
-// TypeInfo:  0x0000000142BAD6C0
+// TypeInfo: 0x0000000142BAD6C0
 struct VeniceNetworkRequestCoopEorStatsMessage
 {
     char _0x0000[72];
@@ -13094,7 +13094,7 @@ struct VeniceNetworkRequestCoopEorStatsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00744
-// TypeInfo:  0x0000000142BAD6E0
+// TypeInfo: 0x0000000142BAD6E0
 struct VeniceNetworkRequestEorStatsMessage
 {
     char _0x0000[64];
@@ -13102,7 +13102,7 @@ struct VeniceNetworkRequestEorStatsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00743
-// TypeInfo:  0x0000000142BAD700
+// TypeInfo: 0x0000000142BAD700
 struct VeniceNetworkDefibKillMessage
 {
     char _0x0000[96];
@@ -13110,7 +13110,7 @@ struct VeniceNetworkDefibKillMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00742
-// TypeInfo:  0x0000000142BAD720
+// TypeInfo: 0x0000000142BAD720
 struct VeniceNetworkScoreChangeMessage
 {
     char _0x0000[72];
@@ -13118,7 +13118,7 @@ struct VeniceNetworkScoreChangeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00741
-// TypeInfo:  0x0000000142BAD740
+// TypeInfo: 0x0000000142BAD740
 struct VeniceNetworkCounterStatusMessage
 {
     char _0x0000[72];
@@ -13126,7 +13126,7 @@ struct VeniceNetworkCounterStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00740
-// TypeInfo:  0x0000000142BAD760
+// TypeInfo: 0x0000000142BAD760
 struct VeniceNetworkRequestCounterStatusMessage
 {
     char _0x0000[72];
@@ -13134,7 +13134,7 @@ struct VeniceNetworkRequestCounterStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00739
-// TypeInfo:  0x0000000142BAD780
+// TypeInfo: 0x0000000142BAD780
 struct VeniceNetworkMissionAwardsStatusMessage
 {
     char _0x0000[72];
@@ -13142,7 +13142,7 @@ struct VeniceNetworkMissionAwardsStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00736
-// TypeInfo:  0x0000000142BAF120
+// TypeInfo: 0x0000000142BAF120
 struct CounterStatus
 {
     float m_CurrentValue; //0x0000
@@ -13151,7 +13151,7 @@ struct CounterStatus
 
 ////////////////////////////////////////
 // RuntimeId: 00738
-// TypeInfo:  0x0000000142BAF100
+// TypeInfo: 0x0000000142BAF100
 struct AwardStatus
 {
     char* m_Code; //0x0000
@@ -13164,7 +13164,7 @@ struct AwardStatus
 
 ////////////////////////////////////////
 // RuntimeId: 00734
-// TypeInfo:  0x0000000142BAF140
+// TypeInfo: 0x0000000142BAF140
 struct StatCounterStatus
 {
     char* m_Code; //0x0000
@@ -13174,7 +13174,7 @@ struct StatCounterStatus
 
 ////////////////////////////////////////
 // RuntimeId: 00732
-// TypeInfo:  0x0000000142BAD7A0
+// TypeInfo: 0x0000000142BAD7A0
 struct VeniceNetworkDogTagMessage
 {
     char _0x0000[88];
@@ -13182,7 +13182,7 @@ struct VeniceNetworkDogTagMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00731
-// TypeInfo:  0x0000000142BAD7C0
+// TypeInfo: 0x0000000142BAD7C0
 struct VeniceNetworkAchievementUpdateMessage
 {
     char _0x0000[72];
@@ -13190,7 +13190,7 @@ struct VeniceNetworkAchievementUpdateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00730
-// TypeInfo:  0x0000000142BAD7E0
+// TypeInfo: 0x0000000142BAD7E0
 struct VeniceNetworkAchievementProgressMessage
 {
     char _0x0000[88];
@@ -13198,7 +13198,7 @@ struct VeniceNetworkAchievementProgressMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00729
-// TypeInfo:  0x0000000142BAD800
+// TypeInfo: 0x0000000142BAD800
 struct VeniceNetworkUnlockAchievementsMessage
 {
     char _0x0000[88];
@@ -13206,7 +13206,7 @@ struct VeniceNetworkUnlockAchievementsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00728
-// TypeInfo:  0x0000000142BAD820
+// TypeInfo: 0x0000000142BAD820
 struct VeniceNetworkAllWeaponKillsMessage
 {
     char _0x0000[80];
@@ -13214,7 +13214,7 @@ struct VeniceNetworkAllWeaponKillsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00727
-// TypeInfo:  0x0000000142BAD840
+// TypeInfo: 0x0000000142BAD840
 struct VeniceNetworkRequestAllWeaponKillsMessage
 {
     char _0x0000[72];
@@ -13222,7 +13222,7 @@ struct VeniceNetworkRequestAllWeaponKillsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00726
-// TypeInfo:  0x0000000142BAD860
+// TypeInfo: 0x0000000142BAD860
 struct VeniceNetworkBoostUpdateMessage
 {
     char _0x0000[88];
@@ -13230,7 +13230,7 @@ struct VeniceNetworkBoostUpdateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00723
-// TypeInfo:  0x0000000142BAD8A0
+// TypeInfo: 0x0000000142BAD8A0
 struct VeniceNetworkUnlockGainedMessage
 {
     char _0x0000[120];
@@ -13238,7 +13238,7 @@ struct VeniceNetworkUnlockGainedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00720
-// TypeInfo:  0x0000000142BAD8E0
+// TypeInfo: 0x0000000142BAD8E0
 struct VeniceNetworkAwardGainedMessage
 {
     char _0x0000[112];
@@ -13246,7 +13246,7 @@ struct VeniceNetworkAwardGainedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00719
-// TypeInfo:  0x0000000142BAD900
+// TypeInfo: 0x0000000142BAD900
 struct VeniceNetworkSetSquadPrivacyMessage
 {
     char _0x0000[72];
@@ -13254,7 +13254,7 @@ struct VeniceNetworkSetSquadPrivacyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00718
-// TypeInfo:  0x0000000142BAD920
+// TypeInfo: 0x0000000142BAD920
 struct VeniceNetworkLeaveSquadMessage
 {
     char _0x0000[64];
@@ -13262,7 +13262,7 @@ struct VeniceNetworkLeaveSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00717
-// TypeInfo:  0x0000000142BAD940
+// TypeInfo: 0x0000000142BAD940
 struct VeniceNetworkKickFromSquadMessage
 {
     char _0x0000[72];
@@ -13270,7 +13270,7 @@ struct VeniceNetworkKickFromSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00716
-// TypeInfo:  0x0000000142BAD960
+// TypeInfo: 0x0000000142BAD960
 struct VeniceNetworkCreateSquadMessage
 {
     char _0x0000[64];
@@ -13278,7 +13278,7 @@ struct VeniceNetworkCreateSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00715
-// TypeInfo:  0x0000000142BAD980
+// TypeInfo: 0x0000000142BAD980
 struct VeniceNetworkJoinSquadByOnlineIdMessage
 {
     char _0x0000[72];
@@ -13286,7 +13286,7 @@ struct VeniceNetworkJoinSquadByOnlineIdMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00714
-// TypeInfo:  0x0000000142BAD9A0
+// TypeInfo: 0x0000000142BAD9A0
 struct VeniceNetworkJoinSquadMessage
 {
     char _0x0000[80];
@@ -13294,7 +13294,7 @@ struct VeniceNetworkJoinSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00713
-// TypeInfo:  0x0000000142BAD9C0
+// TypeInfo: 0x0000000142BAD9C0
 struct VeniceNetworkOrderMessage
 {
     char _0x0000[104];
@@ -13302,7 +13302,7 @@ struct VeniceNetworkOrderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00712
-// TypeInfo:  0x0000000142BAD9E0
+// TypeInfo: 0x0000000142BAD9E0
 struct VeniceNetworkFocusPointMessage
 {
     char _0x0000[96];
@@ -13310,7 +13310,7 @@ struct VeniceNetworkFocusPointMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00711
-// TypeInfo:  0x0000000142BADA00
+// TypeInfo: 0x0000000142BADA00
 struct VeniceNetworkSpottingOverheatMessage
 {
     char _0x0000[72];
@@ -13318,7 +13318,7 @@ struct VeniceNetworkSpottingOverheatMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00710
-// TypeInfo:  0x0000000142BADA20
+// TypeInfo: 0x0000000142BADA20
 struct VeniceNetworkSpottingMessage
 {
     char _0x0000[232];
@@ -13326,7 +13326,7 @@ struct VeniceNetworkSpottingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00709
-// TypeInfo:  0x0000000142BADA40
+// TypeInfo: 0x0000000142BADA40
 struct StaticModelDamagedPartByPlayerMessage
 {
     char _0x0000[56];
@@ -13334,7 +13334,7 @@ struct StaticModelDamagedPartByPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00708
-// TypeInfo:  0x0000000142BADA60
+// TypeInfo: 0x0000000142BADA60
 struct StaticModelAllPartsDisabledMessage
 {
     char _0x0000[48];
@@ -13342,7 +13342,7 @@ struct StaticModelAllPartsDisabledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00707
-// TypeInfo:  0x0000000142BADA80
+// TypeInfo: 0x0000000142BADA80
 struct BallisticShieldCreatedMessage
 {
     char _0x0000[48];
@@ -13350,7 +13350,7 @@ struct BallisticShieldCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00706
-// TypeInfo:  0x0000000142BADAA0
+// TypeInfo: 0x0000000142BADAA0
 struct EmblemTextureFinishedMessage
 {
     char _0x0000[40];
@@ -13358,7 +13358,7 @@ struct EmblemTextureFinishedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00705
-// TypeInfo:  0x0000000142BADAC0
+// TypeInfo: 0x0000000142BADAC0
 struct ServerScreenshotReceivedMessage
 {
     char _0x0000[64];
@@ -13366,7 +13366,7 @@ struct ServerScreenshotReceivedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00704
-// TypeInfo:  0x0000000142BADAE0
+// TypeInfo: 0x0000000142BADAE0
 struct FieldUpgradesLevelUpPlayerMessage
 {
     char _0x0000[56];
@@ -13374,7 +13374,7 @@ struct FieldUpgradesLevelUpPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00703
-// TypeInfo:  0x0000000142BADB00
+// TypeInfo: 0x0000000142BADB00
 struct PushNotificationChallengeActiveDeltaMessage
 {
     char _0x0000[56];
@@ -13382,7 +13382,7 @@ struct PushNotificationChallengeActiveDeltaMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00702
-// TypeInfo:  0x0000000142BADB20
+// TypeInfo: 0x0000000142BADB20
 struct PushNotificationPresencePlayingDeltaMessage
 {
     char _0x0000[56];
@@ -13390,7 +13390,7 @@ struct PushNotificationPresencePlayingDeltaMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00701
-// TypeInfo:  0x0000000142BADB40
+// TypeInfo: 0x0000000142BADB40
 struct PushNotificationPresentMessageBase
 {
     char _0x0000[56];
@@ -13398,7 +13398,7 @@ struct PushNotificationPresentMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00698
-// TypeInfo:  0x0000000142BADB80
+// TypeInfo: 0x0000000142BADB80
 struct GameControlJoinServerMessageBase
 {
     char _0x0000[48];
@@ -13406,7 +13406,7 @@ struct GameControlJoinServerMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00697
-// TypeInfo:  0x0000000142BADBA0
+// TypeInfo: 0x0000000142BADBA0
 struct ESportsMatchManagerDelayedTerminationMessage
 {
     char _0x0000[40];
@@ -13414,7 +13414,7 @@ struct ESportsMatchManagerDelayedTerminationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00696
-// TypeInfo:  0x0000000142BADBC0
+// TypeInfo: 0x0000000142BADBC0
 struct ESportsMatchManagerTooFewPlayersMessage
 {
     char _0x0000[48];
@@ -13422,7 +13422,7 @@ struct ESportsMatchManagerTooFewPlayersMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00695
-// TypeInfo:  0x0000000142BADBE0
+// TypeInfo: 0x0000000142BADBE0
 struct VeniceCommonMetricsTriggerMessage
 {
     char _0x0000[56];
@@ -13430,7 +13430,7 @@ struct VeniceCommonMetricsTriggerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00694
-// TypeInfo:  0x0000000142BADC00
+// TypeInfo: 0x0000000142BADC00
 struct ServerUnlockSystemSetupMessage
 {
     char _0x0000[56];
@@ -13438,7 +13438,7 @@ struct ServerUnlockSystemSetupMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00691
-// TypeInfo:  0x0000000142BADC40
+// TypeInfo: 0x0000000142BADC40
 struct ServerMapSequencerLevelLoadedMessage
 {
     char _0x0000[64];
@@ -13446,7 +13446,7 @@ struct ServerMapSequencerLevelLoadedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00690
-// TypeInfo:  0x0000000142BADC60
+// TypeInfo: 0x0000000142BADC60
 struct ServerMapSequencerSwitchingLevelsMessage
 {
     char _0x0000[72];
@@ -13454,7 +13454,7 @@ struct ServerMapSequencerSwitchingLevelsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00689
-// TypeInfo:  0x0000000142BADC80
+// TypeInfo: 0x0000000142BADC80
 struct ServerMapSequencerControlledInfoMessage
 {
     char _0x0000[48];
@@ -13462,7 +13462,7 @@ struct ServerMapSequencerControlledInfoMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00688
-// TypeInfo:  0x0000000142BADCA0
+// TypeInfo: 0x0000000142BADCA0
 struct ServerMapSequencerMaxPlayerCountMessage
 {
     char _0x0000[48];
@@ -13470,7 +13470,7 @@ struct ServerMapSequencerMaxPlayerCountMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00687
-// TypeInfo:  0x0000000142BADCC0
+// TypeInfo: 0x0000000142BADCC0
 struct ServerMapSequencerEventMessageBase
 {
     char _0x0000[48];
@@ -13478,7 +13478,7 @@ struct ServerMapSequencerEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00684
-// TypeInfo:  0x0000000142BADD00
+// TypeInfo: 0x0000000142BADD00
 struct ClientPersistenceAwardGainedMessage
 {
     char _0x0000[56];
@@ -13486,7 +13486,7 @@ struct ClientPersistenceAwardGainedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00683
-// TypeInfo:  0x0000000142BADD20
+// TypeInfo: 0x0000000142BADD20
 struct VoiceSetPushToTalkStateMessage
 {
     char _0x0000[48];
@@ -13494,7 +13494,7 @@ struct VoiceSetPushToTalkStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00682
-// TypeInfo:  0x0000000142BADD40
+// TypeInfo: 0x0000000142BADD40
 struct VoiceChangedMicEnabledMessage
 {
     char _0x0000[48];
@@ -13502,7 +13502,7 @@ struct VoiceChangedMicEnabledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00681
-// TypeInfo:  0x0000000142BADD60
+// TypeInfo: 0x0000000142BADD60
 struct VoiceSetMuteStatusMessage
 {
     char _0x0000[56];
@@ -13510,7 +13510,7 @@ struct VoiceSetMuteStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00680
-// TypeInfo:  0x0000000142BADD80
+// TypeInfo: 0x0000000142BADD80
 struct VoiceSettingsRequestMessageBase
 {
     char _0x0000[40];
@@ -13518,7 +13518,7 @@ struct VoiceSettingsRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00679
-// TypeInfo:  0x0000000142BADDA0
+// TypeInfo: 0x0000000142BADDA0
 struct VoiceSettingsMessageBase
 {
     char _0x0000[40];
@@ -13526,7 +13526,7 @@ struct VoiceSettingsMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00678
-// TypeInfo:  0x0000000142BADDC0
+// TypeInfo: 0x0000000142BADDC0
 struct VoiceChannelRequestMessageBase
 {
     char _0x0000[40];
@@ -13534,7 +13534,7 @@ struct VoiceChannelRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00677
-// TypeInfo:  0x0000000142BADDE0
+// TypeInfo: 0x0000000142BADDE0
 struct VoiceChannelMessageBase
 {
     char _0x0000[40];
@@ -13542,7 +13542,7 @@ struct VoiceChannelMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00676
-// TypeInfo:  0x0000000142BADE00
+// TypeInfo: 0x0000000142BADE00
 struct UIMemoryCardDestroyedMessage
 {
     char _0x0000[40];
@@ -13550,7 +13550,7 @@ struct UIMemoryCardDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00675
-// TypeInfo:  0x0000000142BADE20
+// TypeInfo: 0x0000000142BADE20
 struct UIMemoryCardCreatedMessage
 {
     char _0x0000[40];
@@ -13558,7 +13558,7 @@ struct UIMemoryCardCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00674
-// TypeInfo:  0x0000000142BADE40
+// TypeInfo: 0x0000000142BADE40
 struct UIIOStatusMessage
 {
     char _0x0000[48];
@@ -13566,7 +13566,7 @@ struct UIIOStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00671
-// TypeInfo:  0x0000000142BADE80
+// TypeInfo: 0x0000000142BADE80
 struct UINPXTooltipMessage
 {
     char _0x0000[56];
@@ -13574,7 +13574,7 @@ struct UINPXTooltipMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00670
-// TypeInfo:  0x0000000142BADEA0
+// TypeInfo: 0x0000000142BADEA0
 struct UITooltipMessage
 {
     char _0x0000[56];
@@ -13582,7 +13582,7 @@ struct UITooltipMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00667
-// TypeInfo:  0x0000000142BADEE0
+// TypeInfo: 0x0000000142BADEE0
 struct UISelectedWeaponMessage
 {
     char _0x0000[64];
@@ -13590,7 +13590,7 @@ struct UISelectedWeaponMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00666
-// TypeInfo:  0x0000000142BADF00
+// TypeInfo: 0x0000000142BADF00
 struct UIClearWeaponsListMessage
 {
     char _0x0000[40];
@@ -13598,7 +13598,7 @@ struct UIClearWeaponsListMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00665
-// TypeInfo:  0x0000000142BADF20
+// TypeInfo: 0x0000000142BADF20
 struct UISelectedVisualUnlocksMessage
 {
     char _0x0000[48];
@@ -13606,7 +13606,7 @@ struct UISelectedVisualUnlocksMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00664
-// TypeInfo:  0x0000000142BADF40
+// TypeInfo: 0x0000000142BADF40
 struct UIReceivedCustomizationFromBlazeMessage
 {
     char _0x0000[40];
@@ -13614,7 +13614,7 @@ struct UIReceivedCustomizationFromBlazeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00663
-// TypeInfo:  0x0000000142BADF60
+// TypeInfo: 0x0000000142BADF60
 struct UIRefreshCustomizationSelectionsMessage
 {
     char _0x0000[40];
@@ -13622,7 +13622,7 @@ struct UIRefreshCustomizationSelectionsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00662
-// TypeInfo:  0x0000000142BADF80
+// TypeInfo: 0x0000000142BADF80
 struct UIPreEndOfRoundReadyMessage
 {
     char _0x0000[40];
@@ -13630,7 +13630,7 @@ struct UIPreEndOfRoundReadyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00661
-// TypeInfo:  0x0000000142BADFA0
+// TypeInfo: 0x0000000142BADFA0
 struct UIEndOfRoundReadyMessage
 {
     char _0x0000[40];
@@ -13638,7 +13638,7 @@ struct UIEndOfRoundReadyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00660
-// TypeInfo:  0x0000000142BADFC0
+// TypeInfo: 0x0000000142BADFC0
 struct UIRequestEndOfRoundMessage
 {
     char _0x0000[40];
@@ -13646,7 +13646,7 @@ struct UIRequestEndOfRoundMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00659
-// TypeInfo:  0x0000000142BADFE0
+// TypeInfo: 0x0000000142BADFE0
 struct UIRequestPreEndOfRoundMessage
 {
     char _0x0000[40];
@@ -13654,7 +13654,7 @@ struct UIRequestPreEndOfRoundMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00658
-// TypeInfo:  0x0000000142BAE000
+// TypeInfo: 0x0000000142BAE000
 struct UILoadingProgressHideMessage
 {
     char _0x0000[40];
@@ -13662,7 +13662,7 @@ struct UILoadingProgressHideMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00657
-// TypeInfo:  0x0000000142BAE020
+// TypeInfo: 0x0000000142BAE020
 struct UILoadingProgressShowMessage
 {
     char _0x0000[48];
@@ -13670,7 +13670,7 @@ struct UILoadingProgressShowMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00656
-// TypeInfo:  0x0000000142BAE040
+// TypeInfo: 0x0000000142BAE040
 struct UIEnterFrontendMessage
 {
     char _0x0000[40];
@@ -13678,7 +13678,7 @@ struct UIEnterFrontendMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00655
-// TypeInfo:  0x0000000142BAE060
+// TypeInfo: 0x0000000142BAE060
 struct UIControlpointChangedTeamMessage
 {
     char _0x0000[40];
@@ -13686,7 +13686,7 @@ struct UIControlpointChangedTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00654
-// TypeInfo:  0x0000000142BAE080
+// TypeInfo: 0x0000000142BAE080
 struct UIPlayerVehicleListRefreshMessage
 {
     char _0x0000[40];
@@ -13694,7 +13694,7 @@ struct UIPlayerVehicleListRefreshMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00653
-// TypeInfo:  0x0000000142BAE0A0
+// TypeInfo: 0x0000000142BAE0A0
 struct UIHudTicketBleedMessage
 {
     char _0x0000[40];
@@ -13702,7 +13702,7 @@ struct UIHudTicketBleedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00652
-// TypeInfo:  0x0000000142BAE0C0
+// TypeInfo: 0x0000000142BAE0C0
 struct UIHudSquadLevelChangeMessage
 {
     char _0x0000[48];
@@ -13710,7 +13710,7 @@ struct UIHudSquadLevelChangeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00651
-// TypeInfo:  0x0000000142BAE0E0
+// TypeInfo: 0x0000000142BAE0E0
 struct UIHudLastManStandingMessage
 {
     char _0x0000[40];
@@ -13718,7 +13718,7 @@ struct UIHudLastManStandingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00650
-// TypeInfo:  0x0000000142BAE100
+// TypeInfo: 0x0000000142BAE100
 struct UIHudResetWinningTeamMessage
 {
     char _0x0000[40];
@@ -13726,7 +13726,7 @@ struct UIHudResetWinningTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00649
-// TypeInfo:  0x0000000142BAE120
+// TypeInfo: 0x0000000142BAE120
 struct UITrackedAwardChangedMessage
 {
     char _0x0000[48];
@@ -13734,7 +13734,7 @@ struct UITrackedAwardChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00648
-// TypeInfo:  0x0000000142BAE140
+// TypeInfo: 0x0000000142BAE140
 struct UITrackedAwardUpdatedMessage
 {
     char _0x0000[40];
@@ -13742,7 +13742,7 @@ struct UITrackedAwardUpdatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00647
-// TypeInfo:  0x0000000142BAE160
+// TypeInfo: 0x0000000142BAE160
 struct UIHudReviveWeaponEquippedChangedMessage
 {
     char _0x0000[48];
@@ -13750,7 +13750,7 @@ struct UIHudReviveWeaponEquippedChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00646
-// TypeInfo:  0x0000000142BAE180
+// TypeInfo: 0x0000000142BAE180
 struct UIHudShowEnemiesMessage
 {
     char _0x0000[80];
@@ -13758,7 +13758,7 @@ struct UIHudShowEnemiesMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00645
-// TypeInfo:  0x0000000142BAE1A0
+// TypeInfo: 0x0000000142BAE1A0
 struct UIHudShowCaptureProgressMessage
 {
     char _0x0000[48];
@@ -13766,7 +13766,7 @@ struct UIHudShowCaptureProgressMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00644
-// TypeInfo:  0x0000000142BAE1C0
+// TypeInfo: 0x0000000142BAE1C0
 struct UIHudEnableMinimapMessage
 {
     char _0x0000[48];
@@ -13774,7 +13774,7 @@ struct UIHudEnableMinimapMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00643
-// TypeInfo:  0x0000000142BAE1E0
+// TypeInfo: 0x0000000142BAE1E0
 struct UIShowScoreboardMessage
 {
     char _0x0000[48];
@@ -13782,7 +13782,7 @@ struct UIShowScoreboardMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00642
-// TypeInfo:  0x0000000142BAE200
+// TypeInfo: 0x0000000142BAE200
 struct UIShowMinimapMessage
 {
     char _0x0000[48];
@@ -13790,7 +13790,7 @@ struct UIShowMinimapMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00641
-// TypeInfo:  0x0000000142BAE220
+// TypeInfo: 0x0000000142BAE220
 struct ServerSoldierSuppressionSuppressMessage
 {
     char _0x0000[64];
@@ -13798,7 +13798,7 @@ struct ServerSoldierSuppressionSuppressMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00640
-// TypeInfo:  0x0000000142BAE240
+// TypeInfo: 0x0000000142BAE240
 struct UIMinimapObjectiveEventMessage
 {
     char _0x0000[56];
@@ -13806,7 +13806,7 @@ struct UIMinimapObjectiveEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00639
-// TypeInfo:  0x0000000142BAE260
+// TypeInfo: 0x0000000142BAE260
 struct UIObjectiveEventMessage
 {
     char _0x0000[56];
@@ -13814,7 +13814,7 @@ struct UIObjectiveEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00636
-// TypeInfo:  0x0000000142BAE2A0
+// TypeInfo: 0x0000000142BAE2A0
 struct ClientGameplayPlayerBaseDestroyedMessage
 {
     char _0x0000[40];
@@ -13822,7 +13822,7 @@ struct ClientGameplayPlayerBaseDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00635
-// TypeInfo:  0x0000000142BAE2C0
+// TypeInfo: 0x0000000142BAE2C0
 struct ServerGameplayChainlinkDoubleBreakMessage
 {
     char _0x0000[48];
@@ -13830,7 +13830,7 @@ struct ServerGameplayChainlinkDoubleBreakMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00634
-// TypeInfo:  0x0000000142BAE2E0
+// TypeInfo: 0x0000000142BAE2E0
 struct ServerGameplayChainlinkDoubleLinkMessage
 {
     char _0x0000[48];
@@ -13838,7 +13838,7 @@ struct ServerGameplayChainlinkDoubleLinkMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00633
-// TypeInfo:  0x0000000142BAE300
+// TypeInfo: 0x0000000142BAE300
 struct ServerGameplayChainlinkLinkBrokenMessage
 {
     char _0x0000[48];
@@ -13846,7 +13846,7 @@ struct ServerGameplayChainlinkLinkBrokenMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00632
-// TypeInfo:  0x0000000142BAE320
+// TypeInfo: 0x0000000142BAE320
 struct ServerGameplayChainlinkLinkCreatedMessage
 {
     char _0x0000[48];
@@ -13854,7 +13854,7 @@ struct ServerGameplayChainlinkLinkCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00631
-// TypeInfo:  0x0000000142BAE340
+// TypeInfo: 0x0000000142BAE340
 struct ServerGameplayCTFFlagReturnedMessage
 {
     char _0x0000[48];
@@ -13862,7 +13862,7 @@ struct ServerGameplayCTFFlagReturnedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00630
-// TypeInfo:  0x0000000142BAE360
+// TypeInfo: 0x0000000142BAE360
 struct ServerGameplayCTFFlagCapturedMessage
 {
     char _0x0000[48];
@@ -13870,7 +13870,7 @@ struct ServerGameplayCTFFlagCapturedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00629
-// TypeInfo:  0x0000000142BAE380
+// TypeInfo: 0x0000000142BAE380
 struct ServerGameplayCTFFlagDroppedMessage
 {
     char _0x0000[48];
@@ -13878,7 +13878,7 @@ struct ServerGameplayCTFFlagDroppedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00628
-// TypeInfo:  0x0000000142BAE3A0
+// TypeInfo: 0x0000000142BAE3A0
 struct ServerGameplayCTFFlagPickedUpMessage
 {
     char _0x0000[56];
@@ -13886,7 +13886,7 @@ struct ServerGameplayCTFFlagPickedUpMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00627
-// TypeInfo:  0x0000000142BAE3C0
+// TypeInfo: 0x0000000142BAE3C0
 struct ServerGameplayTeamTakeLeadMessage
 {
     char _0x0000[48];
@@ -13894,7 +13894,7 @@ struct ServerGameplayTeamTakeLeadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00626
-// TypeInfo:  0x0000000142BAE3E0
+// TypeInfo: 0x0000000142BAE3E0
 struct ServerGameplayTeamLostLeadMessage
 {
     char _0x0000[48];
@@ -13902,7 +13902,7 @@ struct ServerGameplayTeamLostLeadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00625
-// TypeInfo:  0x0000000142BAE400
+// TypeInfo: 0x0000000142BAE400
 struct ServerGameplayPlayerBaseDestroyedMessage
 {
     char _0x0000[64];
@@ -13910,7 +13910,7 @@ struct ServerGameplayPlayerBaseDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00624
-// TypeInfo:  0x0000000142BAE420
+// TypeInfo: 0x0000000142BAE420
 struct ServerGameplayTeamReinforceMessage
 {
     char _0x0000[48];
@@ -13918,7 +13918,7 @@ struct ServerGameplayTeamReinforceMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00623
-// TypeInfo:  0x0000000142BAE440
+// TypeInfo: 0x0000000142BAE440
 struct ServerGameplayCapturePointPlayerEnteredMessage
 {
     char _0x0000[56];
@@ -13926,7 +13926,7 @@ struct ServerGameplayCapturePointPlayerEnteredMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00622
-// TypeInfo:  0x0000000142BAE460
+// TypeInfo: 0x0000000142BAE460
 struct ServerGameplayCapturePointResetMessage
 {
     char _0x0000[48];
@@ -13934,7 +13934,7 @@ struct ServerGameplayCapturePointResetMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00621
-// TypeInfo:  0x0000000142BAE480
+// TypeInfo: 0x0000000142BAE480
 struct ServerGameplayCapturePointLostMessage
 {
     char _0x0000[56];
@@ -13942,7 +13942,7 @@ struct ServerGameplayCapturePointLostMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00620
-// TypeInfo:  0x0000000142BAE4A0
+// TypeInfo: 0x0000000142BAE4A0
 struct ServerGameplayCapturePointCapturedMessage
 {
     char _0x0000[48];
@@ -13950,7 +13950,7 @@ struct ServerGameplayCapturePointCapturedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00619
-// TypeInfo:  0x0000000142BAE4C0
+// TypeInfo: 0x0000000142BAE4C0
 struct ServerGameplayCapturePointChangedMessageBase
 {
     char _0x0000[40];
@@ -13958,7 +13958,7 @@ struct ServerGameplayCapturePointChangedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00618
-// TypeInfo:  0x0000000142BAE4E0
+// TypeInfo: 0x0000000142BAE4E0
 struct ServerPlayerTrialAccountOnUnofficialKickMessage
 {
     char _0x0000[48];
@@ -13966,7 +13966,7 @@ struct ServerPlayerTrialAccountOnUnofficialKickMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00617
-// TypeInfo:  0x0000000142BAE500
+// TypeInfo: 0x0000000142BAE500
 struct ServerPlayerRankTooHighKickMessage
 {
     char _0x0000[48];
@@ -13974,7 +13974,7 @@ struct ServerPlayerRankTooHighKickMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00616
-// TypeInfo:  0x0000000142BAE520
+// TypeInfo: 0x0000000142BAE520
 struct ServerPlayerBoostUpdateMessage
 {
     char _0x0000[56];
@@ -13982,7 +13982,7 @@ struct ServerPlayerBoostUpdateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00615
-// TypeInfo:  0x0000000142BAE540
+// TypeInfo: 0x0000000142BAE540
 struct ServerPlayerConsumableConsumedMessage
 {
     char _0x0000[56];
@@ -13990,7 +13990,7 @@ struct ServerPlayerConsumableConsumedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00614
-// TypeInfo:  0x0000000142BAE560
+// TypeInfo: 0x0000000142BAE560
 struct ServerPlayerFieldUpgradeUpdateMessage
 {
     char _0x0000[56];
@@ -13998,7 +13998,7 @@ struct ServerPlayerFieldUpgradeUpdateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00613
-// TypeInfo:  0x0000000142BAE580
+// TypeInfo: 0x0000000142BAE580
 struct ServerPlayerCommanderOrderReplyMessage
 {
     char _0x0000[64];
@@ -14006,7 +14006,7 @@ struct ServerPlayerCommanderOrderReplyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00612
-// TypeInfo:  0x0000000142BAE5A0
+// TypeInfo: 0x0000000142BAE5A0
 struct ServerPlayerNewCommanderOrderMessage
 {
     char _0x0000[96];
@@ -14014,7 +14014,7 @@ struct ServerPlayerNewCommanderOrderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00611
-// TypeInfo:  0x0000000142BAE5C0
+// TypeInfo: 0x0000000142BAE5C0
 struct ServerPlayerLicensesAvailableMessage
 {
     char _0x0000[48];
@@ -14022,7 +14022,7 @@ struct ServerPlayerLicensesAvailableMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00610
-// TypeInfo:  0x0000000142BAE5E0
+// TypeInfo: 0x0000000142BAE5E0
 struct ServerPlayerManDownRevivedMessage
 {
     char _0x0000[64];
@@ -14030,7 +14030,7 @@ struct ServerPlayerManDownRevivedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00609
-// TypeInfo:  0x0000000142BAE600
+// TypeInfo: 0x0000000142BAE600
 struct ServerPlayerMeleeInteruptedMessage
 {
     char _0x0000[72];
@@ -14038,7 +14038,7 @@ struct ServerPlayerMeleeInteruptedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00608
-// TypeInfo:  0x0000000142BAE620
+// TypeInfo: 0x0000000142BAE620
 struct ServerPlayerTeamKillKickMessage
 {
     char _0x0000[48];
@@ -14046,7 +14046,7 @@ struct ServerPlayerTeamKillKickMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00607
-// TypeInfo:  0x0000000142BAE640
+// TypeInfo: 0x0000000142BAE640
 struct ServerPlayerNoInteractivityKickMessage
 {
     char _0x0000[48];
@@ -14054,7 +14054,7 @@ struct ServerPlayerNoInteractivityKickMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00606
-// TypeInfo:  0x0000000142BAE660
+// TypeInfo: 0x0000000142BAE660
 struct ServerPlayerSpawnOnSelectedSpawnPointMessage
 {
     char _0x0000[48];
@@ -14062,7 +14062,7 @@ struct ServerPlayerSpawnOnSelectedSpawnPointMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00605
-// TypeInfo:  0x0000000142BAE680
+// TypeInfo: 0x0000000142BAE680
 struct ServerPlayerSpawnAtVehicleMessage
 {
     char _0x0000[56];
@@ -14070,7 +14070,7 @@ struct ServerPlayerSpawnAtVehicleMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00604
-// TypeInfo:  0x0000000142BAE6A0
+// TypeInfo: 0x0000000142BAE6A0
 struct ServerPlayerSpawnOnPlayerMessage
 {
     char _0x0000[64];
@@ -14078,7 +14078,7 @@ struct ServerPlayerSpawnOnPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00603
-// TypeInfo:  0x0000000142BAE6C0
+// TypeInfo: 0x0000000142BAE6C0
 struct ServerPlayerSquadLeaderStatusChangedMessage
 {
     char _0x0000[48];
@@ -14086,7 +14086,7 @@ struct ServerPlayerSquadLeaderStatusChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00602
-// TypeInfo:  0x0000000142BAE6E0
+// TypeInfo: 0x0000000142BAE6E0
 struct ServerPlayerChangedSquadSpawnerStatusMessage
 {
     char _0x0000[48];
@@ -14094,7 +14094,7 @@ struct ServerPlayerChangedSquadSpawnerStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00601
-// TypeInfo:  0x0000000142BAE700
+// TypeInfo: 0x0000000142BAE700
 struct ServerPlayerChangedVoiceChannelMessage
 {
     char _0x0000[48];
@@ -14102,7 +14102,7 @@ struct ServerPlayerChangedVoiceChannelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00600
-// TypeInfo:  0x0000000142BAE720
+// TypeInfo: 0x0000000142BAE720
 struct ServerPlayerSwitchSquadMessage
 {
     char _0x0000[56];
@@ -14110,7 +14110,7 @@ struct ServerPlayerSwitchSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00599
-// TypeInfo:  0x0000000142BAE740
+// TypeInfo: 0x0000000142BAE740
 struct ClientPlayerMeleeCounterWindowEndsMessage
 {
     char _0x0000[56];
@@ -14118,7 +14118,7 @@ struct ClientPlayerMeleeCounterWindowEndsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00598
-// TypeInfo:  0x0000000142BAE760
+// TypeInfo: 0x0000000142BAE760
 struct ClientPlayerMeleeCounterWindowStartsMessage
 {
     char _0x0000[56];
@@ -14126,7 +14126,7 @@ struct ClientPlayerMeleeCounterWindowStartsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00597
-// TypeInfo:  0x0000000142BAE780
+// TypeInfo: 0x0000000142BAE780
 struct ClientPlayerChangedMatchReadyStatusMessage
 {
     char _0x0000[48];
@@ -14134,7 +14134,7 @@ struct ClientPlayerChangedMatchReadyStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00596
-// TypeInfo:  0x0000000142BAE7A0
+// TypeInfo: 0x0000000142BAE7A0
 struct ClientPlayerVoiceSlotMessage
 {
     char _0x0000[48];
@@ -14142,7 +14142,7 @@ struct ClientPlayerVoiceSlotMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00595
-// TypeInfo:  0x0000000142BAE7C0
+// TypeInfo: 0x0000000142BAE7C0
 struct ClientPlayerChangedVoiceChannelMessage
 {
     char _0x0000[48];
@@ -14150,7 +14150,7 @@ struct ClientPlayerChangedVoiceChannelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00594
-// TypeInfo:  0x0000000142BAE7E0
+// TypeInfo: 0x0000000142BAE7E0
 struct ClientPlayerChangedAllowedToSpawnOnMessage
 {
     char _0x0000[40];
@@ -14158,7 +14158,7 @@ struct ClientPlayerChangedAllowedToSpawnOnMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00593
-// TypeInfo:  0x0000000142BAE800
+// TypeInfo: 0x0000000142BAE800
 struct ClientPlayerChangedSquadLeaderStatusMessage
 {
     char _0x0000[48];
@@ -14166,7 +14166,7 @@ struct ClientPlayerChangedSquadLeaderStatusMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00592
-// TypeInfo:  0x0000000142BAE820
+// TypeInfo: 0x0000000142BAE820
 struct ClientPlayerNewSquadOrderMessage
 {
     char _0x0000[56];
@@ -14174,7 +14174,7 @@ struct ClientPlayerNewSquadOrderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00591
-// TypeInfo:  0x0000000142BAE840
+// TypeInfo: 0x0000000142BAE840
 struct ClientPlayerSwitchSquadMessage
 {
     char _0x0000[56];
@@ -14182,7 +14182,7 @@ struct ClientPlayerSwitchSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00590
-// TypeInfo:  0x0000000142BAE860
+// TypeInfo: 0x0000000142BAE860
 struct ServerAutoBalanceSettingsChangedMessage
 {
     char _0x0000[40];
@@ -14190,7 +14190,7 @@ struct ServerAutoBalanceSettingsChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00589
-// TypeInfo:  0x0000000142BAE880
+// TypeInfo: 0x0000000142BAE880
 struct ServerResendSyncedSettingsMessage
 {
     char _0x0000[40];
@@ -14198,7 +14198,7 @@ struct ServerResendSyncedSettingsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00588
-// TypeInfo:  0x0000000142BAE8A0
+// TypeInfo: 0x0000000142BAE8A0
 struct ServerRestartForESportsMatchMessage
 {
     char _0x0000[40];
@@ -14206,7 +14206,7 @@ struct ServerRestartForESportsMatchMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00587
-// TypeInfo:  0x0000000142BAE8C0
+// TypeInfo: 0x0000000142BAE8C0
 struct ServerRotateLevelMessage
 {
     char _0x0000[96];
@@ -14214,7 +14214,7 @@ struct ServerRotateLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00586
-// TypeInfo:  0x0000000142BAE8E0
+// TypeInfo: 0x0000000142BAE8E0
 struct CommanderActivateCameraMessageBase
 {
     char _0x0000[40];
@@ -14222,7 +14222,7 @@ struct CommanderActivateCameraMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00585
-// TypeInfo:  0x0000000142BAE900
+// TypeInfo: 0x0000000142BAE900
 struct CommanderAwardCommanderScoreMessage
 {
     char _0x0000[48];
@@ -14230,7 +14230,7 @@ struct CommanderAwardCommanderScoreMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00584
-// TypeInfo:  0x0000000142BAE920
+// TypeInfo: 0x0000000142BAE920
 struct CommanderAwardCommanderSquadScoreMessage
 {
     char _0x0000[56];
@@ -14238,7 +14238,7 @@ struct CommanderAwardCommanderSquadScoreMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00583
-// TypeInfo:  0x0000000142BAE940
+// TypeInfo: 0x0000000142BAE940
 struct CommanderNetworkEMPDroneDeployedMessage
 {
     char _0x0000[88];
@@ -14246,7 +14246,7 @@ struct CommanderNetworkEMPDroneDeployedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00582
-// TypeInfo:  0x0000000142BAE960
+// TypeInfo: 0x0000000142BAE960
 struct CommanderNetworkUAVDroneDeployedMessage
 {
     char _0x0000[88];
@@ -14254,7 +14254,7 @@ struct CommanderNetworkUAVDroneDeployedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00581
-// TypeInfo:  0x0000000142BAE980
+// TypeInfo: 0x0000000142BAE980
 struct CommanderNetworkGunshipDeployedMessage
 {
     char _0x0000[88];
@@ -14262,7 +14262,7 @@ struct CommanderNetworkGunshipDeployedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00580
-// TypeInfo:  0x0000000142BAE9A0
+// TypeInfo: 0x0000000142BAE9A0
 struct CommanderNetworkEarlyWarningEndedMessage
 {
     char _0x0000[72];
@@ -14270,7 +14270,7 @@ struct CommanderNetworkEarlyWarningEndedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00579
-// TypeInfo:  0x0000000142BAE9C0
+// TypeInfo: 0x0000000142BAE9C0
 struct CommanderNetworkEarlyWarningStartedMessage
 {
     char _0x0000[96];
@@ -14278,7 +14278,7 @@ struct CommanderNetworkEarlyWarningStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00578
-// TypeInfo:  0x0000000142BAE9E0
+// TypeInfo: 0x0000000142BAE9E0
 struct CommanderNetworkRadarScanStartedMessage
 {
     char _0x0000[128];
@@ -14286,7 +14286,7 @@ struct CommanderNetworkRadarScanStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00577
-// TypeInfo:  0x0000000142BAEA00
+// TypeInfo: 0x0000000142BAEA00
 struct CommanderNetworkTomahawkLaunchedMessage
 {
     char _0x0000[88];
@@ -14294,7 +14294,7 @@ struct CommanderNetworkTomahawkLaunchedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00576
-// TypeInfo:  0x0000000142BAEA20
+// TypeInfo: 0x0000000142BAEA20
 struct CommanderNetworkSatelliteEMPEndedMessage
 {
     char _0x0000[72];
@@ -14302,7 +14302,7 @@ struct CommanderNetworkSatelliteEMPEndedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00575
-// TypeInfo:  0x0000000142BAEA40
+// TypeInfo: 0x0000000142BAEA40
 struct CommanderNetworkSatelliteEMPStartedMessage
 {
     char _0x0000[72];
@@ -14310,7 +14310,7 @@ struct CommanderNetworkSatelliteEMPStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00574
-// TypeInfo:  0x0000000142BAEA60
+// TypeInfo: 0x0000000142BAEA60
 struct CommanderNetworkJamEndedMessage
 {
     char _0x0000[72];
@@ -14318,7 +14318,7 @@ struct CommanderNetworkJamEndedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00573
-// TypeInfo:  0x0000000142BAEA80
+// TypeInfo: 0x0000000142BAEA80
 struct CommanderNetworkJamStartedMessage
 {
     char _0x0000[112];
@@ -14326,7 +14326,7 @@ struct CommanderNetworkJamStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00572
-// TypeInfo:  0x0000000142BAEAA0
+// TypeInfo: 0x0000000142BAEAA0
 struct CommanderNetworkScanEndedMessage
 {
     char _0x0000[72];
@@ -14334,7 +14334,7 @@ struct CommanderNetworkScanEndedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00571
-// TypeInfo:  0x0000000142BAEAC0
+// TypeInfo: 0x0000000142BAEAC0
 struct CommanderNetworkScanStartedMessage
 {
     char _0x0000[112];
@@ -14342,7 +14342,7 @@ struct CommanderNetworkScanStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00570
-// TypeInfo:  0x0000000142BAEAE0
+// TypeInfo: 0x0000000142BAEAE0
 struct CommanderNetworkOrderReplyMessage
 {
     char _0x0000[72];
@@ -14350,7 +14350,7 @@ struct CommanderNetworkOrderReplyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00569
-// TypeInfo:  0x0000000142BAEB00
+// TypeInfo: 0x0000000142BAEB00
 struct CommanderNetworkRemoveOrderMessage
 {
     char _0x0000[72];
@@ -14358,7 +14358,7 @@ struct CommanderNetworkRemoveOrderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00568
-// TypeInfo:  0x0000000142BAEB20
+// TypeInfo: 0x0000000142BAEB20
 struct CommanderNetworkIssueOrderMessage
 {
     char _0x0000[128];
@@ -14366,7 +14366,7 @@ struct CommanderNetworkIssueOrderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00567
-// TypeInfo:  0x0000000142BAEB40
+// TypeInfo: 0x0000000142BAEB40
 struct CommanderNetworkAbortActionMessage
 {
     char _0x0000[72];
@@ -14374,7 +14374,7 @@ struct CommanderNetworkAbortActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00566
-// TypeInfo:  0x0000000142BAEB60
+// TypeInfo: 0x0000000142BAEB60
 struct CommanderNetworkSelectedSquadMessage
 {
     char _0x0000[72];
@@ -14382,7 +14382,7 @@ struct CommanderNetworkSelectedSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00565
-// TypeInfo:  0x0000000142BAEB80
+// TypeInfo: 0x0000000142BAEB80
 struct CommanderNetworkTriggerOrderReplyMessage
 {
     char _0x0000[72];
@@ -14390,7 +14390,7 @@ struct CommanderNetworkTriggerOrderReplyMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00564
-// TypeInfo:  0x0000000142BAEBA0
+// TypeInfo: 0x0000000142BAEBA0
 struct CommanderNetworkTriggerRequestMessage
 {
     char _0x0000[72];
@@ -14398,7 +14398,7 @@ struct CommanderNetworkTriggerRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00563
-// TypeInfo:  0x0000000142BAEBC0
+// TypeInfo: 0x0000000142BAEBC0
 struct CommanderNetworkTriggerActionMessage
 {
     char _0x0000[144];
@@ -14406,7 +14406,7 @@ struct CommanderNetworkTriggerActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00562
-// TypeInfo:  0x0000000142BAEBE0
+// TypeInfo: 0x0000000142BAEBE0
 struct CommanderNetworkLeaveSeatMessage
 {
     char _0x0000[72];
@@ -14414,7 +14414,7 @@ struct CommanderNetworkLeaveSeatMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00561
-// TypeInfo:  0x0000000142BAEC00
+// TypeInfo: 0x0000000142BAEC00
 struct CommanderNetworkApplyForSeatMessage
 {
     char _0x0000[72];
@@ -14422,7 +14422,7 @@ struct CommanderNetworkApplyForSeatMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00560
-// TypeInfo:  0x0000000142BAEC20
+// TypeInfo: 0x0000000142BAEC20
 struct CommanderNetworkSquadReinforcedMessage
 {
     char _0x0000[72];
@@ -14430,7 +14430,7 @@ struct CommanderNetworkSquadReinforcedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00559
-// TypeInfo:  0x0000000142BAEC40
+// TypeInfo: 0x0000000142BAEC40
 struct CommanderNetworkMutinyAbortedMessage
 {
     char _0x0000[72];
@@ -14438,7 +14438,7 @@ struct CommanderNetworkMutinyAbortedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00558
-// TypeInfo:  0x0000000142BAEC60
+// TypeInfo: 0x0000000142BAEC60
 struct CommanderNetworkMutinyCompletedMessage
 {
     char _0x0000[72];
@@ -14446,7 +14446,7 @@ struct CommanderNetworkMutinyCompletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00557
-// TypeInfo:  0x0000000142BAEC80
+// TypeInfo: 0x0000000142BAEC80
 struct CommanderNetworkMutinyStartedMessage
 {
     char _0x0000[72];
@@ -14454,7 +14454,7 @@ struct CommanderNetworkMutinyStartedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00556
-// TypeInfo:  0x0000000142BAECA0
+// TypeInfo: 0x0000000142BAECA0
 struct CommanderNetworkSquadLeaderRateCommanderMessage
 {
     char _0x0000[80];
@@ -14462,7 +14462,7 @@ struct CommanderNetworkSquadLeaderRateCommanderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00555
-// TypeInfo:  0x0000000142BAECC0
+// TypeInfo: 0x0000000142BAECC0
 struct CommanderNetworkRemoveRequestFromSquadMessage
 {
     char _0x0000[80];
@@ -14470,7 +14470,7 @@ struct CommanderNetworkRemoveRequestFromSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00554
-// TypeInfo:  0x0000000142BAECE0
+// TypeInfo: 0x0000000142BAECE0
 struct CommanderNetworkAddRequestFromSquadMessage
 {
     char _0x0000[96];
@@ -14478,7 +14478,7 @@ struct CommanderNetworkAddRequestFromSquadMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00553
-// TypeInfo:  0x0000000142BAED00
+// TypeInfo: 0x0000000142BAED00
 struct CommanderNetworkRequestActionFromCommanderMessage
 {
     char _0x0000[112];
@@ -14486,7 +14486,7 @@ struct CommanderNetworkRequestActionFromCommanderMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00552
-// TypeInfo:  0x0000000142BAED20
+// TypeInfo: 0x0000000142BAED20
 struct CommanderActionsActionStateChangedMessage
 {
     char _0x0000[56];
@@ -14494,7 +14494,7 @@ struct CommanderActionsActionStateChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00551
-// TypeInfo:  0x0000000142BAED40
+// TypeInfo: 0x0000000142BAED40
 struct CommanderSquadChangedMessage
 {
     char _0x0000[56];
@@ -14502,7 +14502,7 @@ struct CommanderSquadChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00550
-// TypeInfo:  0x0000000142BAED60
+// TypeInfo: 0x0000000142BAED60
 struct CommanderCommanderChangedMessage
 {
     char _0x0000[56];
@@ -14510,7 +14510,7 @@ struct CommanderCommanderChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00545
-// TypeInfo:  0x0000000142BAF180
+// TypeInfo: 0x0000000142BAF180
 struct GunMasterLevelInfo
 {
     CustomizeSoldierData* m_CustomizeData; //0x0000
@@ -14520,7 +14520,7 @@ struct GunMasterLevelInfo
 
 ////////////////////////////////////////
 // RuntimeId: 00547
-// TypeInfo:  0x0000000142BAF160
+// TypeInfo: 0x0000000142BAF160
 struct GunMasterWeaponsPreset
 {
     Array<GunMasterLevelInfo> m_GunMasterLevelInfos; //0x0000
@@ -14529,7 +14529,7 @@ struct GunMasterWeaponsPreset
 
 ////////////////////////////////////////
 // RuntimeId: 00479
-// TypeInfo:  0x0000000142BAF1A0
+// TypeInfo: 0x0000000142BAF1A0
 struct MessageLineData
 {
     char* m_MessageSid; //0x0000
@@ -14539,7 +14539,7 @@ struct MessageLineData
 
 ////////////////////////////////////////
 // RuntimeId: 00461
-// TypeInfo:  0x0000000142BAEDA0
+// TypeInfo: 0x0000000142BAEDA0
 struct AimingConstraintEntityBinding
 {
     AntRef m_ProneAimLimit; //0x0000
@@ -14548,7 +14548,7 @@ struct AimingConstraintEntityBinding
 
 ////////////////////////////////////////
 // RuntimeId: 00453
-// TypeInfo:  0x0000000142BAEDC0
+// TypeInfo: 0x0000000142BAEDC0
 struct CharacterMeleeBinding
 {
     AntRef m_TriggerMelee; //0x0000
@@ -14561,7 +14561,7 @@ struct CharacterMeleeBinding
 
 ////////////////////////////////////////
 // RuntimeId: 00451
-// TypeInfo:  0x0000000142BAEDE0
+// TypeInfo: 0x0000000142BAEDE0
 struct CharacterMeleeCommonBinding
 {
     AntRef m_MeleeDistance; //0x0000
@@ -14578,7 +14578,7 @@ struct CharacterMeleeCommonBinding
 
 ////////////////////////////////////////
 // RuntimeId: 00433
-// TypeInfo:  0x0000000142BAEE00
+// TypeInfo: 0x0000000142BAEE00
 struct KillWeight
 {
     float m_LowIntenseWeight; //0x0000
@@ -14588,7 +14588,7 @@ struct KillWeight
 
 ////////////////////////////////////////
 // RuntimeId: 00379
-// TypeInfo:  0x0000000142BAF1C0
+// TypeInfo: 0x0000000142BAF1C0
 struct LookAtHuman
 {
     AntSpeedLevel m_SpeedLevel; //0x0000
@@ -14600,7 +14600,7 @@ struct LookAtHuman
 
 ////////////////////////////////////////
 // RuntimeId: 00361
-// TypeInfo:  0x0000000142BAF1E0
+// TypeInfo: 0x0000000142BAF1E0
 struct WeaponInteractionData
 {
     SoldierWeaponUnlockAsset* m_WeaponToInteractWith; //0x0000
@@ -14610,7 +14610,7 @@ struct WeaponInteractionData
 
 ////////////////////////////////////////
 // RuntimeId: 00333
-// TypeInfo:  0x0000000142BAEE20
+// TypeInfo: 0x0000000142BAEE20
 struct SupportedShootingProximityChecking
 {
     float m_RayAboveGunHeightOffset; //0x0000
@@ -14621,7 +14621,7 @@ struct SupportedShootingProximityChecking
 
 ////////////////////////////////////////
 // RuntimeId: 00323
-// TypeInfo:  0x0000000142BAF220
+// TypeInfo: 0x0000000142BAF220
 struct SpecialMoveInterpolatedPoint
 {
     Vec3 m_Value; //0x0000
@@ -14631,7 +14631,7 @@ struct SpecialMoveInterpolatedPoint
 
 ////////////////////////////////////////
 // RuntimeId: 00327
-// TypeInfo:  0x0000000142BAEE40
+// TypeInfo: 0x0000000142BAEE40
 struct SpecialMoveStateData
 {
     float m_OptimumDistanceFromObject; //0x0000
@@ -14655,7 +14655,7 @@ struct SpecialMoveStateData
 
 ////////////////////////////////////////
 // RuntimeId: 00329
-// TypeInfo:  0x0000000142BAF200
+// TypeInfo: 0x0000000142BAF200
 struct SpecialMoveVaultStateCriteria
 {
     float m_DistToObject; //0x0000
@@ -14669,7 +14669,7 @@ struct SpecialMoveVaultStateCriteria
 
 ////////////////////////////////////////
 // RuntimeId: 00317
-// TypeInfo:  0x0000000142BAEE60
+// TypeInfo: 0x0000000142BAEE60
 struct AirMissileJammingData
 {
     float m_MaxRadius; //0x0000
@@ -14689,7 +14689,7 @@ struct AirMissileJammingData
 
 ////////////////////////////////////////
 // RuntimeId: 00315
-// TypeInfo:  0x0000000142BAEE80
+// TypeInfo: 0x0000000142BAEE80
 struct SmokeJammingData
 {
     float m_MaxRadius; //0x0000
@@ -14704,7 +14704,7 @@ struct SmokeJammingData
 
 ////////////////////////////////////////
 // RuntimeId: 00311
-// TypeInfo:  0x0000000142BAEEA0
+// TypeInfo: 0x0000000142BAEEA0
 struct Vault3pOnlyBinding
 {
     AntRef m_IsVaulting; //0x0000
@@ -14712,7 +14712,7 @@ struct Vault3pOnlyBinding
 
 ////////////////////////////////////////
 // RuntimeId: 00309
-// TypeInfo:  0x0000000142BAEEC0
+// TypeInfo: 0x0000000142BAEEC0
 struct Vault1pOnlyBinding
 {
     AntRef m_IsVaulting; //0x0000
@@ -14720,7 +14720,7 @@ struct Vault1pOnlyBinding
 
 ////////////////////////////////////////
 // RuntimeId: 00307
-// TypeInfo:  0x0000000142BAEEE0
+// TypeInfo: 0x0000000142BAEEE0
 struct VaultBinding
 {
     AntRef m_VaultActive; //0x0000
@@ -14734,7 +14734,7 @@ struct VaultBinding
 
 ////////////////////////////////////////
 // RuntimeId: 00301
-// TypeInfo:  0x0000000142BAEF00
+// TypeInfo: 0x0000000142BAEF00
 struct AwarenessTargetInfo
 {
     float m_Priority; //0x0000
@@ -14746,7 +14746,7 @@ struct AwarenessTargetInfo
 
 ////////////////////////////////////////
 // RuntimeId: 00297
-// TypeInfo:  0x0000000142BAEF20
+// TypeInfo: 0x0000000142BAEF20
 struct AwarenessComponentBinding
 {
     AntRef m_RelativeLookAtPitch; //0x0000
@@ -14761,7 +14761,7 @@ struct AwarenessComponentBinding
 
 ////////////////////////////////////////
 // RuntimeId: 00295
-// TypeInfo:  0x0000000142BAF240
+// TypeInfo: 0x0000000142BAF240
 struct TabletCommanderClientHasLoadedLevelMessage
 {
     bool m_Loaded; //0x0000
@@ -14769,7 +14769,7 @@ struct TabletCommanderClientHasLoadedLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00293
-// TypeInfo:  0x0000000142BAF260
+// TypeInfo: 0x0000000142BAF260
 struct TabletCommanderSelectedSquadChangedMessage
 {
     SquadId m_SelectedSquad; //0x0000
@@ -14777,7 +14777,7 @@ struct TabletCommanderSelectedSquadChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00291
-// TypeInfo:  0x0000000142BAF280
+// TypeInfo: 0x0000000142BAF280
 struct TabletCommanderAbortActionMessage
 {
     unsigned __int8 m_ActionType; //0x0000
@@ -14785,7 +14785,7 @@ struct TabletCommanderAbortActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00289
-// TypeInfo:  0x0000000142BAF2A0
+// TypeInfo: 0x0000000142BAF2A0
 struct TabletCommanderTriggerActionMessage
 {
     unsigned __int8 m_ActionType; //0x0000
@@ -14798,7 +14798,7 @@ struct TabletCommanderTriggerActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00287
-// TypeInfo:  0x0000000142BAF2C0
+// TypeInfo: 0x0000000142BAF2C0
 struct TabletCommanderPingMessage
 {
     float m_PingTime; //0x0000
@@ -14806,7 +14806,7 @@ struct TabletCommanderPingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00285
-// TypeInfo:  0x0000000142BAF2E0
+// TypeInfo: 0x0000000142BAF2E0
 struct TabletCommanderTryConnectMessage
 {
     unsigned __int32 m_TCClientProtocolVersion; //0x0000
@@ -14822,7 +14822,7 @@ struct TabletCommanderTryConnectMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00283
-// TypeInfo:  0x0000000142BAF300
+// TypeInfo: 0x0000000142BAF300
 struct TabletCommanderCarrierStateMessage
 {
     unsigned __int8 m_Team1CarrierHealth; //0x0000
@@ -14833,7 +14833,7 @@ struct TabletCommanderCarrierStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00281
-// TypeInfo:  0x0000000142BAF320
+// TypeInfo: 0x0000000142BAF320
 struct TabletCommanderChatMessage
 {
     char* m_ChatMessage; //0x0000
@@ -14843,7 +14843,7 @@ struct TabletCommanderChatMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00279
-// TypeInfo:  0x0000000142BAF340
+// TypeInfo: 0x0000000142BAF340
 struct TabletCommanderEnemyCommanderChangedMessage
 {
     char* m_CommanderName; //0x0000
@@ -14854,7 +14854,7 @@ struct TabletCommanderEnemyCommanderChangedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00277
-// TypeInfo:  0x0000000142BAF360
+// TypeInfo: 0x0000000142BAF360
 struct TabletCommanderMutinyCompletedMessage
 {
     bool m_Dummy; //0x0000
@@ -14862,7 +14862,7 @@ struct TabletCommanderMutinyCompletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00275
-// TypeInfo:  0x0000000142BAF380
+// TypeInfo: 0x0000000142BAF380
 struct TabletCommanderRankGainedMessage
 {
     unsigned __int8 m_OldRank; //0x0000
@@ -14871,7 +14871,7 @@ struct TabletCommanderRankGainedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00193
-// TypeInfo:  0x0000000142BAEFC0
+// TypeInfo: 0x0000000142BAEFC0
 struct TabletCommanderAwardData
 {
     char* m_AwardCode; //0x0000
@@ -14886,7 +14886,7 @@ struct TabletCommanderAwardData
 
 ////////////////////////////////////////
 // RuntimeId: 00191
-// TypeInfo:  0x0000000142BAF820
+// TypeInfo: 0x0000000142BAF820
 struct TabletCommanderScoreBoardData
 {
     unsigned __int32 m_Id; //0x0000
@@ -14899,7 +14899,7 @@ struct TabletCommanderScoreBoardData
 
 ////////////////////////////////////////
 // RuntimeId: 00195
-// TypeInfo:  0x0000000142BAEFA0
+// TypeInfo: 0x0000000142BAEFA0
 struct TabletCommanderAwardCriteria
 {
     char* m_Description; //0x0000
@@ -14911,7 +14911,7 @@ struct TabletCommanderAwardCriteria
 
 ////////////////////////////////////////
 // RuntimeId: 00201
-// TypeInfo:  0x0000000142BAF7E0
+// TypeInfo: 0x0000000142BAF7E0
 struct TabletCommanderRankLevelData
 {
     unsigned __int32 m_RankPointsNeeded; //0x0000
@@ -14921,7 +14921,7 @@ struct TabletCommanderRankLevelData
 
 ////////////////////////////////////////
 // RuntimeId: 00265
-// TypeInfo:  0x0000000142BAF420
+// TypeInfo: 0x0000000142BAF420
 struct TabletCommanderPlayerLeftMessage
 {
     unsigned __int32 m_PlayerId; //0x0000
@@ -14929,7 +14929,7 @@ struct TabletCommanderPlayerLeftMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00185
-// TypeInfo:  0x0000000142BAF000
+// TypeInfo: 0x0000000142BAF000
 struct TabletCommanderPlayerData
 {
     unsigned __int32 m_Id; //0x0000
@@ -14948,7 +14948,7 @@ struct TabletCommanderPlayerData
 
 ////////////////////////////////////////
 // RuntimeId: 00183
-// TypeInfo:  0x0000000142BAF020
+// TypeInfo: 0x0000000142BAF020
 struct TabletCommanderLevolutionState
 {
     LevolutionType m_LevolutionType; //0x0000
@@ -14962,7 +14962,7 @@ struct TabletCommanderLevolutionState
 
 ////////////////////////////////////////
 // RuntimeId: 00259
-// TypeInfo:  0x0000000142BAF480
+// TypeInfo: 0x0000000142BAF480
 struct TabletCommanderScoringEventMessage
 {
     char* m_Description; //0x0000
@@ -14976,7 +14976,7 @@ struct TabletCommanderScoringEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00257
-// TypeInfo:  0x0000000142BAF4A0
+// TypeInfo: 0x0000000142BAF4A0
 struct TabletCommanderPlayerKilledMessage
 {
     unsigned __int32 m_KillerId; //0x0000
@@ -14988,7 +14988,7 @@ struct TabletCommanderPlayerKilledMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00255
-// TypeInfo:  0x0000000142BAF4C0
+// TypeInfo: 0x0000000142BAF4C0
 struct TabletCommanderDeniedActionMessage
 {
     unsigned __int8 m_ActionType; //0x0000
@@ -14996,7 +14996,7 @@ struct TabletCommanderDeniedActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00253
-// TypeInfo:  0x0000000142BAF4E0
+// TypeInfo: 0x0000000142BAF4E0
 struct TabletCommanderAcknowledgedActionMessage
 {
     unsigned __int8 m_ActionType; //0x0000
@@ -15004,7 +15004,7 @@ struct TabletCommanderAcknowledgedActionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00187
-// TypeInfo:  0x0000000142BAEFE0
+// TypeInfo: 0x0000000142BAEFE0
 struct TabletCommanderActionState
 {
     unsigned __int8 m_ActionType; //0x0000
@@ -15021,7 +15021,7 @@ struct TabletCommanderActionState
 
 ////////////////////////////////////////
 // RuntimeId: 00189
-// TypeInfo:  0x0000000142BAF840
+// TypeInfo: 0x0000000142BAF840
 struct TabletCommanderCombatAreaPoint
 {
     unsigned __int16 m_X; //0x0000
@@ -15030,7 +15030,7 @@ struct TabletCommanderCombatAreaPoint
 
 ////////////////////////////////////////
 // RuntimeId: 00247
-// TypeInfo:  0x0000000142BAF540
+// TypeInfo: 0x0000000142BAF540
 struct TabletCommanderCommanderSwitchedTeamMessage
 {
     TeamId m_TeamId; //0x0000
@@ -15041,7 +15041,7 @@ struct TabletCommanderCommanderSwitchedTeamMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00245
-// TypeInfo:  0x0000000142BAF560
+// TypeInfo: 0x0000000142BAF560
 struct TabletCommanderLoadLevelRushMessage
 {
     unsigned __int8 m_StartCratesCount; //0x0000
@@ -15051,7 +15051,7 @@ struct TabletCommanderLoadLevelRushMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00243
-// TypeInfo:  0x0000000142BAF580
+// TypeInfo: 0x0000000142BAF580
 struct TabletCommanderLoadLevelSquadBarMessage
 {
     Array<unsigned __int8> m_ActionTypes; //0x0000
@@ -15061,7 +15061,7 @@ struct TabletCommanderLoadLevelSquadBarMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00241
-// TypeInfo:  0x0000000142BAF5A0
+// TypeInfo: 0x0000000142BAF5A0
 struct TabletCommanderLoadLevelLevolutionStateMessage
 {
     Array<TabletCommanderLevolutionState> m_LevolutionStates; //0x0000
@@ -15069,7 +15069,7 @@ struct TabletCommanderLoadLevelLevolutionStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00239
-// TypeInfo:  0x0000000142BAF5C0
+// TypeInfo: 0x0000000142BAF5C0
 struct TabletCommanderLoadLevelActionStateMessage
 {
     Array<TabletCommanderActionState> m_ActionStates; //0x0000
@@ -15081,7 +15081,7 @@ struct TabletCommanderLoadLevelActionStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00237
-// TypeInfo:  0x0000000142BAF5E0
+// TypeInfo: 0x0000000142BAF5E0
 struct TabletCommanderLoadLevelPlayerDataMessage
 {
     Array<TabletCommanderPlayerData> m_PlayerData; //0x0000
@@ -15089,7 +15089,7 @@ struct TabletCommanderLoadLevelPlayerDataMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00209
-// TypeInfo:  0x0000000142BAF7A0
+// TypeInfo: 0x0000000142BAF7A0
 struct TabletCommanderLevolutionMiniMap
 {
     char* m_Tag; //0x0000
@@ -15102,7 +15102,7 @@ struct TabletCommanderLevolutionMiniMap
 
 ////////////////////////////////////////
 // RuntimeId: 00233
-// TypeInfo:  0x0000000142BAF620
+// TypeInfo: 0x0000000142BAF620
 struct TabletCommanderJoinServerMessage
 {
     char* m_ServerName; //0x0000
@@ -15111,7 +15111,7 @@ struct TabletCommanderJoinServerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00231
-// TypeInfo:  0x0000000142BAF640
+// TypeInfo: 0x0000000142BAF640
 struct TabletCommanderPongMessage
 {
     float m_PingTime; //0x0000
@@ -15120,7 +15120,7 @@ struct TabletCommanderPongMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00229
-// TypeInfo:  0x0000000142BAF660
+// TypeInfo: 0x0000000142BAF660
 struct TabletCommanderConnectionDeniedMessage
 {
     unsigned __int32 m_TCServerProtocolVersion; //0x0000
@@ -15129,7 +15129,7 @@ struct TabletCommanderConnectionDeniedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00227
-// TypeInfo:  0x0000000142BAF680
+// TypeInfo: 0x0000000142BAF680
 struct TabletCommanderConnectionApprovedMessage
 {
     unsigned __int32 m_TCServerProtocolVersion; //0x0000
@@ -15137,7 +15137,7 @@ struct TabletCommanderConnectionApprovedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00171
-// TypeInfo:  0x0000000142BAF080
+// TypeInfo: 0x0000000142BAF080
 struct TabletCommanderPacketBase
 {
     TabletCommanderPacketType m_PacketType; //0x0000
@@ -15148,7 +15148,7 @@ struct TabletCommanderPacketBase
 
 ////////////////////////////////////////
 // RuntimeId: 00223
-// TypeInfo:  0x0000000142BAF6C0
+// TypeInfo: 0x0000000142BAF6C0
 struct TabletCommanderSquadRequest
 {
     SquadId m_SquadId; //0x0000
@@ -15161,7 +15161,7 @@ struct TabletCommanderSquadRequest
 
 ////////////////////////////////////////
 // RuntimeId: 00221
-// TypeInfo:  0x0000000142BAF6E0
+// TypeInfo: 0x0000000142BAF6E0
 struct TabletCommanderOrder
 {
     unsigned __int8 m_OrderType; //0x0000
@@ -15176,7 +15176,7 @@ struct TabletCommanderOrder
 
 ////////////////////////////////////////
 // RuntimeId: 00219
-// TypeInfo:  0x0000000142BAF700
+// TypeInfo: 0x0000000142BAF700
 struct TabletCommanderMapMarker
 {
     unsigned __int32 m_MapMarkerId; //0x0000
@@ -15186,7 +15186,7 @@ struct TabletCommanderMapMarker
 
 ////////////////////////////////////////
 // RuntimeId: 00217
-// TypeInfo:  0x0000000142BAF720
+// TypeInfo: 0x0000000142BAF720
 struct TabletCommanderObjective
 {
     char* m_ObjectiveName; //0x0000
@@ -15208,7 +15208,7 @@ struct TabletCommanderObjective
 
 ////////////////////////////////////////
 // RuntimeId: 00173
-// TypeInfo:  0x0000000142BAF060
+// TypeInfo: 0x0000000142BAF060
 struct TabletCommanderNetworkState
 {
     unsigned __int32 m_Id; //0x0000
@@ -15220,7 +15220,7 @@ struct TabletCommanderNetworkState
 
 ////////////////////////////////////////
 // RuntimeId: 00175
-// TypeInfo:  0x0000000142BAF8A0
+// TypeInfo: 0x0000000142BAF8A0
 struct TabletCommanderNetworkSoldierState
 {
     TabletCommanderNetworkState m_NetworkState; //0x0000
@@ -15235,7 +15235,7 @@ struct TabletCommanderNetworkSoldierState
 
 ////////////////////////////////////////
 // RuntimeId: 00213
-// TypeInfo:  0x0000000142BAF760
+// TypeInfo: 0x0000000142BAF760
 struct TabletCommanderHighFrequencyFriendlySquad
 {
     SquadId m_SquadId; //0x0000
@@ -15248,7 +15248,7 @@ struct TabletCommanderHighFrequencyFriendlySquad
 
 ////////////////////////////////////////
 // RuntimeId: 00235
-// TypeInfo:  0x0000000142BAF600
+// TypeInfo: 0x0000000142BAF600
 struct TabletCommanderLoadLevelMessage
 {
     char* m_LevelName; //0x0000
@@ -15276,7 +15276,7 @@ struct TabletCommanderLoadLevelMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00207
-// TypeInfo:  0x0000000142BAEF40
+// TypeInfo: 0x0000000142BAEF40
 struct TabletCommanderMutinyState
 {
     float m_MutinyTreshold; //0x0000
@@ -15288,7 +15288,7 @@ struct TabletCommanderMutinyState
 
 ////////////////////////////////////////
 // RuntimeId: 00205
-// TypeInfo:  0x0000000142BAF7C0
+// TypeInfo: 0x0000000142BAF7C0
 struct TabletCommanderServiceStarProgression
 {
     TabletCommanderAwardData m_ServiceStarAwardData; //0x0000
@@ -15297,7 +15297,7 @@ struct TabletCommanderServiceStarProgression
 
 ////////////////////////////////////////
 // RuntimeId: 00203
-// TypeInfo:  0x0000000142BAEF60
+// TypeInfo: 0x0000000142BAEF60
 struct TabletCommanderRankProgression
 {
     Array<TabletCommanderRankLevelData> m_RankLevelData; //0x0000
@@ -15309,7 +15309,7 @@ struct TabletCommanderRankProgression
 
 ////////////////////////////////////////
 // RuntimeId: 00267
-// TypeInfo:  0x0000000142BAF400
+// TypeInfo: 0x0000000142BAF400
 struct TabletCommanderRoundOverMessage
 {
     TeamId m_WinningTeam; //0x0000
@@ -15321,7 +15321,7 @@ struct TabletCommanderRoundOverMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00197
-// TypeInfo:  0x0000000142BAF800
+// TypeInfo: 0x0000000142BAF800
 struct TabletCommanderDogTagData
 {
     char* m_Name; //0x0000
@@ -15331,7 +15331,7 @@ struct TabletCommanderDogTagData
 
 ////////////////////////////////////////
 // RuntimeId: 00199
-// TypeInfo:  0x0000000142BAEF80
+// TypeInfo: 0x0000000142BAEF80
 struct TabletCommanderAssignment
 {
     TabletCommanderAwardData m_AssignmentAwardData; //0x0000
@@ -15342,7 +15342,7 @@ struct TabletCommanderAssignment
 
 ////////////////////////////////////////
 // RuntimeId: 00269
-// TypeInfo:  0x0000000142BAF3E0
+// TypeInfo: 0x0000000142BAF3E0
 struct TabletCommanderAssignmentMessage
 {
     TabletCommanderAssignment m_Assignment; //0x0000
@@ -15350,7 +15350,7 @@ struct TabletCommanderAssignmentMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00273
-// TypeInfo:  0x0000000142BAF3A0
+// TypeInfo: 0x0000000142BAF3A0
 struct TabletCommanderAwardGainedMessage
 {
     TabletCommanderAwardData m_Award; //0x0000
@@ -15358,7 +15358,7 @@ struct TabletCommanderAwardGainedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00271
-// TypeInfo:  0x0000000142BAF3C0
+// TypeInfo: 0x0000000142BAF3C0
 struct TabletCommanderScoreBoardMessage
 {
     Array<TabletCommanderScoreBoardData> m_ScoreData; //0x0000
@@ -15366,7 +15366,7 @@ struct TabletCommanderScoreBoardMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00249
-// TypeInfo:  0x0000000142BAF520
+// TypeInfo: 0x0000000142BAF520
 struct TabletCommanderCombatAreaMessage
 {
     Array<TabletCommanderCombatAreaPoint> m_CombatAreaPoints; //0x0000
@@ -15374,7 +15374,7 @@ struct TabletCommanderCombatAreaMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00251
-// TypeInfo:  0x0000000142BAF500
+// TypeInfo: 0x0000000142BAF500
 struct TabletCommanderActionEnteredStateMessage
 {
     TabletCommanderActionState m_ActionState; //0x0000
@@ -15382,7 +15382,7 @@ struct TabletCommanderActionEnteredStateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00263
-// TypeInfo:  0x0000000142BAF440
+// TypeInfo: 0x0000000142BAF440
 struct TabletCommanderPlayerJoinedMessage
 {
     TabletCommanderPlayerData m_PlayerData; //0x0000
@@ -15390,7 +15390,7 @@ struct TabletCommanderPlayerJoinedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00261
-// TypeInfo:  0x0000000142BAF460
+// TypeInfo: 0x0000000142BAF460
 struct TabletCommanderLevolutionMessage
 {
     TabletCommanderLevolutionState m_LevolutionState; //0x0000
@@ -15398,7 +15398,7 @@ struct TabletCommanderLevolutionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00181
-// TypeInfo:  0x0000000142BAF040
+// TypeInfo: 0x0000000142BAF040
 struct TabletCommanderTickets
 {
     unsigned __int32 m_FriendTickets; //0x0000
@@ -15409,7 +15409,7 @@ struct TabletCommanderTickets
 
 ////////////////////////////////////////
 // RuntimeId: 00179
-// TypeInfo:  0x0000000142BAF860
+// TypeInfo: 0x0000000142BAF860
 struct TabletCommanderNetworkBombState
 {
     TabletCommanderNetworkState m_NetworkState; //0x0000
@@ -15418,7 +15418,7 @@ struct TabletCommanderNetworkBombState
 
 ////////////////////////////////////////
 // RuntimeId: 00177
-// TypeInfo:  0x0000000142BAF880
+// TypeInfo: 0x0000000142BAF880
 struct TabletCommanderNetworkVehicleState
 {
     TabletCommanderNetworkState m_NetworkState; //0x0000
@@ -15429,7 +15429,7 @@ struct TabletCommanderNetworkVehicleState
 
 ////////////////////////////////////////
 // RuntimeId: 00215
-// TypeInfo:  0x0000000142BAF740
+// TypeInfo: 0x0000000142BAF740
 struct TabletCommanderLowFrequencyPacket
 {
     TabletCommanderPacketBase m_PacketBase; //0x0000
@@ -15453,7 +15453,7 @@ struct TabletCommanderLowFrequencyPacket
 
 ////////////////////////////////////////
 // RuntimeId: 00211
-// TypeInfo:  0x0000000142BAF780
+// TypeInfo: 0x0000000142BAF780
 struct TabletCommanderHighFrequencyPacket
 {
     TabletCommanderPacketBase m_PacketBase; //0x0000
@@ -15469,7 +15469,7 @@ struct TabletCommanderHighFrequencyPacket
 
 ////////////////////////////////////////
 // RuntimeId: 00225
-// TypeInfo:  0x0000000142BAF6A0
+// TypeInfo: 0x0000000142BAF6A0
 struct TabletCommanderMessageListPacket
 {
     TabletCommanderPacketBase m_PacketBase; //0x0000
@@ -15479,7 +15479,7 @@ struct TabletCommanderMessageListPacket
 
 ////////////////////////////////////////
 // RuntimeId: 00149
-// TypeInfo:  0x0000000142BAF0E0
+// TypeInfo: 0x0000000142BAF0E0
 struct UavCameraPointData
 {
     float m_MinTime; //0x0000
@@ -15490,7 +15490,7 @@ struct UavCameraPointData
 
 ////////////////////////////////////////
 // RuntimeId: 00133
-// TypeInfo:  0x0000000142BA38D8
+// TypeInfo: 0x0000000142BA38D8
 struct PunkBusterExecCmdMessage
 {
     char _0x0000[48];
@@ -15498,7 +15498,7 @@ struct PunkBusterExecCmdMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00132
-// TypeInfo:  0x0000000142BA38F8
+// TypeInfo: 0x0000000142BA38F8
 struct PunkBusterMessageMessage
 {
     char _0x0000[48];
@@ -15506,7 +15506,7 @@ struct PunkBusterMessageMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00131
-// TypeInfo:  0x0000000142BA3918
+// TypeInfo: 0x0000000142BA3918
 struct ServerUnlockListRefreshMessage
 {
     char _0x0000[40];
@@ -15514,7 +15514,7 @@ struct ServerUnlockListRefreshMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00130
-// TypeInfo:  0x0000000142BA3938
+// TypeInfo: 0x0000000142BA3938
 struct ServerUnlockListEventMessageBase
 {
     char _0x0000[48];
@@ -15522,7 +15522,7 @@ struct ServerUnlockListEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00127
-// TypeInfo:  0x0000000142BA3978
+// TypeInfo: 0x0000000142BA3978
 struct ServerReservedSlotsListAggressiveJoinVIPPlayerMessage
 {
     char _0x0000[40];
@@ -15530,7 +15530,7 @@ struct ServerReservedSlotsListAggressiveJoinVIPPlayerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00126
-// TypeInfo:  0x0000000142BA3998
+// TypeInfo: 0x0000000142BA3998
 struct ServerReservedSlotsListEventMessageBase
 {
     char _0x0000[48];
@@ -15538,7 +15538,7 @@ struct ServerReservedSlotsListEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00125
-// TypeInfo:  0x0000000142BA39B8
+// TypeInfo: 0x0000000142BA39B8
 struct ServerBanListEventMessageBase
 {
     char _0x0000[48];
@@ -15546,7 +15546,7 @@ struct ServerBanListEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00124
-// TypeInfo:  0x0000000142BA39D8
+// TypeInfo: 0x0000000142BA39D8
 struct NetworkGameAdministrationAddGameBanResponseMessage
 {
     char _0x0000[72];
@@ -15554,7 +15554,7 @@ struct NetworkGameAdministrationAddGameBanResponseMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00121
-// TypeInfo:  0x0000000142BA3A18
+// TypeInfo: 0x0000000142BA3A18
 struct NetworkGameAdministrationAddGameBanRequestMessage
 {
     char _0x0000[80];
@@ -15562,7 +15562,7 @@ struct NetworkGameAdministrationAddGameBanRequestMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00120
-// TypeInfo:  0x0000000142BA3A38
+// TypeInfo: 0x0000000142BA3A38
 struct NetworkGameAdministrationPacketMessage
 {
     char _0x0000[80];
@@ -15570,7 +15570,7 @@ struct NetworkGameAdministrationPacketMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00119
-// TypeInfo:  0x0000000142BA3A58
+// TypeInfo: 0x0000000142BA3A58
 struct ServerGameAdministrationUpdateGameServerListsMessage
 {
     char _0x0000[64];
@@ -15578,7 +15578,7 @@ struct ServerGameAdministrationUpdateGameServerListsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00118
-// TypeInfo:  0x0000000142BA3A78
+// TypeInfo: 0x0000000142BA3A78
 struct ServerGameAdministrationResetServerMessage
 {
     char _0x0000[72];
@@ -15586,7 +15586,7 @@ struct ServerGameAdministrationResetServerMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00117
-// TypeInfo:  0x0000000142BA3A98
+// TypeInfo: 0x0000000142BA3A98
 struct ServerGameAdministrationRefreshGameAttributesMessage
 {
     char _0x0000[40];
@@ -15594,7 +15594,7 @@ struct ServerGameAdministrationRefreshGameAttributesMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00116
-// TypeInfo:  0x0000000142BA3AB8
+// TypeInfo: 0x0000000142BA3AB8
 struct ServerGameAdministrationGameSettingsUpdateMessage
 {
     char _0x0000[152];
@@ -15602,7 +15602,7 @@ struct ServerGameAdministrationGameSettingsUpdateMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00115
-// TypeInfo:  0x0000000142BA3AD8
+// TypeInfo: 0x0000000142BA3AD8
 struct ServerGameAdministrationEventMessageBase
 {
     char _0x0000[48];
@@ -15610,7 +15610,7 @@ struct ServerGameAdministrationEventMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00114
-// TypeInfo:  0x0000000142BA3AF8
+// TypeInfo: 0x0000000142BA3AF8
 struct ClientPersistenceUnlockMessageBase
 {
     char _0x0000[40];
@@ -15618,7 +15618,7 @@ struct ClientPersistenceUnlockMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00113
-// TypeInfo:  0x0000000142BA3B18
+// TypeInfo: 0x0000000142BA3B18
 struct PresenceStateRequestMessageBase
 {
     char _0x0000[40];
@@ -15626,7 +15626,7 @@ struct PresenceStateRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00112
-// TypeInfo:  0x0000000142BA3B38
+// TypeInfo: 0x0000000142BA3B38
 struct PresenceStateMessageBase
 {
     char _0x0000[40];
@@ -15634,7 +15634,7 @@ struct PresenceStateMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00111
-// TypeInfo:  0x0000000142BA3B58
+// TypeInfo: 0x0000000142BA3B58
 struct PresenceXPromoRequestMessageBase
 {
     char _0x0000[40];
@@ -15642,7 +15642,7 @@ struct PresenceXPromoRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00110
-// TypeInfo:  0x0000000142BA3B78
+// TypeInfo: 0x0000000142BA3B78
 struct PresenceXPromoMessageBase
 {
     char _0x0000[40];
@@ -15650,7 +15650,7 @@ struct PresenceXPromoMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00109
-// TypeInfo:  0x0000000142BA3B98
+// TypeInfo: 0x0000000142BA3B98
 struct PresenceWebRequestMessageBase
 {
     char _0x0000[40];
@@ -15658,7 +15658,7 @@ struct PresenceWebRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00108
-// TypeInfo:  0x0000000142BA3BB8
+// TypeInfo: 0x0000000142BA3BB8
 struct PresenceWebFeedRequestMessageBase
 {
     char _0x0000[40];
@@ -15666,7 +15666,7 @@ struct PresenceWebFeedRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00107
-// TypeInfo:  0x0000000142BA3BD8
+// TypeInfo: 0x0000000142BA3BD8
 struct PresenceWebAuthenticationRequestMessageBase
 {
     char _0x0000[40];
@@ -15674,7 +15674,7 @@ struct PresenceWebAuthenticationRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00106
-// TypeInfo:  0x0000000142BA3BF8
+// TypeInfo: 0x0000000142BA3BF8
 struct PresenceWebAuthenticationMessageBase
 {
     char _0x0000[40];
@@ -15682,7 +15682,7 @@ struct PresenceWebAuthenticationMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00105
-// TypeInfo:  0x0000000142BA3C18
+// TypeInfo: 0x0000000142BA3C18
 struct PresenceWebMessageBase
 {
     char _0x0000[40];
@@ -15690,7 +15690,7 @@ struct PresenceWebMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00104
-// TypeInfo:  0x0000000142BA3C38
+// TypeInfo: 0x0000000142BA3C38
 struct PresenceUserTitleInfoRequestMessageBase
 {
     char _0x0000[40];
@@ -15698,7 +15698,7 @@ struct PresenceUserTitleInfoRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00103
-// TypeInfo:  0x0000000142BA3C58
+// TypeInfo: 0x0000000142BA3C58
 struct PresenceUserTitleInfoMessageBase
 {
     char _0x0000[40];
@@ -15706,7 +15706,7 @@ struct PresenceUserTitleInfoMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00102
-// TypeInfo:  0x0000000142BA3C78
+// TypeInfo: 0x0000000142BA3C78
 struct PresenceUserProfileInfoMessageBase
 {
     char _0x0000[40];
@@ -15714,7 +15714,7 @@ struct PresenceUserProfileInfoMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00101
-// TypeInfo:  0x0000000142BA3C98
+// TypeInfo: 0x0000000142BA3C98
 struct PresenceUserSettingsRequestMessageBase
 {
     char _0x0000[40];
@@ -15722,7 +15722,7 @@ struct PresenceUserSettingsRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00100
-// TypeInfo:  0x0000000142BA3CB8
+// TypeInfo: 0x0000000142BA3CB8
 struct PresenceUserSettingsMessageBase
 {
     char _0x0000[40];
@@ -15730,7 +15730,7 @@ struct PresenceUserSettingsMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00099
-// TypeInfo:  0x0000000142BA3CD8
+// TypeInfo: 0x0000000142BA3CD8
 struct PresenceConsoleNewsRequestMessageBase
 {
     char _0x0000[40];
@@ -15738,7 +15738,7 @@ struct PresenceConsoleNewsRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00098
-// TypeInfo:  0x0000000142BA3CF8
+// TypeInfo: 0x0000000142BA3CF8
 struct PresenceConsoleNewsMessageBase
 {
     char _0x0000[40];
@@ -15746,7 +15746,7 @@ struct PresenceConsoleNewsMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00097
-// TypeInfo:  0x0000000142BA3D18
+// TypeInfo: 0x0000000142BA3D18
 struct PresenceStoreRequestMessageBase
 {
     char _0x0000[40];
@@ -15754,7 +15754,7 @@ struct PresenceStoreRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00096
-// TypeInfo:  0x0000000142BA3D38
+// TypeInfo: 0x0000000142BA3D38
 struct PresenceStoreMessageBase
 {
     char _0x0000[40];
@@ -15762,7 +15762,7 @@ struct PresenceStoreMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00095
-// TypeInfo:  0x0000000142BA3D58
+// TypeInfo: 0x0000000142BA3D58
 struct PresenceServerRentalRequestMessageBase
 {
     char _0x0000[40];
@@ -15770,7 +15770,7 @@ struct PresenceServerRentalRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00094
-// TypeInfo:  0x0000000142BA3D78
+// TypeInfo: 0x0000000142BA3D78
 struct PresenceServerRentalMessageBase
 {
     char _0x0000[40];
@@ -15778,7 +15778,7 @@ struct PresenceServerRentalMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00093
-// TypeInfo:  0x0000000142BA3D98
+// TypeInfo: 0x0000000142BA3D98
 struct PresenceServerBrowserRequestMessageBase
 {
     char _0x0000[40];
@@ -15786,7 +15786,7 @@ struct PresenceServerBrowserRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00092
-// TypeInfo:  0x0000000142BA3DB8
+// TypeInfo: 0x0000000142BA3DB8
 struct PresenceServerBrowserMessageBase
 {
     char _0x0000[40];
@@ -15794,7 +15794,7 @@ struct PresenceServerBrowserMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00091
-// TypeInfo:  0x0000000142BA3DD8
+// TypeInfo: 0x0000000142BA3DD8
 struct PresencePlayerEmblemRequestMessageBase
 {
     char _0x0000[40];
@@ -15802,7 +15802,7 @@ struct PresencePlayerEmblemRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00090
-// TypeInfo:  0x0000000142BA3DF8
+// TypeInfo: 0x0000000142BA3DF8
 struct PresencePlayerEmblemMessageBase
 {
     char _0x0000[40];
@@ -15810,7 +15810,7 @@ struct PresencePlayerEmblemMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00089
-// TypeInfo:  0x0000000142BA3E18
+// TypeInfo: 0x0000000142BA3E18
 struct PresenceSetupInfoMessageBase
 {
     char _0x0000[40];
@@ -15818,7 +15818,7 @@ struct PresenceSetupInfoMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00088
-// TypeInfo:  0x0000000142BA3E38
+// TypeInfo: 0x0000000142BA3E38
 struct PresenceServerBannerRequestMessageBase
 {
     char _0x0000[40];
@@ -15826,7 +15826,7 @@ struct PresenceServerBannerRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00087
-// TypeInfo:  0x0000000142BA3E58
+// TypeInfo: 0x0000000142BA3E58
 struct PresenceServerBannerMessageBase
 {
     char _0x0000[40];
@@ -15834,7 +15834,7 @@ struct PresenceServerBannerMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00086
-// TypeInfo:  0x0000000142BA3E78
+// TypeInfo: 0x0000000142BA3E78
 struct PresenceRspRequestMessageBase
 {
     char _0x0000[40];
@@ -15842,7 +15842,7 @@ struct PresenceRspRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00085
-// TypeInfo:  0x0000000142BA3E98
+// TypeInfo: 0x0000000142BA3E98
 struct PresenceRspMessageBase
 {
     char _0x0000[40];
@@ -15850,7 +15850,7 @@ struct PresenceRspMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00084
-// TypeInfo:  0x0000000142BA3EB8
+// TypeInfo: 0x0000000142BA3EB8
 struct PresenceResetStorageRequestMessageBase
 {
     char _0x0000[40];
@@ -15858,7 +15858,7 @@ struct PresenceResetStorageRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00083
-// TypeInfo:  0x0000000142BA3ED8
+// TypeInfo: 0x0000000142BA3ED8
 struct PresenceResetStorageMessageBase
 {
     char _0x0000[40];
@@ -15866,7 +15866,7 @@ struct PresenceResetStorageMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00082
-// TypeInfo:  0x0000000142BA3EF8
+// TypeInfo: 0x0000000142BA3EF8
 struct PresenceProgressionRequestMessageBase
 {
     char _0x0000[40];
@@ -15874,7 +15874,7 @@ struct PresenceProgressionRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00081
-// TypeInfo:  0x0000000142BA3F18
+// TypeInfo: 0x0000000142BA3F18
 struct PresenceProgressionMessageBase
 {
     char _0x0000[40];
@@ -15882,7 +15882,7 @@ struct PresenceProgressionMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00080
-// TypeInfo:  0x0000000142BA3F38
+// TypeInfo: 0x0000000142BA3F38
 struct PresencePingUpdatedMessageBase
 {
     char _0x0000[40];
@@ -15890,7 +15890,7 @@ struct PresencePingUpdatedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00079
-// TypeInfo:  0x0000000142BA3F58
+// TypeInfo: 0x0000000142BA3F58
 struct PresencePlaygroundRequestMessageBase
 {
     char _0x0000[40];
@@ -15898,7 +15898,7 @@ struct PresencePlaygroundRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00078
-// TypeInfo:  0x0000000142BA3F78
+// TypeInfo: 0x0000000142BA3F78
 struct PresencePeerGameRequestMessageBase
 {
     char _0x0000[40];
@@ -15906,7 +15906,7 @@ struct PresencePeerGameRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00077
-// TypeInfo:  0x0000000142BA3F98
+// TypeInfo: 0x0000000142BA3F98
 struct PresencePeerGameMessageBase
 {
     char _0x0000[40];
@@ -15914,7 +15914,7 @@ struct PresencePeerGameMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00076
-// TypeInfo:  0x0000000142BA3FB8
+// TypeInfo: 0x0000000142BA3FB8
 struct PresencePartyRequestMessageBase
 {
     char _0x0000[40];
@@ -15922,7 +15922,7 @@ struct PresencePartyRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00075
-// TypeInfo:  0x0000000142BA3FD8
+// TypeInfo: 0x0000000142BA3FD8
 struct PresencePartyMessageBase
 {
     char _0x0000[40];
@@ -15930,7 +15930,7 @@ struct PresencePartyMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00074
-// TypeInfo:  0x0000000142BA3FF8
+// TypeInfo: 0x0000000142BA3FF8
 struct PresenceNucleusLoginUIRequestMessageBase
 {
     char _0x0000[40];
@@ -15938,7 +15938,7 @@ struct PresenceNucleusLoginUIRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00073
-// TypeInfo:  0x0000000142BA4018
+// TypeInfo: 0x0000000142BA4018
 struct PresenceMigrateDataRequestMessageBase
 {
     char _0x0000[40];
@@ -15946,7 +15946,7 @@ struct PresenceMigrateDataRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00072
-// TypeInfo:  0x0000000142BA4038
+// TypeInfo: 0x0000000142BA4038
 struct PresenceMigrateDataMessageBase
 {
     char _0x0000[40];
@@ -15954,7 +15954,7 @@ struct PresenceMigrateDataMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00071
-// TypeInfo:  0x0000000142BA4058
+// TypeInfo: 0x0000000142BA4058
 struct PresenceMatchFeedMessageBase
 {
     char _0x0000[40];
@@ -15962,7 +15962,7 @@ struct PresenceMatchFeedMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00070
-// TypeInfo:  0x0000000142BA4078
+// TypeInfo: 0x0000000142BA4078
 struct PresenceGameDataRequestMessageBase
 {
     char _0x0000[40];
@@ -15970,7 +15970,7 @@ struct PresenceGameDataRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00069
-// TypeInfo:  0x0000000142BA4098
+// TypeInfo: 0x0000000142BA4098
 struct PresenceGameDataMessageBase
 {
     char _0x0000[40];
@@ -15978,7 +15978,7 @@ struct PresenceGameDataMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00068
-// TypeInfo:  0x0000000142BA40B8
+// TypeInfo: 0x0000000142BA40B8
 struct PresenceGameConfigurationRequestMessageBase
 {
     char _0x0000[40];
@@ -15986,7 +15986,7 @@ struct PresenceGameConfigurationRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00067
-// TypeInfo:  0x0000000142BA40D8
+// TypeInfo: 0x0000000142BA40D8
 struct PresenceGameConfigurationMessageBase
 {
     char _0x0000[40];
@@ -15994,7 +15994,7 @@ struct PresenceGameConfigurationMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00066
-// TypeInfo:  0x0000000142BA40F8
+// TypeInfo: 0x0000000142BA40F8
 struct PresenceFriendsStatsRequestMessageBase
 {
     char _0x0000[40];
@@ -16002,7 +16002,7 @@ struct PresenceFriendsStatsRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00065
-// TypeInfo:  0x0000000142BA4118
+// TypeInfo: 0x0000000142BA4118
 struct PresenceFriendsStatsMessageBase
 {
     char _0x0000[40];
@@ -16010,7 +16010,7 @@ struct PresenceFriendsStatsMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00064
-// TypeInfo:  0x0000000142BA4138
+// TypeInfo: 0x0000000142BA4138
 struct PresenceDownloadRequestMessageBase
 {
     char _0x0000[40];
@@ -16018,7 +16018,7 @@ struct PresenceDownloadRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00063
-// TypeInfo:  0x0000000142BA4158
+// TypeInfo: 0x0000000142BA4158
 struct PresenceDownloadMessageBase
 {
     char _0x0000[40];
@@ -16026,7 +16026,7 @@ struct PresenceDownloadMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00062
-// TypeInfo:  0x0000000142BA4178
+// TypeInfo: 0x0000000142BA4178
 struct PresencePushNotificationMessageBase
 {
     char _0x0000[40];
@@ -16034,7 +16034,7 @@ struct PresencePushNotificationMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00061
-// TypeInfo:  0x0000000142BA4198
+// TypeInfo: 0x0000000142BA4198
 struct PresenceCommMessageBase
 {
     char _0x0000[40];
@@ -16042,7 +16042,7 @@ struct PresenceCommMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00060
-// TypeInfo:  0x0000000142BA41B8
+// TypeInfo: 0x0000000142BA41B8
 struct PresenceChallengesRequestMessageBase
 {
     char _0x0000[40];
@@ -16050,7 +16050,7 @@ struct PresenceChallengesRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00059
-// TypeInfo:  0x0000000142BA41D8
+// TypeInfo: 0x0000000142BA41D8
 struct PresenceChallengesMessageBase
 {
     char _0x0000[40];
@@ -16058,7 +16058,7 @@ struct PresenceChallengesMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00058
-// TypeInfo:  0x0000000142BA41F8
+// TypeInfo: 0x0000000142BA41F8
 struct PresenceCalendarRequestMessageBase
 {
     char _0x0000[40];
@@ -16066,7 +16066,7 @@ struct PresenceCalendarRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00057
-// TypeInfo:  0x0000000142BA4218
+// TypeInfo: 0x0000000142BA4218
 struct PresenceCalendarMessageBase
 {
     char _0x0000[40];
@@ -16074,7 +16074,7 @@ struct PresenceCalendarMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00056
-// TypeInfo:  0x0000000142BA4238
+// TypeInfo: 0x0000000142BA4238
 struct PresenceBFCommerceMetricMessageBase
 {
     char _0x0000[40];
@@ -16082,7 +16082,7 @@ struct PresenceBFCommerceMetricMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00055
-// TypeInfo:  0x0000000142BA4258
+// TypeInfo: 0x0000000142BA4258
 struct PresenceBFCommerceRequestMessageBase
 {
     char _0x0000[40];
@@ -16090,7 +16090,7 @@ struct PresenceBFCommerceRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00054
-// TypeInfo:  0x0000000142BA4278
+// TypeInfo: 0x0000000142BA4278
 struct PresenceBFCommerceMessageBase
 {
     char _0x0000[40];
@@ -16098,7 +16098,7 @@ struct PresenceBFCommerceMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00053
-// TypeInfo:  0x0000000142BA4298
+// TypeInfo: 0x0000000142BA4298
 struct PresenceBattlepackRequestMessageBase
 {
     char _0x0000[40];
@@ -16106,7 +16106,7 @@ struct PresenceBattlepackRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00052
-// TypeInfo:  0x0000000142BA42B8
+// TypeInfo: 0x0000000142BA42B8
 struct PresenceBattlepackMessageBase
 {
     char _0x0000[40];
@@ -16114,7 +16114,7 @@ struct PresenceBattlepackMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00051
-// TypeInfo:  0x0000000142BA42D8
+// TypeInfo: 0x0000000142BA42D8
 struct PresenceBattlelogRequestMessageBase
 {
     char _0x0000[40];
@@ -16122,7 +16122,7 @@ struct PresenceBattlelogRequestMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00050
-// TypeInfo:  0x0000000142BA42F8
+// TypeInfo: 0x0000000142BA42F8
 struct PresenceBattlelogMessageBase
 {
     char _0x0000[40];
@@ -16130,7 +16130,7 @@ struct PresenceBattlelogMessageBase
 
 ////////////////////////////////////////
 // RuntimeId: 00049
-// TypeInfo:  0x0000000142BA4318
+// TypeInfo: 0x0000000142BA4318
 struct NuiGrammarLoadCompletedMessage
 {
     char _0x0000[40];
@@ -16138,7 +16138,7 @@ struct NuiGrammarLoadCompletedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00048
-// TypeInfo:  0x0000000142BA4338
+// TypeInfo: 0x0000000142BA4338
 struct NuiCheckSpeechRecognizingMessage
 {
     char _0x0000[40];
@@ -16146,7 +16146,7 @@ struct NuiCheckSpeechRecognizingMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00047
-// TypeInfo:  0x0000000142BA4358
+// TypeInfo: 0x0000000142BA4358
 struct NuiSpeechGrammarActivationSettingsMessage
 {
     char _0x0000[56];
@@ -16154,7 +16154,7 @@ struct NuiSpeechGrammarActivationSettingsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00046
-// TypeInfo:  0x0000000142BA4378
+// TypeInfo: 0x0000000142BA4378
 struct NuiSpeechGrammarDeactivationMessage
 {
     char _0x0000[48];
@@ -16162,7 +16162,7 @@ struct NuiSpeechGrammarDeactivationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00045
-// TypeInfo:  0x0000000142BA4398
+// TypeInfo: 0x0000000142BA4398
 struct NuiSpeechGrammarActivationMessage
 {
     char _0x0000[48];
@@ -16170,7 +16170,7 @@ struct NuiSpeechGrammarActivationMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00044
-// TypeInfo:  0x0000000142BA43B8
+// TypeInfo: 0x0000000142BA43B8
 struct NuiSpeechProblemDetectedMessage
 {
     char _0x0000[48];
@@ -16178,7 +16178,7 @@ struct NuiSpeechProblemDetectedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00043
-// TypeInfo:  0x0000000142BA43D8
+// TypeInfo: 0x0000000142BA43D8
 struct NuiSpeechOngoingActivityMessage
 {
     char _0x0000[40];
@@ -16186,7 +16186,7 @@ struct NuiSpeechOngoingActivityMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00042
-// TypeInfo:  0x0000000142BA43F8
+// TypeInfo: 0x0000000142BA43F8
 struct NuiSpeechRuleRecognitionFailedMessage
 {
     char _0x0000[40];
@@ -16194,7 +16194,7 @@ struct NuiSpeechRuleRecognitionFailedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00041
-// TypeInfo:  0x0000000142BA4418
+// TypeInfo: 0x0000000142BA4418
 struct NuiSpeechRuleRecognitionStartsMessage
 {
     char _0x0000[40];
@@ -16202,7 +16202,7 @@ struct NuiSpeechRuleRecognitionStartsMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00040
-// TypeInfo:  0x0000000142BA4438
+// TypeInfo: 0x0000000142BA4438
 struct NuiSpeechSoundEventMessage
 {
     char _0x0000[48];
@@ -16210,7 +16210,7 @@ struct NuiSpeechSoundEventMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00039
-// TypeInfo:  0x0000000142BA4458
+// TypeInfo: 0x0000000142BA4458
 struct NuiSpeechRuleRecognizedMessage
 {
     char _0x0000[80];
@@ -16218,7 +16218,7 @@ struct NuiSpeechRuleRecognizedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00038
-// TypeInfo:  0x0000000142BA4478
+// TypeInfo: 0x0000000142BA4478
 struct VeniceClientMetricsJoinGameMessage
 {
     char _0x0000[64];
@@ -16226,7 +16226,7 @@ struct VeniceClientMetricsJoinGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00035
-// TypeInfo:  0x0000000142BA44B8
+// TypeInfo: 0x0000000142BA44B8
 struct VeniceClientMetricsQuitSPGameMessage
 {
     char _0x0000[40];
@@ -16234,7 +16234,7 @@ struct VeniceClientMetricsQuitSPGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00034
-// TypeInfo:  0x0000000142BA44D8
+// TypeInfo: 0x0000000142BA44D8
 struct VeniceClientMetricsRestartSPMissionMessage
 {
     char _0x0000[40];
@@ -16242,7 +16242,7 @@ struct VeniceClientMetricsRestartSPMissionMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00033
-// TypeInfo:  0x0000000142BA44F8
+// TypeInfo: 0x0000000142BA44F8
 struct VeniceClientMetricsRestartSPCheckpointMessage
 {
     char _0x0000[40];
@@ -16250,7 +16250,7 @@ struct VeniceClientMetricsRestartSPCheckpointMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00032
-// TypeInfo:  0x0000000142BA4518
+// TypeInfo: 0x0000000142BA4518
 struct VeniceClientMetricsResumeSPGameMessage
 {
     char _0x0000[48];
@@ -16258,7 +16258,7 @@ struct VeniceClientMetricsResumeSPGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00031
-// TypeInfo:  0x0000000142BA4538
+// TypeInfo: 0x0000000142BA4538
 struct VeniceClientMetricsStartSPGameMessage
 {
     char _0x0000[56];
@@ -16266,7 +16266,7 @@ struct VeniceClientMetricsStartSPGameMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00030
-// TypeInfo:  0x0000000142BA4558
+// TypeInfo: 0x0000000142BA4558
 struct VeniceClientMetricsBootMessage
 {
     char _0x0000[40];
@@ -16274,7 +16274,7 @@ struct VeniceClientMetricsBootMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00029
-// TypeInfo:  0x0000000142BA4578
+// TypeInfo: 0x0000000142BA4578
 struct VeniceClientMetricsLeaveCriticalHealthMessage
 {
     char _0x0000[48];
@@ -16282,7 +16282,7 @@ struct VeniceClientMetricsLeaveCriticalHealthMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00028
-// TypeInfo:  0x0000000142BA4598
+// TypeInfo: 0x0000000142BA4598
 struct VeniceClientMetricsEnterCriticalHealthMessage
 {
     char _0x0000[48];
@@ -16290,7 +16290,7 @@ struct VeniceClientMetricsEnterCriticalHealthMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00027
-// TypeInfo:  0x0000000142BA45B8
+// TypeInfo: 0x0000000142BA45B8
 struct VeniceClientMetricsTimeMessage
 {
     char _0x0000[48];
@@ -16298,7 +16298,7 @@ struct VeniceClientMetricsTimeMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00026
-// TypeInfo:  0x0000000142BA45D8
+// TypeInfo: 0x0000000142BA45D8
 struct VeniceClientMetricsListenerDestroyedMessage
 {
     char _0x0000[40];
@@ -16306,7 +16306,7 @@ struct VeniceClientMetricsListenerDestroyedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00025
-// TypeInfo:  0x0000000142BA45F8
+// TypeInfo: 0x0000000142BA45F8
 struct VeniceClientMetricsListenerCreatedMessage
 {
     char _0x0000[40];
@@ -16314,7 +16314,7 @@ struct VeniceClientMetricsListenerCreatedMessage
 
 ////////////////////////////////////////
 // RuntimeId: 00012
-// TypeInfo:  0x0000000142BA4618
+// TypeInfo: 0x0000000142BA4618
 struct DVRScoringChainMomentMessage
 {
     char _0x0000[48];

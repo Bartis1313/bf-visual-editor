@@ -1,4 +1,5 @@
 ﻿#include "comps.h"
+#include "../textures/textures.h"
 
 #include "../ui/ui_helpers.h"
 #include <imgui.h>
@@ -178,6 +179,12 @@ namespace editor::comps
             ui::FloatEdit("UV Max X", &e->m_PanoramicUVMaxX, &o->m_PanoramicUVMaxX, 0.0f, 1.0f);
             ui::FloatEdit("UV Min Y", &e->m_PanoramicUVMinY, &o->m_PanoramicUVMinY, 0.0f, 1.0f);
             ui::FloatEdit("UV Max Y", &e->m_PanoramicUVMaxY, &o->m_PanoramicUVMaxY, 0.0f, 1.0f);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Textures##Sky"))
+        {
+            editor::textures::renderSkyTextureSlots();
             ImGui::TreePop();
         }
 
@@ -676,7 +683,7 @@ namespace editor::comps
 
     void renderWorldRenderSettingsComponent(fb::WorldRenderSettings* e, const fb::WorldRenderSettings* o)
     {
-        ImGui::TextDisabled("WorldRenderSettings â€” use the World Render tab for full control");
+        ImGui::TextDisabled("WorldRenderSettings: see the World Render tab");
         ImGui::Separator();
         ui::BoolEdit("Enable", &e->m_Enable, &o->m_Enable);
         ui::BoolEdit("HDR", &e->m_HdrEnable, &o->m_HdrEnable);

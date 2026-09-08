@@ -5,6 +5,7 @@
 #include "../emitters/emitters.h"
 #include "../global_ve/global_ve.h"
 #include "../world_render/world_render.h"
+#include "../textures/textures.h"
 #include "../serialize/serialize.h"
 #include "../../utils/log.h"
 #include "../render/render.h"
@@ -21,12 +22,10 @@ namespace editor::config
 
     void init()
     {
-
     }
 
     void shutdown()
     {
-
     }
 
     static json buildConfigJson()
@@ -52,15 +51,26 @@ namespace editor::config
         json lightsJson = json::object();
         {
             auto displayNames = lights::buildDisplayNames();
+            size_t halos = 0, fields = 0, drivers = 0;
+
             for (const auto& [dataPtr, entry] : lights::getEntries())
             {
-                if (!entry.hasOverride)
+                if (!entry.hasOverride && entry.flareShaders.empty() &&
+                    entry.flareFields.empty() && entry.shaderDrivers.empty())
                     continue;
+
+                halos += entry.flareShaders.size();
+                fields += entry.flareFields.size();
+                drivers += entry.shaderDrivers.size();
 
                 const auto it = displayNames.find(dataPtr);
                 const std::string& disp = (it != displayNames.end()) ? it->second : entry.assetName;
                 lightsJson[lights::makeLightKey(entry, dataPtr, disp)] = lights::serialize(entry);
             }
+
+            logger::info("Config: saving {} light(s) - {} halo shader(s), {} element "
+                         "value(s), {} driven parameter(s)",
+                lightsJson.size(), halos, fields, drivers);
         }
         root["lights"] = lightsJson;
 
@@ -113,6 +123,8 @@ namespace editor::config
         {
             root["worldRender"] = world_render::serialize();
         }
+
+        root["textures"] = textures::serialize();
 
         return root;
     }
@@ -175,6 +187,7 @@ namespace editor::config
 
         if (root.contains("lights") && root["lights"].is_object())
         {
+            size_t lightsMatched = 0;
             auto displayNames = lights::buildDisplayNames();
             for (const auto& [name, lightJson] : root["lights"].items())
             {
@@ -193,16 +206,37 @@ namespace editor::config
                 LightDataEntry* target = exact ? exact : byName;
                 if (target)
                 {
+                    ++lightsMatched;
                     lights::deserialize(lightJson, *target);
                     if (target->hasOverride)
                     {
                         lights::applyOverride(*target);
                         lightsApplied++;
                     }
+
+                    lights::applyFlareShaders(*target);
+                    lights::applyFlareFields(*target);
+                    lights::applyShaderDrivers(*target);
                 }
             }
 
-            logger::info("Config: Applied {} light overrides", lightsApplied);
+            size_t unmatched = 0, halos = 0, fields = 0, drivers = 0;
+            for (const auto& [name, lightJson] : root["lights"].items())
+            {
+                if (lightJson.contains("flareShaders")) halos += lightJson["flareShaders"].size();
+                if (lightJson.contains("flareFields")) fields += lightJson["flareFields"].size();
+                if (lightJson.contains("shaderDrivers"))drivers += lightJson["shaderDrivers"].size();
+            }
+            unmatched = root["lights"].size() - lightsMatched;
+
+            logger::info("Config: applied {} light override(s); {} of {} light(s) matched "
+                         "({} halo shader(s), {} element value(s), {} driven parameter(s) "
+                         "queued)",
+                lightsApplied, lightsMatched, root["lights"].size(), halos, fields, drivers);
+
+            if (unmatched)
+                logger::warning("Config: {} saved light(s) matched nothing in this level - "
+                                "their edits cannot be applied", unmatched);
         }
 
         if (root.contains("emitters") && root["emitters"].is_object())
@@ -294,6 +328,11 @@ namespace editor::config
             logger::info("Config: Loaded world render settings");
 
             world_render::apply();
+        }
+
+        if (root.contains("textures"))
+        {
+            textures::deserialize(root["textures"]);
         }
 
         std::string summary{ };
