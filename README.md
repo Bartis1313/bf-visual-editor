@@ -59,7 +59,7 @@ An engine-drawn overlay marks lights in the world (labels, distance, occlusion),
 - A parameter can only be added when the compiled shader reads it; the Materials tab lists exactly those. Anything baked into the graph as a literal is reached through the Shaders tab patch, not a parameter.
 - Textures can only be replaced with textures the engine has loaded, or with images imported through the editor. Streaming decides when a texture is resident.
 
-## Fututre frosbite games
+## Future frosbite games
 
 I have done very experimental 2025 frosbite3 editor. Some of the logic still can be referenced, although manager is a lot different now.
 See [bf6 visual editor](https://github.com/Bartis1313/bf6-visual-editor).
