@@ -4,7 +4,7 @@
 #include "../editor_context.h"
 #include "../../hooks/functions.h"
 #include "../../utils/log.h"
-#include "../render/math.h"
+#include "../../SDK/fb.h"
 
 
 #include <imgui.h>
@@ -42,7 +42,7 @@ namespace editor::camera
         POINT g_center{ };
         LARGE_INTEGER g_lastTick{ };
 
-        // WM_INPUT deltas accumulated by the window proc, drained once per frame.
+        // WM_INPUT deltas, drained once per frame
         std::atomic<long> g_rawDx{ 0 }, g_rawDy{ 0 };
         std::atomic<bool> g_rawSeen{ false };
         float g_smoothYaw = 0.0f, g_smoothPitch = 0.0f;
@@ -134,7 +134,6 @@ namespace editor::camera
             return (std::min)(dt, 0.1f);
         }
 
-        // Turn by degrees. Smoothing is a per-frame EMA; the remainder carries over.
         void turn(float dYaw, float dPitch)
         {
             if (smoothing > 0.0f)
@@ -199,8 +198,7 @@ namespace editor::camera
             return true;
         }
 
-        // Cursor-delta fallback for when no WM_INPUT arrives: re-centre every frame so the
-        // edge of the screen is never hit.
+        // cursor-delta fallback without WM_INPUT
         void readCursorMouse()
         {
             POINT center{ };
@@ -216,7 +214,7 @@ namespace editor::camera
 
             SetCursorPos(center.x, center.y);
             if (g_gameInputBlocked)
-                SetCursor(nullptr); // cursor mode shows the OS cursor; hkWndProc answers WM_SETCURSOR too
+                SetCursor(nullptr);
             g_center = center;
             g_haveMouse = true;
         }
@@ -240,8 +238,7 @@ namespace editor::camera
             move(fb, lr, ud, dt, down(VK_SHIFT));
         }
 
-        // Keyboard typing mode + mouse cursor mode, what hkWndProc does when the menu opens.
-        // Never touched while the menu is open: the menu owns those switches then.
+        // same switches hkWndProc sets for the menu
         void setGameInputBlocked(bool block)
         {
             if (block == g_gameInputBlocked)
@@ -335,8 +332,7 @@ namespace editor::camera
             g_holdsApplied = false;
         }
 
-        // Toggle key: on/off edge. First-person key: held = first person while down; a tap
-        // (under 250 ms) flips the latch.
+        // held = first person, tap under 250 ms latches
         bool pollKeys()
         {
             if (GetForegroundWindow() != g_hWnd || g_capturingKey)
@@ -382,7 +378,6 @@ namespace editor::camera
             return std::format("VK {:#04x}", vk);
         }
 
-        // A button showing the bound key; click, then press the new one (Escape clears).
         void keyBinding(const char* label, int* key)
         {
             ImGui::PushID(key);
@@ -446,7 +441,7 @@ namespace editor::camera
 
         if (!g_active)
         {
-            // First person keeps the seed, so the way back lands where the camera was.
+            // first person keeps the seed
             if (g_holdsApplied || g_gameInputBlocked)
                 releaseAll();
             if (!enabled)
@@ -465,7 +460,7 @@ namespace editor::camera
         applyHolds();
 
 #if defined(BFVE_GAME_BF3)
-        const fb::LinearTransform t = fromAngles();
+        alignas(16) const fb::LinearTransform t = fromAngles();
         reinterpret_cast<SetTransformFn>(OFF_RenderView_setTransform)(view, &t);
 #else
         TransformBlock block{ };

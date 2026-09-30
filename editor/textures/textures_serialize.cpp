@@ -9,29 +9,28 @@ namespace editor::textures
 {
     namespace
     {
-        constexpr uint32_t kRetryEveryFrames = 30;
-        constexpr uint32_t kMaxTries = 120; // ~60 s of level time
-        constexpr int kResolvesPerRun = 6;
+        constexpr uint32_t RETRY_EVERY_FRAMES = 30;
+        constexpr uint32_t MAX_TRIES = 120; // ~60 s of level time
+        constexpr int RESOLVES_PER_RUN = 6;
 
-        // A texture named the only two ways a config can name one.
         struct TexRef
         {
-            std::string path; // a catalogued asset path
-            int clone = -1; // or an index into the config's clone list
+            std::string path;
+            int clone = -1;
 
             bool empty() const { return path.empty() && clone < 0; }
         };
 
         struct CloneSpec
         {
-            std::string of; // asset path of the source
-            void* live = nullptr; // once created
+            std::string of;
+            void* live = nullptr;
         };
 
         struct PendingEdit
         {
             TexRef target;
-            gen::EditInfo edit; // dxTexture filled in on resolve
+            gen::EditInfo edit;
         };
 
         struct PendingSky
@@ -80,14 +79,14 @@ namespace editor::textures
             json j;
 
             if (!texture)
-                return j; // null object: the caller decides what that means
+                return j;
 
             if (gen::isClonedTexture(texture))
             {
                 void* const src = gen::cloneSource(texture);
                 const std::string of = texturePath(src);
                 if (of.empty())
-                    return j; // a copy of something unnameable is unnameable too
+                    return j;
 
                 for (size_t i = 0; i < clones.size(); ++i)
                     if (clones[i].first == texture)
@@ -111,8 +110,7 @@ namespace editor::textures
         TexRef refFromJson(const json& j)
         {
             TexRef r;
-            // The first version of this section wrote a sky texture as a bare path string.
-            // Reading it is two lines; making someone redo their sky is not.
+            // old configs: bare path string
             if (j.is_string())
             {
                 r.path = j.get<std::string>();
@@ -130,8 +128,7 @@ namespace editor::textures
             return r;
         }
 
-        // --- loading: turn a reference into a live texture -----------------------------
-        // Null means "not yet", never "never" - the caller keeps the item pending.
+        // null = not yet
         void* resolve(const TexRef& r)
         {
             if (r.clone >= 0)
@@ -177,11 +174,8 @@ namespace editor::textures
     json serialize()
     {
         json root;
-        // Clones are discovered while writing everything else, so this is filled in last
-        // and the ids handed out along the way.
         std::vector<std::pair<void*, std::string>> clones;
 
-        // --- material parameters -------------------------------------------------------
         json params = json::array();
         uint32_t skippedBlock = 0, skippedTexture = 0;
 
@@ -189,7 +183,7 @@ namespace editor::textures
         {
             if (o.setKey == 0)
             {
-                ++skippedBlock; // block-keyed: no name to write down
+                ++skippedBlock;
                 continue;
             }
 
@@ -198,8 +192,6 @@ namespace editor::textures
             e["material"] = o.material;
             e["handle"] = o.handle;
 
-            // Not read back - the handle is the key - but a config nobody can read is a
-            // config nobody will trust, and "Color" says more than 2937268412.
             if (const char* n = paramName(o.handle))
                 e["name"] = n;
             if (o.added)
@@ -224,7 +216,6 @@ namespace editor::textures
         }
         root["params"] = std::move(params);
 
-        // --- tints and imported images -------------------------------------------------
         json edits = json::array();
         uint32_t skippedEdit = 0;
 
@@ -258,7 +249,6 @@ namespace editor::textures
         }
         root["edits"] = std::move(edits);
 
-        // --- sky slots -----------------------------------------------------------------
         json sky = json::array();
         for (int i = 0; i < skySlotCount(); ++i)
         {
@@ -268,8 +258,7 @@ namespace editor::textures
             json e;
             e["slot"] = skySlotLabel(i);
 
-            // A null asset is a real setting, not a missing one - it is how a cloud layer
-            // is switched off - so it round-trips as an explicit null.
+            // null = cloud layer off
             if (!skyOverride[i].asset)
             {
                 e["texture"] = nullptr;
@@ -354,8 +343,6 @@ namespace editor::textures
                     o.isTexture = true;
                     o.texture = textureByPath(path);
 
-                    // Queued rather than dropped: the override is installed now so the hold
-                    // pass owns the slot, and the texture is filled in when it turns up.
                     if (!o.texture)
                         g_pendingParams.push_back({ o.setKey, o.material, o.handle, path });
                 }
@@ -364,7 +351,6 @@ namespace editor::textures
                     continue;
                 }
 
-                // Replace rather than append: loading a config twice must not stack.
                 auto it = std::find_if(paramOverrides.begin(), paramOverrides.end(),
                     [&o](const ParamOverride& x)
                     {
@@ -451,9 +437,7 @@ namespace editor::textures
                      "{} texture reference(s) and {} shader edit(s) waiting",
             loaded, g_pendingEdits.size(), g_pendingSky.size(), g_pendingParams.size(), pendingShaderWork());
 
-        // Give the first pass a chance immediately - most of a config resolves at once when
-        // it is loaded into a level that is already up.
-        g_frame = kRetryEveryFrames;
+        g_frame = RETRY_EVERY_FRAMES;
         applyPendingConfig();
     }
 
@@ -462,11 +446,11 @@ namespace editor::textures
         if (g_pendingEdits.empty() && g_pendingSky.empty() && g_pendingParams.empty())
             return;
 
-        if (++g_frame < kRetryEveryFrames)
+        if (++g_frame < RETRY_EVERY_FRAMES)
             return;
         g_frame = 0;
 
-        if (++g_tries > kMaxTries)
+        if (++g_tries > MAX_TRIES)
         {
             logger::warning("[textures] config: giving up on {} edit(s), {} sky slot(s) and "
                             "{} texture reference(s) - their textures never turned up",
@@ -475,9 +459,8 @@ namespace editor::textures
             return;
         }
 
-        int budget = kResolvesPerRun;
+        int budget = RESOLVES_PER_RUN;
 
-        // Sky first: it is the cheapest and the most visible.
         for (size_t i = 0; i < g_pendingSky.size() && budget > 0; )
         {
             PendingSky& ps = g_pendingSky[i];

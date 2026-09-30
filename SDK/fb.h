@@ -20,3 +20,5 @@
 #else
   #error "No BFVE_GAME_* macro set."
 #endif
+
+#include "math.h"

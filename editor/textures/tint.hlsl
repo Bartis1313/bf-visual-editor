@@ -1,30 +1,28 @@
-// Texture-editor pass: samples an engine texture view into our own RGBA8 target.
-// Compiled offline with fxc and embedded as bytecode so the DLL needs no d3dcompiler:
+// compiled offline with fxc:
 //   fxc /T vs_4_0 /E VSMain /Fh tint_vs.h /Vn g_tintVS tint.hlsl
 //   fxc /T ps_4_0 /E PSMain /Fh tint_ps.h /Vn g_tintPS tint.hlsl
-Texture2D    src : register(t0);
+Texture2D src : register(t0);
 SamplerState smp : register(s0);
 
 cbuffer TintCB : register(b0)
 {
-    float4 gTint;       // rgb multiply, a scales alpha
-    float4 gParams;     // x = saturation, y = brightness, z = sharpen 0..1, w = upscale factor
-    float4 gTexel;      // xy = 1 / source size, zw = source size (mip 0 of the bound view)
-    float4 gEnhance;    // x = detail 0..1, y = mode: 0 plain, 1 resample+enhance, 2 mip level
+    float4 gTint; // rgb multiply, a scales alpha
+    float4 gParams; // x = saturation, y = brightness, z = sharpen 0..1, w = upscale factor
+    float4 gTexel; // xy = 1 / source size, zw = source size
+    float4 gEnhance; // x = detail 0..1, y = mode: 0 plain, 1 resample+enhance, 2 mip level
 };
 
 struct VSOut
 {
     float4 pos : SV_POSITION;
-    float2 uv  : TEXCOORD0;
+    float2 uv : TEXCOORD0;
 };
 
-// Fullscreen triangle from SV_VertexID - no vertex or index buffer needed.
 VSOut VSMain(uint id : SV_VertexID)
 {
     VSOut o;
     float2 uv = float2((id << 1) & 2, id & 2);
-    o.uv  = uv;
+    o.uv = uv;
     o.pos = float4(uv * float2(2.0f, -2.0f) + float2(-1.0f, 1.0f), 0.0f, 1.0f);
     return o;
 }
@@ -39,14 +37,12 @@ float lanczos3(float x)
 {
     x = abs(x);
     if (x < 1e-4f) return 1.0f;
-    if (x >= 3.0f)  return 0.0f;
+    if (x >= 3.0f) return 0.0f;
     float px = 3.14159265f * x;
     return 3.0f * sin(px) * sin(px / 3.0f) / (px * px);
 }
 
-// Lanczos-3: the resampler image tools default to for enlargement (6x6 taps). The result
-// is clamped to the inner 4x4's range, which removes the ringing halos of the outer lobes
-// (anti-ringing) while keeping the edge slope.
+// Lanczos-3 6x6, clamped to the inner 4x4 range
 float4 resample(float2 uv, out float4 mn, out float4 mx)
 {
     float2 pos = uv * gTexel.zw - 0.5f;
@@ -81,7 +77,6 @@ float4 resample(float2 uv, out float4 mn, out float4 mx)
     return clamp(sum / wsum, mn, mx);
 }
 
-// 3x3 box mean and range at the source texel under `uv`.
 void neighbourhood(float2 uv, out float3 mean, out float3 mn, out float3 mx)
 {
     int2 c = int2(floor(uv * gTexel.zw));
@@ -104,11 +99,7 @@ float hash(float2 p)
     return frac(sin(dot(p, float2(12.9898f, 78.233f))) * 43758.5453f);
 }
 
-// Mode 1: Lanczos resample, then
-//  sharpen - unsharp mask weighted by local contrast (edges only, flat areas stay soft),
-//            bounded to the 3x3 range so it cannot halo;
-//  detail  - the texture's own fine structure (residual against its 3x3 mean) laid over at
-//            twice the frequency, plus a trace of grain: what a plain resample lacks up close.
+// mode 1: lanczos, bounded unsharp, residual detail, grain
 float4 enhanced(float2 uv)
 {
     float4 mn4, mx4;
@@ -128,9 +119,6 @@ float4 enhanced(float2 uv)
 
     if (gEnhance.x > 0.0f && gParams.w > 1.5f)
     {
-        // grain at output-pixel scale whose amplitude follows the texture's own fine
-        // structure (its residual against the 3x3 mean): grainy surfaces stay grainy when
-        // magnified instead of turning to plastic; edges and smooth paint get none
         float3 residual = texel(int2(floor(uv * gTexel.zw))).rgb - mean;
         float amp = min(length(residual), 0.25f);
         float flat = 1.0f - smoothstep(0.05f, 0.3f, contrast);
@@ -140,9 +128,7 @@ float4 enhanced(float2 uv)
     return float4(saturate(c), base.a);
 }
 
-// Mode 2: one mip level from the previous one. The output pixel centre sits on the corner
-// between four source texels, so one bilinear fetch is the 2x2 box; the same edge-weighted
-// unsharp keeps the sharpening in the levels the game samples at distance.
+// mode 2: one mip from the previous, bilinear = 2x2 box
 float4 mipLevel(float2 uv)
 {
     float4 box = src.SampleLevel(smp, uv, 0);
@@ -153,9 +139,9 @@ float4 mipLevel(float2 uv)
     float3 mn = box.rgb, mx = box.rgb;
     float3 s;
     s = src.SampleLevel(smp, uv + float2(-d.x, 0), 0).rgb; n += s; mn = min(mn, s); mx = max(mx, s);
-    s = src.SampleLevel(smp, uv + float2( d.x, 0), 0).rgb; n += s; mn = min(mn, s); mx = max(mx, s);
+    s = src.SampleLevel(smp, uv + float2(d.x, 0), 0).rgb; n += s; mn = min(mn, s); mx = max(mx, s);
     s = src.SampleLevel(smp, uv + float2(0, -d.y), 0).rgb; n += s; mn = min(mn, s); mx = max(mx, s);
-    s = src.SampleLevel(smp, uv + float2(0,  d.y), 0).rgb; n += s; mn = min(mn, s); mx = max(mx, s);
+    s = src.SampleLevel(smp, uv + float2(0, d.y), 0).rgb; n += s; mn = min(mn, s); mx = max(mx, s);
     n *= 0.25f;
     float contrast = max(max(mx.r - mn.r, mx.g - mn.g), mx.b - mn.b);
     float edge = smoothstep(0.02f, 0.18f, contrast);
@@ -174,8 +160,8 @@ float4 PSMain(VSOut i) : SV_Target
         c = src.Sample(smp, i.uv);
 
     float grey = dot(c.rgb, float3(0.2126f, 0.7152f, 0.0722f));
-    c.rgb = lerp(grey.xxx, c.rgb, gParams.x);   // saturation
-    c.rgb *= gParams.y;                         // brightness
-    c *= gTint;                                 // tint
+    c.rgb = lerp(grey.xxx, c.rgb, gParams.x);
+    c.rgb *= gParams.y;
+    c *= gTint;
     return c;
 }

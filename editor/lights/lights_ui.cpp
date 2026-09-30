@@ -6,6 +6,7 @@
 #include "../emitters/emitters.h"
 #include "../editor_context.h"
 #include "../ui/ui_helpers.h"
+#include "../enlighten/enlighten_spawn.h"
 #include "../../utils/log.h"
 
 #include <imgui.h>
@@ -28,7 +29,7 @@ namespace editor::lights
         return slash == std::string::npos ? path.c_str() : path.c_str() + slash + 1;
     }
 
-    // ShaderParameterEntityData values the prefab pushes into the lamp's material block.
+    // ShaderParameterEntityData values into the lamp material
     static void renderShaderDrivers(LightDataEntry& entry)
     {
         if (entry.lampShaderParams.empty())
@@ -80,8 +81,7 @@ namespace editor::lights
         ImGui::TreePop();
     }
 
-    // MeshAsset::m_Materials of the lamp meshes, once per selected light. Registering the
-    // parameter names is what lets a block show "Color" instead of a hash.
+    // lamp mesh materials, cached per selected light
     static const void* g_assetFor = nullptr;
     static std::vector<MeshMaterialInfo> g_assetMaterials;
 
@@ -137,7 +137,6 @@ namespace editor::lights
     };
     static std::unordered_map<const void*, HaloTint> g_haloTints;
 
-    // Distinct texture keys behind this light's flare shaders.
     static std::vector<std::string> haloTextureKeys(const LightDataEntry& entry)
     {
         std::vector<std::string> keys;
@@ -159,8 +158,9 @@ namespace editor::lights
         return keys;
     }
 
-    static bool isFlareTexture(const textures::TextureEntry& te, const std::vector<std::string>& keys)
+    static bool isFlareTexture(textures::TextureEntry& te, const std::vector<std::string>& keys)
     {
+        textures::cacheName(te); // paths fill lazily
         if (te.lowerPath.find("lensflare") == std::string::npos)
             return false;
         for (const std::string& k : keys)
@@ -180,7 +180,7 @@ namespace editor::lights
 
         const std::vector<std::string> keys = haloTextureKeys(entry);
         int done = 0;
-        for (const textures::TextureEntry& te : textures::entries)
+        for (textures::TextureEntry& te : textures::entries)
         {
             if (!te.texture || !isFlareTexture(te, keys))
                 continue;
@@ -197,7 +197,7 @@ namespace editor::lights
     static void revertHaloTint(const LightDataEntry& entry)
     {
         const std::vector<std::string> keys = haloTextureKeys(entry);
-        for (const textures::TextureEntry& te : textures::entries)
+        for (textures::TextureEntry& te : textures::entries)
             if (te.texture && isFlareTexture(te, keys))
                 textures::gen::revert(te.texture);
     }
@@ -206,7 +206,7 @@ namespace editor::lights
     {
         const std::vector<std::string> keys = haloTextureKeys(entry);
         int n = 0;
-        for (const textures::TextureEntry& te : textures::entries)
+        for (textures::TextureEntry& te : textures::entries)
             if (isFlareTexture(te, keys) && (!residentOnly || te.texture))
                 ++n;
         return n;
@@ -245,7 +245,7 @@ namespace editor::lights
         if (flareShaderPalette().empty())
             harvestFlareShaders();
 
-        // Color: the flare texture, shared by every lamp drawing the same one.
+        // flare texture, shared by lamps using it
         {
             HaloTint& tint = g_haloTints[entry.dataPtr];
 
@@ -285,14 +285,13 @@ namespace editor::lights
                     }
                 }
                 if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Shared by every lamp that draws the same flare texture.");
+                    ImGui::SetTooltip("shared by every lamp with this flare texture");
             }
         }
 
-        // Look: which authored shader every element uses.
         if (!flareShaderPalette().empty())
         {
-            renderShaderCombo("look##halo", entry, kAllFlareElements);
+            renderShaderCombo("look##halo", entry, ALL_FLARE_ELEMENTS);
             if (!entry.flareShaders.empty())
             {
                 ImGui::SameLine();
@@ -301,7 +300,6 @@ namespace editor::lights
             }
         }
 
-        // Size per element.
         for (void* data : entry.lampFlares)
         {
             const uint32_t count = flareElementCount(data);
@@ -429,11 +427,11 @@ namespace editor::lights
         ImGui::SameLine();
         ImGui::Checkbox("occlusion", &overlayOcclusion);
         if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("Engine ray from the camera to each item; what is behind geometry draws dimmed.");
+            ImGui::SetTooltip("dimmed when behind geometry");
         ImGui::SameLine();
         ImGui::Checkbox("textures", &meshOverlayTextures);
         if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("Each material of the placements near the crosshair is marked where its geometry is, with its textures.");
+            ImGui::SetTooltip("materials of the placements near the crosshair, with their textures");
         ImGui::SameLine();
         ImGui::Checkbox("wireframe", &meshOverlayWireframe);
         if (ImGui::IsItemHovered())
@@ -468,11 +466,11 @@ namespace editor::lights
         static bool aimRay = false;
         ImGui::Checkbox("aim ray", &aimRay);
         if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("Engine physics ray from the crosshair; the hit mesh and its textures are shown beside it.");
+            ImGui::SetTooltip("physics ray from the crosshair, shows the hit mesh");
         ImGui::SameLine();
         ImGui::Checkbox("GPU pick", &textures::pick::enabled);
         if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("GPU probe of the draws under the crosshair every %u frames, spread over %u; needed by the Shaders tab.", textures::pick::interval, textures::pick::slices);
+            ImGui::SetTooltip("draw probe under the crosshair every %u frames over %u, the Shaders tab needs it", textures::pick::interval, textures::pick::slices);
         ImGui::SameLine();
         ImGui::TextDisabled("%zu placed", placedMeshCount());
 
@@ -523,7 +521,7 @@ namespace editor::lights
         ImGui::SetNextItemWidth(220.0f);
         ImGui::InputTextWithHint("##findMesh", "find placed mesh by name", find, sizeof(meshOverlayFilter));
         if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("While this has text the overlay draws only the matching placements, at any range, with their distance.");
+            ImGui::SetTooltip("only matching placements, at any range");
         if (find[0])
         {
             fb::Vec3 cam{ };
@@ -645,7 +643,7 @@ namespace editor::lights
             ImGui::SameLine();
             ImGui::Checkbox("occlusion", &overlayOcclusion);
             if (ImGui::IsItemHovered())
-                ImGui::SetTooltip("Engine ray from the camera to each light; lights behind geometry draw dimmed.");
+                ImGui::SetTooltip("dimmed when behind geometry");
             ImGui::BeginDisabled(!showOverlay);
             ImGui::Checkbox("only the one at the crosshair", &showOnlyClosest);
             ImGui::SetNextItemWidth(180.0f);
@@ -792,6 +790,8 @@ namespace editor::lights
 
     void renderTab()
     {
+        if (ImGui::CollapsingHeader("Spawn light"))
+            enlighten::spawn::renderUI();
         renderLightEntitiesTab();
     }
 
@@ -832,7 +832,6 @@ namespace editor::lights
         ImGui::TreePop();
     }
 
-    // The lamp around the light: projected texture, effect, halo, mesh textures and glow.
     static void renderLampSection(LightDataEntry& entry)
     {
         if (!entry.dataPtr)

@@ -12,7 +12,6 @@ namespace editor::world_render
 
         j["overrideEnabled"] = isOverrideEnabled();
 
-        // Viewport & quality
         j["Enable"] = s->m_Enable;
         j["ViewportScale"] = s->m_ViewportScale;
         j["CullScreenAreaScale"] = s->m_CullScreenAreaScale;
@@ -42,16 +41,13 @@ namespace editor::world_render
         j["GenericEntityRendererEnable"] = s->m_GenericEntityRendererEnable;
         j["GenericEntityMaxVisibleEntityCount"] = s->m_GenericEntityMaxVisibleEntityCount;
 
-        // Overlay
         j["OverlayEnable"] = s->m_OverlayEnable;
         JSON_SET_VEC4(j, "OverlayColor", s->m_OverlayColor);
 
-        // SMAA
         j["SmaaVelocityReprojectionEnable"] = s->m_SmaaVelocityReprojectionEnable;
         j["SmaaUseStencil"] = s->m_SmaaUseStencil;
         j["SmaaPredicatedThresholdingEnable"] = s->m_SmaaPredicatedThresholdingEnable;
 
-        // GBuffer
         j["GBufferLayout"] = s->m_GBufferLayout;
         j["GBufferTestCount"] = s->m_GBufferTestCount;
         j["GBufferAlphaTestSimpleSmoothness"] = s->m_GBufferAlphaTestSimpleSmoothness;
@@ -63,7 +59,6 @@ namespace editor::world_render
         j["DxGBufferNormal16BitEnable"] = s->m_DxGBufferNormal16BitEnable;
         j["Gen4aEsramEnable"] = s->m_Gen4aEsramEnable;
 
-        // Shadows
         j["ShadowmapsEnable"] = s->m_ShadowmapsEnable;
         j["GenerateShadowmapsEnable"] = s->m_GenerateShadowmapsEnable;
         j["ApplyShadowmapsEnable"] = s->m_ApplyShadowmapsEnable;
@@ -94,7 +89,6 @@ namespace editor::world_render
         j["DxShadowmap16BitEnable"] = s->m_DxShadowmap16BitEnable;
         j["OnlyShadowmapSlice"] = s->m_OnlyShadowmapSlice;
 
-        // Motion blur
         j["MotionBlurEnable"] = s->m_MotionBlurEnable;
         j["MotionBlurForceOn"] = s->m_MotionBlurForceOn;
         j["MotionBlurOptimalStableVelocityFormula"] = s->m_MotionBlurOptimalStableVelocityFormula;
@@ -116,7 +110,6 @@ namespace editor::world_render
         j["MotionBlurDepthCheckThreshold"] = s->m_MotionBlurDepthCheckThreshold;
         j["MotionBlurDepthCheckMaxDistance"] = s->m_MotionBlurDepthCheckMaxDistance;
 
-        // Lighting - general
         j["LightIntensityScale"] = s->m_LightIntensityScale;
         j["LightForceIntensity"] = s->m_LightForceIntensity;
         j["LightRadiusScale"] = s->m_LightRadiusScale;
@@ -135,14 +128,12 @@ namespace editor::world_render
         j["DrawLightSources"] = s->m_DrawLightSources;
         j["HairCoverageEnable"] = s->m_HairCoverageEnable;
 
-        // Lighting - LOD
         j["LightLodSpecularFadeAreaStart"] = s->m_LightLodSpecularFadeAreaStart;
         j["LightLodSpecularFadeAreaEnd"] = s->m_LightLodSpecularFadeAreaEnd;
         j["LightLodRadiusFactor"] = s->m_LightLodRadiusFactor;
         j["LightLodFadeArea"] = s->m_LightLodFadeArea;
         j["LightLodMinArea"] = s->m_LightLodMinArea;
 
-        // Lighting - culling
         j["LightCullEnable"] = s->m_LightCullEnable;
         j["LightOcclusionCullEnable"] = s->m_LightOcclusionCullEnable;
         j["LightDepthCullEnable"] = s->m_LightDepthCullEnable;
@@ -156,7 +147,6 @@ namespace editor::world_render
         j["LightTileMinArea"] = s->m_LightTileMinArea;
         j["LightTileOverlayEnable"] = s->m_LightTileOverlayEnable;
 
-        // Light tiling
         j["LightTileCsAvgLightCountPerTile"] = s->m_LightTileCsAvgLightCountPerTile;
         j["LightTileCsPathEnable"] = s->m_LightTileCsPathEnable;
         j["LightTileMinMaxUseHTile"] = s->m_LightTileMinMaxUseHTile;
@@ -164,7 +154,6 @@ namespace editor::world_render
         j["LightCubeMapStencilEnable"] = s->m_LightCubeMapStencilEnable;
         j["LightCubeMapStencilMinArea"] = s->m_LightCubeMapStencilMinArea;
 
-        // Outdoor light
         j["OutdoorLightEnable"] = s->m_OutdoorLightEnable;
         j["OutdoorKeyLightEnable"] = s->m_OutdoorKeyLightEnable;
         j["OutdoorSkyLightEnable"] = s->m_OutdoorSkyLightEnable;
@@ -174,7 +163,6 @@ namespace editor::world_render
         j["OutdoorLightTileSimpleShaderEnable"] = s->m_OutdoorLightTileSimpleShaderEnable;
         j["OutdoorLightTileBatchCount"] = s->m_OutdoorLightTileBatchCount;
 
-        // Light types
         j["PointLightsEnable"] = s->m_PointLightsEnable;
         j["MaxPointLightCount"] = s->m_MaxPointLightCount;
         j["SpotLightsEnable"] = s->m_SpotLightsEnable;
@@ -184,7 +172,6 @@ namespace editor::world_render
         j["LineLightsEnable"] = s->m_LineLightsEnable;
         j["ConeLightsEnable"] = s->m_ConeLightsEnable;
 
-        // Spot light shadows
         j["SpotLightShadowmapEnable"] = s->m_SpotLightShadowmapEnable;
         j["SpotLightShadowmapResolution"] = s->m_SpotLightShadowmapResolution;
         j["SpotLightShadowmapQuality"] = s->m_SpotLightShadowmapQuality;
@@ -194,7 +181,6 @@ namespace editor::world_render
         j["RadiositySpotLightShadowCullingEnable"] = s->m_RadiositySpotLightShadowCullingEnable;
         j["DxSpotLightShadowmap16BitEnable"] = s->m_DxSpotLightShadowmap16BitEnable;
 
-        // Shadow occlusion & frustum culling
         j["ShadowOcclusionCullingEnable"] = s->m_ShadowOcclusionCullingEnable;
         j["ShadowOcclusionCullingWidth"] = s->m_ShadowOcclusionCullingWidth;
         j["ShadowOcclusionCullingHeight"] = s->m_ShadowOcclusionCullingHeight;
@@ -202,7 +188,6 @@ namespace editor::world_render
         j["FrustumSilhouetteCullingEnable"] = s->m_FrustumSilhouetteCullingEnable;
         j["FrustumSilhouetteCullingPadding"] = s->m_FrustumSilhouetteCullingPadding;
 
-        // Sky
         j["SkyEnable"] = s->m_SkyEnable;
         j["SkyFogEnable"] = s->m_SkyFogEnable;
         j["SkyHeightFogEnable"] = s->m_SkyHeightFogEnable;
@@ -219,7 +204,6 @@ namespace editor::world_render
         j["SkyEnvmapFilterMode"] = static_cast<int>(s->m_SkyEnvmapFilterMode);
         j["DrawDebugSkyEnvmapMipLevel"] = s->m_DrawDebugSkyEnvmapMipLevel;
 
-        // Dynamic envmap
         j["DynamicEnvmapEnable"] = s->m_DynamicEnvmapEnable;
         j["DynamicEnvmapMipmapGenEnable"] = s->m_DynamicEnvmapMipmapGenEnable;
         j["DynamicEnvmapResolution"] = s->m_DynamicEnvmapResolution;
@@ -231,13 +215,11 @@ namespace editor::world_render
         j["CustomEnvmapEnable"] = s->m_CustomEnvmapEnable;
         j["CustomEnvmapMipmapClampEnable"] = s->m_CustomEnvmapMipmapClampEnable;
 
-        // Distortion
         j["DistortionEnable"] = s->m_DistortionEnable;
         j["DistortionHalfResEnable"] = s->m_DistortionHalfResEnable;
         j["Distortion8BitEnable"] = s->m_Distortion8BitEnable;
         j["DistortionTilingEnable"] = s->m_DistortionTilingEnable;
 
-        // Reflections
         j["PlanarReflectionEnable"] = s->m_PlanarReflectionEnable;
         j["PlanarReflectionFastHdrEnable"] = s->m_PlanarReflectionFastHdrEnable;
         j["PlanarReflectionBlur"] = s->m_PlanarReflectionBlur;
@@ -247,17 +229,14 @@ namespace editor::world_render
         j["PlanarReflectionFarPlane"] = s->m_PlanarReflectionFarPlane;
         j["ReflectionLodScale"] = s->m_ReflectionLodScale;
 
-        // Decals & volumes
         j["DecalVolumeEnable"] = s->m_DecalVolumeEnable;
         j["DecalVolumeScale"] = s->m_DecalVolumeScale;
         j["MaxDecalVolumeCount"] = s->m_MaxDecalVolumeCount;
         j["MaxDestructionVolumeCount"] = s->m_MaxDestructionVolumeCount;
 
-        // Lens flares
         j["LensFlaresEnable"] = s->m_LensFlaresEnable;
         j["LensFlareOcclusionEnable"] = s->m_LensFlareOcclusionEnable;
 
-        // Render passes
         j["ZPassEnable"] = s->m_ZPassEnable;
         j["MainOpaqueZPassEnable"] = s->m_MainOpaqueZPassEnable;
         j["OccluderMeshZPrepassEnable"] = s->m_OccluderMeshZPrepassEnable;
@@ -275,7 +254,6 @@ namespace editor::world_render
         j["OnlyTileIndex"] = s->m_OnlyTileIndex;
         j["OnlyLightTileIndex"] = s->m_OnlyLightTileIndex;
 
-        // Job scheduling / misc
         j["SetupJobEnable"] = s->m_SetupJobEnable;
         j["FinishSyncJobsFirstEnable"] = s->m_FinishSyncJobsFirstEnable;
         j["PrepareDispatchListJobEnable"] = s->m_PrepareDispatchListJobEnable;
@@ -283,10 +261,8 @@ namespace editor::world_render
         j["EmitterShadowingBlendToggle"] = s->m_EmitterShadowingBlendToggle;
         j["EmitterShadowingManySamplesToggle"] = s->m_EmitterShadowingManySamplesToggle;
 
-        // Dynamic AO
         j["OverrideDynamicAO"] = s->m_OverrideDynamicAO;
 
-        // Debug
         j["DrawDebugGBuffer"] = s->m_DrawDebugGBuffer;
         j["DrawDebugZBufferEnable"] = s->m_DrawDebugZBufferEnable;
         j["DrawDebugVelocityBuffer"] = s->m_DrawDebugVelocityBuffer;
@@ -338,7 +314,6 @@ namespace editor::world_render
 
         setOverrideEnabled(j.value("overrideEnabled", isOverrideEnabled()));
 
-        // Viewport & quality
         JSON_GET_BOOL(j, "Enable", e->m_Enable);
         JSON_GET(j, "ViewportScale", e->m_ViewportScale);
         JSON_GET(j, "CullScreenAreaScale", e->m_CullScreenAreaScale);
@@ -368,16 +343,13 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "GenericEntityRendererEnable", e->m_GenericEntityRendererEnable);
         JSON_GET(j, "GenericEntityMaxVisibleEntityCount", e->m_GenericEntityMaxVisibleEntityCount);
 
-        // Overlay
         JSON_GET_BOOL(j, "OverlayEnable", e->m_OverlayEnable);
         JSON_GET_VEC4(j, "OverlayColor", e->m_OverlayColor);
 
-        // SMAA
         JSON_GET_BOOL(j, "SmaaVelocityReprojectionEnable", e->m_SmaaVelocityReprojectionEnable);
         JSON_GET_BOOL(j, "SmaaUseStencil", e->m_SmaaUseStencil);
         JSON_GET_BOOL(j, "SmaaPredicatedThresholdingEnable", e->m_SmaaPredicatedThresholdingEnable);
 
-        // GBuffer
         JSON_GET(j, "GBufferLayout", e->m_GBufferLayout);
         JSON_GET(j, "GBufferTestCount", e->m_GBufferTestCount);
         JSON_GET(j, "GBufferAlphaTestSimpleSmoothness", e->m_GBufferAlphaTestSimpleSmoothness);
@@ -389,7 +361,6 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "DxGBufferNormal16BitEnable", e->m_DxGBufferNormal16BitEnable);
         JSON_GET_BOOL(j, "Gen4aEsramEnable", e->m_Gen4aEsramEnable);
 
-        // Shadows
         JSON_GET_BOOL(j, "ShadowmapsEnable", e->m_ShadowmapsEnable);
         JSON_GET_BOOL(j, "GenerateShadowmapsEnable", e->m_GenerateShadowmapsEnable);
         JSON_GET_BOOL(j, "ApplyShadowmapsEnable", e->m_ApplyShadowmapsEnable);
@@ -420,7 +391,6 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "DxShadowmap16BitEnable", e->m_DxShadowmap16BitEnable);
         JSON_GET(j, "OnlyShadowmapSlice", e->m_OnlyShadowmapSlice);
 
-        // Motion blur
         JSON_GET_BOOL(j, "MotionBlurEnable", e->m_MotionBlurEnable);
         JSON_GET_BOOL(j, "MotionBlurForceOn", e->m_MotionBlurForceOn);
         JSON_GET_BOOL(j, "MotionBlurOptimalStableVelocityFormula", e->m_MotionBlurOptimalStableVelocityFormula);
@@ -442,7 +412,6 @@ namespace editor::world_render
         JSON_GET(j, "MotionBlurDepthCheckThreshold", e->m_MotionBlurDepthCheckThreshold);
         JSON_GET(j, "MotionBlurDepthCheckMaxDistance", e->m_MotionBlurDepthCheckMaxDistance);
 
-        // Lighting - general
         JSON_GET(j, "LightIntensityScale", e->m_LightIntensityScale);
         JSON_GET(j, "LightForceIntensity", e->m_LightForceIntensity);
         JSON_GET(j, "LightRadiusScale", e->m_LightRadiusScale);
@@ -461,14 +430,12 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "DrawLightSources", e->m_DrawLightSources);
         JSON_GET_BOOL(j, "HairCoverageEnable", e->m_HairCoverageEnable);
 
-        // Lighting - LOD
         JSON_GET(j, "LightLodSpecularFadeAreaStart", e->m_LightLodSpecularFadeAreaStart);
         JSON_GET(j, "LightLodSpecularFadeAreaEnd", e->m_LightLodSpecularFadeAreaEnd);
         JSON_GET(j, "LightLodRadiusFactor", e->m_LightLodRadiusFactor);
         JSON_GET(j, "LightLodFadeArea", e->m_LightLodFadeArea);
         JSON_GET(j, "LightLodMinArea", e->m_LightLodMinArea);
 
-        // Lighting - culling
         JSON_GET_BOOL(j, "LightCullEnable", e->m_LightCullEnable);
         JSON_GET_BOOL(j, "LightOcclusionCullEnable", e->m_LightOcclusionCullEnable);
         JSON_GET_BOOL(j, "LightDepthCullEnable", e->m_LightDepthCullEnable);
@@ -482,7 +449,6 @@ namespace editor::world_render
         JSON_GET(j, "LightTileMinArea", e->m_LightTileMinArea);
         JSON_GET_BOOL(j, "LightTileOverlayEnable", e->m_LightTileOverlayEnable);
 
-        // Light tiling
         JSON_GET(j, "LightTileCsAvgLightCountPerTile", e->m_LightTileCsAvgLightCountPerTile);
         JSON_GET_BOOL(j, "LightTileCsPathEnable", e->m_LightTileCsPathEnable);
         JSON_GET_BOOL(j, "LightTileMinMaxUseHTile", e->m_LightTileMinMaxUseHTile);
@@ -490,7 +456,6 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "LightCubeMapStencilEnable", e->m_LightCubeMapStencilEnable);
         JSON_GET(j, "LightCubeMapStencilMinArea", e->m_LightCubeMapStencilMinArea);
 
-        // Outdoor light
         JSON_GET_BOOL(j, "OutdoorLightEnable", e->m_OutdoorLightEnable);
         JSON_GET_BOOL(j, "OutdoorKeyLightEnable", e->m_OutdoorKeyLightEnable);
         JSON_GET_BOOL(j, "OutdoorSkyLightEnable", e->m_OutdoorSkyLightEnable);
@@ -500,7 +465,6 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "OutdoorLightTileSimpleShaderEnable", e->m_OutdoorLightTileSimpleShaderEnable);
         JSON_GET(j, "OutdoorLightTileBatchCount", e->m_OutdoorLightTileBatchCount);
 
-        // Light types
         JSON_GET_BOOL(j, "PointLightsEnable", e->m_PointLightsEnable);
         JSON_GET(j, "MaxPointLightCount", e->m_MaxPointLightCount);
         JSON_GET_BOOL(j, "SpotLightsEnable", e->m_SpotLightsEnable);
@@ -510,7 +474,6 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "LineLightsEnable", e->m_LineLightsEnable);
         JSON_GET_BOOL(j, "ConeLightsEnable", e->m_ConeLightsEnable);
 
-        // Spot light shadows
         JSON_GET_BOOL(j, "SpotLightShadowmapEnable", e->m_SpotLightShadowmapEnable);
         JSON_GET(j, "SpotLightShadowmapResolution", e->m_SpotLightShadowmapResolution);
         JSON_GET(j, "SpotLightShadowmapQuality", e->m_SpotLightShadowmapQuality);
@@ -520,7 +483,6 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "RadiositySpotLightShadowCullingEnable", e->m_RadiositySpotLightShadowCullingEnable);
         JSON_GET_BOOL(j, "DxSpotLightShadowmap16BitEnable", e->m_DxSpotLightShadowmap16BitEnable);
 
-        // Shadow occlusion & frustum culling
         JSON_GET_BOOL(j, "ShadowOcclusionCullingEnable", e->m_ShadowOcclusionCullingEnable);
         JSON_GET(j, "ShadowOcclusionCullingWidth", e->m_ShadowOcclusionCullingWidth);
         JSON_GET(j, "ShadowOcclusionCullingHeight", e->m_ShadowOcclusionCullingHeight);
@@ -528,7 +490,6 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "FrustumSilhouetteCullingEnable", e->m_FrustumSilhouetteCullingEnable);
         JSON_GET(j, "FrustumSilhouetteCullingPadding", e->m_FrustumSilhouetteCullingPadding);
 
-        // Sky
         JSON_GET_BOOL(j, "SkyEnable", e->m_SkyEnable);
         JSON_GET_BOOL(j, "SkyFogEnable", e->m_SkyFogEnable);
         JSON_GET_BOOL(j, "SkyHeightFogEnable", e->m_SkyHeightFogEnable);
@@ -545,7 +506,6 @@ namespace editor::world_render
         JSON_GET_ENUM(j, "SkyEnvmapFilterMode", e->m_SkyEnvmapFilterMode, fb::MipmapFilterMode);
         JSON_GET(j, "DrawDebugSkyEnvmapMipLevel", e->m_DrawDebugSkyEnvmapMipLevel);
 
-        // Dynamic envmap
         JSON_GET_BOOL(j, "DynamicEnvmapEnable", e->m_DynamicEnvmapEnable);
         JSON_GET_BOOL(j, "DynamicEnvmapMipmapGenEnable", e->m_DynamicEnvmapMipmapGenEnable);
         JSON_GET(j, "DynamicEnvmapResolution", e->m_DynamicEnvmapResolution);
@@ -557,13 +517,11 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "CustomEnvmapEnable", e->m_CustomEnvmapEnable);
         JSON_GET_BOOL(j, "CustomEnvmapMipmapClampEnable", e->m_CustomEnvmapMipmapClampEnable);
 
-        // Distortion
         JSON_GET_BOOL(j, "DistortionEnable", e->m_DistortionEnable);
         JSON_GET_BOOL(j, "DistortionHalfResEnable", e->m_DistortionHalfResEnable);
         JSON_GET_BOOL(j, "Distortion8BitEnable", e->m_Distortion8BitEnable);
         JSON_GET_BOOL(j, "DistortionTilingEnable", e->m_DistortionTilingEnable);
 
-        // Reflections
         JSON_GET_BOOL(j, "PlanarReflectionEnable", e->m_PlanarReflectionEnable);
         JSON_GET_BOOL(j, "PlanarReflectionFastHdrEnable", e->m_PlanarReflectionFastHdrEnable);
         JSON_GET_BOOL(j, "PlanarReflectionBlur", e->m_PlanarReflectionBlur);
@@ -573,17 +531,14 @@ namespace editor::world_render
         JSON_GET(j, "PlanarReflectionFarPlane", e->m_PlanarReflectionFarPlane);
         JSON_GET(j, "ReflectionLodScale", e->m_ReflectionLodScale);
 
-        // Decals & volumes
         JSON_GET_BOOL(j, "DecalVolumeEnable", e->m_DecalVolumeEnable);
         JSON_GET(j, "DecalVolumeScale", e->m_DecalVolumeScale);
         JSON_GET(j, "MaxDecalVolumeCount", e->m_MaxDecalVolumeCount);
         JSON_GET(j, "MaxDestructionVolumeCount", e->m_MaxDestructionVolumeCount);
 
-        // Lens flares
         JSON_GET_BOOL(j, "LensFlaresEnable", e->m_LensFlaresEnable);
         JSON_GET_BOOL(j, "LensFlareOcclusionEnable", e->m_LensFlareOcclusionEnable);
 
-        // Render passes
         JSON_GET_BOOL(j, "ZPassEnable", e->m_ZPassEnable);
         JSON_GET_BOOL(j, "MainOpaqueZPassEnable", e->m_MainOpaqueZPassEnable);
         JSON_GET_BOOL(j, "OccluderMeshZPrepassEnable", e->m_OccluderMeshZPrepassEnable);
@@ -601,7 +556,6 @@ namespace editor::world_render
         JSON_GET(j, "OnlyTileIndex", e->m_OnlyTileIndex);
         JSON_GET(j, "OnlyLightTileIndex", e->m_OnlyLightTileIndex);
 
-        // Job scheduling / misc
         JSON_GET_BOOL(j, "SetupJobEnable", e->m_SetupJobEnable);
         JSON_GET_BOOL(j, "FinishSyncJobsFirstEnable", e->m_FinishSyncJobsFirstEnable);
         JSON_GET_BOOL(j, "PrepareDispatchListJobEnable", e->m_PrepareDispatchListJobEnable);
@@ -609,10 +563,8 @@ namespace editor::world_render
         JSON_GET_BOOL(j, "EmitterShadowingBlendToggle", e->m_EmitterShadowingBlendToggle);
         JSON_GET_BOOL(j, "EmitterShadowingManySamplesToggle", e->m_EmitterShadowingManySamplesToggle);
 
-        // Dynamic AO
         JSON_GET_BOOL(j, "OverrideDynamicAO", e->m_OverrideDynamicAO);
 
-        // Debug
         JSON_GET_BOOL(j, "DrawDebugGBuffer", e->m_DrawDebugGBuffer);
         JSON_GET_BOOL(j, "DrawDebugZBufferEnable", e->m_DrawDebugZBufferEnable);
         JSON_GET_BOOL(j, "DrawDebugVelocityBuffer", e->m_DrawDebugVelocityBuffer);

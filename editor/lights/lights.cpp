@@ -12,7 +12,7 @@
 #include "../../utils/log.h"
 #include "../render/render.h"
 
-#include "../../hooks/functions.h" // g_pDevice / g_pContext for the geometry copies
+#include "../../hooks/functions.h" // g_pDevice / g_pContext
 #include <d3d11.h>
 
 #include <imgui.h>
@@ -34,7 +34,7 @@ namespace editor::lights
     static void linkLampContents(fb::LocalLightEntityData* data, LightDataEntry& entry);
     static void clearLampLinks();
     static void clearLevelPointers();
-    static void clearOverlayState(); // aim ray, occlusion cache, placed meshes, mesh geometry
+    static void clearOverlayState();
 
     static fb::Array<fb::GameObjectData*>* componentsOf(fb::ClassInfo* classInfo, void* data)
     {
@@ -212,6 +212,7 @@ namespace editor::lights
 
     void clear()
     {
+        forgetSunFlares();
         entries.clear();
         clearLampLinks();
         clearLevelPointers();
@@ -302,10 +303,10 @@ namespace editor::lights
     };
 
     // A flare this far from a light, in the prefab's own units, just a guess after all
-    constexpr float kFlarePairRadius = 2.5f;
+    constexpr float FLARE_PAIR_RADIUS = 2.5f;
 
     static std::unordered_map<void*, std::vector<uint32_t>> placementVariations;
-    constexpr size_t kMaxPlacementVariations = 8;
+    constexpr size_t MAX_PLACEMENT_VARIATIONS = 8;
 
     static void CollectObject(fb::GameObjectData* el, uint32_t varHash, int refHops,
                               ContainerContents& out, const fb::Vec3& origin);
@@ -463,7 +464,7 @@ namespace editor::lights
         if (classInfo->isSubclassOf((fb::ClassInfo*)fb::ReferenceObjectData::ClassInfoPtr()))
         {
             if (refHops >= 1)
-                return; // below the lamp's own blueprint is debris, not the lamp
+                return; // below the lamp blueprint is debris
 
             auto* ref = static_cast<fb::ReferenceObjectData*>(el);
 
@@ -471,7 +472,6 @@ namespace editor::lights
             if (ref->m_ObjectVariation && ref->m_ObjectVariation->m_NameHash)
                 nested = ref->m_ObjectVariation->m_NameHash;
 
-            // child transforms are relative to the reference.
             fb::Vec3 nestedOrigin = origin;
             const fb::Vec3& t = ref->m_BlueprintTransform.m_trans;
             if (std::isfinite(t.m_x) && std::isfinite(t.m_y) && std::isfinite(t.m_z))
@@ -495,8 +495,8 @@ namespace editor::lights
                 std::strcmp(typeName, "LogicPrefabBlueprint") == 0);
     }
 
-    constexpr size_t kMaxPropLights = 64;
-    constexpr size_t kMaxPropMeshes = 8;
+    constexpr size_t MAX_PROP_LIGHTS = 64;
+    constexpr size_t MAX_PROP_MESHES = 8;
 
     template<typename ContainerType>
     static void RecordPlacementVariations(ContainerType* container)
@@ -516,7 +516,7 @@ namespace editor::lights
                 continue;
 
             std::vector<uint32_t>& seen = placementVariations[ref->m_Blueprint];
-            if (seen.size() >= kMaxPlacementVariations)
+            if (seen.size() >= MAX_PLACEMENT_VARIATIONS)
                 continue;
 
             const uint32_t hash = ref->m_ObjectVariation->m_NameHash;
@@ -542,7 +542,7 @@ namespace editor::lights
              cc.meshObjects.empty() && cc.shaderParams.empty()))
             return;
 
-        if (cc.lights.size() > kMaxPropLights || cc.meshes.size() > kMaxPropMeshes)
+        if (cc.lights.size() > MAX_PROP_LIGHTS || cc.meshes.size() > MAX_PROP_MESHES)
         {
             logger::debug("[lights] skipping {} - {} light(s), {} mesh(es): too broad to link",
                 containerTypeName, cc.lights.size(), cc.meshes.size());
@@ -557,18 +557,19 @@ namespace editor::lights
         fb::MeshAsset* mesh;
         uint32_t varHash;
         fb::Vec3 pos;
-        fb::LinearTransform frame; // placement, world space
-        bool hasBox; // mesh set loaded and its box read
+        fb::LinearTransform frame; // world space
+        bool hasBox;
         fb::Vec3 boxMin, boxMax;
-        const void* member; // StaticModelGroupMemberData when placed from its EBX transforms
+        const void* member; // StaticModelGroupMemberData, EBX-placed only
+        uint8_t radiosityOverride; // ReferenceObjectData / per-instance RadiosityTypeOverride
     };
     struct WorldLight { fb::LocalLightEntityData* data; fb::Vec3 pos; };
     static std::vector<WorldMesh> worldMeshes;
     static std::vector<WorldLight> worldLights;
     static std::unordered_map<fb::LocalLightEntityData*, std::vector<MeshVariationRef>> nearbyMeshes;
-    constexpr float kMeshPairRadius = 2.5f;
-    constexpr float kMeshBoxSlack = 0.5f;
-    constexpr size_t kMaxWorldMeshes = 150000; // to not overtank the overlay
+    constexpr float MESH_PAIR_RADIUS = 2.5f;
+    constexpr float MESH_BOX_SLACK = 0.5f;
+    constexpr size_t MAX_WORLD_MESHES = 150000; // to not overtank the overlay
 
     static std::unordered_map<fb::MeshAsset*, std::pair<bool, std::pair<fb::Vec3, fb::Vec3>>> g_meshBoxes;
     struct SubsetGeo
@@ -582,6 +583,7 @@ namespace editor::lights
         fb::MeshSet* set = nullptr;
         std::vector<SubsetGeo> subsets;
         std::vector<uint8_t> vertices, indices;
+        std::vector<uint8_t> lodVertices[6], lodIndices[6]; // LOD 1+, [0] unused
         uint32_t vertexDataSize = 0, indexDataSize = 0;
         int copyState = 0;
 
@@ -594,16 +596,17 @@ namespace editor::lights
     static std::unordered_map<fb::MeshAsset*, MeshGeo> g_meshGeo;
 
     // field packing is different between bf3 and bf4
-    static fb::MeshLayout* lod0(const fb::MeshSet* set)
+    static fb::MeshLayout* lodAt(const fb::MeshSet* set, uint32_t l)
     {
-        if (!set || !set->m_layout)
+        if (!set || !set->m_layout || l >= set->m_layout->m_lodCount)
             return nullptr;
 #if defined(BFVE_GAME_BF4)
-        return static_cast<fb::MeshLayout*>(set->m_layout->m_lods[0]);
+        return static_cast<fb::MeshLayout*>(set->m_layout->m_lods[l]);
 #else
-        return set->m_layout->m_lods[0].as<fb::MeshLayout>();
+        return set->m_layout->m_lods[l].as<fb::MeshLayout>();
 #endif
     }
+    static fb::MeshLayout* lod0(const fb::MeshSet* set) { return lodAt(set, 0); }
     static fb::MeshSubset* subsetsOf(const fb::MeshLayout* lod)
     {
 #if defined(BFVE_GAME_BF4)
@@ -644,7 +647,7 @@ namespace editor::lights
         return sub.m_streams[0][0] ? sub.m_streams[0][0] : sub.m_vertexStride;
 #endif
     }
-    // BF4 DxBuffer (sub_140BEBA30, 0x58): ID3D11Buffer* at +0x10. BF3 DxRenderBuffer: +0x08
+    // ID3D11Buffer*: BF4 DxBuffer +0x10 (sub_140BEBA30), BF3 +0x08
     static ID3D11Buffer* d3dBuffer(void* renderBuffer)
     {
         if (!renderBuffer)
@@ -666,10 +669,10 @@ namespace editor::lights
         if (!registry)
             return nullptr;
         using find_t = fb::MeshSet* (__fastcall*)(void*, int);
-        fb::MeshSet* set = reinterpret_cast<find_t>(fb::MeshSetRegistry::kFind)(registry, int(hash));
+        fb::MeshSet* set = reinterpret_cast<find_t>(fb::MeshSetRegistry::FIND)(registry, int(hash));
         const uint32_t maxLods = 6;
 #else
-        auto* set = static_cast<fb::MeshSet*>(textures::resourceByName(mesh->m_Name));
+        auto* set = static_cast<fb::MeshSet*>(textures::meshSetByName(mesh->m_Name));
         const uint32_t maxLods = 5;
 #endif
         if (!set || !set->m_layout || set->m_layout->m_nameHash != hash ||
@@ -696,7 +699,7 @@ namespace editor::lights
         {
             using find_t = fb::MeshSet* (__fastcall*)(void*, int);
             const uint32_t hash = mesh->m_NameHash;
-            fb::MeshSet* set = reinterpret_cast<find_t>(fb::MeshSetRegistry::kFind)(registry, int(hash));
+            fb::MeshSet* set = reinterpret_cast<find_t>(fb::MeshSetRegistry::FIND)(registry, int(hash));
             if (set && set->m_layout && set->m_layout->m_nameHash == hash &&
                 set->m_layout->m_lodCount <= 6)
             {
@@ -706,7 +709,7 @@ namespace editor::lights
             }
         }
 #else
-        if (auto* set = static_cast<fb::MeshSet*>(textures::resourceByName(mesh->m_Name)))
+        if (auto* set = static_cast<fb::MeshSet*>(textures::meshSetByName(mesh->m_Name)))
         {
             if (set->m_layout && set->m_layout->m_nameHash == mesh->m_NameHash &&
                 set->m_layout->m_lodCount <= 5)
@@ -745,7 +748,7 @@ namespace editor::lights
         };
         const float lx = axis(m.frame.m_right), ly = axis(m.frame.m_up), lz = axis(m.frame.m_forward);
 
-        const float s = kMeshBoxSlack;
+        const float s = MESH_BOX_SLACK;
         if (lx < m.boxMin.m_x - s || lx > m.boxMax.m_x + s ||
             ly < m.boxMin.m_y - s || ly > m.boxMax.m_y + s ||
             lz < m.boxMin.m_z - s || lz > m.boxMax.m_z + s)
@@ -755,7 +758,7 @@ namespace editor::lights
         return true;
     }
 
-    // Row-vector convention: p' = trans + x*right + y*up + z*forward.
+    // p' = trans + x*right + y*up + z*forward
     static fb::Vec3 applyTransform(const fb::LinearTransform& t, const fb::Vec3& p)
     {
         fb::Vec3 r{ };
@@ -784,7 +787,6 @@ namespace editor::lights
         return r;
     }
 
-    // General affine inverse (rows may carry scale).
     static fb::LinearTransform invertTransform(const fb::LinearTransform& t)
     {
         const float m[3][3] = {
@@ -808,7 +810,6 @@ namespace editor::lights
         inv[2][0] = (m[1][0] * m[2][1] - m[1][1] * m[2][0]) * id;
         inv[2][1] = -(m[0][0] * m[2][1] - m[0][1] * m[2][0]) * id;
         inv[2][2] = (m[0][0] * m[1][1] - m[0][1] * m[1][0]) * id;
-        // columns of the inverse are the new basis vectors
         r.m_right = { inv[0][0], inv[1][0], inv[2][0] };
         r.m_up = { inv[0][1], inv[1][1], inv[2][1] };
         r.m_forward = { inv[0][2], inv[1][2], inv[2][2] };
@@ -820,8 +821,7 @@ namespace editor::lights
     }
 
 #if defined(BFVE_GAME_BF3)
-    // StaticModelGroupMemberData::m_MeshEntityType: RigidMeshEntityData / CompositeMeshEntityData
-    // (m_Mesh +0x50), occasionally a StaticModelEntityData
+    // Rigid/CompositeMeshEntityData (m_Mesh +0x50), sometimes StaticModelEntityData
     static fb::MeshAsset* groupMemberMesh(const fb::StaticModelGroupMemberData& mem)
     {
         fb::ClassInfo* mci = fb::classOf(mem.m_MeshEntityType);
@@ -854,7 +854,7 @@ namespace editor::lights
             {
                 if (first)
                     RegisterLightData(light, name, type, bp);
-                if (worldLights.size() < kMaxWorldMeshes)
+                if (worldLights.size() < MAX_WORLD_MESHES)
                     worldLights.push_back({ light,
                         applyTransform(frame, static_cast<fb::SpatialEntityData*>(light)->m_Transform.m_trans) });
             });
@@ -864,13 +864,13 @@ namespace editor::lights
         else if (bci->isSubclassOf((fb::ClassInfo*)fb::PrefabBlueprint::ClassInfoPtr()))
             for (auto child : reinterpret_cast<fb::PrefabBlueprint*>(bp)->m_Objects)
                 if (!fb::classOf(child) || !fb::classOf(child)->isSubclassOf((fb::ClassInfo*)fb::LocalLightEntityData::ClassInfoPtr()))
-                    visit(child, "PrefabBlueprint"); // direct lights are placed by the walk itself
+                    visit(child, "PrefabBlueprint"); // the walk places direct lights
     }
 
     static void CollectWorldPlacements(fb::GameObjectData* el, const fb::LinearTransform& frame,
-                                       uint32_t varHash, int hops)
+                                       uint32_t varHash, int hops, uint8_t radOverride = 0)
     {
-        if (!el || hops > 4 || worldMeshes.size() >= kMaxWorldMeshes)
+        if (!el || hops > 4 || worldMeshes.size() >= MAX_WORLD_MESHES)
             return;
 
         fb::ClassInfo* classInfo = fb::classOf(el);
@@ -890,7 +890,6 @@ namespace editor::lights
         else if (classInfo->isSubclassOf((fb::ClassInfo*)fb::MeshProxyEntityData::ClassInfoPtr()))
             mesh = static_cast<fb::MeshProxyEntityData*>(el)->m_Mesh;
 #if defined(BFVE_GAME_BF3)
-        // BF3 props are RigidMeshEntityData / CompositeMeshEntityData
         else if (classInfo->isSubclassOf((fb::ClassInfo*)fb::RigidMeshEntityData::ClassInfoPtr()))
             mesh = static_cast<fb::RigidMeshEntityData*>(el)->m_Mesh;
         else if (classInfo->isSubclassOf((fb::ClassInfo*)fb::CompositeMeshEntityData::ClassInfoPtr()))
@@ -900,10 +899,11 @@ namespace editor::lights
         {
             worldMeshes.push_back(makeWorldMesh(mesh, varHash,
                 composeTransform(frame, static_cast<fb::SpatialEntityData*>(el)->m_Transform)));
+            worldMeshes.back().radiosityOverride = radOverride;
             return;
         }
 
-        // Most placed props are batched: one member per mesh, one transform per instance.
+        // one member per mesh, one transform per instance
         if (classInfo->isSubclassOf((fb::ClassInfo*)fb::StaticModelGroupEntityData::ClassInfoPtr()))
         {
             auto* group = static_cast<fb::StaticModelGroupEntityData*>(el);
@@ -923,12 +923,17 @@ namespace editor::lights
                 const uint32_t n = mem.m_InstanceTransforms.size();
                 const uint32_t nv = mem.m_InstanceObjectVariation.m_firstElement
                     ? mem.m_InstanceObjectVariation.size() : 0;
-                for (uint32_t i = 0; i < n && worldMeshes.size() < kMaxWorldMeshes; ++i)
+                for (uint32_t i = 0; i < n && worldMeshes.size() < MAX_WORLD_MESHES; ++i)
                 {
                     const uint32_t vh = i < nv ? mem.m_InstanceObjectVariation.At(int(i)) : varHash;
                     worldMeshes.push_back(makeWorldMesh(member, vh,
                         composeTransform(gframe, mem.m_InstanceTransforms.At(int(i)))));
                     worldMeshes.back().member = &mem;
+                    worldMeshes.back().radiosityOverride = radOverride;
+#if defined(BFVE_GAME_BF4)
+                    if (mem.m_InstanceRadiosityTypeOverride.m_firstElement && i < mem.m_InstanceRadiosityTypeOverride.size() && mem.m_InstanceRadiosityTypeOverride.At(int(i)))
+                        worldMeshes.back().radiosityOverride = uint8_t(mem.m_InstanceRadiosityTypeOverride.At(int(i)));
+#endif
                 }
             }
             return;
@@ -946,16 +951,26 @@ namespace editor::lights
         const fb::LinearTransform inner = composeTransform(frame, ref->m_BlueprintTransform);
         const uint32_t vh = ref->m_ObjectVariation ? ref->m_ObjectVariation->m_NameHash : varHash;
         RegisterBlueprintLights(bp, bci, inner);
+        uint8_t ro = radOverride;
+#if defined(BFVE_GAME_BF4)
+        if (ref->m_RadiosityTypeOverride) ro = uint8_t(ref->m_RadiosityTypeOverride);
+#endif
 
         if (bci->isSubclassOf((fb::ClassInfo*)fb::ObjectBlueprint::ClassInfoPtr()))
-            CollectWorldPlacements(reinterpret_cast<fb::ObjectBlueprint*>(bp)->m_Object, inner, vh, hops + 1);
+            CollectWorldPlacements(reinterpret_cast<fb::ObjectBlueprint*>(bp)->m_Object, inner, vh, hops + 1, ro);
         else if (bci->isSubclassOf((fb::ClassInfo*)fb::PrefabBlueprint::ClassInfoPtr()))
             for (auto child : reinterpret_cast<fb::PrefabBlueprint*>(bp)->m_Objects)
-                CollectWorldPlacements(child, inner, vh, hops + 1);
+                CollectWorldPlacements(child, inner, vh, hops + 1, ro);
     }
 
 #if defined(BFVE_GAME_BF4)
     static std::unordered_map<void*, fb::LinearTransform> g_groupFrames;
+
+    static uint8_t instanceRadiosityOverride(fb::StaticModelGroupMemberData* mem, uint32_t i)
+    {
+        auto& a = mem->m_InstanceRadiosityTypeOverride;
+        return a.m_firstElement && i < a.size() ? uint8_t(a.At(int(i))) : 0;
+    }
 
     static fb::LinearTransform memberLocal(fb::StaticModelGroupMember* rec, uint32_t i)
     {
@@ -978,7 +993,7 @@ namespace editor::lights
             for (void* node = head; node && ++seen <= 65536; )
             {
                 auto* e = reinterpret_cast<fb::ClientStaticModelGroupEntity*>(
-                    static_cast<uint8_t*>(node) - fb::kStaticModelGroupLinkOffset);
+                    static_cast<uint8_t*>(node) - fb::STATIC_MODEL_GROUP_LINK_OFFSET);
                 ++groups;
 
                 const size_t memberCount = e->m_data ? e->m_data->m_MemberDatas.size() : 0;
@@ -991,17 +1006,16 @@ namespace editor::lights
                     fb::StaticModelGroupMemberData* mem = rec->m_data;
                     if (!mem || !mem->m_MeshAsset || !rec->m_instances)
                         continue;
-                    // realized instance transforms replace the EBX-composed ones.
                     if (mem->m_InstanceTransforms.size() != 0)
                         worldMeshes.erase(std::remove_if(worldMeshes.begin(), worldMeshes.end(),
                             [mem](const WorldMesh& w) { return w.member == mem; }), worldMeshes.end());
 
                     const uintptr_t vt = reinterpret_cast<uintptr_t>(rec->m_instances->m_vtable);
                     size_t stride = 0;
-                    if (vt == fb::StaticModelGroupMeshInstance::kRigidVTable)
-                        stride = fb::StaticModelGroupMeshInstance::kRigidSize;
-                    else if (vt == fb::StaticModelGroupMeshInstance::kCompositeVTable)
-                        stride = fb::StaticModelGroupMeshInstance::kCompositeSize;
+                    if (vt == fb::StaticModelGroupMeshInstance::RIGID_VTABLE)
+                        stride = fb::StaticModelGroupMeshInstance::RIGID_SIZE;
+                    else if (vt == fb::StaticModelGroupMeshInstance::COMPOSITE_VTABLE)
+                        stride = fb::StaticModelGroupMeshInstance::COMPOSITE_SIZE;
 
                     const uint32_t nv = mem->m_InstanceObjectVariation.m_firstElement
                         ? mem->m_InstanceObjectVariation.size() : 0;
@@ -1011,18 +1025,19 @@ namespace editor::lights
                         // group frame from a sibling, local from the engine
                         auto frameIt = g_groupFrames.find(e);
                         if (frameIt == g_groupFrames.end())
-                            continue; // no sibling seen yet, resolveGroupHit still names the mesh
-                        for (uint32_t i = 0; i < mem->m_InstanceCount && worldMeshes.size() < kMaxWorldMeshes; ++i)
+                            continue; // no sibling seen yet
+                        for (uint32_t i = 0; i < mem->m_InstanceCount && worldMeshes.size() < MAX_WORLD_MESHES; ++i)
                         {
                             const uint32_t vh = i < nv ? mem->m_InstanceObjectVariation.At(int(i)) : 0;
                             worldMeshes.push_back(makeWorldMesh(mem->m_MeshAsset, vh, composeTransform(frameIt->second, memberLocal(rec, i))));
+                            worldMeshes.back().radiosityOverride = instanceRadiosityOverride(mem, i);
                             ++added;
                             ++viaPhysics;
                         }
                         continue;
                     }
 
-                    for (uint32_t i = 0; i < mem->m_InstanceCount && worldMeshes.size() < kMaxWorldMeshes; ++i)
+                    for (uint32_t i = 0; i < mem->m_InstanceCount && worldMeshes.size() < MAX_WORLD_MESHES; ++i)
                     {
                         auto* inst = reinterpret_cast<fb::StaticModelGroupMeshInstance*>(
                             reinterpret_cast<uint8_t*>(rec->m_instances) + i * stride);
@@ -1034,6 +1049,7 @@ namespace editor::lights
                         }
                         const uint32_t vh = i < nv ? mem->m_InstanceObjectVariation.At(int(i)) : 0;
                         worldMeshes.push_back(makeWorldMesh(mem->m_MeshAsset, vh, inst->m_transform));
+                        worldMeshes.back().radiosityOverride = instanceRadiosityOverride(mem, i);
                         ++added;
                     }
                 }
@@ -1090,7 +1106,7 @@ namespace editor::lights
 
             for (fb::ClientStaticModelGroupMember* rec = e->m_membersBegin; rec && rec < end; ++rec)
             {
-                if (reinterpret_cast<uintptr_t>(rec->m_vtable) != fb::ClientStaticModelGroupMember::kVTable)
+                if (reinterpret_cast<uintptr_t>(rec->m_vtable) != fb::ClientStaticModelGroupMember::VTABLE)
                     continue;
                 ++members;
                 fb::StaticModelGroupMemberData* mem = rec->m_data;
@@ -1117,14 +1133,14 @@ namespace editor::lights
                         return;
                     }
                     const uintptr_t vt = reinterpret_cast<uintptr_t>(inst->m_vtable);
-                    if (vt != fb::StaticModelGroupMeshInstance::kRigidVTable &&
-                        vt != fb::StaticModelGroupMeshInstance::kCompositeVTable)
+                    if (vt != fb::StaticModelGroupMeshInstance::RIGID_VTABLE &&
+                        vt != fb::StaticModelGroupMeshInstance::COMPOSITE_VTABLE)
                     {
                         ++skipped;
                         skippedVt = vt;
                         return;
                     }
-                    if (worldMeshes.size() >= kMaxWorldMeshes)
+                    if (worldMeshes.size() >= MAX_WORLD_MESHES)
                         return;
                     const uint32_t vh = i < nv ? mem->m_InstanceObjectVariation.At(int(i)) : 0;
                     worldMeshes.push_back(makeWorldMesh(mesh, vh, inst->m_transform));
@@ -1189,7 +1205,7 @@ namespace editor::lights
         if (worldMeshes.empty() || worldLights.empty())
             return;
 
-        const float limit = kMeshPairRadius * kMeshPairRadius;
+        const float limit = MESH_PAIR_RADIUS * MESH_PAIR_RADIUS;
         uint32_t byBox = 0;
         for (const WorldLight& l : worldLights)
         {
@@ -1290,7 +1306,7 @@ namespace editor::lights
                         best = (std::min)(best, distanceSqr(self->pos, flare.pos));
 
                     if (best < nearestSqr) { nearestSqr = best; nearest = &flare; }
-                    keep = best <= kFlarePairRadius * kFlarePairRadius;
+                    keep = best <= FLARE_PAIR_RADIUS * FLARE_PAIR_RADIUS;
                 }
                 else if (cc.flares.size() > 1)
                 {
@@ -1307,7 +1323,6 @@ namespace editor::lights
                     entry.lampFlares.push_back(flare.data);
             }
 
-            // All flares out of range: keep the closest.
             if (entry.lampFlares.empty() && nearest)
                 entry.lampFlares.push_back(nearest->data);
             else if (entry.lampFlares.empty() && !cc.flares.empty() && cc.flares.size() == 1)
@@ -1442,7 +1457,7 @@ namespace editor::lights
         {
             if (auto* light = static_cast<fb::LightComponentData*>(el)->m_Light)
                 reg(light);
-        // no return: a component can carry components of its own
+        // components can nest
         }
 
 #if defined(BFVE_GAME_BF4)
@@ -1450,7 +1465,7 @@ namespace editor::lights
         {
             if (auto* light = static_cast<fb::LightEffectEntityData*>(el)->m_Light)
                 reg(light);
-        // falls through: it is an EffectEntityData too, so it may carry components
+        // falls through, it is an EffectEntityData too
         }
 #endif
 
@@ -1621,7 +1636,6 @@ namespace editor::lights
         if (!rm)
             return;
 
-        // links are rebuilt from scratch
         clearLampLinks();
         g_registeredBlueprints.clear();
 #if defined(BFVE_GAME_BF3)
@@ -2239,6 +2253,13 @@ namespace editor::lights
         }
     }
 
+    void forgetData(fb::LocalLightEntityData* data)
+    {
+        entries.erase(data);
+        nearbyMeshes.erase(data);
+        linkIndex.erase(data);
+    }
+
     fb::LocalLightEntity* closestLightToCrosshair(float* outScreenDist)
     {
         const ImVec2 disp = ImGui::GetIO().DisplaySize;
@@ -2442,7 +2463,6 @@ namespace editor::lights
                     batch.emplace_back(k, g_vis[k].pos);
                 }
             }
-            // drop entries nobody asked about for a while (overlay off, level changed)
             if (g_vis.size() > 2048)
                 for (auto it = g_vis.begin(); it != g_vis.end();)
                     it = (g_visTick - it->second.tick > 600) ? g_vis.erase(it) : std::next(it);
@@ -2452,7 +2472,7 @@ namespace editor::lights
         for (auto& [k, p] : batch)
         {
             fb::RayCastHit hit{ };
-            const bool blocked = fb::physicsRayQuery(start, p, hit, fb::kRayCastWorldOnly, me);
+            const bool blocked = fb::physicsRayQuery(start, p, hit, fb::RAY_CAST_WORLD_ONLY, me);
 
             const bool visible = !blocked || hit.m_lambda > 0.97f;
             std::lock_guard<std::mutex> lock(g_visMutex);
@@ -2465,9 +2485,37 @@ namespace editor::lights
         }
     }
 
+    void staticMeshBodies(std::vector<void*>& out)
+    {
+        out.clear();
 #if defined(BFVE_GAME_BF4)
-    // RayCastHit names the GroupPhysicsEntity and a part index; every member of that group
-    // stores the same entity at +0x20 and its own part range, so the instance is arithmetic
+        std::vector<void*> heads;
+        collectHeads(fb::ClientStaticModelGroupEntity::ClassInfoPtr(), uint16_t(fb::ClientStaticModelGroupEntity::ClassId()), heads);
+        for (void* head : heads)
+        {
+            size_t seen = 0;
+            for (void* node = head; node && ++seen <= 65536; )
+            {
+                auto* e = reinterpret_cast<fb::ClientStaticModelGroupEntity*>(static_cast<uint8_t*>(node) - fb::STATIC_MODEL_GROUP_LINK_OFFSET);
+                const size_t memberCount = e->m_data ? e->m_data->m_MemberDatas.size() : 0;
+                fb::StaticModelGroupMember* end = e->m_membersEnd;
+                if (e->m_membersBegin && end > e->m_membersBegin + memberCount)
+                    end = e->m_membersBegin + memberCount;
+                for (fb::StaticModelGroupMember* rec = e->m_membersBegin; rec && rec < end; ++rec)
+                    if (rec->m_physics) out.push_back(rec->m_physics);
+                void* next = e->m_link.next;
+                if (!next || next == head)
+                    break;
+                node = next;
+            }
+        }
+#endif
+        std::sort(out.begin(), out.end());
+        out.erase(std::unique(out.begin(), out.end()), out.end());
+    }
+
+#if defined(BFVE_GAME_BF4)
+    // hit = GroupPhysicsEntity + part, stored at member+0x20
     static bool resolveGroupHit(void* body, uint32_t part, const fb::Vec3& hitPos, PlacedMesh& out)
     {
         if (!body)
@@ -2481,7 +2529,7 @@ namespace editor::lights
             for (void* node = head; node && ++seen <= 65536; )
             {
                 auto* e = reinterpret_cast<fb::ClientStaticModelGroupEntity*>(
-                    static_cast<uint8_t*>(node) - fb::kStaticModelGroupLinkOffset);
+                    static_cast<uint8_t*>(node) - fb::STATIC_MODEL_GROUP_LINK_OFFSET);
                 const size_t memberCount = e->m_data ? e->m_data->m_MemberDatas.size() : 0;
                 fb::StaticModelGroupMember* end = e->m_membersEnd;
                 if (e->m_membersBegin && end > e->m_membersBegin + memberCount)
@@ -2503,10 +2551,10 @@ namespace editor::lights
 
                     const uintptr_t vt = reinterpret_cast<uintptr_t>(rec->m_instances->m_vtable);
                     size_t stride = 0;
-                    if (vt == fb::StaticModelGroupMeshInstance::kRigidVTable)
-                        stride = fb::StaticModelGroupMeshInstance::kRigidSize;
-                    else if (vt == fb::StaticModelGroupMeshInstance::kCompositeVTable)
-                        stride = fb::StaticModelGroupMeshInstance::kCompositeSize;
+                    if (vt == fb::StaticModelGroupMeshInstance::RIGID_VTABLE)
+                        stride = fb::StaticModelGroupMeshInstance::RIGID_SIZE;
+                    else if (vt == fb::StaticModelGroupMeshInstance::COMPOSITE_VTABLE)
+                        stride = fb::StaticModelGroupMeshInstance::COMPOSITE_SIZE;
                     const uint32_t nv = mem->m_InstanceObjectVariation.m_firstElement
                         ? mem->m_InstanceObjectVariation.size() : 0;
                     out.mesh = mem->m_MeshAsset;
@@ -2534,8 +2582,7 @@ namespace editor::lights
         return false;
     }
 #else
-    // BF3: the hit body is the member's StaticModelGroupPhysics (= GroupPhysicsEntity), known
-    // from the scan; the part indexes its table straight to the realized mesh instance
+    // BF3 hit body = member's StaticModelGroupPhysics
     static bool resolveGroupHit(void* body, uint32_t part, const fb::Vec3& hitPos, PlacedMesh& out)
     {
         auto it = body ? g_groupPhysics.find(body) : g_groupPhysics.end();
@@ -2560,8 +2607,8 @@ namespace editor::lights
         const uintptr_t vt = reinterpret_cast<uintptr_t>(inst->m_vtable);
         out.mesh = it->second.mesh;
         out.varHash = i < nv ? mem->m_InstanceObjectVariation.At(int(i)) : 0;
-        out.pos = (vt == fb::StaticModelGroupMeshInstance::kRigidVTable ||
-                   vt == fb::StaticModelGroupMeshInstance::kCompositeVTable)
+        out.pos = (vt == fb::StaticModelGroupMeshInstance::RIGID_VTABLE ||
+                   vt == fb::StaticModelGroupMeshInstance::COMPOSITE_VTABLE)
             ? inst->m_transform.m_trans : hitPos;
         return true;
     }
@@ -2603,7 +2650,7 @@ namespace editor::lights
 
     void tickAimRay()
     {
-        if (!aimRayEnabled)
+        if (!aimRayEnabled && !aimRayRequested)
             return;
         AimRay r;
         if (!render::cameraPosition(r.from) || !render::cameraForward(r.dir))
@@ -2617,13 +2664,13 @@ namespace editor::lights
         // 120 is range
         const fb::Vec3 to{ r.from.m_x + r.dir.m_x * 120.0f, r.from.m_y + r.dir.m_y * 120.0f, r.from.m_z + r.dir.m_z * 120.0f };
 
-        void* me = nullptr; // fixed_vector of skips in ray, nullptr = nothing to skip
+        void* me = nullptr; // fixed_vector of skips, nullptr = none
         void* caster = fb::physicsRayCaster();
 #if defined(BFVE_GAME_BF4)
         me = fb::localSoldierPhysics();
 #endif
         fb::RayCastHit hit{ };
-        const bool ok = caster && fb::physicsRayQuery(start, to, hit, fb::kRayCastWorldOnly, me);
+        const bool ok = caster && fb::physicsRayQuery(start, to, hit, fb::RAY_CAST_WORLD_ONLY, me);
         if (ok)
         {
             r.valid = true;
@@ -2799,7 +2846,7 @@ namespace editor::lights
         const uint32_t sign = (h >> 15) & 1, exp = (h >> 10) & 0x1F, man = h & 0x3FF;
         uint32_t bits;
         if (exp == 0)
-            bits = sign << 31; // zero / denormal: close enough for a position
+            bits = sign << 31; // zero / denormal
         else if (exp == 31)
             bits = (sign << 31) | 0x7F800000;
         else
@@ -2809,8 +2856,7 @@ namespace editor::lights
         return f;
     }
 
-    // Position element of a subset: stream 0 at offset 0. VertexElementFormat: 3/4 = float3/4,
-    // 7/8 = half3/4 (both games); BF4 adds packed variants of each
+    // VertexElementFormat 3/4 float3/4, 7/8 half3/4, BF4 adds packed
     static bool positionFormat(const fb::MeshSubset& sub, bool& halves)
     {
         for (uint32_t e = 0; e < sub.m_elementCount && e < 16; ++e)
@@ -3033,7 +3079,7 @@ namespace editor::lights
             g.vertexDataSize = lod->m_vertexDataSize;
             g.indexDataSize = lod->m_indexDataSize;
             g.copyState = 2;
-            // per-material bounds from the vertices themselves: the record has no box
+            // per-material bounds from vertices, record has none
             fb::MeshSubset* subs = subsetsOf(lod);
             for (uint32_t i = 0; subs && i < lod->m_subsetCount && i < g.subsets.size(); ++i)
             {
@@ -3054,7 +3100,135 @@ namespace editor::lights
                 g.subsets[i].mx = mx;
                 g.subsets[i].hasBox = true;
             }
+            // lower LODs carry their own radiosity charts
+            for (uint32_t l = 1; l < g.set->m_layout->m_lodCount && l < 6; ++l)
+            {
+                fb::MeshLayout* ll = lodAt(g.set, l);
+                fb::MeshData* ld = ll ? dataOf(ll) : nullptr;
+                if (!ld || !ld->m_vertexBuffer || !ld->m_indexBuffer ||
+                    !copyGpuBuffer(ld->m_vertexBuffer, g.lodVertices[l]) || !copyGpuBuffer(ld->m_indexBuffer, g.lodIndices[l]))
+                {
+                    g.lodVertices[l].clear();
+                    g.lodIndices[l].clear();
+                }
+            }
         }
+    }
+
+    void drainGeometryCopies(int maxCount)
+    {
+        for (int i = 0; i < maxCount; ++i)
+        {
+            {
+                std::lock_guard<std::mutex> lock(g_geoCopyMutex);
+                if (g_geoCopyQueue.empty())
+                    return;
+            }
+            tickGeometryCopies();
+        }
+    }
+
+    static uint32_t elementUsage(const fb::MeshSubset& sub, uint32_t e)
+    {
+#if defined(BFVE_GAME_BF4)
+        return sub.m_declElements[e] & 0xFF;
+#else
+        return sub.m_elements[e][0];
+#endif
+    }
+
+    uint32_t meshLodCount(fb::MeshAsset* mesh)
+    {
+        const MeshGeo& g = meshGeo(mesh);
+        return g.set && g.set->m_layout ? (std::min)(uint32_t(g.set->m_layout->m_lodCount), 6u) : 0;
+    }
+
+    int meshGeometry(fb::MeshAsset* mesh, GeoView& out, uint32_t l)
+    {
+        out = GeoView{};
+        if (!mesh || l >= 6)
+            return -1;
+        MeshGeo& g = const_cast<MeshGeo&>(meshGeo(mesh));
+        if (!g.set || !g.set->m_layout)
+            return -1;
+        if (!geometryReady(mesh))
+            return g.copyState == 3 ? -1 : 0;
+        const std::vector<uint8_t>& vertices = l ? g.lodVertices[l] : g.vertices;
+        const std::vector<uint8_t>& indices = l ? g.lodIndices[l] : g.indices;
+        if (vertices.empty() || indices.empty())
+            return -1;
+        fb::MeshLayout* lod = lodAt(g.set, l);
+        fb::MeshSubset* subs = lod ? subsetsOf(lod) : nullptr;
+        const uint32_t n = lod ? lod->m_subsetCount : 0;
+        if (!subs || !n || n > 256)
+            return -1;
+
+        uint32_t indexCount = 0;
+        for (uint32_t i = 0; i < n; ++i)
+            indexCount = (std::max)(indexCount, subs[i].m_startIndex + subs[i].m_primitiveCount * 3);
+        uint32_t bpi = indexCount && indices.size() / indexCount >= 4 ? 4 : 2;
+        if (lod->m_indexBufferFormat == 0) bpi = 2;
+        else if (lod->m_indexBufferFormat == 1) bpi = 4;
+
+        out.vertices = vertices.data();
+        out.vertexBytes = vertices.size();
+        out.indices = indices.data();
+        out.indexBytes = indices.size();
+        out.bytesPerIndex = bpi;
+        for (uint32_t i = 0; i < n; ++i)
+        {
+            const fb::MeshSubset& sub = subs[i];
+            GeoSubset gs;
+            gs.materialIndex = sub.m_materialIndex;
+            gs.primitiveCount = sub.m_primitiveCount;
+            gs.startIndex = sub.m_startIndex;
+            gs.vertexOffset = sub.m_vertexOffset;
+            gs.vertexCount = sub.m_vertexCount;
+            gs.stride = stride0(sub);
+            bool halves = false;
+            if (!positionFormat(sub, halves))
+                gs.stride = 0; // unusable
+            gs.posHalves = halves;
+            for (uint32_t e = 0; e < sub.m_elementCount && e < 16; ++e)
+            {
+                // decl usage = VertexElementUsage + 10: TexCoord0 0x21, RadiosityTexCoord 0x2A
+                const uint32_t usage = elementUsage(sub, e);
+#if defined(BFVE_GAME_BF3)
+                // BF3 RadiosityTexCoord 0x1F, decl byte unverified
+                if (usage != 0x1F && usage != 0x29)
+#else
+                if (usage != 0x2A && usage != 0x20)
+#endif
+                    continue;
+                uint32_t fmt = 0, off = 0, st = 0;
+                element(sub, e, fmt, off, st);
+                gs.uvFormat = fmt;
+                gs.uvOffset = off;
+                gs.uvStream = int(st);
+                break;
+            }
+            out.subsets.push_back(gs);
+#if defined(BFVE_GAME_BF3)
+            static int s_logged = 0;
+            if (s_logged < 6)
+            {
+                ++s_logged;
+                std::string us;
+                for (uint32_t e = 0; e < sub.m_elementCount && e < 16; ++e) us += std::format("{:02x} ", elementUsage(sub, e));
+                logger::info("[lights] BF3 decl usages of {}: {}(radiosity uv {})", mesh->m_Name ? mesh->m_Name : "?", us, gs.uvFormat ? "found" : "none");
+            }
+#endif
+        }
+        return 1;
+    }
+
+    bool meshBox(fb::MeshAsset* mesh, fb::Vec3& mn, fb::Vec3& mx) { return meshLocalBox(mesh, mn, mx); }
+
+    void forEachWorldMesh(const std::function<void(const WorldMeshRef&)>& fn)
+    {
+        for (const WorldMesh& m : worldMeshes)
+            if (m.mesh)
+                fn(WorldMeshRef{ m.mesh, &m.frame, m.hasBox, m.boxMin, m.boxMax, m.radiosityOverride });
     }
 
     static const std::vector<std::string>& overlayTextures(const WorldMesh& m)
@@ -3161,7 +3335,7 @@ namespace editor::lights
             if (!meshOverlayLabels && !aimed)
                 continue;
             if (!aimed && filter.empty() && h.depth > meshOverlayMaxDistance * 0.5f)
-                continue; // labels only up close, or the screen fills with text
+                continue;
 
             const char* name = h.m->mesh ? h.m->mesh->m_Name : nullptr;
             if (!name)
@@ -3355,7 +3529,7 @@ namespace editor::lights
 
         const ImVec2 disp = render::displaySize();
         const ImVec2 center{ disp.x * 0.5f, disp.y * 0.5f };
-        constexpr float kLabelScale = 1.25f;
+        constexpr float LABEL_SCALE = 1.25f;
 
         for (auto& [dataPtr, entry] : entries)
         {
@@ -3432,9 +3606,9 @@ namespace editor::lights
                 std::snprintf(buf, sizeof(buf), "%s [%s]  %.0fm",
                     dispName, entry.lightType.c_str(), labelDepth);
 
-            const float tw = render::textWidth(buf, kLabelScale);
+            const float tw = render::textWidth(buf, LABEL_SCALE);
             const ImVec2 tpos{ labelSp.x - tw * 0.5f, labelSp.y + labelMarkerR + 3.0f };
-            render::label(tpos, buf, labelCol, kLabelScale);
+            render::label(tpos, buf, labelCol, LABEL_SCALE);
         }
     }
 }

@@ -322,15 +322,14 @@ namespace editor::emitters
         }
 
 #if defined(BFVE_GAME_BF4)
-        // Loose docs not referenced by any effect go under one folder. Anonymous
-        // ones (no debug name) are skipped as noise.
+        // orphan docs under one folder, anonymous skipped
         int orphanCounter = 0;
         for (fb::EmitterAsset* asset : pendingDocs)
         {
             if (!asset || asset->tryGetDebugName().empty())
                 continue;
             if (g_placedDocs.count(asset))
-                continue; // already listed under the effect that uses it
+                continue; // listed under its effect
             BF4_processEmitterAsset(asset, "(unreferenced documents)", orphanCounter);
         }
 #endif
@@ -680,8 +679,8 @@ void EmitterSpawnColorSnapshot::restoreTo(fb::SpawnColorRandomData* proc) const
 #if defined(BFVE_GAME_BF4)
 namespace
 {
-    constexpr size_t kProcValueStart = offsetof(fb::ProcessorData, m_EvaluatorInput);
-    constexpr size_t kEvalValueStart = sizeof(fb::EvaluatorData);
+    constexpr size_t PROC_VALUE_START = offsetof(fb::ProcessorData, m_EvaluatorInput);
+    constexpr size_t EVAL_VALUE_START = sizeof(fb::EvaluatorData);
 
     uint32_t classIdOf(fb::DataContainer* o)
     {
@@ -748,9 +747,9 @@ namespace editor::emitters
             if (it != edit.origProcBytes.end() && !procHasPointers(classIdOf(proc)))
             {
                 const size_t sz = totalSizeOf(proc);
-                if (sz >= kProcValueStart && it->second.size() == sz)
-                    std::memcpy(reinterpret_cast<uint8_t*>(proc) + kProcValueStart,
-                        it->second.data() + kProcValueStart, sz - kProcValueStart);
+                if (sz >= PROC_VALUE_START && it->second.size() == sz)
+                    std::memcpy(reinterpret_cast<uint8_t*>(proc) + PROC_VALUE_START,
+                        it->second.data() + PROC_VALUE_START, sz - PROC_VALUE_START);
             }
             if (proc->m_Pre)
             {
@@ -758,9 +757,9 @@ namespace editor::emitters
                 if (pit != edit.origProcBytes.end() && !evalHasPointers(classIdOf(proc->m_Pre)))
                 {
                     const size_t psz = totalSizeOf(proc->m_Pre);
-                    if (psz >= kEvalValueStart && pit->second.size() == psz)
-                        std::memcpy(reinterpret_cast<uint8_t*>(proc->m_Pre) + kEvalValueStart,
-                            pit->second.data() + kEvalValueStart, psz - kEvalValueStart);
+                    if (psz >= EVAL_VALUE_START && pit->second.size() == psz)
+                        std::memcpy(reinterpret_cast<uint8_t*>(proc->m_Pre) + EVAL_VALUE_START,
+                            pit->second.data() + EVAL_VALUE_START, psz - EVAL_VALUE_START);
                 }
             }
         }
@@ -785,10 +784,10 @@ void EmitterProcSnapshot::captureFrom(fb::EmitterTemplateData* d)
         if (n.classId && !procHasPointers(n.classId))
         {
             const size_t sz = totalSizeOf(proc);
-            if (sz > kProcValueStart)
+            if (sz > PROC_VALUE_START)
             {
                 auto* base = reinterpret_cast<const uint8_t*>(proc);
-                n.procBytes.assign(base + kProcValueStart, base + sz);
+                n.procBytes.assign(base + PROC_VALUE_START, base + sz);
             }
         }
         if (proc->m_Pre)
@@ -797,12 +796,12 @@ void EmitterProcSnapshot::captureFrom(fb::EmitterTemplateData* d)
             if (pcid && !evalHasPointers(pcid))
             {
                 const size_t psz = totalSizeOf(proc->m_Pre);
-                if (psz > kEvalValueStart)
+                if (psz > EVAL_VALUE_START)
                 {
                     auto* pbase = reinterpret_cast<const uint8_t*>(proc->m_Pre);
                     n.hasPre = true;
                     n.preClassId = pcid;
-                    n.preBytes.assign(pbase + kEvalValueStart, pbase + psz);
+                    n.preBytes.assign(pbase + EVAL_VALUE_START, pbase + psz);
                 }
             }
         }
@@ -825,14 +824,14 @@ void EmitterProcSnapshot::restoreTo(fb::EmitterTemplateData* d) const
         if (!n.procBytes.empty() && classIdOf(proc) == n.classId)
         {
             const size_t sz = totalSizeOf(proc);
-            if (sz >= kProcValueStart && n.procBytes.size() == sz - kProcValueStart)
-                std::memcpy(reinterpret_cast<uint8_t*>(proc) + kProcValueStart, n.procBytes.data(), n.procBytes.size());
+            if (sz >= PROC_VALUE_START && n.procBytes.size() == sz - PROC_VALUE_START)
+                std::memcpy(reinterpret_cast<uint8_t*>(proc) + PROC_VALUE_START, n.procBytes.data(), n.procBytes.size());
         }
         if (n.hasPre && proc->m_Pre && !n.preBytes.empty() && classIdOf(proc->m_Pre) == n.preClassId)
         {
             const size_t psz = totalSizeOf(proc->m_Pre);
-            if (psz >= kEvalValueStart && n.preBytes.size() == psz - kEvalValueStart)
-                std::memcpy(reinterpret_cast<uint8_t*>(proc->m_Pre) + kEvalValueStart, n.preBytes.data(), n.preBytes.size());
+            if (psz >= EVAL_VALUE_START && n.preBytes.size() == psz - EVAL_VALUE_START)
+                std::memcpy(reinterpret_cast<uint8_t*>(proc->m_Pre) + EVAL_VALUE_START, n.preBytes.data(), n.preBytes.size());
         }
     }
 #else

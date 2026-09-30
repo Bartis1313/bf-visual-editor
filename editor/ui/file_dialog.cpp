@@ -24,12 +24,12 @@ namespace editor::ui::filedlg
 {
     namespace
     {
-        constexpr const char* kPopupId = "bfve_file_dialog";
+        constexpr const char* POPUP_ID = "bfve_file_dialog";
 
-        constexpr int kRequestsPerFrame = 8; // decode requests handed to the worker per frame
-        constexpr int kUploadsPerFrame = 8; // decoded images turned into views per frame
-        constexpr int kThumbDecodeSize = 128;
-        constexpr size_t kMaxPreviews = 1024; // 128px thumbs: at most ~64 MB of GPU memory
+        constexpr int REQUESTS_PER_FRAME = 8;
+        constexpr int UPLOADS_PER_FRAME = 8;
+        constexpr int THUMB_DECODE_SIZE = 128;
+        constexpr size_t MAX_PREVIEWS = 1024; // ~64 MB of 128px thumbs
 
         struct Entry
         {
@@ -42,12 +42,12 @@ namespace editor::ui::filedlg
 
         struct Preview
         {
-            void* view = nullptr; // ID3D11ShaderResourceView*, ours
+            void* view = nullptr; // ID3D11ShaderResourceView*
             int width = 0;
             int height = 0;
-            bool failed = false; // tried and cannot be shown; do not retry every frame
-            bool pending = false; // handed to the decode worker, no result yet
-            uintmax_t size = 0; // of the file when decoded; a changed file is decoded again
+            bool failed = false;
+            bool pending = false;
+            uintmax_t size = 0; // file size at decode
             long long mtime = 0;
         };
 
@@ -55,7 +55,7 @@ namespace editor::ui::filedlg
         Mode g_mode = Mode::Open;
         std::vector<std::string> g_extensions;
         bool g_open = false;
-        bool g_needsOpen = false; // call OpenPopup on the next draw
+        bool g_needsOpen = false;
         bool g_showAll = false;
         bool g_thumbs = true;
         float g_thumbSize = 96.0f;
@@ -71,10 +71,8 @@ namespace editor::ui::filedlg
         int g_drawnFrame = -1;
 
         std::vector<Entry> g_entries;
-        std::unordered_map<std::string, Preview> g_previews; // kept across folders and opens
+        std::unordered_map<std::string, Preview> g_previews;
 
-        // Decoding happens off the render thread: the worker reads and decodes, the render
-        // thread only creates the GPU view from the finished pixels.
         struct Decoded
         {
             std::string path;
@@ -104,7 +102,7 @@ namespace editor::ui::filedlg
                 Decoded d;
                 d.path = std::move(path);
                 std::string err;
-                d.ok = textures::gen::loadFileImage(d.path, kThumbDecodeSize, d.image, err);
+                d.ok = textures::gen::loadFileImage(d.path, THUMB_DECODE_SIZE, d.image, err);
                 std::lock_guard<std::mutex> lock(g_workMutex);
                 g_done.push_back(std::move(d));
             }
@@ -131,7 +129,6 @@ namespace editor::ui::filedlg
             g_done.clear();
         }
 
-        // Drops queued (not yet started) decodes; their previews go back to "not asked".
         void dropQueuedJobs()
         {
             std::lock_guard<std::mutex> lock(g_workMutex);
@@ -140,10 +137,10 @@ namespace editor::ui::filedlg
             g_jobs.clear();
         }
 
-        // Render thread: turns finished decodes into views, a few per frame.
+        // render thread
         void uploadDecoded()
         {
-            for (int n = 0; n < kUploadsPerFrame; ++n)
+            for (int n = 0; n < UPLOADS_PER_FRAME; ++n)
             {
                 Decoded d;
                 {
@@ -219,10 +216,9 @@ namespace editor::ui::filedlg
             g_previews.clear();
         }
 
-        // Over the cap: keep the folder on screen, drop the rest.
         void evictPreviews()
         {
-            if (g_previews.size() < kMaxPreviews)
+            if (g_previews.size() < MAX_PREVIEWS)
                 return;
             std::unordered_set<std::string> keep;
             for (const Entry& e : g_entries)
@@ -304,8 +300,6 @@ namespace editor::ui::filedlg
             listDirectory(g_dir);
         }
 
-        // Cached by path; a decode is requested only for tiles on screen, and only while
-        // the per-frame budget lasts.
         const Preview* previewFor(const Entry& e, bool request, int& budget)
         {
             if (e.isDir || !isImage(extensionOf(e.name)))
@@ -318,11 +312,11 @@ namespace editor::ui::filedlg
                     return nullptr;
                 if (p.size == e.size && p.mtime == e.mtime)
                     return p.failed ? nullptr : &p;
-                textures::gen::releaseFileView(p.view); // the file changed
+                textures::gen::releaseFileView(p.view);
                 g_previews.erase(it);
             }
 
-            if (!request || budget <= 0 || g_previews.size() >= kMaxPreviews)
+            if (!request || budget <= 0 || g_previews.size() >= MAX_PREVIEWS)
                 return nullptr;
             --budget;
 
@@ -369,8 +363,6 @@ namespace editor::ui::filedlg
 
             ImGui::Separator();
 
-            // Drives, so a texture pack anywhere on the machine is reachable without
-            // typing a path.
             const DWORD mask = GetLogicalDrives();
             for (int i = 0; i < 26; ++i)
             {
@@ -388,7 +380,6 @@ namespace editor::ui::filedlg
             }
         }
 
-        // Confirms the current selection. Returns true when the caller should take it.
         bool commit(std::string& outPath)
         {
             if (g_nameBuf[0] == 0)
@@ -410,8 +401,6 @@ namespace editor::ui::filedlg
             }
             else if (fs::exists(chosen, ec) && !g_confirmOverwrite)
             {
-                // One click to say "yes, that one" - the button relabels rather than
-                // opening a second modal on top of a modal.
                 g_confirmOverwrite = true;
                 return false;
             }
@@ -440,7 +429,7 @@ namespace editor::ui::filedlg
 
         std::snprintf(g_nameBuf, sizeof(g_nameBuf), "%s", suggestedName.c_str());
 
-        // A suggested name with a folder in it means "start there, with this name".
+        // a folder in suggestedName sets the start dir
         std::string dir = startDir;
         if (!suggestedName.empty())
         {
@@ -457,7 +446,7 @@ namespace editor::ui::filedlg
             dir = getDumpsDir();
 
         std::error_code ec;
-        fs::create_directories(fs::path(dir), ec); // the dumps folder on a fresh install
+        fs::create_directories(fs::path(dir), ec);
         navigate(dir);
     }
 
@@ -478,16 +467,16 @@ namespace editor::ui::filedlg
         if (g_needsOpen)
         {
             g_needsOpen = false;
-            ImGui::OpenPopup(kPopupId);
+            ImGui::OpenPopup(POPUP_ID);
             ImGui::SetNextWindowSize(ImVec2(880.0f, 560.0f), ImGuiCond_Appearing);
         }
 
         bool picked = false;
 
-        if (!ImGui::BeginPopupModal(kPopupId, nullptr, ImGuiWindowFlags_NoSavedSettings))
+        if (!ImGui::BeginPopupModal(POPUP_ID, nullptr, ImGuiWindowFlags_NoSavedSettings))
         {
-            // Dismissed by something other than our buttons (Escape).
-            if (g_open && !ImGui::IsPopupOpen(kPopupId))
+            // closed by Escape
+            if (g_open && !ImGui::IsPopupOpen(POPUP_ID))
                 g_open = false;
             return false;
         }
@@ -497,7 +486,6 @@ namespace editor::ui::filedlg
         ImGui::TextUnformatted(g_title.c_str());
         ImGui::Separator();
 
-        // --- path bar ------------------------------------------------------------------
         if (ImGui::Button("Up"))
         {
             const fs::path p(g_dir);
@@ -514,7 +502,6 @@ namespace editor::ui::filedlg
                              ImGuiInputTextFlags_EnterReturnsTrue))
             navigate(g_dirBuf);
 
-        // --- options -------------------------------------------------------------------
         ImGui::Checkbox("thumbnails", &g_thumbs);
         ImGui::SameLine();
         ImGui::SetNextItemWidth(120.0f);
@@ -534,7 +521,6 @@ namespace editor::ui::filedlg
 
         ImGui::Separator();
 
-        // --- places + listing ----------------------------------------------------------
         const float footer = ImGui::GetFrameHeightWithSpacing() * 2.0f + 8.0f;
 
         ImGui::BeginChild("places", ImVec2(150.0f, -footer), true);
@@ -550,7 +536,7 @@ namespace editor::ui::filedlg
 
         std::string pendingNav;
 
-        int budget = kRequestsPerFrame;
+        int budget = REQUESTS_PER_FRAME;
 
         std::vector<int> shown;
         shown.reserve(g_entries.size());
@@ -684,7 +670,6 @@ namespace editor::ui::filedlg
         if (!pendingNav.empty())
             navigate(pendingNav);
 
-        // --- filename + actions --------------------------------------------------------
         if (!picked)
         {
             ImGui::SetNextItemWidth(-260.0f);
@@ -727,7 +712,7 @@ namespace editor::ui::filedlg
             else
             {
                 ImGui::TextDisabled("%zu item(s)%s", shown.size(),
-                    g_previews.size() >= kMaxPreviews ? "  (preview cache full)" : "");
+                    g_previews.size() >= MAX_PREVIEWS ? "  (preview cache full)" : "");
             }
         }
 

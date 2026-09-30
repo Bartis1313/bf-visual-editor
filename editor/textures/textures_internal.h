@@ -42,10 +42,9 @@ namespace editor::textures::detail
 
     struct SkySlotDesc { const char* label; uint32_t offset; };
 
-// Offsets within fb::CapturedSkyComponentData (the captured struct starts at the
-// full SkyComponentData's +0x80, so these are the dumped offsets minus 0x80).
+// fb::CapturedSkyComponentData offsets = dumped SkyComponentData offsets - 0x80
 #if defined(BFVE_GAME_BF4)
-    inline constexpr SkySlotDesc kSkySlots[] = {
+    inline constexpr SkySlotDesc SKY_SLOTS[] = {
         { "SkyGradientTexture", 0x38 },
         { "PanoramicTexture", 0x60 },
         { "PanoramicAlphaTexture", 0x68 },
@@ -56,7 +55,7 @@ namespace editor::textures::detail
         { "CustomEnvmapTexture", 0xD8 },
     };
 #else
-    inline constexpr SkySlotDesc kSkySlots[] = {
+    inline constexpr SkySlotDesc SKY_SLOTS[] = {
         { "SkyGradientTexture", 0x30 },
         { "PanoramicTexture", 0x54 },
         { "PanoramicAlphaTexture", 0x58 },
@@ -67,7 +66,7 @@ namespace editor::textures::detail
         { "CustomEnvmapTexture", 0xC0 },
     };
 #endif
-    inline constexpr int kSkySlotCount = int(sizeof(kSkySlots) / sizeof(kSkySlots[0]));
+    inline constexpr int SKY_SLOT_COUNT = int(sizeof(SKY_SLOTS) / sizeof(SKY_SLOTS[0]));
 
     struct SlotPick
     {
@@ -77,7 +76,7 @@ namespace editor::textures::detail
         uint32_t handle = 0;
         uint64_t setKey = 0;
         uint32_t material = 0;
-        void* original = nullptr; // what was there when the picker opened
+        void* original = nullptr;
         bool open = false;
     };
 
@@ -100,6 +99,7 @@ namespace editor::textures::detail
     void addRefTexture(void* tex);
     void forEachVeState(const std::function<void(uint8_t*)>& fn);
     void*& skySlotRef(uint8_t* state, int slot);
+    void* skyCurrent(int slot);
     void skyCaptureOriginal(int slot);
     void skyRevertSlot(int slot);
     bool looksSkyRelevant(const std::string& path);

@@ -2,10 +2,10 @@
 #include "texgen.h"
 #include "surfacepick.h"
 #include "../lights/lights.h"
-#include "../../hooks/functions.h" // g_pDevice
+#include "../../hooks/functions.h"
 #include "../../utils/log.h"
 
-#include "../editor_context.h" // getCurrentMapName, sanitizeMapName
+#include "../editor_context.h"
 
 #include <Windows.h>
 #include <d3d11.h>
@@ -39,7 +39,7 @@ namespace editor::textures
         void renderStreamingControls(TextureEntry& e)
         {
             if (!e.texture)
-                return; // still not resident; try again next time it is displayed
+                return;
 
             fb::TextureStreamingManager* mgr = nullptr;
             uint16_t handle = 0;
@@ -48,7 +48,7 @@ namespace editor::textures
 
             const bool pinned = isPinned(handle);
             if (e.drawable && !pinned)
-                return; // nothing to say about a texture that is already showing
+                return;
 
             const int st = onDemandStatus(e.texture);
             static const char* kNames[] = { "not loaded", "loading", "loaded",
@@ -67,7 +67,7 @@ namespace editor::textures
             {
                 if (ImGui::Button("Load texture"))
                 {
-                    budgetHit = false; // an explicit ask overrides the auto backoff
+                    budgetHit = false;
                     queueLoad(handle);
                 }
                 ImGui::SameLine();
@@ -100,10 +100,10 @@ namespace editor::textures
             ImGui::Text("%zu TextureAssets", textureAssets.size());
             ImGui::SameLine();
             if (ImGui::Button("Revert all"))
-                for (int i = 0; i < kSkySlotCount; ++i)
+                for (int i = 0; i < SKY_SLOT_COUNT; ++i)
                     skyRevertSlot(i);
             if (ImGui::IsItemHovered())
-                ImGui::SetTooltip("Put the map's own textures back in every slot.");
+                ImGui::SetTooltip("map's own textures back in every slot");
             ImGui::SameLine();
             ImGui::Checkbox("sky-relevant only", &skyRelevantOnly);
 
@@ -117,13 +117,12 @@ namespace editor::textures
                 return;
             }
 
-            for (int i = 0; i < kSkySlotCount; ++i)
+            for (int i = 0; i < SKY_SLOT_COUNT; ++i)
             {
                 ImGui::PushID(3000 + i);
 
-                void* cur = skySlotRef(firstState, i);
+                void* cur = skyCurrent(i);
 
-                // Preview whatever the slot currently points at.
                 void* shown = skyOverride[i].enabled ? skyOverride[i].asset : cur;
                 if (shown)
                     if (TextureEntry* me = const_cast<TextureEntry*>(findTextureEntry(shown)))
@@ -135,7 +134,7 @@ namespace editor::textures
                     ImGui::Dummy(ImVec2(40.0f, 40.0f));
                 ImGui::SameLine();
 
-                ImGui::Text("%-22s", kSkySlots[i].label);
+                ImGui::Text("%-22s", SKY_SLOTS[i].label);
                 ImGui::SameLine(240.0f);
 
                 if (skyOverride[i].enabled)
@@ -150,7 +149,10 @@ namespace editor::textures
                     if (e)
                         ImGui::TextDisabled("%s", shortLabel(*e).c_str());
                     else
+                    {
+                        noteUncatalogued(cur);
                         ImGui::TextDisabled("ITexture %p", cur);
+                    }
                 }
                 else
                 {
@@ -200,7 +202,7 @@ namespace editor::textures
                             skyOverride[i].enabled = true;
                             skyOverride[i].asset = copy;
                             logger::info("[textures] sky slot {} detached: {} -> {}",
-                                kSkySlots[i].label, shown, copy);
+                                SKY_SLOTS[i].label, shown, copy);
                         }
                     }
                     if (ImGui::IsItemHovered())
@@ -219,8 +221,6 @@ namespace editor::textures
                 ImGui::PopID();
             }
 
-            // Texture editor for the slot's current texture - generate, tint or load an
-            // image without leaving the sky settings.
             if (skyEditSlot >= 0)
             {
                 if (!ImGui::IsPopupOpen("sky_texture_editor"))
@@ -231,11 +231,11 @@ namespace editor::textures
 
                 if (ImGui::BeginPopupModal("sky_texture_editor", nullptr, 0))
                 {
-                    void* live = skySlotRef(firstState, skyEditSlot);
+                    void* live = skyCurrent(skyEditSlot);
                     void* target = skyOverride[skyEditSlot].enabled
                         ? skyOverride[skyEditSlot].asset : live;
 
-                    ImGui::Text("%s", kSkySlots[skyEditSlot].label);
+                    ImGui::Text("%s", SKY_SLOTS[skyEditSlot].label);
                     if (const TextureEntry* te = findTextureEntry(target))
                     {
                         if (const char* n = textureLabel(*te))
@@ -277,7 +277,7 @@ namespace editor::textures
 
                 if (ImGui::BeginPopupModal("pick_sky_resource", nullptr, 0))
                 {
-                    ImGui::Text("Assign to %s", kSkySlots[skyResPicker].label);
+                    ImGui::Text("Assign to %s", SKY_SLOTS[skyResPicker].label);
                     ImGui::TextDisabled("any loaded TextureAsset - resolved via +0x18");
                     ImGui::PushItemWidth(520.0f);
                     ImGui::InputTextWithHint("##srsearch", "filter by name...",
@@ -314,12 +314,11 @@ namespace editor::textures
 
                         if (ImGui::Selectable(name.c_str()))
                         {
-                            addRefTexture(tex);
                             skyCaptureOriginal(skyResPicker);
                             skyOverride[skyResPicker].enabled = true;
                             skyOverride[skyResPicker].asset = tex;
                             logger::info("[textures] sky {} -> {} (ITexture {})",
-                                kSkySlots[skyResPicker].label, name, tex);
+                                SKY_SLOTS[skyResPicker].label, name, tex);
                             skyResPicker = -1;
                             ImGui::CloseCurrentPopup();
                             break;
@@ -344,7 +343,6 @@ namespace editor::textures
             renderSkyResourcesSection();
         }
 
-        // --- gallery ------------------------------------------------------------------
         void renderGallery(float paneWidth)
         {
             refreshVisible();
@@ -401,8 +399,6 @@ namespace editor::textures
                             ImGui::SameLine();
 
                         const int i = visible[idx];
-                        // Each distinct texture becomes its own ImGui draw command, so cap
-                        // how many we issue per frame; the rest fall back to buttons.
                         if (drawnThumbs < maxThumbs)
                             ensureDrawable(entries[i]);
                         const TextureEntry& e = entries[i];
@@ -462,7 +458,6 @@ namespace editor::textures
             ImGui::EndChild();
         }
 
-        // --- zoomable preview ----------------------------------------------------------
         void renderPreview(const TextureEntry& e, float side)
         {
             void* srv = (previewGamma && e.srvGamma) ? e.srvGamma : e.srvLinear;
@@ -518,7 +513,6 @@ namespace editor::textures
                 const float wheel = ImGui::GetIO().MouseWheel;
                 if (wheel != 0.0f)
                 {
-                    // Zoom toward the cursor rather than the centre.
                     const ImVec2 m = ImGui::GetIO().MousePos;
                     const float fx = (m.x - p0.x) / side - 0.5f;
                     const float fy = (m.y - p0.y) / side - 0.5f;
@@ -555,12 +549,11 @@ namespace editor::textures
                 ImGui::SameLine();
                 ImGui::Checkbox("compare", &previewCompare);
                 if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Left half: the engine's texture. Right half: your edit. Zoom in on an edge.");
+                    ImGui::SetTooltip("left: engine texture, right: your edit");
             }
             ImGui::TextDisabled("wheel to zoom at cursor, drag to pan");
         }
 
-        // --- replace picker -----------------------------------------------------------
         void renderReplacePicker()
         {
             if (!ImGui::BeginPopupModal("replace_texture", nullptr, 0))
@@ -880,7 +873,6 @@ namespace editor::textures
             {
                 if (gen::renderUI(e.texture, exportNameFor(e).c_str()))
                 {
-                    // Point our cached preview at whatever it samples now.
                     if (void* s = gen::currentSrv(e.texture))
                     {
                         if (entries[selected].drawable)
@@ -955,7 +947,7 @@ namespace editor::textures
                     if (ImGui::TreeNode(label))
                     {
                         if (ImGui::SmallButton("replace this slot"))
-                            replaceSlot = u; // opened after the loop, outside PushID
+                            replaceSlot = u; // opened outside PushID
                         if (TexBackup* b = findTexBackup(m.block, use.slot))
                         {
                             ImGui::SameLine();
@@ -1010,8 +1002,6 @@ namespace editor::textures
             ImGui::SeparatorText("Loading");
             ImGui::Checkbox("scan automatically", &autoScan);
             ImGui::Checkbox("auto-load the catalogue after a scan", &autoLoadAfterScan);
-            if (ImGui::IsItemHovered())
-                ImGui::SetTooltip("Load all, once, right after each scan.");
 
             ImGui::Checkbox("load on scroll", &autoLoadMissing);
             if (ImGui::IsItemHovered())
@@ -1237,7 +1227,6 @@ namespace editor::textures
 
                 ImGui::PushID(int(i));
 
-                // Mode toggle: click to cycle auto -> color -> numeric.
                 const char* tag = (mode == ParamColor) ? "rgba" : "xyzw";
                 if (ImGui::SmallButton(tag))
                 {
@@ -1258,7 +1247,6 @@ namespace editor::textures
 
                 if (changed)
                 {
-                    // The copy is byte-identical, so the slot offset carries over unchanged.
                     MaterialEntry target = m;
                     target.block = redirectEdit(m.block);
 
@@ -1274,7 +1262,6 @@ namespace editor::textures
                     mirrorWrite(target.block, handle, false, value, nullptr);
                 }
 
-                // Numeric mode shows what a color picker hides (UV offsets inside 0..1).
                 if (mode == ParamColor)
                     ImGui::TextDisabled("      %.3f %.3f %.3f %.3f",
                         value[0], value[1], value[2], value[3]);
@@ -1357,7 +1344,7 @@ namespace editor::textures
                         logger::warning("[textures] could not add {} to {}", addName, m.label);
                 }
                 if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Grows the block by a slot the material never declared (e.g. Lasercolor on the red laser).");
+                    ImGui::SetTooltip("adds a slot the material never declared (e.g. Lasercolor on the red laser)");
                 ImGui::PopID();
             }
         }
@@ -1403,7 +1390,7 @@ namespace editor::textures
                 if (!needle.empty())
                 {
                     if (m.searchKey.find(needle) == std::string::npos)
-                        continue; // a typed name shows every match, color or not
+                        continue;
                 }
                 else if (filter.colorOnly && !m.hasColor)
                     continue;
@@ -1478,7 +1465,7 @@ namespace editor::textures
             if (ImGui::MenuItem("Export all as DDS"))
                 exportAllLoaded(true);
             if (ImGui::IsItemHovered())
-                ImGui::SetTooltip("Every resident texture, keeping the engine format and mips.");
+                ImGui::SetTooltip("every resident texture, engine format and mips");
             if (ImGui::MenuItem("Export all as PNG"))
                 exportAllLoaded(false);
             if (ImGui::IsItemHovered())
@@ -1627,8 +1614,6 @@ namespace editor::textures
                 {
                     const MaterialEntry& m = materials[i];
 
-                    // Order matters: the key compare is one integer, materialHasColor()
-                    // walks every parameter through SEH-guarded reads.
                     const bool isExact = want.key != 0 && m.setKey == want.key;
                     const bool isSameMesh = !isExact && (want.key >> 32) != 0 &&
                                             (m.setKey >> 32) == (want.key >> 32);
@@ -1650,7 +1635,6 @@ namespace editor::textures
             }
         }
 
-        // Falling back is only useful when the exact variation found nothing.
         const bool haveExact = !exact.empty();
 
         bool exactIsRealVariation = false;
@@ -1689,15 +1673,13 @@ namespace editor::textures
 
         ImGui::Checkbox("what the variation changes", &lampOverridesOnly);
         if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("Only what the variation overrides - the lit parts.");
+            ImGui::SetTooltip("only the variation's overrides, the lit parts");
         ImGui::SameLine();
         ImGui::Checkbox("colors only", &lampColorOnly);
-        if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("Narrow further to parameters declared as colors.");
         ImGui::SameLine();
         ImGui::Checkbox("this variation only", &lampThisVariationOnly);
         if (ImGui::IsItemHovered())
-            ImGui::SetTooltip("Off lists every variation of the same mesh.");
+            ImGui::SetTooltip("off: every variation of the mesh");
         ImGui::SameLine();
         ImGui::TextDisabled("%zu shown", list.size());
 
@@ -1826,7 +1808,6 @@ namespace editor::textures
 
     void renderBlockParams(void* block, bool colorsOnly)
     {
-        // Pointer-keyed: nothing to look up, but the block must still be there.
         uint8_t vec = 0, tex = 0, bol = 0;
         if (!looksLikeParamBlock(block, vec, tex, bol))
         {
@@ -1842,8 +1823,6 @@ namespace editor::textures
 
         renderVectorParams(m, colorsOnly, nullptr);
 
-        // Always: the texture slots are where a flare gets its own private copy, and hiding
-        // them behind the color filter put that out of reach exactly where it is wanted.
         renderMaterialTextureSlots(m);
     }
 

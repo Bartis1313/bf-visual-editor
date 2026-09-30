@@ -4,7 +4,6 @@
 #include <vector>
 #include <cstring>
 #include <cfloat>
-#include "math.h"
 #include <imgui_internal.h>
 
 bool render::engineReady()
@@ -14,7 +13,7 @@ bool render::engineReady()
 
 ImVec2 render::displaySize()
 {
-    // The update thread draws overlays before the first Present has created the context.
+    // update thread may draw before the first Present
     return ImGui::GetCurrentContext() ? ImGui::GetIO().DisplaySize : ImVec2{ 0.0f, 0.0f };
 }
 
@@ -117,7 +116,7 @@ void render::label(const ImVec2& pos, const char* text, const ImColor& c, float 
     if (backend == Backend::Engine)
     {
         if (fb::DebugRenderer2* r = fb::DebugRenderer2::Singleton())
-            r->drawText(int(pos.x), int(pos.y), text, ImU32(c), scale); // no shadow: plain glyphs
+            r->drawText(int(pos.x), int(pos.y), text, ImU32(c), scale);
         return;
     }
     ImDrawList* dl = ImGui::GetBackgroundDrawList();
@@ -133,7 +132,7 @@ float render::textWidth(const char* text, float scale)
     if (!text)
         return 0.0f;
     if (backend == Backend::Engine)
-        return float(std::strlen(text)) * 8.0f * scale; // the debug font is ~8 px per glyph
+        return float(std::strlen(text)) * 8.0f * scale; // ~8 px per glyph
     return ImGui::GetFont()->CalcTextSizeA(ImGui::GetFontSize() * scale, FLT_MAX, 0.0f, text).x;
 }
 

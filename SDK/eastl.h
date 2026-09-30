@@ -46,6 +46,21 @@ namespace eastl
 			return (reinterpret_cast<uintptr_t>(m_ArrayBound) - reinterpret_cast<uintptr_t>(m_FirstElement)) / sizeof(T);
 		}
 
+		// in place, never allocates: the engine owns the storage
+		void erase_unsorted(T* pos)
+		{
+			*pos = m_End[-1];
+			--m_End;
+		}
+
+		bool push_back_in_capacity(const T& value)
+		{
+			if (!m_End || m_End >= m_ArrayBound)
+				return false;
+			*m_End++ = value;
+			return true;
+		}
+
 	private:
 		T* m_FirstElement = nullptr;
 		T* m_End = nullptr;

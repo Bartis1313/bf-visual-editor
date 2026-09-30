@@ -84,6 +84,9 @@
     <ClInclude Include="editor\textures\surfacepick.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="editor\textures\viewsubst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="editor\textures\textures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -102,7 +105,7 @@
     <ClInclude Include="editor\render\render.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="editor\render\math.h">
+    <ClInclude Include="SDK\math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="editor\comps\comps.h">
@@ -142,6 +145,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="editor\camera\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\enlighten\enlighten.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\enlighten\enlighten_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\enlighten\enlighten_spawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\enlighten\enlighten_scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -242,6 +257,9 @@
     <ClCompile Include="editor\textures\surfacepick.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="editor\textures\viewsubst.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="editor\textures\textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -290,6 +308,42 @@
     <ClCompile Include="editor\camera\camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_files.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_db.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_gen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_inspect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_relight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_serialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\enlighten\enlighten_spawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\global_ve\global_ve_presets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\global_ve\global_ve_sun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg.json" />
@@ -310,6 +364,24 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="images\5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\11.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

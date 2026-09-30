@@ -53,6 +53,17 @@
 #define OFF_operator_delete 0x00425930 // arena-map lookup, be careful with not hitting debugbreak
 #define OFF_g_dxRenderer 0x023577D4
 #define OFF_g_effectManager 0x02380E10
+#define OFF_g_enlightenRenderer 0x023B69C4 // WorldRenderModule+0x20 (sub_101D3E0)
+#define OFF_g_lightProbeInstanceManager 0x023B3F94 // EnlightenRenderer probe update sub_17AD8F0
+#define OFF_Enlighten_lightMapInstanceHash 0x017A4770 // cdecl (Guid*, LinearTransform*)
+#define OFF_EnlightenSystem_ctor 0x017AA8A0 // thiscall (arena), size 0xF0 (loader sub_17B6A50)
+#define OFF_EnlightenSystem_load 0x017B5A10 // thiscall (arena, Buffer&, ResourceHandle*)
+#define OFF_EnlightenDatabase_resizeSystems 0x017B1590 // thiscall on db+0x1C (count) (postLoad sub_17B6700)
+#define OFF_EnlightenDatabase_appendInputBuffers 0x017B2990 // thiscall on db+0x7C (count, const void** value)
+#define OFF_EnlightenRenderer_updateState 0x017A7C00
+#define OFF_EnlightenSystem_copyToGpu 0x0179B130 // thiscall (sub_17B5700)
+#define OFF_g_renderer 0x023577E8 // IRenderer
+#define OFF_Renderer_createTexture_slot 36 // (arena, TextureCreateDesc*) (EnlightenDatabase::load sub_17B2E70)
 
 // hook targets
 #define OFF_VisualEnvironment_operatorAssign 0x01791F30
@@ -60,6 +71,8 @@
 #define OFF_MessageManager_dispatchMessage 0x004A6050
 #define OFF_LocalLightEntity_ctor 0x017A6220
 #define OFF_LocalLightEntity_dtor 0x017A81F0
+#define OFF_PointLightEntity_ctor 0x017ABFF0 // thiscall (params = creator+0x10, data), 0xA0 bytes align 16
+#define OFF_SpotLightEntity_ctor 0x017ADFD0 // thiscall (params, data), 0xB0 bytes align 16
 #define OFF_LensFlareEntity_buildShaders 0x017B0600
 #define OFF_DxTexture_releaseGpu 0x006BFAE0
 #define OFF_DxTexture_create 0x006CAE90
@@ -73,6 +86,8 @@
 #define OFF_GameRenderer_createUpdateJob 0x00FB97A0
 #define OFF_InternalDatabasePartition_onPartitionLoaded 0x004D5790
 #define OFF_ClientGameContext_unloadLevel 0x00F72D50
+#define OFF_SkyRenderModule_draw 0x0178DF90 // thiscall (type, view, VisualEnvironment*, settings, depth, ?, ?, mainPass, ?, ?); sun = max(0, VE+444 * VE+0), size VE+436
+#define OFF_SkyRenderModule_drawEnvmap 0x0178D0E0 // thiscall (type, view, VisualEnvironment*, settings, depth, mainPass)
 
 #elif defined(BFVE_GAME_BF4)
 
@@ -92,6 +107,27 @@
 #define OFF_g_worldRenderSettings 0x1426724A0
 #define OFF_g_dxRenderer 0x142738080
 #define OFF_g_visualEnvironmentManager 0x14273D6F8
+#define OFF_g_enlightenRuntimeSettings 0x1426724C0
+#define OFF_g_enlightenRenderer 0x14273E920
+#define OFF_g_lightProbeInstanceManager 0x1427382C0 // EnlightenRenderer probe update sub_140D037A0
+#define OFF_Enlighten_lightMapInstanceHash 0x140CFAC00
+#define OFF_Enlighten_addLightMapHandle 0x140CFD980
+#define OFF_EnlightenDatabase_ctor 0x140CF45F0
+#define OFF_EnlightenDatabaseLoader_load 0x140CFCFA0
+#define OFF_EnlightenRenderer_selectTextures 0x140D053F0
+#define OFF_Enlighten_convertToOutputFormat 0x141196AB0
+#define OFF_EnlightenRenderer_updateState 0x140D05020
+#define OFF_MemoryArena_alloc 0x14064DB00
+#define OFF_MemoryArena_free 0x14064E580
+#define OFF_SkyRenderModule_draw 0x140CE3220 // (module, ctx, renderType, view, VisualEnvironment*, ...18 args); g_sunColorAndSize = max(0, Sky.SunScale * OutdoorLight.SunColor)
+#define OFF_Enlighten_directionTable 0x141EB5500
+#define OFF_PointLightEntity_ctor 0x140CC8530
+#define OFF_SpotLightEntity_ctor 0x140CC8C70
+#define OFF_LocalLightEntityData_ctor 0x141B00830
+#define OFF_SpotLightEntityData_ctor 0x141B013B0
+#define OFF_vt_PointLightEntityData 0x141DF49C8
+#define OFF_g_settingsRegistry 0x14261E930
+#define OFF_SettingsRegistry_getSettings 0x140688C50
 
 // vtables
 #define OFF_vt_DxTexture 0x141DD1410
@@ -111,7 +147,7 @@
 #define OFF_MeshSetRegistry_find 0x140691EC0
 #define OFF_StaticModelGroupMember_getInstanceTransform 0x14099CCB0
 #define OFF_LocalLightEntity_setDirty 0x140CCE9E0
-#define OFF_Malloc_allocAligned 0x14064DA60 // (size, align); sub_140627980 frees it
+#define OFF_Malloc_allocAligned 0x14064DA60 // (size, align), freed by sub_140627980
 #define OFF_operator_delete 0x140627980 // arena-map lookup, be careful with not hitting debugbreak
 #define OFF_VisualEnvironmentManager_rebakeCharacterLightingSH 0x140CC60E0
 #define OFF_VisualEnvironmentManager_rebakeVehicleLightingSH 0x140CC71D0

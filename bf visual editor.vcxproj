@@ -170,13 +170,18 @@
     <ClInclude Include="editor\editor_context.h" />
     <ClInclude Include="editor\effects\effects.h" />
     <ClInclude Include="editor\textures\textures.h" />
+    <ClInclude Include="editor\enlighten\enlighten.h" />
+    <ClInclude Include="editor\enlighten\enlighten_internal.h" />
+    <ClInclude Include="editor\enlighten\enlighten_spawn.h" />
+    <ClInclude Include="editor\enlighten\enlighten_scene.h" />
     <ClInclude Include="editor\textures\texgen.h" />
     <ClInclude Include="editor\textures\surfacepick.h" />
+    <ClInclude Include="editor\textures\viewsubst.h" />
     <ClInclude Include="editor\emitters\emitters.h" />
     <ClInclude Include="editor\global_ve\global_ve.h" />
     <ClInclude Include="editor\lights\lights.h" />
     <ClInclude Include="editor\lights\lights_internal.h" />
-    <ClInclude Include="editor\render\math.h" />
+    <ClInclude Include="SDK\math.h" />
     <ClInclude Include="editor\serialize\serialize.h" />
     <ClInclude Include="editor\settings\settings.h" />
     <ClInclude Include="editor\states\states.h" />
@@ -215,11 +220,22 @@
     <ClCompile Include="editor\editor.cpp" />
     <ClCompile Include="editor\editor_context.cpp" />
     <ClCompile Include="editor\textures\textures.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_ui.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_files.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_db.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_gen.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_inspect.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_relight.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_scene.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_serialize.cpp" />
+    <ClCompile Include="editor\enlighten\enlighten_spawn.cpp" />
     <ClCompile Include="editor\textures\textures_shaders.cpp" />
     <ClCompile Include="editor\textures\textures_ui.cpp" />
     <ClCompile Include="editor\textures\textures_serialize.cpp" />
     <ClCompile Include="editor\textures\texgen.cpp" />
     <ClCompile Include="editor\textures\surfacepick.cpp" />
+    <ClCompile Include="editor\textures\viewsubst.cpp" />
     <ClCompile Include="editor\effects\effects.cpp" />
     <ClCompile Include="editor\effects\effects_ui.cpp" />
     <ClCompile Include="editor\emitters\emitters.cpp" />
@@ -227,6 +243,8 @@
     <ClCompile Include="editor\emitters\emitters_serialize.cpp" />
     <ClCompile Include="editor\emitters\emitters_ui.cpp" />
     <ClCompile Include="editor\global_ve\global_ve.cpp" />
+    <ClCompile Include="editor\global_ve\global_ve_presets.cpp" />
+    <ClCompile Include="editor\global_ve\global_ve_sun.cpp" />
     <ClCompile Include="editor\global_ve\global_ve_serialize.cpp" />
     <ClCompile Include="editor\global_ve\global_ve_ui.cpp" />
     <ClCompile Include="editor\lights\lights.cpp" />
@@ -263,10 +281,16 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\1.png" />
+    <Image Include="images\10.png" />
+    <Image Include="images\11.png" />
     <Image Include="images\2.png" />
     <Image Include="images\3.png" />
     <Image Include="images\4.png" />
     <Image Include="images\5.png" />
+    <Image Include="images\6.png" />
+    <Image Include="images\7.png" />
+    <Image Include="images\8.png" />
+    <Image Include="images\9.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

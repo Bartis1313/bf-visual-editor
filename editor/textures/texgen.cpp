@@ -55,22 +55,19 @@ namespace editor::textures::gen
             ID3D11Texture2D* tex = nullptr;
             ID3D11ShaderResourceView* srvLinear = nullptr;
             ID3D11ShaderResourceView* srvSrgb = nullptr;
-            // The image a tint is computed FROM. Fixed for the lifetime of the override so
-            // repeated tints recompute from it instead of multiplying onto the last result.
-            ID3D11ShaderResourceView* baseSrv = nullptr; // tint source, AddRef'd once on first tint
+            ID3D11ShaderResourceView* baseSrv = nullptr;
             Params params;
 
             bool installed = false;
 
             uint32_t width = 0, height = 0, mips = 0, shaderFormat = 0;
             bool identified = false;
-            // The streaming handle, when this texture has one. See identityOf().
             uint16_t handle = 0;
             bool hasHandle = false;
 
-            std::string sourceFile; // imported file, if any
+            std::string sourceFile;
             bool tinted = false;
-            std::string assetPath; // for replaying onto a re-created texture
+            std::string assetPath;
         };
 
         PathOfTexture g_pathOf = nullptr;
@@ -79,8 +76,6 @@ namespace editor::textures::gen
 
         std::mutex g_overrideMutex;
         std::unordered_map<void*, Override> g_overrides;
-        // The source is kept as well as the copy: a clone has no asset of its own, so
-        // "a private copy of this texture" is the only way a config can describe one.
         std::vector<std::pair<void*, void*>> g_clones; // { copy, source }
 
         fb::DxTexture* asTex(void* p) { return static_cast<fb::DxTexture*>(p); }
@@ -154,7 +149,6 @@ namespace editor::textures::gen
             srgb1 = viewIsSrgb(s1);
         }
 
-        // --- image file loading (WIC - no third-party decoder needed) ----------------
         bool loadImageFile(const std::string& path, int& outW, int& outH,
                            std::vector<uint32_t>& rgba, std::string& err, int maxSide = 0)
         {
@@ -227,7 +221,6 @@ namespace editor::textures::gen
             return ok;
         }
 
-        // Box-filter mip chain, built on the CPU so we never touch the device context.
         void buildMips(const std::vector<uint32_t>& base, int width, int height,
                        std::vector<std::vector<uint32_t>>& levels)
         {
@@ -273,7 +266,7 @@ namespace editor::textures::gen
             float tint[4]; // rgb multiply, a scales alpha
             float params[4]; // x = saturation, y = brightness, z = sharpness, w = upscale factor
             float texel[4]; // xy = 1 / source size, zw = source size
-            float enhance[4]; // x = detail, y = mode (0 plain, 1 enhance, 2 mip level)
+            float enhance[4]; // x = detail, y = mode: 0 plain, 1 enhance, 2 mip
         };
 
         ID3D11VertexShader* g_tintVSObj = nullptr;
@@ -421,8 +414,7 @@ namespace editor::textures::gen
                 return false;
             }
 
-            // An _SRGB render target makes the hardware encode on write, which is what
-            // puts the result back in the same space the source view decoded from.
+            // _SRGB target encodes on write
             D3D11_RENDER_TARGET_VIEW_DESC rd{};
             rd.Format = fmt0;
             rd.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2D;
@@ -443,7 +435,7 @@ namespace editor::textures::gen
             TintCB cb{};
             cb.tint[0] = p.colorA[0]; cb.tint[1] = p.colorA[1];
             cb.tint[2] = p.colorA[2]; cb.tint[3] = p.colorA[3];
-            cb.params[0] = 1.0f; // saturation - fixed; the editor no longer exposes it
+            cb.params[0] = 1.0f;
             cb.params[1] = p.brightness;
             cb.params[2] = p.sharpness;
             cb.params[3] = float(scale);
@@ -454,7 +446,6 @@ namespace editor::textures::gen
             cb.enhance[0] = p.detail;
             cb.enhance[1] = enhance ? 1.0f : 0.0f;
 
-            // save what ImGui will care about afterwards
             ID3D11RenderTargetView* oldRtv = nullptr;
             ID3D11DepthStencilView* oldDsv = nullptr;
             g_pContext->OMGetRenderTargets(1, &oldRtv, &oldDsv);
@@ -484,7 +475,7 @@ namespace editor::textures::gen
                 D3D11_TEXTURE2D_DESC got{};
                 dst->GetDesc(&got);
                 TintCB mc{};
-                mc.tint[0] = mc.tint[1] = mc.tint[2] = mc.tint[3] = 1.0f; // color was applied at mip 0
+                mc.tint[0] = mc.tint[1] = mc.tint[2] = mc.tint[3] = 1.0f;
                 mc.params[0] = mc.params[1] = 1.0f;
                 mc.params[2] = p.sharpness;
                 mc.params[3] = 1.0f;
@@ -560,7 +551,7 @@ namespace editor::textures::gen
             }
         }
 
-        // viewRefs = 1 for our own reference, 2 when the slot reference is ours to drop too.
+        // viewRefs 1 = ours, 2 = slot ref too
         void releaseObjects(ID3D11Texture2D* tex, ID3D11ShaderResourceView* a,
                             ID3D11ShaderResourceView* b, int viewRefs)
         {
@@ -706,7 +697,7 @@ namespace editor::textures::gen
         bool readbackTexture(void* srv, int width, int height, bool srgb,
                              std::vector<uint32_t>& out, std::string& err)
         {
-            Params identity; // a straight decode into RGBA8 we can map
+            Params identity;
             identity.sharpness = 0.0f;
             identity.detail = 0.0f;
 
@@ -766,7 +757,6 @@ namespace editor::textures::gen
 
             fb::DxTexture* tex = asTex(dxTexture);
 
-            // Prefer our own edited view if there is one, else the engine's.
             void* srv = nullptr;
             {
                 std::lock_guard<std::mutex> lock(g_overrideMutex);
@@ -851,7 +841,7 @@ namespace editor::textures::gen
             {
                 void* const owner = textureForHandle(o.handle);
                 if (!owner)
-                    return Ident::Unknown; // manager not up, or not readable right now
+                    return Ident::Unknown;
 
                 if (owner == dxTexture)
                     return Ident::Same;
@@ -861,8 +851,6 @@ namespace editor::textures::gen
                 return Ident::Different;
             }
 
-            // No handle: nothing re-creates this texture, so its header fields are stable
-            // and are the only identity available.
             if (!o.identified)
                 return Ident::Unknown;
 
@@ -892,7 +880,7 @@ namespace editor::textures::gen
 
             const char* field = nullptr;
             if (identityOf(dxTexture, it->second, &field) != Ident::Different)
-                return false; // Same, or cannot tell - either way, keep it
+                return false;
 
             const std::string path = it->second.assetPath;
             releaseBase(it->second);
@@ -924,8 +912,6 @@ namespace editor::textures::gen
             o.installed = false;
         }
 
-        // Captures the engine's current views as the originals and installs ours. False
-        // while the slots are null (not resident) - reassertOverrides retries per frame.
         bool tryInstallLocked(fb::DxTexture* tex, Override& o)
         {
             if (o.installed)
@@ -1047,18 +1033,18 @@ namespace editor::textures::gen
         };
 #pragma pack(pop)
 
-        constexpr uint32_t kDdsMagic = 0x20534444; // "DDS "
-        constexpr uint32_t kFourCcDx10 = 0x30315844; // "DX10"
-        constexpr uint32_t kDdsdCaps = 0x1;
-        constexpr uint32_t kDdsdHeight = 0x2;
-        constexpr uint32_t kDdsdWidth = 0x4;
-        constexpr uint32_t kDdsdPixelFmt = 0x1000;
-        constexpr uint32_t kDdsdMipCount = 0x20000;
-        constexpr uint32_t kDdsdLinear = 0x80000;
-        constexpr uint32_t kDdpfFourCc = 0x4;
-        constexpr uint32_t kDdscapsTex = 0x1000;
-        constexpr uint32_t kDdscapsMip = 0x400000;
-        constexpr uint32_t kDdscapsCmplx = 0x8;
+        constexpr uint32_t DDS_MAGIC = 0x20534444; // "DDS "
+        constexpr uint32_t FOURCC_DX10 = 0x30315844; // "DX10"
+        constexpr uint32_t DDSD_CAPS = 0x1;
+        constexpr uint32_t DDSD_HEIGHT = 0x2;
+        constexpr uint32_t DDSD_WIDTH = 0x4;
+        constexpr uint32_t DDSD_PIXEL_FMT = 0x1000;
+        constexpr uint32_t DDSD_MIP_COUNT = 0x20000;
+        constexpr uint32_t DDSD_LINEAR = 0x80000;
+        constexpr uint32_t DDPF_FOURCC = 0x4;
+        constexpr uint32_t DDSCAPS_TEX = 0x1000;
+        constexpr uint32_t DDSCAPS_MIP = 0x400000;
+        constexpr uint32_t DDSCAPS_CMPLX = 0x8;
 
         bool isBlockCompressed(DXGI_FORMAT f)
         {
@@ -1104,7 +1090,6 @@ namespace editor::textures::gen
             }
         }
 
-        // Bytes and row count for one mip, honouring 4x4 block layout when compressed.
         void surfaceInfo(DXGI_FORMAT f, uint32_t w, uint32_t h,
                          uint32_t& rowBytes, uint32_t& rows)
         {
@@ -1204,7 +1189,6 @@ namespace editor::textures::gen
                 return false;
             }
 
-            // Straight block copy - no decode, so the data stays exactly as the game has it.
             g_pContext->CopyResource(staging, src);
             src->Release();
 
@@ -1251,7 +1235,7 @@ namespace editor::textures::gen
             return true;
         }
 
-        // No device calls here - safe to run on a worker thread.
+        // any thread
         bool writeDdsImage(const DdsImage& img, const std::string& path, std::string& err)
         {
             uint32_t topRow = 0, topRows = 0;
@@ -1261,16 +1245,16 @@ namespace editor::textures::gen
 
             DdsHeader h{};
             h.size = sizeof(DdsHeader);
-            h.flags = kDdsdCaps | kDdsdHeight | kDdsdWidth | kDdsdPixelFmt | kDdsdLinear
-                    | (mips > 1 ? kDdsdMipCount : 0u);
+            h.flags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_PIXEL_FMT | DDSD_LINEAR
+                    | (mips > 1 ? DDSD_MIP_COUNT : 0u);
             h.height = img.height;
             h.width = img.width;
             h.pitchOrLinearSize = topRow * topRows;
             h.mipMapCount = mips;
             h.ddspf.size = sizeof(DdsPixelFormat);
-            h.ddspf.flags = kDdpfFourCc;
-            h.ddspf.fourCC = kFourCcDx10;
-            h.caps = kDdscapsTex | (mips > 1 ? (kDdscapsMip | kDdscapsCmplx) : 0u);
+            h.ddspf.flags = DDPF_FOURCC;
+            h.ddspf.fourCC = FOURCC_DX10;
+            h.caps = DDSCAPS_TEX | (mips > 1 ? (DDSCAPS_MIP | DDSCAPS_CMPLX) : 0u);
 
             DdsHeaderDxt10 h10{};
             h10.dxgiFormat = uint32_t(img.format);
@@ -1283,7 +1267,7 @@ namespace editor::textures::gen
                 err = "cannot open file for writing";
                 return false;
             }
-            const uint32_t magic = kDdsMagic;
+            const uint32_t magic = DDS_MAGIC;
             fwrite(&magic, 4, 1, f);
             fwrite(&h, sizeof(h), 1, f);
             fwrite(&h10, sizeof(h10), 1, f);
@@ -1322,7 +1306,7 @@ namespace editor::textures::gen
                 err = "not a DDS file";
                 return false;
             }
-            if (*reinterpret_cast<const uint32_t*>(data.data()) != kDdsMagic)
+            if (*reinterpret_cast<const uint32_t*>(data.data()) != DDS_MAGIC)
             {
                 err = "bad DDS magic";
                 return false;
@@ -1332,7 +1316,7 @@ namespace editor::textures::gen
             size_t offset = 4 + sizeof(DdsHeader);
             fmt = DXGI_FORMAT_UNKNOWN;
 
-            if ((h->ddspf.flags & kDdpfFourCc) && h->ddspf.fourCC == kFourCcDx10)
+            if ((h->ddspf.flags & DDPF_FOURCC) && h->ddspf.fourCC == FOURCC_DX10)
             {
                 if (data.size() < offset + sizeof(DdsHeaderDxt10))
                 {
@@ -1342,7 +1326,7 @@ namespace editor::textures::gen
                 fmt = DXGI_FORMAT(reinterpret_cast<const DdsHeaderDxt10*>(data.data() + offset)->dxgiFormat);
                 offset += sizeof(DdsHeaderDxt10);
             }
-            else if (h->ddspf.flags & kDdpfFourCc)
+            else if (h->ddspf.flags & DDPF_FOURCC)
             {
                 switch (h->ddspf.fourCC)
                 {
@@ -1356,7 +1340,7 @@ namespace editor::textures::gen
             }
             else
             {
-                fmt = DXGI_FORMAT_B8G8R8A8_UNORM; // uncompressed, assume BGRA8
+                fmt = DXGI_FORMAT_B8G8R8A8_UNORM; // assume BGRA8
             }
 
             width = h->width;
@@ -1395,7 +1379,7 @@ namespace editor::textures::gen
 
             if (!parseDdsFile(path, data, fmt, width, height, mips, init, err))
                 return false;
-            fmt = typedFormat(fmt); // older exports carried the resource's TYPELESS format
+            fmt = typedFormat(fmt); // old exports are TYPELESS
 
             D3D11_TEXTURE2D_DESC td{};
             td.Width = width;
@@ -1543,7 +1527,7 @@ namespace editor::textures::gen
 
         ID3D11ShaderResourceView* srv = nullptr;
         const HRESULT hr = g_pDevice->CreateShaderResourceView(tex, &svd, &srv);
-        tex->Release(); // the view holds it now
+        tex->Release();
         if (FAILED(hr) || !srv)
         {
             err = "CreateShaderResourceView failed";
@@ -1601,8 +1585,6 @@ namespace editor::textures::gen
         }
     }
 
-    // Imports read rather than write, so a bare filename should look where exports go
-    // without conjuring the folder into existence when it is really a full path typo.
     static std::string resolveImportPath(const std::string& path)
     {
         namespace fs = std::filesystem;
@@ -1639,15 +1621,13 @@ namespace editor::textures::gen
         return true;
     }
 
-    // Remember the recipe on whichever entry now exists for this texture. Called after
-    // the operation, since the entry may only have been created by it.
     static void noteSource(void* dxTexture, const std::string& path)
     {
         std::lock_guard<std::mutex> lock(g_overrideMutex);
         if (auto it = g_overrides.find(dxTexture); it != g_overrides.end())
         {
             it->second.sourceFile = path;
-            it->second.tinted = false; // a fresh image replaces whatever was tinted before
+            it->second.tinted = false;
         }
     }
 
@@ -1831,6 +1811,21 @@ namespace editor::textures::gen
         return nullptr;
     }
 
+    bool installCubeOverride(void* dxTexture, ID3D11Texture2D* tex, ID3D11ShaderResourceView* srv, std::string& err)
+    {
+        if (!tex || !srv)
+        {
+            err = "no cube objects";
+            return false;
+        }
+        Override fresh;
+        fresh.tex = tex;
+        fresh.srvLinear = srv;
+        fresh.srvSrgb = srv;
+        srv->AddRef();
+        return installOverride(dxTexture, fresh, err);
+    }
+
     void* cloneTexture(void* dxTexture)
     {
         if (!dxTexture)
@@ -1952,14 +1947,14 @@ namespace editor::textures::gen
         {
             if (asTex(dxTexture)->m_shaderViews[0] == o.srvLinear)
                 return;
-            o.installed = false; // rebuilt without the release hook seeing it: slot refs are gone
+            o.installed = false;
         }
         static uint32_t missed = 0;
         if (identityOf(dxTexture, o) != Ident::Same)
         {
             if (++missed <= 8 || (missed % 64) == 0)
                 logger::info("[texgen] engine rebuilt {} but it is another texture now - not re-installed ({} misses)", dxTexture, missed);
-            return; // a different texture now lives at this address: reassertOverrides retargets it
+            return;
         }
         if (!tryInstallLocked(asTex(dxTexture), o))
         {
@@ -1988,8 +1983,6 @@ namespace editor::textures::gen
 
     void reassertOverrides()
     {
-        // Edits whose texture object is gone: replayed on the asset's current object after
-        // the lock is released (the replay takes it again).
         std::vector<std::pair<std::string, EditInfo>> retarget;
         {
             std::lock_guard<std::mutex> lock(g_overrideMutex);
@@ -2028,11 +2021,11 @@ namespace editor::textures::gen
                 {
                     if (slot0 == o.srvLinear)
                         continue;
-                    o.installed = false; // the slot refs were released with the old views
+                    o.installed = false;
                 }
 
                 if (!tryInstallLocked(asTex(dxTexture), o))
-                    continue; // not resident; try again next frame
+                    continue;
 
                 ++reinstalled;
                 if (reinstalled <= 10)
@@ -2165,8 +2158,6 @@ namespace editor::textures::gen
             return false;
         }
 
-        // The file first, then the tint - the order a person did it in, and the order the
-        // tint base depends on: tinting after an import tints the imported image.
         if (!edit.sourceFile.empty())
         {
             const bool dds = edit.sourceFile.size() >= 4 &&
@@ -2211,8 +2202,8 @@ namespace editor::textures::gen
         std::atomic<uint32_t> g_batchDone{ 0 };
         std::atomic<uint32_t> g_batchFailed{ 0 };
 
-        constexpr size_t kMaxWriters = 4; // file writes allowed in flight
-        constexpr size_t kReadsPerFrame = 2; // GPU readbacks per frame
+        constexpr size_t MAX_WRITERS = 4;
+        constexpr size_t READS_PER_FRAME = 2;
 
         void reapWriters()
         {
@@ -2292,11 +2283,9 @@ namespace editor::textures::gen
         if (!g_batch.running)
             return;
 
-        for (size_t n = 0; n < kReadsPerFrame && g_batch.next < g_batch.items.size(); ++n)
+        for (size_t n = 0; n < READS_PER_FRAME && g_batch.next < g_batch.items.size(); ++n)
         {
-            // Back off rather than queue unbounded pixel buffers: a 4k BC7 texture is
-            // tens of megabytes and a whole level's worth would not fit anywhere.
-            if (g_writers.size() >= kMaxWriters)
+            if (g_writers.size() >= MAX_WRITERS)
                 return;
 
             const BatchItem item = g_batch.items[g_batch.next++];
@@ -2380,7 +2369,6 @@ namespace editor::textures::gen
 
     bool renderUI(void* dxTexture, const char* suggestedName)
     {
-        // Ids unique per target, so two panels in one frame are two panels.
         ImGui::PushID(dxTexture);
         struct IdScope { ~IdScope() { ImGui::PopID(); } } idScope;
 
@@ -2389,7 +2377,7 @@ namespace editor::textures::gen
         Params& p = st.p;
         std::string& lastError = st.lastError;
         std::string& lastInfo = st.lastInfo;
-        auto& imagePath = st.imagePath; // by reference: sizeof() must stay 512
+        auto& imagePath = st.imagePath; // sizeof() must stay 512
         int& fileFormat = st.fileFormat;
 
         const std::string seed = suggestedName ? suggestedName : "";
@@ -2425,7 +2413,6 @@ namespace editor::textures::gen
 
         bool regenerated = false;
 
-        // --- tint ---------------------------------------------------------------------
         ImGui::SeparatorText("Tint");
         {
             fb::DxTexture* tex = asTex(dxTexture);
@@ -2470,7 +2457,6 @@ namespace editor::textures::gen
         }
         ImGui::TextDisabled("always applied to the original, so repeat applies do not stack");
 
-        // --- round trip through a real image editor ------------------------------------
         ImGui::SeparatorText("Export / import");
 
         ImGui::RadioButton("DDS", &fileFormat, 0);
@@ -2507,8 +2493,6 @@ namespace editor::textures::gen
                                  imagePath, sizeof(imagePath));
         ImGui::PopItemWidth();
 
-        // Two doors on purpose: typing a name is faster once you know what you want, and
-        // browsing is how you find out. Both write the same box.
         ImGui::SameLine();
         if (ImGui::SmallButton("Browse"))
         {
@@ -2531,8 +2515,6 @@ namespace editor::textures::gen
         {
             std::snprintf(imagePath, sizeof(imagePath), "%s", chosen.c_str());
 
-            // The extension the user actually picked wins over the radio button - having
-            // chosen "sky.png" and then exported a .dds would be nobody's intention.
             const std::string picked = chosen.size() >= 4
                 ? chosen.substr(chosen.size() - 4) : std::string{};
             if (_stricmp(picked.c_str(), ".dds") == 0) fileFormat = 0;
@@ -2593,8 +2575,6 @@ namespace editor::textures::gen
         if (ImGui::IsItemHovered())
             ImGui::SetTooltip("imports are copied to Documents/VisEnvEditor/Textures; the config names them");
 
-        // The game's working directory is its install folder - often not writable and
-        // never where anyone would go looking - so a bare filename lands here instead.
         const std::string outDir = defaultExportDir();
         ImGui::TextDisabled("bare filenames go to:");
         ImGui::SameLine();

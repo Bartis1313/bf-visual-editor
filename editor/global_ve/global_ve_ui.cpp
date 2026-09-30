@@ -1,6 +1,7 @@
 #include "global_ve.h"
 #include "../ui/ui_helpers.h"
 #include "../comps/comps.h"
+#include "../enlighten/enlighten_db.h"
 #include <imgui.h>
 
 namespace editor::global_ve
@@ -77,11 +78,26 @@ namespace editor::global_ve
 #undef DISABLE
         }
 
+        if (ImGui::Button("Night preset"))
+            applyNightPreset();
+        if (ImGui::IsItemHovered())
+            ImGui::SetTooltip("Zavod: Graveyard Shift lighting, sky / envmaps / clouds scaled down; Reset All = day");
+        if (!enlighten::db::engineSolver)
+        {
+            ImGui::SameLine();
+            ImGui::TextDisabled("engine solver off: lightmaps and probes keep the baked day light");
+        }
+        if (ImGui::TreeNode("Sun"))
+        {
+            sun::renderUI();
+            ImGui::TreePop();
+        }
+
         ImGui::Separator();
 
         if (!data.globalOverrideEnabled)
         {
-            ImGui::TextColored(ImVec4{ 0.7f, 0.7f, 0.3f, 1.0f }, "Global overrides disabled. Enable checkbox above to apply edits to final output.");
+            ImGui::TextColored(ImVec4{ 0.7f, 0.7f, 0.3f, 1.0f }, "overrides off, edits do not reach the output");
             ImGui::Separator();
         }
 

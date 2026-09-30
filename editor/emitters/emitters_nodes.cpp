@@ -626,7 +626,7 @@ namespace editor::emitters
             return ch;
         }
 
-        // BF3 emitters carry no UpdateShaderParam processors in the chain.
+        // BF3 chains have no UpdateShaderParam
         bool isShaderParam(fb::ProcessorData*) { return false; }
 
 #endif

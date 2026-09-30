@@ -7,6 +7,8 @@
 #include "global_ve/global_ve.h"
 #include "world_render/world_render.h"
 #include "textures/textures.h"
+#include "enlighten/enlighten.h"
+#include "enlighten/enlighten_db.h"
 #include "config/config.h"
 #include "ui/ui_helpers.h"
 #include "ui/file_dialog.h"
@@ -15,6 +17,7 @@
 #include "render/render.h"
 
 #include <imgui.h>
+#include <Windows.h>
 #include <filesystem>
 #include <mutex>
 
@@ -24,7 +27,7 @@ namespace editor
 {
     bool showConsole = false;
 
-    // Present thread (render), VE update thread, level and entity hooks all take it.
+    // taken by Present, VE update and entity hooks
     static std::recursive_mutex g_lock;
     using Lock = std::lock_guard<std::recursive_mutex>;
 
@@ -33,7 +36,7 @@ namespace editor
         return g_lock;
     }
 
-    // Set at unload begin; recovery from Unloading waits for a different level name.
+    // level being unloaded
     static std::string unloadingMap;
 
     void init()
@@ -49,6 +52,22 @@ namespace editor
             logger::error("Init error: {}", err.what());
         }
 
+        {
+            HMODULE self = nullptr;
+            GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+                reinterpret_cast<LPCSTR>(&init), &self);
+            char path[MAX_PATH] = {};
+            GetModuleFileNameA(self, path, MAX_PATH);
+            WIN32_FILE_ATTRIBUTE_DATA fa{};
+            SYSTEMTIME st{};
+            if (GetFileAttributesExA(path, GetFileExInfoStandard, &fa))
+            {
+                FILETIME lt{};
+                FileTimeToLocalFileTime(&fa.ftLastWriteTime, &lt);
+                FileTimeToSystemTime(&lt, &st);
+            }
+            logger::info("build {} ({:04}-{:02}-{:02} {:02}:{:02}:{:02})", path, st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
+        }
         states::init();
         lights::init();
         emitters::init();
@@ -56,6 +75,7 @@ namespace editor
         global_ve::init();
         world_render::init();
         textures::init();
+        enlighten::init();
         config::init();
     }
 
@@ -68,9 +88,9 @@ namespace editor
         global_ve::shutdown();
         world_render::shutdown();
         textures::shutdown();
+        enlighten::shutdown();
         config::shutdown();
 
-        // GPU textures we made for previews, which nothing else owns.
         ui::filedlg::releasePreviews();
     }
 
@@ -109,6 +129,7 @@ namespace editor
         effects::clear();
         global_ve::clear();
         world_render::clear();
+        enlighten::clear();
 
         g_levelScanPending = true;
 
@@ -137,11 +158,14 @@ namespace editor
         levelUnloadingSignaled = true;
         safeToOperate = false;
 
+        // before db::onLevelUnload stops the solver
         if (autoSaveOnUnload && !capturedMapName.empty())
         {
             logger::info("Auto-saving config for map: {}", capturedMapName.c_str());
             config::saveForCurrentMap();
         }
+
+        enlighten::db::onLevelUnload();
 
         states::clear();
         lights::clear();
@@ -149,6 +173,7 @@ namespace editor
         global_ve::clear();
         effects::stopAll();
         textures::clear();
+        enlighten::clear();
 
         setEditorState(EditorState::Unloading);
     }
@@ -234,11 +259,11 @@ namespace editor
 
         states::syncWithManager(manager);
 
-        // Not gated on resourcesSettled(): bundle loads never stop while the player moves.
+        // not gated on resourcesSettled()
         const bool levelStable = editorState != EditorState::Unloading;
         if (levelStable)
         {
-            lights::tickAimRay(); // physics query: update thread
+            lights::tickAimRay(); // update thread
             textures::tickGameThread();
         }
         if (levelStable && render::backend == render::Backend::Engine && ImGui::GetCurrentContext())
@@ -247,6 +272,7 @@ namespace editor
             lights::renderOverlay();
             emitters::renderOverlay();
             effects::renderOverlay();
+            enlighten::renderOverlay();
         }
 
         if (!hasCapturedOriginals)
@@ -319,6 +345,7 @@ namespace editor
             lights::renderOverlay();
             emitters::renderOverlay();
             effects::renderOverlay();
+            enlighten::renderOverlay();
         }
         if (g_levelScanPending && settled)
         {
@@ -334,7 +361,7 @@ namespace editor
                 tryInitialCapture();
             return;
         }
-        // no light ctor hook on BF3: walk the entities every ~2 s so late ones are collected
+        // BF3 has no light ctor hook, walk every ~2 s
         static uint32_t lightWalkTick = 0;
         if (levelStable && (++lightWalkTick % 120) == 0)
             lights::refreshEntities();
@@ -347,17 +374,17 @@ namespace editor
 
     void onManagerUpdateEnd(fb::VisualEnvironmentManager* manager)
     {
-        if (!manager || !overridesEnabled)
+        if (!manager)
             return;
         Lock guard(g_lock);
 
-        auto& editList = states::getEditList();
-        if (editList.empty())
-            return;
-
+        // state edits only with overrides on
         bool appliedAny = false;
+        const bool applyStates = overridesEnabled && !states::getEditList().empty();
         for (auto state : manager->m_states)
         {
+            if (!applyStates)
+                break;
             if (!state || state->excluded)
                 continue;
 
@@ -394,7 +421,7 @@ namespace editor
         VE_COMPONENTS(ANY_GLOBAL)
 #undef ANY_GLOBAL
         onVisualEnvironmentUpdated(&manager->getEnv());
-        if (anyGlobal && g.globalOverrideEnabled)
+        if (overridesEnabled && anyGlobal && g.globalOverrideEnabled)
         {
             manager->setDirty(true);
             manager->forceStatesDirty();
@@ -416,11 +443,11 @@ namespace editor
 
         // sky texture pointers are not carried by copy::sky
         textures::applySkyOverrides(ve);
-
-        if (!hasCapturedOriginals || !overridesEnabled)
-            return;
-
-        global_ve::onUpdated(ve);
+        // before the Enlighten solver reads the values
+        if (hasCapturedOriginals && overridesEnabled)
+            global_ve::onUpdated(ve);
+        global_ve::sun::onUpdated(ve);
+        enlighten::onUpdated(ve);
     }
 
     void onMessage(uint32_t category, uint32_t type)
@@ -631,6 +658,12 @@ namespace editor
                 ImGui::EndTabItem();
             }
 
+            if (ImGui::BeginTabItem("Enlighten"))
+            {
+                enlighten::renderTab();
+                ImGui::EndTabItem();
+            }
+
             if (ImGui::BeginTabItem("Textures", nullptr,
                     textures::focusTab ? ImGuiTabItemFlags_SetSelected : 0))
             {
@@ -663,15 +696,17 @@ namespace editor
         if (levelStable)
         {
             textures::tick();
+            enlighten::tick();
             lights::tick();
             lights::tickGeometryCopies();
         }
 
-        if (levelStable && render::backend == render::Backend::ImGui) // engine backend: drawn from the update thread
+        if (levelStable && render::backend == render::Backend::ImGui) // engine backend draws on the update thread
         {
             effects::renderOverlay();
             lights::renderOverlay();
             emitters::renderOverlay();
+            enlighten::renderOverlay();
         }
         render::ImNotify::handle();
 

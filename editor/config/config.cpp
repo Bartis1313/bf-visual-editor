@@ -7,6 +7,7 @@
 #include "../world_render/world_render.h"
 #include "../textures/textures.h"
 #include "../serialize/serialize.h"
+#include "../enlighten/enlighten.h"
 #include "../../utils/log.h"
 #include "../render/render.h"
 
@@ -125,6 +126,9 @@ namespace editor::config
         }
 
         root["textures"] = textures::serialize();
+
+        if (enlighten::hasSaveData())
+            root["enlighten"] = enlighten::serialize();
 
         return root;
     }
@@ -335,6 +339,12 @@ namespace editor::config
             textures::deserialize(root["textures"]);
         }
 
+        if (root.contains("enlighten"))
+        {
+            enlighten::deserialize(root["enlighten"]);
+            logger::info("Config: Loaded Enlighten settings");
+        }
+
         std::string summary{ };
         bool anyLoaded = (componentsLoaded + lightsApplied + emittersApplied) > 0;
 
@@ -373,9 +383,9 @@ namespace editor::config
 
             file << root.dump(2);
 
-            int stateCount = root["states"].size();
-            int lightCount = root["lights"].size();
-            int emitterCount = root["emitters"].size();
+            size_t stateCount = root["states"].size();
+            size_t lightCount = root["lights"].size();
+            size_t emitterCount = root["emitters"].size();
 
             std::string filename = filePath.filename().string();
             std::string summary = std::format("Saved to {}\n{} states, {} lights, {} emitters", filename, stateCount, lightCount, emitterCount);

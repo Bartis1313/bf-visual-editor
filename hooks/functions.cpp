@@ -1,8 +1,12 @@
 #include "functions.h"
 #include "../editor/textures/texgen.h"
 #include "../editor/textures/surfacepick.h"
+#include "../editor/textures/viewsubst.h"
 #include "../editor/textures/textures.h"
 #include "../editor/camera/camera.h"
+#include "../editor/enlighten/enlighten.h"
+#include "../editor/enlighten/enlighten_spawn.h"
+#include "../editor/enlighten/enlighten_db.h"
 
 
 #include "../SDK/fb.h"
@@ -18,6 +22,7 @@
 #include "../utils/log.h"
 #include "../editor/emitters/emitters.h"
 #include "../editor/lights/lights.h"
+#include "../editor/global_ve/global_ve.h"
 
 LRESULT CALLBACK hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -28,6 +33,37 @@ void __fastcall hkfb__VisualEnvironment__operator(fb::VisualEnvironment* _this, 
     ofb__VisualEnvironment__operator(_this, _that);
 
     editor::onVisualEnvironmentUpdated(_this);
+}
+
+// disc = max(0, Sky.SunScale * SunColor), size Sky.SunSize
+static fb::VisualEnvironment* bf3SkyVe(fb::VisualEnvironment* ve)
+{
+    float rgb[3], size = -1.0f;
+    if (!ve || !editor::global_ve::sun::disc(rgb, size))
+        return ve;
+    alignas(16) static thread_local uint8_t copy[sizeof(fb::VisualEnvironment)];
+    std::memcpy(copy, ve, sizeof(copy));
+    auto* c = reinterpret_cast<fb::VisualEnvironment*>(copy);
+    c->outdoorLight.m_SunColor = fb::vec3(rgb[0], rgb[1], rgb[2]);
+    c->sky.m_SunScale = 1.0f;
+    if (size >= 0.0f) c->sky.m_SunSize = size;
+    return c;
+}
+
+void __fastcall hkfb__SkyRenderModule__draw(void* _this, void*, int type, void* view, fb::VisualEnvironment* ve, void* settings, void* depth, void* a7, void* a8, int mainPass, int a10, int a11)
+{
+    ofb__SkyRenderModule__draw(_this, type, view, bf3SkyVe(ve), settings, depth, a7, a8, mainPass, a10, a11);
+}
+
+void __fastcall hkfb__EnlightenSystem__copyToGpu(void* _this, void*)
+{
+    if (!editor::enlighten::db::uploadSystemOutput(_this))
+        ofb__EnlightenSystem__copyToGpu(_this);
+}
+
+void __fastcall hkfb__SkyRenderModule__drawEnvmap(void* _this, void*, int type, void* view, fb::VisualEnvironment* ve, void* settings, void* depth, int mainPass)
+{
+    ofb__SkyRenderModule__drawEnvmap(_this, type, view, bf3SkyVe(ve), settings, depth, mainPass);
 }
 
 int __fastcall hkfb__VisualEnvironmentManager__update(fb::VisualEnvironmentManager* _this, void*, const void* a2)
@@ -70,6 +106,7 @@ void __fastcall hkfb__MessageManager__dispatchMessage(int pMessageManager, void*
 
 int __fastcall hkfb__LocalLightEntity__LocalLightEntity(fb::LocalLightEntity* _this, void*, void* info, fb::LocalLightEntityData* data, int lightType)
 {
+    editor::enlighten::spawn::onCtorParams(info);
     int result = ofb__LocalLightEntity__LocalLightEntity(_this, info, data, lightType);
     editor::onLightEntityCreated(_this, data);
     return result;
@@ -208,6 +245,7 @@ void InitImGui(IDXGISwapChain* pSwapChain)
     {
         g_pDevice->GetImmediateContext(&g_pContext);
         editor::textures::pick::init(g_pDevice, g_pContext);
+        editor::textures::subst::init(g_pDevice, g_pContext);
 
         DXGI_SWAP_CHAIN_DESC sd;
         pSwapChain->GetDesc(&sd);
@@ -437,9 +475,54 @@ void hkBf4_VisualEnvironmentEntity_dtor(fb::VisualEnvironmentEntity* _this)
 
 void* hkBf4_LocalLightEntity_ctor(fb::LocalLightEntity* _this, void* a2, fb::LocalLightEntityData* data, int lightType)
 {
+    editor::enlighten::spawn::onCtorParams(a2);
     void* ret = oBf4_LocalLightEntity_ctor(_this, a2, data, lightType);
     editor::onLightEntityCreated(_this, data);
     return ret;
+}
+
+unsigned long long hkBf4_EnlightenDatabaseLoader_load(void* loader, void* request, void* buffers, void* a4, void* out)
+{
+    editor::enlighten::db::onLoaderLoad(request, buffers);
+    return oBf4_EnlightenDatabaseLoader_load(loader, request, buffers, a4, out);
+}
+
+// VE copy: SunColor +0, Sky +544 (SunSize +608, SunScale +612)
+// draw reads up to +3892
+__int64 hkBf4_SkyDraw(void* module, void* ctx, __int64 type, void* view, void* ve, __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10,
+    __int64 a11, __int64 a12, __int64 a13, __int64 a14, __int64 a15, __int64 a16, __int64 a17, __int64 a18)
+{
+    float rgb[3], size = -1.0f;
+    if (ve && editor::global_ve::sun::disc(rgb, size))
+    {
+        alignas(16) static thread_local uint8_t copy[0xF40];
+        std::memcpy(copy, ve, sizeof(copy));
+        std::memcpy(copy, rgb, sizeof(rgb));
+        const float one = 1.0f;
+        std::memcpy(copy + 612, &one, 4);
+        if (size >= 0.0f) std::memcpy(copy + 608, &size, 4);
+        return oBf4_SkyDraw(module, ctx, type, view, copy, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+    }
+    return oBf4_SkyDraw(module, ctx, type, view, ve, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+}
+
+unsigned long long hkBf4_Enlighten_convertOutput(int format, float* irradiance, unsigned short* luma, int a4)
+{
+    editor::enlighten::db::scaleOutput(irradiance, luma);
+    return oBf4_Enlighten_convertOutput(format, irradiance, luma, a4);
+}
+
+void* hkBf4_EnlightenDatabase_ctor(void* db, void* arena, int* flags, void* blob)
+{
+    return oBf4_EnlightenDatabase_ctor(db, arena, flags, editor::enlighten::db::onConstruct(arena, flags, blob));
+}
+
+unsigned short hkBf4_Enlighten_addLightMapHandle(void* renderer, const fb::LinearTransform* transform, fb::MeshAsset* mesh, int flag)
+{
+    const unsigned short handle = oBf4_Enlighten_addLightMapHandle(renderer, transform, mesh, flag);
+    if (handle != 0xFFFF && transform && mesh)
+        editor::enlighten::onLightMapRegistered(handle, mesh, *transform);
+    return handle;
 }
 
 void hkBf4_DxTexture_releaseGpu(fb::DxTexture* texture)

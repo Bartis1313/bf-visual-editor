@@ -7,7 +7,6 @@
 
 namespace editor::lights::detail
 {
-    // Bounded copy of an engine string into a UI-sized buffer.
     inline bool copyEngineString(const char* src, char* out, size_t cap)
     {
         out[0] = '\0';
@@ -29,8 +28,8 @@ namespace editor::lights::detail
 namespace editor::lights
 {
     // lights_flares.cpp
-    void clearFlarePointers(); // claims, palette, list - on level change
-    void linkFlaresByProximity(); // BF3: pair realized flares with lights by distance
+    void clearFlarePointers(); // level change
+    void linkFlaresByProximity(); // BF3
 
 #if defined(BFVE_GAME_BF4)
     void collectHeads(uintptr_t classInfo, uint16_t expectedClassId, std::vector<void*>& out);

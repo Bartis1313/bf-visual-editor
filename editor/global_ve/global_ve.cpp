@@ -21,6 +21,7 @@ namespace editor::global_ve
     void clear()
     {
         data.Reset();
+        sun::clear();
     }
 
     bool hasCaptured()

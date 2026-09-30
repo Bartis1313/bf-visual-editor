@@ -827,6 +827,14 @@ namespace fb
 		char unknown248[4]; //0x00F8
 	};
 
+	struct ScreenViewport
+	{
+		unsigned short m_x; //0x0000
+		unsigned short m_y; //0x0002
+		unsigned short m_width; //0x0004
+		unsigned short m_height; //0x0006
+	};//Size=0x0008
+
 	class RenderScreenInfo
 	{
 	public:
@@ -860,6 +868,8 @@ namespace fb
 		ID3D11DeviceContext* pContext; // 0xDC
 		char pad3[0x14]; // 0xE0
 		IDXGISwapChain* pSwapChain; // 0xF4
+		char pad4[0xA8]; // 0xF8
+		ScreenViewport m_viewport; // 0x1A0 getScreenInfo sub_6A8BA0
 
 	public:
 		static DxRenderer* GetInstance()
@@ -968,11 +978,11 @@ namespace fb
 		class GameTime* m_gameTime; // 0x0C
 		class ClientLevel* m_level; // 0x10
 		class MaterialGridManager* m_materialGridManager; // 0x14
-		DWORD m_animationManager; // 0x18 ant::AnimationManager
-		DWORD m_modelAnimationManager; // 0x1C ModelAnimationManager
-		DWORD m_blueprintBundleManager; // 0x20 BlueprintBundleManager
-		DWORD m_dlcManager; // 0x24 DLCManager
-		DWORD m_demoControl; // 0x28 DemoControl
+		DWORD m_animationManager; // 0x18
+		DWORD m_modelAnimationManager; // 0x1C
+		DWORD m_blueprintBundleManager; // 0x20
+		DWORD m_dlcManager; // 0x24
+		DWORD m_demoControl; // 0x28
 		INT m_realm; // 0x2C
 	}; // 0x30
 
@@ -1290,6 +1300,142 @@ namespace fb
 		class EnlightenRenderer* m_enlightenRenderer;
 	};
 
+	class DxTexture;
+
+	// ShProbe: R, G, B, occlusion rows of 4 floats
+	class EnlightenStaticDatabase
+	{
+	public:
+		char _0x0000[20];
+		float* m_probesBegin; //0x0014 ShProbe[]
+		float* m_probesEnd; //0x0018
+	};
+
+	class EnlightenProbeSetData
+	{
+	public:
+		LinearTransform m_transform; //0x0000
+		char _0x0040[64];
+		Vec3 m_boxMin; //0x0080 world
+		Vec3 m_boxMax; //0x0090
+		char _0x00A0[20];
+		unsigned __int32 m_probeCount; //0x00B4
+		unsigned __int32 m_firstStaticProbe; //0x00B8 index into EnlightenStaticDatabase probes
+		char _0x00BC[12];
+		Vec3* m_positions; //0x00C8 RelocPtr, 16 bytes per probe
+	};
+
+	// filled by sub_179A830, sets +0x38
+	class EnlightenProbeSetRuntime
+	{
+	public:
+		char _0x0000[12];
+		EnlightenProbeSetData* m_data; //0x000C
+		float* m_probes; //0x0010
+		char _0x0014[36];
+		bool m_probesUpdated; //0x0038
+	};
+
+	// uv = (u, v) * 2x2 + translation
+	struct EnlightenInstanceNode
+	{
+		unsigned __int32 m_key; //0x0000 hash of mesh guid + transform, sub_17A4770
+		char _0x0004[12];
+		float m_uvTransform[4]; //0x0010
+		float m_uvTranslation[4]; //0x0020
+		char _0x0030[16];
+		EnlightenInstanceNode* m_next; //0x0040
+	};
+
+	struct EnlightenTerrainLightMap
+	{
+		Vec3 m_min; //0x0000
+		Vec3 m_max; //0x0010
+		float m_uvTransform[4]; //0x0020
+		float m_uvTranslation[4]; //0x0030
+	};//Size=0x0040
+	struct EnlightenProbeSetRef { EnlightenProbeSetRuntime* m_set; void* _0x04; }; // ResourceProxy
+
+	// fb::EnlightenSystem, ctor sub_17AA8A0, load sub_17B5A10
+	class EnlightenRuntimeSystem
+	{
+	public:
+		char _0x0000[12];
+		unsigned __int32 m_updateCount; //0x000C
+		unsigned __int32 m_systemId; //0x0010
+		unsigned __int32 m_atlasX; //0x0014
+		unsigned __int32 m_atlasY; //0x0018
+		unsigned __int32 m_width; //0x001C
+		unsigned __int32 m_height; //0x0020
+		unsigned __int32 m_numRadPixels; //0x0024
+		float m_solveTime; //0x0028 ms
+		float m_solvePerc; //0x002C solved pixels / pixels
+		float m_writeInputTime; //0x0030
+		float m_endInputTime; //0x0034
+		__int32 m_index; //0x0038 index into m_inputLightingBuffers
+		char _0x003C[76];
+		float* m_currentInput; //0x0088 32-byte header, +0x10 cluster count, float4 per cluster
+		float* m_nextInput; //0x008C
+		char _0x0090[28];
+		float* m_bounce; //0x00AC half-res bounce
+		unsigned __int16* m_chromaOut; //0x00B0
+		unsigned __int16* m_lumaOut; //0x00B4
+		unsigned __int32* m_directionOut; //0x00B8
+	};
+
+	class EnlightenRuntimeDatabase
+	{
+	public:
+		char _0x0000[8];
+		bool m_enable; //0x0008
+		bool m_dynamicDataEnable; //0x0009 postLoad binds m_systems only if set
+		char _0x000A[2];
+		eastl::vector<eastl::string> m_systemNames; //0x000C
+		eastl::vector<EnlightenProbeSetRef> m_systems; //0x001C ResourceProxy<EnlightenSystem>
+		eastl::vector<eastl::string> m_probeSetNames; //0x002C
+		eastl::vector<EnlightenProbeSetRef> m_probeSets; //0x003C
+		unsigned __int32 m_probeCount; //0x004C
+		eastl::vector<EnlightenTerrainLightMap> m_terrainLightMaps; //0x0050
+		unsigned __int32 m_outputAtlasWidth; //0x0060
+		unsigned __int32 m_outputAtlasHeight; //0x0064
+		char _0x0068[8];
+		DxTexture* m_dynamicChroma; //0x0070 RG8
+		DxTexture* m_dynamicLuma; //0x0074 L16
+		DxTexture* m_dynamicDirection; //0x0078 ARGB8888
+		eastl::vector<void*> m_inputLightingBuffers; //0x007C one per system
+		char _0x008C[4];
+		EnlightenInstanceNode** m_instanceBuckets; //0x0090 m_instanceHashMap buckets
+		unsigned __int32 m_instanceBucketCount; //0x0094
+	};
+
+	class EnlightenStaticEntity
+	{
+	public:
+		char _0x0000[16];
+		void* m_data; //0x0010 StaticEnlightenEntityData: +0x18 StaticEnlightenData*
+		EnlightenStaticDatabase* m_database; //0x0014
+		char _0x0018[4];
+		DxTexture* m_chroma; //0x001C ResourceProxy<ITexture>
+		char _0x0020[4];
+		DxTexture* m_luma; //0x0024
+		char _0x0028[4];
+		DxTexture* m_direction; //0x002C
+		char _0x0030[4];
+	};//Size=0x0034
+
+	// DynamicEnlightenEntity, paired by sub_17A5B10
+	class EnlightenRendererEntity
+	{
+	public:
+		char _0x0000[20];
+		EnlightenRuntimeDatabase* m_database; //0x0014
+		char _0x0018[28];
+		EnlightenStaticEntity* m_staticEntity; //0x0034
+		char _0x0038[8];
+		DxTexture* m_textures[4]; //0x0040 chroma, luma, direction, sky visibility
+	};//Size=0x0050
+
+	// updateState sub_17A7C00, addEntity sub_17B5960, WorldRenderModule+0x20
 	class EnlightenRenderer
 	{
 	public:
@@ -1300,10 +1446,38 @@ namespace fb
 			EnlightenState_Disabled = 0x2,
 		};
 
+		static EnlightenRenderer* GetInstance() { return *reinterpret_cast<EnlightenRenderer**>(OFF_g_enlightenRenderer); }
+
 		char pad_0000[12]; //0x0000
 		EnlightenState state; //0x000C
 		char pad_0010[472]; //0x0010
 		class EnlightenRuntimeSettings* m_runtimeSettings; //0x01E8
+		char _0x01EC[64];
+		eastl::vector<EnlightenRendererEntity*> m_entities; //0x022C
+		eastl::vector<EnlightenStaticEntity*> m_staticEntities; //0x023C unpaired
+	};
+
+	// probe update sub_17AAB80: an instance is resampled only in view and when forced or dirty
+	struct LightProbeInstanceState
+	{
+		void* m_lookup; //0x0000
+		unsigned __int16 m_flags; //0x0004 bit0 dirty, cleared when resampled
+		char _0x0006[2];
+	};//Size=0x0008
+
+	class LightProbeInstanceManager
+	{
+	public:
+		static LightProbeInstanceManager* GetInstance() { return *reinterpret_cast<LightProbeInstanceManager**>(OFF_g_lightProbeInstanceManager); }
+
+		unsigned char* m_chunks[64]; //0x0000 1024 instances of 0x50 each
+		unsigned __int32 m_chunkCount; //0x0100
+		unsigned char* m_lastBegin; //0x0104
+		unsigned char* m_lastEnd; //0x0108
+		char _0x010C[8];
+		LightProbeInstanceState* m_states; //0x0114
+
+		unsigned __int32 count() const { return m_chunkCount ? ((m_chunkCount - 1) << 10) + unsigned(m_lastEnd - m_lastBegin) / 0x50 : 0; }
 	};
 
 	class SystemSettings : public DataContainer
@@ -1601,7 +1775,7 @@ namespace fb
 	{
 		Vec3 m_position; //0x0000 (16)
 		Vec3 m_normal; //0x0010 (16)
-		void* m_rigidBody; //0x0020 PhysicsEntityBase* (GroupPhysicsEntity for world geometry)
+		void* m_rigidBody; //0x0020 PhysicsEntityBase*, GroupPhysicsEntity for world
 		void* m_material; //0x0024 MaterialContainerPair*
 		unsigned __int32 m_part; //0x0028
 		unsigned __int32 m_bone; //0x002C
@@ -1619,11 +1793,11 @@ namespace fb
 		void* m_data[8]; //0x0010
 	};//Size=0x0030
 
-	constexpr intptr_t kGameWorldRayCaster = 0x840;
-	// flags the soldier ground probe uses (sub_60D870, OnGroundState::update); start the ray outside the capsule
-	constexpr unsigned int kRayCastWorldOnly = 0x14u;
-	constexpr intptr_t kClientLevelPhysicsManager = 0xBC;
-	constexpr intptr_t kHavokPhysicsRayCaster = 0x40;
+	constexpr intptr_t GAME_WORLD_RAY_CASTER = 0x840;
+	// soldier ground probe flags, sub_60D870
+	constexpr unsigned int RAY_CAST_WORLD_ONLY = 0x14u;
+	constexpr intptr_t CLIENT_LEVEL_PHYSICS_MANAGER = 0xBC;
+	constexpr intptr_t HAVOK_PHYSICS_RAY_CASTER = 0x40;
 
 	inline void* clientGameWorld()
 	{
@@ -1638,13 +1812,13 @@ namespace fb
 		ClientGameContext* ctx = ClientGameContext::GetInstance();
 		if (ctx && ctx->m_level)
 		{
-			void* manager = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx->m_level) + kClientLevelPhysicsManager);
-			void* caster = manager ? *reinterpret_cast<void**>(static_cast<uint8_t*>(manager) + kHavokPhysicsRayCaster) : nullptr;
+			void* manager = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx->m_level) + CLIENT_LEVEL_PHYSICS_MANAGER);
+			void* caster = manager ? *reinterpret_cast<void**>(static_cast<uint8_t*>(manager) + HAVOK_PHYSICS_RAY_CASTER) : nullptr;
 			if (caster)
 				return caster;
 		}
 		void* gw = clientGameWorld();
-		return gw ? static_cast<uint8_t*>(gw) + kGameWorldRayCaster : nullptr;
+		return gw ? static_cast<uint8_t*>(gw) + GAME_WORLD_RAY_CASTER : nullptr;
 	}
 
 	inline bool physicsRayQuery(const Vec3& from, const Vec3& to, RayCastHit& hit, unsigned int flags,
@@ -1671,7 +1845,7 @@ namespace fb
 		EntityList() {}
 		EntityList(fb::ClassInfo* classInfo, bool onlyIncludeIterable = true)
 		{
-			EntityWorld* manager = static_cast<EntityWorld*>(clientGameWorld()); // dword_236B60C, see physicsRayCaster
+			EntityWorld* manager = static_cast<EntityWorld*>(clientGameWorld()); // dword_236B60C
 			if (!manager)
 				return;
 
@@ -1744,7 +1918,7 @@ namespace fb
 	{
 		eastl::string name; // 0x00
 		eastl::string root; // 0x10
-		uint32_t flags; // 0x20 bitfield
+		uint32_t flags; // 0x20
 		char imports[16]; // 0x24 vector<DomainImportInfo>
 		char emergencyMapping[16]; // 0x34 vector<TypeRemapInfo>
 	}; // 0x44
@@ -1797,15 +1971,15 @@ namespace fb
 
 			void* m_realHeap; // 0x00
 			char pad_0004[0x2C]; // 0x04 lock
-			StringMap m_handles; // 0x30 StringMap<ResourceHandle*>, lower-case paths
+			StringMap m_handles; // 0x30 ResourceHandle* by lowercase path
 			char pad_0048[0x08]; // 0x48 thisTag
 			InternalDatabaseDomain* m_domain; // 0x50
 			DomainInfo m_domainInfo; // 0x54
 			char m_domainName[64]; // 0x98 "Compartment:%s(%d)"
 			eastl::vector<void*> m_pendingPostloads; // 0xD8 IResourceObject*
-			eastl::vector<fb::ITypedObject*> m_objects; // 0xE8 m_dataContainersToUnregister: the primary instance of every loaded partition
+			eastl::vector<fb::ITypedObject*> m_objects; // 0xE8 m_dataContainersToUnregister, one per partition
 			char pad_00F8[0x40]; // 0xF8 availableChunks, queuedReads, batchObjects, affectedObjects
-			eastl::vector<fb::DataContainer*> m_dataContainers; // 0x138 emptied at the end of every fixup
+			eastl::vector<fb::DataContainer*> m_dataContainers; // 0x138 cleared after each fixup
 		}; // 0x2A0
 		static_assert(offsetof(Compartment, m_handles) == 0x30, "Compartment");
 		static_assert(offsetof(Compartment, m_objects) == 0xE8, "Compartment");
@@ -1879,7 +2053,7 @@ namespace fb
 
 		char _0x0014[12];
 		LinearTransform m_transform; //0x0020
-		eastl::vector<void*> m_surfaceShaders; //0x0060 SmartRef<ISurfaceShader const> per element
+		eastl::vector<void*> m_surfaceShaders; //0x0060 SmartRef<ISurfaceShader const>
 		bool m_enabled; //0x0070
 		bool m_halfRes; //0x0071
 		bool m_directionEnable; //0x0072
@@ -1890,16 +2064,15 @@ namespace fb
 	class StaticModelGroupMeshInstance
 	{
 	public:
-		static constexpr uintptr_t kRigidVTable = OFF_vt_RigidMeshEntity;
-		static constexpr uintptr_t kCompositeVTable = OFF_vt_CompositeMeshEntity;
+		static constexpr uintptr_t RIGID_VTABLE = OFF_vt_RigidMeshEntity;
+		static constexpr uintptr_t COMPOSITE_VTABLE = OFF_vt_CompositeMeshEntity;
 
 		void* m_vtable; //0x0000
 		char _0x0004[12];
 		LinearTransform m_transform; //0x0010
 	};
 
-	// Physics part -> its mesh instance; sub_6053C0 writes m_instance, sub_605270 reads
-	// m_transformIndex.
+	// written by sub_6053C0, read by sub_605270
 	struct StaticModelGroupPartEntry
 	{
 		StaticModelGroupMeshInstance* m_instance; //0x0000
@@ -1922,14 +2095,14 @@ namespace fb
 	class ClientStaticModelGroupMember
 	{
 	public:
-		static constexpr uintptr_t kVTable = OFF_vt_ClientStaticModelGroupMember;
+		static constexpr uintptr_t VTABLE = OFF_vt_ClientStaticModelGroupMember;
 
 		void* m_vtable; //0x0000
 		char _0x0004[8];
 		StaticModelGroupMemberData* m_data; //0x000C
 		StaticModelGroupPhysics* m_physics; //0x0010
 		char _0x0014[0x1C];
-		StaticModelGroupMeshInstance** m_entitiesWithoutPhysics;//0x0030 only when m_InstanceTransforms is set
+		StaticModelGroupMeshInstance** m_entitiesWithoutPhysics;//0x0030 only with m_InstanceTransforms
 		void* m_meshSet; //0x0034
 	};//Size=0x0038
 
@@ -1980,7 +2153,6 @@ namespace fb
 			using fn_t = void (__thiscall*)(void*, int, DebugRenderVertex*);
 			reinterpret_cast<fn_t>(OFF_DebugRenderer2_endVertices)(this, type, end);
 		}
-		// drawText(int x, int y, const char*, Color32, float scale): queues a Text2d command.
 		void drawText(int x, int y, const char* text, unsigned int color, float scale)
 		{
 			using fn_t = void (__thiscall*)(void*, int, int, const char*, unsigned int, float);
@@ -2003,11 +2175,10 @@ namespace fb
 			reinterpret_cast<fn_t>(OFF_DebugRenderer2_drawRect2d)(this, min, max, color);
 		}
 	};
-	// BF4 splits 3D and 2D into two classes; the shared render backend uses both names.
 	using DebugRenderer = DebugRenderer2;
 
-	// dword_2356C90. vtable[4](this, arena, name) fetches a shader by name (sub_17B0600); the
-	// arena is *(*(entity->m_entityBus + 4) + 0x34) (sub_545DC0).
+	// dword_2356C90, vtable[4] finds shader by name, sub_17B0600
+	// arena = *(*(entity->m_entityBus + 4) + 0x34), sub_545DC0
 	class ShaderDatabase
 	{
 	public:
@@ -2015,11 +2186,11 @@ namespace fb
 		{
 			return *reinterpret_cast<ShaderDatabase**>(OFF_g_shaderSystem);
 		}
-		static constexpr size_t kFindSlot = 4;
+		static constexpr size_t FIND_SLOT = 4;
 	};
 
 	class DxTexture;
-	// DxTexture::create(arena, desc) OFF_DxTexture_create: +0x40 set = rebuild the texture at +0x44 in place.
+	// OFF_DxTexture_create: +0x40 set rebuilds +0x44 in place
 	struct DxTextureCreateDesc
 	{
 		char _0x0000[0x40];
@@ -2036,7 +2207,7 @@ namespace fb
 		void* m_vtable; //0x0000
 		unsigned __int32 m_refCount; //0x0004
 		void* m_arena; //0x0008
-		const char* m_name; //0x000C not written by the ctor - do not trust
+		const char* m_name; //0x000C unset by ctor
 		unsigned __int32 m_memoryType; //0x0010
 		unsigned __int32 m_flags; //0x0014
 		unsigned __int32 m_type; //0x0018
@@ -2054,12 +2225,12 @@ namespace fb
 		void* m_streamingHeader; //0x0044
 		void* m_subResourceCopy; //0x0048
 		char _0x004C[8];
-		unsigned __int16 m_handle; //0x0054 streaming handle, 0xFFFF = none
+		unsigned __int16 m_handle; //0x0054 0xFFFF = none
 		char _0x0056[2];
 		unsigned __int32 m_bindFlags2; //0x0058
-		unsigned __int32 m_resFormat; //0x005C DXGI_FORMAT of m_resource
-		unsigned __int32 m_shaderFormat; //0x0060 DXGI_FORMAT of the views
-		void* m_streamingInfo; //0x0064 128 bytes, own allocation
+		unsigned __int32 m_resFormat; //0x005C DXGI_FORMAT
+		unsigned __int32 m_shaderFormat; //0x0060 DXGI_FORMAT
+		void* m_streamingInfo; //0x0064 128 bytes
 		ID3D11Resource* m_resource; //0x0068
 		void* m_data; //0x006C
 		ID3D11ShaderResourceView* m_shaderViews[2]; //0x0070 [0] linear, [1] sRGB
@@ -2080,7 +2251,7 @@ namespace fb
 		unsigned __int8 m_activeMipmapCount; //0x002F
 		unsigned __int8 m_activeMipmapIndex; //0x0030
 		unsigned __int8 m_wantedMipmapCount; //0x0031
-		unsigned __int8 m_state; //0x0032 pool; 2 = on-demand
+		unsigned __int8 m_state; //0x0032 pool, 2 = on-demand
 		bool m_loading; //0x0033
 		bool m_forceLoaded; //0x0034
 		char _0x0035[3];
@@ -2089,8 +2260,7 @@ namespace fb
 		float m_activeMinMipClamp; //0x0040
 	};//Size=0x0044
 
-	// dword_23577EC, 672128 bytes (ctor sub_6D0300). m_textures is a fixed_vector<TextureInfo,
-	// 8192> at 0x30 (begin/end/cap/alloc, buffer at 0x40).
+	// dword_23577EC, ctor sub_6D0300, 672128 bytes
 	class TextureStreamingManager
 	{
 	public:
@@ -2132,7 +2302,7 @@ namespace fb
 		}
 	};
 
-	// fb::RelocPtr<T>: pointer in the low dword, 8 bytes in the record.
+	// fb::RelocPtr<T>, pointer in low dword
 	struct RelocPtr
 	{
 		void* m_ptr; //0x0000
@@ -2242,7 +2412,7 @@ namespace fb
 		RelocPtr m_subsetPartIndices; //0x00A8
 	};//Size=0x00B0
 
-	// eastl::hash_node of MeshVariationManager::m_variations (sub_17398C0 = getMeshVariation).
+	// m_variations hash node, getMeshVariation sub_17398C0
 	struct MeshVariationNode
 	{
 		unsigned __int64 m_key; //0x0000 variationHash | (MeshAsset::m_NameHash << 32)
@@ -2251,14 +2421,14 @@ namespace fb
 		MeshVariationNode* m_next; //0x0010
 	};//Size=0x0018
 
-	// dword_23B3E88, 176 bytes (ctor sub_1739850). Lock sub_46FF80(this) at +0.
+	// dword_23B3E88, ctor sub_1739850, lock sub_46FF80
 	class MeshVariationManager
 	{
 	public:
 		char m_lock[0x20]; //0x0000
 		void* m_heap; //0x0020
 		char _0x0024[4];
-		MeshVariationNode** m_buckets; //0x0028 m_bucketCount + 1 entries, last is a sentinel
+		MeshVariationNode** m_buckets; //0x0028 m_bucketCount + 1, last is sentinel
 		unsigned __int32 m_bucketCount; //0x002C
 		unsigned __int32 m_elementCount; //0x0030
 
@@ -2281,7 +2451,7 @@ namespace fb
 	{
 	public:
 		void* m_shader; //0x0000 SurfaceShader*, refcounted
-		void* m_block; //0x0004 ShaderParameterBlock*
+		void* m_block; //0x0004
 		unsigned __int16 m_blockHeader; //0x0008
 		char _0x000A[2];
 	};//Size=0x000C
@@ -2317,7 +2487,6 @@ namespace fb
 		unsigned __int32 _0x002C[5];
 	};//Size=0x0040
 
-	// eastl::pair<unsigned __int64, ShaderSolution const*>, 0x10.
 	struct ShaderSolutionPair
 	{
 		unsigned __int64 m_key; //0x0000
@@ -2342,7 +2511,7 @@ namespace fb
 		char m_streamableTextureSet[0x0C]; //0x0038
 		ShaderSolutionPair* m_solutionPairs; //0x0044
 		unsigned __int32 m_solutionPairCount; //0x0048
-		unsigned __int32 _0x004C; //0x004C retail: no debug name, object is 0x50 (sub_6A46B0 allocs 80)
+		unsigned __int32 _0x004C; //0x004C no debug name in retail, sub_6A46B0
 	};//Size=0x0050
 
 	class ShaderParameterBlock
@@ -2578,7 +2747,7 @@ namespace fb
 	public:
 		static __inline unsigned int ClassId()
 		{
-			return 0xFFFFFFFF; // sentinel: no BF3 processor uses this id
+			return 0xFFFFFFFF; // no BF3 processor has this id
 		}
 		Vec3 m_Color0; //0x0030
 		Vec3 m_Color1; //0x0040
@@ -2586,7 +2755,7 @@ namespace fb
 
 	class EmitterAsset;
 	class EmitterEntityData;
-	class EmitterDocument; // fwd: only used as Array<EmitterDocument*> element
+	class EmitterDocument;
 
 	class EmitterTemplate
 	{
@@ -2742,6 +2911,7 @@ static_assert(sizeof(fb::ClientStaticModelGroupMember) == 0x38, "ClientStaticMod
 static_assert(sizeof(fb::ClientStaticModelGroupEntity) == 0x88, "ClientStaticModelGroupEntity size");
 static_assert(offsetof(fb::ClientStaticModelGroupEntity, m_membersBegin) == 0x74, "ClientStaticModelGroupEntity::m_membersBegin");
 static_assert(sizeof(fb::DxTexture) == 0x7C, "DxTexture size");
+static_assert(offsetof(fb::DxRenderer, m_viewport) == 0x1A0, "DxRenderer::m_viewport");
 static_assert(offsetof(fb::DxTexture, m_width) == 0x20, "DxTexture::m_width");
 static_assert(offsetof(fb::DxTexture, m_handle) == 0x54, "DxTexture::m_handle");
 static_assert(offsetof(fb::DxTexture, m_resource) == 0x68, "DxTexture::m_resource");

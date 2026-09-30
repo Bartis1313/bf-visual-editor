@@ -344,7 +344,6 @@ struct GlobalVEData
 
 struct EmitterSnapshot
 {
-    // Common to both games.
     unsigned int maxCount;
     unsigned int lifetimeFrameCount;
     float timeScale;
@@ -374,7 +373,7 @@ struct EmitterSnapshot
     bool forceNiceSorting;
 
 #if defined(BFVE_GAME_BF3)
-    // BF3-only: emitter can act as a point light directly.
+    // BF3 only
     fb::Vec4 pointLightIntensity;
     fb::Vec3 pointLightPivot;
     fb::Vec3 pointLightColor;
@@ -452,7 +451,7 @@ struct EmitterEditData
 
 struct PendingEmitterEdit
 {
-    std::string key; // name/key
+    std::string key;
     EmitterSnapshot templateData;
     EmitterColorSnapshot colorData;
     bool hasColorData = false;

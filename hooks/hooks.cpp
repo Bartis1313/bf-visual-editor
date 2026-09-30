@@ -30,6 +30,9 @@ bool hooks::init()
     MH_CreateHook((LPVOID)OFF_ClientEmitterEntity_ctor, hkfb__ClientEmitterEntity__ctor, (LPVOID*)&ofb__ClientEmitterEntity__ctor);
     MH_CreateHook((LPVOID)OFF_GameRenderer_createUpdateJob, hkfb__GameRenderer__createUpdateJob, (LPVOID*)&ofb__GameRenderer__createUpdateJob);
     MH_CreateHook((LPVOID)OFF_InternalDatabasePartition_onPartitionLoaded, hkfb__InternalDatabasePartition_onPartitonLoaded, (LPVOID*)&ofb__InternalDatabasePartition_onPartitonLoaded);
+    MH_CreateHook((LPVOID)OFF_SkyRenderModule_draw, hkfb__SkyRenderModule__draw, (LPVOID*)&ofb__SkyRenderModule__draw);
+    MH_CreateHook((LPVOID)OFF_SkyRenderModule_drawEnvmap, hkfb__SkyRenderModule__drawEnvmap, (LPVOID*)&ofb__SkyRenderModule__drawEnvmap);
+    MH_CreateHook((LPVOID)OFF_EnlightenSystem_copyToGpu, hkfb__EnlightenSystem__copyToGpu, (LPVOID*)&ofb__EnlightenSystem__copyToGpu);
     if (OFF_ClientGameContext_unloadLevel)
         MH_CreateHook((LPVOID)OFF_ClientGameContext_unloadLevel, hkfb__ClientGameContext__unloadLevel, (LPVOID*)&ofb__ClientGameContext__unloadLevel);
 #elif defined(BFVE_GAME_BF4)
@@ -50,6 +53,11 @@ bool hooks::init()
     MH_CreateHook((LPVOID)OFF_DxTexture_releaseGpu, hkBf4_DxTexture_releaseGpu, (LPVOID*)&oBf4_DxTexture_releaseGpu);
     MH_CreateHook((LPVOID)OFF_DxTexture_create, hkBf4_DxTexture_create, (LPVOID*)&oBf4_DxTexture_create);
     MH_CreateHook((LPVOID)OFF_DxTexture_assign, hkBf4_DxTexture_assign, (LPVOID*)&oBf4_DxTexture_assign);
+    MH_CreateHook((LPVOID)OFF_Enlighten_addLightMapHandle, hkBf4_Enlighten_addLightMapHandle, (LPVOID*)&oBf4_Enlighten_addLightMapHandle);
+    MH_CreateHook((LPVOID)OFF_EnlightenDatabase_ctor, hkBf4_EnlightenDatabase_ctor, (LPVOID*)&oBf4_EnlightenDatabase_ctor);
+    MH_CreateHook((LPVOID)OFF_EnlightenDatabaseLoader_load, hkBf4_EnlightenDatabaseLoader_load, (LPVOID*)&oBf4_EnlightenDatabaseLoader_load);
+    MH_CreateHook((LPVOID)OFF_Enlighten_convertToOutputFormat, hkBf4_Enlighten_convertOutput, (LPVOID*)&oBf4_Enlighten_convertOutput);
+    MH_CreateHook((LPVOID)OFF_SkyRenderModule_draw, hkBf4_SkyDraw, (LPVOID*)&oBf4_SkyDraw);
 
 #endif
 
@@ -71,7 +79,7 @@ bool hooks::init()
     }
     else
     {
-        logger::warning("Swap chain unavailable — Present/ResizeBuffers not hooked");
+        logger::warning("Swap chain unavailable: Present/ResizeBuffers not hooked");
     }
 
     MH_STATUS hS = MH_EnableHook(MH_ALL_HOOKS);

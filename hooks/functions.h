@@ -101,6 +101,18 @@ inline fn_sub_1763720 original_sub_1763720 = nullptr;
 int __fastcall hooked_sub_1763720(void* thisPtr, void* edx, int size, void* offsetOut, void* sourceData);
 
 #if defined(BFVE_GAME_BF3)
+typedef void(__thiscall* tfb__SkyRenderModule__draw)(void* _this, int type, void* view, fb::VisualEnvironment* ve, void* settings, void* depth, void* a7, void* a8, int mainPass, int a10, int a11);
+inline tfb__SkyRenderModule__draw ofb__SkyRenderModule__draw = 0;
+void __fastcall hkfb__SkyRenderModule__draw(void* _this, void*, int type, void* view, fb::VisualEnvironment* ve, void* settings, void* depth, void* a7, void* a8, int mainPass, int a10, int a11);
+
+typedef void(__thiscall* tfb__EnlightenSystem__copyToGpu)(void* _this);
+inline tfb__EnlightenSystem__copyToGpu ofb__EnlightenSystem__copyToGpu = 0;
+void __fastcall hkfb__EnlightenSystem__copyToGpu(void* _this, void*);
+
+typedef void(__thiscall* tfb__SkyRenderModule__drawEnvmap)(void* _this, int type, void* view, fb::VisualEnvironment* ve, void* settings, void* depth, int mainPass);
+inline tfb__SkyRenderModule__drawEnvmap ofb__SkyRenderModule__drawEnvmap = 0;
+void __fastcall hkfb__SkyRenderModule__drawEnvmap(void* _this, void*, int type, void* view, fb::VisualEnvironment* ve, void* settings, void* depth, int mainPass);
+
 typedef void(__thiscall* tfb__DxTexture__reassign)(fb::DxTexture* _this, fb::DxTexture* source);
 inline tfb__DxTexture__reassign ofb__DxTexture__reassign = 0;
 void __fastcall hkfb__DxTexture__reassign(fb::DxTexture* _this, void* edx, fb::DxTexture* source);
@@ -120,6 +132,7 @@ void __fastcall hkfb__InternalDatabasePartition_onPartitonLoaded(fb::InternalDat
 typedef void(__thiscall* tfb__ClientGameContext__unloadLevel)(void* _this);
 inline tfb__ClientGameContext__unloadLevel ofb__ClientGameContext__unloadLevel = 0;
 void __fastcall hkfb__ClientGameContext__unloadLevel(void* _this, void* edx);
+
 #endif
 
 typedef void(__thiscall* tfb__MessageManager__dispatchMessage)(int pMessageManager, fb::Message* pMessage);
@@ -239,6 +252,30 @@ void* hkBf4_VisualEnvironmentEntity_ctor(fb::VisualEnvironmentEntity* _this, voi
 typedef void(*tBf4_VisualEnvironmentEntity_dtor)(fb::VisualEnvironmentEntity* _this);
 inline tBf4_VisualEnvironmentEntity_dtor oBf4_VisualEnvironmentEntity_dtor = nullptr;
 void hkBf4_VisualEnvironmentEntity_dtor(fb::VisualEnvironmentEntity* _this);
+
+// EnlightenDatabaseLoader load (slot 3): (loader, request, buffers, arena?, out)
+typedef unsigned long long (*tBf4_EnlightenDatabaseLoader_load)(void* loader, void* request, void* buffers, void* a4, void* out);
+inline tBf4_EnlightenDatabaseLoader_load oBf4_EnlightenDatabaseLoader_load = nullptr;
+unsigned long long hkBf4_EnlightenDatabaseLoader_load(void* loader, void* request, void* buffers, void* a4, void* out);
+
+// Enlighten ConvertToOutputFormat(format, irradiance float4, luma out, a4), per pixel
+typedef __int64 (*tBf4_SkyDraw)(void*, void*, __int64, void*, void*, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64);
+inline tBf4_SkyDraw oBf4_SkyDraw = nullptr;
+__int64 hkBf4_SkyDraw(void* module, void* ctx, __int64 type, void* view, void* ve, __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10,
+    __int64 a11, __int64 a12, __int64 a13, __int64 a14, __int64 a15, __int64 a16, __int64 a17, __int64 a18);
+typedef unsigned long long (*tBf4_Enlighten_convertOutput)(int format, float* irradiance, unsigned short* luma, int a4);
+inline tBf4_Enlighten_convertOutput oBf4_Enlighten_convertOutput = nullptr;
+unsigned long long hkBf4_Enlighten_convertOutput(int format, float* irradiance, unsigned short* luma, int a4);
+
+// EnlightenDatabase ctor(db, arena, resource flags, relocated blob)
+typedef void* (*tBf4_EnlightenDatabase_ctor)(void* db, void* arena, int* flags, void* blob);
+inline tBf4_EnlightenDatabase_ctor oBf4_EnlightenDatabase_ctor = nullptr;
+void* hkBf4_EnlightenDatabase_ctor(void* db, void* arena, int* flags, void* blob);
+
+// EnlightenRenderer::addLightMapHandle(renderer, world transform, MeshAsset, flag) -> u16 handle
+typedef unsigned short (*tBf4_Enlighten_addLightMapHandle)(void* renderer, const fb::LinearTransform* transform, fb::MeshAsset* mesh, int flag);
+inline tBf4_Enlighten_addLightMapHandle oBf4_Enlighten_addLightMapHandle = nullptr;
+unsigned short hkBf4_Enlighten_addLightMapHandle(void* renderer, const fb::LinearTransform* transform, fb::MeshAsset* mesh, int flag);
 
 typedef void* (*tBf4_LocalLightEntity_ctor)(fb::LocalLightEntity* _this, void* a2, fb::LocalLightEntityData* data, int lightType);
 inline tBf4_LocalLightEntity_ctor oBf4_LocalLightEntity_ctor = nullptr;

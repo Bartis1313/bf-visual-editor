@@ -1,6 +1,7 @@
 #include "lights.h"
 #include "lights_internal.h"
 #include "../../utils/log.h"
+#include "../render/render.h"
 
 #include <algorithm>
 #include <atomic>
@@ -28,9 +29,9 @@ namespace editor::lights
             return;
         }
 
-        for (uint32_t base : fb::kIterableBases)
+        for (uint32_t base : fb::ITERABLE_BASES)
         {
-            for (uint32_t realm : fb::kIterableRealms)
+            for (uint32_t realm : fb::ITERABLE_REALMS)
             {
                 void** const slot = fb::iterableListHead(classInfo, realm, base);
                 void* const head = slot ? *slot : nullptr;
@@ -41,8 +42,7 @@ namespace editor::lights
     }
 #endif
 
-    // Every realized LensFlareEntity. BF4: the class's iterable list, link +0x30. BF3: the
-    // EntityWorld kind query. fn returns false to stop.
+    // BF4 iterable link +0x30, BF3 EntityWorld kind query
     template <typename Fn>
     static void forEachFlareEntity(Fn&& fn)
     {
@@ -64,7 +64,7 @@ namespace editor::lights
                     break;
 
                 auto* e = reinterpret_cast<fb::LensFlareEntity*>(
-                    static_cast<uint8_t*>(node) - fb::kLensFlareLinkOffset);
+                    static_cast<uint8_t*>(node) - fb::LENS_FLARE_LINK_OFFSET);
                 if (!fn(e))
                     return;
 
@@ -85,6 +85,54 @@ namespace editor::lights
             if (!fn(e))
                 return;
 #endif
+    }
+
+    namespace
+    {
+        struct SunFlare { fb::LensFlareEntity* entity; fb::Vec3 direction; bool directionEnable; };
+        std::vector<SunFlare> g_sunFlares;
+        bool g_sunFlaresScanned = false;
+    }
+
+    // level unload, entities die with it
+    void forgetSunFlares()
+    {
+        g_sunFlares.clear();
+        g_sunFlaresScanned = false;
+    }
+
+    size_t followSunFlares(const fb::Vec3* dir)
+    {
+        if (!dir)
+        {
+            for (const SunFlare& s : g_sunFlares)
+            {
+                s.entity->m_direction = s.direction;
+                s.entity->m_directionEnable = s.directionEnable;
+            }
+            forgetSunFlares();
+            return 0;
+        }
+        if (!g_sunFlaresScanned)
+        {
+            g_sunFlaresScanned = true;
+            fb::Vec3 cam{};
+            render::cameraPosition(cam);
+            forEachFlareEntity([&](fb::LensFlareEntity* e) -> bool
+            {
+                // sun flares sit kilometers out
+                if (fb::distanceSq(e->m_transform.m_trans, cam) > 1500.0f * 1500.0f)
+                    g_sunFlares.push_back({ e, e->m_direction, e->m_directionEnable });
+                return true;
+            });
+            logger::info("[lights] {} lens flare(s) placed as a sun follow the sun rotation", g_sunFlares.size());
+        }
+        for (const SunFlare& s : g_sunFlares)
+        {
+            s.entity->m_direction = *dir;
+            s.entity->m_directionEnable = true;
+        }
+        return g_sunFlares.size();
     }
 
     static fb::LensFlareElement* flareElements(void* flareData, uint32_t& count)
@@ -159,7 +207,7 @@ namespace editor::lights
 
     const std::vector<FlareShaderChoice>& flareShaderPalette() { return g_flarePalette; }
 
-    // LensFlareEntity::m_elementShaders[i], bounded by the array header.
+    // LensFlareEntity::m_elementShaders[i]
     void* flareShaderSlot(void* entity, uint32_t elementIndex)
     {
         auto* flare = static_cast<fb::LensFlareEntity*>(entity);
@@ -178,7 +226,7 @@ namespace editor::lights
         return first + elementIndex;
     }
 
-    // Shader objects: vtable[0] addref, vtable[1] release (sub_140CCCDA0, sub_140CB3650).
+    // vtable[0] addref, [1] release (sub_140CCCDA0, sub_140CB3650)
     static void shaderAddRef(void* obj)
     {
         if (obj)
@@ -191,8 +239,7 @@ namespace editor::lights
             reinterpret_cast<void(__fastcall*)(void*)>((*static_cast<void***>(obj))[1])(obj);
     }
 
-    // What the engine does to a slot, in its order: addref the new one before releasing the
-    // old, so a swap cannot pass through zero.
+    // addref new before releasing old, as the engine
     static bool installFlareShader(void* slot, void* shaderObject)
     {
         if (!slot)
@@ -222,8 +269,7 @@ namespace editor::lights
         std::mutex g_flareClaimMutex;
         std::vector<FlareShaderClaim> g_flareClaims;
 
-        // The hook runs on the game thread for every flare rebuild; nothing is claimed
-        // almost always, so answer that without taking the lock.
+        // read lock-free by the game-thread hook
         std::atomic<uint32_t> g_flareClaimCount{ 0 };
     }
 
@@ -232,8 +278,7 @@ namespace editor::lights
         return g_flareClaimCount.load(std::memory_order_relaxed) != 0;
     }
 
-    // The LensFlareEntityData an entity is currently realized from, or null. Same shape as
-    // liveLightEntity: identity by what the object still points at, not by its address.
+    // realized-from LensFlareEntityData or null
     static void* flareIdentity(void* entity)
     {
         return entity ? static_cast<fb::LensFlareEntity*>(entity)->m_data : nullptr;
@@ -251,7 +296,7 @@ namespace editor::lights
             }
     }
 
-    // Called from the hook on sub_140CCCDA0, after the engine has refilled the array.
+    // sub_140CCCDA0 hook, after the array refill
     void applyFlareShaderClaims(void* entity)
     {
         if (!g_flareClaimCount.load(std::memory_order_relaxed))
@@ -319,7 +364,7 @@ namespace editor::lights
             return nullptr;
         }
 
-        void* fn = vfunc::getVFunc(mgr, fb::ShaderDatabase::kFindSlot);
+        void* fn = vfunc::getVFunc(mgr, fb::ShaderDatabase::FIND_SLOT);
         if (!fn)
             return nullptr;
 
@@ -327,8 +372,8 @@ namespace editor::lights
         using fetch_t = void* (__fastcall*)(void*, void*, const char*);
         void* const arena = fb::ShaderDatabase::Allocator();
 #else
-        // (db, arena, name) thiscall; the arena is borrowed from a realized flare's bus,
-        // *(*(m_entityBus + 4) + 0x34) - sub_545DC0.
+        // thiscall (db, arena, name), arena from a realized flare's bus
+        // *(*(m_entityBus + 4) + 0x34) - sub_545DC0
         using fetch_t = void* (__thiscall*)(void*, void*, const char*);
         void* arena = nullptr;
         for (const FlareInstance& fi : flareList)
@@ -419,8 +464,7 @@ namespace editor::lights
         logger::info("[lights] flare palette: {} shader(s) loaded", g_flarePalette.size());
     }
 
-    // The palette object for a name, fetching it from the database if the level has not
-    // realized that look anywhere.
+    // database fetch when not realized
     static void* flareShaderByName(const std::string& name)
     {
         for (const FlareShaderChoice& c : g_flarePalette)
@@ -452,7 +496,7 @@ namespace editor::lights
                     entry.lampFlares.end())
                     continue;
 
-                if (edit.element == kAllFlareElements)
+                if (edit.element == ALL_FLARE_ELEMENTS)
                 {
                     const uint32_t count = flareElementCount(fi.data);
                     for (uint32_t e = 0; e < count; ++e)
@@ -468,7 +512,7 @@ namespace editor::lights
         return written;
     }
 
-    // sub_140CB3650 re-reads the element data every frame; no realized flare needed.
+    // sub_140CB3650 re-reads element data every frame
     uint32_t applyFlareFields(LightDataEntry& entry)
     {
         if (entry.flareFields.empty() || entry.lampFlares.empty())
@@ -526,14 +570,12 @@ namespace editor::lights
         if (shaderName.empty())
             return;
 
-        // One record per element. Picking "all elements" replaces the per-element ones -
-        // they would only fight over the same slots.
-        if (element == kAllFlareElements)
+        if (element == ALL_FLARE_ELEMENTS)
             entry.flareShaders.clear();
         else
             std::erase_if(entry.flareShaders,
                 [](const LightDataEntry::FlareShaderEdit& e)
-                { return e.element == kAllFlareElements; });
+                { return e.element == ALL_FLARE_ELEMENTS; });
 
         auto it = std::find_if(entry.flareShaders.begin(), entry.flareShaders.end(),
             [element](const LightDataEntry::FlareShaderEdit& e) { return e.element == element; });
@@ -548,8 +590,7 @@ namespace editor::lights
 
     void clearFlareShadersFor(LightDataEntry& entry)
     {
-        // Dropping the claims is enough to undo it: the next rebuild puts the flare's own
-        // shader back, because that is what sub_140CCCDA0 reads out of the element data.
+        // sub_140CCCDA0 restores the data's shader on rebuild
         for (const FlareInstance& fi : flareList)
         {
             if (!fi.data ||
@@ -710,10 +751,8 @@ namespace editor::lights
         }
 
         if (wanted.empty())
-            return; // the container walk has not linked this light's flares yet
+            return; // flares not linked yet
 
-        // Rescans for our own set, which is why flareListGeneration exists - the UI caches
-        // a view of flareList and has to be told it moved.
         scanLensFlaresFor(wanted);
 
         uint32_t applied = 0;

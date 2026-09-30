@@ -14,11 +14,7 @@
 #include <unordered_map>
 #include <vector>
 
-// A probe cycle is `slices` consecutive frames. Each scene draw is re-issued once, in the frame
-// its identity (pixel shader, srv0, count) hashes to, under a 1x1 scissor at the crosshair with
-// an occlusion query and no color/depth writes. Constant buffers are snapshotted once per
-// frame; results are read back only after an event query says the GPU is done, so the render
-// thread never waits on the GPU
+// 1x1 scissor at the crosshair, occlusion query, no writes
 namespace editor::textures::pick
 {
     namespace
@@ -42,34 +38,31 @@ namespace editor::textures::pick
             ID3D11ShaderResourceView* srvs[16];
             ID3D11Buffer* cbs[3];
             UINT cbFirst[3];
-            uint32_t order; // scene draw index within its frame; hits sort by it, last = nearest
+            uint32_t order; // last = nearest
             uint32_t slice;
         };
 
-        constexpr uint32_t kMaxRecords = 8000;
-        Record g_records[kMaxRecords];
-        ID3D11Query* g_queries[kMaxRecords];
-        std::atomic<uint32_t> g_recordCount{ 0 }; // slots are claimed lock-free from any recording thread
+        constexpr uint32_t MAX_RECORDS = 8000;
+        Record g_records[MAX_RECORDS];
+        ID3D11Query* g_queries[MAX_RECORDS];
+        std::atomic<uint32_t> g_recordCount{ 0 };
         std::atomic<uint32_t> g_sceneDraws{ 0 };
         std::atomic<bool> g_armed{ false };
         std::atomic<uint32_t> g_slice{ 0 };
         int g_px = 0, g_py = 0, g_w = 0, g_h = 0;
 
-        // Probe variants of the game's own states, keyed by the original (held with a ref so
-        // the address cannot be reused under the key). Lookups take the shared lock.
         std::shared_mutex g_cacheMutex;
         std::unordered_map<void*, ID3D11RasterizerState*> g_rsProbe;
         std::unordered_map<void*, ID3D11BlendState*> g_bsProbe;
         std::unordered_map<void*, ID3D11DepthStencilState*> g_dsProbe;
         struct ViewSize { int w, h; };
-        std::unordered_map<ID3D11View*, ViewSize> g_viewSize; // refs held, cleared every cycle
+        std::unordered_map<ID3D11View*, ViewSize> g_viewSize;
 
-        // One staging copy per (frame, constant buffer), taken at that frame's present.
         struct Snapshot { ID3D11Buffer* source; ID3D11Buffer* staging; uint32_t slice; UINT width; };
         std::vector<Snapshot> g_snapshots;
         std::vector<std::pair<UINT, ID3D11Buffer*>> g_stagingPool;
-        constexpr size_t kMaxSnapshotsPerFrame = 16;
-        ID3D11Query* g_fence = nullptr; // D3D11_QUERY_EVENT ended after the last frame's copies
+        constexpr size_t MAX_SNAPSHOTS_PER_FRAME = 16;
+        ID3D11Query* g_fence = nullptr;
         bool g_pending = false;
         uint32_t g_pendingFrames = 0;
 
@@ -77,7 +70,6 @@ namespace editor::textures::pick
         Surface g_result;
         uint32_t g_frame = 0;
 
-        // Sorted; swapped whole so the recording threads never take a lock for it.
         std::atomic<std::shared_ptr<const std::vector<const void*>>> g_shaderFilter;
 
         bool knownShader(const void* ps)
@@ -197,7 +189,6 @@ namespace editor::textures::pick
             return store(g_bsProbe, bs, out);
         }
 
-        // null when the draw does not depth test: it cannot tell what is under the crosshair
         ID3D11DepthStencilState* probeDs(ID3D11DepthStencilState* ds)
         {
             ID3D11DepthStencilState* out = nullptr;
@@ -243,7 +234,7 @@ namespace editor::textures::pick
             ID3D11PixelShader* ps = nullptr;
             ctx->PSGetShader(&ps, nullptr, nullptr);
             if (!ps)
-                return; // depth-only: nothing to identify
+                return;
             if (!knownShader(ps))
             {
                 ps->Release();
@@ -280,8 +271,8 @@ namespace editor::textures::pick
             ID3D11DepthStencilState* ds = nullptr; UINT stencilRef = 0;
             ctx->OMGetDepthStencilState(&ds, &stencilRef);
             ID3D11DepthStencilState* pds = probeDs(ds);
-            const uint32_t slot = pds ? g_recordCount.fetch_add(1, std::memory_order_relaxed) : kMaxRecords;
-            if (slot >= kMaxRecords)
+            const uint32_t slot = pds ? g_recordCount.fetch_add(1, std::memory_order_relaxed) : MAX_RECORDS;
+            if (slot >= MAX_RECORDS)
             {
                 if (ds) ds->Release();
                 ps->Release();
@@ -357,7 +348,7 @@ namespace editor::textures::pick
         uint32_t recordCount()
         {
             const uint32_t n = g_recordCount.load(std::memory_order_acquire);
-            return n < kMaxRecords ? n : kMaxRecords;
+            return n < MAX_RECORDS ? n : MAX_RECORDS;
         }
 
         ID3D11Buffer* takeStaging(UINT width)
@@ -378,13 +369,11 @@ namespace editor::textures::pick
             return b;
         }
 
-        // Copies every constant buffer this frame's records reference, on the immediate context
-        // before the present, so the values the draws were issued with survive until the readback.
         void snapshotConstants(uint32_t slice)
         {
             size_t taken = 0;
             const uint32_t count = recordCount();
-            for (uint32_t i = 0; i < count && taken < kMaxSnapshotsPerFrame; ++i)
+            for (uint32_t i = 0; i < count && taken < MAX_SNAPSHOTS_PER_FRAME; ++i)
             {
                 const Record& r = g_records[i];
                 if (r.slice != slice)
@@ -564,8 +553,7 @@ namespace editor::textures::pick
         hookVtable(vt, &oDrawIndexed, &oDraw, &oDrawIndexedInstanced, &oDrawInstanced,
                    hkDrawIndexed, hkDraw, hkDrawIndexedInstanced, hkDrawInstanced);
 
-        // Frostbite records most scene draws on deferred contexts, a different class with
-        // its own vtable: one of our own gives the table every deferred context shares.
+        // deferred contexts share their own vtable
         ID3D11DeviceContext* deferred = nullptr;
         if (SUCCEEDED(device->CreateDeferredContext(0, &deferred)) && deferred)
         {

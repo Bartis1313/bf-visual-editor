@@ -17,6 +17,7 @@ namespace editor::global_ve
         }
         VE_COMPONENTS(SAVE)
 #undef SAVE
+        j["sun"] = sun::serialize();
         return j;
     }
 
@@ -33,6 +34,7 @@ namespace editor::global_ve
         }
         VE_COMPONENTS(LOAD)
 #undef LOAD
+        if (j.contains("sun") && j["sun"].is_object()) sun::deserialize(j["sun"]);
 
 #undef LOAD_COMPONENT
     }

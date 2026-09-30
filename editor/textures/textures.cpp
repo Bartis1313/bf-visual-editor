@@ -2,10 +2,10 @@
 #include "texgen.h"
 #include "surfacepick.h"
 #include "../lights/lights.h"
-#include "../../hooks/functions.h" // g_pDevice
+#include "../../hooks/functions.h"
 #include "../../utils/log.h"
 
-#include "../editor_context.h" // getCurrentMapName, sanitizeMapName
+#include "../editor_context.h"
 
 #include <Windows.h>
 #include <d3d11.h>
@@ -42,8 +42,9 @@ namespace editor::textures
     namespace detail
     {
 #if !defined(BFVE_GAME_BF4)
-        std::unordered_map<std::string, void*> g_bf3TextureByName; // lower-case path -> DxTexture*
-        std::unordered_map<std::string, void*> g_bf3ResourceByName; // every resource object
+        std::unordered_map<std::string, void*> g_bf3TextureByName; // lowercase path -> DxTexture*
+        std::unordered_map<std::string, void*> g_bf3ResourceByName;
+        void* g_bf3MeshSetVtable = nullptr; // most common "_mesh" vtable
 #endif
 
         bool isDxTexture(const void* p)
@@ -73,7 +74,6 @@ namespace editor::textures
             return out;
         }
 
-        // Bounded copy of an engine string. False for null or empty.
         bool copyEngineString(const char* src, char* dst, size_t cap)
         {
             if (!src)
@@ -145,7 +145,7 @@ namespace editor::textures
             D3D11_TEXTURE2D_DESC td{};
             tex2d->GetDesc(&td);
 
-            // ImGui can only sample a plain single-slice, non-MSAA 2D texture.
+            // imgui: single-slice non-msaa 2d only
             if (td.ArraySize != 1 || td.SampleDesc.Count != 1)
             {
                 tex2d->Release();
@@ -155,14 +155,13 @@ namespace editor::textures
             D3D11_SHADER_RESOURCE_VIEW_DESC sd{};
             sd.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
             sd.Texture2D.MipLevels = td.MipLevels ? td.MipLevels : 1;
-            // A TYPELESS resource has no implicit view format; the engine already
-            // worked out the right one and left it in m_shaderFormat.
+            // typeless: view format is m_shaderFormat
             sd.Format = (e.shaderFormat != 0) ? DXGI_FORMAT(e.shaderFormat) : td.Format;
 
             ID3D11ShaderResourceView* srv = nullptr;
             if (FAILED(g_pDevice->CreateShaderResourceView(tex2d, &sd, &srv)))
             {
-                sd.Format = td.Format; // second try with the resource's own format
+                sd.Format = td.Format;
                 if (FAILED(g_pDevice->CreateShaderResourceView(tex2d, &sd, &srv)))
                     srv = nullptr;
             }
@@ -171,13 +170,12 @@ namespace editor::textures
             return srv;
         }
 
-        void* resolveAssetTexture(void* textureAsset); // defined below
-        bool liveAsset(const void* textureAsset); // defined below
-        void readTextureMeta(TextureEntry& e); // defined below
+        void* resolveAssetTexture(void* textureAsset);
+        bool liveAsset(const void* textureAsset);
+        void readTextureMeta(TextureEntry& e);
         void ensureDrawable(TextureEntry& e, bool markShown);
 
-        // The manager and this texture's handle; false when either is absent. The manager
-        // masks handles to 15 bits, 0xFFFF = not streamed.
+        // handles are 15 bits, 0xFFFF = not streamed
         bool streamingTarget(void* dxTexture, fb::TextureStreamingManager*& mgr, uint16_t& handle)
         {
             mgr = nullptr;
@@ -190,8 +188,6 @@ namespace editor::textures
                 return false;
 
             handle = asTex(dxTexture)->m_handle;
-            // The handle is masked to 15 bits everywhere in the manager; anything wider is
-            // not a streaming handle and would index past the info array.
             return (handle & 0x7FFF) == handle;
         }
 
@@ -208,17 +204,15 @@ namespace editor::textures
 
         std::mutex pinMutex;
         std::unordered_set<uint16_t> pinnedHandles;
-        std::deque<uint16_t> pinOrder; // FIFO, for evicting past the cap
+        std::deque<uint16_t> pinOrder;
 
-        // Bumped once per tick, so eviction can tell what is actually on screen from
-        // what merely happens to still be pinned.
         uint32_t frameCounter = 0;
         std::unordered_map<uint16_t, int> handleToEntry;
 
         std::mutex loadMutex;
         std::vector<uint16_t> loadQueue;
-        std::unordered_set<uint16_t> loadQueued; // membership, so bulk queueing is not O(n^2)
-        std::atomic<uint32_t> loadsAsked{ 0 }; // total requested for the current bulk run
+        std::unordered_set<uint16_t> loadQueued;
+        std::atomic<uint32_t> loadsAsked{ 0 };
         std::atomic<uint32_t> loadsDone{ 0 };
         std::atomic<bool> budgetHit{ false };
 
@@ -244,7 +238,6 @@ namespace editor::textures
             return mgr->unloadOnDemand(handle, true);
         }
 
-        // Set once we first raise the cap, so it can always be put back exactly.
         uint32_t originalBudgetCap = 0;
 
         uint32_t* budgetCapSlot(uint32_t& scale)
@@ -403,18 +396,15 @@ namespace editor::textures
             }
 
             std::lock_guard<std::mutex> lock(loadMutex);
-            // A streaming handle is 15 bits, so the whole catalogue fits comfortably; the
-            // old cap of 256 existed only because membership was a linear scan.
             if (!loadQueued.insert(handle).second)
                 return;
             loadQueue.push_back(handle);
         }
 
-        // Drain the queue on a worker. Only plain handles cross the thread boundary, so
-        // nothing here can outlive an object it points at.
+        // drained on a worker
         void pumpLoads()
         {
-            constexpr size_t kLoadBatch = 16;
+            constexpr size_t LOAD_BATCH = 16;
 
             std::vector<uint16_t> batch;
             {
@@ -422,7 +412,7 @@ namespace editor::textures
                 if (loadQueue.empty())
                     return;
 
-                const size_t n = (std::min)(loadQueue.size(), kLoadBatch);
+                const size_t n = (std::min)(loadQueue.size(), LOAD_BATCH);
                 batch.assign(loadQueue.begin(), loadQueue.begin() + ptrdiff_t(n));
                 loadQueue.erase(loadQueue.begin(), loadQueue.begin() + ptrdiff_t(n));
                 for (uint16_t h : batch)
@@ -437,8 +427,7 @@ namespace editor::textures
                 ++loadsDone;
             }
 
-            // Every request in a full batch bouncing means the streaming budget is
-            // spent; keep hammering it and we only fight the engine for memory.
+            // whole batch refused = streaming budget spent
             if (refused == batch.size() && batch.size() >= 8)
             {
                 budgetHit = true;
@@ -467,7 +456,7 @@ namespace editor::textures
 
             uint32_t used = 0, cap = 0;
             if (!readBudget(used, cap))
-                return; // no streaming manager yet
+                return;
 
             const uint32_t want = uint32_t(budgetTargetMb) * 1024u * 1024u;
             if (cap >= want)
@@ -500,7 +489,7 @@ namespace editor::textures
             fb::TextureStreamingManager* mgr = nullptr;
             uint16_t handle = 0;
             if (!streamingTarget(e.texture, mgr, handle))
-                return QueueResult::NoTexture; // nothing to ask the manager for
+                return QueueResult::NoTexture;
 
             e.handle = handle;
             handleToEntry[handle] = int(&e - entries.data());
@@ -511,14 +500,12 @@ namespace editor::textures
                 return QueueResult::Skip;
 
             if (!bulkAsked.insert(handle).second)
-                return QueueResult::Skip; // already asked for in this run
+                return QueueResult::Skip;
 
             queueLoad(handle);
             return justResolved ? QueueResult::Resolved : QueueResult::Queued;
         }
 
-        // Everything catalogued that has no GPU data. Queued in one go and drained by the
-        // same worker as the scroll-triggered loads, so this costs the frame nothing.
         void queueEveryMissing()
         {
             budgetHit = false;
@@ -643,7 +630,7 @@ namespace editor::textures
             }
 
             if (!stale.empty())
-                budgetHit = false; // room was made, so let the queue continue
+                budgetHit = false;
         }
 
 
@@ -655,7 +642,6 @@ namespace editor::textures
             if (e.drawable)
                 return;
 
-            // The asset may have streamed in since the scan - resolve it now.
             if (!e.texture && e.asset)
             {
                 if (void* tex = resolveAssetTexture(e.asset))
@@ -698,11 +684,10 @@ namespace editor::textures
                 return;
             }
 
-            // No usable engine view - build one over its resource instead. Textures whose
-            // desc lacks the shader-resource bind flag never get engine views at all.
+            // no srv bind flag = no engine views
             if (void* own = createOwnSrv(e))
             {
-                e.srvLinear = own; // already refcounted 1 by Create
+                e.srvLinear = own;
                 e.ownsSrv = true;
                 e.drawable = true;
                 e.viewChecked = true;
@@ -724,7 +709,6 @@ namespace editor::textures
 
         }
 
-        // Drop the references taken at scan time.
         void releaseHeldSrvs()
         {
             for (TextureEntry& e : entries)
@@ -751,7 +735,7 @@ namespace editor::textures
         bool paramInfo(const void* block, uint32_t slot, uint32_t& handle, uint16_t& offset)
         {
             if (!block)
-                return false; // a graph declaring no parameters gets no block (sub_140C1C360)
+                return false; // no declared params = no block, sub_140C1C360
             const auto* b = static_cast<const fb::ShaderParameterBlock*>(block);
             handle = b->m_entries[slot].m_handle;
             offset = b->m_entries[slot].m_offset;
@@ -786,8 +770,7 @@ namespace editor::textures
             if (b->size() != size)
                 return false;
 #else
-            // BF3 m_size is plain; values (16-byte vectors, 4-byte textures, bools) follow
-            // the info array.
+            // bf3: values after the info array
             if (b->size() < 16u + 8u * total + 16u * vec + 4u * tex + bol)
                 return false;
 #endif
@@ -800,8 +783,7 @@ namespace editor::textures
 
         struct SetRef { uint8_t* set; uint64_t key; };
 
-        // MeshVariationSet: count at +0x18, SurfaceShaderInstance array at +0x10, stride
-        // 0x50, ShaderParameterBlock* at +0x08 of each (Layout).
+        // set: count +0x18, instances +0x10 stride 0x50, block +0x08
         uint32_t setMaterialCount(const uint8_t* set)
         {
             return *reinterpret_cast<const uint32_t*>(set + layout.countOffset);
@@ -942,8 +924,6 @@ namespace editor::textures
                     if (!className)
                         continue;
 
-                    // Variation names, so a set key can be reported as what an artist called
-                    // it rather than as a 32-bit hash.
                     if (strcmp(className, "ObjectVariation") == 0)
                     {
                         auto* ov = reinterpret_cast<fb::ObjectVariation*>(obj);
@@ -984,7 +964,7 @@ namespace editor::textures
                         {
                             EbxMaterial em;
 
-                            // MeshMaterial is not a partition primary; reached only from here.
+                            // MeshMaterial is not a partition primary
                             if (mat.m_Material)
                             {
                                 addShaderNames(mat.m_Material->m_Shader);
@@ -996,7 +976,7 @@ namespace editor::textures
                                 em.dbTexCount = mat.m_TextureParameters.m_firstElement ? mat.m_TextureParameters.size() : 0;
                             }
 
-                            // The variation carries the ColorTint that recolors a lamp.
+                            // variation carries the lamp ColorTint
                             if (mat.m_MaterialVariation)
                             {
                                 em.hasVariation = true;
@@ -1033,7 +1013,7 @@ namespace editor::textures
                 colorHandles.size(), variationNames.size());
         }
 
-        constexpr const char* kKnownParams[] = {
+        constexpr const char* KNOWN_PARAMS[] = {
             "CamoBackground", "CamoColor1", "CamoColor2", "CamoColor3", "CamoColor4",
             "ColorTint", "DiffuseTint", "Color", "TintColor", "BaseColor", "DiffuseColor",
             "Lasercolor",
@@ -1049,7 +1029,7 @@ namespace editor::textures
         {
             handleNames.clear();
 
-            for (const char* n : kKnownParams)
+            for (const char* n : KNOWN_PARAMS)
                 handleNames.emplace(shaderParamHandle(n), n);
 
             fb::ResourceManager* rm = fb::ResourceManager::GetInstance();
@@ -1092,8 +1072,8 @@ namespace editor::textures
             return it == handleNames.end() ? nullptr : it->second.c_str();
         }
 
-        const char* typeName(uint32_t t); // defined below
-        const TextureEntry* findTextureEntry(void* texture); // defined below
+        const char* typeName(uint32_t t);
+        const TextureEntry* findTextureEntry(void* texture);
         bool matchesSearch(const std::string& haystack, const char* needleRaw);
         void ensureNameCache(TextureEntry& e)
         {
@@ -1118,24 +1098,24 @@ namespace editor::textures
                 [](unsigned char c) { return char(std::tolower(c)); });
         }
 
-        const char* textureLabel(const TextureEntry& e); // defined below
-        std::string exportNameFor(const TextureEntry& e); // defined below
-        void selectTextureIndex(int index); // defined below
-        void revertAll(); // defined below
-        int catalogueClone(void* clone, const TextureEntry& src); // defined below
-        void renderMaterialTextureSlots(const MaterialEntry& m); // defined below
-        void renderSlotPicker(); // defined below
-        void noteUncatalogued(void* dxTexture); // defined below
-        void forgetTexBackup(void* block, uint32_t slot); // defined below
-        bool paramIsColor(uint32_t handle, const char* name); // defined below
-        bool materialHasColor(const MaterialEntry& m); // defined below
+        const char* textureLabel(const TextureEntry& e);
+        std::string exportNameFor(const TextureEntry& e);
+        void selectTextureIndex(int index);
+        void revertAll();
+        int catalogueClone(void* clone, const TextureEntry& src);
+        void renderMaterialTextureSlots(const MaterialEntry& m);
+        void renderSlotPicker();
+        void noteUncatalogued(void* dxTexture);
+        void forgetTexBackup(void* block, uint32_t slot);
+        bool paramIsColor(uint32_t handle, const char* name);
+        bool materialHasColor(const MaterialEntry& m);
         void holdVecOverride(const MaterialEntry& m, uint32_t handle, const float* value);
         void holdTexOverride(const MaterialEntry& m, uint32_t handle, void* texture);
         void dropOverride(uint64_t setKey, uint32_t material, uint32_t handle,
                                  void* block);
         void applyVecOverrides();
         void rebuildMaterialIndex();
-        std::string shortLabel(const TextureEntry& e); // defined below
+        std::string shortLabel(const TextureEntry& e);
 
 
         int skyResPicker = -1;
@@ -1200,7 +1180,7 @@ namespace editor::textures
         std::unordered_set<const void*> g_liveAssets;
         uint64_t g_assetsFingerprint = 0;
 
-        // A TextureAsset pointer is only read while its compartment still lists it.
+        // only read while its compartment lists it
         bool liveAsset(const void* textureAsset)
         {
             static uint32_t checkedFrame = ~0u;
@@ -1255,19 +1235,19 @@ namespace editor::textures
         }
 
 #if defined(BFVE_GAME_BF4)
-        constexpr uint32_t kResStateOffset[kSkySlotCount] = {
-            0x188, // SkyGradientTexture      (SkyComponentData +0xB8)
-            0x198, // PanoramicTexture        (+0xE0)
-            0x1A8, // PanoramicAlphaTexture   (+0xE8)
-            0x1C8, // CloudLayerMaskTexture   (+0xF0)
-            0x1B8, // CloudLayer1Texture      (+0x118)
-            0x1C0, // CloudLayer2Texture      (+0x140)
-            0x1D8, // StaticEnvmapTexture     (+0x148)
-            0x1E8, // CustomEnvmapTexture     (+0x158)
+        constexpr uint32_t RES_STATE_OFFSET[SKY_SLOT_COUNT] = {
+            0x188, // SkyGradientTexture, SkyComponentData +0xB8
+            0x198, // PanoramicTexture +0xE0
+            0x1A8, // PanoramicAlphaTexture +0xE8
+            0x1C8, // CloudLayerMaskTexture +0xF0
+            0x1B8, // CloudLayer1Texture +0x118
+            0x1C0, // CloudLayer2Texture +0x140
+            0x1D8, // StaticEnvmapTexture +0x148
+            0x1E8, // CustomEnvmapTexture +0x158
         };
 #else
-        // fb::VisualEnvironmentState::resources (+0xB4) - VisualEnvironmentResources, sdk.h.
-        constexpr uint32_t kResStateOffset[kSkySlotCount] = {
+        // VisualEnvironmentState::resources +0xB4
+        constexpr uint32_t RES_STATE_OFFSET[SKY_SLOT_COUNT] = {
             offsetof(fb::VisualEnvironmentState, resources) + offsetof(fb::VisualEnvironmentResources, skyGradientTexture),
             offsetof(fb::VisualEnvironmentState, resources) + offsetof(fb::VisualEnvironmentResources, panoramicSkyTexture),
             offsetof(fb::VisualEnvironmentState, resources) + offsetof(fb::VisualEnvironmentResources, panoramicSkyAlphaTexture),
@@ -1290,7 +1270,6 @@ namespace editor::textures
             if (ref == ~uintptr_t(0) || !fb::isValidPtr(p))
                 return nullptr;
 
-            // Not resident, or another ITexture implementation whose layout is unknown.
             return isDxTexture(p) ? p : nullptr;
 #else
             if (!liveAsset(textureAsset))
@@ -1316,8 +1295,7 @@ namespace editor::textures
                     fn(reinterpret_cast<uint8_t*>(st));
         }
 
-        // ITexture vfunc[1] = addRef, the call SkyComponent's ctor makes per slot; the state
-        // releases what it holds on teardown.
+        // ITexture vfunc[1] = addRef
         void addRefTexture(void* tex)
         {
             if (!tex)
@@ -1326,64 +1304,154 @@ namespace editor::textures
             void** vt = *reinterpret_cast<void***>(tex);
             reinterpret_cast<void(__fastcall*)(void*)>(vt[1])(tex);
 #else
-            // RefCountBase: the slot's release is a plain decrement, so match it directly.
+            // RefCountBase release is a plain decrement
             if (isDxTexture(tex))
                 InterlockedIncrement(reinterpret_cast<volatile LONG*>(&asTex(tex)->m_refCount));
 #endif
         }
 
+        // ITexture vfunc[2] = release, BF4 0x140C0A7E0
+        void releaseTexture(void* tex)
+        {
+            if (!tex)
+                return;
+#if defined(BFVE_GAME_BF4)
+            void** vt = *reinterpret_cast<void***>(tex);
+            reinterpret_cast<void(__fastcall*)(void*)>(vt[2])(tex);
+#else
+            if (isDxTexture(tex))
+                InterlockedDecrement(reinterpret_cast<volatile LONG*>(&asTex(tex)->m_refCount));
+#endif
+        }
+
         void*& skySlotRef(uint8_t* state, int slot)
         {
-            return *reinterpret_cast<void**>(state + kResStateOffset[slot]);
+            return *reinterpret_cast<void**>(state + RES_STATE_OFFSET[slot]);
+        }
+
+        // one override ref per state
+        // states release their slots before unloadLevel
+        struct SkyHeld
+        {
+            void* ours[SKY_SLOT_COUNT] = {};
+            void* orig[SKY_SLOT_COUNT] = {};
+            bool held[SKY_SLOT_COUNT] = {};
+        };
+        std::unordered_map<uint8_t*, SkyHeld> g_skyHeld;
+
+        void skyPruneHeld()
+        {
+            std::unordered_set<uint8_t*> live;
+            forEachVeState([&live](uint8_t* st) { live.insert(st); });
+            for (auto it = g_skyHeld.begin(); it != g_skyHeld.end();)
+            {
+                if (live.count(it->first))
+                {
+                    ++it;
+                    continue;
+                }
+                for (int i = 0; i < SKY_SLOT_COUNT; ++i)
+                    if (it->second.held[i])
+                        releaseTexture(it->second.orig[i]);
+                it = g_skyHeld.erase(it);
+            }
+        }
+
+        // skyless states hold null, e.g. XP4_Titan
+        void* skyCurrent(int slot)
+        {
+            void* cur = nullptr;
+            forEachVeState([&cur, slot](uint8_t* st)
+            {
+                if (cur)
+                    return;
+                const auto it = g_skyHeld.find(st);
+                void* v = (it != g_skyHeld.end() && it->second.held[slot]) ? it->second.orig[slot] : skySlotRef(st, slot);
+                if (v)
+                    cur = v;
+            });
+            return cur;
         }
 
         void skyCaptureOriginal(int slot)
         {
-            if (slot < 0 || slot >= kSkySlotCount || skyOriginalCaptured[slot])
+            if (slot < 0 || slot >= SKY_SLOT_COUNT || skyOriginalCaptured[slot])
                 return;
-
-            uint8_t* first = nullptr;
-            forEachVeState([&first](uint8_t* st) { if (!first) first = st; });
-            if (!first)
-                return; // no state yet - try again when there is one
-
-            skyOriginal[slot] = skySlotRef(first, slot);
+            skyOriginal[slot] = skyCurrent(slot);
             skyOriginalCaptured[slot] = true;
         }
 
         void skyRevertSlot(int slot)
         {
-            if (slot < 0 || slot >= kSkySlotCount)
+            if (slot < 0 || slot >= SKY_SLOT_COUNT)
                 return;
 
             skyOverride[slot] = {};
+            skyOriginal[slot] = nullptr;
+            skyOriginalCaptured[slot] = false;
 
-            if (!skyOriginalCaptured[slot])
-                return;
-
-            void* const orig = skyOriginal[slot];
-            forEachVeState([slot, orig](uint8_t* st)
+            skyPruneHeld();
+            for (auto it = g_skyHeld.begin(); it != g_skyHeld.end();)
             {
-                skySlotRef(st, slot) = orig;
-            });
+                SkyHeld& h = it->second;
+                if (h.held[slot])
+                {
+                    void*& ref = skySlotRef(it->first, slot);
+                    if (ref == h.ours[slot])
+                    {
+                        releaseTexture(h.ours[slot]);
+                        ref = h.orig[slot];
+                    }
+                    else
+                        releaseTexture(h.orig[slot]); // the game rewrote the slot
+                    h.held[slot] = false;
+                }
+                if (std::none_of(std::begin(h.held), std::end(h.held), [](bool b) { return b; }))
+                    it = g_skyHeld.erase(it);
+                else
+                    ++it;
+            }
+        }
 
-            // The state releases what it holds when it is torn down, so the pointer we put
-            // back needs the reference the ctor originally gave it.
-            addRefTexture(orig);
+        void skyRevertAll()
+        {
+            for (int i = 0; i < SKY_SLOT_COUNT; ++i)
+                skyRevertSlot(i);
+            g_skyHeld.clear();
         }
 
         void applyResourceOverrides()
         {
+            skyPruneHeld();
             forEachVeState([](uint8_t* st)
             {
-                for (int i = 0; i < kSkySlotCount; ++i)
-                    if (skyOverride[i].enabled)
-                        skySlotRef(st, i) = skyOverride[i].asset;
+                SkyHeld* h = nullptr;
+                for (int i = 0; i < SKY_SLOT_COUNT; ++i)
+                {
+                    if (!skyOverride[i].enabled)
+                        continue;
+                    void*& ref = skySlotRef(st, i);
+                    void* const want = skyOverride[i].asset;
+                    if (ref == want)
+                        continue;
+                    if (!h)
+                        h = &g_skyHeld[st];
+                    if (h->held[i] && ref == h->ours[i])
+                        releaseTexture(h->ours[i]);
+                    else
+                    {
+                        if (h->held[i])
+                            releaseTexture(h->orig[i]); // the game rewrote the slot
+                        h->orig[i] = ref;
+                        h->held[i] = true;
+                    }
+                    addRefTexture(want);
+                    ref = want;
+                    h->ours[i] = want;
+                }
             });
         }
 
-        // VU ships a curated g_TextureAssets list for this. We have ~6350 loaded textures,
-        // almost none of which make sense in a sky slot, so filter by path instead.
         bool looksSkyRelevant(const std::string& path)
         {
             static const char* kHints[] = {
@@ -1472,8 +1540,6 @@ namespace editor::textures
 
                 if (tex)
                 {
-                    // Already known through a material slot: just attach the asset so the
-                    // name is authoritative and it can re-resolve later.
                     if (auto it = byTexture.find(tex); it != byTexture.end())
                     {
                         entries[it->second].loaded = true;
@@ -1498,7 +1564,6 @@ namespace editor::textures
                 e.loaded = tex != nullptr;
                 readTextureMeta(e);
 
-                // Name it up front so it is searchable even while unresolved.
                 e.nameCached = true;
                 e.lowerPath = name;
                 const size_t slash = e.lowerPath.find_last_of("/\\");
@@ -1600,6 +1665,7 @@ namespace editor::textures
 
             g_bf3TextureByName.clear();
             g_bf3ResourceByName.clear();
+            g_bf3MeshSetVtable = nullptr;
             const std::unordered_set<const void*> live = streamedTextureSet();
             uint32_t seen = 0;
             std::string prefix;
@@ -1614,14 +1680,25 @@ namespace editor::textures
                 }
             }
 
-            logger::info("[textures] resource names: {} texture(s) named from {} tree node(s)",
-                g_bf3TextureByName.size(), seen);
+            // a name can hold another type or stale data
+            std::unordered_map<void*, uint32_t> vtables;
+            uint32_t meshes = 0, best = 0;
+            for (const auto& [name, obj] : g_bf3ResourceByName)
+                if (name.size() > 5 && name.compare(name.size() - 5, 5, "_mesh") == 0)
+                {
+                    ++vtables[*static_cast<void**>(obj)];
+                    ++meshes;
+                }
+            for (const auto& [vt, n] : vtables)
+                if (n > best) { best = n; g_bf3MeshSetVtable = vt; }
+
+            logger::info("[textures] resource names: {} texture(s) named from {} tree node(s), MeshSet vtable {} ({} of {} meshes)",
+                g_bf3TextureByName.size(), seen, g_bf3MeshSetVtable, best, meshes);
             return uint32_t(g_bf3TextureByName.size());
         }
 #endif
 
-        // (TextureInfo::texture, 8192 slots) is the catalogue source there. Names still come
-        // from the EBX pairing where a material references the texture.
+        // bf3: catalogue = TextureInfo::texture, 8192 slots
         uint32_t catalogueStreamedTextures()
         {
 #if defined(BFVE_GAME_BF4)
@@ -1793,7 +1870,6 @@ namespace editor::textures
                 me.texCount = tex;
                 me.boolCount = bol;
 
-                // Identity + texture paths, courtesy of the EBX entry under the same key.
                 const EbxMaterial* ebxMat = nullptr;
                 if (auto it = g_ebx.find(ref.key); it != g_ebx.end())
                 {
@@ -1826,8 +1902,7 @@ namespace editor::textures
                 if (me.meshName.empty())
                     me.meshName = std::format("<unnamed {:016X}>", ref.key);
 
-                // The low half of the set key IS the ObjectVariation name hash, so the
-                // recolor that produced this material has a name we can show.
+                // low half of the set key = ObjectVariation name hash
                 if (auto vit = variationNames.find(uint32_t(ref.key & 0xFFFFFFFFull));
                     vit != variationNames.end())
                     me.variationName = vit->second;
@@ -1877,7 +1952,6 @@ namespace editor::textures
                     e.refs = 1;
                     e.loaded = true;
 
-                    // Fields are only read off a DxTexture; another ITexture stays bare.
                     const fb::DxTexture* tp = asTex(texture);
                     e.vtable = tp->m_vtable;
                     if (e.vtable == fb::DxTexture::VTable())
@@ -1886,7 +1960,6 @@ namespace editor::textures
                         ++stats.vtableMatch;
                     }
 
-                    // Hold a reference for as long as we cache the pointer.
                     if (srvIsDrawable2D(e.srvLinear))
                     {
                         addRefSrv(e.srvLinear);
@@ -1902,7 +1975,6 @@ namespace editor::textures
 
         void scan();
 
-        // Materials rebuilt from the live sets, cached where the set is unchanged; no harvest or asset pass.
         void scanIncremental()
         {
             std::vector<SetRef> sets;
@@ -2052,8 +2124,7 @@ namespace editor::textures
             logger::debug("[textures] catalog: {} total ({} live, {} carried)",
                 entries.size(), liveNow, carried);
 
-            // Resolve every live handle against the harvested names. A non-zero
-            // handlesNamed also proves BF4 uses the same DJB2-xor hash as BF3.
+            // handlesNamed > 0: BF4 uses BF3's DJB2-xor hash
             for (const MaterialEntry& m : materials)
             {
                 const uint32_t total = uint32_t(m.vecCount) + m.texCount + m.boolCount;
@@ -2070,7 +2141,6 @@ namespace editor::textures
                 }
             }
 
-            // One line is enough; the breakdown is on the tab and in debug logging.
             uint32_t resident = 0;
             for (const TextureEntry& e : entries)
                 if (e.texture) ++resident;
@@ -2081,8 +2151,7 @@ namespace editor::textures
                 stats.vtableMatch, stats.texUnique);
 #if defined(BFVE_GAME_BF3)
             {
-                // What the Shaders tab and the crosshair pick can reach: SurfaceShaderInstance ->
-                // SurfaceShader (+0) -> solution pairs (+0x44) -> DxShaderSolution -> pixel permutation.
+                // SurfaceShader +0 -> solution pairs +0x44 -> pixel permutation
                 size_t realized = 0, withShader = 0, initialized = 0, withPairs = 0, perms = 0, shown = 0;
                 for (const MaterialEntry& m : materials)
                 {
@@ -2154,8 +2223,8 @@ namespace editor::textures
     namespace detail
     {
         int rescanCountdown = -1; // < 0 = idle
-        int autoScanRetryIn = 0; // frames until the empty-catalogue retry may fire again
-        int emptyScans = 0; // consecutive scans that found nothing
+        int autoScanRetryIn = 0;
+        int emptyScans = 0;
         bool rescanIncremental = false;
     }
 
@@ -2167,8 +2236,6 @@ namespace editor::textures
 
     namespace detail
     {
-        // Raised from the per-frame override pass, so it must not queue a rescan every
-        // frame while something stays broken.
         void requestRescanSoon()
         {
             if (rescanCountdown < 0)
@@ -2217,15 +2284,11 @@ namespace editor::textures
             }
         }
 
-        // Runs on the render thread, which is where a readback has to happen. Cheap when
-        // no bulk export is in flight.
+        // render thread
         gen::tickBatch();
 
-        // Anything a loaded config could not resolve yet - a texture that had not streamed
-        // in when the file was read. Cheap when there is nothing pending.
         applyPendingConfig();
 
-        // Re-assert held parameter edits before anything else this frame.
         applyVecOverrides();
         holdShaderPatches();
         if ((frameCounter % 30) == 0)
@@ -2234,22 +2297,18 @@ namespace editor::textures
             applyPendingShader();
         }
 
-        // ...and the texture-view edits, which live on the DxTexture rather than in a
-        // parameter block and so are not covered by the above.
         if (holdEdits)
             gen::reassertOverrides();
 
         if (budgetHit.load() && !gen::batchActive() && !bulkLoadActive.load())
             recyclePins();
 
-        // Before anything else touches `entries`: this is the one point in the frame where
-        // growing it cannot pull the rug from under a UI holding pointers into it.
+        // only safe point to grow entries
         drainPendingCatalogue();
 
-        // 16 loadOnDemand calls per frame, here on the Present thread.
+        // 16 loadOnDemand per frame
         pumpLoads();
 
-        // Residency is recounted while a bulk load is running, and only then.
         {
             static uint32_t lastResidency = 0;
             const bool loading = loadsAsked.load() > loadsDone.load();
@@ -2290,6 +2349,11 @@ namespace editor::textures
     {
         ++catalogGeneration;
         clearShaderPatches();
+#if !defined(BFVE_GAME_BF4)
+        g_bf3TextureByName.clear();
+        g_bf3ResourceByName.clear();
+        g_bf3MeshSetVtable = nullptr;
+#endif
 
         releaseClonedParamBlocks();
 
@@ -2299,22 +2363,15 @@ namespace editor::textures
         releaseHeldSrvs();
         releaseAllPins();
 
-        // Streaming handles belong to the level that issued them, so a standing load-all
-        // does not carry over into the next one.
         bulkLoadActive = false;
         bulkAsked.clear();
         residentTextures = 0;
         pendingCatalogue.clear();
-        clearPendingConfig(); // and anything a config was still waiting to apply
+        clearPendingConfig();
         g_autoScanned = false;
         g_lastScanElements = 0;
 
-        for (int i = 0; i < kSkySlotCount; ++i)
-        {
-            skyOverride[i] = {};
-            skyOriginal[i] = nullptr;
-            skyOriginalCaptured[i] = false;
-        }
+        skyRevertAll();
         skyEditSlot = -1;
         skyResPicker = -1;
         textureAssets.clear();
@@ -2399,7 +2456,6 @@ namespace editor::textures
             o.material = m.index;
             o.handle = handle;
             o.isTexture = false;
-            // No set key means the block came from somewhere the manager cannot resolve.
             o.block = m.setKey ? nullptr : m.block;
             std::memcpy(o.value, value, sizeof(o.value));
             paramOverrides.push_back(o);
@@ -2496,7 +2552,7 @@ namespace editor::textures
 
             why = Resolve::KeyNotFound;
 
-            // bucket index = (u32)variationNameHash % bucketCount - the low half of the key.
+            // bucket = (u32)variationNameHash % bucketCount
             const uint32_t bucket = uint32_t(setKey & 0xFFFFFFFFull) % mgr->m_bucketCount;
 
             uint32_t guard = 0;
@@ -2538,7 +2594,7 @@ namespace editor::textures
             return nullptr;
         }
 
-        // What the hold pass wrote this frame, by block; read by the block-setter hooks on the game thread.
+        // read by the block-setter hooks, game thread
         struct HeldVec { uint32_t handle; float value[4]; };
         std::mutex g_heldMutex;
         std::unordered_map<const void*, std::vector<HeldVec>> g_heldVec;
@@ -2555,8 +2611,6 @@ namespace editor::textures
             if (!holdEdits || paramOverrides.empty())
                 return;
 
-            // One line per override whenever its state changes, so "it reverted" turns into
-            // a reason instead of a guess. Silent while everything is applying.
             static std::unordered_map<uint64_t, int> lastState;
 
             for (const ParamOverride& o : paramOverrides)
@@ -2733,8 +2787,6 @@ namespace editor::textures
             return it == textureNames.end() ? nullptr : it->second.c_str();
         }
 
-        // Short display name: the last path component is what identifies a texture at a
-        // glance. The full path lives in the detail pane and the tooltip.
         std::string shortLabel(const TextureEntry& e)
         {
             if (e.nameCached)
@@ -2763,8 +2815,6 @@ namespace editor::textures
             return hay.find(needle) != std::string::npos;
         }
 
-        // Every material slot pointing at this texture. Recomputed only when the selection
-        // changes - it is O(materials * slots).
         void rebuildUsages()
         {
             usages.clear();
@@ -2806,7 +2856,6 @@ namespace editor::textures
             holdTexOverride(m, handle, newTexture);
         }
 
-        // --- gallery -------------------------------------------------------------------
         std::vector<int> g_visible;
         std::string g_visibleKey;
         uint32_t g_liveCount = 0;
@@ -2998,7 +3047,7 @@ namespace editor::textures
             }
 
             entries.push_back(std::move(e));
-            ++catalogGeneration; // the gallery caches its filter and sort
+            ++catalogGeneration;
             return int(entries.size()) - 1;
         }
 
@@ -3055,8 +3104,6 @@ namespace editor::textures
             return shortLabel(e);
         }
 
-        // Everything with GPU data right now. A texture that is catalogued but not
-        // resident has nothing to read back, so exporting it would only produce noise.
         void exportAllLoaded(bool asDds)
         {
             std::vector<gen::BatchItem> items;
@@ -3079,7 +3126,6 @@ namespace editor::textures
                 return;
             }
 
-            // Everything from one level lands together, under its own name.
             std::string map = sanitizeMapName(getCurrentMapName());
             if (map.empty())
                 map = "unknown_level";
@@ -3102,7 +3148,7 @@ namespace editor::textures
                             containsCI(name, "flare"));
         }
 
-        void renderMaterialTextureSlots(const MaterialEntry& m); // defined above
+        void renderMaterialTextureSlots(const MaterialEntry& m);
 
         bool materialHasColor(const MaterialEntry& m)
         {
@@ -3168,7 +3214,7 @@ namespace editor::textures
 
     }
 
-    // After every VE blend: the manager rewrites ve->sky from the source states each frame.
+    // the manager rewrites ve->sky every blend
     void applySkyOverrides(fb::VisualEnvironment* ve)
     {
         if (!ve)
@@ -3177,26 +3223,26 @@ namespace editor::textures
         applyResourceOverrides();
     }
 
-    int skySlotCount() { return kSkySlotCount; }
+    int skySlotCount() { return SKY_SLOT_COUNT; }
 
     const char* skySlotLabel(int slot)
     {
-        return (slot >= 0 && slot < kSkySlotCount) ? kSkySlots[slot].label : "";
+        return (slot >= 0 && slot < SKY_SLOT_COUNT) ? SKY_SLOTS[slot].label : "";
     }
 
     int skySlotByLabel(const char* label)
     {
         if (!label)
             return -1;
-        for (int i = 0; i < kSkySlotCount; ++i)
-            if (std::strcmp(kSkySlots[i].label, label) == 0)
+        for (int i = 0; i < SKY_SLOT_COUNT; ++i)
+            if (std::strcmp(SKY_SLOTS[i].label, label) == 0)
                 return i;
         return -1;
     }
 
     void setSkySlot(int slot, void* texture)
     {
-        if (slot < 0 || slot >= kSkySlotCount)
+        if (slot < 0 || slot >= SKY_SLOT_COUNT)
             return;
 
         skyCaptureOriginal(slot);
@@ -3206,8 +3252,6 @@ namespace editor::textures
 
     void revertSkySlot(int slot) { skyRevertSlot(slot); }
 
-    // A DxTexture's asset path, which is what a config can name it by. Empty when the
-    // texture has no catalogued name - a cloned copy, say, which cannot be saved anyway.
     std::string texturePath(void* dxTexture)
     {
         if (!dxTexture)
@@ -3291,7 +3335,7 @@ namespace editor::textures
         scan();
         g_lastScanElements = stats.elementCount;
         usagesFor = -1;
-        emptyScans = 0; // an explicit ask resets the give-up counter
+        emptyScans = 0;
         autoScanRetryIn = 0;
     }
 
@@ -3395,8 +3439,6 @@ namespace editor::textures
             return hits;
         }
 
-        // Our tint replaced the texture's shader views, so the cached preview points at the
-        // old image until it is repointed.
         void refreshPreview(TextureEntry& e)
         {
             void* fresh = gen::currentSrv(e.texture);
@@ -3500,9 +3542,9 @@ namespace editor::textures
     {
         struct ClonedBlock
         {
-            void** slot = nullptr; // where the pointer lives
-            void* original = nullptr; // what was there before
-            void* copy = nullptr; // what we put there
+            void** slot = nullptr;
+            void* original = nullptr;
+            void* copy = nullptr;
         };
 
         std::vector<ClonedBlock> g_clonedBlocks;
@@ -3574,8 +3616,7 @@ namespace editor::textures
 #if defined(BFVE_GAME_BF4)
             return reinterpret_cast<void*(__fastcall*)(uint64_t, uint64_t)>(OFF_Malloc_allocAligned)(size, 16);
 #else
-            // Malloc traps on every thread a hook runs on (tls flag + int 3), so allocate from the arena
-            // that owns the engine's own material blocks: the arena map entry of any live block.
+            // malloc traps on hook threads, use a live block's arena
             void* reference = nullptr;
             for (const MaterialEntry& m : materials)
                 if (m.block) { reference = m.block; break; }
@@ -3639,12 +3680,12 @@ namespace editor::textures
 
             const uint32_t nvec = vec + 1u, total = nvec + tex + bol;
 #if defined(BFVE_GAME_BF4)
-            constexpr uint32_t kTexBytes = 8;
+            constexpr uint32_t TEX_BYTES = 8;
 #else
-            constexpr uint32_t kTexBytes = 4;
+            constexpr uint32_t TEX_BYTES = 4;
 #endif
             const uint32_t head = (8u * total + 15u) & ~0xFu;
-            const uint32_t size = 16u + head + 16u * nvec + kTexBytes * tex + bol;
+            const uint32_t size = 16u + head + 16u * nvec + TEX_BYTES * tex + bol;
             const uint16_t header = uint16_t((size & 0x1FFF) | (1u << 13) | (tex ? 1u << 14 : 0u) | (bol ? 1u << 15 : 0u));
 
             auto* grown = static_cast<uint8_t*>(engineAlloc(size));
@@ -3670,7 +3711,7 @@ namespace editor::textures
                 uint32_t e = 0;
                 for (uint32_t i = 0; i < nvec; ++i, ++e, off += 16)
                     nb->m_entries[e] = { 0, off, 1 };
-                for (uint32_t i = 0; i < tex; ++i, ++e, off += uint16_t(kTexBytes))
+                for (uint32_t i = 0; i < tex; ++i, ++e, off += uint16_t(TEX_BYTES))
                     nb->m_entries[e] = { 0, off, 1 };
                 for (uint32_t i = 0; i < bol; ++i, ++e, off += 1)
                     nb->m_entries[e] = { 0, off, 1 };
@@ -3691,7 +3732,7 @@ namespace editor::textures
             {
                 const auto& src = old->m_entries[vec + i];
                 nb->m_entries[e].m_handle = src.m_handle;
-                std::memcpy(data + nb->m_entries[e].m_offset, oldData + src.m_offset, kTexBytes);
+                std::memcpy(data + nb->m_entries[e].m_offset, oldData + src.m_offset, TEX_BYTES);
             }
             for (uint32_t i = 0; i < bol; ++i, ++e)
             {
@@ -4020,6 +4061,8 @@ namespace editor::textures
 
     void* g_lampEditTex = nullptr;
 
+    void cacheName(TextureEntry& e) { detail::ensureNameCache(e); }
+
     std::string lowerCopy(const std::string& s)
     {
         std::string out = s;
@@ -4055,8 +4098,7 @@ namespace editor::textures
 
 
 
-    // "lightceiling_02_flicker_Mesh" -> "lightceiling_02": tokens up to and including the
-    // first numeric one. That is the family the artists named the textures after.
+    // "lightceiling_02_flicker_Mesh" -> "lightceiling_02"
     std::string meshFamily(const std::string& meshName)
     {
         std::string base = meshName;
@@ -4169,19 +4211,21 @@ namespace editor::textures
 
 
 
-    void* resourceByName(const char* name)
+    void* meshSetByName(const char* name)
     {
 #if defined(BFVE_GAME_BF4)
         (void)name;
         return nullptr;
 #else
-        if (!name || !*name)
+        if (!name || !*name || !g_bf3MeshSetVtable)
             return nullptr;
         std::string key = name;
         std::transform(key.begin(), key.end(), key.begin(),
             [](unsigned char c) { return char(std::tolower(c)); });
         auto it = g_bf3ResourceByName.find(key);
-        return it != g_bf3ResourceByName.end() ? it->second : nullptr;
+        if (it == g_bf3ResourceByName.end() || *static_cast<void**>(it->second) != g_bf3MeshSetVtable)
+            return nullptr;
+        return it->second;
 #endif
     }
 

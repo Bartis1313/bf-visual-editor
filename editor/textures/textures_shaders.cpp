@@ -2,10 +2,10 @@
 #include "texgen.h"
 #include "surfacepick.h"
 #include "../lights/lights.h"
-#include "../../hooks/functions.h" // g_pDevice
+#include "../../hooks/functions.h"
 #include "../../utils/log.h"
 
-#include "../editor_context.h" // getCurrentMapName, sanitizeMapName
+#include "../editor_context.h"
 
 #include <Windows.h>
 #include <d3d11.h>
@@ -38,8 +38,7 @@ namespace editor::textures
     {
         struct ShaderSlot { std::string name; uint32_t slot; };
 
-        // The pixel-shader permutations a material's graph draws with. BF4: the resolved
-        // program table; BF3: the solution pairs of the SurfaceShader.
+        // bf4: resolved program table, bf3: solution pairs
         template <typename F>
         void forEachPixelPermutation(fb::SurfaceShaderInstance* inst, F&& f)
         {
@@ -230,7 +229,7 @@ namespace editor::textures
                     logger::info("[textures] shader reads: nothing for {} [{}] shader {}", m.meshName, m.index, inst->m_shader);
 #endif
                 }
-                return none; // programs resolve on first draw; ask again next frame
+                return none; // programs resolve on first draw
             }
             else
             {
@@ -279,8 +278,7 @@ namespace editor::textures
             return false;
         }
 
-        // How many of the material's block vectors the draw's constants agree with: the
-        // shader names them external_<Parameter>; a twin that differs in Color is told apart.
+        // shader names them external_<Parameter>
         int constantMatches(const MaterialEntry& m, fb::PixelShaderPermutation* perm, const pick::Hit& hit)
         {
             if (!m.block || !perm)
@@ -391,7 +389,7 @@ namespace editor::textures
             if (filterSet)
                 pick::setShaderFilter(nullptr, 0);
             filterSet = false;
-            return false; // no level catalogued (or it is being torn down)
+            return false;
         }
         if (s.frame == cachedFrame)
         {
@@ -473,8 +471,7 @@ namespace editor::textures
             return best;
         };
 
-        // Last passing draw first: the nearest surface, unless it is a lighting or fog pass,
-        // in which case the one below it.
+        // last passing draw = nearest, bar lighting/fog
         int best = -1;
         uint32_t used = 0;
         for (uint32_t h = s.hitCount; h > 0 && best < 0; --h)
@@ -541,7 +538,6 @@ namespace editor::textures
         }
         cached.own = cached.textures.size();
 
-        // Exact: the slots this pixel shader samples, by name, with what was bound there.
         if (matchedPerm)
             for (const ShaderSlot& sl : textureSlotsOf(matchedPerm))
             {
@@ -556,7 +552,6 @@ namespace editor::textures
                 }
             }
 
-        // Views the draw bound besides: shared detail maps, noise, cubemaps - shown apart.
         for (const std::string& b : texturesOfViews(s.hits[used - 1].srvs, 16, 8))
             if (std::find(cached.textures.begin(), cached.textures.end(), b) == cached.textures.end())
                 cached.textures.push_back(b);
@@ -633,7 +628,6 @@ namespace editor::textures
             return 0;
         }
 
-        // Named textures first: the database, then the realized block. Deduped by path.
         std::vector<std::pair<uint32_t, std::string>> found;
         bool byName = false;
         collectMeshTextures(meshes, found, byName);
@@ -647,8 +641,6 @@ namespace editor::textures
         if (byName)
             ImGui::TextDisabled("named after this lamp - its shader names no texture");
 
-        // One tint for the whole fitting: a lamp is usually a diffuse plus a normal and
-        // sometimes an emissive, and the change is the same to each.
         {
             static gen::Params bulk;
 
@@ -745,7 +737,6 @@ namespace editor::textures
             return nullptr;
         }
 
-        // The realized material record of a set, by manager key.
         uint8_t* liveInstance(uint64_t setKey, uint32_t materialIndex)
         {
             fb::MeshVariationManager* mgr = fb::MeshVariationManager::Singleton();
@@ -772,8 +763,7 @@ namespace editor::textures
     {
         struct Literal { size_t offset; float value[4]; };
 
-        // SHEX/SHDR chunk: an IMMEDIATE32 four-component operand token is 0x00004002 followed
-        // by four dwords.
+        // IMMEDIATE32 vec4 operand: 0x00004002 + four dwords
         std::vector<Literal> findLiterals(const uint8_t* data, uint32_t size)
         {
             std::vector<Literal> out;
@@ -884,10 +874,10 @@ namespace editor::textures
         struct ShaderPatch
         {
             fb::PixelShaderPermutation* permutation = nullptr;
-            ID3D11PixelShader* original = nullptr; // what the slot held, ours to put back
+            ID3D11PixelShader* original = nullptr;
             ID3D11PixelShader* patched = nullptr;
-            std::vector<uint8_t> bytes; // the patched blob (edits live here)
-            std::vector<uint8_t> originalBytes; // permutation->m_data before we wrote it
+            std::vector<uint8_t> bytes;
+            std::vector<uint8_t> originalBytes;
             std::string graph;
         };
         std::vector<ShaderPatch> g_shaderPatches;
@@ -921,16 +911,15 @@ namespace editor::textures
                 if (p.original)
                     p.original->AddRef();
             }
-            // The engine creates permutation->shader lazily from permutation->data whenever the
-            // slot is empty, so the stored bytes are patched too: a shader it rebuilds is ours.
+            // engine re-creates m_shader from m_data when empty
             if (p.originalBytes.empty())
                 p.originalBytes.assign(p.permutation->m_data, p.permutation->m_data + p.permutation->m_dataSize);
             if (p.bytes.size() == p.permutation->m_dataSize)
                 std::memcpy(const_cast<unsigned char*>(p.permutation->m_data), p.bytes.data(), p.bytes.size());
             ID3D11PixelShader* old = p.permutation->m_shader;
-            p.permutation->m_shader = ps; // the engine's SmartRef now owns ps
+            p.permutation->m_shader = ps;
             if (old && old != p.original)
-                old->Release(); // a previous patch of ours
+                old->Release();
             if (p.patched)
                 p.patched->Release();
             p.patched = ps;
@@ -946,7 +935,7 @@ namespace editor::textures
             if (p.permutation && p.original)
             {
                 ID3D11PixelShader* cur = p.permutation->m_shader;
-                p.permutation->m_shader = p.original; // hands the AddRef we took to the slot
+                p.permutation->m_shader = p.original;
                 if (cur && cur != p.original)
                     cur->Release();
             }
@@ -956,7 +945,6 @@ namespace editor::textures
             p.original = nullptr;
         }
 
-        // The slot can be written back by the engine; keep ours in it.
         void holdShaderPatches()
         {
             for (ShaderPatch& p : g_shaderPatches)
@@ -1017,7 +1005,7 @@ namespace editor::textures
                         logger::warning("[textures] saved shader edit on {}: {}", e.graph, err);
                 });
                 if (any)
-                    break; // one material's shader covers the graph
+                    break;
             }
             return any;
         }
@@ -1046,7 +1034,6 @@ namespace editor::textures
             g_shaderPatches.clear();
         }
 
-        // Literal scan of a permutation's original bytes, once per level.
         const std::vector<Literal>& literalsOf(fb::PixelShaderPermutation* perm)
         {
             static std::unordered_map<void*, std::vector<Literal>> cache;
@@ -1064,7 +1051,6 @@ namespace editor::textures
             return cache.emplace(perm, findLiterals(data, perm->m_dataSize)).first->second;
         }
 
-        // The current material's graph: its programs, each with the pixel shader's literals.
         void renderShaderPatches(const MaterialEntry& m)
         {
             auto* inst = reinterpret_cast<fb::SurfaceShaderInstance*>(liveInstance(m.setKey, m.index));
@@ -1316,17 +1302,17 @@ namespace editor::textures
                 static uint64_t heldKey = 0;
                 static uint32_t heldIndex = 0;
                 if (ImGui::Checkbox("surface under the crosshair", &fromCrosshair) && fromCrosshair)
-                    pick::enabled = true; // the GPU pick is what answers this; off by default
+                    pick::enabled = true;
                 if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Edits the material the GPU pick names under the crosshair (turns the pick on).");
+                    ImGui::SetTooltip("material the GPU pick names (turns the pick on)");
                 ImGui::SameLine();
                 ImGui::Checkbox("hold", &holdPick);
                 if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Keep the material the crosshair last named while you edit it.");
+                    ImGui::SetTooltip("keep the last picked material");
                 ImGui::SameLine();
                 ImGui::Checkbox("catalogued only", &pick::onlyKnown);
                 if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Probe only draws whose pixel shader belongs to a catalogued material (much cheaper). Off: every scene draw, which also names textures of uncatalogued surfaces.");
+                    ImGui::SetTooltip("only draws of catalogued materials (cheaper); off: every draw, uncatalogued surfaces too");
                 editor::lights::PlacedMesh pm;
                 MeshVariationRef ref;
                 static int pickedIndex = -1;
@@ -1335,7 +1321,7 @@ namespace editor::textures
                     const MaterialEntry* picked = nullptr;
                     SurfaceInfo si;
                     if ((holdPick || ImGui::IsAnyItemActive()) && heldKey)
-                        picked = materialFor(heldKey, heldIndex); // held, or a widget is mid-edit
+                        picked = materialFor(heldKey, heldIndex);
                     else if (surfaceUnderCrosshair(si) && !si.meshName.empty())
                     {
                         picked = materialFor(si.setKey, si.material);
@@ -1346,9 +1332,7 @@ namespace editor::textures
                         }
                     }
                     if (!picked && heldKey)
-                        picked = materialFor(heldKey, heldIndex); // a missed probe keeps the last named mesh
-                    // Every material of the aimed mesh across its object variations. The pick names
-                    // the one drawn under the crosshair; a radio choice sticks while that mesh is aimed at.
+                        picked = materialFor(heldKey, heldIndex);
                     static uint64_t chosenKey = 0;
                     static uint32_t chosenIndex = 0;
                     static uint32_t chosenMesh = 0;
@@ -1368,7 +1352,7 @@ namespace editor::textures
                         for (const MaterialEntry* mm : mats)
                             if (chosenKey && mm->setKey == chosenKey && mm->index == chosenIndex)
                                 chosen = mm;
-                        if (!chosen && !picked->block) // the plain set often has no block while the variation that draws has one
+                        if (!chosen && !picked->block) // the plain set often has no block
                             for (const MaterialEntry* mm : mats)
                                 if (!chosen && mm->index == picked->index && mm->block)
                                     chosen = mm;
