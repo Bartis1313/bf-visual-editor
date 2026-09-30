@@ -82,15 +82,15 @@ See [bf6 visual editor](https://github.com/Bartis1313/bf6-visual-editor).
 
 <table>
   <tr>
-    <td width="50%"><img src="images/1.png" alt="Grand Bazaar at night"><br><sub><b>States</b> - Grand Bazaar (BF3) turned to night with per-state VE overrides</sub></td>
-    <td width="50%"><img src="images/4.png" alt="Recolored sky"><br><sub><b>Global VE</b> - sky colors edited live (BF4)</sub></td>
+    <td width="50%"><img src="images/1.png" alt="Grand Bazaar at night"><br><sub><b>States</b> - Grand Bazaar turned to night with per-state VE overrides</sub></td>
+    <td width="50%"><img src="images/4.png" alt="Recolored sky"><br><sub><b>Global VE</b> - sky clouds colors edited live</sub></td>
   </tr>
   <tr>
-    <td width="50%"><img src="images/2.png" alt="Emitters tab"><br><sub><b>Emitters</b> - an emitter's point light and color processor, Caspian Border (BF3)</sub></td>
-    <td width="50%"><img src="images/5.png" alt="Recolored flares"><br><sub><b>Emitters</b> - jet flare trails recolored (BF4)</sub></td>
+    <td width="50%"><img src="images/2.png" alt="Emitters tab"><br><sub><b>Emitters</b> - emitter options</sub></td>
+    <td width="50%"><img src="images/5.png" alt="Recolored flares"><br><sub><b>Emitters</b> - jet flare trails recolored</sub></td>
   </tr>
   <tr>
-    <td colspan="2"><img src="images/3.png" alt="Effect spawning"><br><sub><b>Effects</b> - an effect spawned at a chosen transform, Grand Bazaar (BF3)</sub></td>
+    <td colspan="2"><img src="images/3.png" alt="Effect spawning"><br><sub><b>Effects</b> - effect spawner</sub></td>
   </tr>
 </table>
 
